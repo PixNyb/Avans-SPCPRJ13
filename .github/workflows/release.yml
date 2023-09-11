@@ -17,7 +17,7 @@ jobs:
               run: sudo apt-get install -y cmake
 
             - name: Build
-              run: cmake . && make
+              run: cmake -S . -B build && cmake --build build --config Release
 
             - name: Generate Release Body
               id: generate_release_body
