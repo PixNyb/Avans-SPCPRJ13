@@ -1,5 +1,7 @@
 # CMake-generated files
 cmake-build-*/
+.cache/
+build/
 
 # CMake cache and install files
 CMakeCache.txt
