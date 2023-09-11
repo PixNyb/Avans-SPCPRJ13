@@ -19,21 +19,32 @@ Voor het bijhouden van de voortgang van het project wordt er gebruik gemaakt van
 - C++ compiler (GCC, Clang, MSVC)
 - CMake
 - Git
+- Doxygen (en Graphviz)
 
 ### Installatie
 
-1. Clone de repository
+- Clone de repository
 
-    ```sh
-    git clone git@github.com:PixNyb/Avans-SPCPRJ13.git
-    ```
+```bash
+git clone git@github.com:PixNyb/Avans-SPCPRJ13.git
+```
 
-2. Gebruik CMake om de code te compileren
+- Gebruik CMake om de code te compileren
 
-    ```sh
-    cmake .
-    ```
+```bash
+cmake -S . -B build && cmake --build build
+```
+
+### Doxygen
+
+De documentatie van de code wordt gegenereerd met behulp van [Doxygen](https://www.doxygen.nl/index.html). De documentatie is te vinden in de `docs` map. Om de documentatie te genereren moet het volgende commando worden uitgevoerd:
+
+```sh
+doxygen Doxyfile
+```
+
+*Denk eraan dat [Graphviz](https://graphviz.org/) geïnstalleerd moet zijn om de UML-diagrammen te genereren, en dat doxygen niet automatisch in CI/CD wordt uitgevoerd. Dit moet dus handmatig worden gedaan.*
 
 ## Development Guidelines
 
-De development guidelines zijn gedefiniëerd in [DEVELOPMENT_GUIDELINES.md](docs/DEVELOPMENT_GUIDELINES.md).
+De development guidelines zijn gedefiniëerd in [DEVELOPMENT_GUIDELINES.md](DEVELOPMENT_GUIDELINES.md).
