@@ -1,0 +1,32 @@
+name: Doxygen
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Install Doxygen
+              run: sudo apt-get install -y doxygen graphviz
+            - name: Update Doxygen version
+              run: sed -i "s/PROJECT_NUMBER.*/PROJECT_NUMBER = $GITHUB_SHA/" Doxyfile
+            - name: Generate Doxygen documentation
+              run: doxygen Doxyfile
+            - name: Upload documentation artifacts
+              uses: actions/upload-pages-artifact@v2
+
+    deploy:
+        needs: build
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v2
