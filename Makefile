@@ -116,6 +116,43 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named DeFunBobEngine
+
+# Build rule for target.
+DeFunBobEngine: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DeFunBobEngine
+.PHONY : DeFunBobEngine
+
+# fast build rule for target.
+DeFunBobEngine/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DeFunBobEngine.dir/build.make CMakeFiles/DeFunBobEngine.dir/build
+.PHONY : DeFunBobEngine/fast
+
+src/lib.o: src/lib.cpp.o
+.PHONY : src/lib.o
+
+# target to build an object file
+src/lib.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DeFunBobEngine.dir/build.make CMakeFiles/DeFunBobEngine.dir/src/lib.cpp.o
+.PHONY : src/lib.cpp.o
+
+src/lib.i: src/lib.cpp.i
+.PHONY : src/lib.i
+
+# target to preprocess a source file
+src/lib.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DeFunBobEngine.dir/build.make CMakeFiles/DeFunBobEngine.dir/src/lib.cpp.i
+.PHONY : src/lib.cpp.i
+
+src/lib.s: src/lib.cpp.s
+.PHONY : src/lib.s
+
+# target to generate assembly for a file
+src/lib.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DeFunBobEngine.dir/build.make CMakeFiles/DeFunBobEngine.dir/src/lib.cpp.s
+.PHONY : src/lib.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... DeFunBobEngine"
+	@echo "... src/lib.o"
+	@echo "... src/lib.i"
+	@echo "... src/lib.s"
 .PHONY : help
 
 

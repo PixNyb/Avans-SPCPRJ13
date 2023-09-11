@@ -7,6 +7,9 @@ CMakeFiles/
 cmake_install.cmake
 install_manifest.txt
 
+# Makefiles
+Makefile
+
 # Compiled object files and libraries
 *.o
 *.obj
