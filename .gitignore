@@ -1,0 +1,43 @@
+# CMake-generated files
+cmake-build-*/
+
+# CMake cache and install files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+
+# Compiled object files and libraries
+*.o
+*.obj
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+
+# Visual Studio files
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.suo
+*.pdb
+
+# JetBrains files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Visual Studio Code files
+.vscode/
+
+# macOS files
+.DS_Store
+
+# Other generated files
+compile_commands.json
+conanbuildinfo.txt
+conaninfo.txt
