@@ -72,5 +72,5 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 
 ## 8. Documentatie
 
-- Voeg doelmatige documentatie toe aan de code en gebruik hulpmiddelen zoals `Doxygen` indien nodig.
-    Documenteer **functies**, **klassen** en **complexe algoritmen**.
+- Voeg doelmatige documentatie toe aan de code en gebruik `doxygen` om documentatie te genereren.
+- Documenteer **functies**, **klassen** en **complexe algoritmen**.
