@@ -46,3 +46,6 @@ Makefile
 compile_commands.json
 conanbuildinfo.txt
 conaninfo.txt
+
+# College stuff
+college/
