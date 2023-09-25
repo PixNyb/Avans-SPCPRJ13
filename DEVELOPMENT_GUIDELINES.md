@@ -1,6 +1,19 @@
 # Development Guidelines
 
-## 1. Code Formatting
+## Inhoudsopgave
+
+- [Development Guidelines](#development-guidelines)
+  - [Inhoudsopgave](#inhoudsopgave)
+  - [Code Formatting](#code-formatting)
+  - [Bestandsstructuur](#bestandsstructuur)
+  - [Commentaar](#commentaar)
+  - [CMake-bestanden](#cmake-bestanden)
+  - [Bouwproces](#bouwproces)
+  - [Git en Versiebeheer](#git-en-versiebeheer)
+  - [Code Reviews](#code-reviews)
+  - [Documentatie](#documentatie)
+
+## Code Formatting
 
 Gebruik de Clang Formatter om code te formatteren volgens de `C++ Coding Style Guide` van `LLVM`. Hier zijn enkele basisregels:
 
@@ -15,14 +28,14 @@ Voor meer informatie, zie [LLVM Coding Standards](https://llvm.org/docs/CodingSt
 
 Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code te formatteren. Voor Visual Studio Code is er bijvoorbeeld de [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) extensie.
 
-## 2. Bestandsstructuur
+## Bestandsstructuur
 
 - Organiseer bronbestanden in duidelijke mappen met beschrijvende namen (bijv. `src/`, `include/`, `tests/`).
 - Houd headerbestanden (`.h` of `.hpp`) en implementatiebestanden (`.cpp`) apart.
 - Plaats `CMakeLists.txt`-bestanden in de relevante mappen om de bronnen en doelen te definiëren.
 - Voor meer informatie, zie [Modern CMake](https://cliutils.gitlab.io/modern-cmake/chapters/basics/structure.html).
 
-## 3. Commentaar
+## Commentaar
 
 - Voeg commentaar toe om complexe of onduidelijke delen van de code uit te leggen.
 - Voeg een licentieheader bovenaan elk bronbestand toe om auteursrecht en licentie-informatie te vermelden.
@@ -51,21 +64,21 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
  */
 ```
 
-## 4. CMake-bestanden
+## CMake-bestanden
 
 - Organiseer CMake-bestanden duidelijk in de projectmap.
 - Gebruik een hoofd-`CMakeLists.txt`-bestand in de hoofdmap om het project te configureren en submappen toe te voegen.
 - Gebruik afzonderlijke `CMakeLists.txt`-bestanden in submappen om doelen en afhankelijkheden te definiëren.
 - Maak gebruik van CMake-variabelen om configuratieopties te beheren (bijv. compilerflags, versie-informatie).
 
-## 5. Bouwproces
+## Bouwproces
 
 - Gebruik CMake om het buildproces te automatiseren. Definieer targets en afhankelijkheden in `CMakeLists.txt`-bestanden.
 - Zorg ervoor dat uw project zonder problemen kan worden gebouwd met behulp van het cmake- en make-commando.
 - Voeg testdoelen toe om unit tests uit te voeren.
 - Maak gebruik van Continuous Integration (CI) om automatische builds en tests te garanderen.
 
-## 6. Git en Versiebeheer
+## Git en Versiebeheer
 
 - Gebruik Git voor versiebeheer en houd een **consistente** en **betekenisvolle** commitgeschiedenis bij.
 - Gebruik branches voor nieuwe functies en bugfixes en voeg deze samen via pull requests.
@@ -79,12 +92,12 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
   - `docs/<naam>` voor documentatie.
   - `test/<naam>` voor tests.
 
-## 7. Code Reviews
+## Code Reviews
 
 - Voer regelmatig code reviews uit om codekwaliteit en naleving van de richtlijnen te waarborgen.
 - Moedig feedback aan en wees bereid om wijzigingen aan te brengen op basis van suggesties.
 
-## 8. Documentatie
+## Documentatie
 
 - Voeg doelmatige documentatie toe aan de code en gebruik `doxygen` om documentatie te genereren.
 - Documenteer **functies**, **klassen** en **complexe algoritmen**.
