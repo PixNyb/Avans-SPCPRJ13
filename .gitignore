@@ -21,6 +21,7 @@ Makefile
 # Executables
 *.exe
 *.out
+**/DeFunBobEngine
 
 # Visual Studio files
 *.vcxproj
