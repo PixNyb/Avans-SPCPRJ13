@@ -1,12 +1,9 @@
-#define SDL_MAIN_HANDLED
-
 #include <SDL2/SDL.h>
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
 
-int SDL_main(int argc, char *argv[]) {
-  std::cout << "Hello, world!" << std::endl;
+int main(int argc, char *argv[]) {
   // Initialize SDL
   if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
     std::cerr << "SDL_Init Error: " << SDL_GetError() << std::endl;
@@ -19,8 +16,8 @@ int SDL_main(int argc, char *argv[]) {
 
   // Create a window and a renderer
   SDL_Window *window =
-      SDL_CreateWindow("Square", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                       windowWidth, windowHeight, 0);
+      SDL_CreateWindow("SDL Input", SDL_WINDOWPOS_CENTERED,
+                       SDL_WINDOWPOS_CENTERED, windowWidth, windowHeight, 0);
   SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
 
   // Define the size and position of the square
