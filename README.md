@@ -43,7 +43,7 @@ De documentatie van de code wordt gegenereerd met behulp van [Doxygen](https://w
 doxygen Doxyfile
 ```
 
-*Denk eraan dat [Graphviz](https://graphviz.org/) geïnstalleerd moet zijn om de UML-diagrammen te genereren, en dat doxygen niet automatisch in CI/CD wordt uitgevoerd. Dit moet dus handmatig worden gedaan.*
+_Denk eraan dat [Graphviz](https://graphviz.org/) geïnstalleerd moet zijn om de UML-diagrammen te genereren, en dat doxygen niet automatisch in CI/CD wordt uitgevoerd. Dit moet dus handmatig worden gedaan._
 
 ## Development Guidelines
 

@@ -1,37 +1,38 @@
 name: Doxygen
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
-            - name: Install Doxygen
-              run: sudo apt-get install -y doxygen graphviz
-            - name: Update Doxygen version
-              run: sed -i "s/PROJECT_NUMBER.*/PROJECT_NUMBER = $GITHUB_SHA/" Doxyfile
-            - name: Generate Doxygen documentation
-              run: doxygen Doxyfile
-            - name: Upload documentation artifacts
-              uses: actions/upload-pages-artifact@v2
-              with:
-                  path: docs
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install Doxygen
+        run: sudo apt-get install -y doxygen graphviz
+      - name: Update Doxygen version
+        run: sed -i "s/PROJECT_NUMBER.*/PROJECT_NUMBER = $GITHUB_SHA/" Doxyfile
+      - name: Generate Doxygen documentation
+        run: doxygen Doxyfile
+      - name: Upload documentation artifacts
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: docs
 
-    deploy:
-        needs: build
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        permissions:
-            pages: write
-            id-token: write
-        runs-on: ubuntu-latest
-        steps:
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v2
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    # trunk-ignore(checkov/CKV2_GHA_1)
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

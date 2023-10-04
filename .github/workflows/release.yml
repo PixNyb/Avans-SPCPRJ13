@@ -1,46 +1,48 @@
 name: DeFunBobEngine Release Build
 
 on:
-    push:
-        tags:
-            - "*"
+  push:
+    tags:
+      - "*"
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-            - name: Install CMake
-              run: sudo apt-get install -y cmake
+      - name: Install CMake
+        run: sudo apt-get install -y cmake
 
-            - name: Build
-              run: cmake -S . -B build && cmake --build build --config Release
+      - name: Build
+        run: cmake -S . -B build && cmake --build build --config Release
 
-            - name: Generate Release Body
-              id: generate_release_body
-              run: echo "::set-output name=body::$(git log --pretty=format:'- %s' $(git describe --tags --abbrev=0)..HEAD)"
+      - name: Generate Release Body
+        id: generate_release_body
+        run:
+          echo "body=$(git log --pretty=format:'- %s' $(git describe --tags --abbrev=0)..HEAD)" >> $GITHUB_ENV
+          echo "generate_release_body=${{ env.body }}" >> $GITHUB_ENV
 
-            - name: Create Release
-              id: create_release
-              uses: actions/create-release@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  tag_name: ${{ github.ref }}
-                  release_name: Release ${{ github.ref }}
-                  body: ${{ steps.generate_release_body.outputs.body }}
-                  draft: false
-                  prerelease: false
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: ${{ steps.generate_release_body.outputs.body }}
+          draft: false
+          prerelease: false
 
-            - name: Upload Release Asset
-              uses: actions/upload-release-asset@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  upload_url: ${{ steps.create_release.outputs.upload_url }}
-                  asset_path: ./build/DeFunBobEngine
-                  asset_name: DeFunBobEngine
-                  asset_content_type: application/octet-stream
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/DeFunBobEngine
+          asset_name: DeFunBobEngine
+          asset_content_type: application/octet-stream
