@@ -45,6 +45,16 @@ doxygen Doxyfile
 
 _Denk eraan dat [Graphviz](https://graphviz.org/) geïnstalleerd moet zijn om de UML-diagrammen te genereren, en dat doxygen niet automatisch in CI/CD wordt uitgevoerd. Dit moet dus handmatig worden gedaan._
 
+## Proof Of Concepts
+
+De POC's zijn te vinden in de `poc` map. Deze map bevat een map voor elke POC. In deze map staat een `README.md` bestand met de informatie over de POC.
+
+Alle POC's worden met behulp van CMake gecompileerd. De POC's kunnen individueel gebouwd worden maar worden ook automatisch gebouwd als de hoofdmap wordt gebouwd.
+
+- [Entity Component System](poc/ecs/README.md)
+- [SDL Input](poc/sdl-input/README.md)
+- [SDL Render](poc/sdl-render/README.md)
+
 ## Development Guidelines
 
 De development guidelines zijn gedefiniëerd in [DEVELOPMENT_GUIDELINES.md](DEVELOPMENT_GUIDELINES.md).
