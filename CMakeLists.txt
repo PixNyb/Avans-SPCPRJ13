@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.22)
 project(DeFunBobEngine)
 
 # Set C++ standard
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Add source files
@@ -14,3 +14,11 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 # Add executable
 add_executable(DeFunBobEngine ${SOURCES})
+
+# Add POC's
+file(GLOB SUBDIR_LIST RELATIVE ${PROJECT_SOURCE_DIR}/poc ${PROJECT_SOURCE_DIR}/poc/*)
+foreach(SUBDIR ${SUBDIR_LIST})
+    if(IS_DIRECTORY ${PROJECT_SOURCE_DIR}/poc/${SUBDIR})
+        add_subdirectory(${PROJECT_SOURCE_DIR}/poc/${SUBDIR})
+    endif()
+endforeach()
