@@ -3,7 +3,7 @@
 #include <ctime>
 #include <iostream>
 
-const int VELOCITY = 50;
+const int VELOCITY = 10;
 
 int main(int argc, char *argv[]) {
   // Initialize SDL
@@ -12,11 +12,9 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  // Define the window size
+  // Create a window and a renderer
   int windowWidth = 640;
   int windowHeight = 480;
-
-  // Create a window and a renderer
   SDL_Window *window =
       SDL_CreateWindow("SDL Input", SDL_WINDOWPOS_CENTERED,
                        SDL_WINDOWPOS_CENTERED, windowWidth, windowHeight, 0);
@@ -30,6 +28,7 @@ int main(int argc, char *argv[]) {
 
   // Define the initial color of the square
   SDL_Color squareColor = {255, 255, 255, 255};
+  SDL_Color previousSquareColor = squareColor;
   SDL_Color backgroundColor = {0, 0, 0, 255};
 
   // Seed the random number generator
@@ -69,6 +68,12 @@ int main(int argc, char *argv[]) {
         case SDLK_RIGHT:
           squareX += VELOCITY;
           break;
+        case SDLK_SPACE:
+          squareColor.r = std::rand() % 256;
+          squareColor.g = std::rand() % 256;
+          squareColor.b = std::rand() % 256;
+          previousSquareColor = squareColor;
+          break;
         }
         break;
       case SDL_MOUSEBUTTONDOWN:
@@ -76,14 +81,10 @@ int main(int argc, char *argv[]) {
         squareY = event.button.y - squareSize / 2;
         break;
       case SDL_MOUSEMOTION:
-        if (event.motion.x >= squareX &&
-            event.motion.x <= squareX + squareSize &&
-            event.motion.y >= squareY &&
-            event.motion.y <= squareY + squareSize) {
-          isHovering = true;
-        } else {
-          isHovering = false;
-        }
+        isHovering = (event.motion.x >= squareX &&
+                      event.motion.x <= squareX + squareSize &&
+                      event.motion.y >= squareY &&
+                      event.motion.y <= squareY + squareSize);
         break;
       }
     }
@@ -91,18 +92,18 @@ int main(int argc, char *argv[]) {
     // Change the background color every 0.1 seconds if the mouse is hovering
     // over the square
     Uint32 currentTime = SDL_GetTicks();
-    if (isHovering) {
-      if (currentTime - lastBackgroundColorChangeTime >= 100) {
-        backgroundColor.r = std::rand() % 256;
-        backgroundColor.g = std::rand() % 256;
-        backgroundColor.b = std::rand() % 256;
-        lastBackgroundColorChangeTime = currentTime;
-      }
-      SDL_SetRenderDrawColor(renderer, backgroundColor.r, backgroundColor.g,
-                             backgroundColor.b, backgroundColor.a);
-    } else {
-      SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    if (isHovering && currentTime - lastBackgroundColorChangeTime >= 100) {
+      backgroundColor.r = std::rand() % 256;
+      backgroundColor.g = std::rand() % 256;
+      backgroundColor.b = std::rand() % 256;
+      squareColor = {0, 0, 0, 255};
+      lastBackgroundColorChangeTime = currentTime;
+    } else if (!isHovering) {
+      squareColor = previousSquareColor;
+      backgroundColor = {0, 0, 0, 255};
     }
+    SDL_SetRenderDrawColor(renderer, backgroundColor.r, backgroundColor.g,
+                           backgroundColor.b, backgroundColor.a);
     SDL_RenderClear(renderer);
 
     // Draw the square with the current color
