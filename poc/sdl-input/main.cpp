@@ -3,6 +3,8 @@
 #include <ctime>
 #include <iostream>
 
+const int VELOCITY = 10;
+
 int main(int argc, char *argv[]) {
   // Initialize SDL
   if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
@@ -18,7 +20,8 @@ int main(int argc, char *argv[]) {
   SDL_Window *window =
       SDL_CreateWindow("SDL Input", SDL_WINDOWPOS_CENTERED,
                        SDL_WINDOWPOS_CENTERED, windowWidth, windowHeight, 0);
-  SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
+  SDL_Renderer *renderer =
+      SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
   // Define the size and position of the square
   int squareSize = 50;
@@ -31,8 +34,15 @@ int main(int argc, char *argv[]) {
   // Seed the random number generator
   std::srand(std::time(nullptr));
 
+  // Set the renderer draw color
+  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+  SDL_SetRenderDrawColor(renderer, squareColor.r, squareColor.g, squareColor.b,
+                         squareColor.a);
+
   // Create a loop that listens for events
   bool quit = false;
+  bool isHovering = false;
+
   while (!quit) {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
@@ -42,38 +52,69 @@ int main(int argc, char *argv[]) {
         break;
       case SDL_KEYDOWN:
         switch (event.key.keysym.sym) {
+        case SDLK_ESCAPE:
+          quit = true;
+          break;
         case SDLK_UP:
-          squareY -= 10;
+          squareY -= VELOCITY;
           break;
         case SDLK_DOWN:
-          squareY += 10;
+          squareY += VELOCITY;
           break;
         case SDLK_LEFT:
-          squareX -= 10;
+          squareX -= VELOCITY;
           break;
         case SDLK_RIGHT:
-          squareX += 10;
+          squareX += VELOCITY;
           break;
         case SDLK_SPACE:
           squareColor.r = std::rand() % 256;
           squareColor.g = std::rand() % 256;
           squareColor.b = std::rand() % 256;
+          SDL_SetRenderDrawColor(renderer, squareColor.r, squareColor.g,
+                                 squareColor.b, squareColor.a);
           break;
+        }
+        break;
+      case SDL_MOUSEBUTTONDOWN:
+        squareX = event.button.x - squareSize / 2;
+        squareY = event.button.y - squareSize / 2;
+        break;
+      case SDL_MOUSEMOTION:
+        if (event.motion.x >= squareX &&
+            event.motion.x <= squareX + squareSize &&
+            event.motion.y >= squareY &&
+            event.motion.y <= squareY + squareSize) {
+          isHovering = true;
+        } else {
+          isHovering = false;
         }
         break;
       }
     }
 
-    // Clear the renderer and draw the square with the current color
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    // Draw the background with a random color if the mouse is hovering over the
+    // square
+    if (isHovering) {
+      SDL_SetRenderDrawColor(renderer, std::rand() % 256, std::rand() % 256,
+                             std::rand() % 256, 255);
+    } else {
+      SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    }
     SDL_RenderClear(renderer);
-    SDL_SetRenderDrawColor(renderer, squareColor.r, squareColor.g,
-                           squareColor.b, squareColor.a);
+
+    // Draw the square with the current color
+    if (isHovering) {
+      SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    } else {
+      SDL_SetRenderDrawColor(renderer, squareColor.r, squareColor.g,
+                             squareColor.b, squareColor.a);
+    }
     SDL_Rect squareRect = {squareX, squareY, squareSize, squareSize};
     SDL_RenderFillRect(renderer, &squareRect);
 
-    // Update the screen
     SDL_RenderPresent(renderer);
+    SDL_Delay(1);
   }
 
   // Clean up and exit
