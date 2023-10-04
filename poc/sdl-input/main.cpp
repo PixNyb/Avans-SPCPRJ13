@@ -3,7 +3,7 @@
 #include <ctime>
 #include <iostream>
 
-const int VELOCITY = 10;
+const int VELOCITY = 50;
 
 int main(int argc, char *argv[]) {
   // Initialize SDL
@@ -30,6 +30,7 @@ int main(int argc, char *argv[]) {
 
   // Define the initial color of the square
   SDL_Color squareColor = {255, 255, 255, 255};
+  SDL_Color backgroundColor = {0, 0, 0, 255};
 
   // Seed the random number generator
   std::srand(std::time(nullptr));
@@ -42,6 +43,7 @@ int main(int argc, char *argv[]) {
   // Create a loop that listens for events
   bool quit = false;
   bool isHovering = false;
+  Uint32 lastBackgroundColorChangeTime = SDL_GetTicks();
 
   while (!quit) {
     SDL_Event event;
@@ -67,13 +69,6 @@ int main(int argc, char *argv[]) {
         case SDLK_RIGHT:
           squareX += VELOCITY;
           break;
-        case SDLK_SPACE:
-          squareColor.r = std::rand() % 256;
-          squareColor.g = std::rand() % 256;
-          squareColor.b = std::rand() % 256;
-          SDL_SetRenderDrawColor(renderer, squareColor.r, squareColor.g,
-                                 squareColor.b, squareColor.a);
-          break;
         }
         break;
       case SDL_MOUSEBUTTONDOWN:
@@ -93,23 +88,26 @@ int main(int argc, char *argv[]) {
       }
     }
 
-    // Draw the background with a random color if the mouse is hovering over the
-    // square
+    // Change the background color every 0.1 seconds if the mouse is hovering
+    // over the square
+    Uint32 currentTime = SDL_GetTicks();
     if (isHovering) {
-      SDL_SetRenderDrawColor(renderer, std::rand() % 256, std::rand() % 256,
-                             std::rand() % 256, 255);
+      if (currentTime - lastBackgroundColorChangeTime >= 100) {
+        backgroundColor.r = std::rand() % 256;
+        backgroundColor.g = std::rand() % 256;
+        backgroundColor.b = std::rand() % 256;
+        lastBackgroundColorChangeTime = currentTime;
+      }
+      SDL_SetRenderDrawColor(renderer, backgroundColor.r, backgroundColor.g,
+                             backgroundColor.b, backgroundColor.a);
     } else {
       SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     }
     SDL_RenderClear(renderer);
 
     // Draw the square with the current color
-    if (isHovering) {
-      SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    } else {
-      SDL_SetRenderDrawColor(renderer, squareColor.r, squareColor.g,
-                             squareColor.b, squareColor.a);
-    }
+    SDL_SetRenderDrawColor(renderer, squareColor.r, squareColor.g,
+                           squareColor.b, squareColor.a);
     SDL_Rect squareRect = {squareX, squareY, squareSize, squareSize};
     SDL_RenderFillRect(renderer, &squareRect);
 
