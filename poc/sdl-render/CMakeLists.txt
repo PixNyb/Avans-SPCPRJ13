@@ -17,7 +17,6 @@ include_directories(
     ${SDL2_INCLUDE_DIRS}
     ${SDL2_IMAGE_INCLUDE_DIRS}
 )
-# include_directories(${SDL2_IMAGE_INCLUDE_DIRS})
 
 # Voeg alle bronbestanden toe aan de uitvoerbare bestanden
 file(GLOB SOURCES "src/*.cpp")
