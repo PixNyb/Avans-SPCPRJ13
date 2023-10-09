@@ -1,4 +1,4 @@
-#include "../include/Spritesheet.h"
+#include "Spritesheet.h"
 #include "SDL_image.h"
 
 Spritesheet::Spritesheet(SDL_Renderer *render, int w, int h) {

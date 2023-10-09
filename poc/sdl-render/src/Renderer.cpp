@@ -1,5 +1,5 @@
-#include "../include/Renderer.h"
-#include "../include/Spritesheet.h"
+#include "Renderer.h"
+#include "Spritesheet.h"
 
 Renderer::Renderer(int width, int height)
 {

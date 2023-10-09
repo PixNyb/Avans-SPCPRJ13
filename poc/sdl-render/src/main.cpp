@@ -1,6 +1,6 @@
 #include <SDL.h>
 #include <SDL_image.h>
-#include "../include/Renderer.h"
+#include "Renderer.h"
 
 int main(int argc, char *args[])
 {
@@ -39,6 +39,7 @@ int main(int argc, char *args[])
 
     // Game loop
     bool quit = false;
+    bool spriteExist = true;
     SDL_Event e;
     while (!quit)
     {
@@ -56,7 +57,10 @@ int main(int argc, char *args[])
         renderer.drawRectangle(50, 50, 100, 100);
         renderer.drawCircle(400, 300, 50);
 
-        renderer.drawSprite(windowWidth, windowHeight);
+        if(spriteExist) {
+            spriteExist = false;
+            renderer.drawSprite(windowWidth, windowHeight);
+        }
 
         renderer.present();
         SDL_Delay(500); // Vertraging toegevoegd om de animatie te kunnen zien

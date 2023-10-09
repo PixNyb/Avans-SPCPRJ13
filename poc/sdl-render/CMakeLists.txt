@@ -21,10 +21,7 @@ include_directories(
 
 # Voeg alle bronbestanden toe aan de uitvoerbare bestanden
 file(GLOB SOURCES "src/*.cpp")
-add_executable(SDLPoC ${SOURCES}
-        include/Spritesheet.h
-        src/Spritesheet.cpp
-)
+add_executable(SDLPoC ${SOURCES})
 
 # Link de SDL2-bibliotheek aan het uitvoerbare bestand
 target_link_libraries(SDLPoC ${SDL2_LIBRARIES} SDL2_image::SDL2_image)
