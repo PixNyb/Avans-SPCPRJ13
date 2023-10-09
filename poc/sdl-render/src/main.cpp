@@ -1,6 +1,6 @@
 #include <SDL.h>
 #include <SDL_image.h>
-#include "Renderer.h"
+#include "../include/Renderer.h"
 
 int main(int argc, char *args[])
 {
@@ -55,6 +55,8 @@ int main(int argc, char *args[])
         renderer.drawImage(bgTexture, 0, 0, windowWidth, windowHeight);
         renderer.drawRectangle(50, 50, 100, 100);
         renderer.drawCircle(400, 300, 50);
+
+        renderer.drawSprite(windowWidth, windowHeight);
 
         renderer.present();
         SDL_Delay(500); // Vertraging toegevoegd om de animatie te kunnen zien

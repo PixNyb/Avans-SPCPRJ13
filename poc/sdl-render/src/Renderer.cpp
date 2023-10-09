@@ -1,4 +1,5 @@
-#include "Renderer.h"
+#include "../include/Renderer.h"
+#include "../include/Spritesheet.h"
 
 Renderer::Renderer(int width, int height)
 {
@@ -32,13 +33,33 @@ void Renderer::drawRectangle(int x, int y, int w, int h)
 
 void Renderer::drawCircle(int x, int y, int radius)
 {
-    // Implementatie van het tekenen van de cirkel
+    SDL_Color color = {0, 0, 0, 0};
+
+    SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
+
+    for (int w = 0; w < radius * 2; w++)
+    {
+        for (int h = 0; h < radius * 2; h++)
+        {
+            int dx = radius - w;
+            int dy = radius - h;
+
+            if ((dx*dx + dy*dy) <= (radius * radius))
+            {
+                SDL_RenderDrawPoint(renderer, x + dx, y + dy);
+            }
+        }
+    }
 }
 
 void Renderer::drawImage(SDL_Texture *texture, int x, int y, int w, int h)
 {
     SDL_Rect destRect = {x, y, w, h};
     SDL_RenderCopy(renderer, texture, NULL, &destRect);
+}
+
+void Renderer::drawSprite(int w, int h) {
+    Spritesheet spritesheet(this->renderer, w, h);
 }
 
 SDL_Renderer *Renderer::getSDLRenderer()

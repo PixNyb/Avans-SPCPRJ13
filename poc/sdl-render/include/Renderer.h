@@ -11,6 +11,7 @@ public:
     void drawRectangle(int x, int y, int w, int h);
     void drawCircle(int x, int y, int radius);
     void drawImage(SDL_Texture *texture, int x, int y, int w, int h);
+    void drawSprite(int w, int h);
     SDL_Renderer *getSDLRenderer();
 
 private:
