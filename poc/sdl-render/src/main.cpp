@@ -18,7 +18,7 @@ int main(int argc, char *args[]) {
 
   Renderer renderer(800, 600);
 
-  SDL_Surface *bgSurface = IMG_Load("./assets/indianaBob.png");
+  SDL_Surface *bgSurface = IMG_Load("../assets/indianaBob.png");
   if (bgSurface == nullptr) {
     SDL_Log("Unable to load image: %s", IMG_GetError());
     return 1;
