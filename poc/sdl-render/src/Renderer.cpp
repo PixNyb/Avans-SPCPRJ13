@@ -1,4 +1,5 @@
-#include "Renderer.h"
+#include "Renderer.hpp"
+#include "Spritesheet.hpp"
 
 Renderer::Renderer(int width, int height) {
   window = SDL_CreateWindow("POC", SDL_WINDOWPOS_CENTERED,

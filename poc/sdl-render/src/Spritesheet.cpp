@@ -1,5 +1,5 @@
-#include "Spritesheet.h"
-#include <SDL_image.h>
+#include "Spritesheet.hpp"
+#include <SDL2/SDL_image.h>
 
 Spritesheet::Spritesheet(SDL_Renderer *renderer, int w, int h) : renderer(renderer), frameTime(0)
 {
