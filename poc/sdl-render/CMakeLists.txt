@@ -1,28 +1,30 @@
-cmake_minimum_required(VERSION 3.10)
+# cmake_minimum_required(VERSION 3.10)
 
-# Zet de naam van het project en de gebruikte taal
-project(SDLPoC)
+# # Zet de naam van het project en de gebruikte taal
+# project(SDLPoC)
 
-# Specify the C++ standard
-set(CMAKE_CXX_STANDARD 14)
+# # Specify the C++ standard
+# set(CMAKE_CXX_STANDARD 14)
 
-# Add your project's include directory
-include_directories(${CMAKE_SOURCE_DIR}/include)
+# # Add cmake to the path
+# set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
-# Vind de SDL2-bibliotheek
-find_package(SDL2 REQUIRED)
-find_package(SDL2_image REQUIRED)
+# # Add your project's include directory
+# include_directories(${CMAKE_SOURCE_DIR}/include)
 
-include_directories(
-    ${SDL2_INCLUDE_DIRS}
-    ${SDL2_IMAGE_INCLUDE_DIRS}
-)
-# include_directories(${SDL2_IMAGE_INCLUDE_DIRS})
+# # Vind de SDL2-bibliotheek
+# find_package(SDL2 REQUIRED)
+# find_package(SDL2_image REQUIRED)
 
-# Voeg alle bronbestanden toe aan de uitvoerbare bestanden
-file(GLOB SOURCES "src/*.cpp")
-add_executable(SDLPoC ${SOURCES})
+# include_directories(
+#     ${SDL2_INCLUDE_DIRS}
+#     ${SDL2_IMAGE_INCLUDE_DIRS}
+# )
+# # include_directories(${SDL2_IMAGE_INCLUDE_DIRS})
 
-# Link de SDL2-bibliotheek aan het uitvoerbare bestand
-target_link_libraries(SDLPoC ${SDL2_LIBRARIES} SDL2_image::SDL2_image)
+# # Voeg alle bronbestanden toe aan de uitvoerbare bestanden
+# file(GLOB SOURCES "src/*.cpp")
+# add_executable(SDLPoC ${SOURCES})
 
+# # Link de SDL2-bibliotheek aan het uitvoerbare bestand
+# target_link_libraries(SDLPoC ${SDL2_LIBRARIES} SDL2_image::SDL2_image)
