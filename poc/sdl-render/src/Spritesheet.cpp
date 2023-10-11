@@ -1,9 +1,9 @@
 #include "Spritesheet.hpp"
-#include <SDL2/SDL_image.h>
+#include <SDL_image.h>
 
 Spritesheet::Spritesheet(SDL_Renderer *renderer, int w, int h) : renderer(renderer), frameTime(0)
 {
-    SDL_Surface *loadedSurface = IMG_Load("../assets/lego_spritesheet.png");
+    SDL_Surface *loadedSurface = IMG_Load("./assets/lego_spritesheet.png");
     if (loadedSurface)
     {
         texture = SDL_CreateTextureFromSurface(renderer, loadedSurface);
