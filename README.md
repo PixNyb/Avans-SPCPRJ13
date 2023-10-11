@@ -52,6 +52,7 @@ De POC's zijn te vinden in de `poc` map. Deze map bevat een map voor elke POC. I
 Alle POC's worden met behulp van CMake gecompileerd. De POC's kunnen individueel gebouwd worden maar worden ook automatisch gebouwd als de hoofdmap wordt gebouwd.
 
 - [Entity Component System](poc/ecs/README.md)
+- [Entity Component](poc/ec/README.md)
 - [SDL Input](poc/sdl-input/README.md)
 - [SDL Render](poc/sdl-render/README.md)
 
