@@ -6,41 +6,46 @@ void PositionComponent::update(SDL_Event &event) {}
 void InputComponent::update(SDL_Event &event) {
   MovementComponent *movementComponent =
       entity.getComponent<MovementComponent>();
-
-  if (movementComponent == nullptr)
+  if (!movementComponent)
     return;
 
-  if (event.type == SDL_KEYDOWN) {
+  int vx = 0, vy = 0;
+  switch (event.type) {
+  case SDL_KEYDOWN:
     switch (event.key.keysym.sym) {
     case SDLK_UP:
-      movementComponent->setVy(-5);
+      vy = -5;
       break;
     case SDLK_DOWN:
-      movementComponent->setVy(5);
+      vy = 5;
       break;
     case SDLK_LEFT:
-      movementComponent->setVx(-5);
+      vx = -5;
       break;
     case SDLK_RIGHT:
-      movementComponent->setVx(5);
+      vx = 5;
       break;
     }
-  } else if (event.type == SDL_KEYUP) {
+    break;
+  case SDL_KEYUP:
     switch (event.key.keysym.sym) {
     case SDLK_UP:
-      movementComponent->setVy(0);
+      vy = 0;
       break;
     case SDLK_DOWN:
-      movementComponent->setVy(0);
+      vy = 0;
       break;
     case SDLK_LEFT:
-      movementComponent->setVx(0);
+      vx = 0;
       break;
     case SDLK_RIGHT:
-      movementComponent->setVx(0);
+      vx = 0;
       break;
     }
+    break;
   }
+  movementComponent->setVx(vx);
+  movementComponent->setVy(vy);
 }
 
 void FollowComponent::update(SDL_Event &event) {
@@ -50,36 +55,22 @@ void FollowComponent::update(SDL_Event &event) {
       entity.getComponent<MovementComponent>();
   PositionComponent *targetPositionComponent =
       target.getComponent<PositionComponent>();
-
-  if (positionComponent == nullptr || movementComponent == nullptr ||
-      targetPositionComponent == nullptr)
+  if (!positionComponent || !movementComponent || !targetPositionComponent)
     return;
 
-  int x = positionComponent->getX();
-  int y = positionComponent->getY();
-  int targetX = targetPositionComponent->getX();
-  int targetY = targetPositionComponent->getY();
-
-  if (x < targetX)
-    movementComponent->setVx(2);
-  else if (x > targetX)
-    movementComponent->setVx(-2);
-  else
-    movementComponent->setVx(0);
-
-  if (y < targetY)
-    movementComponent->setVy(2);
-  else if (y > targetY)
-    movementComponent->setVy(-2);
-  else
-    movementComponent->setVy(0);
+  int x = positionComponent->getX(), y = positionComponent->getY();
+  int targetX = targetPositionComponent->getX(),
+      targetY = targetPositionComponent->getY();
+  int vx = (x < targetX) ? 2 : (x > targetX) ? -2 : 0;
+  int vy = (y < targetY) ? 2 : (y > targetY) ? -2 : 0;
+  movementComponent->setVx(vx);
+  movementComponent->setVy(vy);
 }
 
 void MovementComponent::update(SDL_Event &event) {
   PositionComponent *positionComponent =
       entity.getComponent<PositionComponent>();
-
-  if (positionComponent == nullptr)
+  if (!positionComponent)
     return;
 
   positionComponent->setX(positionComponent->getX() + vx);
@@ -89,16 +80,11 @@ void MovementComponent::update(SDL_Event &event) {
 void RenderComponent::update(SDL_Event &event) {
   PositionComponent *positionComponent =
       entity.getComponent<PositionComponent>();
-
-  if (positionComponent == nullptr)
+  if (!positionComponent)
     return;
 
-  SDL_Rect rect;
-  rect.x = positionComponent->getX();
-  rect.y = positionComponent->getY();
-  rect.w = width;
-  rect.h = height;
-
+  SDL_Rect rect = {positionComponent->getX(), positionComponent->getY(), width,
+                   height};
   SDL_SetRenderDrawColor(&renderer, color.r, color.g, color.b, color.a);
   SDL_RenderFillRect(&renderer, &rect);
 }
