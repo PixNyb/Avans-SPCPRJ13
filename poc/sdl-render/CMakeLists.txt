@@ -29,4 +29,4 @@ file(GLOB SOURCES "src/*.cpp")
 add_executable(SdlRenderPoc ${SOURCES})
 
 # Link de SDL2-bibliotheek aan het uitvoerbare bestand
-target_link_libraries(SdlRenderPoc ${SDL2_LIBRARIES} SDL2_image::SDL2_image)
+target_link_libraries(SdlRenderPoc ${SDL2_LIBRARIES} SDL2_image)
