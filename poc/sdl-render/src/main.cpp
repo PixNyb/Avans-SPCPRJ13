@@ -1,69 +1,62 @@
+#include "Renderer.h"
 #include <SDL.h>
 #include <SDL_image.h>
-#include "Renderer.h"
 
-int main(int argc, char *args[])
-{
-    int windowWidth = 800;
-    int windowHeight = 600;
+int main(int argc, char *args[]) {
+  int windowWidth = 800;
+  int windowHeight = 600;
 
-    // Initialiseer SDL
-    if (SDL_Init(SDL_INIT_VIDEO) < 0)
-    {
-        return 1;
+  // Initialiseer SDL
+  if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+    return 1;
+  }
+
+  // Initialiseer SDL_image
+  if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG)) {
+    return 1;
+  }
+
+  Renderer renderer(800, 600);
+
+  SDL_Surface *bgSurface = IMG_Load("./assets/indianaBob.png");
+  if (bgSurface == nullptr) {
+    SDL_Log("Unable to load image: %s", IMG_GetError());
+    return 1;
+  }
+
+  SDL_Texture *bgTexture =
+      SDL_CreateTextureFromSurface(renderer.getSDLRenderer(), bgSurface);
+  SDL_FreeSurface(bgSurface);
+
+  if (bgTexture == nullptr) {
+    SDL_Log("Unable to create texture: %s", SDL_GetError());
+    return 1;
+  }
+
+  // Game loop
+  bool quit = false;
+  SDL_Event e;
+  while (!quit) {
+    while (SDL_PollEvent(&e) != 0) {
+      if (e.type == SDL_QUIT) {
+        quit = true;
+      }
     }
 
-    // Initialiseer SDL_image
-    if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG))
-    {
-        return 1;
-    }
+    renderer.clear();
 
-    Renderer renderer(800, 600);
+    renderer.drawImage(bgTexture, 0, 0, windowWidth, windowHeight);
+    renderer.drawRectangle(50, 50, 100, 100);
+    renderer.drawCircle(400, 300, 50);
 
-    SDL_Surface *bgSurface = IMG_Load("../assets/indianaBob.png");
-    if (bgSurface == nullptr)
-    {
-        SDL_Log("Unable to load image: %s", IMG_GetError());
-        return 1;
-    }
+    renderer.present();
+    SDL_Delay(500); // Vertraging toegevoegd om de animatie te kunnen zien
+  }
 
-    SDL_Texture *bgTexture = SDL_CreateTextureFromSurface(renderer.getSDLRenderer(), bgSurface);
-    SDL_FreeSurface(bgSurface);
+  SDL_DestroyTexture(bgTexture);
 
-    if (bgTexture == nullptr)
-    {
-        SDL_Log("Unable to create texture: %s", SDL_GetError());
-        return 1;
-    }
+  IMG_Quit();
+  SDL_Quit();
 
-    // Game loop
-    bool quit = false;
-    SDL_Event e;
-    while (!quit)
-    {
-        while (SDL_PollEvent(&e) != 0)
-        {
-            if (e.type == SDL_QUIT)
-            {
-                quit = true;
-            }
-        }
-
-        renderer.clear();
-
-        renderer.drawImage(bgTexture, 0, 0, windowWidth, windowHeight);
-        renderer.drawRectangle(50, 50, 100, 100);
-        renderer.drawCircle(400, 300, 50);
-
-        renderer.present();
-        SDL_Delay(500); // Vertraging toegevoegd om de animatie te kunnen zien
-    }
-
-    SDL_DestroyTexture(bgTexture);
-
-    IMG_Quit();
-    SDL_Quit();
-
-    return 0;
+  return 0;
 }
