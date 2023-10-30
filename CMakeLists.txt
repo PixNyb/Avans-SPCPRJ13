@@ -16,7 +16,7 @@ file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/apps/*.cpp)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
 # Add executable
-add_executable(DeFunBobEngine ${SOURCES})
+add_executable(DeFunBobEngine ${SOURCES} "include/API/*.h")
 
 # Add POC's
 file(GLOB SUBDIR_LIST RELATIVE ${PROJECT_SOURCE_DIR}/poc ${PROJECT_SOURCE_DIR}/poc/*)
