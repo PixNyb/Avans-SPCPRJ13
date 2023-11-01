@@ -2,9 +2,11 @@
 #include <SDL_image.h>
 
 Spritesheet::Spritesheet(SDL_Renderer *renderer, int w, int h)
-    : renderer(renderer), frameTime(0) {
+    : renderer(renderer), frameTime(0)
+{
   SDL_Surface *loadedSurface = IMG_Load("assets/lego_spritesheet.png");
-  if (loadedSurface) {
+  if (loadedSurface)
+  {
     texture = SDL_CreateTextureFromSurface(renderer, loadedSurface);
     SDL_FreeSurface(loadedSurface);
 
@@ -19,18 +21,22 @@ Spritesheet::Spritesheet(SDL_Renderer *renderer, int w, int h)
   }
 }
 
-void Spritesheet::update() {
+void Spritesheet::update()
+{
   frameTime++;
-  if (frameTime % 10 == 0) {
+  if (frameTime % 10 == 0)
+  {
     frameTime = 0;
     playerRect.x += frameWidth;
-    if (playerRect.x >= textureWidth) {
+    if (playerRect.x >= textureWidth)
+    {
       playerRect.x = 0;
     }
   }
 }
 
-void Spritesheet::render() {
+void Spritesheet::render()
+{
   SDL_Rect dstRect;
   dstRect.x = (800 - frameWidth) / 2;
   dstRect.y = (600 - frameHeight) / 2;
