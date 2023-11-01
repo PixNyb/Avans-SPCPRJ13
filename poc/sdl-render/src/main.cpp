@@ -1,7 +1,7 @@
-#include <SDL.h>
-#include <SDL_image.h>
-#include "Renderer.h"
-#include "Spritesheet.h"
+#include "Renderer.hpp"
+#include "Spritesheet.hpp"
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
 int main(int argc, char *args[])
 {
@@ -21,14 +21,15 @@ int main(int argc, char *args[])
     Renderer renderer(windowWidth, windowHeight);
     Spritesheet spritesheet(renderer.getSDLRenderer(), windowWidth, windowHeight);
 
-    SDL_Surface *bgSurface = IMG_Load("../assets/indianaBob.png");
+    SDL_Surface *bgSurface = IMG_Load("assets/indianaBob.png");
     if (bgSurface == nullptr)
     {
         SDL_Log("Unable to load image: %s", IMG_GetError());
         return 1;
     }
 
-    SDL_Texture *bgTexture = SDL_CreateTextureFromSurface(renderer.getSDLRenderer(), bgSurface);
+    SDL_Texture *bgTexture =
+        SDL_CreateTextureFromSurface(renderer.getSDLRenderer(), bgSurface);
     SDL_FreeSurface(bgSurface);
 
     if (bgTexture == nullptr)
