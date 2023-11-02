@@ -1,15 +1,15 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.22)
 project(ECS)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set (CMAKE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/core")
-set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIRECTORY})
-set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIRECTORY})
-set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIRECTORY})
+set(CMAKE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/core")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIRECTORY})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIRECTORY})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIRECTORY})
 
 # Executables
-## Core
+# # Core
 add_executable(${PROJECT_NAME}
         src/core/main.cpp
         src/core/app.cpp
@@ -23,7 +23,7 @@ add_executable(${PROJECT_NAME}
         src/renderer/render_system.cpp
         src/systems/scene_system.cpp)
 
-## Includes
+# # Includes
 target_include_directories(${PROJECT_NAME} PUBLIC
         include/components
         include/core
@@ -33,11 +33,11 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         include/renderer)
 
 # Linking libs
-## EnTT
+# # EnTT
 find_package(EnTT CONFIG REQUIRED)
 target_link_libraries(ECS PRIVATE EnTT::EnTT)
 
-## SDL2
+# # SDL2
 find_package(SDL2 CONFIG REQUIRED)
 target_link_libraries(ECS
         PRIVATE
