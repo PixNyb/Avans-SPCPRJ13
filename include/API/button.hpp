@@ -5,9 +5,10 @@
 #ifndef AVANS_SPCPRJ13_BUTTON_H
 #define AVANS_SPCPRJ13_BUTTON_H
 
-#include "UIObject.hpp"
+#include "ui_object.hpp"
 
-class Button : public UIObject {
+class Button : public UIObject
+{
 private:
     bool interactable;
     // ... (other members)
@@ -18,4 +19,4 @@ public:
     // Getters, Setters, and other public member functions ...
 };
 
-#endif //AVANS_SPCPRJ13_BUTTON_H
+#endif // AVANS_SPCPRJ13_BUTTON_H

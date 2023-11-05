@@ -5,9 +5,10 @@
 #ifndef AVANS_SPCPRJ13_CIRCLECOLLIDER_H
 #define AVANS_SPCPRJ13_CIRCLECOLLIDER_H
 
-#include "Collider.hpp"
+#include "collider.hpp"
 
-class CircleCollider : public Collider {
+class CircleCollider : public Collider
+{
 private:
     float radius;
 
@@ -16,4 +17,4 @@ public:
     // Getters, Setters, and other public member functions ...
 };
 
-#endif //AVANS_SPCPRJ13_CIRCLECOLLIDER_H
+#endif // AVANS_SPCPRJ13_CIRCLECOLLIDER_H

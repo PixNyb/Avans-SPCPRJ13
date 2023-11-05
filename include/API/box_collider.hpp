@@ -5,9 +5,10 @@
 #ifndef AVANS_SPCPRJ13_BOXCOLLIDER_H
 #define AVANS_SPCPRJ13_BOXCOLLIDER_H
 
-#include "Collider.hpp"
+#include "collider.hpp"
 
-class BoxCollider : public Collider {
+class BoxCollider : public Collider
+{
 private:
     float width, height;
 
@@ -16,4 +17,4 @@ public:
     // Getters, Setters, and other public member functions ...
 };
 
-#endif //AVANS_SPCPRJ13_BOXCOLLIDER_H
+#endif // AVANS_SPCPRJ13_BOXCOLLIDER_H

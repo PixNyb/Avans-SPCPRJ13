@@ -7,16 +7,17 @@
 
 #include <map>
 #include <string>
-#include "GameObject.h"
+#include "game_object.hpp"
 
-class AnimationState {
+class AnimationState
+{
 private:
     std::map<std::string, AnimationState> states;
 
 public:
     AnimationState();
-    void Update(GameObject& gameObject);
+    void Update(GameObject &gameObject);
     // Getters, Setters, and other public member functions ...
 };
 
-#endif //AVANS_SPCPRJ13_ANIMATIONSTATE_H
+#endif // AVANS_SPCPRJ13_ANIMATIONSTATE_H

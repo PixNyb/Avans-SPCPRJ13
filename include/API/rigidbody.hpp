@@ -5,9 +5,10 @@
 #ifndef AVANS_SPCPRJ13_RIGIDBODY_H
 #define AVANS_SPCPRJ13_RIGIDBODY_H
 
-#include "Component.hpp"
+#include "component.hpp"
 
-class Rigidbody : public Component {
+class Rigidbody : public Component
+{
 private:
     float mass;
     float gravityScale;
@@ -19,4 +20,4 @@ public:
     // Getters, Setters, and other public member functions ...
 };
 
-#endif //AVANS_SPCPRJ13_RIGIDBODY_H
+#endif // AVANS_SPCPRJ13_RIGIDBODY_H
