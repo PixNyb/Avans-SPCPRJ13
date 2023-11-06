@@ -18,7 +18,7 @@ jobs:
       - name: Cache vcpkg
         uses: actions/cache@v2
         with:
-          path: vcpkg-master
+          path: vcpkg
           key: vcpkg-${{ runner.os }}-${{ hashFiles('**/vcpkg.json') }}
           restore-keys: |
             vcpkg-${{ runner.os }}-
@@ -30,7 +30,11 @@ jobs:
 
       - name: Install vcpkg
         run: |
-          git clone https://github.com/Microsoft/vcpkg.git ./vcpkg
+          if [ ! -d "./vcpkg" ] ; then
+            git clone https://github.com/Microsoft/vcpkg.git vcpkg
+          else
+            git -C vcpkg pull
+          fi
           ./vcpkg/bootstrap-vcpkg.sh
 
       - name: Install dependencies
