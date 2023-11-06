@@ -27,7 +27,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    # trunk-ignore(checkov/CKV2_GHA_1)
     permissions:
       pages: write
       id-token: write
