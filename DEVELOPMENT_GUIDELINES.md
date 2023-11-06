@@ -31,7 +31,7 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 ## Bestandsstructuur
 
 - Organiseer bronbestanden in duidelijke mappen met beschrijvende namen (bijv. `src/`, `include/`, `tests/`).
-- Houd headerbestanden (`.h` of `.hpp`) en implementatiebestanden (`.cpp`) apart.
+- Houd headerbestanden (`.hpp`) en implementatiebestanden (`.cpp`) apart.
 - Plaats `CMakeLists.txt`-bestanden in de relevante mappen om de bronnen en doelen te definiëren.
 - Voor meer informatie, zie [Modern CMake](https://cliutils.gitlab.io/modern-cmake/chapters/basics/structure.html).
 
