@@ -43,10 +43,13 @@ jobs:
       - name: Build
         run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build && cmake --build build
 
+      - name: Get branch name
+        id: extract_branch
+        run: echo "::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/})"
+
       - name: Archive build result
         uses: actions/upload-artifact@v2
         with:
-          # Artifact name should be the branch name + commit hash
-          name: build-${{ github.ref }}-${{ github.sha }}
+          name: build-${{ steps.extract_branch.outputs.branch }}-${{ github.sha }}
           path: |
             ./build
