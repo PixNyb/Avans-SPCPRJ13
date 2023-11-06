@@ -50,6 +50,6 @@ jobs:
       - name: Archive build result
         uses: actions/upload-artifact@v2
         with:
-          name: build-${BRANCH}-${{ github.sha }}
+          name: ${{ env.BRANCH }}-${{ github.sha }}
           path: |
             ./build
