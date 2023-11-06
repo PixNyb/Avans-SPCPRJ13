@@ -1,14 +1,8 @@
-//
-// Created by Robin on 30-10-2023.
-//
+/// @file
 
 #ifndef AVANS_SPCPRJ13_SCENE_H
 #define AVANS_SPCPRJ13_SCENE_H
 
+class Scene {};
 
-class Scene {
-
-};
-
-
-#endif //AVANS_SPCPRJ13_SCENE_H
+#endif // AVANS_SPCPRJ13_SCENE_H

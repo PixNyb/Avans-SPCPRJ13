@@ -1,6 +1,4 @@
-//
-// Created by Robin on 30-10-2023.
-//
+/// @file
 
 #ifndef AVANS_SPCPRJ13_AUDIOSOURCE_H
 #define AVANS_SPCPRJ13_AUDIOSOURCE_H
@@ -9,13 +7,13 @@
 
 class AudioSource {
 private:
-    std::string audioClip;
-    bool playOnAwake;
-    bool loop;
+  std::string audioClip;
+  bool playOnAwake;
+  bool loop;
 
 public:
-    AudioSource();
-    // Getters, Setters, and other public member functions ...
+  AudioSource();
+  // Getters, Setters, and other public member functions ...
 };
 
-#endif //AVANS_SPCPRJ13_AUDIOSOURCE_H
+#endif // AVANS_SPCPRJ13_AUDIOSOURCE_H

@@ -1,51 +1,24 @@
-//
-// Created by Robin on 30-10-2023.
-//
+/// @file
 
 #include "text.hpp"
 
 Text::Text()
-    : text(""), fontSize(12), alignment("left"), textColor(255, 255, 255)
-{
-    // Default constructor initialization
+    : text(""), fontSize(12), alignment("left"), textColor(255, 255, 255) {
+  // Default constructor initialization
 }
 
-void Text::SetText(const std::string &str)
-{
-    text = str;
-}
+void Text::SetText(const std::string &str) { text = str; }
 
-std::string Text::GetText() const
-{
-    return text;
-}
+std::string Text::GetText() const { return text; }
 
-void Text::SetFontSize(int size)
-{
-    fontSize = size;
-}
+void Text::SetFontSize(int size) { fontSize = size; }
 
-int Text::GetFontSize() const
-{
-    return fontSize;
-}
+int Text::GetFontSize() const { return fontSize; }
 
-void Text::SetAlignment(const std::string &align)
-{
-    alignment = align;
-}
+void Text::SetAlignment(const std::string &align) { alignment = align; }
 
-std::string Text::GetAlignment() const
-{
-    return alignment;
-}
+std::string Text::GetAlignment() const { return alignment; }
 
-void Text::SetTextColor(const Color &color)
-{
-    textColor = color;
-}
+void Text::SetTextColor(const Color &color) { textColor = color; }
 
-Color Text::GetTextColor() const
-{
-    return textColor;
-}
+Color Text::GetTextColor() const { return textColor; }

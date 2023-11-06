@@ -1,14 +1,8 @@
-//
-// Created by Robin on 30-10-2023.
-//
+/// @file
 
 #include "animation_state.hpp"
 #include "game_object.hpp"
 
-AnimationState::AnimationState()
-{
-}
+AnimationState::AnimationState() {}
 
-void AnimationState::Update(GameObject &gameObject)
-{
-}
+void AnimationState::Update(GameObject &gameObject) {}

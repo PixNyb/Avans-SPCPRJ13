@@ -1,23 +1,20 @@
-//
-// Created by Robin on 30-10-2023.
-//
+/// @file
 
 #ifndef AVANS_SPCPRJ13_ANIMATIONSTATE_H
 #define AVANS_SPCPRJ13_ANIMATIONSTATE_H
 
+#include "game_object.hpp"
 #include <map>
 #include <string>
-#include "game_object.hpp"
 
-class AnimationState
-{
+class AnimationState {
 private:
-    std::map<std::string, AnimationState> states;
+  std::map<std::string, AnimationState> states;
 
 public:
-    AnimationState();
-    void Update(GameObject &gameObject);
-    // Getters, Setters, and other public member functions ...
+  AnimationState();
+  void Update(GameObject &gameObject);
+  // Getters, Setters, and other public member functions ...
 };
 
 #endif // AVANS_SPCPRJ13_ANIMATIONSTATE_H

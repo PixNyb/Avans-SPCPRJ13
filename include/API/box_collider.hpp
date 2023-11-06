@@ -1,20 +1,17 @@
-//
-// Created by Robin on 30-10-2023.
-//
+/// @file
 
 #ifndef AVANS_SPCPRJ13_BOXCOLLIDER_H
 #define AVANS_SPCPRJ13_BOXCOLLIDER_H
 
 #include "collider.hpp"
 
-class BoxCollider : public Collider
-{
+class BoxCollider : public Collider {
 private:
-    float width, height;
+  float width, height;
 
 public:
-    BoxCollider();
-    // Getters, Setters, and other public member functions ...
+  BoxCollider();
+  // Getters, Setters, and other public member functions ...
 };
 
 #endif // AVANS_SPCPRJ13_BOXCOLLIDER_H

@@ -47,9 +47,7 @@ Makefile
 compile_commands.json
 conanbuildinfo.txt
 conaninfo.txt
+docs/
 
 # vcpkg
 vcpkg_installed
-
-# College stuff
-college/
