@@ -25,6 +25,10 @@
 var menudata={children:[
 {text:"Hoofd Pagina",url:"index.html"},
 {text:"Gerelateerde pagina's",url:"pages.html"},
+{text:"Klassen",url:"annotated.html",children:[
+{text:"Klasse Lijst",url:"annotated.html"},
+{text:"Klasse Index",url:"classes.html"},
+{text:"Klasse Hiërarchie",url:"inherits.html"}]},
 {text:"Bestanden",url:"files.html",children:[
 {text:"Bestandslijst",url:"files.html"},
 {text:"Bestand members",url:"globals.html",children:[

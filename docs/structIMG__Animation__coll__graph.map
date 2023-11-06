@@ -1,0 +1,8 @@
+<map id="IMG_Animation" name="IMG_Animation">
+<area shape="rect" id="node1" title=" " alt="" coords="149,363,272,389"/>
+<area shape="rect" id="node2" href="$structSDL__Surface.html" title="A collection of pixels used in software blitting." alt="" coords="159,273,262,300"/>
+<area shape="rect" id="node3" href="$structSDL__PixelFormat.html" title=" " alt="" coords="5,184,136,211"/>
+<area shape="rect" id="node4" href="$structSDL__Palette.html" title=" " alt="" coords="21,95,120,121"/>
+<area shape="rect" id="node5" href="$structSDL__Color.html" title=" " alt="" coords="27,5,115,32"/>
+<area shape="rect" id="node6" href="$structSDL__Rect.html" title=" " alt="" coords="217,184,300,211"/>
+</map>

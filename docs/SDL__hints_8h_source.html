@@ -1,0 +1,525 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DeFunBobEngine: build/vcpkg_installed/x64-linux/include/SDL2/SDL_hints.h Bron Bestand</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DeFunBobEngine
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Een simpele 2D game engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4fef79e7177ba769987a8da36c892c5f.html">build</a></li><li class="navelem"><a class="el" href="dir_535f872e29fec6d6cc90c195ca679aa8.html">vcpkg_installed</a></li><li class="navelem"><a class="el" href="dir_604a2e5f97e88925e458138976a012cc.html">x64-linux</a></li><li class="navelem"><a class="el" href="dir_bd9aa676adbfe37a593dc134964b61ed.html">include</a></li><li class="navelem"><a class="el" href="dir_0ca51e831a376fbdcc42992cb75b0e5d.html">SDL2</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">SDL_hints.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="SDL__hints_8h.html">Ga naar de documentatie van dit bestand.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">  Simple DirectMedia Layer</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">  Copyright (C) 1997-2023 Sam Lantinga &lt;slouken@libsdl.org&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">  This software is provided &#39;as-is&#39;, without any express or implied</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">  warranty.  In no event will the authors be held liable for any damages</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">  arising from the use of this software.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">  Permission is granted to anyone to use this software for any purpose,</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">  including commercial applications, and to alter it and redistribute it</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">  freely, subject to the following restrictions:</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">  1. The origin of this software must not be misrepresented; you must not</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">     claim that you wrote the original software. If you use this software</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">     in a product, an acknowledgment in the product documentation would be</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">     appreciated but is not required.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">  2. Altered source versions must be plainly marked as such, and must not be</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">     misrepresented as being the original software.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">  3. This notice may not be removed or altered from any source distribution.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifndef SDL_hints_h_</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define SDL_hints_h_</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SDL__stdinc_8h.html">SDL_stdinc.h</a>&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="begin__code_8h.html">begin_code.h</a>&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/* Set up for C function definitions, even when using C++ */</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a3864d9d3569d0edcf7b0a07d8b769810">   58</a></span>&#160;<span class="preprocessor">#define SDL_HINT_ACCELEROMETER_AS_JOYSTICK &quot;SDL_ACCELEROMETER_AS_JOYSTICK&quot;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aef83d045c6a06f26c6df9a8116489bc3">   72</a></span>&#160;<span class="preprocessor">#define SDL_HINT_ALLOW_ALT_TAB_WHILE_GRABBED &quot;SDL_ALLOW_ALT_TAB_WHILE_GRABBED&quot;</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ac0deec953ae4635131cbe321192236ff">   82</a></span>&#160;<span class="preprocessor">#define SDL_HINT_ALLOW_TOPMOST &quot;SDL_ALLOW_TOPMOST&quot;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a83f55aca7bd64c9157f00ad356bda81e">   94</a></span>&#160;<span class="preprocessor">#define SDL_HINT_ANDROID_APK_EXPANSION_MAIN_FILE_VERSION &quot;SDL_ANDROID_APK_EXPANSION_MAIN_FILE_VERSION&quot;</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ac2dce1bbb095169a9de048eeee233e2d">  106</a></span>&#160;<span class="preprocessor">#define SDL_HINT_ANDROID_APK_EXPANSION_PATCH_FILE_VERSION &quot;SDL_ANDROID_APK_EXPANSION_PATCH_FILE_VERSION&quot;</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a8ccbdf2a0e78710a892a5de2ddc42ec9">  117</a></span>&#160;<span class="preprocessor">#define SDL_HINT_ANDROID_BLOCK_ON_PAUSE &quot;SDL_ANDROID_BLOCK_ON_PAUSE&quot;</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a1f7207eda7098e1aa816c6923beddbc4">  129</a></span>&#160;<span class="preprocessor">#define SDL_HINT_ANDROID_BLOCK_ON_PAUSE_PAUSEAUDIO &quot;SDL_ANDROID_BLOCK_ON_PAUSE_PAUSEAUDIO&quot;</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aa1d03c5fbbc178cc9a2c9e669a73e9c5">  146</a></span>&#160;<span class="preprocessor">#define SDL_HINT_ANDROID_TRAP_BACK_BUTTON &quot;SDL_ANDROID_TRAP_BACK_BUTTON&quot;</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a9ad11c944cd0b6f9bb23fbdc33614697">  166</a></span>&#160;<span class="preprocessor">#define SDL_HINT_APP_NAME &quot;SDL_APP_NAME&quot;</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a0301d6377ef50a5a435653743d2771f4">  184</a></span>&#160;<span class="preprocessor">#define SDL_HINT_APPLE_TV_CONTROLLER_UI_EVENTS &quot;SDL_APPLE_TV_CONTROLLER_UI_EVENTS&quot;</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a9b66ef93d2b547e671881bbfdf6c2ddc">  194</a></span>&#160;<span class="preprocessor">#define SDL_HINT_APPLE_TV_REMOTE_ALLOW_ROTATION &quot;SDL_APPLE_TV_REMOTE_ALLOW_ROTATION&quot;</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aadfee7d079b71eebc291fc42622ead38">  207</a></span>&#160;<span class="preprocessor">#define SDL_HINT_AUDIO_CATEGORY   &quot;SDL_AUDIO_CATEGORY&quot;</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a2e6bf88fabdf49edb1c8efcee9429970">  228</a></span>&#160;<span class="preprocessor">#define SDL_HINT_AUDIO_DEVICE_APP_NAME &quot;SDL_AUDIO_DEVICE_APP_NAME&quot;</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ad27a43590172e7064529a770e3e57026">  249</a></span>&#160;<span class="preprocessor">#define SDL_HINT_AUDIO_DEVICE_STREAM_NAME &quot;SDL_AUDIO_DEVICE_STREAM_NAME&quot;</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00269"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a8002759b6e4de860bb03d3aa57f61b36">  269</a></span>&#160;<span class="preprocessor">#define SDL_HINT_AUDIO_DEVICE_STREAM_ROLE &quot;SDL_AUDIO_DEVICE_STREAM_ROLE&quot;</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ac95cc95cd003647ccc6b1446a7e3c408">  292</a></span>&#160;<span class="preprocessor">#define SDL_HINT_AUDIO_RESAMPLING_MODE   &quot;SDL_AUDIO_RESAMPLING_MODE&quot;</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a2b9a1d214918953d36a154e2bffaddab">  304</a></span>&#160;<span class="preprocessor">#define SDL_HINT_AUTO_UPDATE_JOYSTICKS  &quot;SDL_AUTO_UPDATE_JOYSTICKS&quot;</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ae4a20a62bbf68483f3a3ea5d5e10549a">  316</a></span>&#160;<span class="preprocessor">#define SDL_HINT_AUTO_UPDATE_SENSORS    &quot;SDL_AUTO_UPDATE_SENSORS&quot;</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a75c4ce4bba90833587eae21903d3d3fe">  335</a></span>&#160;<span class="preprocessor">#define SDL_HINT_BMP_SAVE_LEGACY_FORMAT &quot;SDL_BMP_SAVE_LEGACY_FORMAT&quot;</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a194d77a4d56c852c7156733622d20dd3">  349</a></span>&#160;<span class="preprocessor">#define SDL_HINT_DISPLAY_USABLE_BOUNDS &quot;SDL_DISPLAY_USABLE_BOUNDS&quot;</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a1547a8b104ccea091840d208a4935015">  364</a></span>&#160;<span class="preprocessor">#define SDL_HINT_EMSCRIPTEN_ASYNCIFY   &quot;SDL_EMSCRIPTEN_ASYNCIFY&quot;</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00378"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a70b9664a38b946b73b669be38add94ef">  378</a></span>&#160;<span class="preprocessor">#define SDL_HINT_EMSCRIPTEN_KEYBOARD_ELEMENT   &quot;SDL_EMSCRIPTEN_KEYBOARD_ELEMENT&quot;</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00389"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#af4540ad6b9ce57bc910998a9f56e164f">  389</a></span>&#160;<span class="preprocessor">#define SDL_HINT_ENABLE_SCREEN_KEYBOARD &quot;SDL_ENABLE_SCREEN_KEYBOARD&quot;</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00400"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a709aa033c6d055cee1c6cffb85cc5053">  400</a></span>&#160;<span class="preprocessor">#define SDL_HINT_ENABLE_STEAM_CONTROLLERS &quot;SDL_ENABLE_STEAM_CONTROLLERS&quot;</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#abeeb244e7cc4610e45235e41039c8211">  422</a></span>&#160;<span class="preprocessor">#define SDL_HINT_EVENT_LOGGING   &quot;SDL_EVENT_LOGGING&quot;</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00435"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a6c43b2b15329f6b891ed06da23fe4376">  435</a></span>&#160;<span class="preprocessor">#define SDL_HINT_FORCE_RAISEWINDOW    &quot;SDL_HINT_FORCE_RAISEWINDOW&quot;</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
+<div class="line"><a name="l00452"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a4f14744afc8f84bf52e3bfaec2667824">  452</a></span>&#160;<span class="preprocessor">#define SDL_HINT_FRAMEBUFFER_ACCELERATION   &quot;SDL_FRAMEBUFFER_ACCELERATION&quot;</span></div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
+<div class="line"><a name="l00462"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ae6733a084fded26033d0b3a1ab1480a4">  462</a></span>&#160;<span class="preprocessor">#define SDL_HINT_GAMECONTROLLERCONFIG &quot;SDL_GAMECONTROLLERCONFIG&quot;</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160; </div>
+<div class="line"><a name="l00472"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a9b6a9932c2d1b85041e15d8a49eb6042">  472</a></span>&#160;<span class="preprocessor">#define SDL_HINT_GAMECONTROLLERCONFIG_FILE &quot;SDL_GAMECONTROLLERCONFIG_FILE&quot;</span></div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160; </div>
+<div class="line"><a name="l00491"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aa8221ba0cc765dd0b71777bdf1433c2b">  491</a></span>&#160;<span class="preprocessor">#define SDL_HINT_GAMECONTROLLERTYPE &quot;SDL_GAMECONTROLLERTYPE&quot;</span></div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160; </div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;<span class="preprocessor">#define SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES &quot;SDL_GAMECONTROLLER_IGNORE_DEVICES&quot;</span></div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160; </div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;<span class="preprocessor">#define SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT &quot;SDL_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT&quot;</span></div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
+<div class="line"><a name="l00540"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a855f385004c66a2750636ab4ab6900d9">  540</a></span>&#160;<span class="preprocessor">#define SDL_HINT_GAMECONTROLLER_USE_BUTTON_LABELS &quot;SDL_GAMECONTROLLER_USE_BUTTON_LABELS&quot;</span></div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160; </div>
+<div class="line"><a name="l00551"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a5295df139727cd78a0663afb0b91010b">  551</a></span>&#160;<span class="preprocessor">#define SDL_HINT_GRAB_KEYBOARD              &quot;SDL_GRAB_KEYBOARD&quot;</span></div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
+<div class="line"><a name="l00559"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ac9a48cdc31612060a44114c4a2cff275">  559</a></span>&#160;<span class="preprocessor">#define SDL_HINT_HIDAPI_IGNORE_DEVICES &quot;SDL_HIDAPI_IGNORE_DEVICES&quot;</span></div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160; </div>
+<div class="line"><a name="l00576"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#abe9410e8b6809c9fdcb1f69e6894a2e8">  576</a></span>&#160;<span class="preprocessor">#define SDL_HINT_IDLE_TIMER_DISABLED &quot;SDL_IOS_IDLE_TIMER_DISABLED&quot;</span></div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160; </div>
+<div class="line"><a name="l00588"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a17c7ae7e0cbbdb6a5049f559a58228ad">  588</a></span>&#160;<span class="preprocessor">#define SDL_HINT_IME_INTERNAL_EDITING &quot;SDL_IME_INTERNAL_EDITING&quot;</span></div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160; </div>
+<div class="line"><a name="l00597"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a386d2ace5e9fe4991d55ce1f57746c06">  597</a></span>&#160;<span class="preprocessor">#define SDL_HINT_IME_SHOW_UI &quot;SDL_IME_SHOW_UI&quot;</span></div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
+<div class="line"><a name="l00608"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#afcb9274e7e5e4fd0cba54acc673279bf">  608</a></span>&#160;<span class="preprocessor">#define SDL_HINT_IME_SUPPORT_EXTENDED_TEXT &quot;SDL_IME_SUPPORT_EXTENDED_TEXT&quot;</span></div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; </div>
+<div class="line"><a name="l00619"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a7f03e5cd7f050a5e9304e3bc46586b06">  619</a></span>&#160;<span class="preprocessor">#define SDL_HINT_IOS_HIDE_HOME_INDICATOR &quot;SDL_IOS_HIDE_HOME_INDICATOR&quot;</span></div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160; </div>
+<div class="line"><a name="l00632"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ab343c91586c6b4789763e4a82b35de0b">  632</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS &quot;SDL_JOYSTICK_ALLOW_BACKGROUND_EVENTS&quot;</span></div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
+<div class="line"><a name="l00643"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a44418d1feca9fbd08b8d246efa6a0246">  643</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI &quot;SDL_JOYSTICK_HIDAPI&quot;</span></div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160; </div>
+<div class="line"><a name="l00654"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ac2c32b0035cb0d14111e212996d24b1a">  654</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE &quot;SDL_JOYSTICK_HIDAPI_GAMECUBE&quot;</span></div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; </div>
+<div class="line"><a name="l00669"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a15d5f137ebe2f0c5b759fbb2281bf7cf">  669</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_GAMECUBE_RUMBLE_BRAKE &quot;SDL_JOYSTICK_GAMECUBE_RUMBLE_BRAKE&quot;</span></div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160; </div>
+<div class="line"><a name="l00680"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a54e6d642afbb4a0ca37424898da2291f">  680</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_JOY_CONS &quot;SDL_JOYSTICK_HIDAPI_JOY_CONS&quot;</span></div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160; </div>
+<div class="line"><a name="l00689"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a445379ec45700c8baf5a1bf0b4d68026">  689</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_COMBINE_JOY_CONS &quot;SDL_JOYSTICK_HIDAPI_COMBINE_JOY_CONS&quot;</span></div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; </div>
+<div class="line"><a name="l00700"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a16ebada763406cdce7eef85d63b0902d">  700</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_VERTICAL_JOY_CONS &quot;SDL_JOYSTICK_HIDAPI_VERTICAL_JOY_CONS&quot;</span></div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160; </div>
+<div class="line"><a name="l00711"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a9e69d9d36e721511c14fa4f6c648f8af">  711</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_LUNA &quot;SDL_JOYSTICK_HIDAPI_LUNA&quot;</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160; </div>
+<div class="line"><a name="l00722"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#acbc69a1e0a72d51a3f116dc5ab070b2d">  722</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_NINTENDO_CLASSIC &quot;SDL_JOYSTICK_HIDAPI_NINTENDO_CLASSIC&quot;</span></div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160; </div>
+<div class="line"><a name="l00733"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#abdeb9ded1da2d71324d4a60b048521b3">  733</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_SHIELD &quot;SDL_JOYSTICK_HIDAPI_SHIELD&quot;</span></div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160; </div>
+<div class="line"><a name="l00747"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ad438c2754a1bd44fc1735054c20a7ce5">  747</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_PS3 &quot;SDL_JOYSTICK_HIDAPI_PS3&quot;</span></div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160; </div>
+<div class="line"><a name="l00758"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#afb90e86b777091befbd4f8479e112b35">  758</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_PS4 &quot;SDL_JOYSTICK_HIDAPI_PS4&quot;</span></div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160; </div>
+<div class="line"><a name="l00778"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a637cb45d5e5565bd7730dcbeb918fda7">  778</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_PS4_RUMBLE &quot;SDL_JOYSTICK_HIDAPI_PS4_RUMBLE&quot;</span></div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160; </div>
+<div class="line"><a name="l00789"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#abcb7bc98e366325985e96815d6ee8b60">  789</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_PS5 &quot;SDL_JOYSTICK_HIDAPI_PS5&quot;</span></div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160; </div>
+<div class="line"><a name="l00798"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a377f842b1953cff827d23981c2913651">  798</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_PS5_PLAYER_LED &quot;SDL_JOYSTICK_HIDAPI_PS5_PLAYER_LED&quot;</span></div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160; </div>
+<div class="line"><a name="l00817"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aa267b8c2c1f6035c31bfc01a2912306d">  817</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE &quot;SDL_JOYSTICK_HIDAPI_PS5_RUMBLE&quot;</span></div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160; </div>
+<div class="line"><a name="l00828"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a16db9252db5f9bec7d46faaadf87dd80">  828</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_STADIA &quot;SDL_JOYSTICK_HIDAPI_STADIA&quot;</span></div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160; </div>
+<div class="line"><a name="l00840"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a1dd9dddd7db2fb38cd9be60b8c06c24d">  840</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_STEAM &quot;SDL_JOYSTICK_HIDAPI_STEAM&quot;</span></div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160; </div>
+<div class="line"><a name="l00851"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a5eef83e49dd47d681b9cc7453618fd4e">  851</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_SWITCH &quot;SDL_JOYSTICK_HIDAPI_SWITCH&quot;</span></div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160; </div>
+<div class="line"><a name="l00862"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a6103647cafa8a5a06a73897c8f5a4c4a">  862</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_SWITCH_HOME_LED &quot;SDL_JOYSTICK_HIDAPI_SWITCH_HOME_LED&quot;</span></div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160; </div>
+<div class="line"><a name="l00873"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a5c56d88024b31b532947f66272125178">  873</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_JOYCON_HOME_LED &quot;SDL_JOYSTICK_HIDAPI_JOYCON_HOME_LED&quot;</span></div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160; </div>
+<div class="line"><a name="l00882"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a09af6c0ccda0c0a15bfbe2e332bcc276">  882</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_SWITCH_PLAYER_LED &quot;SDL_JOYSTICK_HIDAPI_SWITCH_PLAYER_LED&quot;</span></div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160; </div>
+<div class="line"><a name="l00893"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a861d668330d5c3639573c38269e25df3">  893</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_WII &quot;SDL_JOYSTICK_HIDAPI_WII&quot;</span></div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160; </div>
+<div class="line"><a name="l00902"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a20190b85bd5693892603b2ff38575729">  902</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_WII_PLAYER_LED &quot;SDL_JOYSTICK_HIDAPI_WII_PLAYER_LED&quot;</span></div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160; </div>
+<div class="line"><a name="l00913"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a91f5e5be4fae10d57618ea45a252e259">  913</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_XBOX   &quot;SDL_JOYSTICK_HIDAPI_XBOX&quot;</span></div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160; </div>
+<div class="line"><a name="l00924"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a3dd2f30eb743cc1f546fd4e7c84f561d">  924</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_XBOX_360   &quot;SDL_JOYSTICK_HIDAPI_XBOX_360&quot;</span></div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160; </div>
+<div class="line"><a name="l00933"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ab38320700966d6ec524b6054a2ce179b">  933</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_XBOX_360_PLAYER_LED &quot;SDL_JOYSTICK_HIDAPI_XBOX_360_PLAYER_LED&quot;</span></div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160; </div>
+<div class="line"><a name="l00944"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aa6f9bf1a9f040de77b621d8098624b95">  944</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_XBOX_360_WIRELESS   &quot;SDL_JOYSTICK_HIDAPI_XBOX_360_WIRELESS&quot;</span></div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160; </div>
+<div class="line"><a name="l00955"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ae2d42d474afb2ea4dfe4b7e4094820c2">  955</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_XBOX_ONE   &quot;SDL_JOYSTICK_HIDAPI_XBOX_ONE&quot;</span></div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160; </div>
+<div class="line"><a name="l00966"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a51237768efb6101a1a39bddda0a7532f">  966</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_HIDAPI_XBOX_ONE_HOME_LED &quot;SDL_JOYSTICK_HIDAPI_XBOX_ONE_HOME_LED&quot;</span></div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160; </div>
+<div class="line"><a name="l00975"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aa00a24de80b96f28e203d5589d3cf042">  975</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_RAWINPUT &quot;SDL_JOYSTICK_RAWINPUT&quot;</span></div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160; </div>
+<div class="line"><a name="l00988"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ae8e70c0cb4f02133bd05172915492110">  988</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_RAWINPUT_CORRELATE_XINPUT   &quot;SDL_JOYSTICK_RAWINPUT_CORRELATE_XINPUT&quot;</span></div>
+<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160; </div>
+<div class="line"><a name="l00997"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a0004664fa0c63e8f67996d98a1f28449">  997</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_ROG_CHAKRAM &quot;SDL_JOYSTICK_ROG_CHAKRAM&quot;</span></div>
+<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160; </div>
+<div class="line"><a name="l01008"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a1237426d89c35965c9740792e318db61"> 1008</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_THREAD &quot;SDL_JOYSTICK_THREAD&quot;</span></div>
+<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160; </div>
+<div class="line"><a name="l01017"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ab3e11ef1ef602fb3286600b98ebf5789"> 1017</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_WGI &quot;SDL_JOYSTICK_WGI&quot;</span></div>
+<div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160; </div>
+<div class="line"><a name="l01040"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#acc1f6b4d070acbd87ccd578c72742248"> 1040</a></span>&#160;<span class="preprocessor">#define SDL_HINT_KMSDRM_REQUIRE_DRM_MASTER      &quot;SDL_KMSDRM_REQUIRE_DRM_MASTER&quot;</span></div>
+<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160; </div>
+<div class="line"><a name="l01047"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a9da4631092b78a60e777c89313eb3c2d"> 1047</a></span>&#160;<span class="preprocessor">#define SDL_HINT_JOYSTICK_DEVICE &quot;SDL_JOYSTICK_DEVICE&quot;</span></div>
+<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160; </div>
+<div class="line"><a name="l01056"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a5bb0925a68ba9416ae29b54fa5006fee"> 1056</a></span>&#160;<span class="preprocessor">#define SDL_HINT_LINUX_DIGITAL_HATS &quot;SDL_LINUX_DIGITAL_HATS&quot;</span></div>
+<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160; </div>
+<div class="line"><a name="l01065"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a5db818227b8005dc71f47f1aedf099eb"> 1065</a></span>&#160;<span class="preprocessor">#define SDL_HINT_LINUX_HAT_DEADZONES &quot;SDL_LINUX_HAT_DEADZONES&quot;</span></div>
+<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160; </div>
+<div class="line"><a name="l01076"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a7615f61d0bc2e7e635dfe60882f5f006"> 1076</a></span>&#160;<span class="preprocessor">#define SDL_HINT_LINUX_JOYSTICK_CLASSIC &quot;SDL_LINUX_JOYSTICK_CLASSIC&quot;</span></div>
+<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160; </div>
+<div class="line"><a name="l01085"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a541dd6da44a19e00e598e6d63d8a5bc5"> 1085</a></span>&#160;<span class="preprocessor">#define SDL_HINT_LINUX_JOYSTICK_DEADZONES &quot;SDL_LINUX_JOYSTICK_DEADZONES&quot;</span></div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160; </div>
+<div class="line"><a name="l01093"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a1b75df316decc7aae5bc31b0595c1b01"> 1093</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MAC_BACKGROUND_APP    &quot;SDL_MAC_BACKGROUND_APP&quot;</span></div>
+<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160; </div>
+<div class="line"><a name="l01101"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a63dd635fa195f590f645c1170f50968d"> 1101</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK &quot;SDL_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK&quot;</span></div>
+<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160; </div>
+<div class="line"><a name="l01119"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aaeee4e15abdc14a2e2141f4e44d716c8"> 1119</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MAC_OPENGL_ASYNC_DISPATCH &quot;SDL_MAC_OPENGL_ASYNC_DISPATCH&quot;</span></div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160; </div>
+<div class="line"><a name="l01124"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a994debcf46f5f3a39bd80c259975d200"> 1124</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MOUSE_DOUBLE_CLICK_RADIUS    &quot;SDL_MOUSE_DOUBLE_CLICK_RADIUS&quot;</span></div>
+<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160; </div>
+<div class="line"><a name="l01129"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a4e9442b90dd2ecd694c8adb74b38f39c"> 1129</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MOUSE_DOUBLE_CLICK_TIME    &quot;SDL_MOUSE_DOUBLE_CLICK_TIME&quot;</span></div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160; </div>
+<div class="line"><a name="l01140"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a59083735a2377046c2fc72eb0a3e855f"> 1140</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH &quot;SDL_MOUSE_FOCUS_CLICKTHROUGH&quot;</span></div>
+<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160; </div>
+<div class="line"><a name="l01145"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a1a5034b3e1f390aed827bd627ebdd555"> 1145</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MOUSE_NORMAL_SPEED_SCALE    &quot;SDL_MOUSE_NORMAL_SPEED_SCALE&quot;</span></div>
+<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160; </div>
+<div class="line"><a name="l01161"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a30f30b0cd7f7db65812d5e0177d52c5b"> 1161</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MOUSE_RELATIVE_MODE_CENTER    &quot;SDL_MOUSE_RELATIVE_MODE_CENTER&quot;</span></div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160; </div>
+<div class="line"><a name="l01172"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ad2592e57adcf22b77618347fef431790"> 1172</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MOUSE_RELATIVE_MODE_WARP    &quot;SDL_MOUSE_RELATIVE_MODE_WARP&quot;</span></div>
+<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160; </div>
+<div class="line"><a name="l01183"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aab6f0736de40a5f56bb29407b9c35d1c"> 1183</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MOUSE_RELATIVE_SCALING &quot;SDL_MOUSE_RELATIVE_SCALING&quot;</span></div>
+<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160; </div>
+<div class="line"><a name="l01188"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ad69c295983ec1db56ea26af46f184ce7"> 1188</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MOUSE_RELATIVE_SPEED_SCALE    &quot;SDL_MOUSE_RELATIVE_SPEED_SCALE&quot;</span></div>
+<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160; </div>
+<div class="line"><a name="l01199"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a3305b038a2b32e6ef1608698991e822a"> 1199</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MOUSE_RELATIVE_SYSTEM_SCALE    &quot;SDL_MOUSE_RELATIVE_SYSTEM_SCALE&quot;</span></div>
+<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160; </div>
+<div class="line"><a name="l01210"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ae51c386006d2420057e76975919e1ac4"> 1210</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MOUSE_RELATIVE_WARP_MOTION  &quot;SDL_MOUSE_RELATIVE_WARP_MOTION&quot;</span></div>
+<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160; </div>
+<div class="line"><a name="l01219"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a2e433b3f7bdc4cecf273339cc2c603fc"> 1219</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MOUSE_TOUCH_EVENTS    &quot;SDL_MOUSE_TOUCH_EVENTS&quot;</span></div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160; </div>
+<div class="line"><a name="l01232"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aa3bbf027f42e5dc4eaeb39e460849344"> 1232</a></span>&#160;<span class="preprocessor">#define SDL_HINT_MOUSE_AUTO_CAPTURE    &quot;SDL_MOUSE_AUTO_CAPTURE&quot;</span></div>
+<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160; </div>
+<div class="line"><a name="l01245"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a58db46309f4295553ed4b0f1a4ccfa54"> 1245</a></span>&#160;<span class="preprocessor">#define SDL_HINT_NO_SIGNAL_HANDLERS   &quot;SDL_NO_SIGNAL_HANDLERS&quot;</span></div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160; </div>
+<div class="line"><a name="l01276"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#adce02dd2716ef92d3c787789ccfbb98e"> 1276</a></span>&#160;<span class="preprocessor">#define SDL_HINT_OPENGL_ES_DRIVER   &quot;SDL_OPENGL_ES_DRIVER&quot;</span></div>
+<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160; </div>
+<div class="line"><a name="l01287"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a1e2eef18b43aa15121d8250a408421ce"> 1287</a></span>&#160;<span class="preprocessor">#define SDL_HINT_ORIENTATIONS &quot;SDL_IOS_ORIENTATIONS&quot;</span></div>
+<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160; </div>
+<div class="line"><a name="l01303"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ad87f87a8b1300c8401c004427027ea55"> 1303</a></span>&#160;<span class="preprocessor">#define SDL_HINT_POLL_SENTINEL &quot;SDL_POLL_SENTINEL&quot;</span></div>
+<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160; </div>
+<div class="line"><a name="l01317"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a58f4b26bb24cadfbb78ab1e6c73c9296"> 1317</a></span>&#160;<span class="preprocessor">#define SDL_HINT_PREFERRED_LOCALES &quot;SDL_PREFERRED_LOCALES&quot;</span></div>
+<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160; </div>
+<div class="line"><a name="l01336"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a1abf971bf456c82d8cc06868b75fd564"> 1336</a></span>&#160;<span class="preprocessor">#define SDL_HINT_QTWAYLAND_CONTENT_ORIENTATION &quot;SDL_QTWAYLAND_CONTENT_ORIENTATION&quot;</span></div>
+<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160; </div>
+<div class="line"><a name="l01347"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a8893a7653ab4562b99f25aad9e5f41cb"> 1347</a></span>&#160;<span class="preprocessor">#define SDL_HINT_QTWAYLAND_WINDOW_FLAGS &quot;SDL_QTWAYLAND_WINDOW_FLAGS&quot;</span></div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160; </div>
+<div class="line"><a name="l01371"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#af03fa72fddb9fed3f6dbab282fb3f958"> 1371</a></span>&#160;<span class="preprocessor">#define SDL_HINT_RENDER_BATCHING  &quot;SDL_RENDER_BATCHING&quot;</span></div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160; </div>
+<div class="line"><a name="l01384"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a35fec8176d76e48d72af24458271328d"> 1384</a></span>&#160;<span class="preprocessor">#define SDL_HINT_RENDER_LINE_METHOD &quot;SDL_RENDER_LINE_METHOD&quot;</span></div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160; </div>
+<div class="line"><a name="l01397"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ac25a4eba109ed065d639f6054d2b842c"> 1397</a></span>&#160;<span class="preprocessor">#define SDL_HINT_RENDER_DIRECT3D11_DEBUG    &quot;SDL_RENDER_DIRECT3D11_DEBUG&quot;</span></div>
+<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160; </div>
+<div class="line"><a name="l01408"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a6e06533f9f12c456accacb7c1f40a58d"> 1408</a></span>&#160;<span class="preprocessor">#define SDL_HINT_RENDER_DIRECT3D_THREADSAFE &quot;SDL_RENDER_DIRECT3D_THREADSAFE&quot;</span></div>
+<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160; </div>
+<div class="line"><a name="l01430"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a1ecf7a77582e3af7938b2f7c8d900aee"> 1430</a></span>&#160;<span class="preprocessor">#define SDL_HINT_RENDER_DRIVER              &quot;SDL_RENDER_DRIVER&quot;</span></div>
+<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160; </div>
+<div class="line"><a name="l01441"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a2b4f2979611c7eedbe80e37a644bac7d"> 1441</a></span>&#160;<span class="preprocessor">#define SDL_HINT_RENDER_LOGICAL_SIZE_MODE       &quot;SDL_RENDER_LOGICAL_SIZE_MODE&quot;</span></div>
+<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160; </div>
+<div class="line"><a name="l01452"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a156051f550fba6a1d8dfafd8bc90b1b2"> 1452</a></span>&#160;<span class="preprocessor">#define SDL_HINT_RENDER_OPENGL_SHADERS      &quot;SDL_RENDER_OPENGL_SHADERS&quot;</span></div>
+<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160; </div>
+<div class="line"><a name="l01464"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a10b6e40601439f51131d8a264070ab2e"> 1464</a></span>&#160;<span class="preprocessor">#define SDL_HINT_RENDER_SCALE_QUALITY       &quot;SDL_RENDER_SCALE_QUALITY&quot;</span></div>
+<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160; </div>
+<div class="line"><a name="l01475"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ab512fdde4a91d3a271df7b59297fcf98"> 1475</a></span>&#160;<span class="preprocessor">#define SDL_HINT_RENDER_VSYNC               &quot;SDL_RENDER_VSYNC&quot;</span></div>
+<div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160; </div>
+<div class="line"><a name="l01486"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a123207dad441be0fbf9e22fcd94fa545"> 1486</a></span>&#160;<span class="preprocessor">#define SDL_HINT_RENDER_METAL_PREFER_LOW_POWER_DEVICE &quot;SDL_RENDER_METAL_PREFER_LOW_POWER_DEVICE&quot;</span></div>
+<div class="line"><a name="l01487"></a><span class="lineno"> 1487</span>&#160; </div>
+<div class="line"><a name="l01497"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ad4e73bf3492224452b24ee533c2e1333"> 1497</a></span>&#160;<span class="preprocessor">#define SDL_HINT_PS2_DYNAMIC_VSYNC    &quot;SDL_PS2_DYNAMIC_VSYNC&quot;</span></div>
+<div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160; </div>
+<div class="line"><a name="l01509"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ae840652b9ebd21e4317ee80e7b527339"> 1509</a></span>&#160;<span class="preprocessor">#define SDL_HINT_RETURN_KEY_HIDES_IME &quot;SDL_RETURN_KEY_HIDES_IME&quot;</span></div>
+<div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160; </div>
+<div class="line"><a name="l01517"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a0e762eabcf52604adb9bcb9a554e3f32"> 1517</a></span>&#160;<span class="preprocessor">#define SDL_HINT_RPI_VIDEO_LAYER           &quot;SDL_RPI_VIDEO_LAYER&quot;</span></div>
+<div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160; </div>
+<div class="line"><a name="l01537"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a0c3ee5dc0010ebbc97555472e26853d5"> 1537</a></span>&#160;<span class="preprocessor">#define SDL_HINT_SCREENSAVER_INHIBIT_ACTIVITY_NAME &quot;SDL_SCREENSAVER_INHIBIT_ACTIVITY_NAME&quot;</span></div>
+<div class="line"><a name="l01538"></a><span class="lineno"> 1538</span>&#160; </div>
+<div class="line"><a name="l01556"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a60ffebe32576f285060421d0c75d103f"> 1556</a></span>&#160;<span class="preprocessor">#define SDL_HINT_THREAD_FORCE_REALTIME_TIME_CRITICAL &quot;SDL_THREAD_FORCE_REALTIME_TIME_CRITICAL&quot;</span></div>
+<div class="line"><a name="l01557"></a><span class="lineno"> 1557</span>&#160; </div>
+<div class="line"><a name="l01573"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a28a5b3b2e99f6219d4b9f84c794ffbb2"> 1573</a></span>&#160;<span class="preprocessor">#define SDL_HINT_THREAD_PRIORITY_POLICY         &quot;SDL_THREAD_PRIORITY_POLICY&quot;</span></div>
+<div class="line"><a name="l01574"></a><span class="lineno"> 1574</span>&#160; </div>
+<div class="line"><a name="l01587"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a70a6e1364071cde0cba942d47bc7a246"> 1587</a></span>&#160;<span class="preprocessor">#define SDL_HINT_THREAD_STACK_SIZE              &quot;SDL_THREAD_STACK_SIZE&quot;</span></div>
+<div class="line"><a name="l01588"></a><span class="lineno"> 1588</span>&#160; </div>
+<div class="line"><a name="l01603"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#afbc6ba9f809e07557eb369f763299174"> 1603</a></span>&#160;<span class="preprocessor">#define SDL_HINT_TIMER_RESOLUTION &quot;SDL_TIMER_RESOLUTION&quot;</span></div>
+<div class="line"><a name="l01604"></a><span class="lineno"> 1604</span>&#160; </div>
+<div class="line"><a name="l01614"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a334b89b47382e48b03e24defe96b6163"> 1614</a></span>&#160;<span class="preprocessor">#define SDL_HINT_TOUCH_MOUSE_EVENTS    &quot;SDL_TOUCH_MOUSE_EVENTS&quot;</span></div>
+<div class="line"><a name="l01615"></a><span class="lineno"> 1615</span>&#160; </div>
+<div class="line"><a name="l01626"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ae89c85f77f0d1e1f7716f4c81c96dac3"> 1626</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VITA_TOUCH_MOUSE_DEVICE    &quot;SDL_HINT_VITA_TOUCH_MOUSE_DEVICE&quot;</span></div>
+<div class="line"><a name="l01627"></a><span class="lineno"> 1627</span>&#160; </div>
+<div class="line"><a name="l01636"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a798d47734b79941d6acb861fb91811f4"> 1636</a></span>&#160;<span class="preprocessor">#define SDL_HINT_TV_REMOTE_AS_JOYSTICK &quot;SDL_TV_REMOTE_AS_JOYSTICK&quot;</span></div>
+<div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160; </div>
+<div class="line"><a name="l01647"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a7d3457c4003d46ddb560a96844ca1f85"> 1647</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_ALLOW_SCREENSAVER    &quot;SDL_VIDEO_ALLOW_SCREENSAVER&quot;</span></div>
+<div class="line"><a name="l01648"></a><span class="lineno"> 1648</span>&#160; </div>
+<div class="line"><a name="l01666"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ab419844280b39c7c713ec7d7246e71a4"> 1666</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_DOUBLE_BUFFER      &quot;SDL_VIDEO_DOUBLE_BUFFER&quot;</span></div>
+<div class="line"><a name="l01667"></a><span class="lineno"> 1667</span>&#160; </div>
+<div class="line"><a name="l01677"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a8ab1e2a8fd5a04b1ca5b13121d7fe714"> 1677</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_EGL_ALLOW_TRANSPARENCY &quot;SDL_VIDEO_EGL_ALLOW_TRANSPARENCY&quot;</span></div>
+<div class="line"><a name="l01678"></a><span class="lineno"> 1678</span>&#160; </div>
+<div class="line"><a name="l01692"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a47daabed17289a5f6d92021b47538230"> 1692</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_EXTERNAL_CONTEXT    &quot;SDL_VIDEO_EXTERNAL_CONTEXT&quot;</span></div>
+<div class="line"><a name="l01693"></a><span class="lineno"> 1693</span>&#160; </div>
+<div class="line"><a name="l01697"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ac4537a3cf34a3a2d2a1dd674ea7daa6f"> 1697</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_HIGHDPI_DISABLED &quot;SDL_VIDEO_HIGHDPI_DISABLED&quot;</span></div>
+<div class="line"><a name="l01698"></a><span class="lineno"> 1698</span>&#160; </div>
+<div class="line"><a name="l01714"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a7f78bfa36d29dc21728bfabce8b336c3"> 1714</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_MAC_FULLSCREEN_SPACES    &quot;SDL_VIDEO_MAC_FULLSCREEN_SPACES&quot;</span></div>
+<div class="line"><a name="l01715"></a><span class="lineno"> 1715</span>&#160; </div>
+<div class="line"><a name="l01722"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a85488274590bff72c3d1dba5829443f6"> 1722</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_MINIMIZE_ON_FOCUS_LOSS   &quot;SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS&quot;</span></div>
+<div class="line"><a name="l01723"></a><span class="lineno"> 1723</span>&#160; </div>
+<div class="line"><a name="l01733"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a6e194f2af9d8ae8ffdaae8b1df4a3a4d"> 1733</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_WAYLAND_ALLOW_LIBDECOR &quot;SDL_VIDEO_WAYLAND_ALLOW_LIBDECOR&quot;</span></div>
+<div class="line"><a name="l01734"></a><span class="lineno"> 1734</span>&#160; </div>
+<div class="line"><a name="l01747"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a631bd1a3cc0bc03e9ff225d604749226"> 1747</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_WAYLAND_PREFER_LIBDECOR &quot;SDL_VIDEO_WAYLAND_PREFER_LIBDECOR&quot;</span></div>
+<div class="line"><a name="l01748"></a><span class="lineno"> 1748</span>&#160; </div>
+<div class="line"><a name="l01762"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aaa66dc45eda71cf7d58e3d1989dbac0a"> 1762</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_WAYLAND_MODE_EMULATION &quot;SDL_VIDEO_WAYLAND_MODE_EMULATION&quot;</span></div>
+<div class="line"><a name="l01763"></a><span class="lineno"> 1763</span>&#160; </div>
+<div class="line"><a name="l01779"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a23f7d56df432dc12324ec2ea63d53c7b"> 1779</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_WAYLAND_EMULATE_MOUSE_WARP &quot;SDL_VIDEO_WAYLAND_EMULATE_MOUSE_WARP&quot;</span></div>
+<div class="line"><a name="l01780"></a><span class="lineno"> 1780</span>&#160; </div>
+<div class="line"><a name="l01798"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a007f98915e3ca58963c3cace38ed3a05"> 1798</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_WINDOW_SHARE_PIXEL_FORMAT    &quot;SDL_VIDEO_WINDOW_SHARE_PIXEL_FORMAT&quot;</span></div>
+<div class="line"><a name="l01799"></a><span class="lineno"> 1799</span>&#160; </div>
+<div class="line"><a name="l01809"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#addd09f02e56b548dd05f2b927405b560"> 1809</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_FOREIGN_WINDOW_OPENGL &quot;SDL_VIDEO_FOREIGN_WINDOW_OPENGL&quot;</span></div>
+<div class="line"><a name="l01810"></a><span class="lineno"> 1810</span>&#160; </div>
+<div class="line"><a name="l01820"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a1f5d48c45afbdcf3aa339a304ca92bb5"> 1820</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_FOREIGN_WINDOW_VULKAN &quot;SDL_VIDEO_FOREIGN_WINDOW_VULKAN&quot;</span></div>
+<div class="line"><a name="l01821"></a><span class="lineno"> 1821</span>&#160; </div>
+<div class="line"><a name="l01836"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a1e91c63c1b9c4afd7c0349b4392270fd"> 1836</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_WIN_D3DCOMPILER              &quot;SDL_VIDEO_WIN_D3DCOMPILER&quot;</span></div>
+<div class="line"><a name="l01837"></a><span class="lineno"> 1837</span>&#160; </div>
+<div class="line"><a name="l01847"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ad6487525660a858b6b8821945a58129c"> 1847</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_X11_FORCE_EGL &quot;SDL_VIDEO_X11_FORCE_EGL&quot;</span></div>
+<div class="line"><a name="l01848"></a><span class="lineno"> 1848</span>&#160; </div>
+<div class="line"><a name="l01859"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#abc592ad47225c77acdec3d778782a37e"> 1859</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR &quot;SDL_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR&quot;</span></div>
+<div class="line"><a name="l01860"></a><span class="lineno"> 1860</span>&#160; </div>
+<div class="line"><a name="l01873"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a64cf86da8e0fab9201f5d6e677df1a87"> 1873</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_X11_NET_WM_PING      &quot;SDL_VIDEO_X11_NET_WM_PING&quot;</span></div>
+<div class="line"><a name="l01874"></a><span class="lineno"> 1874</span>&#160; </div>
+<div class="line"><a name="l01879"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a6ebe6c6452f73318bd2cb84e51ed08f8"> 1879</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_X11_WINDOW_VISUALID      &quot;SDL_VIDEO_X11_WINDOW_VISUALID&quot;</span></div>
+<div class="line"><a name="l01880"></a><span class="lineno"> 1880</span>&#160; </div>
+<div class="line"><a name="l01888"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ad40f9ea3808d57729baf6d69c019af4b"> 1888</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_X11_XINERAMA         &quot;SDL_VIDEO_X11_XINERAMA&quot;</span></div>
+<div class="line"><a name="l01889"></a><span class="lineno"> 1889</span>&#160; </div>
+<div class="line"><a name="l01899"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ab78bba735481c64f25a01799c0266058"> 1899</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_X11_XRANDR           &quot;SDL_VIDEO_X11_XRANDR&quot;</span></div>
+<div class="line"><a name="l01900"></a><span class="lineno"> 1900</span>&#160; </div>
+<div class="line"><a name="l01908"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a866aaf8bf196921021eb7bda46b7a781"> 1908</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEO_X11_XVIDMODE         &quot;SDL_VIDEO_X11_XVIDMODE&quot;</span></div>
+<div class="line"><a name="l01909"></a><span class="lineno"> 1909</span>&#160; </div>
+<div class="line"><a name="l01935"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a9b502b557707a58d9f51c593ca0077e2"> 1935</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WAVE_FACT_CHUNK   &quot;SDL_WAVE_FACT_CHUNK&quot;</span></div>
+<div class="line"><a name="l01936"></a><span class="lineno"> 1936</span>&#160; </div>
+<div class="line"><a name="l01956"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#abf565db22ddc2f8a3842d42db9a71e8b"> 1956</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WAVE_RIFF_CHUNK_SIZE   &quot;SDL_WAVE_RIFF_CHUNK_SIZE&quot;</span></div>
+<div class="line"><a name="l01957"></a><span class="lineno"> 1957</span>&#160; </div>
+<div class="line"><a name="l01972"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a464d623d2f0edb55e2da44d09e32e72a"> 1972</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WAVE_TRUNCATION   &quot;SDL_WAVE_TRUNCATION&quot;</span></div>
+<div class="line"><a name="l01973"></a><span class="lineno"> 1973</span>&#160; </div>
+<div class="line"><a name="l01988"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#af9f679cc77a01ece373e3aff177f2802"> 1988</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINDOWS_DISABLE_THREAD_NAMING &quot;SDL_WINDOWS_DISABLE_THREAD_NAMING&quot;</span></div>
+<div class="line"><a name="l01989"></a><span class="lineno"> 1989</span>&#160; </div>
+<div class="line"><a name="l02010"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a1257837ca9e302f3c4a20634b2a10438"> 2010</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINDOWS_ENABLE_MENU_MNEMONICS &quot;SDL_WINDOWS_ENABLE_MENU_MNEMONICS&quot;</span></div>
+<div class="line"><a name="l02011"></a><span class="lineno"> 2011</span>&#160; </div>
+<div class="line"><a name="l02021"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a4751d59cbeb36e0e41139f2f3273602d"> 2021</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP &quot;SDL_WINDOWS_ENABLE_MESSAGELOOP&quot;</span></div>
+<div class="line"><a name="l02022"></a><span class="lineno"> 2022</span>&#160; </div>
+<div class="line"><a name="l02035"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#acc9619f329c8ece1fcf2d0a620e0fc9a"> 2035</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINDOWS_FORCE_MUTEX_CRITICAL_SECTIONS &quot;SDL_WINDOWS_FORCE_MUTEX_CRITICAL_SECTIONS&quot;</span></div>
+<div class="line"><a name="l02036"></a><span class="lineno"> 2036</span>&#160; </div>
+<div class="line"><a name="l02051"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a09d0dc09f5a54f499d3715912a19151f"> 2051</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINDOWS_FORCE_SEMAPHORE_KERNEL &quot;SDL_WINDOWS_FORCE_SEMAPHORE_KERNEL&quot;</span></div>
+<div class="line"><a name="l02052"></a><span class="lineno"> 2052</span>&#160; </div>
+<div class="line"><a name="l02056"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a2a5b224b4a44f6a884a3b4bb6bd4fc97"> 2056</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINDOWS_INTRESOURCE_ICON       &quot;SDL_WINDOWS_INTRESOURCE_ICON&quot;</span></div>
+<div class="line"><a name="l02057"></a><span class="lineno"> 2057</span>&#160;<span class="preprocessor">#define SDL_HINT_WINDOWS_INTRESOURCE_ICON_SMALL &quot;SDL_WINDOWS_INTRESOURCE_ICON_SMALL&quot;</span></div>
+<div class="line"><a name="l02058"></a><span class="lineno"> 2058</span>&#160; </div>
+<div class="line"><a name="l02066"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a591d43be8d8b8cc6ad9dd37f69e50630"> 2066</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINDOWS_NO_CLOSE_ON_ALT_F4 &quot;SDL_WINDOWS_NO_CLOSE_ON_ALT_F4&quot;</span></div>
+<div class="line"><a name="l02067"></a><span class="lineno"> 2067</span>&#160; </div>
+<div class="line"><a name="l02086"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a83ec849e306ddb83759806a2dbf44682"> 2086</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINDOWS_USE_D3D9EX &quot;SDL_WINDOWS_USE_D3D9EX&quot;</span></div>
+<div class="line"><a name="l02087"></a><span class="lineno"> 2087</span>&#160; </div>
+<div class="line"><a name="l02116"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a65f66e81aecfb24112855c2d70f22b3c"> 2116</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINDOWS_DPI_AWARENESS &quot;SDL_WINDOWS_DPI_AWARENESS&quot;</span></div>
+<div class="line"><a name="l02117"></a><span class="lineno"> 2117</span>&#160; </div>
+<div class="line"><a name="l02137"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a5e18379beee9d389892aaa7a91531e45"> 2137</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINDOWS_DPI_SCALING &quot;SDL_WINDOWS_DPI_SCALING&quot;</span></div>
+<div class="line"><a name="l02138"></a><span class="lineno"> 2138</span>&#160; </div>
+<div class="line"><a name="l02148"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ab34ea46e0365bd0546c6fa6f4b56d86e"> 2148</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN    &quot;SDL_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN&quot;</span></div>
+<div class="line"><a name="l02149"></a><span class="lineno"> 2149</span>&#160; </div>
+<div class="line"><a name="l02159"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a007760b0d85dcd455cf76a31b1d199b1"> 2159</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINDOW_NO_ACTIVATION_WHEN_SHOWN    &quot;SDL_WINDOW_NO_ACTIVATION_WHEN_SHOWN&quot;</span></div>
+<div class="line"><a name="l02160"></a><span class="lineno"> 2160</span>&#160; </div>
+<div class="line"><a name="l02211"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a50fab1c4959c71f2e066b7eec874ef90"> 2211</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINRT_HANDLE_BACK_BUTTON &quot;SDL_WINRT_HANDLE_BACK_BUTTON&quot;</span></div>
+<div class="line"><a name="l02212"></a><span class="lineno"> 2212</span>&#160; </div>
+<div class="line"><a name="l02232"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a2e703ae1982069e228243e2633cf41c7"> 2232</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINRT_PRIVACY_POLICY_LABEL &quot;SDL_WINRT_PRIVACY_POLICY_LABEL&quot;</span></div>
+<div class="line"><a name="l02233"></a><span class="lineno"> 2233</span>&#160; </div>
+<div class="line"><a name="l02258"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a5f898b6a1c5658f84c812540bb857560"> 2258</a></span>&#160;<span class="preprocessor">#define SDL_HINT_WINRT_PRIVACY_POLICY_URL &quot;SDL_WINRT_PRIVACY_POLICY_URL&quot;</span></div>
+<div class="line"><a name="l02259"></a><span class="lineno"> 2259</span>&#160; </div>
+<div class="line"><a name="l02270"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#afd9e992ec99ebab318a9f73c6d9ba2ce"> 2270</a></span>&#160;<span class="preprocessor">#define SDL_HINT_X11_FORCE_OVERRIDE_REDIRECT &quot;SDL_X11_FORCE_OVERRIDE_REDIRECT&quot;</span></div>
+<div class="line"><a name="l02271"></a><span class="lineno"> 2271</span>&#160; </div>
+<div class="line"><a name="l02279"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a74031ed3b17889222462108800b91c3c"> 2279</a></span>&#160;<span class="preprocessor">#define SDL_HINT_XINPUT_ENABLED &quot;SDL_XINPUT_ENABLED&quot;</span></div>
+<div class="line"><a name="l02280"></a><span class="lineno"> 2280</span>&#160; </div>
+<div class="line"><a name="l02288"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a73a2e9b004241452bd2b3960621810b4"> 2288</a></span>&#160;<span class="preprocessor">#define SDL_HINT_DIRECTINPUT_ENABLED &quot;SDL_DIRECTINPUT_ENABLED&quot;</span></div>
+<div class="line"><a name="l02289"></a><span class="lineno"> 2289</span>&#160; </div>
+<div class="line"><a name="l02297"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a7a7ae9f9a2a771b1f83b5cd165f1c3bb"> 2297</a></span>&#160;<span class="preprocessor">#define SDL_HINT_XINPUT_USE_OLD_JOYSTICK_MAPPING &quot;SDL_XINPUT_USE_OLD_JOYSTICK_MAPPING&quot;</span></div>
+<div class="line"><a name="l02298"></a><span class="lineno"> 2298</span>&#160; </div>
+<div class="line"><a name="l02316"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#af0837cec5a903e2b652b177813c82eb4"> 2316</a></span>&#160;<span class="preprocessor">#define SDL_HINT_AUDIO_INCLUDE_MONITORS &quot;SDL_AUDIO_INCLUDE_MONITORS&quot;</span></div>
+<div class="line"><a name="l02317"></a><span class="lineno"> 2317</span>&#160; </div>
+<div class="line"><a name="l02336"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#adf64ea7426a2fecbf2aec55da0d73750"> 2336</a></span>&#160;<span class="preprocessor">#define SDL_HINT_X11_WINDOW_TYPE &quot;SDL_X11_WINDOW_TYPE&quot;</span></div>
+<div class="line"><a name="l02337"></a><span class="lineno"> 2337</span>&#160; </div>
+<div class="line"><a name="l02360"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a6e249320b0e34906e237258615bc3570"> 2360</a></span>&#160;<span class="preprocessor">#define SDL_HINT_QUIT_ON_LAST_WINDOW_CLOSE &quot;SDL_QUIT_ON_LAST_WINDOW_CLOSE&quot;</span></div>
+<div class="line"><a name="l02361"></a><span class="lineno"> 2361</span>&#160; </div>
+<div class="line"><a name="l02362"></a><span class="lineno"> 2362</span>&#160; </div>
+<div class="line"><a name="l02384"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a5cae24f3b2d33de5471fedb9d84c199a"> 2384</a></span>&#160;<span class="preprocessor">#define SDL_HINT_VIDEODRIVER &quot;SDL_VIDEODRIVER&quot;</span></div>
+<div class="line"><a name="l02385"></a><span class="lineno"> 2385</span>&#160; </div>
+<div class="line"><a name="l02407"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aa50427aaa27d696f2157a5be454df80d"> 2407</a></span>&#160;<span class="preprocessor">#define SDL_HINT_AUDIODRIVER &quot;SDL_AUDIODRIVER&quot;</span></div>
+<div class="line"><a name="l02408"></a><span class="lineno"> 2408</span>&#160; </div>
+<div class="line"><a name="l02421"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aa735bf5ee35ae9fcadd92e76d4243133"> 2421</a></span>&#160;<span class="preprocessor">#define SDL_HINT_KMSDRM_DEVICE_INDEX &quot;SDL_KMSDRM_DEVICE_INDEX&quot;</span></div>
+<div class="line"><a name="l02422"></a><span class="lineno"> 2422</span>&#160; </div>
+<div class="line"><a name="l02423"></a><span class="lineno"> 2423</span>&#160; </div>
+<div class="line"><a name="l02443"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a8f8a2e7ee48e4e87663b099bea42121c"> 2443</a></span>&#160;<span class="preprocessor">#define SDL_HINT_TRACKPAD_IS_TOUCH_ONLY &quot;SDL_TRACKPAD_IS_TOUCH_ONLY&quot;</span></div>
+<div class="line"><a name="l02444"></a><span class="lineno"> 2444</span>&#160; </div>
+<div class="line"><a name="l02445"></a><span class="lineno"> 2445</span>&#160; </div>
+<div class="line"><a name="l02449"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ab85f3099d9bb0445b0c6b5002cfaa7ed"> 2449</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a name="l02450"></a><span class="lineno"> 2450</span>&#160;{</div>
+<div class="line"><a name="l02451"></a><span class="lineno"> 2451</span>&#160;    SDL_HINT_DEFAULT,</div>
+<div class="line"><a name="l02452"></a><span class="lineno"> 2452</span>&#160;    SDL_HINT_NORMAL,</div>
+<div class="line"><a name="l02453"></a><span class="lineno"> 2453</span>&#160;    SDL_HINT_OVERRIDE</div>
+<div class="line"><a name="l02454"></a><span class="lineno"> 2454</span>&#160;} <a class="code" href="SDL__hints_8h.html#ab85f3099d9bb0445b0c6b5002cfaa7ed">SDL_HintPriority</a>;</div>
+<div class="line"><a name="l02455"></a><span class="lineno"> 2455</span>&#160; </div>
+<div class="line"><a name="l02456"></a><span class="lineno"> 2456</span>&#160; </div>
+<div class="line"><a name="l02474"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aa8dbcd854090784ae237aeeefb7e6232"> 2474</a></span>&#160;<span class="keyword">extern</span> DECLSPEC SDL_bool SDLCALL <a class="code" href="SDL__hints_8h.html#aa8dbcd854090784ae237aeeefb7e6232">SDL_SetHintWithPriority</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name,</div>
+<div class="line"><a name="l02475"></a><span class="lineno"> 2475</span>&#160;                                                         <span class="keyword">const</span> <span class="keywordtype">char</span> *value,</div>
+<div class="line"><a name="l02476"></a><span class="lineno"> 2476</span>&#160;                                                         <a class="code" href="SDL__hints_8h.html#ab85f3099d9bb0445b0c6b5002cfaa7ed">SDL_HintPriority</a> priority);</div>
+<div class="line"><a name="l02477"></a><span class="lineno"> 2477</span>&#160; </div>
+<div class="line"><a name="l02494"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a9b47f5aa3911644f0a5a3f0cfa9198a4"> 2494</a></span>&#160;<span class="keyword">extern</span> DECLSPEC SDL_bool SDLCALL <a class="code" href="SDL__hints_8h.html#a9b47f5aa3911644f0a5a3f0cfa9198a4">SDL_SetHint</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name,</div>
+<div class="line"><a name="l02495"></a><span class="lineno"> 2495</span>&#160;                                             <span class="keyword">const</span> <span class="keywordtype">char</span> *value);</div>
+<div class="line"><a name="l02496"></a><span class="lineno"> 2496</span>&#160; </div>
+<div class="line"><a name="l02512"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a4dfe9f289c278db850ba69fa02cd3157"> 2512</a></span>&#160;<span class="keyword">extern</span> DECLSPEC SDL_bool SDLCALL <a class="code" href="SDL__hints_8h.html#a4dfe9f289c278db850ba69fa02cd3157">SDL_ResetHint</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l02513"></a><span class="lineno"> 2513</span>&#160; </div>
+<div class="line"><a name="l02527"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#adb936ea7125da9c2850f0cb126e47d7f"> 2527</a></span>&#160;<span class="keyword">extern</span> DECLSPEC <span class="keywordtype">void</span> SDLCALL <a class="code" href="SDL__hints_8h.html#adb936ea7125da9c2850f0cb126e47d7f">SDL_ResetHints</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l02528"></a><span class="lineno"> 2528</span>&#160; </div>
+<div class="line"><a name="l02540"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a7b26a63a33768fab43d50e3fd0d41eb5"> 2540</a></span>&#160;<span class="keyword">extern</span> DECLSPEC <span class="keyword">const</span> <span class="keywordtype">char</span> * SDLCALL <a class="code" href="SDL__hints_8h.html#a7b26a63a33768fab43d50e3fd0d41eb5">SDL_GetHint</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l02541"></a><span class="lineno"> 2541</span>&#160; </div>
+<div class="line"><a name="l02555"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#ac64146ba3607164ed325956ea3d6d392"> 2555</a></span>&#160;<span class="keyword">extern</span> DECLSPEC SDL_bool SDLCALL <a class="code" href="SDL__hints_8h.html#ac64146ba3607164ed325956ea3d6d392">SDL_GetHintBoolean</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, SDL_bool default_value);</div>
+<div class="line"><a name="l02556"></a><span class="lineno"> 2556</span>&#160; </div>
+<div class="line"><a name="l02565"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a393a846a6c2dbc4ec9e52bd9bef14e02"> 2565</a></span>&#160;<span class="keyword">typedef</span> void (SDLCALL *<a class="code" href="SDL__hints_8h.html#a393a846a6c2dbc4ec9e52bd9bef14e02">SDL_HintCallback</a>)(<span class="keywordtype">void</span> *userdata, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> <span class="keywordtype">char</span> *oldValue, <span class="keyword">const</span> <span class="keywordtype">char</span> *newValue);</div>
+<div class="line"><a name="l02566"></a><span class="lineno"> 2566</span>&#160; </div>
+<div class="line"><a name="l02579"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a8731ae1704dd7a70f63cc6cdd242b5ae"> 2579</a></span>&#160;<span class="keyword">extern</span> DECLSPEC <span class="keywordtype">void</span> SDLCALL <a class="code" href="SDL__hints_8h.html#a8731ae1704dd7a70f63cc6cdd242b5ae">SDL_AddHintCallback</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name,</div>
+<div class="line"><a name="l02580"></a><span class="lineno"> 2580</span>&#160;                                                 <a class="code" href="SDL__hints_8h.html#a393a846a6c2dbc4ec9e52bd9bef14e02">SDL_HintCallback</a> callback,</div>
+<div class="line"><a name="l02581"></a><span class="lineno"> 2581</span>&#160;                                                 <span class="keywordtype">void</span> *userdata);</div>
+<div class="line"><a name="l02582"></a><span class="lineno"> 2582</span>&#160; </div>
+<div class="line"><a name="l02595"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#aff84d56f5de197e49a778e18ad76ab0e"> 2595</a></span>&#160;<span class="keyword">extern</span> DECLSPEC <span class="keywordtype">void</span> SDLCALL <a class="code" href="SDL__hints_8h.html#aff84d56f5de197e49a778e18ad76ab0e">SDL_DelHintCallback</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name,</div>
+<div class="line"><a name="l02596"></a><span class="lineno"> 2596</span>&#160;                                                 <a class="code" href="SDL__hints_8h.html#a393a846a6c2dbc4ec9e52bd9bef14e02">SDL_HintCallback</a> callback,</div>
+<div class="line"><a name="l02597"></a><span class="lineno"> 2597</span>&#160;                                                 <span class="keywordtype">void</span> *userdata);</div>
+<div class="line"><a name="l02598"></a><span class="lineno"> 2598</span>&#160; </div>
+<div class="line"><a name="l02613"></a><span class="lineno"><a class="line" href="SDL__hints_8h.html#a7feb78f92319c07e9d53d7be8185cdbb"> 2613</a></span>&#160;<span class="keyword">extern</span> DECLSPEC <span class="keywordtype">void</span> SDLCALL <a class="code" href="SDL__hints_8h.html#a7feb78f92319c07e9d53d7be8185cdbb">SDL_ClearHints</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l02614"></a><span class="lineno"> 2614</span>&#160; </div>
+<div class="line"><a name="l02615"></a><span class="lineno"> 2615</span>&#160; </div>
+<div class="line"><a name="l02616"></a><span class="lineno"> 2616</span>&#160;<span class="comment">/* Ends C function definitions when using C++ */</span></div>
+<div class="line"><a name="l02617"></a><span class="lineno"> 2617</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l02618"></a><span class="lineno"> 2618</span>&#160;}</div>
+<div class="line"><a name="l02619"></a><span class="lineno"> 2619</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l02620"></a><span class="lineno"> 2620</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="close__code_8h.html">close_code.h</a>&quot;</span></div>
+<div class="line"><a name="l02621"></a><span class="lineno"> 2621</span>&#160; </div>
+<div class="line"><a name="l02622"></a><span class="lineno"> 2622</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SDL_hints_h_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l02623"></a><span class="lineno"> 2623</span>&#160; </div>
+<div class="line"><a name="l02624"></a><span class="lineno"> 2624</span>&#160;<span class="comment">/* vi: set ts=4 sw=4 expandtab: */</span></div>
+<div class="ttc" id="aSDL__hints_8h_html_a393a846a6c2dbc4ec9e52bd9bef14e02"><div class="ttname"><a href="SDL__hints_8h.html#a393a846a6c2dbc4ec9e52bd9bef14e02">SDL_HintCallback</a></div><div class="ttdeci">void(SDLCALL * SDL_HintCallback)(void *userdata, const char *name, const char *oldValue, const char *newValue)</div><div class="ttdef"><b>Definition:</b> SDL_hints.h:2565</div></div>
+<div class="ttc" id="aSDL__hints_8h_html_a4dfe9f289c278db850ba69fa02cd3157"><div class="ttname"><a href="SDL__hints_8h.html#a4dfe9f289c278db850ba69fa02cd3157">SDL_ResetHint</a></div><div class="ttdeci">DECLSPEC SDL_bool SDLCALL SDL_ResetHint(const char *name)</div></div>
+<div class="ttc" id="aSDL__hints_8h_html_a7b26a63a33768fab43d50e3fd0d41eb5"><div class="ttname"><a href="SDL__hints_8h.html#a7b26a63a33768fab43d50e3fd0d41eb5">SDL_GetHint</a></div><div class="ttdeci">DECLSPEC const char *SDLCALL SDL_GetHint(const char *name)</div></div>
+<div class="ttc" id="aSDL__hints_8h_html_a7feb78f92319c07e9d53d7be8185cdbb"><div class="ttname"><a href="SDL__hints_8h.html#a7feb78f92319c07e9d53d7be8185cdbb">SDL_ClearHints</a></div><div class="ttdeci">DECLSPEC void SDLCALL SDL_ClearHints(void)</div></div>
+<div class="ttc" id="aSDL__hints_8h_html_a8731ae1704dd7a70f63cc6cdd242b5ae"><div class="ttname"><a href="SDL__hints_8h.html#a8731ae1704dd7a70f63cc6cdd242b5ae">SDL_AddHintCallback</a></div><div class="ttdeci">DECLSPEC void SDLCALL SDL_AddHintCallback(const char *name, SDL_HintCallback callback, void *userdata)</div></div>
+<div class="ttc" id="aSDL__hints_8h_html_a9b47f5aa3911644f0a5a3f0cfa9198a4"><div class="ttname"><a href="SDL__hints_8h.html#a9b47f5aa3911644f0a5a3f0cfa9198a4">SDL_SetHint</a></div><div class="ttdeci">DECLSPEC SDL_bool SDLCALL SDL_SetHint(const char *name, const char *value)</div></div>
+<div class="ttc" id="aSDL__hints_8h_html_aa8dbcd854090784ae237aeeefb7e6232"><div class="ttname"><a href="SDL__hints_8h.html#aa8dbcd854090784ae237aeeefb7e6232">SDL_SetHintWithPriority</a></div><div class="ttdeci">DECLSPEC SDL_bool SDLCALL SDL_SetHintWithPriority(const char *name, const char *value, SDL_HintPriority priority)</div></div>
+<div class="ttc" id="aSDL__hints_8h_html_ab85f3099d9bb0445b0c6b5002cfaa7ed"><div class="ttname"><a href="SDL__hints_8h.html#ab85f3099d9bb0445b0c6b5002cfaa7ed">SDL_HintPriority</a></div><div class="ttdeci">SDL_HintPriority</div><div class="ttdoc">An enumeration of hint priorities.</div><div class="ttdef"><b>Definition:</b> SDL_hints.h:2450</div></div>
+<div class="ttc" id="aSDL__hints_8h_html_ac64146ba3607164ed325956ea3d6d392"><div class="ttname"><a href="SDL__hints_8h.html#ac64146ba3607164ed325956ea3d6d392">SDL_GetHintBoolean</a></div><div class="ttdeci">DECLSPEC SDL_bool SDLCALL SDL_GetHintBoolean(const char *name, SDL_bool default_value)</div></div>
+<div class="ttc" id="aSDL__hints_8h_html_adb936ea7125da9c2850f0cb126e47d7f"><div class="ttname"><a href="SDL__hints_8h.html#adb936ea7125da9c2850f0cb126e47d7f">SDL_ResetHints</a></div><div class="ttdeci">DECLSPEC void SDLCALL SDL_ResetHints(void)</div></div>
+<div class="ttc" id="aSDL__hints_8h_html_aff84d56f5de197e49a778e18ad76ab0e"><div class="ttname"><a href="SDL__hints_8h.html#aff84d56f5de197e49a778e18ad76ab0e">SDL_DelHintCallback</a></div><div class="ttdeci">DECLSPEC void SDLCALL SDL_DelHintCallback(const char *name, SDL_HintCallback callback, void *userdata)</div></div>
+<div class="ttc" id="aSDL__stdinc_8h_html"><div class="ttname"><a href="SDL__stdinc_8h.html">SDL_stdinc.h</a></div></div>
+<div class="ttc" id="abegin__code_8h_html"><div class="ttname"><a href="begin__code_8h.html">begin_code.h</a></div></div>
+<div class="ttc" id="aclose__code_8h_html"><div class="ttname"><a href="close__code_8h.html">close_code.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

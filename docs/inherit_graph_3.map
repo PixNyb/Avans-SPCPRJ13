@@ -1,0 +1,5 @@
+<map id="Grafische Klasse Hi&amp;euml;rarchie" name="Grafische Klasse Hi&amp;euml;rarchie">
+<area shape="rect" id="node1" href="$classCollider.html" title=" " alt="" coords="5,31,77,57"/>
+<area shape="rect" id="node2" href="$classBoxCollider.html" title=" " alt="" coords="131,5,229,32"/>
+<area shape="rect" id="node3" href="$classCircleCollider.html" title=" " alt="" coords="125,56,235,83"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="FT_CharMapRec_" name="FT_CharMapRec_">
+<area shape="rect" id="node1" title=" " alt="" coords="255,480,388,507"/>
+<area shape="rect" id="node2" href="$structFT__FaceRec__.html" title=" " alt="" coords="561,421,665,448"/>
+<area shape="rect" id="node10" href="$structFT__SizeRec__.html" title=" " alt="" coords="805,417,907,444"/>
+<area shape="rect" id="node12" href="$structFT__GlyphSlotRec__.html" title=" " alt="" coords="787,155,925,181"/>
+<area shape="rect" id="node3" href="$structFT__StreamRec__.html" title=" " alt="" coords="260,356,383,383"/>
+<area shape="rect" id="node4" href="$structFT__MemoryRec__.html" title=" " alt="" coords="7,388,136,415"/>
+<area shape="rect" id="node5" href="$unionFT__StreamDesc__.html" title=" " alt="" coords="6,319,137,345"/>
+<area shape="rect" id="node6" href="$structFT__Bitmap__Size__.html" title=" " alt="" coords="255,547,387,573"/>
+<area shape="rect" id="node7" href="$structFT__ListRec__.html" title=" " alt="" coords="272,597,371,624"/>
+<area shape="rect" id="node8" href="$structFT__ListNodeRec__.html" title=" " alt="" coords="5,597,137,624"/>
+<area shape="rect" id="node9" href="$structFT__Generic__.html" title=" " alt="" coords="271,252,372,279"/>
+<area shape="rect" id="node11" href="$structFT__Size__Metrics__.html" title=" " alt="" coords="547,485,680,512"/>
+<area shape="rect" id="node13" href="$structFT__Outline__.html" title=" " alt="" coords="564,53,663,80"/>
+<area shape="rect" id="node14" href="$structFT__Vector__.html" title=" " alt="" coords="275,9,367,36"/>
+<area shape="rect" id="node15" href="$structFT__Bitmap__.html" title=" " alt="" coords="564,104,663,131"/>
+<area shape="rect" id="node16" href="$structFT__Glyph__Metrics__.html" title=" " alt="" coords="541,155,685,181"/>
+<area shape="rect" id="node17" href="$structFT__BBox__.html" title=" " alt="" coords="279,648,364,675"/>
+</map>

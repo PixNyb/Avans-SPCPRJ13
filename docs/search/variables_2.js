@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['callback_3934',['callback',['../structSDL__AudioSpec.html#a1f8d05139f1679dcf359f49251233eac',1,'SDL_AudioSpec']]],
+  ['caxis_3935',['caxis',['../unionSDL__Event.html#aa8f6df0f2716fae56204b12ab4a4c289',1,'SDL_Event']]],
+  ['cbutton_3936',['cbutton',['../unionSDL__Event.html#aee2b5671c8dcdb447023715cc21593cb',1,'SDL_Event']]],
+  ['cdevice_3937',['cdevice',['../unionSDL__Event.html#ad3beed01e690b885728e0b0e1d636378',1,'SDL_Event']]],
+  ['center_3938',['center',['../structSDL__HapticCondition.html#a8a71ec28ff5ab85246cbc59736aa2c53',1,'SDL_HapticCondition']]],
+  ['channels_3939',['channels',['../structSDL__AudioSpec.html#a31fe8b3710cf23bbef24be8a1749fe46',1,'SDL_AudioSpec::channels()'],['../structSDL__HapticCustom.html#a560215762e9096d583d75867d9227cf5',1,'SDL_HapticCustom::channels()']]],
+  ['clicks_3940',['clicks',['../structSDL__MouseButtonEvent.html#aa606bebcbc3ffc7e932016039c2a36a1',1,'SDL_MouseButtonEvent']]],
+  ['clip_5frect_3941',['clip_rect',['../structSDL__Surface.html#aa9a0da3b38261dad6cf0cc4e3bb5b0c3',1,'SDL_Surface']]],
+  ['code_3942',['code',['../structSDL__UserEvent.html#aef47976781ee82b527a353c5acfa0a34',1,'SDL_UserEvent']]],
+  ['color_3943',['color',['../structSDL__Vertex.html#ace543def50f0b3f3f87a86c47caab53f',1,'SDL_Vertex']]],
+  ['colorscheme_3944',['colorScheme',['../structSDL__MessageBoxData.html#a18744865a3e89e260db5f01aee579e35',1,'SDL_MessageBoxData']]],
+  ['common_3945',['common',['../unionSDL__Event.html#abe5cb8767f93de55163c8ddd4562a7f2',1,'SDL_Event']]],
+  ['condition_3946',['condition',['../unionSDL__HapticEffect.html#aa8fdd1ba202ccd7e61f48ef9977080d2',1,'SDL_HapticEffect']]],
+  ['condvar_5ffree_3947',['condvar_free',['../structDBusThreadFunctions.html#ad302412c382190eddc05736f24d8855c',1,'DBusThreadFunctions']]],
+  ['condvar_5fnew_3948',['condvar_new',['../structDBusThreadFunctions.html#a1796b617165734984bc40d38f9600d78',1,'DBusThreadFunctions']]],
+  ['condvar_5fwait_3949',['condvar_wait',['../structDBusThreadFunctions.html#ae4cb6e9fe7c0813213561150721f349c',1,'DBusThreadFunctions']]],
+  ['condvar_5fwait_5ftimeout_3950',['condvar_wait_timeout',['../structDBusThreadFunctions.html#a5e049c7bdf4d83a85ebce31d838d4218',1,'DBusThreadFunctions']]],
+  ['condvar_5fwake_5fall_3951',['condvar_wake_all',['../structDBusThreadFunctions.html#a128295c0019a401163d04ea0e291b36c',1,'DBusThreadFunctions']]],
+  ['condvar_5fwake_5fone_3952',['condvar_wake_one',['../structDBusThreadFunctions.html#a3f1301eacf666381ec6c39100e6787e1',1,'DBusThreadFunctions']]],
+  ['constant_3953',['constant',['../unionSDL__HapticEffect.html#ac435275e9683d6cc5d65b9c7cc2ec659',1,'SDL_HapticEffect']]],
+  ['country_3954',['country',['../structSDL__Locale.html#a0a6d2720db6bc77bfa82528294c1c6e8',1,'SDL_Locale']]],
+  ['csensor_3955',['csensor',['../unionSDL__Event.html#adcfd6caae4067c338ddd6570ddb37417',1,'SDL_Event']]],
+  ['ctouchpad_3956',['ctouchpad',['../unionSDL__Event.html#af380462bb505815bd9cb19c2d9c5a61c',1,'SDL_Event']]],
+  ['custom_3957',['custom',['../unionSDL__HapticEffect.html#a0b2d2af28c515cc39896b2b7c23019d2',1,'SDL_HapticEffect']]]
+];

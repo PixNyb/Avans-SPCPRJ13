@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DeFunBobEngine: DBusServer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DeFunBobEngine
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Een simpele 2D game engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functies</a>  </div>
+  <div class="headertitle">
+<div class="title">DBusServer</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga6702147c10442757146f3119f655dc8b"><td class="memItemLeft" align="right" valign="top"><a id="ga6702147c10442757146f3119f655dc8b"></a>
+typedef struct DBusServer&#160;</td><td class="memItemRight" valign="bottom"><b>DBusServer</b></td></tr>
+<tr class="separator:ga6702147c10442757146f3119f655dc8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf32eebe096bf1d0771cc3fd1d18718c3"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusServer.html#gaf32eebe096bf1d0771cc3fd1d18718c3">DBusNewConnectionFunction</a>) (DBusServer *server, <a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *new_connection, void *data)</td></tr>
+<tr class="separator:gaf32eebe096bf1d0771cc3fd1d18718c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functies</h2></td></tr>
+<tr class="memitem:ga576489683f323e754c7763dbb2343196"><td class="memItemLeft" align="right" valign="top"><a id="ga576489683f323e754c7763dbb2343196"></a>
+DBUS_EXPORT DBusServer *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_listen</b> (const char *address, <a class="el" href="structDBusError.html">DBusError</a> *error)</td></tr>
+<tr class="separator:ga576489683f323e754c7763dbb2343196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8c48240b745fec57c76273bc8000f795"><td class="memItemLeft" align="right" valign="top"><a id="ga8c48240b745fec57c76273bc8000f795"></a>
+DBUS_EXPORT DBusServer *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_ref</b> (DBusServer *server)</td></tr>
+<tr class="separator:ga8c48240b745fec57c76273bc8000f795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga95d0b6cb9795b4919aa08f667807c555"><td class="memItemLeft" align="right" valign="top"><a id="ga95d0b6cb9795b4919aa08f667807c555"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_unref</b> (DBusServer *server)</td></tr>
+<tr class="separator:ga95d0b6cb9795b4919aa08f667807c555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ff306fbaaa608306b0619ba5c0029a1"><td class="memItemLeft" align="right" valign="top"><a id="ga1ff306fbaaa608306b0619ba5c0029a1"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_disconnect</b> (DBusServer *server)</td></tr>
+<tr class="separator:ga1ff306fbaaa608306b0619ba5c0029a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93c36d8b42a3f2a4f3706a0c3609b3d1"><td class="memItemLeft" align="right" valign="top"><a id="ga93c36d8b42a3f2a4f3706a0c3609b3d1"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_get_is_connected</b> (DBusServer *server)</td></tr>
+<tr class="separator:ga93c36d8b42a3f2a4f3706a0c3609b3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3ecd9b410250a32e717253f5916afed"><td class="memItemLeft" align="right" valign="top"><a id="gaa3ecd9b410250a32e717253f5916afed"></a>
+DBUS_EXPORT char *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_get_address</b> (DBusServer *server)</td></tr>
+<tr class="separator:gaa3ecd9b410250a32e717253f5916afed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga324c2962b32549f2b605340b213f22d7"><td class="memItemLeft" align="right" valign="top"><a id="ga324c2962b32549f2b605340b213f22d7"></a>
+DBUS_EXPORT char *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_get_id</b> (DBusServer *server)</td></tr>
+<tr class="separator:ga324c2962b32549f2b605340b213f22d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa14d9109e04adccffd9a40460c28c53b"><td class="memItemLeft" align="right" valign="top"><a id="gaa14d9109e04adccffd9a40460c28c53b"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_set_new_connection_function</b> (DBusServer *server, <a class="el" href="group__DBusServer.html#gaf32eebe096bf1d0771cc3fd1d18718c3">DBusNewConnectionFunction</a> function, void *data, DBusFreeFunction free_data_function)</td></tr>
+<tr class="separator:gaa14d9109e04adccffd9a40460c28c53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa5723810ea52e9f1815062fd91395892"><td class="memItemLeft" align="right" valign="top"><a id="gaa5723810ea52e9f1815062fd91395892"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_set_watch_functions</b> (DBusServer *server, <a class="el" href="group__DBusConnection.html#ga632c59364661602111278efd6a10d3aa">DBusAddWatchFunction</a> add_function, <a class="el" href="group__DBusConnection.html#gab99c5eeb90a30ec49cc2bdbb2e965b75">DBusRemoveWatchFunction</a> remove_function, <a class="el" href="group__DBusConnection.html#ga08cb6a64fbd538ac30a8dd00ba19cd95">DBusWatchToggledFunction</a> toggled_function, void *data, DBusFreeFunction free_data_function)</td></tr>
+<tr class="separator:gaa5723810ea52e9f1815062fd91395892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacafa42ffc063a7386db40a975c32d530"><td class="memItemLeft" align="right" valign="top"><a id="gacafa42ffc063a7386db40a975c32d530"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_set_timeout_functions</b> (DBusServer *server, <a class="el" href="group__DBusConnection.html#ga7fad164617baf483b39f3e3ea1c30a40">DBusAddTimeoutFunction</a> add_function, <a class="el" href="group__DBusConnection.html#gaed317fe6f12e65586a50e1d1d2ea96b7">DBusRemoveTimeoutFunction</a> remove_function, <a class="el" href="group__DBusConnection.html#ga65ee05019d4ee6d7c665ec829cd4414a">DBusTimeoutToggledFunction</a> toggled_function, void *data, DBusFreeFunction free_data_function)</td></tr>
+<tr class="separator:gacafa42ffc063a7386db40a975c32d530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga309e5f1510c74c4b221d12d874d53341"><td class="memItemLeft" align="right" valign="top"><a id="ga309e5f1510c74c4b221d12d874d53341"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_set_auth_mechanisms</b> (DBusServer *server, const char **mechanisms)</td></tr>
+<tr class="separator:ga309e5f1510c74c4b221d12d874d53341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05d280cd92ea5bb0d49bbe5b1fb1d5c2"><td class="memItemLeft" align="right" valign="top"><a id="ga05d280cd92ea5bb0d49bbe5b1fb1d5c2"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_allocate_data_slot</b> (<a class="el" href="group__DBusTypes.html#gab18afa60e9b17b6e322735bda3d863d8">dbus_int32_t</a> *slot_p)</td></tr>
+<tr class="separator:ga05d280cd92ea5bb0d49bbe5b1fb1d5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac6ebc6105e32ab38ef0ac60dec6d5bc8"><td class="memItemLeft" align="right" valign="top"><a id="gac6ebc6105e32ab38ef0ac60dec6d5bc8"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_free_data_slot</b> (<a class="el" href="group__DBusTypes.html#gab18afa60e9b17b6e322735bda3d863d8">dbus_int32_t</a> *slot_p)</td></tr>
+<tr class="separator:gac6ebc6105e32ab38ef0ac60dec6d5bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9ecb216dc9c40b0c7d370673fb9b269"><td class="memItemLeft" align="right" valign="top"><a id="gab9ecb216dc9c40b0c7d370673fb9b269"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_set_data</b> (DBusServer *server, int slot, void *data, DBusFreeFunction free_data_func)</td></tr>
+<tr class="separator:gab9ecb216dc9c40b0c7d370673fb9b269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a207396433681c2b760f6227a64584a"><td class="memItemLeft" align="right" valign="top"><a id="ga1a207396433681c2b760f6227a64584a"></a>
+DBUS_EXPORT void *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_server_get_data</b> (DBusServer *server, int slot)</td></tr>
+<tr class="separator:ga1a207396433681c2b760f6227a64584a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Gedetailleerde Beschrijving</h2>
+<h2 class="groupheader">Documentatie van typedefs</h2>
+<a id="gaf32eebe096bf1d0771cc3fd1d18718c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf32eebe096bf1d0771cc3fd1d18718c3">&#9670;&nbsp;</a></span>DBusNewConnectionFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* DBusNewConnectionFunction) (DBusServer *server, <a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *new_connection, void *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called when a new connection to the server is available. Must reference and save the new connection, or close the new connection. Set with dbus_server_set_new_connection_function(). </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -68,7 +68,23 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
-1. Code Formatting</h1>
+Inhoudsopgave</h1>
+<ul>
+<li><a href="#development-guidelines">Development Guidelines</a><ul>
+<li><a href="#inhoudsopgave">Inhoudsopgave</a></li>
+<li><a href="#code-formatting">Code Formatting</a></li>
+<li><a href="#bestandsstructuur">Bestandsstructuur</a></li>
+<li><a href="#commentaar">Commentaar</a></li>
+<li><a href="#cmake-bestanden">CMake-bestanden</a></li>
+<li><a href="#bouwproces">Bouwproces</a></li>
+<li><a href="#git-en-versiebeheer">Git en Versiebeheer</a></li>
+<li><a href="#code-reviews">Code Reviews</a></li>
+<li><a href="#documentatie">Documentatie</a></li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Code Formatting</h1>
 <p>Gebruik de Clang Formatter om code te formatteren volgens de <code>C++ Coding Style Guide</code> van <code>LLVM</code>. Hier zijn enkele basisregels:</p>
 <ul>
 <li>Gebruik 4 spaties voor inspringing (geen tabbladen).</li>
@@ -80,16 +96,16 @@ $(function() {
 </ul>
 <p>Voor meer informatie, zie <a href="https://llvm.org/docs/CodingStandards.html">LLVM Coding Standards</a>.</p>
 <p>Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code te formatteren. Voor Visual Studio Code is er bijvoorbeeld de <a href="https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd">clangd</a> extensie.</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
-2. Bestandsstructuur</h1>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Bestandsstructuur</h1>
 <ul>
 <li>Organiseer bronbestanden in duidelijke mappen met beschrijvende namen (bijv. <code>src/</code>, <code>include/</code>, <code>tests/</code>).</li>
-<li>Houd headerbestanden (<code>.h</code> of <code>.hpp</code>) en implementatiebestanden (<code>.cpp</code>) apart.</li>
+<li>Houd headerbestanden (<code>.hpp</code>) en implementatiebestanden (<code>.cpp</code>) apart.</li>
 <li>Plaats <code>CMakeLists.txt</code>-bestanden in de relevante mappen om de bronnen en doelen te definiëren.</li>
 <li>Voor meer informatie, zie <a href="https://cliutils.gitlab.io/modern-cmake/chapters/basics/structure.html">Modern CMake</a>.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
-3. Commentaar</h1>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Commentaar</h1>
 <ul>
 <li>Voeg commentaar toe om complexe of onduidelijke delen van de code uit te leggen.</li>
 <li>Voeg een licentieheader bovenaan elk bronbestand toe om auteursrecht en licentie-informatie te vermelden.</li>
@@ -113,24 +129,25 @@ $(function() {
 <div class="line"> * @file</div>
 <div class="line"> * @brief This file contains the implementation of the Foo class.</div>
 <div class="line"> */</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
-4. CMake-bestanden</h1>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
+CMake-bestanden</h1>
 <ul>
 <li>Organiseer CMake-bestanden duidelijk in de projectmap.</li>
 <li>Gebruik een hoofd-<code>CMakeLists.txt</code>-bestand in de hoofdmap om het project te configureren en submappen toe te voegen.</li>
 <li>Gebruik afzonderlijke <code>CMakeLists.txt</code>-bestanden in submappen om doelen en afhankelijkheden te definiëren.</li>
 <li>Maak gebruik van CMake-variabelen om configuratieopties te beheren (bijv. compilerflags, versie-informatie).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md5"></a>
-5. Bouwproces</h1>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Bouwproces</h1>
 <ul>
 <li>Gebruik CMake om het buildproces te automatiseren. Definieer targets en afhankelijkheden in <code>CMakeLists.txt</code>-bestanden.</li>
+<li>Gebruik vcpkg met het <a href="vcpkg.json">vcpkg.json</a> manifest om afhankelijkheden te beheren.</li>
 <li>Zorg ervoor dat uw project zonder problemen kan worden gebouwd met behulp van het cmake- en make-commando.</li>
 <li>Voeg testdoelen toe om unit tests uit te voeren.</li>
 <li>Maak gebruik van Continuous Integration (CI) om automatische builds en tests te garanderen.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md6"></a>
-6. Git en Versiebeheer</h1>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Git en Versiebeheer</h1>
 <ul>
 <li>Gebruik Git voor versiebeheer en houd een <b>consistente</b> en <b>betekenisvolle</b> commitgeschiedenis bij.</li>
 <li>Gebruik branches voor nieuwe functies en bugfixes en voeg deze samen via pull requests.</li>
@@ -146,14 +163,14 @@ $(function() {
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md7"></a>
-7. Code Reviews</h1>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Code Reviews</h1>
 <ul>
 <li>Voer regelmatig code reviews uit om codekwaliteit en naleving van de richtlijnen te waarborgen.</li>
 <li>Moedig feedback aan en wees bereid om wijzigingen aan te brengen op basis van suggesties.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md8"></a>
-8. Documentatie</h1>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Documentatie</h1>
 <ul>
 <li>Voeg doelmatige documentatie toe aan de code en gebruik <code>doxygen</code> om documentatie te genereren.</li>
 <li>Documenteer <b>functies</b>, <b>klassen</b> en <b>complexe algoritmen</b>. </li>

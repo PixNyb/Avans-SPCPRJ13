@@ -1,0 +1,23 @@
+<map id="FT_COLR_Paint_" name="FT_COLR_Paint_">
+<area shape="rect" id="node1" title=" " alt="" coords="975,407,1100,433"/>
+<area shape="rect" id="node2" href="$structFT__PaintColrGlyph__.html" title=" " alt="" coords="654,76,801,103"/>
+<area shape="rect" id="node3" href="$structFT__PaintRadialGradient__.html" title=" " alt="" coords="637,204,817,231"/>
+<area shape="rect" id="node4" href="$structFT__Vector__.html" title=" " alt="" coords="367,55,459,81"/>
+<area shape="rect" id="node7" href="$structFT__PaintLinearGradient__.html" title=" " alt="" coords="638,255,817,281"/>
+<area shape="rect" id="node14" href="$structFT__PaintSweepGradient__.html" title=" " alt="" coords="636,127,819,153"/>
+<area shape="rect" id="node5" href="$structFT__ColorLine__.html" title=" " alt="" coords="357,220,469,247"/>
+<area shape="rect" id="node6" href="$structFT__ColorStopIterator__.html" title=" " alt="" coords="5,220,168,247"/>
+<area shape="rect" id="node8" href="$structFT__PaintTranslate__.html" title=" " alt="" coords="656,609,799,636"/>
+<area shape="rect" id="node9" href="$structFT__Opaque__Paint__.html" title=" " alt="" coords="343,507,483,533"/>
+<area shape="rect" id="node12" href="$structFT__PaintComposite__.html" title=" " alt="" coords="651,407,804,433"/>
+<area shape="rect" id="node13" href="$structFT__PaintSkew__.html" title=" " alt="" coords="669,457,786,484"/>
+<area shape="rect" id="node15" href="$structFT__PaintTransform__.html" title=" " alt="" coords="653,660,801,687"/>
+<area shape="rect" id="node17" href="$structFT__PaintScale__.html" title=" " alt="" coords="668,356,787,383"/>
+<area shape="rect" id="node18" href="$structFT__PaintGlyph__.html" title=" " alt="" coords="667,508,788,535"/>
+<area shape="rect" id="node19" href="$structFT__PaintRotate__.html" title=" " alt="" coords="664,559,791,585"/>
+<area shape="rect" id="node10" href="$structFT__PaintColrLayers__.html" title=" " alt="" coords="651,305,803,332"/>
+<area shape="rect" id="node11" href="$structFT__LayerIterator__.html" title=" " alt="" coords="345,311,480,337"/>
+<area shape="rect" id="node16" href="$structFT__Affine__23__.html" title=" " alt="" coords="357,688,469,715"/>
+<area shape="rect" id="node20" href="$structFT__PaintSolid__.html" title=" " alt="" coords="670,724,785,751"/>
+<area shape="rect" id="node21" href="$structFT__ColorIndex__.html" title=" " alt="" coords="352,739,473,765"/>
+</map>

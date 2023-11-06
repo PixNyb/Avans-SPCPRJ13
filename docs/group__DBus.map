@@ -1,0 +1,7 @@
+<map id="D&#45;Bus low&#45;level public API" name="D&#45;Bus low&#45;level public API">
+<area shape="rect" id="node1" href="$group__DBusProtocol.html" title="Defines constants which are part of the D&#45;Bus protocol." alt="" coords="245,5,388,31"/>
+<area shape="rect" id="node2" href="$group__DBusShared.html" title="Shared header included by both libdbus and C/C++ bindings such as the GLib bindings." alt="" coords="249,55,384,80"/>
+<area shape="rect" id="node3" title="The low&#45;level public API of the D&#45;Bus library." alt="" coords="5,80,197,105"/>
+<area shape="rect" id="node4" href="$group__DBusMacros.html" title="TRUE, FALSE, NULL, and so on" alt="" coords="259,104,374,129"/>
+<area shape="rect" id="node5" href="$group__DBusTypes.html" title="dbus_bool_t, dbus_int32_t, etc." alt="" coords="268,153,365,179"/>
+</map>

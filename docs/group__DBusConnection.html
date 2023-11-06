@@ -1,0 +1,668 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DeFunBobEngine: DBusConnection</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DeFunBobEngine
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Een simpele 2D game engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Klassen</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumeraties</a> &#124;
+<a href="#func-members">Functies</a>  </div>
+  <div class="headertitle">
+<div class="title">DBusConnection</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Klassen</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDBusObjectPathVTable.html">DBusObjectPathVTable</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gae2725c803bf1747fe8524a84383ae911"><td class="memItemLeft" align="right" valign="top"><a id="gae2725c803bf1747fe8524a84383ae911"></a>
+typedef struct DBusWatch&#160;</td><td class="memItemRight" valign="bottom"><b>DBusWatch</b></td></tr>
+<tr class="separator:gae2725c803bf1747fe8524a84383ae911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee36600f1d7a916cb981c4cf6195de0a"><td class="memItemLeft" align="right" valign="top"><a id="gaee36600f1d7a916cb981c4cf6195de0a"></a>
+typedef struct DBusTimeout&#160;</td><td class="memItemRight" valign="bottom"><b>DBusTimeout</b></td></tr>
+<tr class="separator:gaee36600f1d7a916cb981c4cf6195de0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaadc8a802cfffb0719d394609d9cd2186"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="group__DBusConnection.html#gaadc8a802cfffb0719d394609d9cd2186">DBusPreallocatedSend</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#gaadc8a802cfffb0719d394609d9cd2186">DBusPreallocatedSend</a></td></tr>
+<tr class="separator:gaadc8a802cfffb0719d394609d9cd2186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2d0684d2edd8174819af46060fbf38f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="group__DBusConnection.html#gaf2d0684d2edd8174819af46060fbf38f">DBusPendingCall</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#gaf2d0684d2edd8174819af46060fbf38f">DBusPendingCall</a></td></tr>
+<tr class="separator:gaf2d0684d2edd8174819af46060fbf38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga168c25556d88c296ebc64f1d7b20f699"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a></td></tr>
+<tr class="separator:ga168c25556d88c296ebc64f1d7b20f699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4dd10016d1f17d1a2fbf0ad913c90427"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structDBusObjectPathVTable.html">DBusObjectPathVTable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#ga4dd10016d1f17d1a2fbf0ad913c90427">DBusObjectPathVTable</a></td></tr>
+<tr class="separator:ga4dd10016d1f17d1a2fbf0ad913c90427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga632c59364661602111278efd6a10d3aa"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#ga632c59364661602111278efd6a10d3aa">DBusAddWatchFunction</a>) (DBusWatch *watch, void *data)</td></tr>
+<tr class="separator:ga632c59364661602111278efd6a10d3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08cb6a64fbd538ac30a8dd00ba19cd95"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#ga08cb6a64fbd538ac30a8dd00ba19cd95">DBusWatchToggledFunction</a>) (DBusWatch *watch, void *data)</td></tr>
+<tr class="separator:ga08cb6a64fbd538ac30a8dd00ba19cd95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab99c5eeb90a30ec49cc2bdbb2e965b75"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#gab99c5eeb90a30ec49cc2bdbb2e965b75">DBusRemoveWatchFunction</a>) (DBusWatch *watch, void *data)</td></tr>
+<tr class="separator:gab99c5eeb90a30ec49cc2bdbb2e965b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7fad164617baf483b39f3e3ea1c30a40"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#ga7fad164617baf483b39f3e3ea1c30a40">DBusAddTimeoutFunction</a>) (DBusTimeout *timeout, void *data)</td></tr>
+<tr class="separator:ga7fad164617baf483b39f3e3ea1c30a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65ee05019d4ee6d7c665ec829cd4414a"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#ga65ee05019d4ee6d7c665ec829cd4414a">DBusTimeoutToggledFunction</a>) (DBusTimeout *timeout, void *data)</td></tr>
+<tr class="separator:ga65ee05019d4ee6d7c665ec829cd4414a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed317fe6f12e65586a50e1d1d2ea96b7"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#gaed317fe6f12e65586a50e1d1d2ea96b7">DBusRemoveTimeoutFunction</a>) (DBusTimeout *timeout, void *data)</td></tr>
+<tr class="separator:gaed317fe6f12e65586a50e1d1d2ea96b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ce642a7bea6a14e030255dcfb25c8bd"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#ga3ce642a7bea6a14e030255dcfb25c8bd">DBusDispatchStatusFunction</a>) (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusConnection.html#gabf250a32ff740b2a8c99136e0142d8d2">DBusDispatchStatus</a> new_status, void *data)</td></tr>
+<tr class="separator:ga3ce642a7bea6a14e030255dcfb25c8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadbcbd64b9c8b0d40cf3f884e2ee2528c"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#gadbcbd64b9c8b0d40cf3f884e2ee2528c">DBusWakeupMainFunction</a>) (void *data)</td></tr>
+<tr class="separator:gadbcbd64b9c8b0d40cf3f884e2ee2528c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe3c6a8f883cd280c58779080cef234c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#gabe3c6a8f883cd280c58779080cef234c">DBusAllowUnixUserFunction</a>) (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, unsigned long uid, void *data)</td></tr>
+<tr class="separator:gabe3c6a8f883cd280c58779080cef234c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae92d8ad407e216c6b5c67c7efbf949dd"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#gae92d8ad407e216c6b5c67c7efbf949dd">DBusAllowWindowsUserFunction</a>) (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, const char *user_sid, void *data)</td></tr>
+<tr class="separator:gae92d8ad407e216c6b5c67c7efbf949dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8209089764f3df09ec6523a24983375d"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#ga8209089764f3df09ec6523a24983375d">DBusPendingCallNotifyFunction</a>) (<a class="el" href="group__DBusConnection.html#gaf2d0684d2edd8174819af46060fbf38f">DBusPendingCall</a> *pending, void *user_data)</td></tr>
+<tr class="separator:ga8209089764f3df09ec6523a24983375d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d7721ab952bd87d9a84f26d61709ad6"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__DBusShared.html#ga8244b29230187624c24986c24edab1de">DBusHandlerResult</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#ga5d7721ab952bd87d9a84f26d61709ad6">DBusHandleMessageFunction</a>) (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, DBusMessage *message, void *user_data)</td></tr>
+<tr class="separator:ga5d7721ab952bd87d9a84f26d61709ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga631a3290b2921ca4c45e1a34917eee36"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#ga631a3290b2921ca4c45e1a34917eee36">DBusObjectPathUnregisterFunction</a>) (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, void *user_data)</td></tr>
+<tr class="separator:ga631a3290b2921ca4c45e1a34917eee36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2cc66a1b9aa29d76e99b2fedfaf97126"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__DBusShared.html#ga8244b29230187624c24986c24edab1de">DBusHandlerResult</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#ga2cc66a1b9aa29d76e99b2fedfaf97126">DBusObjectPathMessageFunction</a>) (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, DBusMessage *message, void *user_data)</td></tr>
+<tr class="separator:ga2cc66a1b9aa29d76e99b2fedfaf97126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumeraties</h2></td></tr>
+<tr class="memitem:ga0556779e61aeb19eb9cf6b6466bd1b98"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#ga0556779e61aeb19eb9cf6b6466bd1b98">DBusWatchFlags</a> { <a class="el" href="group__DBusConnection.html#gga0556779e61aeb19eb9cf6b6466bd1b98a178bd7a88e9bfbb8505db76eb7e0ccc4">DBUS_WATCH_READABLE</a> = 1 &lt;&lt; 0
+, <a class="el" href="group__DBusConnection.html#gga0556779e61aeb19eb9cf6b6466bd1b98a62ddca29b06bfbbc08bb7f3dfd3d307f">DBUS_WATCH_WRITABLE</a> = 1 &lt;&lt; 1
+, <a class="el" href="group__DBusConnection.html#gga0556779e61aeb19eb9cf6b6466bd1b98ab1474e26aa5be3d2876dd86bbe452156">DBUS_WATCH_ERROR</a> = 1 &lt;&lt; 2
+, <a class="el" href="group__DBusConnection.html#gga0556779e61aeb19eb9cf6b6466bd1b98a7a361a1a03f463c3c9e57f7368a0bfe4">DBUS_WATCH_HANGUP</a> = 1 &lt;&lt; 3
+ }</td></tr>
+<tr class="separator:ga0556779e61aeb19eb9cf6b6466bd1b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf250a32ff740b2a8c99136e0142d8d2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DBusConnection.html#gabf250a32ff740b2a8c99136e0142d8d2">DBusDispatchStatus</a> { <a class="el" href="group__DBusConnection.html#ggabf250a32ff740b2a8c99136e0142d8d2adf8e8a594ab338cb9cf7855b19e37e93">DBUS_DISPATCH_DATA_REMAINS</a>
+, <a class="el" href="group__DBusConnection.html#ggabf250a32ff740b2a8c99136e0142d8d2acb9bb9daa90f520d5fc9e84de3c5f017">DBUS_DISPATCH_COMPLETE</a>
+, <a class="el" href="group__DBusConnection.html#ggabf250a32ff740b2a8c99136e0142d8d2a5af20a035f29cfa67fb8d69fb693b685">DBUS_DISPATCH_NEED_MEMORY</a>
+ }</td></tr>
+<tr class="separator:gabf250a32ff740b2a8c99136e0142d8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functies</h2></td></tr>
+<tr class="memitem:gac49ada798af3e258b6f905601fc5b99e"><td class="memItemLeft" align="right" valign="top"><a id="gac49ada798af3e258b6f905601fc5b99e"></a>
+DBUS_EXPORT <a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_open</b> (const char *address, <a class="el" href="structDBusError.html">DBusError</a> *error)</td></tr>
+<tr class="separator:gac49ada798af3e258b6f905601fc5b99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3a4549adf46fd1f05f9a76dd1b426223"><td class="memItemLeft" align="right" valign="top"><a id="ga3a4549adf46fd1f05f9a76dd1b426223"></a>
+DBUS_EXPORT <a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_open_private</b> (const char *address, <a class="el" href="structDBusError.html">DBusError</a> *error)</td></tr>
+<tr class="separator:ga3a4549adf46fd1f05f9a76dd1b426223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab73006f13394a92d586fa095eacbeb1d"><td class="memItemLeft" align="right" valign="top"><a id="gab73006f13394a92d586fa095eacbeb1d"></a>
+DBUS_EXPORT <a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_ref</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:gab73006f13394a92d586fa095eacbeb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6385ff09bc108238c4429e7c195dab25"><td class="memItemLeft" align="right" valign="top"><a id="ga6385ff09bc108238c4429e7c195dab25"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_unref</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga6385ff09bc108238c4429e7c195dab25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2522ac5075dfe0a1535471f6e045e1ee"><td class="memItemLeft" align="right" valign="top"><a id="ga2522ac5075dfe0a1535471f6e045e1ee"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_close</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga2522ac5075dfe0a1535471f6e045e1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga611ae94556af36fe30bfb547366ca4e1"><td class="memItemLeft" align="right" valign="top"><a id="ga611ae94556af36fe30bfb547366ca4e1"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_is_connected</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga611ae94556af36fe30bfb547366ca4e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f1fa02c9897b6f07f4d33c862de4a1d"><td class="memItemLeft" align="right" valign="top"><a id="ga2f1fa02c9897b6f07f4d33c862de4a1d"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_is_authenticated</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga2f1fa02c9897b6f07f4d33c862de4a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa6c5d523e16d8a5b9316c92d9ff1ac17"><td class="memItemLeft" align="right" valign="top"><a id="gaa6c5d523e16d8a5b9316c92d9ff1ac17"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_is_anonymous</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:gaa6c5d523e16d8a5b9316c92d9ff1ac17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab6be7ea216350ba12818c0cf57f90462"><td class="memItemLeft" align="right" valign="top"><a id="gab6be7ea216350ba12818c0cf57f90462"></a>
+DBUS_EXPORT char *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_server_id</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:gab6be7ea216350ba12818c0cf57f90462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e41509b3afdbc22872bacc5754e85c2"><td class="memItemLeft" align="right" valign="top"><a id="ga3e41509b3afdbc22872bacc5754e85c2"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_can_send_type</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, int type)</td></tr>
+<tr class="separator:ga3e41509b3afdbc22872bacc5754e85c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga19091beb74f1504b0e862a7ad10e71cd"><td class="memItemLeft" align="right" valign="top"><a id="ga19091beb74f1504b0e862a7ad10e71cd"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_exit_on_disconnect</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a> exit_on_disconnect)</td></tr>
+<tr class="separator:ga19091beb74f1504b0e862a7ad10e71cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10e68d9d2f41d655a4151ddeb807ff54"><td class="memItemLeft" align="right" valign="top"><a id="ga10e68d9d2f41d655a4151ddeb807ff54"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_flush</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga10e68d9d2f41d655a4151ddeb807ff54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga580d8766c23fe5f49418bc7d87b67dc6"><td class="memItemLeft" align="right" valign="top"><a id="ga580d8766c23fe5f49418bc7d87b67dc6"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_read_write_dispatch</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, int timeout_milliseconds)</td></tr>
+<tr class="separator:ga580d8766c23fe5f49418bc7d87b67dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga371163b4955a6e0bf0f1f70f38390c14"><td class="memItemLeft" align="right" valign="top"><a id="ga371163b4955a6e0bf0f1f70f38390c14"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_read_write</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, int timeout_milliseconds)</td></tr>
+<tr class="separator:ga371163b4955a6e0bf0f1f70f38390c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8fb28e491fd96a597c4612541c4c2064"><td class="memItemLeft" align="right" valign="top"><a id="ga8fb28e491fd96a597c4612541c4c2064"></a>
+DBUS_EXPORT DBusMessage *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_borrow_message</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga8fb28e491fd96a597c4612541c4c2064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0586da03a01c9c6f332fbea900ef55e3"><td class="memItemLeft" align="right" valign="top"><a id="ga0586da03a01c9c6f332fbea900ef55e3"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_return_message</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, DBusMessage *message)</td></tr>
+<tr class="separator:ga0586da03a01c9c6f332fbea900ef55e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7125d747575b2f596aceaf7be53eae68"><td class="memItemLeft" align="right" valign="top"><a id="ga7125d747575b2f596aceaf7be53eae68"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_steal_borrowed_message</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, DBusMessage *message)</td></tr>
+<tr class="separator:ga7125d747575b2f596aceaf7be53eae68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa6e8528af2f54864e236d87acebcfdaa"><td class="memItemLeft" align="right" valign="top"><a id="gaa6e8528af2f54864e236d87acebcfdaa"></a>
+DBUS_EXPORT DBusMessage *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_pop_message</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:gaa6e8528af2f54864e236d87acebcfdaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga893d18d8b36ffb371f16d13645071289"><td class="memItemLeft" align="right" valign="top"><a id="ga893d18d8b36ffb371f16d13645071289"></a>
+DBUS_EXPORT <a class="el" href="group__DBusConnection.html#gabf250a32ff740b2a8c99136e0142d8d2">DBusDispatchStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_dispatch_status</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga893d18d8b36ffb371f16d13645071289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66ba7df50d75f4bda6b6e942430b81c7"><td class="memItemLeft" align="right" valign="top"><a id="ga66ba7df50d75f4bda6b6e942430b81c7"></a>
+DBUS_EXPORT <a class="el" href="group__DBusConnection.html#gabf250a32ff740b2a8c99136e0142d8d2">DBusDispatchStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_dispatch</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga66ba7df50d75f4bda6b6e942430b81c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac40563ec4c0e309d936daf3163ba9bb7"><td class="memItemLeft" align="right" valign="top"><a id="gac40563ec4c0e309d936daf3163ba9bb7"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_has_messages_to_send</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:gac40563ec4c0e309d936daf3163ba9bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f715006be056feaf159b6a956bd9025"><td class="memItemLeft" align="right" valign="top"><a id="ga4f715006be056feaf159b6a956bd9025"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_send</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, DBusMessage *message, <a class="el" href="group__DBusTypes.html#gaf513803b030613a669cc7ef199f90a8b">dbus_uint32_t</a> *client_serial)</td></tr>
+<tr class="separator:ga4f715006be056feaf159b6a956bd9025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa215df7ab7ca6dce7be153c6b9cc80ba"><td class="memItemLeft" align="right" valign="top"><a id="gaa215df7ab7ca6dce7be153c6b9cc80ba"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_send_with_reply</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, DBusMessage *message, <a class="el" href="group__DBusConnection.html#gaf2d0684d2edd8174819af46060fbf38f">DBusPendingCall</a> **pending_return, int timeout_milliseconds)</td></tr>
+<tr class="separator:gaa215df7ab7ca6dce7be153c6b9cc80ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga729ab274c29afc12eb7520650a3c47e2"><td class="memItemLeft" align="right" valign="top"><a id="ga729ab274c29afc12eb7520650a3c47e2"></a>
+DBUS_EXPORT DBusMessage *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_send_with_reply_and_block</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, DBusMessage *message, int timeout_milliseconds, <a class="el" href="structDBusError.html">DBusError</a> *error)</td></tr>
+<tr class="separator:ga729ab274c29afc12eb7520650a3c47e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaebf031eb444b4f847606aa27daa3d8e6"><td class="memItemLeft" align="right" valign="top"><a id="gaebf031eb444b4f847606aa27daa3d8e6"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_watch_functions</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusConnection.html#ga632c59364661602111278efd6a10d3aa">DBusAddWatchFunction</a> add_function, <a class="el" href="group__DBusConnection.html#gab99c5eeb90a30ec49cc2bdbb2e965b75">DBusRemoveWatchFunction</a> remove_function, <a class="el" href="group__DBusConnection.html#ga08cb6a64fbd538ac30a8dd00ba19cd95">DBusWatchToggledFunction</a> toggled_function, void *data, DBusFreeFunction free_data_function)</td></tr>
+<tr class="separator:gaebf031eb444b4f847606aa27daa3d8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab3cbc68eec427e9ce1783b25d44fe93c"><td class="memItemLeft" align="right" valign="top"><a id="gab3cbc68eec427e9ce1783b25d44fe93c"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_timeout_functions</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusConnection.html#ga7fad164617baf483b39f3e3ea1c30a40">DBusAddTimeoutFunction</a> add_function, <a class="el" href="group__DBusConnection.html#gaed317fe6f12e65586a50e1d1d2ea96b7">DBusRemoveTimeoutFunction</a> remove_function, <a class="el" href="group__DBusConnection.html#ga65ee05019d4ee6d7c665ec829cd4414a">DBusTimeoutToggledFunction</a> toggled_function, void *data, DBusFreeFunction free_data_function)</td></tr>
+<tr class="separator:gab3cbc68eec427e9ce1783b25d44fe93c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b1df13251c7ec348bcba39c0924e881"><td class="memItemLeft" align="right" valign="top"><a id="ga2b1df13251c7ec348bcba39c0924e881"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_wakeup_main_function</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusConnection.html#gadbcbd64b9c8b0d40cf3f884e2ee2528c">DBusWakeupMainFunction</a> wakeup_main_function, void *data, DBusFreeFunction free_data_function)</td></tr>
+<tr class="separator:ga2b1df13251c7ec348bcba39c0924e881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55ff88cd22c0672441c7deffbfb68fbf"><td class="memItemLeft" align="right" valign="top"><a id="ga55ff88cd22c0672441c7deffbfb68fbf"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_dispatch_status_function</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusConnection.html#ga3ce642a7bea6a14e030255dcfb25c8bd">DBusDispatchStatusFunction</a> function, void *data, DBusFreeFunction free_data_function)</td></tr>
+<tr class="separator:ga55ff88cd22c0672441c7deffbfb68fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef670c3a8170ab9c719ec955252459d0"><td class="memItemLeft" align="right" valign="top"><a id="gaef670c3a8170ab9c719ec955252459d0"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_unix_user</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, unsigned long *uid)</td></tr>
+<tr class="separator:gaef670c3a8170ab9c719ec955252459d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeebeadcafa87e2d30eed4296f26fb73c"><td class="memItemLeft" align="right" valign="top"><a id="gaeebeadcafa87e2d30eed4296f26fb73c"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_unix_process_id</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, unsigned long *pid)</td></tr>
+<tr class="separator:gaeebeadcafa87e2d30eed4296f26fb73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga969b9dafe806c9fe0a54c9d8a565c2e1"><td class="memItemLeft" align="right" valign="top"><a id="ga969b9dafe806c9fe0a54c9d8a565c2e1"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_adt_audit_session_data</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, void **data, <a class="el" href="group__DBusTypes.html#gab18afa60e9b17b6e322735bda3d863d8">dbus_int32_t</a> *data_size)</td></tr>
+<tr class="separator:ga969b9dafe806c9fe0a54c9d8a565c2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b78379badb4c5804344f4f3d87a958a"><td class="memItemLeft" align="right" valign="top"><a id="ga6b78379badb4c5804344f4f3d87a958a"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_unix_user_function</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusConnection.html#gabe3c6a8f883cd280c58779080cef234c">DBusAllowUnixUserFunction</a> function, void *data, DBusFreeFunction free_data_function)</td></tr>
+<tr class="separator:ga6b78379badb4c5804344f4f3d87a958a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b3cb488f1922aeecdeafdcb110e91a8"><td class="memItemLeft" align="right" valign="top"><a id="ga2b3cb488f1922aeecdeafdcb110e91a8"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_windows_user</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, char **windows_sid_p)</td></tr>
+<tr class="separator:ga2b3cb488f1922aeecdeafdcb110e91a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa35ced9ccd29d3366749ae383b120f9c"><td class="memItemLeft" align="right" valign="top"><a id="gaa35ced9ccd29d3366749ae383b120f9c"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_windows_user_function</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusConnection.html#gae92d8ad407e216c6b5c67c7efbf949dd">DBusAllowWindowsUserFunction</a> function, void *data, DBusFreeFunction free_data_function)</td></tr>
+<tr class="separator:gaa35ced9ccd29d3366749ae383b120f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade349ff04ed548993a8054250e317c12"><td class="memItemLeft" align="right" valign="top"><a id="gade349ff04ed548993a8054250e317c12"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_allow_anonymous</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a> value)</td></tr>
+<tr class="separator:gade349ff04ed548993a8054250e317c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae57ce610b7e88e917b7b2985c9cf32cc"><td class="memItemLeft" align="right" valign="top"><a id="gae57ce610b7e88e917b7b2985c9cf32cc"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_builtin_filters_enabled</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a> value)</td></tr>
+<tr class="separator:gae57ce610b7e88e917b7b2985c9cf32cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf58e8cc7b8717db1581459c0c3d34b08"><td class="memItemLeft" align="right" valign="top"><a id="gaf58e8cc7b8717db1581459c0c3d34b08"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_route_peer_messages</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a> value)</td></tr>
+<tr class="separator:gaf58e8cc7b8717db1581459c0c3d34b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae00f581e5487408cb294bf71826aff86"><td class="memItemLeft" align="right" valign="top"><a id="gae00f581e5487408cb294bf71826aff86"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_add_filter</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusConnection.html#ga5d7721ab952bd87d9a84f26d61709ad6">DBusHandleMessageFunction</a> function, void *user_data, DBusFreeFunction free_data_function)</td></tr>
+<tr class="separator:gae00f581e5487408cb294bf71826aff86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5e7f1dad410506a8a6f5182c55e7c4fe"><td class="memItemLeft" align="right" valign="top"><a id="ga5e7f1dad410506a8a6f5182c55e7c4fe"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_remove_filter</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusConnection.html#ga5d7721ab952bd87d9a84f26d61709ad6">DBusHandleMessageFunction</a> function, void *user_data)</td></tr>
+<tr class="separator:ga5e7f1dad410506a8a6f5182c55e7c4fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga728b15c71a492ad244e5a480f1156088"><td class="memItemLeft" align="right" valign="top"><a id="ga728b15c71a492ad244e5a480f1156088"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_allocate_data_slot</b> (<a class="el" href="group__DBusTypes.html#gab18afa60e9b17b6e322735bda3d863d8">dbus_int32_t</a> *slot_p)</td></tr>
+<tr class="separator:ga728b15c71a492ad244e5a480f1156088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7dc8c73d8c3e733f5410d52be84239a0"><td class="memItemLeft" align="right" valign="top"><a id="ga7dc8c73d8c3e733f5410d52be84239a0"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_free_data_slot</b> (<a class="el" href="group__DBusTypes.html#gab18afa60e9b17b6e322735bda3d863d8">dbus_int32_t</a> *slot_p)</td></tr>
+<tr class="separator:ga7dc8c73d8c3e733f5410d52be84239a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga845b4942399f43dd4ac644de7cb9e3ff"><td class="memItemLeft" align="right" valign="top"><a id="ga845b4942399f43dd4ac644de7cb9e3ff"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_data</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusTypes.html#gab18afa60e9b17b6e322735bda3d863d8">dbus_int32_t</a> slot, void *data, DBusFreeFunction free_data_func)</td></tr>
+<tr class="separator:ga845b4942399f43dd4ac644de7cb9e3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga267d3ef9e040cdbbe69ac1e286e943c1"><td class="memItemLeft" align="right" valign="top"><a id="ga267d3ef9e040cdbbe69ac1e286e943c1"></a>
+DBUS_EXPORT void *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_data</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusTypes.html#gab18afa60e9b17b6e322735bda3d863d8">dbus_int32_t</a> slot)</td></tr>
+<tr class="separator:ga267d3ef9e040cdbbe69ac1e286e943c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga794d0b572e30448fb262618222f76124"><td class="memItemLeft" align="right" valign="top"><a id="ga794d0b572e30448fb262618222f76124"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_change_sigpipe</b> (<a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a> will_modify_sigpipe)</td></tr>
+<tr class="separator:ga794d0b572e30448fb262618222f76124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d783462274a6c71d3767f5821c29ce9"><td class="memItemLeft" align="right" valign="top"><a id="ga0d783462274a6c71d3767f5821c29ce9"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_max_message_size</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, long size)</td></tr>
+<tr class="separator:ga0d783462274a6c71d3767f5821c29ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a459e64d7dca7b592136cec0a73422c"><td class="memItemLeft" align="right" valign="top"><a id="ga7a459e64d7dca7b592136cec0a73422c"></a>
+DBUS_EXPORT long&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_max_message_size</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga7a459e64d7dca7b592136cec0a73422c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6565d75f16e6e803372b2ae3d94d991b"><td class="memItemLeft" align="right" valign="top"><a id="ga6565d75f16e6e803372b2ae3d94d991b"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_max_received_size</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, long size)</td></tr>
+<tr class="separator:ga6565d75f16e6e803372b2ae3d94d991b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga376529acf41d1d34b4f46c0d9d515c85"><td class="memItemLeft" align="right" valign="top"><a id="ga376529acf41d1d34b4f46c0d9d515c85"></a>
+DBUS_EXPORT long&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_max_received_size</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga376529acf41d1d34b4f46c0d9d515c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2aadce7d15c0e11983363912292b3fcd"><td class="memItemLeft" align="right" valign="top"><a id="ga2aadce7d15c0e11983363912292b3fcd"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_max_message_unix_fds</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, long n)</td></tr>
+<tr class="separator:ga2aadce7d15c0e11983363912292b3fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga18abaca9a512dbb7b6f921c3df6875d9"><td class="memItemLeft" align="right" valign="top"><a id="ga18abaca9a512dbb7b6f921c3df6875d9"></a>
+DBUS_EXPORT long&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_max_message_unix_fds</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga18abaca9a512dbb7b6f921c3df6875d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga81e63dc6d9298e8a7f92c0d93d0e80b3"><td class="memItemLeft" align="right" valign="top"><a id="ga81e63dc6d9298e8a7f92c0d93d0e80b3"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_set_max_received_unix_fds</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, long n)</td></tr>
+<tr class="separator:ga81e63dc6d9298e8a7f92c0d93d0e80b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga219f31132338616f82dc975c070ff418"><td class="memItemLeft" align="right" valign="top"><a id="ga219f31132338616f82dc975c070ff418"></a>
+DBUS_EXPORT long&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_max_received_unix_fds</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga219f31132338616f82dc975c070ff418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga47aff801f586e7116f9c54532bb1baf9"><td class="memItemLeft" align="right" valign="top"><a id="ga47aff801f586e7116f9c54532bb1baf9"></a>
+DBUS_EXPORT long&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_outgoing_size</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga47aff801f586e7116f9c54532bb1baf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad218838fdaa8d36c606723c63e96f453"><td class="memItemLeft" align="right" valign="top"><a id="gad218838fdaa8d36c606723c63e96f453"></a>
+DBUS_EXPORT long&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_outgoing_unix_fds</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:gad218838fdaa8d36c606723c63e96f453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10748f83a991f51d074fc2aee6e42c4a"><td class="memItemLeft" align="right" valign="top"><a id="ga10748f83a991f51d074fc2aee6e42c4a"></a>
+DBUS_EXPORT <a class="el" href="group__DBusConnection.html#gaadc8a802cfffb0719d394609d9cd2186">DBusPreallocatedSend</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_preallocate_send</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection)</td></tr>
+<tr class="separator:ga10748f83a991f51d074fc2aee6e42c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad0ea06307b418616711131ea7bdae8ac"><td class="memItemLeft" align="right" valign="top"><a id="gad0ea06307b418616711131ea7bdae8ac"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_free_preallocated_send</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusConnection.html#gaadc8a802cfffb0719d394609d9cd2186">DBusPreallocatedSend</a> *preallocated)</td></tr>
+<tr class="separator:gad0ea06307b418616711131ea7bdae8ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2fea5f972d1bfe7bcde8c0ec65ca9e90"><td class="memItemLeft" align="right" valign="top"><a id="ga2fea5f972d1bfe7bcde8c0ec65ca9e90"></a>
+DBUS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_send_preallocated</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusConnection.html#gaadc8a802cfffb0719d394609d9cd2186">DBusPreallocatedSend</a> *preallocated, DBusMessage *message, <a class="el" href="group__DBusTypes.html#gaf513803b030613a669cc7ef199f90a8b">dbus_uint32_t</a> *client_serial)</td></tr>
+<tr class="separator:ga2fea5f972d1bfe7bcde8c0ec65ca9e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga708b1e108feed18f5775ff404c9dda4b"><td class="memItemLeft" align="right" valign="top"><a id="ga708b1e108feed18f5775ff404c9dda4b"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_try_register_object_path</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, const char *path, const <a class="el" href="structDBusObjectPathVTable.html">DBusObjectPathVTable</a> *vtable, void *user_data, <a class="el" href="structDBusError.html">DBusError</a> *error)</td></tr>
+<tr class="separator:ga708b1e108feed18f5775ff404c9dda4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24730ca6fd2e9132873962a32df7628c"><td class="memItemLeft" align="right" valign="top"><a id="ga24730ca6fd2e9132873962a32df7628c"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_register_object_path</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, const char *path, const <a class="el" href="structDBusObjectPathVTable.html">DBusObjectPathVTable</a> *vtable, void *user_data)</td></tr>
+<tr class="separator:ga24730ca6fd2e9132873962a32df7628c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e9d2d4ff17c3071124e4993d1536ed4"><td class="memItemLeft" align="right" valign="top"><a id="ga8e9d2d4ff17c3071124e4993d1536ed4"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_try_register_fallback</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, const char *path, const <a class="el" href="structDBusObjectPathVTable.html">DBusObjectPathVTable</a> *vtable, void *user_data, <a class="el" href="structDBusError.html">DBusError</a> *error)</td></tr>
+<tr class="separator:ga8e9d2d4ff17c3071124e4993d1536ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4473b37bfa74ccf7459959d27e7bc59"><td class="memItemLeft" align="right" valign="top"><a id="gac4473b37bfa74ccf7459959d27e7bc59"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_register_fallback</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, const char *path, const <a class="el" href="structDBusObjectPathVTable.html">DBusObjectPathVTable</a> *vtable, void *user_data)</td></tr>
+<tr class="separator:gac4473b37bfa74ccf7459959d27e7bc59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ae8f005dedf24c5f2df1768795392fb"><td class="memItemLeft" align="right" valign="top"><a id="ga6ae8f005dedf24c5f2df1768795392fb"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_unregister_object_path</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, const char *path)</td></tr>
+<tr class="separator:ga6ae8f005dedf24c5f2df1768795392fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08ee6e70b74c294fe24d0f391f16db24"><td class="memItemLeft" align="right" valign="top"><a id="ga08ee6e70b74c294fe24d0f391f16db24"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_object_path_data</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, const char *path, void **data_p)</td></tr>
+<tr class="separator:ga08ee6e70b74c294fe24d0f391f16db24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e9de2067d0eed66ef73230fae8d8be2"><td class="memItemLeft" align="right" valign="top"><a id="ga3e9de2067d0eed66ef73230fae8d8be2"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_list_registered</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, const char *parent_path, char ***child_entries)</td></tr>
+<tr class="separator:ga3e9de2067d0eed66ef73230fae8d8be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga38297f511f4124accdfa68c321e081cc"><td class="memItemLeft" align="right" valign="top"><a id="ga38297f511f4124accdfa68c321e081cc"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_unix_fd</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, int *fd)</td></tr>
+<tr class="separator:ga38297f511f4124accdfa68c321e081cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c14590d77b148390bde9e82a7544434"><td class="memItemLeft" align="right" valign="top"><a id="ga1c14590d77b148390bde9e82a7544434"></a>
+DBUS_EXPORT <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dbus_connection_get_socket</b> (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, int *fd)</td></tr>
+<tr class="separator:ga1c14590d77b148390bde9e82a7544434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Gedetailleerde Beschrijving</h2>
+<h2 class="groupheader">Documentatie van typedefs</h2>
+<a id="ga7fad164617baf483b39f3e3ea1c30a40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7fad164617baf483b39f3e3ea1c30a40">&#9670;&nbsp;</a></span>DBusAddTimeoutFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>(* DBusAddTimeoutFunction) (DBusTimeout *timeout, void *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called when libdbus needs a new timeout to be monitored by the main loop. Returns <a class="el" href="group__DBusMacros.html#gaa93f0eb578d23995850d61f7d61c55c1">FALSE</a> if it lacks enough memory to add the watch. Set by dbus_connection_set_timeout_functions() or dbus_server_set_timeout_functions(). </p>
+
+</div>
+</div>
+<a id="ga632c59364661602111278efd6a10d3aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga632c59364661602111278efd6a10d3aa">&#9670;&nbsp;</a></span>DBusAddWatchFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>(* DBusAddWatchFunction) (DBusWatch *watch, void *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called when libdbus needs a new watch to be monitored by the main loop. Returns <a class="el" href="group__DBusMacros.html#gaa93f0eb578d23995850d61f7d61c55c1">FALSE</a> if it lacks enough memory to add the watch. Set by dbus_connection_set_watch_functions() or dbus_server_set_watch_functions(). </p>
+
+</div>
+</div>
+<a id="gabe3c6a8f883cd280c58779080cef234c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe3c6a8f883cd280c58779080cef234c">&#9670;&nbsp;</a></span>DBusAllowUnixUserFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>(* DBusAllowUnixUserFunction) (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, unsigned long uid, void *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called during authentication to check whether the given UNIX user ID is allowed to connect, if the client tried to auth as a UNIX user ID. Normally on Windows this would never happen. Set with dbus_connection_set_unix_user_function(). </p>
+
+</div>
+</div>
+<a id="gae92d8ad407e216c6b5c67c7efbf949dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae92d8ad407e216c6b5c67c7efbf949dd">&#9670;&nbsp;</a></span>DBusAllowWindowsUserFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="group__DBusTypes.html#ga39c9cb0f3a2a8ad6f55cc4855d035349">dbus_bool_t</a>(* DBusAllowWindowsUserFunction) (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, const char *user_sid, void *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called during authentication to check whether the given Windows user ID is allowed to connect, if the client tried to auth as a Windows user ID. Normally on UNIX this would never happen. Set with dbus_connection_set_windows_user_function(). </p>
+
+</div>
+</div>
+<a id="ga168c25556d88c296ebc64f1d7b20f699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga168c25556d88c296ebc64f1d7b20f699">&#9670;&nbsp;</a></span>DBusConnection</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> <a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Opaque type representing a connection to a remote application and associated incoming/outgoing message queues. </p>
+
+</div>
+</div>
+<a id="ga3ce642a7bea6a14e030255dcfb25c8bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ce642a7bea6a14e030255dcfb25c8bd">&#9670;&nbsp;</a></span>DBusDispatchStatusFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* DBusDispatchStatusFunction) (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, <a class="el" href="group__DBusConnection.html#gabf250a32ff740b2a8c99136e0142d8d2">DBusDispatchStatus</a> new_status, void *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called when the return value of dbus_connection_get_dispatch_status() may have changed. Set with dbus_connection_set_dispatch_status_function(). </p>
+
+</div>
+</div>
+<a id="ga5d7721ab952bd87d9a84f26d61709ad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5d7721ab952bd87d9a84f26d61709ad6">&#9670;&nbsp;</a></span>DBusHandleMessageFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="group__DBusShared.html#ga8244b29230187624c24986c24edab1de">DBusHandlerResult</a>(* DBusHandleMessageFunction) (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, DBusMessage *message, void *user_data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called when a message needs to be handled. The result indicates whether or not more handlers should be run. Set with dbus_connection_add_filter(). </p>
+
+</div>
+</div>
+<a id="ga2cc66a1b9aa29d76e99b2fedfaf97126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2cc66a1b9aa29d76e99b2fedfaf97126">&#9670;&nbsp;</a></span>DBusObjectPathMessageFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="group__DBusShared.html#ga8244b29230187624c24986c24edab1de">DBusHandlerResult</a>(* DBusObjectPathMessageFunction) (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, DBusMessage *message, void *user_data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called when a message is sent to a registered object path. Found in <a class="el" href="structDBusObjectPathVTable.html">DBusObjectPathVTable</a> which is registered with dbus_connection_register_object_path() or dbus_connection_register_fallback(). </p>
+
+</div>
+</div>
+<a id="ga631a3290b2921ca4c45e1a34917eee36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga631a3290b2921ca4c45e1a34917eee36">&#9670;&nbsp;</a></span>DBusObjectPathUnregisterFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* DBusObjectPathUnregisterFunction) (<a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a> *connection, void *user_data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called when a <a class="el" href="structDBusObjectPathVTable.html">DBusObjectPathVTable</a> is unregistered (or its connection is freed). Found in <a class="el" href="structDBusObjectPathVTable.html">DBusObjectPathVTable</a>. </p>
+
+</div>
+</div>
+<a id="ga4dd10016d1f17d1a2fbf0ad913c90427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4dd10016d1f17d1a2fbf0ad913c90427">&#9670;&nbsp;</a></span>DBusObjectPathVTable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structDBusObjectPathVTable.html">DBusObjectPathVTable</a> <a class="el" href="structDBusObjectPathVTable.html">DBusObjectPathVTable</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set of functions that must be implemented to handle messages sent to a particular object path. </p>
+
+</div>
+</div>
+<a id="gaf2d0684d2edd8174819af46060fbf38f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf2d0684d2edd8174819af46060fbf38f">&#9670;&nbsp;</a></span>DBusPendingCall</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="group__DBusConnection.html#gaf2d0684d2edd8174819af46060fbf38f">DBusPendingCall</a> <a class="el" href="group__DBusConnection.html#gaf2d0684d2edd8174819af46060fbf38f">DBusPendingCall</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Opaque type representing a method call that has not yet received a reply. </p>
+
+</div>
+</div>
+<a id="ga8209089764f3df09ec6523a24983375d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8209089764f3df09ec6523a24983375d">&#9670;&nbsp;</a></span>DBusPendingCallNotifyFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* DBusPendingCallNotifyFunction) (<a class="el" href="group__DBusConnection.html#gaf2d0684d2edd8174819af46060fbf38f">DBusPendingCall</a> *pending, void *user_data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called when a pending call now has a reply available. Set with dbus_pending_call_set_notify(). </p>
+
+</div>
+</div>
+<a id="gaadc8a802cfffb0719d394609d9cd2186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaadc8a802cfffb0719d394609d9cd2186">&#9670;&nbsp;</a></span>DBusPreallocatedSend</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="group__DBusConnection.html#gaadc8a802cfffb0719d394609d9cd2186">DBusPreallocatedSend</a> <a class="el" href="group__DBusConnection.html#gaadc8a802cfffb0719d394609d9cd2186">DBusPreallocatedSend</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Opaque type representing preallocated resources so a message can be sent without further memory allocation. </p>
+
+</div>
+</div>
+<a id="gaed317fe6f12e65586a50e1d1d2ea96b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed317fe6f12e65586a50e1d1d2ea96b7">&#9670;&nbsp;</a></span>DBusRemoveTimeoutFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* DBusRemoveTimeoutFunction) (DBusTimeout *timeout, void *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called when libdbus no longer needs a timeout to be monitored by the main loop. Set by dbus_connection_set_timeout_functions() or dbus_server_set_timeout_functions(). </p>
+
+</div>
+</div>
+<a id="gab99c5eeb90a30ec49cc2bdbb2e965b75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab99c5eeb90a30ec49cc2bdbb2e965b75">&#9670;&nbsp;</a></span>DBusRemoveWatchFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* DBusRemoveWatchFunction) (DBusWatch *watch, void *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called when libdbus no longer needs a watch to be monitored by the main loop. Set by dbus_connection_set_watch_functions() or dbus_server_set_watch_functions(). </p>
+
+</div>
+</div>
+<a id="ga65ee05019d4ee6d7c665ec829cd4414a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga65ee05019d4ee6d7c665ec829cd4414a">&#9670;&nbsp;</a></span>DBusTimeoutToggledFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* DBusTimeoutToggledFunction) (DBusTimeout *timeout, void *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called when dbus_timeout_get_enabled() may return a different value than it did before. Set by dbus_connection_set_timeout_functions() or dbus_server_set_timeout_functions(). </p>
+
+</div>
+</div>
+<a id="gadbcbd64b9c8b0d40cf3f884e2ee2528c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadbcbd64b9c8b0d40cf3f884e2ee2528c">&#9670;&nbsp;</a></span>DBusWakeupMainFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* DBusWakeupMainFunction) (void *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called when the main loop's thread should be notified that there's now work to do. Set with dbus_connection_set_wakeup_main_function(). </p>
+
+</div>
+</div>
+<a id="ga08cb6a64fbd538ac30a8dd00ba19cd95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga08cb6a64fbd538ac30a8dd00ba19cd95">&#9670;&nbsp;</a></span>DBusWatchToggledFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* DBusWatchToggledFunction) (DBusWatch *watch, void *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Called when dbus_watch_get_enabled() may return a different value than it did before. Set by dbus_connection_set_watch_functions() or dbus_server_set_watch_functions(). </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentatie van enumeratie types</h2>
+<a id="gabf250a32ff740b2a8c99136e0142d8d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf250a32ff740b2a8c99136e0142d8d2">&#9670;&nbsp;</a></span>DBusDispatchStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__DBusConnection.html#gabf250a32ff740b2a8c99136e0142d8d2">DBusDispatchStatus</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates the status of incoming data on a <a class="el" href="group__DBusConnection.html#ga168c25556d88c296ebc64f1d7b20f699">DBusConnection</a>. This determines whether dbus_connection_dispatch() needs to be called. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumeratie waarden</th></tr><tr><td class="fieldname"><a id="ggabf250a32ff740b2a8c99136e0142d8d2adf8e8a594ab338cb9cf7855b19e37e93"></a>DBUS_DISPATCH_DATA_REMAINS&#160;</td><td class="fielddoc"><p>There is more data to potentially convert to messages. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabf250a32ff740b2a8c99136e0142d8d2acb9bb9daa90f520d5fc9e84de3c5f017"></a>DBUS_DISPATCH_COMPLETE&#160;</td><td class="fielddoc"><p>All currently available data has been processed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabf250a32ff740b2a8c99136e0142d8d2a5af20a035f29cfa67fb8d69fb693b685"></a>DBUS_DISPATCH_NEED_MEMORY&#160;</td><td class="fielddoc"><p>More memory is needed to continue. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga0556779e61aeb19eb9cf6b6466bd1b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0556779e61aeb19eb9cf6b6466bd1b98">&#9670;&nbsp;</a></span>DBusWatchFlags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__DBusConnection.html#ga0556779e61aeb19eb9cf6b6466bd1b98">DBusWatchFlags</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates the status of a #DBusWatch. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumeratie waarden</th></tr><tr><td class="fieldname"><a id="gga0556779e61aeb19eb9cf6b6466bd1b98a178bd7a88e9bfbb8505db76eb7e0ccc4"></a>DBUS_WATCH_READABLE&#160;</td><td class="fielddoc"><p>As in POLLIN </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga0556779e61aeb19eb9cf6b6466bd1b98a62ddca29b06bfbbc08bb7f3dfd3d307f"></a>DBUS_WATCH_WRITABLE&#160;</td><td class="fielddoc"><p>As in POLLOUT </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga0556779e61aeb19eb9cf6b6466bd1b98ab1474e26aa5be3d2876dd86bbe452156"></a>DBUS_WATCH_ERROR&#160;</td><td class="fielddoc"><p>As in POLLERR (can't watch for this, but can be present in current state passed to dbus_watch_handle()). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga0556779e61aeb19eb9cf6b6466bd1b98a7a361a1a03f463c3c9e57f7368a0bfe4"></a>DBUS_WATCH_HANGUP&#160;</td><td class="fielddoc"><p>As in POLLHUP (can't watch for it, but can be present in current state passed to dbus_watch_handle()). </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

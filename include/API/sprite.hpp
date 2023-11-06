@@ -1,6 +1,4 @@
-//
-// Created by Robin on 30-10-2023.
-//
+/// @file
 
 #ifndef AVANS_SPCPRJ13_SPRITE_H
 #define AVANS_SPCPRJ13_SPRITE_H
@@ -8,16 +6,15 @@
 #include "behaviour_script.hpp"
 #include <string>
 
-class Sprite : public BehaviourScript
-{
+class Sprite : public BehaviourScript {
 private:
-    std::string sprite;
-    bool flipX, flipY;
-    int sortingLayer, orderInLayer;
+  std::string sprite;
+  bool flipX, flipY;
+  int sortingLayer, orderInLayer;
 
 public:
-    Sprite();
-    // Getters, Setters, and other public member functions ...
+  Sprite();
+  // Getters, Setters, and other public member functions ...
 };
 
 #endif // AVANS_SPCPRJ13_SPRITE_H

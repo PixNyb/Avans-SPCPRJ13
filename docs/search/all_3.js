@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['spcprj13_20repository_3',['SPCPRJ13 Repository',['../index.html',1,'']]]
+  ['development_20guidelines_26',['Development Guidelines',['../md_DEVELOPMENT_GUIDELINES.html',1,'']]]
 ];

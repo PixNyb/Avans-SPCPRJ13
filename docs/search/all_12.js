@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['ramp_843',['ramp',['../unionSDL__HapticEffect.html#a1d32ef4c2d1cc89dc938b392f6ad81bd',1,'SDL_HapticEffect']]],
+  ['rate_5fincr_844',['rate_incr',['../structSDL__AudioCVT.html#ad886122c23a6673073baace31bff3b6c',1,'SDL_AudioCVT']]],
+  ['recursive_5fmutex_5ffree_845',['recursive_mutex_free',['../structDBusThreadFunctions.html#a8be6d85b7f162352efa5bb4a5663f44f',1,'DBusThreadFunctions']]],
+  ['recursive_5fmutex_5flock_846',['recursive_mutex_lock',['../structDBusThreadFunctions.html#ae99179276be65fe4f701de307882dac5',1,'DBusThreadFunctions']]],
+  ['recursive_5fmutex_5fnew_847',['recursive_mutex_new',['../structDBusThreadFunctions.html#afd30fb78a3ca1064bc8c074a6a61361e',1,'DBusThreadFunctions']]],
+  ['recursive_5fmutex_5funlock_848',['recursive_mutex_unlock',['../structDBusThreadFunctions.html#a0bdb8cd9b263bcde5a0548b16ccd0702',1,'DBusThreadFunctions']]],
+  ['refcount_849',['refcount',['../structSDL__Surface.html#a03d10628a359c0674f5ceffd574f1641',1,'SDL_Surface']]],
+  ['refresh_5frate_850',['refresh_rate',['../structSDL__DisplayMode.html#ad1b5783c9b292ebf24ad4e0e7a98e540',1,'SDL_DisplayMode']]],
+  ['release_5fnumber_851',['release_number',['../structSDL__hid__device__info.html#ad6eb1e9cafd756ef89cd427cccc89da8',1,'SDL_hid_device_info']]],
+  ['rendercomponent_852',['RenderComponent',['../classRenderComponent.html',1,'']]],
+  ['renderer_853',['Renderer',['../classRenderer.html',1,'']]],
+  ['repeat_854',['repeat',['../structSDL__KeyboardEvent.html#a3edac3b36304812d533795c9df4ed4c1',1,'SDL_KeyboardEvent']]],
+  ['right_5fcoeff_855',['right_coeff',['../structSDL__HapticCondition.html#a3de7f164ef88841255535387d0f100b6',1,'SDL_HapticCondition']]],
+  ['right_5frumble_856',['right_rumble',['../structSDL__VirtualJoystickDesc.html#afb2468ddc1b70e80bd09236edfe899f4',1,'SDL_VirtualJoystickDesc']]],
+  ['right_5fsat_857',['right_sat',['../structSDL__HapticCondition.html#a90427a1e0d464b4b53abc1d419c97b2e',1,'SDL_HapticCondition']]],
+  ['rigidbody_858',['Rigidbody',['../classRigidbody.html',1,'']]],
+  ['rw_5fseek_5fcur_859',['RW_SEEK_CUR',['../SDL__rwops_8h.html#aba5f3b60c197def370ffa2ca1ab1348d',1,'SDL_rwops.h']]],
+  ['rw_5fseek_5fend_860',['RW_SEEK_END',['../SDL__rwops_8h.html#a6cf141faabd1b8f2ec3c03cf76eaf553',1,'SDL_rwops.h']]],
+  ['rw_5fseek_5fset_861',['RW_SEEK_SET',['../SDL__rwops_8h.html#ac028b032bb8230df64bc6284e04789f5',1,'SDL_rwops.h']]]
+];

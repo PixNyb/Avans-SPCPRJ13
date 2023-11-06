@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['brotli_5fdecoder_5fparam_5fdisable_5fring_5fbuffer_5freallocation_4354',['BROTLI_DECODER_PARAM_DISABLE_RING_BUFFER_REALLOCATION',['../decode_8h.html#a85a48e5725264efb4e36a3fb9e34c070ae1ab9b5b0188da1bc56b74c6fee1d1f7',1,'decode.h']]],
+  ['brotli_5fdecoder_5fparam_5flarge_5fwindow_4355',['BROTLI_DECODER_PARAM_LARGE_WINDOW',['../decode_8h.html#a85a48e5725264efb4e36a3fb9e34c070a500b69dd614ca3ac79d79c486dc40908',1,'decode.h']]],
+  ['brotli_5fdecoder_5fresult_5ferror_4356',['BROTLI_DECODER_RESULT_ERROR',['../decode_8h.html#a87fd23715d225d1518eb7cd2a5cb374eadd6df16ccf47d89d71a0170acd452496',1,'decode.h']]],
+  ['brotli_5fdecoder_5fresult_5fneeds_5fmore_5finput_4357',['BROTLI_DECODER_RESULT_NEEDS_MORE_INPUT',['../decode_8h.html#a87fd23715d225d1518eb7cd2a5cb374ea0da57a2b50c1e65c6b55c095f88bff38',1,'decode.h']]],
+  ['brotli_5fdecoder_5fresult_5fneeds_5fmore_5foutput_4358',['BROTLI_DECODER_RESULT_NEEDS_MORE_OUTPUT',['../decode_8h.html#a87fd23715d225d1518eb7cd2a5cb374eafa10e01bd2f25a3d8d4b22db6fe66ab1',1,'decode.h']]],
+  ['brotli_5fdecoder_5fresult_5fsuccess_4359',['BROTLI_DECODER_RESULT_SUCCESS',['../decode_8h.html#a87fd23715d225d1518eb7cd2a5cb374eaba3e4e586e974657ec2e72753a469823',1,'decode.h']]],
+  ['brotli_5fmode_5ffont_4360',['BROTLI_MODE_FONT',['../encode_8h.html#aa6fdd56b234eddc40cd8b79a0ecc70a7ad780936a708a653ebf1c4543b7249a34',1,'encode.h']]],
+  ['brotli_5fmode_5fgeneric_4361',['BROTLI_MODE_GENERIC',['../encode_8h.html#aa6fdd56b234eddc40cd8b79a0ecc70a7a7f53c9c953e88702ed8c7eb8da1a846d',1,'encode.h']]],
+  ['brotli_5fmode_5ftext_4362',['BROTLI_MODE_TEXT',['../encode_8h.html#aa6fdd56b234eddc40cd8b79a0ecc70a7a05c92692faa0f316f09f73411d4c9b45',1,'encode.h']]],
+  ['brotli_5foperation_5femit_5fmetadata_4363',['BROTLI_OPERATION_EMIT_METADATA',['../encode_8h.html#aed29c96cccbe4dc2aed53a2f1e2d04cba3b5108b267793993e6f6decd8ebc438a',1,'encode.h']]],
+  ['brotli_5foperation_5ffinish_4364',['BROTLI_OPERATION_FINISH',['../encode_8h.html#aed29c96cccbe4dc2aed53a2f1e2d04cba9e7ec104794a42c7a14e3bec4753be18',1,'encode.h']]],
+  ['brotli_5foperation_5fflush_4365',['BROTLI_OPERATION_FLUSH',['../encode_8h.html#aed29c96cccbe4dc2aed53a2f1e2d04cba35d9c34839f1171ecb715de795e47664',1,'encode.h']]],
+  ['brotli_5foperation_5fprocess_4366',['BROTLI_OPERATION_PROCESS',['../encode_8h.html#aed29c96cccbe4dc2aed53a2f1e2d04cbab2e4f33caf69a01084bdb1db7fb8c356',1,'encode.h']]],
+  ['brotli_5fparam_5fdisable_5fliteral_5fcontext_5fmodeling_4367',['BROTLI_PARAM_DISABLE_LITERAL_CONTEXT_MODELING',['../encode_8h.html#a9a8f89a2fd7678ae0cfca1dee4b12faba1dbafb6915376ab20fb2a87c721d0f45',1,'encode.h']]],
+  ['brotli_5fparam_5flarge_5fwindow_4368',['BROTLI_PARAM_LARGE_WINDOW',['../encode_8h.html#a9a8f89a2fd7678ae0cfca1dee4b12faba4b364d6f74149853fa147d3f4d6db580',1,'encode.h']]],
+  ['brotli_5fparam_5flgblock_4369',['BROTLI_PARAM_LGBLOCK',['../encode_8h.html#a9a8f89a2fd7678ae0cfca1dee4b12fabaa2a5a09ba4fe98841bb0c8f844f9cf78',1,'encode.h']]],
+  ['brotli_5fparam_5flgwin_4370',['BROTLI_PARAM_LGWIN',['../encode_8h.html#a9a8f89a2fd7678ae0cfca1dee4b12fabae3d363e61b30ea4ae9e08db2d0dfa3d4',1,'encode.h']]],
+  ['brotli_5fparam_5fmode_4371',['BROTLI_PARAM_MODE',['../encode_8h.html#a9a8f89a2fd7678ae0cfca1dee4b12fabaee22e9368dfa5382dc3c8fb07c129f92',1,'encode.h']]],
+  ['brotli_5fparam_5fndirect_4372',['BROTLI_PARAM_NDIRECT',['../encode_8h.html#a9a8f89a2fd7678ae0cfca1dee4b12faba1cbd778644a1306982bf55fb229d6dc9',1,'encode.h']]],
+  ['brotli_5fparam_5fnpostfix_4373',['BROTLI_PARAM_NPOSTFIX',['../encode_8h.html#a9a8f89a2fd7678ae0cfca1dee4b12faba579cc2c55788b70a0bd37efcdf73ea50',1,'encode.h']]],
+  ['brotli_5fparam_5fquality_4374',['BROTLI_PARAM_QUALITY',['../encode_8h.html#a9a8f89a2fd7678ae0cfca1dee4b12faba11e8c7def1638f8f31676d233c7c64d6',1,'encode.h']]],
+  ['brotli_5fparam_5fsize_5fhint_4375',['BROTLI_PARAM_SIZE_HINT',['../encode_8h.html#a9a8f89a2fd7678ae0cfca1dee4b12fababcac7ab9aca3be47a9476528201152e7',1,'encode.h']]],
+  ['brotli_5fparam_5fstream_5foffset_4376',['BROTLI_PARAM_STREAM_OFFSET',['../encode_8h.html#a9a8f89a2fd7678ae0cfca1dee4b12faba3bacc3f5f55a2f4bd1f53a7bd6dcc587',1,'encode.h']]]
+];

@@ -1,0 +1,5 @@
+<map id="SDL_SysWMEvent" name="SDL_SysWMEvent">
+<area shape="rect" id="node1" title="A video driver dependent system event (event.syswm.*) This event is disabled by default,..." alt="" coords="5,184,144,211"/>
+<area shape="rect" id="node2" href="$structSDL__SysWMmsg.html" title=" " alt="" coords="9,95,140,121"/>
+<area shape="rect" id="node3" href="$structSDL__version.html" title=" " alt="" coords="23,5,126,32"/>
+</map>

@@ -68,27 +68,28 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> Welkom in de repository van SPCPRJ13. Dit is de repository waarin de code van de <code>DeFunBobEngine</code> game engine staat. Deze game engine is gemaakt voor het vak <code>SPCPRJ13</code> van de opleiding HBO-ICT van Avans Hogeschool 's-Hertogenbosch.</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Projectdetails</h1>
 <ul>
 <li><b>Projectnaam</b>: DeFunBobEngine</li>
 <li><b>Taal</b>: C++</li>
 <li><b>Platform</b>: Windows/Linux/MacOS</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 ClickUp Board</h1>
 <p>Voor het bijhouden van de voortgang van het project wordt er gebruik gemaakt van <a href="https://app.clickup.com/9012037397/v/l/4-90120089132-1">ClickUp</a>. Dit is een online project management tool. In deze tool worden alle taken bijgehouden en kan de voortgang van het project worden bijgehouden.</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 Aan de slag</h1>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Vereisten</h2>
 <ul>
 <li>C++ compiler (GCC, Clang, MSVC)</li>
 <li>CMake</li>
+<li>vcpkg</li>
 <li>Git</li>
 <li>Doxygen (en Graphviz)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Installatie</h2>
 <ul>
 <li>Clone de repository</li>
@@ -97,13 +98,23 @@ Installatie</h2>
 </div><!-- fragment --><ul>
 <li>Gebruik CMake om de code te compileren</li>
 </ul>
-<div class="fragment"><div class="line">cmake -S . -B build &amp;&amp; cmake --build build</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md15"></a>
+<div class="fragment"><div class="line">cmake -DCMAKE_TOOLCHAIN_FILE=/your/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build &amp;&amp; cmake --build build</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md16"></a>
 Doxygen</h2>
 <p>De documentatie van de code wordt gegenereerd met behulp van <a href="https://www.doxygen.nl/index.html">Doxygen</a>. De documentatie is te vinden in de <code>docs</code> map. Om de documentatie te genereren moet het volgende commando worden uitgevoerd:</p>
 <div class="fragment"><div class="line">doxygen Doxyfile</div>
 </div><!-- fragment --><p><em>Denk eraan dat <a href="https://graphviz.org/">Graphviz</a> geïnstalleerd moet zijn om de UML-diagrammen te genereren, en dat doxygen niet automatisch in CI/CD wordt uitgevoerd. Dit moet dus handmatig worden gedaan.</em></p>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
+Proof Of Concepts</h1>
+<p>De POC's zijn te vinden in de <code>poc</code> map. Deze map bevat een map voor elke POC. In deze map staat een <code>README.md</code> bestand met de informatie over de POC.</p>
+<p>Alle POC's worden met behulp van CMake gecompileerd. De POC's kunnen individueel gebouwd worden maar worden ook automatisch gebouwd als de hoofdmap wordt gebouwd.</p>
+<ul>
+<li>Entity Component System</li>
+<li>Entity Component</li>
+<li>SDL Input</li>
+<li>SDL Render</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md18"></a>
 Development Guidelines</h1>
 <p>De development guidelines zijn gedefiniëerd in <a class="el" href="md_DEVELOPMENT_GUIDELINES.html">DEVELOPMENT_GUIDELINES.md</a>. </p>
 </div></div><!-- PageDoc -->

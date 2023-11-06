@@ -1,0 +1,14 @@
+<map id="poc" name="poc">
+<area shape="rect" id="node2" href="dir_beb0501146ffe1588aad34ce19cef54d.html" title="ec" alt="" coords="496,27,568,75"/>
+<area shape="rect" id="node7" href="dir_4fef79e7177ba769987a8da36c892c5f.html" title="build" alt="" coords="300,123,372,171"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000061_000005.html" title="2" alt="" coords="388,128,397,142"/>
+<area shape="rect" id="node3" href="dir_fe5391ad26f0af2d19b435410261b549.html" title="ecs" alt="" coords="400,27,472,75"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000002_000005.html" title="9" alt="" coords="375,109,384,124"/>
+<area shape="rect" id="node4" href="dir_84cc08b00e95e58dcefc98b293bcb585.html" title="sdl&#45;input" alt="" coords="297,27,375,75"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000063_000005.html" title="1" alt="" coords="340,97,349,112"/>
+<area shape="rect" id="node5" href="dir_e91533dec11d7cb7efa00e14992b4ed3.html" title="sdl&#45;input&#45;physics" alt="" coords="139,27,272,75"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000072_000005.html" title="1" alt="" coords="289,98,299,112"/>
+<area shape="rect" id="node6" href="dir_0b9ac01ef33e46ec8a9a7742491303bc.html" title="sdl&#45;render" alt="" coords="27,27,115,75"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000073_000005.html" title="7" alt="" coords="279,118,289,133"/>
+<area shape="rect" id="clust1" href="dir_7aeedb098cc9a7196e7c561fe3b36dad.html" alt="" coords="16,16,675,85"/>
+</map>

@@ -18,6 +18,7 @@ Voor het bijhouden van de voortgang van het project wordt er gebruik gemaakt van
 
 - C++ compiler (GCC, Clang, MSVC)
 - CMake
+- vcpkg
 - Git
 - Doxygen (en Graphviz)
 
@@ -32,7 +33,7 @@ git clone git@github.com:PixNyb/Avans-SPCPRJ13.git
 - Gebruik CMake om de code te compileren
 
 ```bash
-cmake -S . -B build && cmake --build build
+cmake -DCMAKE_TOOLCHAIN_FILE=/your/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build && cmake --build build
 ```
 
 ### Doxygen

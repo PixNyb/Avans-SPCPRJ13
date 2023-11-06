@@ -1,0 +1,7 @@
+<map id="Component" name="Component">
+<area shape="rect" id="node1" title=" " alt="" coords="111,5,209,32"/>
+<area shape="rect" id="node2" href="$classBehaviourScript.html" title=" " alt="" coords="32,80,157,107"/>
+<area shape="rect" id="node5" href="$classRigidbody.html" title=" " alt="" coords="182,80,269,107"/>
+<area shape="rect" id="node3" href="$classAnimator.html" title=" " alt="" coords="5,155,88,181"/>
+<area shape="rect" id="node4" href="$classSprite.html" title=" " alt="" coords="113,155,173,181"/>
+</map>
