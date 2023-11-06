@@ -1,6 +1,0 @@
-<map id="System" name="System">
-<area shape="rect" id="node1" title=" " alt="" coords="215,5,286,32"/>
-<area shape="rect" id="node2" href="$classMovementSystem.html" title=" " alt="" coords="5,80,147,107"/>
-<area shape="rect" id="node3" href="$classPlayerControlSystem.html" title=" " alt="" coords="171,80,330,107"/>
-<area shape="rect" id="node4" href="$classSceneSystem.html" title=" " alt="" coords="354,80,465,107"/>
-</map>

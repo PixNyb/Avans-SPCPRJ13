@@ -1,4 +1,0 @@
-<map id="Basic types" name="Basic types">
-<area shape="rect" id="node1" href="$group__DBus.html" title="The low&#45;level public API of the D&#45;Bus library." alt="" coords="5,5,197,31"/>
-<area shape="rect" id="node2" title="dbus_bool_t, dbus_int32_t, etc." alt="" coords="245,5,343,31"/>
-</map>

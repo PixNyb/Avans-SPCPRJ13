@@ -1,4 +1,0 @@
-<map id="SDL_KeyboardEvent" name="SDL_KeyboardEvent">
-<area shape="rect" id="node1" title="Keyboard button event structure (event.key.*)" alt="" coords="5,95,157,121"/>
-<area shape="rect" id="node2" href="$structSDL__Keysym.html" title="The SDL keysym structure, used in key events." alt="" coords="28,5,135,32"/>
-</map>

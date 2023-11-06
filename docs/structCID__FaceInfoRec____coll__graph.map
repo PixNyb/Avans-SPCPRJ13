@@ -1,9 +1,0 @@
-<map id="CID_FaceInfoRec_" name="CID_FaceInfoRec_">
-<area shape="rect" id="node1" title=" " alt="" coords="160,184,297,211"/>
-<area shape="rect" id="node2" href="$structPS__FontInfoRec__.html" title=" " alt="" coords="5,95,135,121"/>
-<area shape="rect" id="node3" href="$structCID__FaceDictRec__.html" title=" " alt="" coords="159,95,298,121"/>
-<area shape="rect" id="node4" href="$structFT__Vector__.html" title=" " alt="" coords="65,5,157,32"/>
-<area shape="rect" id="node5" href="$structFT__Matrix__.html" title=" " alt="" coords="182,5,275,32"/>
-<area shape="rect" id="node6" href="$structPS__PrivateRec__.html" title=" " alt="" coords="299,5,422,32"/>
-<area shape="rect" id="node7" href="$structFT__BBox__.html" title=" " alt="" coords="322,95,407,121"/>
-</map>

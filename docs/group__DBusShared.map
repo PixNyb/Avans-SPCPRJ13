@@ -1,4 +1,0 @@
-<map id="Shared constants" name="Shared constants">
-<area shape="rect" id="node1" title="Shared header included by both libdbus and C/C++ bindings such as the GLib bindings." alt="" coords="245,5,380,31"/>
-<area shape="rect" id="node2" href="$group__DBus.html" title="The low&#45;level public API of the D&#45;Bus library." alt="" coords="5,5,197,31"/>
-</map>
