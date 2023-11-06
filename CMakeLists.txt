@@ -21,12 +21,30 @@ add_executable(DeFunBobEngine ${SOURCES})
 target_include_directories(DeFunBobEngine PRIVATE ${PROJECT_SOURCE_DIR}/include)
 target_include_directories(DeFunBobEngine PRIVATE ${PROJECT_SOURCE_DIR}/include/API)
 
-# Add POC's
-# file(GLOB SUBDIR_LIST RELATIVE ${PROJECT_SOURCE_DIR}/poc ${PROJECT_SOURCE_DIR}/poc/*)
-# foreach(SUBDIR ${SUBDIR_LIST})
-# if(IS_DIRECTORY ${PROJECT_SOURCE_DIR}/poc/${SUBDIR})
-# add_subdirectory(${PROJECT_SOURCE_DIR}/poc/${SUBDIR})
-# endif()
-# endforeach()
-message("Include directory: ${PROJECT_SOURCE_DIR}/include")
-message("API directory: ${PROJECT_SOURCE_DIR}/include/API")
+# Add SDL2
+find_package(SDL2 CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine
+    PRIVATE
+    $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+    $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+)
+
+# Add SDL2_gfx
+find_package(sdl2-gfx CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE SDL2::SDL2_gfx)
+
+# Add SDL2_image
+find_package(SDL2_image CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_image::SDL2_image>,SDL2_image::SDL2_image,SDL2_image::SDL2_image-static>)
+
+# Add SDL2_mixer
+find_package(SDL2_mixer CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_mixer::SDL2_mixer>,SDL2_mixer::SDL2_mixer,SDL2_mixer::SDL2_mixer-static>)
+
+# Add SDL2_ttf
+find_package(SDL2_ttf CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2_ttf>,SDL2_ttf::SDL2_ttf,SDL2_ttf::SDL2_ttf-static>)
+
+# Add SDL2_net
+find_package(SDL2_net CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_net::SDL2_net>,SDL2_net::SDL2_net,SDL2_net::SDL2_net-static>)
