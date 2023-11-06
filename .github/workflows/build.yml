@@ -30,14 +30,14 @@ jobs:
 
       - name: Install vcpkg
         run: |
-          git clone https://github.com/Microsoft/vcpkg.git
+          git clone https://github.com/Microsoft/vcpkg.git ./vcpkg
           ./vcpkg/bootstrap-vcpkg.sh
 
       - name: Install dependencies
-        run: ./vcpkg-master/vcpkg install --triplet x64-linux --feature-flags=manifests
+        run: ./vcpkg/vcpkg install --triplet x64-linux --feature-flags=manifests
 
       - name: Build
-        run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg-master/scripts/buildsystems/vcpkg.cmake -S . -B build && cmake --build build
+        run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build && cmake --build build
 
       - name: Archive build result
         uses: actions/upload-artifact@v2
