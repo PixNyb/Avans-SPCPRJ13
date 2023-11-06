@@ -46,6 +46,7 @@ jobs:
       - name: Archive build result
         uses: actions/upload-artifact@v2
         with:
-          name: build-result
+          # Artifact name should be the branch name + commit hash
+          name: build-${{ github.ref }}-${{ github.sha }}
           path: |
             ./build
