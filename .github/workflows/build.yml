@@ -15,6 +15,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Cache vcpkg
+        uses: actions/cache@v2
+        with:
+          path: vcpkg-master
+          key: vcpkg-${{ runner.os }}-${{ hashFiles('**/vcpkg.json') }}
+          restore-keys: |
+            vcpkg-${{ runner.os }}-
+
       - name: Install CMake
         run: sudo apt-get install -y cmake
 
