@@ -45,11 +45,11 @@ jobs:
 
       - name: Get branch name
         id: extract_branch
-        run: echo "::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/})"
+        run: echo "BRANCH=$(echo ${{ github.event.ref }} | sed 's/refs\/heads\///g')" >> $GITHUB_ENV
 
       - name: Archive build result
         uses: actions/upload-artifact@v2
         with:
-          name: build-${{ steps.extract_branch.outputs.branch }}-${{ github.sha }}
+          name: build-${BRANCH}-${{ github.sha }}
           path: |
             ./build
