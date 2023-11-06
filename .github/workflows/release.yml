@@ -21,8 +21,10 @@ jobs:
           restore-keys: |
             vcpkg-${{ runner.os }}-
 
-      - name: Install CMake
-        run: sudo apt-get install -y cmake
+              - name: Install CMake
+              run: |
+                wget https://github.com/Kitware/CMake/releases/download/v3.27.0/cmake-3.27.0-Linux-x86_64.sh
+                sudo sh cmake-3.27.0-Linux-x86_64.sh --skip-license --prefix=/usr/local
 
       - name: Install vcpkg
         run: |

@@ -1,7 +1,7 @@
 {
     "name": "de-fun-bob-engine",
     "version-string": "1.0.0",
-    "builtin-baseline": "a9d989a",
+    "builtin-baseline": "d8079ecd674fe5632277d78d761333467955adb1",
     "dependencies": [
         {
             "name": "sdl2",
