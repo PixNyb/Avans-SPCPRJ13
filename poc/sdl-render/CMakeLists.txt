@@ -12,21 +12,24 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 # Copy the assets folder to the build directory
 file(COPY ${PROJECT_SOURCE_DIR}/assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
-# Vind de SDL2-bibliotheek
-find_package(SDL2 REQUIRED)
-find_package(SDL2_image REQUIRED)
-
-include_directories(
-    ${SDL2_INCLUDE_DIRS}
-    ${SDL2_IMAGE_INCLUDE_DIRS}
-)
+# Voeg alle bronbestanden toe aan de uitvoerbare bestanden
+file(GLOB SOURCES "src/*.cpp")
 
 # Add your project's include directory
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-# Voeg alle bronbestanden toe aan de uitvoerbare bestanden
-file(GLOB SOURCES "src/*.cpp")
 add_executable(SdlRenderPoc ${SOURCES})
 
-# Link de SDL2-bibliotheek aan het uitvoerbare bestand
-target_link_libraries(SdlRenderPoc ${SDL2_LIBRARIES} SDL2_image)
+# Vind de SDL2-bibliotheek
+find_package(SDL2 CONFIG REQUIRED)
+target_link_libraries(SdlRenderPoc
+    PRIVATE
+    $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+    $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+)
+
+find_package(SDL2_image CONFIG REQUIRED)
+target_link_libraries(SdlRenderPoc
+    PRIVATE
+    $<IF:$<TARGET_EXISTS:SDL2_image::SDL2_image>,SDL2_image::SDL2_image,SDL2_image::SDL2_image-static>
+)

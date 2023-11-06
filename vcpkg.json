@@ -1,0 +1,13 @@
+{
+    "name": "de-fun-bob-engine",
+    "version-string": "1.0.0",
+    "dependencies": [
+        "sdl2",
+        "sdl2-gfx",
+        "sdl2-image",
+        "sdl2-mixer",
+        "sdl2-net",
+        "sdl2-ttf",
+        "entt"
+    ]
+}

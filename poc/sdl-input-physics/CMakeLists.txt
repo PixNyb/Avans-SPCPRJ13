@@ -4,13 +4,13 @@ project(SDLV2Poc)
 
 set(CMAKE_CXX_STANDARD 14)
 
-# Find SDL2 library
-find_package(SDL2 REQUIRED)
-
 # Add executable
 add_executable(SDLV2Poc main.cpp)
 
-include_directories(${SDL2_INCLUDE_DIRS})
-
-# Link SDL2 library
-target_link_libraries(SDLV2Poc ${SDL2_LIBRARIES})
+# Find SDL2 library
+find_package(SDL2 CONFIG REQUIRED)
+target_link_libraries(SDLV2Poc
+    PRIVATE
+    $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+    $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+)

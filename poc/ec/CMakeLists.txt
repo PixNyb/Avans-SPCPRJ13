@@ -11,10 +11,12 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 # Add source files
 file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 
-# Add SDL2
-find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
-
-# Add executable
 add_executable(EcPoc ${SOURCES})
-target_link_libraries(EcPoc ${SDL2_LIBRARIES})
+
+# Add SDL2
+find_package(SDL2 CONFIG REQUIRED)
+target_link_libraries(EcPoc
+    PRIVATE
+    $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+    $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+)

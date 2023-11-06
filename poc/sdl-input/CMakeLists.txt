@@ -9,10 +9,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Add source files
 file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/*.cpp)
 
-# Add SDL2
-find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
-
-# Add executable
 add_executable(SdlInputPoc main.cpp)
-target_link_libraries(SdlInputPoc ${SDL2_LIBRARIES})
+
+# Add SDL2
+find_package(SDL2 CONFIG REQUIRED)
+target_link_libraries(SdlInputPoc
+    PRIVATE
+    $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+    $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+)

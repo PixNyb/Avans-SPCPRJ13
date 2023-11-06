@@ -48,5 +48,8 @@ compile_commands.json
 conanbuildinfo.txt
 conaninfo.txt
 
+# vcpkg
+vcpkg_installed
+
 # College stuff
 college/

@@ -18,14 +18,18 @@ jobs:
       - name: Install CMake
         run: sudo apt-get install -y cmake
 
-      - name: Install SDL2
-        run: sudo apt-get install -y libsdl2-dev
+      - name: Install vcpkg
+        run: |
+          wget -qO vcpkg.tar.gz https://github.com/microsoft/vcpkg/archive/master.tar.gz
+          tar -xf vcpkg.tar.gz
+          cd vcpkg-master
+          ./bootstrap-vcpkg.sh
 
-      - name: Install SDL2 GFX, Image, Mixer, Net and TTF
-        run: sudo apt-get install -y libsdl2-gfx-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev
+      - name: Install dependencies
+        run: ./vcpkg-master/vcpkg install --triplet x64-linux --feature-flags=manifests
 
       - name: Build
-        run: cmake -S . -B build && cmake --build build
+        run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg-master/scripts/buildsystems/vcpkg.cmake -S . -B build && cmake --build build
 
       - name: Archive build result
         uses: actions/upload-artifact@v2
