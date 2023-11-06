@@ -30,10 +30,8 @@ jobs:
 
       - name: Install vcpkg
         run: |
-          wget -qO vcpkg.tar.gz https://github.com/microsoft/vcpkg/archive/master.tar.gz
-          tar -xf vcpkg.tar.gz
-          cd vcpkg-master
-          ./bootstrap-vcpkg.sh
+          git clone https://github.com/Microsoft/vcpkg.git
+          ./vcpkg/bootstrap-vcpkg.sh
 
       - name: Install dependencies
         run: ./vcpkg-master/vcpkg install --triplet x64-linux --feature-flags=manifests
