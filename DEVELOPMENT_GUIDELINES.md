@@ -40,6 +40,7 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 - Voeg commentaar toe om complexe of onduidelijke delen van de code uit te leggen.
 - Voeg een licentieheader bovenaan elk bronbestand toe om auteursrecht en licentie-informatie te vermelden.
 - Gebruik `//` voor enkele regel commentaar en `/* */` voor meerdere regels.
+- Houd de [Doxygen commentaarstijl](https://www.doxygen.nl/manual/docblocks.html) aan voor documentatie.
 
 ```console
 // Dit is een voorbeeld van een enkele regel commentaar.
@@ -58,7 +59,7 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 
 // Of
 
-/*
+/**
  * @file
  * @brief This file contains the implementation of the Foo class.
  */
