@@ -13,6 +13,7 @@
 #define AVANS_SPCPRJ13_GAMEOBJECT_H
 
 #include "component.hpp"
+#include "transform.hpp"
 #include <memory>
 #include <string>
 #include <vector>
@@ -30,10 +31,11 @@ class GameObject
   private:
     std::string name; ///< The name of the GameObject.
     std::vector<std::shared_ptr<Component>>
-        components; ///< The list of components attached to the GameObject.
-    bool active;    ///< The active flag of the GameObject.
-    int tag;        ///< The tag/type of the GameObject.
-    int layer;      ///< The layer of the GameObject.
+        components;      ///< The list of components attached to the GameObject.
+    Transform transform; ///< The transform of the GameObject.
+    bool active;         ///< The active flag of the GameObject.
+    int tag;             ///< The tag/type of the GameObject.
+    int layer;           ///< The layer of the GameObject.
 
   public:
     /**
@@ -46,6 +48,14 @@ class GameObject
      * @param name The name of the GameObject.
      */
     GameObject(const std::string &name);
+
+    /**
+     * @brief Constructor for GameObject that sets the name and transform.
+     *
+     * @param name The name of the GameObject.
+     * @param transform The transform of the GameObject.
+     */
+    GameObject(const std::string &name, const Transform &transform);
 
     /**
      * @brief Destructor for GameObject.

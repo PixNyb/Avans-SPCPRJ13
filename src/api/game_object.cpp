@@ -13,14 +13,21 @@
 #include "component.hpp"
 #include <memory>
 
-GameObject::GameObject() : name(""), active(true), tag(0), layer(0)
+GameObject::GameObject() : name(""), active(true), tag(0), layer(0), transform()
 {
     // Constructor default initialization
 }
 
-GameObject::GameObject(const std::string &name) : name(name), active(true), tag(0), layer(0)
+GameObject::GameObject(const std::string &name)
+    : name(name), active(true), tag(0), layer(0), transform()
 {
     // Constructor with name initialization
+}
+
+GameObject::GameObject(const std::string &name, const Transform &transform)
+    : name(name), transform(transform), active(true), tag(0), layer(0)
+{
+    // Constructor with name and transform initialization
 }
 
 void GameObject::AddComponent(std::shared_ptr<Component> component)
