@@ -17,14 +17,14 @@
 class SceneManager
 {
   private:
-    std::unique_ptr<Scene> currentScene;
+    std::shared_ptr<Scene> currentScene;
   public:
         SceneManager();
         ~SceneManager();
-        void SetScene(std::unique_ptr<Scene> scene);
+        void SetScene(std::shared_ptr<Scene> scene);
         void RenderScene();
-        bool HasScene() const;
-        const Scene& GetScene();
+        [[nodiscard]] bool HasScene() const;
+        std::weak_ptr<Scene> GetScene();
 };
 
 #endif // DEFUNBOBENGINE_SCENE_MANAGER_HPP

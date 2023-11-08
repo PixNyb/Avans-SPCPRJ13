@@ -15,11 +15,9 @@ SceneManager::SceneManager()
 {
 }
 
-SceneManager::~SceneManager()
-{
-}
+SceneManager::~SceneManager() = default;
 
-void SceneManager::SetScene(std::unique_ptr<Scene> scene)
+void SceneManager::SetScene(std::shared_ptr<Scene> scene)
 {
     currentScene = std::move(scene);
 }
@@ -29,12 +27,9 @@ void SceneManager::RenderScene()
     currentScene->RenderScene();
 }
 
-const Scene& SceneManager::GetScene()
+std::weak_ptr<Scene> SceneManager::GetScene()
 {
-    if(!HasScene())
-        throw std::runtime_error("No scene set");
-
-    return *currentScene;
+    return currentScene;
 }
 
 bool SceneManager::HasScene() const
