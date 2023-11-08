@@ -10,6 +10,7 @@
 /**
  * @brief Instances of this class are clickable user interface items.
  */
+ // TODO: Add listener for button clicks and attach to input manager somehow
 class Button : public UIObject {
 public:
     Button();
