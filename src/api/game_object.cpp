@@ -11,19 +11,21 @@
 
 #include "game_object.hpp"
 #include "component.hpp"
+#include <memory>
 
-GameObject::GameObject() : name(""), active(true), tag(0), layer(0) {
-  // Constructor default initialization
+GameObject::GameObject() : name(""), active(true), tag(0), layer(0)
+{
+    // Constructor default initialization
 }
 
-GameObject::GameObject(const std::string &name)
-    : name(name), active(true), tag(0), layer(0) {
-  // Constructor with name initialization
+GameObject::GameObject(const std::string &name) : name(name), active(true), tag(0), layer(0)
+{
+    // Constructor with name initialization
 }
 
-void GameObject::AddComponent(Component &component) {
-  // TODO: Optionally change this to a shared_ptr<Component> parameter.
-  components.push_back(std::make_shared<Component>(component));
+void GameObject::AddComponent(std::shared_ptr<Component> component)
+{
+    components.push_back(component);
 }
 
 bool GameObject::IsActive() const { return active; }
