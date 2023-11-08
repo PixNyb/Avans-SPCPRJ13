@@ -90,7 +90,7 @@ jobs:
       - name: Download build result
         uses: actions/download-artifact@v2
         with:
-          name: ${{ env.BUILD_INFO }}-${{ github.sha }}.tar.gz
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Build.tar.gz
 
       - name: Extract build result to build folder
         run: tar -xzf build.tar.gz
