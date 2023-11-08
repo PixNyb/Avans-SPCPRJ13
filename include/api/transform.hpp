@@ -9,6 +9,7 @@
  * @brief Instances of this class represent specific 2D transformations.
  */
 struct Transform {
+    Transform();
     Point position; // Translation (shift)
     double rotation; // Rotation, in radians
     double scale; // Multiplication factor

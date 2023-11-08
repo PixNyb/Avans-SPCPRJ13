@@ -12,6 +12,11 @@ private:
 public:
   UIObject();
   // Getters, Setters, and other public member functions ...
+    void SetWidth(int w);
+    int GetWidth() const;
+
+    void SetHeight(int h);
+    int GetHeight() const;
 };
 
 #endif // AVANS_SPCPRJ13_UIOBJECT_H

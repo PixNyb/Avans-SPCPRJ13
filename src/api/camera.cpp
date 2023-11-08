@@ -3,7 +3,7 @@
 #include "camera.hpp"
 
 Camera::Camera()
-    : backgroundColor(0, 0, 0), // default to black color
+    : backgroundColor(0, 0, 0, 1), // default to black color
       aspectWidth(16), aspectHeight(9) {
   // Default constructor initialization
 }

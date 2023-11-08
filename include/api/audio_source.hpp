@@ -11,11 +11,25 @@
  */
 class AudioSource : public Component {
 public:
+    AudioSource();
+    AudioSource(const std::string &audioClipPath);
+
     /**
      * @brief Call this method to start playing audio.
      * @param looping Automatically start over when done.
      */
     void Play(bool looping);
+
+    /**
+     * @brief Call this method to set the volume of the audio.
+     * @param volume The volume, between 0.0 and 1.0.
+     */
+    void SetPitch(float pitch);
+
+    /**
+     * @brief Call this method to pause playing audio.
+     */
+    void Pause();
 
     /**
      * @brief Call this method to stop playing audio.
