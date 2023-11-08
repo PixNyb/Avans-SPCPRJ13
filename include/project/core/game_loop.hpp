@@ -1,0 +1,8 @@
+//
+// Created by Robin Pijnappels on 08/11/2023.
+//
+
+#ifndef DEFUNBOBENGINE_GAME_LOOP_HPP
+#define DEFUNBOBENGINE_GAME_LOOP_HPP
+
+#endif //DEFUNBOBENGINE_GAME_LOOP_HPP
