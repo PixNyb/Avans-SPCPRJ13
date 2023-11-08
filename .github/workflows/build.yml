@@ -46,7 +46,7 @@ jobs:
         run: ./vcpkg/vcpkg install --triplet x64-linux --feature-flags=manifests
 
       - name: Build
-        run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build && cmake --build build
+        run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build -DBUILD_CICD=ON && cmake --build build
 
       - name: Get branch name or PR number
         id: extract_info
@@ -63,3 +63,45 @@ jobs:
           name: ${{ env.BUILD_INFO }}-${{ github.sha }}
           path: |
             ./build
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install lcov
+        run: sudo apt-get install lcov
+
+      - name: Download build result
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ needs.build.outputs.BUILD_INFO }}-${{ github.sha }}
+
+      - name: Run tests
+        run: |
+          cd build
+          ctest --output-on-failure
+
+      - name: Generate coverage report
+        run: |
+          cd build
+          lcov --capture --directory . --output-file coverage.info
+          lcov --remove coverage.info '/usr/*' --output-file coverage.info
+          lcov --list coverage.info
+
+      - name: Upload test result
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ needs.build.outputs.BUILD_INFO }}-${{ github.sha }}-Test.log
+          path: |
+            ./build/Testing/Temporary/LastTest.log
+
+      - name: Upload coverage result
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ needs.build.outputs.BUILD_INFO }}-${{ github.sha }}-Coverage.info
+          path: |
+            ./build/coverage.info
