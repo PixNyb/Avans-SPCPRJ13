@@ -13,6 +13,7 @@
 #define AVANS_SPCPRJ13_GAMEOBJECT_H
 
 #include "component.hpp"
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -27,7 +28,7 @@
 class GameObject {
 private:
   std::string name; ///< The name of the GameObject.
-  std::vector<Component *>
+  std::vector<std::shared_ptr<Component>>
       components; ///< The list of components attached to the GameObject.
   bool active;    ///< The active flag of the GameObject.
   int tag;        ///< The tag/type of the GameObject.
@@ -114,7 +115,7 @@ public:
    * @brief Add a component to the GameObject.
    * @param component The component to add to the GameObject.
    */
-  void AddComponent(Component *component);
+  void AddComponent(Component &component);
 };
 
 #endif // AVANS_SPCPRJ13_GAMEOBJECT_H

@@ -21,8 +21,9 @@ GameObject::GameObject(const std::string &name)
   // Constructor with name initialization
 }
 
-void GameObject::AddComponent(Component *component) {
-  components.push_back(component);
+void GameObject::AddComponent(Component &component) {
+  // TODO: Optionally change this to a shared_ptr<Component> parameter.
+  components.push_back(std::make_shared<Component>(component));
 }
 
 bool GameObject::IsActive() const { return active; }
