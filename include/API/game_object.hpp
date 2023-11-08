@@ -1,6 +1,12 @@
 /**
  * @file game_object.hpp
- * @brief This file contains the GameObject class.
+ * @author Roël Couwenberg (contact@roelc.me)
+ * @brief This file contains the GameObject class definition.
+ * @version 0.1
+ * @date 2023-11-08
+ *
+ * @copyright Copyright (c) 2023
+ *
  */
 
 #ifndef AVANS_SPCPRJ13_GAMEOBJECT_H
