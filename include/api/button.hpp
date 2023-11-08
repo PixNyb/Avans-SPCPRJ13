@@ -22,7 +22,7 @@ public:
     /**
      * @brief Register the onClick handler to be used when the button is clicked.
      * @param callback The function to register, usually a lambda. But this can be
-     *        any kind of callable.
+     * @deprecated Other listeners should be used instead of this function
      */
     void OnClick(std::function<void()> callback) { onClick = callback; }
 
