@@ -28,7 +28,7 @@
  */
 class GameObject
 {
-  private:
+  protected:
     std::string name; ///< The name of the GameObject.
     std::vector<std::shared_ptr<Component>>
         components;                     ///< The list of components attached to the GameObject.
