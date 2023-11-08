@@ -7,14 +7,14 @@ UIObject::UIObject() : width(0), height(0) {
 }
 
 // TODO: Implement game object props
-UIObject::UIObject(const std::string &name, const std::string &tag, const std::string &layer, float width, float height) : GameObject(name), width(width), height(height) {
+UIObject::UIObject(const std::string &name, const std::string &tag, int layer, float width, float height) : GameObject(name), width(width), height(height) {
 
 }
 
-void UIObject::SetWidth(int w) { width = w; }
+void UIObject::SetWidth(float w) { width = w; }
 
-int UIObject::GetWidth() const { return width; }
+float UIObject::GetWidth() const { return width; }
 
-void UIObject::SetHeight(int h) { height = h; }
+void UIObject::SetHeight(float h) { height = h; }
 
-int UIObject::GetHeight() const { return height; }
+float UIObject::GetHeight() const { return height; }

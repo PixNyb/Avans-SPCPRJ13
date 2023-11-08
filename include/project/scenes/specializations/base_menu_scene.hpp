@@ -27,7 +27,7 @@ class BaseMenuScene : public BaseScene
 {
 public:
     BaseMenuScene();
-    ~BaseMenuScene();
+    ~BaseMenuScene() override;
 
     /**
     * @brief Add a text to the scene
@@ -36,7 +36,7 @@ public:
     * @param size Size of the text (default: 12)
     * @param font Font of the text (default: Sans.ttf)
     */
-    void AddText(const std::string &text, const Point &position, const int size = CoreConstants::Text::DEFAULT_SIZE, const std::string &font = CoreConstants::Text::DEFAULT_FONT);
+    void AddText(const std::string& name, const std::string &text, const Point &position, int size = CoreConstants::Text::DEFAULT_SIZE, const std::string &font = CoreConstants::Text::DEFAULT_FONT);
 
     // TODO: Add bounds to button (2D Vector)
     /**
@@ -49,7 +49,7 @@ public:
     * @param font The font of the text (default: Sans.ttf)
     * @return A reference to the button that was added (Required for actions)
     */
-    std::shared_ptr<Button> AddButton(const std::string &text, const Point &position, const Color &bgColor = Color::black(), const Color &textColor = Color::white(), const int textSize = CoreConstants::Text::DEFAULT_SIZE, const std::string &font = CoreConstants::Text::DEFAULT_FONT);
+    std::weak_ptr<Button> AddButton(const std::string& name, const std::string &text, const Point &position, const Color &bgColor = Color::black(), const Color &textColor = Color::white(), int textSize = CoreConstants::Text::DEFAULT_SIZE, const std::string &font = CoreConstants::Text::DEFAULT_FONT);
 
     /**
      * @brief Add a button to the scene
@@ -60,7 +60,7 @@ public:
      * @param font The font of the text (default: Sans.ttf)
      * @return A reference to the button that was added (Required for actions)
      */
-    std::shared_ptr<Button> AddButton(const std::string &text, const Point &position, const std::string& buttonBackgroundImagePath, const int textSize = CoreConstants::Text::DEFAULT_SIZE, const std::string &font = CoreConstants::Text::DEFAULT_FONT);
+    std::weak_ptr<Button> AddButton(const std::string& name, const std::string &text, const Point &position, const std::string& buttonBackgroundImagePath, int textSize = CoreConstants::Text::DEFAULT_SIZE, const std::string &font = CoreConstants::Text::DEFAULT_FONT);
 };
 
 #endif // DEFUNBOBENGINE_BASE_MENU_SCENE_HPP

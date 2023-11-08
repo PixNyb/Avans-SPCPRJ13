@@ -12,12 +12,16 @@
 #ifndef DEFUNBOBENGINE_CORECONSTANTS_HPP
 #define DEFUNBOBENGINE_CORECONSTANTS_HPP
 
+#include "color.hpp"
+#include "text.hpp"
 #include <string>
 
 namespace CoreConstants {
     namespace Text {
         const int DEFAULT_SIZE = 12;
         const std::string DEFAULT_FONT = "Sans.ttf";
+        const Color DEFAULT_COLOR = Color::white();
+        const Alignment DEFAULT_ALIGNMENT = Alignment::left;
     }
 }
 

@@ -8,18 +8,17 @@
 
 class UIObject : public GameObject {
 private:
-  float width, height;
-
+    float width, height;
 public:
   UIObject();
-  UIObject(const std::string& name, const std::string& tag, const std::string& layer, float width, float height);
+  UIObject(const std::string &name, const std::string &tag, int layer, float width, float height);
 
   // Getters, Setters, and other public member functions ...
-    void SetWidth(int w);
-    int GetWidth() const;
+    void SetWidth(float w);
+    [[nodiscard]] float GetWidth() const;
 
-    void SetHeight(int h);
-    int GetHeight() const;
+    void SetHeight(float h);
+    [[nodiscard]] float GetHeight() const;
 };
 
 #endif // AVANS_SPCPRJ13_UIOBJECT_H

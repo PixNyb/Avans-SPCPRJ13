@@ -12,7 +12,7 @@
 class Button : public UIObject {
 public:
     Button();
-
+    Button(const std::string &name, const std::string &tag, int layer, float width, float height);
     /**
      * @brief This function is called when the button is clicked, which
      *        will trigger a call to the registered onClick member.
@@ -34,6 +34,7 @@ private:
 
     /**
      * @brief The registered click handler.
+     * @deprecated Other listeners should be used instead of this function
      */
     std::function<void()> onClick;
 };
