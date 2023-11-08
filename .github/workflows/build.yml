@@ -90,6 +90,10 @@ jobs:
           name: ${{ env.BUILD_INFO }}-${{ github.sha }}
           path: build
 
+      - name: Set permissions to executable for all binaries
+        run: |
+          find ./build -type f -executable -exec chmod +x {} \;
+
       - name: Run tests
         run: |
           cd build
