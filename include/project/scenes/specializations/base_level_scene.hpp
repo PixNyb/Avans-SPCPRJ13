@@ -22,7 +22,7 @@ class BaseLevelScene : public BaseScene
 {
 public:
     explicit BaseLevelScene(int id);
-    ~BaseLevelScene() override = default;
+    ~BaseLevelScene() override;
     void RenderScene() override;
     void UpdateScene() override;
 

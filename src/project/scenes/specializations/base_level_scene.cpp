@@ -40,3 +40,4 @@ int BaseLevelScene::GetId() const
 {
     return id;
 }
+BaseLevelScene::~BaseLevelScene() = default;
