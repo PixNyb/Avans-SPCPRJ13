@@ -1,4 +1,7 @@
-/// @file
+/**
+ * @file game_object.cpp
+ * @brief GameObject class definition
+ */
 
 #include "game_object.hpp"
 #include "component.hpp"
@@ -13,8 +16,12 @@ GameObject::GameObject(const std::string &name)
 }
 
 void GameObject::AddComponent(Component *component) {
-  contents.push_back(component);
+  components.push_back(component);
 }
+
+bool GameObject::IsActive() const { return active; }
+
+void GameObject::SetActive(bool active) { this->active = active; }
 
 bool GameObject::IsActiveInWorld() const { return active; }
 
