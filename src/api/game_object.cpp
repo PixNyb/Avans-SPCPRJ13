@@ -35,6 +35,22 @@ void GameObject::AddComponent(std::shared_ptr<Component> component)
     components.push_back(component);
 }
 
+void GameObject::SetName(const std::string &name) { this->name = name; }
+
+std::string GameObject::GetName() const { return name; }
+
+int GameObject::GetTag() const { return tag; }
+
+void GameObject::SetTag(int tag) { this->tag = tag; }
+
+int GameObject::GetLayer() const { return layer; }
+
+void GameObject::SetLayer(int layer) { this->layer = layer; }
+
+const Transform &GameObject::GetTransform() const { return transform; }
+
+void GameObject::SetTransform(const Transform &transform) { this->transform = transform; }
+
 bool GameObject::IsActive() const { return active; }
 
 void GameObject::SetActive(bool active) { this->active = active; }

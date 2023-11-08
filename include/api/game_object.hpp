@@ -31,11 +31,12 @@ class GameObject
   private:
     std::string name; ///< The name of the GameObject.
     std::vector<std::shared_ptr<Component>>
-        components;      ///< The list of components attached to the GameObject.
-    Transform transform; ///< The transform of the GameObject.
-    bool active;         ///< The active flag of the GameObject.
-    int tag;             ///< The tag/type of the GameObject.
-    int layer;           ///< The layer of the GameObject.
+        components;                     ///< The list of components attached to the GameObject.
+    Transform transform;                ///< The transform of the GameObject.
+    std::shared_ptr<GameObject> parent; ///< The parent of the GameObject.
+    bool active;                        ///< The active flag of the GameObject.
+    int tag;                            ///< The tag/type of the GameObject.
+    int layer;                          ///< The layer of the GameObject.
 
   public:
     /**
@@ -97,6 +98,30 @@ class GameObject
      * @param layer The new layer of the GameObject.
      */
     void SetLayer(int layer);
+
+    /**
+     * @brief Get the transform of the GameObject.
+     * @return The transform of the GameObject.
+     */
+    const Transform &GetTransform() const;
+
+    /**
+     * @brief Set the transform of the GameObject.
+     * @param transform The new transform of the GameObject.
+     */
+    void SetTransform(const Transform &transform);
+
+    /**
+     * @brief Get the parent of the GameObject.
+     * @return The parent of the GameObject.
+     */
+    std::shared_ptr<GameObject> GetParent() const { return parent; }
+
+    /**
+     * @brief Set the parent of the GameObject.
+     * @param parent The new parent of the GameObject.
+     */
+    void SetParent(std::shared_ptr<GameObject> parent) { this->parent = parent; }
 
     /**
      * @brief Check if the GameObject is active.
