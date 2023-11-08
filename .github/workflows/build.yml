@@ -88,6 +88,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: ${{ env.BUILD_INFO }}-${{ github.sha }}
+          path: build
 
       - name: Run tests
         run: |
@@ -104,13 +105,13 @@ jobs:
       - name: Upload test result
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ needs.build.outputs.BUILD_INFO }}-${{ github.sha }}-Test.log
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Test.log
           path: |
             ./build/Testing/Temporary/LastTest.log
 
       - name: Upload coverage result
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ needs.build.outputs.BUILD_INFO }}-${{ github.sha }}-Coverage.info
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Coverage.info
           path: |
             ./build/coverage.info
