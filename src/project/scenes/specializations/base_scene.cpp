@@ -10,3 +10,5 @@
  */
 
 #include "base_scene.hpp"
+BaseScene::~BaseScene() {}
+BaseScene::BaseScene() {}

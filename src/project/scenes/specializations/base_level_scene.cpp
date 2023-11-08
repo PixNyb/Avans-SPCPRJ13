@@ -16,10 +16,6 @@ BaseLevelScene::BaseLevelScene(int id)
     this->id = id;
 }
 
-BaseLevelScene::~BaseLevelScene()
-{
-}
-
 void BaseLevelScene::RenderScene()
 {
 }

@@ -21,10 +21,10 @@
 class BaseLevelScene : public BaseScene
 {
 public:
-    BaseLevelScene(int id);
-    ~BaseLevelScene();
-    virtual void RenderScene() override;
-    virtual void UpdateScene() override;
+    explicit BaseLevelScene(int id);
+    ~BaseLevelScene() override = default;
+    void RenderScene() override;
+    void UpdateScene() override;
 
     /**
      * @brief Starts the level.
@@ -50,7 +50,7 @@ public:
      *
      * @return ID of the level.
      */
-    int GetId() const;
+    [[nodiscard]] int GetId() const;
 private:
     int id;
 };

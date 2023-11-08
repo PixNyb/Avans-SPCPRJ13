@@ -19,7 +19,7 @@ class BaseScene : public Scene
   public:
     BaseScene();
     virtual ~BaseScene();
-    virtual void RenderScene() override = 0;
+    void RenderScene() override = 0;
 
     /**
      * @brief Updates the scene

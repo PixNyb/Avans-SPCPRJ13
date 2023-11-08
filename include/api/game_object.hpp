@@ -48,7 +48,7 @@ class GameObject
      * @brief Constructor for GameObject that sets the name.
      * @param name The name of the GameObject.
      */
-    GameObject(const std::string &name);
+    explicit GameObject(const std::string &name);
 
     /**
      * @brief Constructor for GameObject that sets the name and transform.
@@ -61,13 +61,13 @@ class GameObject
     /**
      * @brief Destructor for GameObject.
      */
-    virtual ~GameObject();
+    virtual ~GameObject() = default;
 
     /**
      * @brief Get the name of the GameObject.
      * @return The name of the GameObject.
      */
-    std::string GetName() const;
+    [[nodiscard]] std::string GetName() const;
 
     /**
      * @brief Set the name of the GameObject.
