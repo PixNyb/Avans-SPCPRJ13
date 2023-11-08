@@ -10,3 +10,13 @@
  */
 
 #include "physics_facade.hpp"
+
+PhysicsFacade::PhysicsFacade(std::vector<std::shared_ptr<GameObject>> &game_objects) {
+    this->game_objects = game_objects;
+}
+
+void PhysicsFacade::PopulateWorld() {
+    b2Vec2 gravity(0, -9.8);
+    bool doSleep = true;
+    world = std::make_unique<b2World>(gravity);
+}
