@@ -5,12 +5,16 @@
 
 #include "behaviour_script.hpp"
 #include <string>
+#include "color.hpp"
 
 class Sprite : public BehaviourScript {
 private:
-  std::string sprite;
-  bool flipX, flipY;
-  int sortingLayer, orderInLayer;
+    std::string sprite;
+    Color color;
+    bool flipX;
+    bool flipY;
+    int sortingLayer;
+    int orderInLayer;
 
 public:
   Sprite();
