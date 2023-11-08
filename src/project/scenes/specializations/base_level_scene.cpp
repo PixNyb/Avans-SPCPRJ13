@@ -32,7 +32,7 @@ void BaseLevelScene::StopLevel()
 {
 }
 
-void BaseLevelScene::LoadLevel(std::string& content)
+void BaseLevelScene::LoadJSONLevel(std::string& content)
 {
 }
 

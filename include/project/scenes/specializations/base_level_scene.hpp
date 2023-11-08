@@ -43,7 +43,7 @@ public:
      *
      * @param content
      */
-    void LoadLevel(std::string& content);
+    void LoadJSONLevel(std::string& content);
 
     /**
      * @brief Get the Id object

@@ -25,6 +25,12 @@ class BaseScene : public Scene
      * @brief Updates the scene
      */
     virtual void UpdateScene() = 0;
+
+    /**
+     * @brief Remove a component from the scene
+     * @param name The name of the component to be removed
+     */
+    void RemoveByName(const std::string& name);
 };
 
 #endif // DEFUNBOBENGINE_BASE_SCENE_HPP

@@ -10,6 +10,7 @@
  */
 
 #include "base_menu_scene.hpp"
+#include <algorithm>
 
 BaseMenuScene::BaseMenuScene()
 {
@@ -43,8 +44,10 @@ std::weak_ptr<Button> BaseMenuScene::AddButton(const std::string& name, const st
     textComponent->SetTextColor(textColor);
 
     contents.push_back(button);
+    contents.push_back(textComponent);
     return button;
 }
+
 std::weak_ptr<Button> BaseMenuScene::AddButton(const std::string& name, const std::string &text, const Point &position, const std::string &buttonBackgroundImagePath, const int textSize, const std::string &font){
     // TODO: Add bounding box using vector2D
     const auto button = std::make_shared<Button>(name, name, 0, 500, 200);
@@ -57,5 +60,6 @@ std::weak_ptr<Button> BaseMenuScene::AddButton(const std::string& name, const st
 
     // TODO: Add button background image
     contents.push_back(button);
+    contents.push_back(textComponent);
     return button;
 }
