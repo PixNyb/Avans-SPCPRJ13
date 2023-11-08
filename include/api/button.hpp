@@ -5,6 +5,7 @@
 
 #include "ui_object.hpp"
 #include <functional>
+#include <utility>
 
 /**
  * @brief Instances of this class are clickable user interface items.
@@ -24,7 +25,7 @@ public:
      * @param callback The function to register, usually a lambda. But this can be
      * @deprecated Other listeners should be used instead of this function
      */
-    void OnClick(std::function<void()> callback) { onClick = callback; }
+    void OnClick(std::function<void()> callback) { onClick = std::move(callback); }
 
 private:
     /**

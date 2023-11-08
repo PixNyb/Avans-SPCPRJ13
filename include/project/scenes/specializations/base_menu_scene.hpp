@@ -36,7 +36,7 @@ public:
     * @param size Size of the text (default: 12)
     * @param font Font of the text (default: Sans.ttf)
     */
-    void AddText(const std::string& name, const std::string &text, const Point &position, int size = CoreConstants::Text::DEFAULT_SIZE, const std::string &font = CoreConstants::Text::DEFAULT_FONT);
+    void AddText(const std::string& name, const std::string &text, const Point &position, int size = CoreConstants::Text::DEFAULT_SIZE, const Color &textColor = Color::white(), const std::string &font = CoreConstants::Text::DEFAULT_FONT);
 
     // TODO: Add bounds to button (2D Vector)
     /**
