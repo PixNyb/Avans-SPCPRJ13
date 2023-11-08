@@ -77,7 +77,7 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 - Gebruik CMake om het buildproces te automatiseren. Definieer targets en afhankelijkheden in `CMakeLists.txt`-bestanden.
 - Gebruik vcpkg met het [vcpkg.json](vcpkg.json) manifest om afhankelijkheden te beheren.
 - Zorg ervoor dat uw project zonder problemen kan worden gebouwd met behulp van het cmake- en make-commando.
-- Voeg testdoelen toe om unit tests uit te voeren.
+- Voeg testdoelen toe om [unit tests](https://cmake.org/cmake/help/book/mastering-cmake/chapter/Testing%20With%20CMake%20and%20CTest.html) uit te voeren in `tests/`.
 - Maak gebruik van Continuous Integration (CI) om automatische builds en tests te garanderen.
 
 ## Git en Versiebeheer
