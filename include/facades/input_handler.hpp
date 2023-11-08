@@ -7,7 +7,7 @@
 
 #include <vector>
 #include "event.hpp"
-#include "io_facade.hpp" // De abstracte klasse
+#include "io_facade.hpp"
 
 class InputHandler : public IOFacade {
 public:

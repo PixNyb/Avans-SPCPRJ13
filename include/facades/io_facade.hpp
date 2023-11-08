@@ -6,7 +6,7 @@
 #define DEFUNBOBENGINE_IO_FACADE_HPP
 
 #include <vector>
-#include "project/core/events/event.hpp"
+#include "event.hpp"
 
 class IOFacade {
 public:
