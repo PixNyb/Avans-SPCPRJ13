@@ -72,6 +72,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Get branch name or PR number
+        id: extract_info
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "BUILD_INFO=PR-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+          else
+            echo "BUILD_INFO=$(echo ${{ github.event.ref }} | sed 's/refs\/heads\///g')" >> $GITHUB_ENV
+          fi
+
       - name: Install lcov
         run: sudo apt-get install lcov
 
