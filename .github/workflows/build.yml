@@ -6,6 +6,11 @@ on:
       - main
       - development
       - staging
+  pull_request:
+    branches:
+      - main
+      - development
+      - staging
 
 jobs:
   build:
@@ -43,13 +48,18 @@ jobs:
       - name: Build
         run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build && cmake --build build
 
-      - name: Get branch name
-        id: extract_branch
-        run: echo "BRANCH=$(echo ${{ github.event.ref }} | sed 's/refs\/heads\///g')" >> $GITHUB_ENV
+      - name: Get branch name or PR number
+        id: extract_info
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "BUILD_INFO=PR-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+          else
+            echo "BUILD_INFO=$(echo ${{ github.event.ref }} | sed 's/refs\/heads\///g')" >> $GITHUB_ENV
+          fi
 
       - name: Archive build result
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ env.BRANCH }}-${{ github.sha }}
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}
           path: |
             ./build

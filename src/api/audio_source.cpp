@@ -12,10 +12,7 @@ AudioSource::AudioSource(const std::string &audioClipPath)
   // Constructor with audio clip path initialization
 }
 
-void AudioSource::Play() {}
-
+void AudioSource::Play(bool looping) {}
 void AudioSource::Stop() {}
-
 void AudioSource::SetPitch(float pitch) {}
-
 void AudioSource::Pause() {}

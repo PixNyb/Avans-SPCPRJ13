@@ -1,3 +1,4 @@
+
 /**
  * @file window.hpp
  * @author Robin Pijnappels
@@ -10,6 +11,7 @@
  * The actual implementation of window operations is delegated to the SDL2Facade class, ensuring
  * that the engine is not directly coupled to the SDL2 library.
  */
+
 
 #ifndef DEFUNBOBENGINE_WINDOW_H
 #define DEFUNBOBENGINE_WINDOW_H
