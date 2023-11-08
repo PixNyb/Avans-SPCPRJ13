@@ -3,10 +3,13 @@
 #ifndef AVANS_SPCPRJ13_CAMERA_H
 #define AVANS_SPCPRJ13_CAMERA_H
 
+#include "color.hpp"
+
 class Camera {
 private:
-  // color backgroundColor; Uncomment and define 'color'
-  float aspectWidth, aspectHeight;
+    Color backgroundColor;
+    double aspectWidth;
+    double aspectHeight;
 
 public:
   Camera();

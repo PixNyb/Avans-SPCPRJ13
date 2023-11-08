@@ -3,7 +3,9 @@
 #ifndef AVANS_SPCPRJ13_UIOBJECT_H
 #define AVANS_SPCPRJ13_UIOBJECT_H
 
-class UIObject {
+#include "game_object.hpp"
+
+class UIObject : GameObject {
 private:
   float width, height;
 
