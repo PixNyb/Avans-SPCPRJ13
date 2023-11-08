@@ -12,14 +12,21 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 # Add source files
 file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/apps/*.cpp)
 
-# Add header files
-include_directories(${PROJECT_SOURCE_DIR}/include)
+# Add header directories
+file(GLOB_RECURSE HEADER_LIST ${PROJECT_SOURCE_DIR}/include/*.hpp)
+foreach(_headerFile ${HEADER_LIST})
+    get_filename_component(_dir ${_headerFile} PATH)
+    list(APPEND HEADER_DIRS ${_dir})
+endforeach()
+list(REMOVE_DUPLICATES HEADER_DIRS)
 
 # Add executable
 add_executable(DeFunBobEngine ${SOURCES})
 
-target_include_directories(DeFunBobEngine PRIVATE ${PROJECT_SOURCE_DIR}/include)
-target_include_directories(DeFunBobEngine PRIVATE ${PROJECT_SOURCE_DIR}/include/API)
+# Include headers
+foreach(_headerDir ${HEADER_DIRS})
+    target_include_directories(DeFunBobEngine PRIVATE ${_headerDir})
+endforeach()
 
 # Add SDL2
 find_package(SDL2 CONFIG REQUIRED)

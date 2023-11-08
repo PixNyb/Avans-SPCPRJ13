@@ -6,7 +6,7 @@
 #define DEFUNBOBENGINE_INPUTHANDLER_HPP
 
 #include <vector>
-#include "project/core/events/event.hpp"
+#include "event.hpp"
 #include "io_facade.hpp" // De abstracte klasse
 
 class InputHandler : public IOFacade {
