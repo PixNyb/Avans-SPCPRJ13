@@ -87,7 +87,7 @@ jobs:
       - name: Download build result
         uses: actions/download-artifact@v2
         with:
-          name: ${{ needs.build.outputs.BUILD_INFO }}-${{ github.sha }}
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}
 
       - name: Run tests
         run: |
