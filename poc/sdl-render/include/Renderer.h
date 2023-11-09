@@ -3,7 +3,7 @@
 
 class Renderer
 {
-public:
+  public:
     Renderer(int width, int height);
     ~Renderer();
     void clear();
@@ -14,7 +14,7 @@ public:
     void drawSprite(int w, int h);
     SDL_Renderer *getSDLRenderer();
 
-private:
+  private:
     SDL_Window *window;
     SDL_Renderer *renderer;
 };

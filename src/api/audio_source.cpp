@@ -2,14 +2,15 @@
 
 #include "audio_source.hpp"
 
-AudioSource::AudioSource()
-    : audioClip(""), playOnAwake(true), loop(false), volume(1.0f) {
-  // Default constructor initialization
+AudioSource::AudioSource() : audioClip(""), playOnAwake(true), loop(false), volume(1.0f)
+{
+    // Default constructor initialization
 }
 
 AudioSource::AudioSource(const std::string &audioClipPath)
-    : audioClip(audioClipPath), playOnAwake(true), loop(false), volume(1.0f) {
-  // Constructor with audio clip path initialization
+    : audioClip(audioClipPath), playOnAwake(true), loop(false), volume(1.0f)
+{
+    // Constructor with audio clip path initialization
 }
 
 void AudioSource::Play(bool looping) {}
