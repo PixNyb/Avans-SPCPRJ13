@@ -2,8 +2,9 @@
 
 #include "ui_object.hpp"
 
-UIObject::UIObject() : width(0), height(0) {
-  // Default constructor initialization
+UIObject::UIObject() : width(0), height(0)
+{
+    // Default constructor initialization
 }
 
 void UIObject::SetWidth(int w) { width = w; }

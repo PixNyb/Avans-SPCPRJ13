@@ -18,30 +18,19 @@ int windowHeight = 480;
 float squareSize = 50;
 SDL_FRect squareRect = {static_cast<float>((windowWidth - squareSize) / 2),
                         static_cast<float>((windowHeight - squareSize) / 2),
-                        static_cast<float>(squareSize),
-                        static_cast<float>(squareSize)};
+                        static_cast<float>(squareSize), static_cast<float>(squareSize)};
 
-SDL_FRect floorRect = {0.0f,
-                       static_cast<float>(windowHeight - 10),
-                       static_cast<float>(windowWidth),
+SDL_FRect floorRect = {0.0f, static_cast<float>(windowHeight - 10), static_cast<float>(windowWidth),
                        10.0f};
 
-void bounceRect()
-{
-    verticalVelocity = -verticalVelocity * DAMPING_FACTOR;
-}
+void bounceRect() { verticalVelocity = -verticalVelocity * DAMPING_FACTOR; }
 
-void jumpRect()
-{
-    verticalVelocity = JUMP_STRENGTH;
-}
+void jumpRect() { verticalVelocity = JUMP_STRENGTH; }
 
 bool checkCol(SDL_FRect rect1, SDL_FRect rect2)
 {
-    return rect1.x < rect2.x + rect2.w &&
-           rect1.x + rect1.w > rect2.x &&
-           rect1.y < rect2.y + rect2.h &&
-           rect1.y + rect1.h > rect2.y;
+    return rect1.x < rect2.x + rect2.w && rect1.x + rect1.w > rect2.x &&
+           rect1.y < rect2.y + rect2.h && rect1.y + rect1.h > rect2.y;
 }
 int main(int argc, char *argv[])
 {
@@ -54,11 +43,9 @@ int main(int argc, char *argv[])
 
     // Create a window and a renderer
 
-    SDL_Window *window =
-        SDL_CreateWindow("SDL Input", SDL_WINDOWPOS_CENTERED,
-                         SDL_WINDOWPOS_CENTERED, windowWidth, windowHeight, 0);
-    SDL_Renderer *renderer =
-        SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    SDL_Window *window = SDL_CreateWindow("SDL Input", SDL_WINDOWPOS_CENTERED,
+                                          SDL_WINDOWPOS_CENTERED, windowWidth, windowHeight, 0);
+    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     // Define the initial color of the square
     SDL_Color squareColor = {255, 255, 255, 255};
@@ -70,8 +57,7 @@ int main(int argc, char *argv[])
 
     // Set the renderer draw color
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_SetRenderDrawColor(renderer, squareColor.r, squareColor.g, squareColor.b,
-                           squareColor.a);
+    SDL_SetRenderDrawColor(renderer, squareColor.r, squareColor.g, squareColor.b, squareColor.a);
 
     // Create a loop that listens for events
     bool quit = false;
@@ -151,10 +137,10 @@ int main(int argc, char *argv[])
                 squareRect.y = event.button.y - squareSize / 2;
                 break;
             case SDL_MOUSEMOTION:
-                isHovering = (event.motion.x >= squareRect.x &&
-                              event.motion.x <= squareRect.x + squareSize &&
-                              event.motion.y >= squareRect.y &&
-                              event.motion.y <= squareRect.y + squareSize);
+                isHovering =
+                    (event.motion.x >= squareRect.x &&
+                     event.motion.x <= squareRect.x + squareSize &&
+                     event.motion.y >= squareRect.y && event.motion.y <= squareRect.y + squareSize);
                 break;
             }
         }
@@ -168,8 +154,9 @@ int main(int argc, char *argv[])
         // Check for collision with the floor
         if (checkCol(squareRect, floorRect))
         {
-            squareRect.y = floorRect.y - squareRect.h; // Reset the y position to the top of the floor
-            bounceRect();                              // Make it bounce
+            squareRect.y =
+                floorRect.y - squareRect.h; // Reset the y position to the top of the floor
+            bounceRect();                   // Make it bounce
         }
 
         // Change the background color every 0.1 seconds if the mouse is hovering
@@ -188,13 +175,13 @@ int main(int argc, char *argv[])
             squareColor = previousSquareColor;
             backgroundColor = {0, 0, 0, 255};
         }
-        SDL_SetRenderDrawColor(renderer, backgroundColor.r, backgroundColor.g,
-                               backgroundColor.b, backgroundColor.a);
+        SDL_SetRenderDrawColor(renderer, backgroundColor.r, backgroundColor.g, backgroundColor.b,
+                               backgroundColor.a);
         SDL_RenderClear(renderer);
 
         // Draw the square with the current color
-        SDL_SetRenderDrawColor(renderer, squareColor.r, squareColor.g,
-                               squareColor.b, squareColor.a);
+        SDL_SetRenderDrawColor(renderer, squareColor.r, squareColor.g, squareColor.b,
+                               squareColor.a);
 
         SDL_RenderFillRectF(renderer, &squareRect);
         SDL_RenderFillRectF(renderer, &floorRect);

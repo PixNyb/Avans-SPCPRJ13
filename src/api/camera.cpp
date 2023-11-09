@@ -4,8 +4,9 @@
 
 Camera::Camera()
     : backgroundColor(0, 0, 0, 1), // default to black color
-      aspectWidth(16), aspectHeight(9) {
-  // Default constructor initialization
+      aspectWidth(16), aspectHeight(9)
+{
+    // Default constructor initialization
 }
 
 void Camera::SetBackgroundColor(const Color &color) { backgroundColor = color; }
@@ -20,11 +21,13 @@ void Camera::SetAspectHeight(int height) { aspectHeight = height; }
 
 int Camera::GetAspectHeight() const { return aspectHeight; }
 
-float Camera::GetAspectRatio() const {
-  if (aspectHeight != 0) {
-    return static_cast<float>(aspectWidth) / aspectHeight;
-  }
-  return 0.0f;
+float Camera::GetAspectRatio() const
+{
+    if (aspectHeight != 0)
+    {
+        return static_cast<float>(aspectWidth) / aspectHeight;
+    }
+    return 0.0f;
 }
 
 // ... additional methods if required

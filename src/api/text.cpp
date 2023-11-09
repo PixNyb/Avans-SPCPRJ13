@@ -2,8 +2,8 @@
 
 #include "text.hpp"
 
-Text::Text()
-        : text(""), fontSize(12), alignment("left"), textColor(255, 255, 255, 1) {
+Text::Text() : text(""), fontSize(12), alignment("left"), textColor(255, 255, 255, 1)
+{
     // Default constructor initialization
 }
 
