@@ -87,7 +87,7 @@ jobs:
       - name: Extract docs to current directory
         run: |
           tar -xzvf docs.tar.gz -C .
-          mv docs/* .
+          mv -f docs/* .
           rm docs.tar.gz
 
       - name: Commit docs
