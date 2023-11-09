@@ -51,10 +51,21 @@ jobs:
             echo "<meta http-equiv=\"refresh\" content=\"0; url=./${{ env.LATEST_TAG }}/index.html\" />" > docs/index.html
           fi
 
+      - name: Upload docs directory
+        uses: actions/upload-artifact@v2
+        with:
+          name: docs-${{ env.BUILD_INFO }}
+          path: docs
+
       - name: Checkout docs branch
         uses: actions/checkout@v2
         with:
           ref: docs
+
+      - name: Download docs directory
+        uses: actions/download-artifact@v2
+        with:
+          name: docs-${{ env.BUILD_INFO }}
 
       - name: Commit and push changes
         run: |
