@@ -2,7 +2,8 @@
 
 #include "position2D.h"
 
-struct MovementComponent {
+struct MovementComponent
+{
     Position2D acceleration;
     Position2D velocity;
     Position2D max_velocity;
