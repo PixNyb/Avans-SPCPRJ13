@@ -44,6 +44,19 @@ jobs:
           fi
           doxygen Doxyfile
 
+      - name: Get latest release tag
+        id: get_latest_tag
+        run: |
+          echo "LATEST_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+
+      - name: Add redirect to latest release tag if there is one, if not, redirect to current build
+        run: |
+          if [ -z "${{ env.LATEST_TAG }}" ]; then
+            echo "<meta http-equiv=\"refresh\" content=\"0; url=./${{ env.BUILD_INFO }}/index.html\" />" > docs/index.html
+          else
+            echo "<meta http-equiv=\"refresh\" content=\"0; url=./${{ env.LATEST_TAG }}/index.html\" />" > docs/index.html
+          fi
+
       - name: Upload documentation artifacts
         uses: actions/upload-pages-artifact@v2
         with:
