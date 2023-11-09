@@ -1,7 +1,7 @@
 /**
  * @file game_object.hpp
  * @author Roël Couwenberg (contact@roelc.me)
- * @brief This file contains the GameObject class definition.
+ * @brief This file contains the GameObject class definition. (TEST)
  * @version 0.1
  * @date 2023-11-08
  *
