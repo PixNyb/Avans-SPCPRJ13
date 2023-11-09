@@ -79,11 +79,10 @@ jobs:
       - name: Extract docs to current directory
         run: |
           tar -xzvf docs.tar.gz -C .
+          rm docs.tar.gz
 
       - name: Commit docs
         run: |
-          git config --global user.name "Doxygen"
-          git config --global user.email "doxygen[bot]@github.com"
           git add .
           git commit -m "Update docs"
           git push
