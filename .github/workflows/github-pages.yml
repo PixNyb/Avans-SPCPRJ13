@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+      - staging
+      - development
+    tags:
+      - v*
 
 jobs:
   build:
@@ -11,12 +15,48 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: Install Doxygen
         run: sudo apt-get install -y doxygen graphviz
+
+      - name: Cache docs
+        uses: actions/cache@v2
+        with:
+          path: docs
+          key: docs-cache-${{ runner.os }}
+
+      - name: Get branch name or tag name
+        id: extract_info
+        run: |
+          ref=${{ github.ref }}
+          IFS='/' read -ra ADDR <<< "$ref"
+          echo "BUILD_INFO=${ADDR[2]}" >> $GITHUB_ENV
+
       - name: Update Doxygen version
-        run: sed -i "s/PROJECT_NUMBER.*/PROJECT_NUMBER = $GITHUB_SHA/" Doxyfile
+        run: |
+          sed -i "s/PROJECT_NUMBER.*/PROJECT_NUMBER = $GITHUB_SHA/" Doxyfile
+          sed -i "s/OUTPUT_DIRECTORY.*/OUTPUT_DIRECTORY = docs\/${{ env.BUILD_INFO }}/" Doxyfile
+
       - name: Generate Doxygen documentation
-        run: doxygen Doxyfile
+        run: |
+          if [ ! -d "docs/${{ env.BUILD_INFO }}" ]; then
+            mkdir -p docs/${{ env.BUILD_INFO }}
+          fi
+          doxygen Doxyfile
+
+      - name: Get latest release tag
+        id: get_latest_tag
+        run: |
+          echo "LATEST_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+
+      - name: Add redirect to latest release tag if there is one, if not, redirect to current build
+        run: |
+          if [ -z "${{ env.LATEST_TAG }}" ]; then
+            echo "<meta http-equiv=\"refresh\" content=\"0; url=./${{ env.BUILD_INFO }}/index.html\" />" > docs/index.html
+          else
+            echo "<meta http-equiv=\"refresh\" content=\"0; url=./${{ env.LATEST_TAG }}/index.html\" />" > docs/index.html
+          fi
+
       - name: Upload documentation artifacts
         uses: actions/upload-pages-artifact@v2
         with:
