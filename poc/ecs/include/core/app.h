@@ -1,26 +1,29 @@
 #pragma once
 
-#include "definitions.h"
 #include "SDL.h"
 #include "SDL_opengl.h"
+#include "definitions.h"
 #include "entt/entity/registry.hpp"
 #include "scene_manager.h"
 #include "system.h"
 
-enum AppState {
+enum AppState
+{
     RUNNING,
     PAUSED,
     EXIT
 };
 
-class App {
-public:
+class App
+{
+  public:
     App();
     ~App();
 
     void start();
     void initSystems();
-private:
+
+  private:
     int _screenWidth;
     int _screenHeight;
 

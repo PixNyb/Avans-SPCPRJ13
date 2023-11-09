@@ -11,7 +11,8 @@ using namespace std;
  * @param argv  array of arguments
  * @return int  0 if success
  */
-int main(int argc, char **argv) {
-  std::cout << "Hello, World!" << std::endl;
-  return 0;
+int main(int argc, char **argv)
+{
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
 }

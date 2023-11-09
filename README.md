@@ -20,7 +20,7 @@ Voor het bijhouden van de voortgang van het project wordt er gebruik gemaakt van
 - CMake
 - vcpkg
 - Git
-- Doxygen (en Graphviz)
+- Doxygen en Graphviz (optioneel om lokaal documentatie te genereren)
 
 ### Installatie
 
@@ -44,7 +44,7 @@ De documentatie van de code wordt gegenereerd met behulp van [Doxygen](https://w
 doxygen Doxyfile
 ```
 
-_Denk eraan dat [Graphviz](https://graphviz.org/) geïnstalleerd moet zijn om de UML-diagrammen te genereren, en dat doxygen niet automatisch in CI/CD wordt uitgevoerd. Dit moet dus handmatig worden gedaan._
+_Denk eraan dat [Graphviz](https://graphviz.org/) geïnstalleerd moet zijn om de UML-diagrammen te genereren._
 
 ## Proof Of Concepts
 
@@ -55,6 +55,7 @@ Alle POC's worden met behulp van CMake gecompileerd. De POC's kunnen individueel
 - [Entity Component System](poc/ecs/README.md)
 - [Entity Component](poc/ec/README.md)
 - [SDL Input](poc/sdl-input/README.md)
+- [SDL Physics](poc/sdl-input-physics/README.md)
 - [SDL Render](poc/sdl-render/README.md)
 
 ## Development Guidelines

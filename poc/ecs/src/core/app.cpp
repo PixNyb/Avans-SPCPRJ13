@@ -1,30 +1,33 @@
 #include "app.h"
-#include "position.h"
 #include "box.h"
-#include "input.h"
-#include "movement_system.h"
-#include "input_manager.h"
-#include "player_control_system.h"
 #include "game_object.h"
+#include "input.h"
+#include "input_manager.h"
+#include "movement_system.h"
+#include "player_control_system.h"
+#include "position.h"
 #include "render_system.h"
 #include "scene_system.h"
 
-App::App() {
+App::App()
+{
     _window = nullptr;
     _renderer = nullptr;
     _screenHeight = SCREEN_HEIGHT;
     _screenWidth = SCREEN_WIDTH;
     _state = AppState::PAUSED;
-    _primary_registry = entt::registry {};
+    _primary_registry = entt::registry{};
 }
 
-App::~App() {
+App::~App()
+{
     _window = nullptr;
     _renderer = nullptr;
     _state = AppState::EXIT;
 }
 
-void App::start() {
+void App::start()
+{
     initSystems();
     test();
     _state = AppState::RUNNING;
@@ -38,7 +41,8 @@ void App::start() {
     const int TARGET_FPS = 240;
     const int FRAME_DURATION = 1000 / TARGET_FPS;
 
-    while(_state == AppState::RUNNING){
+    while (_state == AppState::RUNNING)
+    {
         currentTime = SDL_GetTicks();
         elapsedTime = currentTime - previousTime;
         deltaTime = (float)elapsedTime / 1000.0f;
@@ -48,7 +52,8 @@ void App::start() {
 
         // Input events
         InputManager::poll();
-        if (InputManager::hasQuit()) _state = AppState::EXIT;
+        if (InputManager::hasQuit())
+            _state = AppState::EXIT;
 
         update(deltaTime);
 
@@ -56,9 +61,11 @@ void App::start() {
     }
 }
 
-void App::initSystems() {
+void App::initSystems()
+{
     SDL_Init(SDL_INIT_EVERYTHING);
-    _window = SDL_CreateWindow("App", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _screenWidth, _screenHeight, SDL_WINDOW_OPENGL);
+    _window = SDL_CreateWindow("App", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _screenWidth,
+                               _screenHeight, SDL_WINDOW_OPENGL);
 
     // TODO: Do some checking and error handling
 
@@ -72,30 +79,33 @@ void App::initSystems() {
 }
 
 // Meant to test entities
-void App::test() {
+void App::test()
+{
 
-//    // Prepare entities
+    //    // Prepare entities
     auto entity = _primary_registry.create();
 
     _primary_registry.emplace<InputComponent>(entity);
-    _primary_registry.emplace<PositionComponent>(entity, Position2D { 50, 50 });
-    _primary_registry.emplace<Box2DComponent>(entity, Box2DComponent { 50, 50 });
+    _primary_registry.emplace<PositionComponent>(entity, Position2D{50, 50});
+    _primary_registry.emplace<Box2DComponent>(entity, Box2DComponent{50, 50});
 
     auto entityB = _primary_registry.create();
 
-//    _primary_registry.emplace<InputComponent>(entityB);
-    _primary_registry.emplace<PositionComponent>(entityB, Position2D { 100, 100 });
-    _primary_registry.emplace<Box2DComponent>(entityB, Box2DComponent { 50, 50 });
+    //    _primary_registry.emplace<InputComponent>(entityB);
+    _primary_registry.emplace<PositionComponent>(entityB, Position2D{100, 100});
+    _primary_registry.emplace<Box2DComponent>(entityB, Box2DComponent{50, 50});
 
     auto entityC = _primary_registry.create();
 
     _primary_registry.emplace<InputComponent>(entityC);
-    _primary_registry.emplace<PositionComponent>(entityC, Position2D { 300, 150 });
-    _primary_registry.emplace<Box2DComponent>(entityC, Box2DComponent { 75, 25 });
+    _primary_registry.emplace<PositionComponent>(entityC, Position2D{300, 150});
+    _primary_registry.emplace<Box2DComponent>(entityC, Box2DComponent{75, 25});
 }
 
-void App::update(float delta) {
-    for (auto system : _systems) {
+void App::update(float delta)
+{
+    for (auto system : _systems)
+    {
         system->onUpdate(_primary_registry, delta);
     }
 
