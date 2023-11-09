@@ -15,11 +15,11 @@ enum class Alignment { left, center, right };
 /**
  * @brief Class representing a piece of text which can be rendered.
  */
-class Text {
+class Text : public UIObject {
 private:
     std::string text;      ///< The text string.
     int fontSize;          ///< The font size of the text.
-    std::string alignment; ///< The alignment of the text.
+    Alignment alignment; ///< The alignment of the text.
     Color textColor;       ///< The color of the text.
 
 public:
@@ -29,6 +29,16 @@ public:
      * Initializes a new Text with default values.
      */
     Text();
+
+    /**
+     * @brief Default for Text.
+     * @param name The name of the text.
+     * @param tag The tag of the text.
+     * @param layer The layer of the text.
+     * @param width The width of the text.
+     * @param height The height of the text.
+     */
+    Text(const std::string &name, const std::string &tag, int layer, float width, float height);
 
     /**
      * @brief Set the text string.
@@ -63,14 +73,14 @@ public:
      *
      * @param align The new alignment.
      */
-    void SetAlignment(const std::string &align);
+    void SetAlignment(const Alignment &align);
 
     /**
      * @brief Get the alignment of the text.
      *
      * @return The alignment of the text.
      */
-    std::string GetAlignment() const;
+    Alignment GetAlignment() const;
 
     /**
      * @brief Set the color of the text.
