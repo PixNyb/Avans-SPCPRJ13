@@ -8,3 +8,12 @@
  * @copyright Copyright (c) 2023
  *
  */
+
+#include "component.hpp"
+
+Component::Component() : active(true) {}
+
+bool Component::IsActive() const { return active; }
+void Component::SetActive(bool active) { this->active = active; }
+void Component::Update() {}
+void Component::Condition() {}
