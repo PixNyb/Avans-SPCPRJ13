@@ -87,8 +87,8 @@ jobs:
       - name: Extract docs to current directory
         run: |
           tar -xzvf docs.tar.gz -C .
-          if [ -d "docs/${{ env.BUILD_INFO }}" ]; then
-            rm -rf docs/${{ env.BUILD_INFO }}
+          if [ -d "${{ env.BUILD_INFO }}" ]; then
+            rm -rf ${{ env.BUILD_INFO }}
           fi
           mv -f docs/* .
           rm docs.tar.gz
