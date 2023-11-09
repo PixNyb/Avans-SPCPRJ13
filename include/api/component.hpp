@@ -37,14 +37,14 @@ public:
    *
    * A pure virtual destructor is needed to make this class abstract.
    */
-  virtual ~Component() = 0;
+  virtual ~Component() = default;
 
   /**
    * @brief Check if the Component is active.
    *
    * @return True if the Component is active, false otherwise.
    */
-  bool IsActive() const;
+  [[nodiscard]] bool IsActive() const;
 
   /**
    * @brief Set the active status of the Component.
