@@ -1,4 +1,4 @@
 /// @file
 #include "scene.hpp"
 
-void Scene::RenderScene(){}
+void Scene::RenderScene() {}

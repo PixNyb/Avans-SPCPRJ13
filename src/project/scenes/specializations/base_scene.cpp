@@ -15,7 +15,9 @@
 BaseScene::~BaseScene() {}
 BaseScene::BaseScene() {}
 
-void BaseScene::RemoveByName(const std::string &name) {
-    auto it = std::remove_if(contents.begin(), contents.end(),[name](const auto& element) { return element->GetName() == name;});
+void BaseScene::RemoveByName(const std::string &name)
+{
+    auto it = std::remove_if(contents.begin(), contents.end(),
+                             [name](const auto &element) { return element->GetName() == name; });
     contents.erase(it, contents.end());
 }

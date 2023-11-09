@@ -8,8 +8,10 @@ UIObject::UIObject() : width(0), height(0)
 }
 
 // TODO: Implement game object props
-UIObject::UIObject(const std::string &name, const std::string &tag, int layer, float width, float height) : GameObject(name), width(width), height(height) {
-
+UIObject::UIObject(const std::string &name, const std::string &tag, int layer, float width,
+                   float height)
+    : GameObject(name), width(width), height(height)
+{
 }
 
 void UIObject::SetWidth(float w) { width = w; }

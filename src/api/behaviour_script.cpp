@@ -2,8 +2,8 @@
 // Created by Robin Pijnappels on 31/10/2023.
 //
 
-#include "component.hpp"
 #include "behaviour_script.hpp"
+#include "component.hpp"
 
 void BehaviourScript::OnStart() {}
 void BehaviourScript::OnUpdate() {}

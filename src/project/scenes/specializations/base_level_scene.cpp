@@ -11,33 +11,17 @@
 
 #include "base_level_scene.hpp"
 
-BaseLevelScene::BaseLevelScene(int id)
-{
-    this->id = id;
-}
+BaseLevelScene::BaseLevelScene(int id) { this->id = id; }
 
-void BaseLevelScene::RenderScene()
-{
-}
+void BaseLevelScene::RenderScene() {}
 
-void BaseLevelScene::UpdateScene()
-{
-}
+void BaseLevelScene::UpdateScene() {}
 
-void BaseLevelScene::StartLevel()
-{
-}
+void BaseLevelScene::StartLevel() {}
 
-void BaseLevelScene::StopLevel()
-{
-}
+void BaseLevelScene::StopLevel() {}
 
-void BaseLevelScene::LoadJSONLevel(std::string& content)
-{
-}
+void BaseLevelScene::LoadJSONLevel(std::string &content) {}
 
-int BaseLevelScene::GetId() const
-{
-    return id;
-}
+int BaseLevelScene::GetId() const { return id; }
 BaseLevelScene::~BaseLevelScene() = default;

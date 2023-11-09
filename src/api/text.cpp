@@ -3,29 +3,36 @@
 #include "text.hpp"
 #include "core_constants.hpp"
 
-Text::Text() : UIObject(), fontSize(CoreConstants::Text::DEFAULT_SIZE), alignment(CoreConstants::Text::DEFAULT_ALIGNMENT), textColor(CoreConstants::Text::DEFAULT_COLOR) {}
-
-Text::Text(const std::string &name, const std::string &tag, int layer, float width, float height)
-    : UIObject(name, tag, layer, width, height), fontSize(CoreConstants::Text::DEFAULT_SIZE), alignment(CoreConstants::Text::DEFAULT_ALIGNMENT), textColor(CoreConstants::Text::DEFAULT_COLOR)
+Text::Text()
+    : UIObject(), fontSize(CoreConstants::Text::DEFAULT_SIZE),
+      alignment(CoreConstants::Text::DEFAULT_ALIGNMENT),
+      textColor(CoreConstants::Text::DEFAULT_COLOR)
 {
-
-Text::Text() : text(""), fontSize(12), alignment("left"), textColor(255, 255, 255, 1)
-{
-    // Default constructor initialization
 }
 
-void Text::SetText(const std::string &str) { text = str; }
+Text::Text(const std::string &name, const std::string &tag, int layer, float width, float height)
+    : UIObject(name, tag, layer, width, height), fontSize(CoreConstants::Text::DEFAULT_SIZE),
+      alignment(CoreConstants::Text::DEFAULT_ALIGNMENT),
+      textColor(CoreConstants::Text::DEFAULT_COLOR)
+{
 
-std::string Text::GetText() const { return text; }
+    Text::Text() : text(""), fontSize(12), alignment("left"), textColor(255, 255, 255, 1)
+    {
+        // Default constructor initialization
+    }
 
-void Text::SetFontSize(int size) { fontSize = size; }
+    void Text::SetText(const std::string &str) { text = str; }
 
-int Text::GetFontSize() const { return fontSize; }
+    std::string Text::GetText() const { return text; }
 
-void Text::SetAlignment(const Alignment &align) { alignment = align; }
+    void Text::SetFontSize(int size) { fontSize = size; }
 
-Alignment Text::GetAlignment() const { return alignment; }
+    int Text::GetFontSize() const { return fontSize; }
 
-void Text::SetTextColor(const Color &color) { textColor = color; }
+    void Text::SetAlignment(const Alignment &align) { alignment = align; }
 
-Color Text::GetTextColor() const { return textColor; }
+    Alignment Text::GetAlignment() const { return alignment; }
+
+    void Text::SetTextColor(const Color &color) { textColor = color; }
+
+    Color Text::GetTextColor() const { return textColor; }

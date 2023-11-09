@@ -12,15 +12,13 @@
 #include "base_menu_scene.hpp"
 #include <algorithm>
 
-BaseMenuScene::BaseMenuScene()
-{
-}
+BaseMenuScene::BaseMenuScene() {}
 
-BaseMenuScene::~BaseMenuScene()
-{
-}
+BaseMenuScene::~BaseMenuScene() {}
 
-void BaseMenuScene::AddText(const std::string& name, const std::string &text, const Point &position, const int size, const Color &textColor, const std::string &font){
+void BaseMenuScene::AddText(const std::string &name, const std::string &text, const Point &position,
+                            const int size, const Color &textColor, const std::string &font)
+{
     const auto textComponent = std::make_shared<Text>(name, name, 0, size, size);
     textComponent->SetText(text);
     textComponent->SetFontSize(size);
@@ -30,7 +28,11 @@ void BaseMenuScene::AddText(const std::string& name, const std::string &text, co
     contents.push_back(textComponent);
 }
 
-std::weak_ptr<Button> BaseMenuScene::AddButton(const std::string& name, const std::string &text, const Point &position, const Color &bgColor, const Color &textColor, const int textSize, const std::string &font){
+std::weak_ptr<Button> BaseMenuScene::AddButton(const std::string &name, const std::string &text,
+                                               const Point &position, const Color &bgColor,
+                                               const Color &textColor, const int textSize,
+                                               const std::string &font)
+{
     // TODO: Add bounding box using vector2D
     // TODO: Add background for button and text color, size and font
     const auto button = std::make_shared<Button>(name, name, 0, 500, 500);
@@ -48,7 +50,11 @@ std::weak_ptr<Button> BaseMenuScene::AddButton(const std::string& name, const st
     return button;
 }
 
-std::weak_ptr<Button> BaseMenuScene::AddButton(const std::string& name, const std::string &text, const Point &position, const std::string &buttonBackgroundImagePath, const int textSize, const std::string &font){
+std::weak_ptr<Button> BaseMenuScene::AddButton(const std::string &name, const std::string &text,
+                                               const Point &position,
+                                               const std::string &buttonBackgroundImagePath,
+                                               const int textSize, const std::string &font)
+{
     // TODO: Add bounding box using vector2D
     const auto button = std::make_shared<Button>(name, name, 0, 500, 200);
     button->SetTransform(Transform(position, 0, 0));
