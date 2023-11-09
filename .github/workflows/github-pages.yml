@@ -95,7 +95,7 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions@users.noreply.github.com"
           git add ${{ env.BUILD_INFO }} index.html
-          git commit -m "Update docs"
+          git commit -m "Update docs for ${{ env.BUILD_INFO }}"
           git push origin docs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
