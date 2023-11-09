@@ -9,7 +9,7 @@
 <area shape="rect" id="node3" href="$scene_8hpp.html" title=" " alt="" coords="101,259,189,285"/>
 <area shape="rect" id="node4" title=" " alt="" coords="107,408,170,435"/>
 <area shape="rect" id="node5" title=" " alt="" coords="5,408,83,435"/>
-<area shape="rect" id="node6" href="$game__object_8hpp.html" title="This file contains the GameObject class definition. (TEST)" alt="" coords="178,333,313,360"/>
+<area shape="rect" id="node6" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="178,333,313,360"/>
 <area shape="rect" id="node7" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="333,408,456,435"/>
 <area shape="rect" id="node8" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="195,408,309,435"/>
 <area shape="rect" id="node10" title=" " alt="" coords="480,408,539,435"/>
