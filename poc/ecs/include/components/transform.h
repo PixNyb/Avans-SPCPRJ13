@@ -1,6 +1,7 @@
 #pragma once
 
-struct TransformComponent {
+struct TransformComponent
+{
     Position2D position;
     Position2D scale;
     float rotate = 0.0f;

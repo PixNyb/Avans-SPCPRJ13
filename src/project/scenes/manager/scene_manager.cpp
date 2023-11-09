@@ -11,28 +11,14 @@
 
 #include "scene_manager.hpp"
 
-SceneManager::SceneManager()
-{
-}
+SceneManager::SceneManager() {}
 
 SceneManager::~SceneManager() = default;
 
-void SceneManager::SetScene(std::shared_ptr<Scene> scene)
-{
-    currentScene = std::move(scene);
-}
+void SceneManager::SetScene(std::shared_ptr<Scene> scene) { currentScene = std::move(scene); }
 
-void SceneManager::RenderScene()
-{
-    currentScene->RenderScene();
-}
+void SceneManager::RenderScene() { currentScene->RenderScene(); }
 
-std::weak_ptr<Scene> SceneManager::GetScene()
-{
-    return currentScene;
-}
+std::weak_ptr<Scene> SceneManager::GetScene() { return currentScene; }
 
-bool SceneManager::HasScene() const
-{
-    return currentScene != nullptr;
-}
+bool SceneManager::HasScene() const { return currentScene != nullptr; }

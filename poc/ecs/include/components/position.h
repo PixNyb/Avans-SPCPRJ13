@@ -2,6 +2,7 @@
 
 #include "position2D.h"
 
-struct PositionComponent {
+struct PositionComponent
+{
     Position2D position2D;
 };

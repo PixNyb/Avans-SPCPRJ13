@@ -2,6 +2,7 @@
 
 #include "position2D.h"
 
-struct InputComponent {
+struct InputComponent
+{
     Position2D movement_input;
 };

@@ -28,8 +28,7 @@ int main(int argc, char *args[])
         return 1;
     }
 
-    SDL_Texture *bgTexture =
-        SDL_CreateTextureFromSurface(renderer.getSDLRenderer(), bgSurface);
+    SDL_Texture *bgTexture = SDL_CreateTextureFromSurface(renderer.getSDLRenderer(), bgSurface);
     SDL_FreeSurface(bgSurface);
 
     if (bgTexture == nullptr)

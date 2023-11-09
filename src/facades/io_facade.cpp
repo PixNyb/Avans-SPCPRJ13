@@ -11,6 +11,7 @@
 
 #include "io_facade.hpp"
 
-void IOFacade::createWindow(const char* title, int width, int height) {
+void IOFacade::createWindow(const char *title, int width, int height)
+{
     sdlWindow.create(title, width, height);
 }
