@@ -19,6 +19,12 @@ jobs:
       - name: Install Doxygen
         run: sudo apt-get install -y doxygen graphviz
 
+      - name: Cache docs
+        uses: actions/cache@v2
+        with:
+          path: docs
+          key: docs-cache-${{ runner.os }}
+
       - name: Get branch name or tag name
         id: extract_info
         run: |
@@ -32,7 +38,11 @@ jobs:
           sed -i "s/OUTPUT_DIRECTORY.*/OUTPUT_DIRECTORY = docs\/${{ env.BUILD_INFO }}/" Doxyfile
 
       - name: Generate Doxygen documentation
-        run: doxygen Doxyfile
+        run: |
+          if [ ! -d "docs/${{ env.BUILD_INFO }}" ]; then
+            mkdir -p docs/${{ env.BUILD_INFO }}
+          fi
+          doxygen Doxyfile
 
       - name: Upload documentation artifacts
         uses: actions/upload-pages-artifact@v2
