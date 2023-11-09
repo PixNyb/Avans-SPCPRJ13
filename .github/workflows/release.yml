@@ -45,58 +45,25 @@ jobs:
         run: | 
           zip -r sdk.zip include
           tar -czf sdk.tar.gz include
-
-      - name: Generate release body
-        id: generate_release_body
-        run: |
-          BODY=$(git log --pretty=format:'- %s' $(git describe --tags --abbrev=0)..HEAD)
-          if [ -z "$BODY" ]; then
-            BODY="Release ${{ github.ref }}"
-          fi
-          echo "BODY=${BODY}" >> $GITHUB_ENV
-
-      - name: Create library release
-        id: create_library
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          
+      - name: Get release
+        id: get_release
+        uses: actions/github-script@v5
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: ${{ env.BODY }}
-          draft: false
-          prerelease: false
-
-      - name: Create SDK ZIP release
-        id: create_sdk_zip
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: ${{ env.BODY }}
-          draft: false
-          prerelease: false
-
-      - name: Create SDK tar.gz release
-        id: create_sdk_tar_gz
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: ${{ env.BODY }}
-          draft: false
-          prerelease: false
+          script: |
+            const release = await github.repos.getReleaseByTag({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag: '${{ github.ref }}'
+            });
+            return release.data.upload_url;
 
       - name: Upload library binary
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          upload_url: ${{ steps.create_library.outputs.upload_url }}
+          upload_url: ${{ steps.get_release.outputs.result }}
           asset_path: ./build/DeFunBobEngine
           asset_name: DeFunBobEngine
           asset_content_type: application/octet-stream
@@ -106,7 +73,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          upload_url: ${{ steps.create_sdk_zip.outputs.upload_url }}
+          upload_url: ${{ steps.get_release.outputs.result }}
           asset_path: ./sdk.zip
           asset_name: DeFunBobEngine-sdk.zip
           asset_content_type: application/zip
@@ -116,7 +83,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          upload_url: ${{ steps.create_sdk_tar_gz.outputs.upload_url }}
+          upload_url: ${{ steps.get_release.outputs.result }}
           asset_path: ./sdk.tar.gz
           asset_name: DeFunBobEngine-sdk.tar.gz
           asset_content_type: application/gzip
