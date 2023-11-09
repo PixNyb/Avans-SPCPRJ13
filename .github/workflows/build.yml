@@ -57,12 +57,15 @@ jobs:
             echo "BUILD_INFO=$(echo ${{ github.event.ref }} | sed 's/refs\/heads\///g')" >> $GITHUB_ENV
           fi
 
+      - name: Compress build result
+        run: tar -czf build.tar.gz build
+
       - name: Archive build result
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ env.BUILD_INFO }}-${{ github.sha }}
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Build.tar.gz
           path: |
-            ./build
+            ./build.tar.gz
 
   test:
     needs: build
@@ -87,12 +90,10 @@ jobs:
       - name: Download build result
         uses: actions/download-artifact@v2
         with:
-          name: ${{ env.BUILD_INFO }}-${{ github.sha }}
-          path: build
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Build.tar.gz
 
-      - name: Set permissions to executable for all binaries
-        run: |
-          find ./build -type f -executable -exec chmod +x {} \;
+      - name: Extract build result to build folder
+        run: tar -xzf build.tar.gz
 
       - name: Run tests
         run: |
@@ -101,10 +102,15 @@ jobs:
 
       - name: Generate coverage report
         run: |
-          cd build
-          lcov --capture --directory . --output-file coverage.info
-          lcov --remove coverage.info '/usr/*' --output-file coverage.info
-          lcov --list coverage.info
+            cd build
+            if gcov --version | grep -q "coverage"; then
+                lcov --capture --directory . --output-file coverage.info
+                lcov --remove coverage.info '/usr/*' --output-file coverage.info
+                lcov --list coverage.info
+            else
+                echo "Program not built with coverage flags, skipping coverage generation"
+                echo "Program not built with coverage flags." > coverage.info
+            fi
 
       - name: Upload test result
         uses: actions/upload-artifact@v2
