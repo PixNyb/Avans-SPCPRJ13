@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - v*
 
 jobs:
   build:
@@ -11,12 +13,25 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: Install Doxygen
         run: sudo apt-get install -y doxygen graphviz
+
+      - name: Get branch name or tag name
+        id: extract_info
+        run: |
+          ref=${{ github.ref }}
+          IFS='/' read -ra ADDR <<< "$ref"
+          echo "BUILD_INFO=${ADDR[2]}" >> $GITHUB_ENV
+
       - name: Update Doxygen version
-        run: sed -i "s/PROJECT_NUMBER.*/PROJECT_NUMBER = $GITHUB_SHA/" Doxyfile
+        run: |
+          sed -i "s/PROJECT_NUMBER.*/PROJECT_NUMBER = $GITHUB_SHA/" Doxyfile
+          sed -i "s/OUTPUT_DIRECTORY.*/OUTPUT_DIRECTORY = docs\/${{ env.BUILD_INFO }}/" Doxyfile
+
       - name: Generate Doxygen documentation
         run: doxygen Doxyfile
+
       - name: Upload documentation artifacts
         uses: actions/upload-pages-artifact@v2
         with:
