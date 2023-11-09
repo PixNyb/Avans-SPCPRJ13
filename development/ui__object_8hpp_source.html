@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DeFunBobEngine: include/api/ui_object.hpp Bron Bestand</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DeFunBobEngine
+   &#160;<span id="projectnumber">c010155cc989f73263190121100e7ccbcdc171e9</span>
+   </div>
+   <div id="projectbrief">Een simpele 2D game engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_2d52abcd54c181b91d630da402923092.html">api</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ui_object.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ui__object_8hpp.html">Ga naar de documentatie van dit bestand.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef AVANS_SPCPRJ13_UIOBJECT_H</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define AVANS_SPCPRJ13_UIOBJECT_H</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="game__object_8hpp.html">game_object.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="point_8hpp.html">point.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classUIObject.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classUIObject.html">UIObject</a> : <span class="keyword">public</span> <a class="code" href="classGameObject.html">GameObject</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">float</span> width, height;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="classUIObject.html">UIObject</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="classUIObject.html">UIObject</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="classGameObject.html#af542b33c8de269343e22c5629e6b66c0">name</a>, <span class="keyword">const</span> std::string &amp;<a class="code" href="classGameObject.html#a756474b81169b2341a05fcb431de6fe4">tag</a>, <span class="keywordtype">int</span> <a class="code" href="classGameObject.html#a77b865c8396028f6250dcff11aa76421">layer</a>, <span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="comment">// Getters, Setters, and other public member functions ...</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> SetWidth(<span class="keywordtype">float</span> w);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    [[nodiscard]] <span class="keywordtype">float</span> GetWidth() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> SetHeight(<span class="keywordtype">float</span> h);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    [[nodiscard]] <span class="keywordtype">float</span> GetHeight() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_UIOBJECT_H</span></div>
+<div class="ttc" id="aclassGameObject_html"><div class="ttname"><a href="classGameObject.html">GameObject</a></div><div class="ttdoc">The GameObject class represents an object in the game world.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:30</div></div>
+<div class="ttc" id="aclassGameObject_html_a756474b81169b2341a05fcb431de6fe4"><div class="ttname"><a href="classGameObject.html#a756474b81169b2341a05fcb431de6fe4">GameObject::tag</a></div><div class="ttdeci">int tag</div><div class="ttdoc">The tag/type of the GameObject.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:38</div></div>
+<div class="ttc" id="aclassGameObject_html_a77b865c8396028f6250dcff11aa76421"><div class="ttname"><a href="classGameObject.html#a77b865c8396028f6250dcff11aa76421">GameObject::layer</a></div><div class="ttdeci">int layer</div><div class="ttdoc">The layer of the GameObject.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:39</div></div>
+<div class="ttc" id="aclassGameObject_html_af542b33c8de269343e22c5629e6b66c0"><div class="ttname"><a href="classGameObject.html#af542b33c8de269343e22c5629e6b66c0">GameObject::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">The name of the GameObject.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:32</div></div>
+<div class="ttc" id="aclassUIObject_html"><div class="ttname"><a href="classUIObject.html">UIObject</a></div><div class="ttdef"><b>Definition:</b> ui_object.hpp:9</div></div>
+<div class="ttc" id="agame__object_8hpp_html"><div class="ttname"><a href="game__object_8hpp.html">game_object.hpp</a></div><div class="ttdoc">This file contains the GameObject class definition.</div></div>
+<div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<map id="Grafische Klasse Hi&amp;euml;rarchie" name="Grafische Klasse Hi&amp;euml;rarchie">
+<area shape="rect" id="node1" href="$classGeometry.html" title="Abstract base class for geometric shapes." alt="" coords="5,56,92,83"/>
+<area shape="rect" id="node2" href="$classCircle.html" title="Represents a circle and extends the Geometry class." alt="" coords="154,5,213,32"/>
+<area shape="rect" id="node3" href="$classPolygon.html" title="Represents a polygon and extends the Geometry class." alt="" coords="146,56,221,83"/>
+<area shape="rect" id="node4" href="$classRectangle.html" title="Represents a rectangle and extends the Geometry class." alt="" coords="140,107,227,133"/>
+</map>

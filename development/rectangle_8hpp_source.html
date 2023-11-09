@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DeFunBobEngine: include/project/graphics/shapes/rectangle.hpp Bron Bestand</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DeFunBobEngine
+   &#160;<span id="projectnumber">c010155cc989f73263190121100e7ccbcdc171e9</span>
+   </div>
+   <div id="projectbrief">Een simpele 2D game engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_181c00e2b942bc2bd301cc4650f9e5c8.html">project</a></li><li class="navelem"><a class="el" href="dir_401eb742a99ef53d31c908bb011aa0b1.html">graphics</a></li><li class="navelem"><a class="el" href="dir_3d74180e9998a78ceeaf0075e1308cb3.html">shapes</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">rectangle.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="rectangle_8hpp.html">Ga naar de documentatie van dit bestand.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef DEFUNBOBENGINE_RECTANGLE_HPP</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define DEFUNBOBENGINE_RECTANGLE_HPP</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geometry_8hpp.html">geometry.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classRectangle.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRectangle.html">Rectangle</a> : <span class="keyword">public</span> <a class="code" href="classGeometry.html">Geometry</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">float</span> height; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">float</span> width; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classRectangle.html#ace8e09c8a402745d8658a7ea1800eafd">   42</a></span>&#160;    <a class="code" href="classRectangle.html#ace8e09c8a402745d8658a7ea1800eafd">Rectangle</a>(<span class="keyword">const</span> <a class="code" href="classVector2D.html">Vector2D</a>&amp; pos, <span class="keywordtype">float</span> h, <span class="keywordtype">float</span> w)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            : <a class="code" href="classGeometry.html">Geometry</a>(pos), height(h), width(w) {}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classRectangle.html#a17bb76d1851a4744fa27838944c8bba3">   52</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRectangle.html#a17bb76d1851a4744fa27838944c8bba3">draw</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">// Rendering logic goes here</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_RECTANGLE_HPP</span></div>
+<div class="ttc" id="aclassGeometry_html"><div class="ttname"><a href="classGeometry.html">Geometry</a></div><div class="ttdoc">Abstract base class for geometric shapes.</div><div class="ttdef"><b>Definition:</b> geometry.hpp:27</div></div>
+<div class="ttc" id="aclassRectangle_html"><div class="ttname"><a href="classRectangle.html">Rectangle</a></div><div class="ttdoc">Represents a rectangle and extends the Geometry class.</div><div class="ttdef"><b>Definition:</b> rectangle.hpp:29</div></div>
+<div class="ttc" id="aclassRectangle_html_a17bb76d1851a4744fa27838944c8bba3"><div class="ttname"><a href="classRectangle.html#a17bb76d1851a4744fa27838944c8bba3">Rectangle::draw</a></div><div class="ttdeci">void draw() const override</div><div class="ttdoc">Draws the rectangle using the rendering system.</div><div class="ttdef"><b>Definition:</b> rectangle.hpp:52</div></div>
+<div class="ttc" id="aclassRectangle_html_ace8e09c8a402745d8658a7ea1800eafd"><div class="ttname"><a href="classRectangle.html#ace8e09c8a402745d8658a7ea1800eafd">Rectangle::Rectangle</a></div><div class="ttdeci">Rectangle(const Vector2D &amp;pos, float h, float w)</div><div class="ttdoc">Constructs a new Rectangle object.</div><div class="ttdef"><b>Definition:</b> rectangle.hpp:42</div></div>
+<div class="ttc" id="aclassVector2D_html"><div class="ttname"><a href="classVector2D.html">Vector2D</a></div><div class="ttdoc">Represents a two-dimensional vector.</div><div class="ttdef"><b>Definition:</b> vector2d.hpp:25</div></div>
+<div class="ttc" id="ageometry_8hpp_html"><div class="ttname"><a href="geometry_8hpp.html">geometry.hpp</a></div><div class="ttdoc">This file contains the Geometry class definition.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

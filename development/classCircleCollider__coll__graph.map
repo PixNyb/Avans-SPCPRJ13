@@ -1,0 +1,5 @@
+<map id="CircleCollider" name="CircleCollider">
+<area shape="rect" id="node1" title="A collider which represents a circular collision area." alt="" coords="5,155,115,181"/>
+<area shape="rect" id="node2" href="$classCollider.html" title="The base class for all colliders." alt="" coords="24,80,96,107"/>
+<area shape="rect" id="node3" href="$classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="11,5,109,32"/>
+</map>

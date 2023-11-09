@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DeFunBobEngine: Graaf Legenda</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DeFunBobEngine
+   &#160;<span id="projectnumber">c010155cc989f73263190121100e7ccbcdc171e9</span>
+   </div>
+   <div id="projectbrief">Een simpele 2D game engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Graaf Legenda</div>  </div>
+</div><!--header-->
+<div class="contents">
+<p>Deze pagina legt uit hoe de grafen die gegenereerd worden door doxygen ge&iuml;nterpreteerd dienen te worden.</p>
+<p>Beschouw het volgende voorbeeld: </p><div class="fragment"><div class="line"><span class="comment">/*! Onzichtbare klasse vanwege afkappen van de graaf */</span></div>
+<div class="line"><span class="keyword">class </span>Invisible { };</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">/*! Afgekapte klasse, overervingsrelatie is verborgen */</span></div>
+<div class="line"><span class="keyword">class </span>Truncated : <span class="keyword">public</span> Invisible { };</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Klasse is niet gedocumenteerd met doxygen commentaar */</span></div>
+<div class="line"><span class="keyword">class </span>Undocumented { };</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">/*! Klasse met public inheritance */</span></div>
+<div class="line"><span class="keyword">class </span>PublicBase : <span class="keyword">public</span> Truncated { };</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">/*! A template class */</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span>Templ { };</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">/*! Klasse met protected inheritance */</span></div>
+<div class="line"><span class="keyword">class </span>ProtectedBase { };</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">/*! Klasse met private inheritance */</span></div>
+<div class="line"><span class="keyword">class </span>PrivateBase { };</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">/*! Klasse die wordt gebruikt door de klasse Inherited */</span></div>
+<div class="line"><span class="keyword">class </span>Used { };</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">/*! Super klasse die overerft van een aantal andere klassen */</span></div>
+<div class="line"><span class="keyword">class </span>Inherited : <span class="keyword">public</span> PublicBase,</div>
+<div class="line">                  <span class="keyword">protected</span> ProtectedBase,</div>
+<div class="line">                  <span class="keyword">private</span> PrivateBase,</div>
+<div class="line">                  <span class="keyword">public</span> Undocumented,</div>
+<div class="line">                  <span class="keyword">public</span> Templ&lt;int&gt;</div>
+<div class="line">{</div>
+<div class="line">  <span class="keyword">private</span>:</div>
+<div class="line">    Used *m_usedClass;</div>
+<div class="line">};</div>
+</div><!-- fragment --><p> Dit voorbeeld zal resulteren in de volgende graaf:</p>
+<center><img src="graph_legend.png" alt="" class="inline"/></center> <p>De rechthoeken in the bovenstaande graaf hebben de volgende betekenis: </p><ul>
+<li>
+Een gevulde grijze rechthoek representeert de structure of klasse waarvoor de graaf is gegenereerd. </li>
+<li>
+Een rechthoek met een zwarte rand representeert een gedocumenteerde structure of klasse. </li>
+<li>
+Een rechthoek met een grijze rand representeert een ongedocumenteerde structure of klasse. </li>
+<li>
+Een rechthoek met een rode rand representeert een gedocumenteerde structure or klasse waarvoor niet alle overervings- of gebruiksrelaties konden worden getoond. Een graaf wordt afgekapt als hij niet past binnen de gespecificeerde grenzen.</li>
+</ul>
+<p>De pijlen hebben de volgende betekenis: </p><ul>
+<li>
+Een donkerblauwe pijl visualizeert een public inheritance relatie tussen twee klassen. </li>
+<li>
+Een donkergroene pijl wordt gebruikt voor protected inheritance. </li>
+<li>
+Een donkerrode pijl wordt gebruikt voor private inheritance. </li>
+<li>
+Een paars gestippelde pijl wordt gebruikt indien een klasse bevat is of gebruikt wordt door een andere klasse. De pijl is gelabeled met de variable(n) die toegang geven tot de aangewezen klasse of structure. </li>
+<li>
+Een geel gestippelde pijl wordt gebruikt om een relatie tussen een template instantie en een template klasse aan te geven. De pijl is gelabeld met template parameters van de instantie. </li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
