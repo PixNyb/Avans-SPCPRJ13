@@ -53,7 +53,7 @@ jobs:
 
       - name: Tar docs
         run: |
-          tar -czvf docs.tar.gz docs/*
+          tar -czvf docs.tar.gz docs
 
       - name: Upload docs
         uses: actions/upload-artifact@v2
@@ -85,6 +85,7 @@ jobs:
       - name: Extract docs to current directory
         run: |
           tar -xzvf docs.tar.gz -C .
+          mv docs/* .
           rm docs.tar.gz
 
       - name: Commit docs
