@@ -45,45 +45,36 @@ jobs:
         run: | 
           zip -r sdk.zip include
           tar -czf sdk.tar.gz include
-          
-      - name: Get release
-        id: get_release
-        uses: actions/github-script@v5
-        with:
-          script: |
-            const release = await github.repos.getReleaseByTag({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              tag: '${{ github.ref }}'
-            });
-            return release.data.upload_url;
 
-      - name: Upload library binary
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Upload compiled binaries
+        uses: svenstaro/upload-release-action@v2
         with:
-          upload_url: ${{ steps.get_release.outputs.result }}
-          asset_path: ./build/DeFunBobEngine
+          repo_token: ${{ secrets.GH_TOKEN }}
+          file: build/DeFunBobEngine
           asset_name: DeFunBobEngine
-          asset_content_type: application/octet-stream
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: |
+            Compiled binaries for ${{ github.ref }}
 
-      - name: Upload SDK zip
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Upload SDK archive
+        uses: svenstaro/upload-release-action@v2
         with:
-          upload_url: ${{ steps.get_release.outputs.result }}
-          asset_path: ./sdk.zip
+          repo_token: ${{ secrets.GH_TOKEN }}
+          file: sdk.zip
           asset_name: DeFunBobEngine-sdk.zip
-          asset_content_type: application/zip
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: |
+            SDK archive for ${{ github.ref }}
 
-      - name: Upload SDK tar.gz
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Upload SDK tarball
+        uses: svenstaro/upload-release-action@v2
         with:
-          upload_url: ${{ steps.get_release.outputs.result }}
-          asset_path: ./sdk.tar.gz
+          repo_token: ${{ secrets.GH_TOKEN }}
+          file: sdk.tar.gz
           asset_name: DeFunBobEngine-sdk.tar.gz
-          asset_content_type: application/gzip
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: |
+            SDK tarball for ${{ github.ref }}
