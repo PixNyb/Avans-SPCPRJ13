@@ -53,9 +53,6 @@ jobs:
           file: build/DeFunBobEngine
           asset_name: DeFunBobEngine
           tag: ${{ github.ref }}
-          overwrite: true
-          body: |
-            Compiled binaries for ${{ github.ref }}
 
       - name: Upload SDK archive
         uses: svenstaro/upload-release-action@v2
@@ -64,9 +61,6 @@ jobs:
           file: sdk.zip
           asset_name: DeFunBobEngine-sdk.zip
           tag: ${{ github.ref }}
-          overwrite: true
-          body: |
-            SDK archive for ${{ github.ref }}
 
       - name: Upload SDK tarball
         uses: svenstaro/upload-release-action@v2
@@ -75,6 +69,3 @@ jobs:
           file: sdk.tar.gz
           asset_name: DeFunBobEngine-sdk.tar.gz
           tag: ${{ github.ref }}
-          overwrite: true
-          body: |
-            SDK tarball for ${{ github.ref }}
