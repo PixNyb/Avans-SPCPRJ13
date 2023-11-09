@@ -15,24 +15,20 @@ Text::Text(const std::string &name, const std::string &tag, int layer, float wid
       alignment(CoreConstants::Text::DEFAULT_ALIGNMENT),
       textColor(CoreConstants::Text::DEFAULT_COLOR)
 {
+}
 
-    Text::Text() : text(""), fontSize(12), alignment("left"), textColor(255, 255, 255, 1)
-    {
-        // Default constructor initialization
-    }
+void Text::SetText(const std::string &str) { text = str; }
 
-    void Text::SetText(const std::string &str) { text = str; }
+std::string Text::GetText() const { return text; }
 
-    std::string Text::GetText() const { return text; }
+void Text::SetFontSize(int size) { fontSize = size; }
 
-    void Text::SetFontSize(int size) { fontSize = size; }
+int Text::GetFontSize() const { return fontSize; }
 
-    int Text::GetFontSize() const { return fontSize; }
+void Text::SetAlignment(const Alignment &align) { alignment = align; }
 
-    void Text::SetAlignment(const Alignment &align) { alignment = align; }
+Alignment Text::GetAlignment() const { return alignment; }
 
-    Alignment Text::GetAlignment() const { return alignment; }
+void Text::SetTextColor(const Color &color) { textColor = color; }
 
-    void Text::SetTextColor(const Color &color) { textColor = color; }
-
-    Color Text::GetTextColor() const { return textColor; }
+Color Text::GetTextColor() const { return textColor; }
