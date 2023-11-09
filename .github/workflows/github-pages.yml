@@ -53,7 +53,7 @@ jobs:
 
       - name: Tar docs
         run: |
-          tar -czvf docs.tar.gz docs
+          tar -czvf docs.tar.gz docs/*
 
       - name: Upload docs
         uses: actions/upload-artifact@v2
@@ -65,11 +65,17 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           ref: docs
+
+      - name: Get branch name or tag name
+        id: extract_info
+        run: |
+          ref=${{ github.ref }}
+          IFS='/' read -ra ADDR <<< "$ref"
+          echo "BUILD_INFO=${ADDR[2]}" >> $GITHUB_ENV
 
       - name: Download docs
         uses: actions/download-artifact@v2
@@ -83,8 +89,10 @@ jobs:
 
       - name: Commit docs
         run: |
-          git add .
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git add ${{ env.BUILD_INFO }} index.html
           git commit -m "Update docs"
-          git push
+          git push origin docs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
