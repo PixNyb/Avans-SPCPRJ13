@@ -15,13 +15,14 @@
 #include <box2d/box2d.h>
 #include <vector>
 #include <memory>
+#include <map>
 #include "game_object.hpp"
 
 
 class PhysicsFacade {
 private:
-    std::vector<std::shared_ptr<GameObject>> game_objects;
-    std::vector<std::shared_ptr<b2Body>> bodies; ///< The list of dynamic bodies in the physicsfacade.
+    std::vector<std::shared_ptr<GameObject>> game_objects; ////< the list of gameobjects in the engine
+    std::map<std::shared_ptr<GameObject>, std::unique_ptr<b2Body>> bodies; ///< The map with bodies in the physicsfacade.
     std::unique_ptr<b2World> world; ////< The world in which the bodies can move.
 
 public:

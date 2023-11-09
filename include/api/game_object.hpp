@@ -26,19 +26,18 @@
  * GameObjects can be added to the game world and can have their components
  * updated and rendered.
  */
-class GameObject
-{
-  protected:
+class GameObject {
+protected:
     std::string name; ///< The name of the GameObject.
     std::vector<std::shared_ptr<Component>>
-        components;                     ///< The list of components attached to the GameObject.
+            components;                     ///< The list of components attached to the GameObject.
     Transform transform;                ///< The transform of the GameObject.
     std::shared_ptr<GameObject> parent; ///< The parent of the GameObject.
     bool active;                        ///< The active flag of the GameObject.
     int tag;                            ///< The tag/type of the GameObject.
     int layer;                          ///< The layer of the GameObject.
 
-  public:
+public:
     /**
      * @brief Default constructor for GameObject.
      */
@@ -152,6 +151,14 @@ class GameObject
      * @param component The component to add to the GameObject.
      */
     void AddComponent(std::shared_ptr<Component> component);
+
+    /**
+    * @brief Get the first component of the specified type. Must be
+    *        a valid subclass of Component.
+    * @return Pointer to Component instance.
+    */
+    template<class T>
+    std::shared_ptr<T> GetComponent() const;
 };
 
 #endif // AVANS_SPCPRJ13_GAMEOBJECT_H
