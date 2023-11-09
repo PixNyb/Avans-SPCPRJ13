@@ -1,6 +1,3 @@
-# TODO: Fix the following error:
-# Cannot find file: /build/DartConfiguration.tcl
-
 cmake_minimum_required(VERSION 3.27)
 
 project(DeFunBobEngine-Test)
