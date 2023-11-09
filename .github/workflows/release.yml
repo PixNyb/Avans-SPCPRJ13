@@ -49,6 +49,13 @@ jobs:
           zip -r sdk.zip include
           tar -czf sdk.tar.gz include
 
+      - name: Generate checksums
+        run: |  
+          sha256sum sdk.zip > sdk.zip.sha256
+          sha256sum sdk.tar.gz > sdk.tar.gz.sha256
+          cd build
+          sha256sum DeFunBobEngine > DeFunBobEngine.sha256
+
       - name: Upload compiled binaries
         uses: svenstaro/upload-release-action@v2
         with:
@@ -71,4 +78,28 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: sdk.tar.gz
           asset_name: DeFunBobEngine-sdk.tar.gz
+          tag: ${{ github.ref }}
+
+      - name: Upload binary checksums
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: build/DeFunBobEngine.sha256
+          asset_name: DeFunBobEngine.sha256
+          tag: ${{ github.ref }}
+
+      - name: Upload SDK archive checksums
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: sdk.zip.sha256
+          asset_name: DeFunBobEngine-sdk.zip.sha256
+          tag: ${{ github.ref }}
+
+      - name: Upload SDK tarball checksums
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: sdk.tar.gz.sha256
+          asset_name: DeFunBobEngine-sdk.tar.gz.sha256
           tag: ${{ github.ref }}
