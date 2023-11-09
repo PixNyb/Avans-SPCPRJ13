@@ -41,30 +41,77 @@ jobs:
       - name: Build
         run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build && cmake --build build
 
-      - name: Generate Release Body
-        id: generate_release_body
-        run:
-          echo "body=$(git log --pretty=format:'- %s' $(git describe --tags --abbrev=0)..HEAD)" >> $GITHUB_ENV
-          echo "generate_release_body=${{ env.body }}" >> $GITHUB_ENV
+      - name: Create SDK archives
+        run: | 
+          zip -r sdk.zip include
+          tar -czf sdk.tar.gz include
 
-      - name: Create Release
-        id: create_release
+      - name: Generate release body
+        id: generate_release_body
+        run: echo "BODY=$(git log --pretty=format:'- %s' $(git describe --tags --abbrev=0)..HEAD)" >> $GITHUB_ENV
+
+      - name: Create library release
+        id: create_library
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body: ${{ steps.generate_release_body.outputs.body }}
+          body: ${{ env.BODY }}
           draft: false
           prerelease: false
 
-      - name: Upload Release Asset
+      - name: Create SDK ZIP release
+        id: create_sdk_zip
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: ${{ env.BODY }}
+          draft: false
+          prerelease: false
+
+      - name: Create SDK tar.gz release
+        id: create_sdk_tar_gz
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: ${{ env.BODY }}
+          draft: false
+          prerelease: false
+
+      - name: Upload library binary
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          upload_url: ${{ steps.create_library.outputs.upload_url }}
           asset_path: ./build/DeFunBobEngine
           asset_name: DeFunBobEngine
           asset_content_type: application/octet-stream
+
+      - name: Upload SDK zip
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_sdk_zip.outputs.upload_url }}
+          asset_path: ./sdk.zip
+          asset_name: DeFunBobEngine-sdk.zip
+          asset_content_type: application/zip
+
+      - name: Upload SDK tar.gz
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_sdk_tar_gz.outputs.upload_url }}
+          asset_path: ./sdk.tar.gz
+          asset_name: DeFunBobEngine-sdk.tar.gz
+          asset_content_type: application/gzip
