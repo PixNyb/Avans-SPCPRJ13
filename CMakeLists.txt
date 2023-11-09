@@ -2,6 +2,33 @@ cmake_minimum_required(VERSION 3.27)
 
 project(DeFunBobEngine)
 
+option(BUILD_CICD "Build for CICD" OFF)
+
+# Include the test project
+option(BUILD_TESTS "Build the tests" OFF)
+
+# If the option is set to true or we're running a debug build, build the tests
+if(BUILD_TESTS OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
+    enable_testing()
+    add_subdirectory(tests)
+endif()
+
+# Generate coverage
+option(GENERATE_COVERAGE "Generate coverage" OFF)
+
+# If the option is set to true or we're running a debug build, generate coverage
+if(GENERATE_COVERAGE OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
+    if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+        include(ProcessorCount)
+        ProcessorCount(N)
+
+        if(NOT N EQUAL 0)
+            set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
+        endif()
+    endif()
+endif()
+
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -12,14 +39,23 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 # Add source files
 file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/apps/*.cpp)
 
-# Add header files
-include_directories(${PROJECT_SOURCE_DIR}/include)
+# Add header directories
+file(GLOB_RECURSE HEADER_LIST ${PROJECT_SOURCE_DIR}/include/*.hpp)
+
+foreach(_headerFile ${HEADER_LIST})
+    get_filename_component(_dir ${_headerFile} PATH)
+    list(APPEND HEADER_DIRS ${_dir})
+endforeach()
+
+list(REMOVE_DUPLICATES HEADER_DIRS)
 
 # Add executable
 add_executable(DeFunBobEngine ${SOURCES})
 
-target_include_directories(DeFunBobEngine PRIVATE ${PROJECT_SOURCE_DIR}/include)
-target_include_directories(DeFunBobEngine PRIVATE ${PROJECT_SOURCE_DIR}/include/API)
+# Include headers
+foreach(_headerDir ${HEADER_DIRS})
+    target_include_directories(DeFunBobEngine PRIVATE ${_headerDir})
+endforeach()
 
 # Add SDL2
 find_package(SDL2 CONFIG REQUIRED)

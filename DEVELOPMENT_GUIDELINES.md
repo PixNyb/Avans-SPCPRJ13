@@ -40,6 +40,7 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 - Voeg commentaar toe om complexe of onduidelijke delen van de code uit te leggen.
 - Voeg een licentieheader bovenaan elk bronbestand toe om auteursrecht en licentie-informatie te vermelden.
 - Gebruik `//` voor enkele regel commentaar en `/* */` voor meerdere regels.
+- Houd de [Doxygen commentaarstijl](https://www.doxygen.nl/manual/docblocks.html) aan voor documentatie.
 
 ```console
 // Dit is een voorbeeld van een enkele regel commentaar.
@@ -58,7 +59,7 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 
 // Of
 
-/*
+/**
  * @file
  * @brief This file contains the implementation of the Foo class.
  */
@@ -76,7 +77,7 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 - Gebruik CMake om het buildproces te automatiseren. Definieer targets en afhankelijkheden in `CMakeLists.txt`-bestanden.
 - Gebruik vcpkg met het [vcpkg.json](vcpkg.json) manifest om afhankelijkheden te beheren.
 - Zorg ervoor dat uw project zonder problemen kan worden gebouwd met behulp van het cmake- en make-commando.
-- Voeg testdoelen toe om unit tests uit te voeren.
+- Voeg testdoelen toe om [unit tests](https://cmake.org/cmake/help/book/mastering-cmake/chapter/Testing%20With%20CMake%20and%20CTest.html) uit te voeren in `tests/`.
 - Maak gebruik van Continuous Integration (CI) om automatische builds en tests te garanderen.
 
 ## Git en Versiebeheer

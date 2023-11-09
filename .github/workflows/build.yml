@@ -6,6 +6,11 @@ on:
       - main
       - development
       - staging
+  pull_request:
+    branches:
+      - main
+      - development
+      - staging
 
 jobs:
   build:
@@ -41,15 +46,82 @@ jobs:
         run: ./vcpkg/vcpkg install --triplet x64-linux --feature-flags=manifests
 
       - name: Build
-        run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build && cmake --build build
+        run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build -DBUILD_CICD=ON && cmake --build build
 
-      - name: Get branch name
-        id: extract_branch
-        run: echo "BRANCH=$(echo ${{ github.event.ref }} | sed 's/refs\/heads\///g')" >> $GITHUB_ENV
+      - name: Get branch name or PR number
+        id: extract_info
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "BUILD_INFO=PR-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+          else
+            echo "BUILD_INFO=$(echo ${{ github.event.ref }} | sed 's/refs\/heads\///g')" >> $GITHUB_ENV
+          fi
+
+      - name: Compress build result
+        run: tar -czf build.tar.gz build
 
       - name: Archive build result
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ env.BRANCH }}-${{ github.sha }}
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Build.tar.gz
           path: |
-            ./build
+            ./build.tar.gz
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get branch name or PR number
+        id: extract_info
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "BUILD_INFO=PR-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+          else
+            echo "BUILD_INFO=$(echo ${{ github.event.ref }} | sed 's/refs\/heads\///g')" >> $GITHUB_ENV
+          fi
+
+      - name: Install lcov
+        run: sudo apt-get install lcov
+
+      - name: Download build result
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Build.tar.gz
+
+      - name: Extract build result to build folder
+        run: tar -xzf build.tar.gz
+
+      - name: Run tests
+        run: |
+          cd build
+          ctest --output-on-failure
+
+      - name: Generate coverage report
+        run: |
+            cd build
+            if gcov --version | grep -q "coverage"; then
+                lcov --capture --directory . --output-file coverage.info
+                lcov --remove coverage.info '/usr/*' --output-file coverage.info
+                lcov --list coverage.info
+            else
+                echo "Program not built with coverage flags, skipping coverage generation"
+                echo "Program not built with coverage flags." > coverage.info
+            fi
+
+      - name: Upload test result
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Test.log
+          path: |
+            ./build/Testing/Temporary/LastTest.log
+
+      - name: Upload coverage result
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Coverage.info
+          path: |
+            ./build/coverage.info
