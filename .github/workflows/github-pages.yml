@@ -19,12 +19,6 @@ jobs:
       - name: Install Doxygen
         run: sudo apt-get install -y doxygen graphviz
 
-      - name: Cache docs
-        uses: actions/cache@v2
-        with:
-          path: docs
-          key: docs-cache-${{ runner.os }}
-
       - name: Get branch name or tag name
         id: extract_info
         run: |
@@ -57,21 +51,15 @@ jobs:
             echo "<meta http-equiv=\"refresh\" content=\"0; url=./${{ env.LATEST_TAG }}/index.html\" />" > docs/index.html
           fi
 
-      - name: Upload documentation artifacts
-        uses: actions/upload-pages-artifact@v2
+      - name: Checkout docs branch
+        uses: actions/checkout@v2
         with:
-          path: docs
+          ref: docs
 
-  deploy:
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      pages: write
-      id-token: write
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git add .
+          git commit -m "Update docs for ${{ env.BUILD_INFO }}"
+          git push origin docs
