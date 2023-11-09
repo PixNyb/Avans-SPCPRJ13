@@ -3,7 +3,7 @@ name: DeFunBobEngine Release Build
 on:
   push:
     tags:
-      - "*"
+      - "v*"
 
 jobs:
   build:
