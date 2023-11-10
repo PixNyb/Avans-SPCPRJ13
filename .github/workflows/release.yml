@@ -55,7 +55,7 @@ jobs:
       - name: Upload SDK archive
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GH_TOKEN }}
           file: sdk.zip
           asset_name: libDeFunBobEngine-sdk.zip
           tag: ${{ github.ref }}
@@ -63,7 +63,7 @@ jobs:
       - name: Upload SDK tarball
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GH_TOKEN }}
           file: sdk.tar.gz
           asset_name: libDeFunBobEngine-sdk.tar.gz
           tag: ${{ github.ref }}
@@ -71,7 +71,7 @@ jobs:
       - name: Upload compiled library
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GH_TOKEN }}
           file: build/libDeFunBobEngine.a
           asset_name: libDeFunBobEngine.a
           tag: ${{ github.ref }}
@@ -79,7 +79,7 @@ jobs:
       - name: Upload SDK archive checksum
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GH_TOKEN }}
           file: sdk.zip.sha256
           asset_name: libDeFunBobEngine-sdk.zip.sha256
           tag: ${{ github.ref }}
@@ -87,7 +87,7 @@ jobs:
       - name: Upload SDK tarball checksum
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GH_TOKEN }}
           file: sdk.tar.gz.sha256
           asset_name: libDeFunBobEngine-sdk.tar.gz.sha256
           tag: ${{ github.ref }}
@@ -95,7 +95,7 @@ jobs:
       - name: Upload library checksum
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GH_TOKEN }}
           file: build/DeFunBobEngine.sha256
           asset_name: libDeFunBobEngine.sha256
           tag: ${{ github.ref }}
