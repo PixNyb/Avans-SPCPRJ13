@@ -1,0 +1,8 @@
+<map id="include/project/core/events/event_type.hpp" name="include/project/core/events/event_type.hpp">
+<area shape="rect" id="node1" title="This file contains the EventType enum." alt="" coords="90,5,265,47"/>
+<area shape="rect" id="node2" href="$event_8hpp.html" title="This file contains the Event class definition." alt="" coords="102,95,253,136"/>
+<area shape="rect" id="node3" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="182,184,322,225"/>
+<area shape="rect" id="node4" href="$sdl2__input__handler_8hpp_source.html" title=" " alt="" coords="5,273,160,315"/>
+<area shape="rect" id="node5" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="185,273,362,315"/>
+<area shape="rect" id="node6" href="$io__facade_8cpp.html" title="This file contains the IOFacade interface definition." alt="" coords="386,281,577,307"/>
+</map>

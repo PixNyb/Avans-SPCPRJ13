@@ -1,0 +1,5 @@
+<map id="Rectangle" name="Rectangle">
+<area shape="rect" id="node1" title="Represents a rectangle and extends the Geometry class." alt="" coords="5,171,92,197"/>
+<area shape="rect" id="node2" href="$classGeometry.html" title="Abstract base class for geometric shapes." alt="" coords="5,95,92,121"/>
+<area shape="rect" id="node3" href="$classVector2D.html" title="Represents a two&#45;dimensional vector." alt="" coords="8,5,89,32"/>
+</map>
