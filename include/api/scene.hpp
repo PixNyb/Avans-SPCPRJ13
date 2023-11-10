@@ -3,24 +3,105 @@
 #ifndef AVANS_SPCPRJ13_SCENE_H
 #define AVANS_SPCPRJ13_SCENE_H
 
-#include <vector>
-#include <memory>
 #include "game_object.hpp"
+#include <memory>
+#include <vector>
 
 /**
  * @brief Class representing a scene which can be rendered by the Camera.
  */
-class Scene {
-public:
+class Scene
+{
+  public:
     /**
      * @brief This function is called by a Camera to render the scene on the engine.
      */
     virtual void RenderScene() = 0;
 
+    virtual ~Scene() = default;
+
+    /**
+    * @brief Updates all game objects in the scene.
+    * @param deltaTime The time passed since the last frame.
+     */
+    virtual void Update(float deltaTime){
+        // TODO: Call an update on game object?
+    }
+
     /**
      * @brief This property contains all the Game Object that are contained in this scene.
      */
     std::vector<std::shared_ptr<GameObject>> contents;
+
+    /**
+     * @brief Adds a game object
+     */
+    void AddGameObject(const std::shared_ptr<GameObject> &gameObject);
+
+
+    /**
+     * @brief Gets all game objects by type
+     * @tparam T Type of the game object
+     * @return A vector containing all game objects of the specified type
+     */
+    template<typename T>
+    std::vector<std::weak_ptr<T>> GetAllByType(){
+        std::vector<std::weak_ptr<T>> result;
+        for(auto& go : contents){
+            auto casted = std::dynamic_pointer_cast<T>(go);
+            if(casted != nullptr){
+                result.push_back(casted);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * @brief Finds a game object by name
+     * @param name Name of the game object
+     * @return The game object if found, otherwise an empty pointer
+     */
+    std::weak_ptr<GameObject> findGameObjectByName(const std::string &name);
+
+    /**
+     * @brief Finds a game object by tag
+     * @param tag Tag of the game object
+     * @return The game object if found, otherwise an empty pointer
+     */
+    std::weak_ptr<GameObject> findGameObjectByTag(const std::string &tag);
+
+    /**
+     * @brief Removes a game object by name
+     * @param name Name of the game object
+     * @return True if the game object was found and removed, otherwise false
+     */
+    bool removeGameObjectByName(const std::string &name);
+
+    /**
+     * @brief Removes a game object by tag
+     * @param tag Tag of the game object
+     * @return True if the game object was found and removed, otherwise false
+     */
+    bool removeGameObjectByTag(const std::string &tag);
+
+    /**
+     * @brief Removes all game objects from the scene
+     */
+    void Clear();
+
+    /**
+     * @brief Returns the amount of game objects in the scene
+     * @return Amount of game objects in the scene
+     */
+    [[nodiscard]] size_t GetGameObjectCount() const { return contents.size(); }
+
+    /**
+     * @brief Sets the active status of a specific game object by name.
+     * @param name Name of the game object.
+     * @param isActive The new active status.
+     * @return True if the game object was found and the status was updated, otherwise false.
+     */
+    bool SetActiveStatus(const std::string &name, bool isActive);
 };
 
 #endif // AVANS_SPCPRJ13_SCENE_H

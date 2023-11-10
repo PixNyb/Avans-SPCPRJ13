@@ -9,7 +9,7 @@
  *
  */
 
-#include "scene_manager.hpp"
+#include "managers/scene_manager.hpp"
 
 SceneManager::SceneManager() {}
 
