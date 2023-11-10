@@ -9,7 +9,7 @@
  *
  */
 
-#include "scene_manager.hpp"
+#include "managers/scene_manager.hpp"
 
 SceneManager::SceneManager() {}
 
@@ -22,3 +22,19 @@ void SceneManager::RenderScene() { currentScene->RenderScene(); }
 std::weak_ptr<Scene> SceneManager::GetScene() { return currentScene; }
 
 bool SceneManager::HasScene() const { return currentScene != nullptr; }
+
+void SceneManager::Update(float deltaTime)
+{
+    if (currentScene != nullptr)
+    {
+        currentScene->Update(deltaTime);
+    }
+}
+void SceneManager::ClearScene()
+{
+    if (currentScene != nullptr)
+    {
+        currentScene->Clear();
+        currentScene = nullptr;
+    }
+}
