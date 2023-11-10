@@ -19,10 +19,8 @@ jobs:
       - name: Cache vcpkg
         uses: actions/cache@v2
         with:
-          path: vcpkg
-          key: vcpkg-${{ runner.os }}-${{ hashFiles('**/vcpkg.json') }}
-          restore-keys: |
-            vcpkg-${{ runner.os }}-
+          path: vcpkg/installed
+          key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/vcpkg.json') }}
 
       - name: Install CMake
         run: |
@@ -48,13 +46,15 @@ jobs:
         run: | 
           zip -r sdk.zip include
           tar -czf sdk.tar.gz include
+          
+      - name: Generate checksum for sdk.zip
+        run: sha256sum sdk.zip > sdk.zip.sha256
 
-      - name: Generate checksums
-        run: |  
-          sha256sum sdk.zip > sdk.zip.sha256
-          sha256sum sdk.tar.gz > sdk.tar.gz.sha256
-          cd build
-          sha256sum DeFunBobEngine > DeFunBobEngine.sha256
+      - name: Generate checksum for sdk.tar.gz
+        run: sha256sum sdk.tar.gz > sdk.tar.gz.sha256
+
+      - name: Generate checksum for DeFunBobEngine
+        run: cd build && sha256sum DeFunBobEngine > DeFunBobEngine.sha256
 
       - name: Upload compiled binaries
         uses: svenstaro/upload-release-action@v2

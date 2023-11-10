@@ -23,10 +23,8 @@ jobs:
       - name: Cache vcpkg
         uses: actions/cache@v2
         with:
-          path: vcpkg
-          key: vcpkg-${{ runner.os }}-${{ hashFiles('**/vcpkg.json') }}
-          restore-keys: |
-            vcpkg-${{ runner.os }}-
+          path: vcpkg/installed
+          key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/vcpkg.json') }}
 
       - name: Install CMake
         run: |
