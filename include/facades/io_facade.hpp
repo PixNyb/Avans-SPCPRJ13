@@ -25,6 +25,7 @@
 #include <vector>
 #include "event.hpp"
 #include "sdl_window.hpp"
+
 /**
  * @class IOFacade
  * @brief Interface for input/output handling in the game engine.
@@ -40,7 +41,7 @@ public:
     /**
      * @brief Virtual destructor for IOFacade.
      */
-    virtual ~IOFacade() {}
+    virtual ~IOFacade() = default;
 
     /**
      * @brief Initializes the input handling system.
@@ -74,6 +75,11 @@ public:
     */
     virtual void createWindow(const char* title, int width, int height) = 0;
 
+    /**
+     * @brief delay execution for a specified number of milliseconds.
+     * @param ms The number of milliseconds to delay execution.
+     */
+    virtual void delay(unsigned int ms) = 0;
 
     virtual void destroyWindow() {
 //        sdlWindow.destroy()

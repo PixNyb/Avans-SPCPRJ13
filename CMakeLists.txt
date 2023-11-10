@@ -52,10 +52,6 @@ list(REMOVE_DUPLICATES HEADER_DIRS)
 # Add executable
 add_library(DeFunBobEngine ${SOURCES})
 
-add_executable(DeFunBobEngineSandBox src/sandbox.cpp)
-target_include_directories(DeFunBobEngineSandBox PRIVATE ${HEADER_DIRS})
-target_link_libraries(DeFunBobEngineSandBox PRIVATE DeFunBobEngine)
-
 # Include headers
 foreach(_headerDir ${HEADER_DIRS})
     target_include_directories(DeFunBobEngine PUBLIC ${_headerDir})
@@ -88,3 +84,5 @@ target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2
 # Add SDL2_net
 find_package(SDL2_net CONFIG REQUIRED)
 target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_net::SDL2_net>,SDL2_net::SDL2_net,SDL2_net::SDL2_net-static>)
+
+add_subdirectory(sandbox)

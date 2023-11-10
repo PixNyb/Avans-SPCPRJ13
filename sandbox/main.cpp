@@ -1,5 +1,5 @@
 /**
- * @file sandbox.cpp
+ * @file main.cpp
  * @author "Melvin van Bree"
  * @brief TODO
  * @version 0.1
@@ -37,11 +37,10 @@ int main(int argc, char *argv[])
     auto engine = Engine::getInstance();
     auto sceneManager = engine->get<SceneManager>();
 
-
     auto scene = std::make_shared<TestScene>();
     sceneManager->SetScene(scene);
 
-    sceneManager->RenderScene();
+    engine->Start();
 
-    return 0;
+    return 1;
 }
