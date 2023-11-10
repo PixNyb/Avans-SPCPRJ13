@@ -56,6 +56,9 @@ jobs:
       - name: Generate checksum for DeFunBobEngine
         run: cd build && sha256sum libDeFunBobEngine.a > libDeFunBobEngine.sha256 && cd ..
 
+      - name: List build artifacts
+        run: ls -la build
+
       - name: Upload compiled binaries
         uses: svenstaro/upload-release-action@v2
         with:
