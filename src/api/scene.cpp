@@ -58,11 +58,15 @@ bool Scene::removeGameObjectByTag(const std::string &tag)
 }
 void Scene::Clear() { contents.clear(); }
 
-bool Scene::SetActiveStatus(const std::string &name, bool isActive) {
+bool Scene::SetActiveStatus(const std::string &name, bool isActive)
+{
     auto gameObject = findGameObjectByName(name);
     auto gameObjectPtr = gameObject.lock();
 
-    if (gameObjectPtr == nullptr) { return false; }
+    if (gameObjectPtr == nullptr)
+    {
+        return false;
+    }
     gameObjectPtr->SetActive(isActive);
     return true;
 }
@@ -72,12 +76,23 @@ std::weak_ptr<GameObject> Scene::CreateGameObject()
     AddGameObject(go);
     return go;
 }
+
+template <typename GameObjectType, typename... Args>
+std::weak_ptr<GameObjectType> Scene::CreateGameObject(Args &&...args)
+{
+    auto gameObject = std::make_shared<GameObjectType>(std::forward<Args>(args)...);
+    AddGameObject(gameObject);
+    return gameObject;
+}
+
 template <typename T> std::vector<std::weak_ptr<T>> Scene::GetAllByType()
 {
     std::vector<std::weak_ptr<T>> result;
-    for(auto& go : contents){
+    for (auto &go : contents)
+    {
         auto casted = std::dynamic_pointer_cast<T>(go);
-        if(casted != nullptr){
+        if (casted != nullptr)
+        {
             result.push_back(casted);
         }
     }

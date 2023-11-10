@@ -45,6 +45,16 @@ class Scene
     std::weak_ptr<GameObject> CreateGameObject();
 
     /**
+     * @brief Creates a game object and adds it to the scene, should be the preferred method of creating game objects for clear ownership
+     * @tparam GameObjectType The type of game object to create.
+     * @tparam Args The types of arguments to forward to the GameObject constructor.
+     * @param args The arguments to forward to the GameObject constructor.
+     * @return The created game object as a weak pointer because the created game object is owned by the scene.
+     */
+    template <typename GameObjectType, typename... Args>
+    std::weak_ptr<GameObjectType> CreateGameObject(Args&&... args);
+
+    /**
      * @brief Gets all game objects by type
      * @tparam T Type of the game object
      * @return A vector containing all game objects of the specified type
