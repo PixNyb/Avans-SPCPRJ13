@@ -54,7 +54,7 @@ jobs:
         run: sha256sum sdk.tar.gz > sdk.tar.gz.sha256
 
       - name: Generate checksum for DeFunBobEngine
-        run: cd build && sha256sum libDeFunBobEngine.a > libDeFunBobEngine.sha256
+        run: cd build && sha256sum libDeFunBobEngine.a > libDeFunBobEngine.sha256 && cd ..
 
       - name: Upload compiled binaries
         uses: svenstaro/upload-release-action@v2
