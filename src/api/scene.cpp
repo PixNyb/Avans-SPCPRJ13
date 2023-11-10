@@ -66,3 +66,20 @@ bool Scene::SetActiveStatus(const std::string &name, bool isActive) {
     gameObjectPtr->SetActive(isActive);
     return true;
 }
+std::weak_ptr<GameObject> Scene::CreateGameObject()
+{
+    auto go = std::make_shared<GameObject>();
+    AddGameObject(go);
+    return go;
+}
+template <typename T> std::vector<std::weak_ptr<T>> Scene::GetAllByType()
+{
+    std::vector<std::weak_ptr<T>> result;
+    for(auto& go : contents){
+        auto casted = std::dynamic_pointer_cast<T>(go);
+        if(casted != nullptr){
+            result.push_back(casted);
+        }
+    }
+    return result;
+}

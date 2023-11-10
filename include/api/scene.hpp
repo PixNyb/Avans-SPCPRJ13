@@ -34,10 +34,15 @@ class Scene
     std::vector<std::shared_ptr<GameObject>> contents;
 
     /**
-     * @brief Adds a game object
+     * @brief Adds a game object, might be required for stuff like prefabs
      */
     void AddGameObject(const std::shared_ptr<GameObject> &gameObject);
 
+    /**
+     * @brief Creates a game object and adds it to the scene, should be the preferred method of creating game objects for clear ownership
+     * @return The created game object as a weak pointer because the created game object is owned by the scene
+     */
+    std::weak_ptr<GameObject> CreateGameObject();
 
     /**
      * @brief Gets all game objects by type
@@ -45,16 +50,7 @@ class Scene
      * @return A vector containing all game objects of the specified type
      */
     template<typename T>
-    std::vector<std::weak_ptr<T>> GetAllByType(){
-        std::vector<std::weak_ptr<T>> result;
-        for(auto& go : contents){
-            auto casted = std::dynamic_pointer_cast<T>(go);
-            if(casted != nullptr){
-                result.push_back(casted);
-            }
-        }
-        return result;
-    }
+    std::vector<std::weak_ptr<T>> GetAllByType();
 
     /**
      * @brief Finds a game object by name
