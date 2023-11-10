@@ -70,11 +70,11 @@ class Scene
     std::weak_ptr<GameObject> findGameObjectByName(const std::string &name);
 
     /**
-     * @brief Finds a game object by tag
-     * @param tag Tag of the game object
-     * @return The game object if found, otherwise an empty pointer
+     * @brief Finds game objects by tag
+     * @param tag Tag of the game objects
+     * @return The game objects if found, otherwise an empty vector
      */
-    std::weak_ptr<GameObject> findGameObjectByTag(const std::string &tag);
+    std::vector<std::weak_ptr<GameObject>> findGameObjectByTag(const std::string &tag);
 
     /**
      * @brief Removes a game object by name

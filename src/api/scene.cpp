@@ -2,34 +2,36 @@
 #include "scene.hpp"
 
 void Scene::RenderScene() {}
+
 void Scene::AddGameObject(const std::shared_ptr<GameObject> &gameObject)
 {
     contents.push_back(gameObject);
 }
+
 std::weak_ptr<GameObject> Scene::findGameObjectByName(const std::string &name)
 {
     for (auto &gameObject : contents)
     {
         if (gameObject->GetName() == name)
-        {
             return gameObject;
-        }
     }
 
     return {};
 }
-std::weak_ptr<GameObject> Scene::findGameObjectByTag(const std::string &tag)
+
+std::vector<std::weak_ptr<GameObject>> Scene::findGameObjectByTag(const std::string &tag)
 {
+    std::vector<std::weak_ptr<GameObject>> gameObjects;
+
     for (auto &gameObject : contents)
     {
         if (gameObject->GetTag() == tag)
-        {
-            return gameObject;
-        }
+            gameObjects.emplace_back(gameObject);
     }
 
-    return {};
+    return gameObjects;
 }
+
 bool Scene::removeGameObjectByName(const std::string &name)
 {
     for (auto it = contents.begin(); it != contents.end(); ++it)
@@ -43,6 +45,7 @@ bool Scene::removeGameObjectByName(const std::string &name)
 
     return false;
 }
+
 bool Scene::removeGameObjectByTag(const std::string &tag)
 {
     for (auto it = contents.begin(); it != contents.end(); ++it)
@@ -56,6 +59,7 @@ bool Scene::removeGameObjectByTag(const std::string &tag)
 
     return false;
 }
+
 void Scene::Clear() { contents.clear(); }
 
 bool Scene::SetActiveStatus(const std::string &name, bool isActive)
@@ -63,13 +67,12 @@ bool Scene::SetActiveStatus(const std::string &name, bool isActive)
     auto gameObject = findGameObjectByName(name);
     auto gameObjectPtr = gameObject.lock();
 
-    if (gameObjectPtr == nullptr)
-    {
-        return false;
-    }
+    if (gameObjectPtr == nullptr) return false;
+
     gameObjectPtr->SetActive(isActive);
     return true;
 }
+
 std::weak_ptr<GameObject> Scene::CreateGameObject()
 {
     auto go = std::make_shared<GameObject>();
@@ -92,9 +95,7 @@ template <typename T> std::vector<std::weak_ptr<T>> Scene::GetAllByType()
     {
         auto casted = std::dynamic_pointer_cast<T>(go);
         if (casted != nullptr)
-        {
             result.push_back(casted);
-        }
     }
     return result;
 }
