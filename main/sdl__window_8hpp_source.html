@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DeFunBobEngine: include/facades/sdl2/sdl_window.hpp Bron Bestand</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DeFunBobEngine
+   &#160;<span id="projectnumber">main</span>
+   </div>
+   <div id="projectbrief">Een simpele 2D game engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_53a771c9ad71090a27bee26439f940f2.html">facades</a></li><li class="navelem"><a class="el" href="dir_0e4392474d6d3c0f3c6a065a1a5a9c9b.html">sdl2</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">sdl_window.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="sdl__window_8hpp.html">Ga naar de documentatie van dit bestand.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef DEFUNBOBENGINE_WINDOW_HPP</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define DEFUNBOBENGINE_WINDOW_HPP</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classSDLWindow.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSDLWindow.html">SDLWindow</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    SDL_Window* sdl_window; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classSDLWindow.html#a9e1618d5a1a2a1935ac0eb1c547da63c">SDLWindow</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* title, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classSDLWindow.html#a7a0af0daec54970ff2262b67a6ece281">~SDLWindow</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSDLWindow.html#add373000c5b55b3ff84153cdac943d64">create</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* title, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSDLWindow.html#a258f7a5d3b88f9855dd7c47e938f6eea">destroy</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    SDL_Window* <a class="code" href="classSDLWindow.html#a449afe3be353b02f9c684541b5253ed4">getSDLWindow</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_WINDOW_HPP</span></div>
+<div class="ttc" id="aclassSDLWindow_html"><div class="ttname"><a href="classSDLWindow.html">SDLWindow</a></div><div class="ttdoc">Manages creation, display, and destruction of an SDL_Window.</div><div class="ttdef"><b>Definition:</b> sdl_window.hpp:32</div></div>
+<div class="ttc" id="aclassSDLWindow_html_a258f7a5d3b88f9855dd7c47e938f6eea"><div class="ttname"><a href="classSDLWindow.html#a258f7a5d3b88f9855dd7c47e938f6eea">SDLWindow::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Destroys the SDL_Window managed by this object.</div><div class="ttdef"><b>Definition:</b> sdl_window.cpp:46</div></div>
+<div class="ttc" id="aclassSDLWindow_html_a449afe3be353b02f9c684541b5253ed4"><div class="ttname"><a href="classSDLWindow.html#a449afe3be353b02f9c684541b5253ed4">SDLWindow::getSDLWindow</a></div><div class="ttdeci">SDL_Window * getSDLWindow() const</div><div class="ttdoc">Retrieves the underlying SDL_Window pointer.</div><div class="ttdef"><b>Definition:</b> sdl_window.cpp:55</div></div>
+<div class="ttc" id="aclassSDLWindow_html_a7a0af0daec54970ff2262b67a6ece281"><div class="ttname"><a href="classSDLWindow.html#a7a0af0daec54970ff2262b67a6ece281">SDLWindow::~SDLWindow</a></div><div class="ttdeci">~SDLWindow()</div><div class="ttdoc">Destroys the Window object, ensuring the SDL_Window is properly destroyed.</div><div class="ttdef"><b>Definition:</b> sdl_window.cpp:20</div></div>
+<div class="ttc" id="aclassSDLWindow_html_a9e1618d5a1a2a1935ac0eb1c547da63c"><div class="ttname"><a href="classSDLWindow.html#a9e1618d5a1a2a1935ac0eb1c547da63c">SDLWindow::SDLWindow</a></div><div class="ttdeci">SDLWindow(const char *title, int width, int height)</div><div class="ttdoc">Construct a new Window object but does not create the window.</div><div class="ttdef"><b>Definition:</b> sdl_window.cpp:15</div></div>
+<div class="ttc" id="aclassSDLWindow_html_add373000c5b55b3ff84153cdac943d64"><div class="ttname"><a href="classSDLWindow.html#add373000c5b55b3ff84153cdac943d64">SDLWindow::create</a></div><div class="ttdeci">void create(const char *title, int width, int height)</div><div class="ttdoc">Creates the SDL_Window with the specified properties.</div><div class="ttdef"><b>Definition:</b> sdl_window.cpp:25</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

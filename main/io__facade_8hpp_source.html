@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DeFunBobEngine: include/facades/io_facade.hpp Bron Bestand</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DeFunBobEngine
+   &#160;<span id="projectnumber">main</span>
+   </div>
+   <div id="projectbrief">Een simpele 2D game engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_53a771c9ad71090a27bee26439f940f2.html">facades</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">io_facade.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="io__facade_8hpp.html">Ga naar de documentatie van dit bestand.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef DEFUNBOBENGINE_IO_FACADE_HPP</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define DEFUNBOBENGINE_IO_FACADE_HPP</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="event_8hpp.html">event.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sdl__window_8hpp.html">sdl_window.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classIOFacade.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="classIOFacade.html">IOFacade</a> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classSDLWindow.html">SDLWindow</a> sdlWindow;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classIOFacade.html#ac3a1f975c731199c93541327f2666d83">   43</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classIOFacade.html#ac3a1f975c731199c93541327f2666d83">~IOFacade</a>() {}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classIOFacade.html#a58ecacdb7eb8885b1c108d7989fd9440">   51</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIOFacade.html#a58ecacdb7eb8885b1c108d7989fd9440">init</a>() = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classIOFacade.html#aed7cc9609a52c4d69e958cfe791ce8c2">   60</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIOFacade.html#aed7cc9609a52c4d69e958cfe791ce8c2">pollEvents</a>(std::vector&lt;Event&gt;&amp; events) = 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIOFacade.html#ac42049f6fb802e3ecd1b2fb9866ee98a">createWindow</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* title, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height) = 0;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> destroyWindow() {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">//        sdlWindow.destroy()</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_IO_FACADE_HPP</span></div>
+<div class="ttc" id="aclassIOFacade_html"><div class="ttname"><a href="classIOFacade.html">IOFacade</a></div><div class="ttdoc">Interface for input/output handling in the game engine.</div><div class="ttdef"><b>Definition:</b> io_facade.hpp:37</div></div>
+<div class="ttc" id="aclassIOFacade_html_a58ecacdb7eb8885b1c108d7989fd9440"><div class="ttname"><a href="classIOFacade.html#a58ecacdb7eb8885b1c108d7989fd9440">IOFacade::init</a></div><div class="ttdeci">virtual void init()=0</div><div class="ttdoc">Initializes the input handling system.</div></div>
+<div class="ttc" id="aclassIOFacade_html_ac3a1f975c731199c93541327f2666d83"><div class="ttname"><a href="classIOFacade.html#ac3a1f975c731199c93541327f2666d83">IOFacade::~IOFacade</a></div><div class="ttdeci">virtual ~IOFacade()</div><div class="ttdoc">Virtual destructor for IOFacade.</div><div class="ttdef"><b>Definition:</b> io_facade.hpp:43</div></div>
+<div class="ttc" id="aclassIOFacade_html_ac42049f6fb802e3ecd1b2fb9866ee98a"><div class="ttname"><a href="classIOFacade.html#ac42049f6fb802e3ecd1b2fb9866ee98a">IOFacade::createWindow</a></div><div class="ttdeci">virtual void createWindow(const char *title, int width, int height)=0</div><div class="ttdoc">Creates a window with the specified properties.</div><div class="ttdef"><b>Definition:</b> io_facade.cpp:14</div></div>
+<div class="ttc" id="aclassIOFacade_html_aed7cc9609a52c4d69e958cfe791ce8c2"><div class="ttname"><a href="classIOFacade.html#aed7cc9609a52c4d69e958cfe791ce8c2">IOFacade::pollEvents</a></div><div class="ttdeci">virtual void pollEvents(std::vector&lt; Event &gt; &amp;events)=0</div><div class="ttdoc">Polls for input events and populates the provided event vector.</div></div>
+<div class="ttc" id="aclassSDLWindow_html"><div class="ttname"><a href="classSDLWindow.html">SDLWindow</a></div><div class="ttdoc">Manages creation, display, and destruction of an SDL_Window.</div><div class="ttdef"><b>Definition:</b> sdl_window.hpp:32</div></div>
+<div class="ttc" id="aevent_8hpp_html"><div class="ttname"><a href="event_8hpp.html">event.hpp</a></div><div class="ttdoc">This file contains the Event class definition.</div></div>
+<div class="ttc" id="asdl__window_8hpp_html"><div class="ttname"><a href="sdl__window_8hpp.html">sdl_window.hpp</a></div><div class="ttdoc">This file contains the SDLWindow class definition for managing an SDL_Window.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DeFunBobEngine: include/project/scenes/specializations/base_menu_scene.hpp Bron Bestand</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DeFunBobEngine
+   &#160;<span id="projectnumber">main</span>
+   </div>
+   <div id="projectbrief">Een simpele 2D game engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Zoeken','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_181c00e2b942bc2bd301cc4650f9e5c8.html">project</a></li><li class="navelem"><a class="el" href="dir_154ada2b694d90c07d429e48fdcb3d74.html">scenes</a></li><li class="navelem"><a class="el" href="dir_15ea164b256ef6ae96065e0dc809fa3b.html">specializations</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">base_menu_scene.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="base__menu__scene_8hpp.html">Ga naar de documentatie van dit bestand.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef DEFUNBOBENGINE_BASE_MENU_SCENE_HPP</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define DEFUNBOBENGINE_BASE_MENU_SCENE_HPP</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__scene_8hpp.html">base_scene.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;core_constants.hpp&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="point_8hpp.html">point.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="color_8hpp.html">color.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="button_8hpp.html">button.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="text_8hpp.html">text.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classBaseMenuScene.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBaseMenuScene.html">BaseMenuScene</a> : <span class="keyword">public</span> <a class="code" href="classBaseScene.html">BaseScene</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classBaseMenuScene.html">BaseMenuScene</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    ~<a class="code" href="classBaseMenuScene.html">BaseMenuScene</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBaseMenuScene.html#a981fee759a8615aaaa02b5a7aeaf2755">AddText</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> std::string &amp;text, <span class="keyword">const</span> <a class="code" href="structPoint.html">Point</a> &amp;position, <span class="keywordtype">int</span> size = CoreConstants::Text::DEFAULT_SIZE, <span class="keyword">const</span> <a class="code" href="classColor.html">Color</a> &amp;textColor = <a class="code" href="classColor.html#accb1b1c202f260a57710fbd1434857ff">Color::white</a>(), <span class="keyword">const</span> std::string &amp;font = CoreConstants::Text::DEFAULT_FONT);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// TODO: Add bounds to button (2D Vector)</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span>    std::weak_ptr&lt;Button&gt; <a class="code" href="classBaseMenuScene.html#aa110e7589b43cc74e21f8f99259da9e2">AddButton</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> std::string &amp;text, <span class="keyword">const</span> <a class="code" href="structPoint.html">Point</a> &amp;position, <span class="keyword">const</span> <a class="code" href="classColor.html">Color</a> &amp;bgColor = <a class="code" href="classColor.html#a95fcb8c8d3fc0cce22298cfc7beee7db">Color::black</a>(), <span class="keyword">const</span> <a class="code" href="classColor.html">Color</a> &amp;textColor = <a class="code" href="classColor.html#accb1b1c202f260a57710fbd1434857ff">Color::white</a>(), <span class="keywordtype">int</span> textSize = CoreConstants::Text::DEFAULT_SIZE, <span class="keyword">const</span> std::string &amp;font = CoreConstants::Text::DEFAULT_FONT);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::weak_ptr&lt;Button&gt; <a class="code" href="classBaseMenuScene.html#aa110e7589b43cc74e21f8f99259da9e2">AddButton</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> std::string &amp;text, <span class="keyword">const</span> <a class="code" href="structPoint.html">Point</a> &amp;position, <span class="keyword">const</span> std::string&amp; buttonBackgroundImagePath, <span class="keywordtype">int</span> textSize = CoreConstants::Text::DEFAULT_SIZE, <span class="keyword">const</span> std::string &amp;font = CoreConstants::Text::DEFAULT_FONT);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_BASE_MENU_SCENE_HPP</span></div>
+<div class="ttc" id="abase__scene_8hpp_html"><div class="ttname"><a href="base__scene_8hpp.html">base_scene.hpp</a></div><div class="ttdoc">TODO.</div></div>
+<div class="ttc" id="abutton_8hpp_html"><div class="ttname"><a href="button_8hpp.html">button.hpp</a></div></div>
+<div class="ttc" id="aclassBaseMenuScene_html"><div class="ttname"><a href="classBaseMenuScene.html">BaseMenuScene</a></div><div class="ttdoc">Provides specializations for menu scenes.</div><div class="ttdef"><b>Definition:</b> base_menu_scene.hpp:27</div></div>
+<div class="ttc" id="aclassBaseMenuScene_html_a981fee759a8615aaaa02b5a7aeaf2755"><div class="ttname"><a href="classBaseMenuScene.html#a981fee759a8615aaaa02b5a7aeaf2755">BaseMenuScene::AddText</a></div><div class="ttdeci">void AddText(const std::string &amp;name, const std::string &amp;text, const Point &amp;position, int size=CoreConstants::Text::DEFAULT_SIZE, const Color &amp;textColor=Color::white(), const std::string &amp;font=CoreConstants::Text::DEFAULT_FONT)</div><div class="ttdoc">Add a text to the scene.</div><div class="ttdef"><b>Definition:</b> base_menu_scene.cpp:19</div></div>
+<div class="ttc" id="aclassBaseMenuScene_html_aa110e7589b43cc74e21f8f99259da9e2"><div class="ttname"><a href="classBaseMenuScene.html#aa110e7589b43cc74e21f8f99259da9e2">BaseMenuScene::AddButton</a></div><div class="ttdeci">std::weak_ptr&lt; Button &gt; AddButton(const std::string &amp;name, const std::string &amp;text, const Point &amp;position, const Color &amp;bgColor=Color::black(), const Color &amp;textColor=Color::white(), int textSize=CoreConstants::Text::DEFAULT_SIZE, const std::string &amp;font=CoreConstants::Text::DEFAULT_FONT)</div><div class="ttdoc">Add a button to the scene.</div><div class="ttdef"><b>Definition:</b> base_menu_scene.cpp:31</div></div>
+<div class="ttc" id="aclassBaseScene_html"><div class="ttname"><a href="classBaseScene.html">BaseScene</a></div><div class="ttdef"><b>Definition:</b> base_scene.hpp:18</div></div>
+<div class="ttc" id="aclassColor_html"><div class="ttname"><a href="classColor.html">Color</a></div><div class="ttdoc">Color represents a red-green-blue color with alpha.</div><div class="ttdef"><b>Definition:</b> color.hpp:9</div></div>
+<div class="ttc" id="aclassColor_html_a95fcb8c8d3fc0cce22298cfc7beee7db"><div class="ttname"><a href="classColor.html#a95fcb8c8d3fc0cce22298cfc7beee7db">Color::black</a></div><div class="ttdeci">static const Color &amp; black()</div><div class="ttdoc">One of the standard colors (read-only): black.</div><div class="ttdef"><b>Definition:</b> color.hpp:66</div></div>
+<div class="ttc" id="aclassColor_html_accb1b1c202f260a57710fbd1434857ff"><div class="ttname"><a href="classColor.html#accb1b1c202f260a57710fbd1434857ff">Color::white</a></div><div class="ttdeci">static const Color &amp; white()</div><div class="ttdoc">One of the standard colors (read-only): white.</div><div class="ttdef"><b>Definition:</b> color.hpp:24</div></div>
+<div class="ttc" id="acolor_8hpp_html"><div class="ttname"><a href="color_8hpp.html">color.hpp</a></div></div>
+<div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div></div>
+<div class="ttc" id="astructPoint_html"><div class="ttname"><a href="structPoint.html">Point</a></div><div class="ttdoc">Struct representing both a 2D point and a 2D vector.</div><div class="ttdef"><b>Definition:</b> point.hpp:9</div></div>
+<div class="ttc" id="atext_8hpp_html"><div class="ttname"><a href="text_8hpp.html">text.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gegenereerd door&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
