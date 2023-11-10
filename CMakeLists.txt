@@ -52,9 +52,13 @@ list(REMOVE_DUPLICATES HEADER_DIRS)
 # Add executable
 add_library(DeFunBobEngine ${SOURCES})
 
+add_executable(DeFunBobEngineSandBox src/sandbox.cpp)
+target_include_directories(DeFunBobEngineSandBox PRIVATE ${HEADER_DIRS})
+target_link_libraries(DeFunBobEngineSandBox PRIVATE DeFunBobEngine)
+
 # Include headers
 foreach(_headerDir ${HEADER_DIRS})
-    target_include_directories(DeFunBobEngine PRIVATE ${_headerDir})
+    target_include_directories(DeFunBobEngine PUBLIC ${_headerDir})
 endforeach()
 
 # Add SDL2
