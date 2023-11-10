@@ -1,4 +1,0 @@
-<map id="BaseScene" name="BaseScene">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,99,107"/>
-<area shape="rect" id="node2" href="$classScene.html" title="Class representing a scene which can be rendered by the Camera." alt="" coords="21,5,83,32"/>
-</map>

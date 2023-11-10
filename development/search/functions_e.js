@@ -1,9 +1,25 @@
 var searchData=
 [
-  ['text_453',['Text',['../classText.html#ab3e26143fccc52699bcc5149cae852bc',1,'Text::Text()'],['../classText.html#a5df2162d782edf497ce8e44271a71b19',1,'Text::Text(const std::string &amp;name, const std::string &amp;tag, int layer, float width, float height)']]],
-  ['thread_454',['Thread',['../classThread.html#a95c703fb8f2f27cb64f475a8c940864a',1,'Thread']]],
-  ['timer_455',['Timer',['../classTimer.html#a5f16e8da27d2a5a5242dead46de05d97',1,'Timer']]],
-  ['timescale_456',['TimeScale',['../classTime.html#a713d855de85a659e685e0aadaafcd94e',1,'Time::TimeScale()'],['../classTime.html#ab02cd9e2559074f680519e00d8e5335f',1,'Time::TimeScale(double newTimeScale)']]],
-  ['tosdlrect_457',['toSDLRect',['../classSDLRect.html#a65c861525ff2aaa206ba1be58e7819e0',1,'SDLRect']]],
-  ['transform_458',['Transform',['../structTransform.html#aa08ca4266efabc768973cdeea51945ab',1,'Transform::Transform()'],['../structTransform.html#a4d81f040002266fa6a2bd08c298770e4',1,'Transform::Transform(const Point &amp;position, double rotation, double scale)']]]
+  ['sdlcircle_425',['SDLCircle',['../classSDLCircle.html#a8a5085570b660a7896fef2a78e6c2183',1,'SDLCircle']]],
+  ['sdlrect_426',['SDLRect',['../classSDLRect.html#ad190ab1ecdea778ab4de83afd4914eae',1,'SDLRect']]],
+  ['sdlsurface_427',['SDLSurface',['../classSDLSurface.html#a46e97a8063d67b296a58d93a8ac10243',1,'SDLSurface']]],
+  ['sdltexture_428',['SDLTexture',['../classSDLTexture.html#aa64c5219c4b68b50787a2833c1f92c75',1,'SDLTexture']]],
+  ['sdltriangle_429',['SDLTriangle',['../classSDLTriangle.html#a3832fc0eb5c1bd3954026f511587d527',1,'SDLTriangle']]],
+  ['sdlwindow_430',['SDLWindow',['../classSDLWindow.html#a9e1618d5a1a2a1935ac0eb1c547da63c',1,'SDLWindow']]],
+  ['setactive_431',['SetActive',['../classComponent.html#aa1d536baf09af2dbc56aae342e4e5c60',1,'Component::SetActive()'],['../classGameObject.html#ab404a95de157896426dbe0a419d0a40d',1,'GameObject::SetActive()']]],
+  ['setactivestatus_432',['SetActiveStatus',['../classScene.html#a8b8fbebd1546b8dba7c8bd7f573c6242',1,'Scene']]],
+  ['setalignment_433',['SetAlignment',['../classText.html#abefbc7bc20f7b31cbc3376def798dbfd',1,'Text']]],
+  ['setfontsize_434',['SetFontSize',['../classText.html#ab7a79fc8775c7935b2515fde15cbc127',1,'Text']]],
+  ['setlayer_435',['SetLayer',['../classGameObject.html#a9d77f9c92686dacd0bccb5cb9f2aeac8',1,'GameObject']]],
+  ['setname_436',['SetName',['../classGameObject.html#aeb05cfeea5008cffef2012ed763a7db8',1,'GameObject']]],
+  ['setparent_437',['SetParent',['../classGameObject.html#aaf750e94d6052b1c96897cd91517638e',1,'GameObject']]],
+  ['setpitch_438',['SetPitch',['../classAudioSource.html#a1fc6a1e9b9c6f1ea3acd0d16705a44b0',1,'AudioSource']]],
+  ['setscene_439',['SetScene',['../classSceneManager.html#a38ed7d8f12aeb8b625e1097f54823af9',1,'SceneManager']]],
+  ['settag_440',['SetTag',['../classGameObject.html#a2121c39612440691843dd8bf7d64d452',1,'GameObject']]],
+  ['settext_441',['SetText',['../classText.html#a2f24f9144249af47a7ea7d3edcc5d8aa',1,'Text']]],
+  ['settextcolor_442',['SetTextColor',['../classText.html#af5a0352e342f533959996276c7b0cd50',1,'Text']]],
+  ['settransform_443',['SetTransform',['../classGameObject.html#a0aa1842e6bcd14add28cb71347d6ca5d',1,'GameObject']]],
+  ['start_444',['start',['../classThread.html#a1f53ee62bd30a7924186ef26150ce262',1,'Thread::start()'],['../classTimer.html#a3a8b5272198d029779dc9302a54305a8',1,'Timer::start()']]],
+  ['stop_445',['stop',['../classThread.html#abd50159ecd409936f454c2321f673616',1,'Thread::stop()'],['../classTimer.html#a63f0eb44b27402196590a03781515dba',1,'Timer::stop()']]],
+  ['stop_446',['Stop',['../classAudioSource.html#afcfa9a28255f0aac30aa218d4e293123',1,'AudioSource']]]
 ];

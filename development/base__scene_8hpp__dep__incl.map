@@ -1,8 +1,0 @@
-<map id="include/project/scenes/specializations/base_scene.hpp" name="include/project/scenes/specializations/base_scene.hpp">
-<area shape="rect" id="node1" title="TODO." alt="" coords="196,5,363,61"/>
-<area shape="rect" id="node2" href="$base__level__scene_8hpp.html" title="TODO." alt="" coords="5,109,172,165"/>
-<area shape="rect" id="node4" href="$base__menu__scene_8hpp.html" title="TODO." alt="" coords="196,109,363,165"/>
-<area shape="rect" id="node6" href="$base__scene_8cpp.html" title="TODO." alt="" coords="387,109,545,165"/>
-<area shape="rect" id="node3" href="$base__level__scene_8cpp.html" title="Provides specialization for levels." alt="" coords="9,213,168,269"/>
-<area shape="rect" id="node5" href="$base__menu__scene_8cpp.html" title="TODO." alt="" coords="200,213,359,269"/>
-</map>

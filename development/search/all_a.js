@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['magenta_112',['magenta',['../classColor.html#a080c4ee6bdc05ecac3068c4ce0264279',1,'Color']]],
-  ['mousebuttondown_113',['MouseButtonDown',['../event__type_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa8cdc59370ca82c9591c1f0f212a2971c',1,'event_type.hpp']]],
-  ['mousebuttonup_114',['MouseButtonUp',['../event__type_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa2a3ccd10f3eb3ee5e6009dde78de0d1f',1,'event_type.hpp']]],
-  ['mousemove_115',['MouseMove',['../event__type_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faafd060c0c157323f1e43e0704d4f3ffc8',1,'event_type.hpp']]]
+  ['layer_105',['layer',['../classGameObject.html#a77b865c8396028f6250dcff11aa76421',1,'GameObject']]],
+  ['log_106',['Log',['../namespaceDebug.html#a1c69b0423a8f8161fd8c6c203a77aeab',1,'Debug']]],
+  ['logerror_107',['LogError',['../namespaceDebug.html#aa6bd25ff0b91cd3c28a0db6f9b33e10f',1,'Debug']]],
+  ['logwarning_108',['LogWarning',['../namespaceDebug.html#a8cbee46d3f3d0d7154a1976b74c13c95',1,'Debug']]]
 ];

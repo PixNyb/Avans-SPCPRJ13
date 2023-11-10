@@ -1,12 +1,6 @@
 <map id="include/api/scene.hpp" name="include/api/scene.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="391,5,554,32"/>
-<area shape="rect" id="node2" href="$scene__manager_8hpp.html" title="Manages scenes." alt="" coords="99,87,318,129"/>
-<area shape="rect" id="node4" href="$base__scene_8hpp.html" title="TODO." alt="" coords="389,80,556,136"/>
-<area shape="rect" id="node10" href="$scene_8cpp.html" title=" " alt="" coords="580,95,715,121"/>
-<area shape="rect" id="node3" href="$scene__manager_8cpp.html" title="TODO." alt="" coords="5,191,223,233"/>
-<area shape="rect" id="node5" href="$base__level__scene_8hpp.html" title="TODO." alt="" coords="247,184,413,240"/>
-<area shape="rect" id="node7" href="$base__menu__scene_8hpp.html" title="TODO." alt="" coords="437,184,604,240"/>
-<area shape="rect" id="node9" href="$base__scene_8cpp.html" title="TODO." alt="" coords="628,184,787,240"/>
-<area shape="rect" id="node6" href="$base__level__scene_8cpp.html" title="Provides specialization for levels." alt="" coords="251,288,409,344"/>
-<area shape="rect" id="node8" href="$base__menu__scene_8cpp.html" title="TODO." alt="" coords="441,288,600,344"/>
+<area shape="rect" id="node1" title=" " alt="" coords="109,5,272,32"/>
+<area shape="rect" id="node2" href="$scene__manager_8hpp.html" title="Manages scenes." alt="" coords="5,80,192,121"/>
+<area shape="rect" id="node4" href="$scene_8cpp.html" title=" " alt="" coords="217,87,351,114"/>
+<area shape="rect" id="node3" href="$scene__manager_8cpp.html" title="TODO." alt="" coords="19,169,178,211"/>
 </map>

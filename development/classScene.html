@@ -76,17 +76,6 @@ $(function() {
  <a href="classScene.html#details">Meer...</a></p>
 
 <p><code>#include &lt;<a class="el" href="scene_8hpp_source.html">scene.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Klasse diagram voor Scene</div>
-<div class="dyncontent">
-<div class="center"><img src="classScene__inherit__graph.png" border="0" usemap="#aScene_inherit__map" alt="Inheritance graph"/></div>
-<map name="aScene_inherit__map" id="aScene_inherit__map">
-<area shape="rect" title="Class representing a scene which can be rendered by the Camera." alt="" coords="115,5,176,32"/>
-<area shape="rect" href="classBaseScene.html" title=" " alt="" coords="99,80,192,107"/>
-<area shape="rect" href="classBaseLevelScene.html" title="Provides specializations for level scenes." alt="" coords="5,155,133,181"/>
-<area shape="rect" href="classBaseMenuScene.html" title="Provides specializations for menu scenes." alt="" coords="158,155,287,181"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Members</h2></td></tr>
@@ -94,6 +83,46 @@ Public Members</h2></td></tr>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a8d9949c150fa695d00078031938d14ac">RenderScene</a> ()=0</td></tr>
 <tr class="memdesc:a8d9949c150fa695d00078031938d14ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called by a <a class="el" href="classCamera.html">Camera</a> to render the scene on the engine. <br /></td></tr>
 <tr class="separator:a8d9949c150fa695d00078031938d14ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a310ca6a34dc40f51c4f4b2130fb821a1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a310ca6a34dc40f51c4f4b2130fb821a1">Update</a> (float deltaTime)</td></tr>
+<tr class="memdesc:a310ca6a34dc40f51c4f4b2130fb821a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all game objects in the scene.  <a href="classScene.html#a310ca6a34dc40f51c4f4b2130fb821a1">Meer...</a><br /></td></tr>
+<tr class="separator:a310ca6a34dc40f51c4f4b2130fb821a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ef168b772654613b77c19852f3e6be"><td class="memItemLeft" align="right" valign="top"><a id="ae4ef168b772654613b77c19852f3e6be"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#ae4ef168b772654613b77c19852f3e6be">AddGameObject</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject)</td></tr>
+<tr class="memdesc:ae4ef168b772654613b77c19852f3e6be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a game object, might be required for stuff like prefabs. <br /></td></tr>
+<tr class="separator:ae4ef168b772654613b77c19852f3e6be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada8488415f4f1da74419c00644f9c9b5"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#ada8488415f4f1da74419c00644f9c9b5">CreateGameObject</a> ()</td></tr>
+<tr class="memdesc:ada8488415f4f1da74419c00644f9c9b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a game object and adds it to the scene, should be the preferred method of creating game objects for clear ownership.  <a href="classScene.html#ada8488415f4f1da74419c00644f9c9b5">Meer...</a><br /></td></tr>
+<tr class="separator:ada8488415f4f1da74419c00644f9c9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a723ba9340878ea5fced1b55d9228e4b4"><td class="memTemplParams" colspan="2">template&lt;typename GameObjectType , typename... Args&gt; </td></tr>
+<tr class="memitem:a723ba9340878ea5fced1b55d9228e4b4"><td class="memTemplItemLeft" align="right" valign="top">std::weak_ptr&lt; GameObjectType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classScene.html#a723ba9340878ea5fced1b55d9228e4b4">CreateGameObject</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a723ba9340878ea5fced1b55d9228e4b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a game object and adds it to the scene, should be the preferred method of creating game objects for clear ownership.  <a href="classScene.html#a723ba9340878ea5fced1b55d9228e4b4">Meer...</a><br /></td></tr>
+<tr class="separator:a723ba9340878ea5fced1b55d9228e4b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a040961eca187b2846866675791d01847"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a040961eca187b2846866675791d01847"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::weak_ptr&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classScene.html#a040961eca187b2846866675791d01847">GetAllByType</a> ()</td></tr>
+<tr class="memdesc:a040961eca187b2846866675791d01847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all game objects by type.  <a href="classScene.html#a040961eca187b2846866675791d01847">Meer...</a><br /></td></tr>
+<tr class="separator:a040961eca187b2846866675791d01847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4347c1f657acfd61825133d6e2781354"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a4347c1f657acfd61825133d6e2781354">findGameObjectByName</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a4347c1f657acfd61825133d6e2781354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a game object by name.  <a href="classScene.html#a4347c1f657acfd61825133d6e2781354">Meer...</a><br /></td></tr>
+<tr class="separator:a4347c1f657acfd61825133d6e2781354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09c129e19e48cbff6ee39307b2926879"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a09c129e19e48cbff6ee39307b2926879">findGameObjectByTag</a> (const std::string &amp;tag)</td></tr>
+<tr class="memdesc:a09c129e19e48cbff6ee39307b2926879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds game objects by tag.  <a href="classScene.html#a09c129e19e48cbff6ee39307b2926879">Meer...</a><br /></td></tr>
+<tr class="separator:a09c129e19e48cbff6ee39307b2926879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98584cbd2f74018bbb52fbbd4cd4b112"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a98584cbd2f74018bbb52fbbd4cd4b112">removeGameObjectByName</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a98584cbd2f74018bbb52fbbd4cd4b112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a game object by name.  <a href="classScene.html#a98584cbd2f74018bbb52fbbd4cd4b112">Meer...</a><br /></td></tr>
+<tr class="separator:a98584cbd2f74018bbb52fbbd4cd4b112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82e0a11932a12439e02f5c958b6b6a26"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a82e0a11932a12439e02f5c958b6b6a26">removeGameObjectByTag</a> (const std::string &amp;tag)</td></tr>
+<tr class="memdesc:a82e0a11932a12439e02f5c958b6b6a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a game object by tag.  <a href="classScene.html#a82e0a11932a12439e02f5c958b6b6a26">Meer...</a><br /></td></tr>
+<tr class="separator:a82e0a11932a12439e02f5c958b6b6a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47102b9881f81865736e9d38bb7b2f15"><td class="memItemLeft" align="right" valign="top"><a id="a47102b9881f81865736e9d38bb7b2f15"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a47102b9881f81865736e9d38bb7b2f15">Clear</a> ()</td></tr>
+<tr class="memdesc:a47102b9881f81865736e9d38bb7b2f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all game objects from the scene. <br /></td></tr>
+<tr class="separator:a47102b9881f81865736e9d38bb7b2f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68684ab25c373c5a04b9330cec8b3461"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a68684ab25c373c5a04b9330cec8b3461">GetGameObjectCount</a> () const</td></tr>
+<tr class="memdesc:a68684ab25c373c5a04b9330cec8b3461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the amount of game objects in the scene.  <a href="classScene.html#a68684ab25c373c5a04b9330cec8b3461">Meer...</a><br /></td></tr>
+<tr class="separator:a68684ab25c373c5a04b9330cec8b3461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b8fbebd1546b8dba7c8bd7f573c6242"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a8b8fbebd1546b8dba7c8bd7f573c6242">SetActiveStatus</a> (const std::string &amp;name, bool isActive)</td></tr>
+<tr class="memdesc:a8b8fbebd1546b8dba7c8bd7f573c6242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the active status of a specific game object by name.  <a href="classScene.html#a8b8fbebd1546b8dba7c8bd7f573c6242">Meer...</a><br /></td></tr>
+<tr class="separator:a8b8fbebd1546b8dba7c8bd7f573c6242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributen</h2></td></tr>
@@ -104,7 +133,297 @@ std::vector&lt; std::shared_ptr&lt; <a class="el" href="classGameObject.html">Ga
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Gedetailleerde Beschrijving</h2>
 <div class="textblock"><p>Class representing a scene which can be rendered by the <a class="el" href="classCamera.html">Camera</a>. </p>
-</div><hr/>De documentatie voor deze klasse is gegenereerd op grond van de volgende bestanden:<ul>
+</div><h2 class="groupheader">Documentatie van functie members</h2>
+<a id="ada8488415f4f1da74419c00644f9c9b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada8488415f4f1da74419c00644f9c9b5">&#9670;&nbsp;</a></span>CreateGameObject() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; Scene::CreateGameObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a game object and adds it to the scene, should be the preferred method of creating game objects for clear ownership. </p>
+<dl class="section return"><dt>Retourneert</dt><dd>The created game object as a weak pointer because the created game object is owned by the scene </dd></dl>
+
+</div>
+</div>
+<a id="a723ba9340878ea5fced1b55d9228e4b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a723ba9340878ea5fced1b55d9228e4b4">&#9670;&nbsp;</a></span>CreateGameObject() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename GameObjectType , typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::weak_ptr&lt; GameObjectType &gt; Scene::CreateGameObject </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a game object and adds it to the scene, should be the preferred method of creating game objects for clear ownership. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">GameObjectType</td><td>The type of game object to create. </td></tr>
+    <tr><td class="paramname">Args</td><td>The types of arguments to forward to the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> constructor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>The arguments to forward to the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> constructor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>The created game object as a weak pointer because the created game object is owned by the scene. </dd></dl>
+
+</div>
+</div>
+<a id="a4347c1f657acfd61825133d6e2781354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4347c1f657acfd61825133d6e2781354">&#9670;&nbsp;</a></span>findGameObjectByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; Scene::findGameObjectByName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds a game object by name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name of the game object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>The game object if found, otherwise an empty pointer </dd></dl>
+
+</div>
+</div>
+<a id="a09c129e19e48cbff6ee39307b2926879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c129e19e48cbff6ee39307b2926879">&#9670;&nbsp;</a></span>findGameObjectByTag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &gt; Scene::findGameObjectByTag </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>tag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds game objects by tag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tag</td><td>Tag of the game objects </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>The game objects if found, otherwise an empty vector </dd></dl>
+
+</div>
+</div>
+<a id="a040961eca187b2846866675791d01847"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a040961eca187b2846866675791d01847">&#9670;&nbsp;</a></span>GetAllByType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::weak_ptr&lt; T &gt; &gt; Scene::GetAllByType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets all game objects by type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of the game object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>A vector containing all game objects of the specified type </dd></dl>
+
+</div>
+</div>
+<a id="a68684ab25c373c5a04b9330cec8b3461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68684ab25c373c5a04b9330cec8b3461">&#9670;&nbsp;</a></span>GetGameObjectCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Scene::GetGameObjectCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the amount of game objects in the scene. </p>
+<dl class="section return"><dt>Retourneert</dt><dd>Amount of game objects in the scene </dd></dl>
+
+</div>
+</div>
+<a id="a98584cbd2f74018bbb52fbbd4cd4b112"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98584cbd2f74018bbb52fbbd4cd4b112">&#9670;&nbsp;</a></span>removeGameObjectByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Scene::removeGameObjectByName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes a game object by name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name of the game object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>True if the game object was found and removed, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="a82e0a11932a12439e02f5c958b6b6a26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82e0a11932a12439e02f5c958b6b6a26">&#9670;&nbsp;</a></span>removeGameObjectByTag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Scene::removeGameObjectByTag </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>tag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes a game object by tag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tag</td><td>Tag of the game object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>True if the game object was found and removed, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="a8b8fbebd1546b8dba7c8bd7f573c6242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b8fbebd1546b8dba7c8bd7f573c6242">&#9670;&nbsp;</a></span>SetActiveStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Scene::SetActiveStatus </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isActive</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the active status of a specific game object by name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name of the game object. </td></tr>
+    <tr><td class="paramname">isActive</td><td>The new active status. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>True if the game object was found and the status was updated, otherwise false. </dd></dl>
+
+</div>
+</div>
+<a id="a310ca6a34dc40f51c4f4b2130fb821a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a310ca6a34dc40f51c4f4b2130fb821a1">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Scene::Update </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>deltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates all game objects in the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>The time passed since the last frame. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>De documentatie voor deze klasse is gegenereerd op grond van de volgende bestanden:<ul>
 <li>include/api/<a class="el" href="scene_8hpp_source.html">scene.hpp</a></li>
 <li>src/api/<a class="el" href="scene_8cpp.html">scene.cpp</a></li>
 </ul>

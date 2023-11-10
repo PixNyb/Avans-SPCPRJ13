@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['name_116',['name',['../classGameObject.html#af542b33c8de269343e22c5629e6b66c0',1,'GameObject']]],
-  ['none_117',['None',['../event__type_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa6adf97f83acf6453d4a6a4b1070f3754',1,'event_type.hpp']]]
+  ['magenta_109',['magenta',['../classColor.html#a080c4ee6bdc05ecac3068c4ce0264279',1,'Color']]],
+  ['mousebuttondown_110',['MouseButtonDown',['../event__type_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa8cdc59370ca82c9591c1f0f212a2971c',1,'event_type.hpp']]],
+  ['mousebuttonup_111',['MouseButtonUp',['../event__type_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa2a3ccd10f3eb3ee5e6009dde78de0d1f',1,'event_type.hpp']]],
+  ['mousemove_112',['MouseMove',['../event__type_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faafd060c0c157323f1e43e0704d4f3ffc8',1,'event_type.hpp']]]
 ];
