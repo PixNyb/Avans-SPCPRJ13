@@ -50,7 +50,7 @@ endforeach()
 list(REMOVE_DUPLICATES HEADER_DIRS)
 
 # Add executable
-add_executable(DeFunBobEngine ${SOURCES})
+add_library(DeFunBobEngine ${SOURCES})
 
 # Include headers
 foreach(_headerDir ${HEADER_DIRS})

@@ -23,10 +23,8 @@ jobs:
       - name: Cache vcpkg
         uses: actions/cache@v2
         with:
-          path: vcpkg
-          key: vcpkg-${{ runner.os }}-${{ hashFiles('**/vcpkg.json') }}
-          restore-keys: |
-            vcpkg-${{ runner.os }}-
+          path: vcpkg/installed
+          key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/vcpkg.json') }}
 
       - name: Install CMake
         run: |
@@ -60,17 +58,23 @@ jobs:
       - name: Compress build result
         run: tar -czf build.tar.gz build
 
-      - name: Archive build result
+      - name: Upload build result
         uses: actions/upload-artifact@v2
         with:
           name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Build.tar.gz
           path: |
             ./build.tar.gz
 
+      - name: Upload library
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}.a
+          path: |
+            ./build/libDeFunBobEngine.a
+
   test:
     needs: build
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
