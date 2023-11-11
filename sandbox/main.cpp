@@ -1,12 +1,12 @@
 /**
  * @file main.cpp
  * @author "Melvin van Bree"
- * @brief TODO
+ * @brief Sandbox is used to test stuff temporarily
  * @version 0.1
  * @date 10/11/2023
  *
  * @copyright Copyright (c) 2023
- *
+ * @details `development/` should have an empty main entry point. This is used to test stuff temporarily.
  */
 
 #include "core/engine.hpp"
@@ -15,6 +15,8 @@
 
 class TestScene : public Scene
 {
+  private:
+    int tick = 0;
   public:
     TestScene() = default;
     ~TestScene() override = default;
@@ -26,7 +28,11 @@ class TestScene : public Scene
 
     void Update(float deltaTime) override
     {
-        std::cout << "Updated Scene" << std::endl;
+        auto fps = Engine::GetInstance()->GetFPS();
+        std::cout << "Update: " << tick << std::endl;
+        std::cout << "Delta Time: " << deltaTime << std::endl;
+        std::cout << "FPS: " << fps << std::endl;
+        tick++;
     }
 };
 
@@ -34,8 +40,8 @@ int main(int argc, char *argv[])
 {
     std::cout << "Sandbox" << std::endl;
 
-    auto engine = Engine::getInstance();
-    auto sceneManager = engine->get<SceneManager>();
+    auto engine = Engine::GetInstance();
+    auto sceneManager = engine->Get<SceneManager>();
 
     auto scene = std::make_shared<TestScene>();
     sceneManager->SetScene(scene);

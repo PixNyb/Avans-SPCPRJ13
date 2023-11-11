@@ -1,5 +1,4 @@
 #include "engine.hpp"
-#include "io_facade.hpp"
 #include "scene_manager.hpp"
 #include "time_utility.h"
 #include <thread>
@@ -7,7 +6,7 @@
 Engine* Engine::instancePtr = nullptr;
 
 Engine::Engine() {
-    publicContainer.registerInstance<SceneManager>(std::make_shared<SceneManager>());
+    container.registerInstance<SceneManager>(std::make_shared<SceneManager>());
     // TODO: Change to actual facade
 //    privateContainer.registerInstance<IOFacade>(std::make_shared<mock_io_facade>());
 }
@@ -19,16 +18,15 @@ void Engine::Start()
     TimeUtility time;
     float lastFPSUpdateTime = time.GetTotalTime();
 
-//    auto io = std::dynamic_pointer_cast<mock_io_facade>(getPrivate<IOFacade>());
-
     while (isRunning) {
-        std::cout << std::string(50, '-') << std::endl;
+        float deltaTime = time.GetDeltaTime();
 
         // Start of the frame
         time.StartFrame();
 
         // Game logic goes here
         // ...
+        Get<SceneManager>()->Update(deltaTime);
 
         // Render stuff goes here
         // ...
@@ -50,22 +48,33 @@ void Engine::Start()
         {
             // TODO: Place in IOFacade
             SDL_Delay(static_cast<unsigned int>(targetMs - elapsedMs));
-//            io->delay(static_cast<unsigned int>(targetMs - elapsedMs));
         }
-
-        std::cout << "FPS: " << currentFPS << std::endl;
-        std::cout << "Delta time: " << time.GetDeltaTime() << std::endl;
-        std::cout << "Frame time: " << time.GetDeltaTime() * 1000.0f << std::endl;
-        std::cout << std::string(50, '-') << std::endl;
     }
-
-    get<SceneManager>()->ClearScene();
+}
+void Engine::Stop() {
+    isRunning = false;
 }
 
-template <typename T> std::shared_ptr<T> Engine::getPrivate()
+void Engine::Shutdown() {
+    Stop();
+
+    if(auto sceneManager = Get<SceneManager>(); sceneManager != nullptr)
+        sceneManager->ClearScene();
+}
+
+int Engine::GetFPS() const {
+    return currentFPS;
+}
+
+void Engine::SetFPSLimit(float fps) {
+    FPS_LIMIT = fps;
+}
+
+template <typename T> std::shared_ptr<T> Engine::GetLocal()
 {
-    return privateContainer.resolve<T>();
+    return container.resolve<T>(InstanceScope::Engine);
 }
-template <typename T> std::shared_ptr<T> Engine::get() {
-    return publicContainer.resolve<T>();
+
+template <typename T> std::shared_ptr<T> Engine::Get() {
+    return container.resolve<T>();
 }

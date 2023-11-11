@@ -16,31 +16,34 @@
 
 class TimeUtility {
   private:
-    uint64_t startTime;
-    uint64_t prevTime;
-    uint64_t currentTime;
-    float deltaTime;
+    uint64_t startTime; /// The time when the class started
+    uint64_t prevTime; /// The time of the previous frame
+    uint64_t currentTime; /// The time of the current frame
+    float deltaTime; /// The time between the previous frame and the current frame
 
   public:
     TimeUtility() : startTime(0), prevTime(0), currentTime(0), deltaTime(0.0f) {}
 
-    void StartFrame() {
-        prevTime = currentTime;
-        currentTime = SDL_GetPerformanceCounter();
-        deltaTime = static_cast<float>(currentTime - prevTime) / SDL_GetPerformanceFrequency();
-    }
+    void StartFrame();
 
-    [[nodiscard]] float GetElapsedTimeSinceFrameStart() const {
-        return (SDL_GetPerformanceCounter() - currentTime) / static_cast<float>(SDL_GetPerformanceFrequency()) * 1000.0f;
-    }
+    /**
+     * @brief Gets the current elapsed time since the start of the frame
+     * @details This means the time from when this function was called, not the time from the start of the frame
+     * @return float The elapsed time in milliseconds
+     */
+    [[nodiscard]] float GetElapsedTimeSinceFrameStart() const;
 
-    [[nodiscard]] float GetTotalTime() const {
-        return static_cast<float>(currentTime - startTime) / SDL_GetPerformanceFrequency();
-    }
+    /**
+     * @brief Gets the total time since the start of the timer
+     * @return float The total time in seconds
+     */
+    [[nodiscard]] float GetTotalTime() const;
 
-    [[nodiscard]] float GetDeltaTime() const {
-        return deltaTime;
-    }
+    /**
+     * @brief Gets the time between the previous frame and the current frame
+     * @return float The delta time in seconds
+     */
+    [[nodiscard]] float GetDeltaTime() const;
 };
 
 #endif // DEFUNBOBENGINE_TIMEUTILITY_H

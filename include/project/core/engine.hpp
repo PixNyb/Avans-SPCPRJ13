@@ -1,7 +1,7 @@
 /**
  * @file engine.hpp
  * @author "Melvin van Bree"
- * @brief TODO
+ * @brief Engine is the core of the engine. It is responsible for managing the game loop and managing the DIContainer.
  * @version 0.1
  * @date 10/11/2023
  *
@@ -12,6 +12,7 @@
 #ifndef AVANS_SPCPRJ13_ENGINE_HPP
 #define AVANS_SPCPRJ13_ENGINE_HPP
 
+#include "core_constants.hpp"
 #include <di_container.hpp>
 #include <iostream>
 #include <memory>
@@ -32,13 +33,9 @@ class Engine
     static Engine *instancePtr;
 
     /**
-     * @brief The public container is used to store public instances for the game dev like SceneManager etc.
+     * @brief The container is used to store public or private instances for the game dev like SceneManager etc.
      */
-    DIContainer publicContainer;
-    /**
-     * @brief The private container is used to store private instances for the game dev like facades.
-     */
-    DIContainer privateContainer;
+    DIContainer container;
 
     /**
      * @brief Checks if the engine is running
@@ -48,16 +45,8 @@ class Engine
     /**
      * @brief The FPS of the engine
      */
-    float FPS_LIMIT = 60;
+    float FPS_LIMIT = CoreConstants::Engine::DEFAULT_FPS;
     int currentFPS = 0;
-
-    /**
-     * @brief Gets a privately available instance (like facades)
-     * @tparam T The type of the instance
-     * @return std::shared_ptr<T>
-     */
-    template <typename T>
-    std::shared_ptr<T> getPrivate();
 
   public:
     Engine(Engine &other) = delete;
@@ -69,13 +58,21 @@ class Engine
      * @return std::shared_ptr<T>
      */
     template <typename T>
-    std::shared_ptr<T> get();
+    std::shared_ptr<T> Get();
+
+    /**
+     * @brief Gets a locally scoped instance for the engine (like facades)
+     * @tparam T The type of the instance
+     * @return std::shared_ptr<T>
+     */
+    template <typename T>
+    std::shared_ptr<T> GetLocal();
 
     /**
      * @brief Gets the instance of the engine
      * @return Engine*
      */
-    static Engine *getInstance()
+    static Engine *GetInstance()
     {
         if (instancePtr == nullptr)
         {
@@ -86,8 +83,33 @@ class Engine
         return instancePtr;
     }
 
-
+    /**
+     * @brief Starts the game loop
+     */
     void Start();
+
+    /**
+     * @brief Stops the game loop
+     */
+    void Stop();
+
+    /**
+     * @brief Shuts down the engine
+     * @details Calls stop and cleans up the engine
+     */
+    void Shutdown();
+
+    /**
+     * @brief Gets the FPS of the engine
+     * @return int
+     */
+    int GetFPS() const;
+
+    /**
+     * @brief Sets the FPS of the engine
+     * @param fps The FPS to set
+     */
+    void SetFPSLimit(float fps);
 };
 
 #endif // AVANS_SPCPRJ13_ENGINE_HPP
