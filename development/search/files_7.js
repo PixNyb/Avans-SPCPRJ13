@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['point_2ehpp_312',['point.hpp',['../point_8hpp.html',1,'']]],
-  ['polygon_2ehpp_313',['polygon.hpp',['../polygon_8hpp.html',1,'']]]
+  ['main_2ecpp_313',['main.cpp',['../sandbox_2main_8cpp.html',1,'']]]
 ];
