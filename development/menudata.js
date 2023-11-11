@@ -85,4 +85,5 @@ var menudata={children:[
 {text:"Bestandslijst",url:"files.html"},
 {text:"Bestand members",url:"globals.html",children:[
 {text:"Alle",url:"globals.html"},
+{text:"Variabelen",url:"globals_vars.html"},
 {text:"Enumeraties",url:"globals_enum.html"}]}]}]}

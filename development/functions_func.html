@@ -130,6 +130,9 @@ $(function() {
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
+<li>delay()
+: <a class="el" href="classIOFacade.html#a18e399fbe5a3b7b7d58ad6636f597bcc">IOFacade</a>
+</li>
 <li>DeltaTime()
 : <a class="el" href="classTime.html#a8ee525887d3216e0a291692a36831d27">Time</a>
 </li>
@@ -175,26 +178,50 @@ $(function() {
 <li>Geometry()
 : <a class="el" href="classGeometry.html#a31f028381e46f352866f1a6dae80e26e">Geometry</a>
 </li>
+<li>Get()
+: <a class="el" href="classEngine.html#a268ea2b76970145979eafcd8a89eb543">Engine</a>
+</li>
 <li>GetAlignment()
 : <a class="el" href="classText.html#a43894099d956379ea4320aa60797998c">Text</a>
 </li>
 <li>GetAllByType()
 : <a class="el" href="classScene.html#a040961eca187b2846866675791d01847">Scene</a>
 </li>
+<li>GetDeltaTime()
+: <a class="el" href="classTimeUtility.html#a2f731df724660c20b2d7d924f46e50ed">TimeUtility</a>
+</li>
+<li>GetElapsedTimeSinceFrameStart()
+: <a class="el" href="classTimeUtility.html#a043125535af3ea7863e8e20bb8763a63">TimeUtility</a>
+</li>
 <li>GetFontSize()
 : <a class="el" href="classText.html#a3f58eb1736e822f96882ded57938dbbd">Text</a>
+</li>
+<li>GetFPS()
+: <a class="el" href="classEngine.html#ae6e3d3842d973d79811e24525c95b5a8">Engine</a>
 </li>
 <li>GetGameObjectCount()
 : <a class="el" href="classScene.html#a68684ab25c373c5a04b9330cec8b3461">Scene</a>
 </li>
+<li>GetInstance()
+: <a class="el" href="classEngine.html#ac21ca2e625a8880c6623e0593ec58ac1">Engine</a>
+</li>
 <li>GetLayer()
 : <a class="el" href="classGameObject.html#a3f5c50c6cf0f7c63ab75257f959f200e">GameObject</a>
+</li>
+<li>GetLocal()
+: <a class="el" href="classEngine.html#af6622db88bc766fa01c900858972fc37">Engine</a>
 </li>
 <li>GetName()
 : <a class="el" href="classGameObject.html#a986731c4dfb08336dbf0731e6514bad9">GameObject</a>
 </li>
 <li>GetParent()
 : <a class="el" href="classGameObject.html#aa6788e19c6016d6de2e8374af223ab0b">GameObject</a>
+</li>
+<li>GetPerformanceCounter()
+: <a class="el" href="classPerformanceUtility.html#af992026a4e9056f8e16e2d62d0f0a31f">PerformanceUtility</a>
+</li>
+<li>GetPerformanceFrequency()
+: <a class="el" href="classPerformanceUtility.html#a64d02b0145a72ad3b8924581223bf3c9">PerformanceUtility</a>
 </li>
 <li>GetScene()
 : <a class="el" href="classSceneManager.html#a7a6e586528ef56626b6e89452afd7b80">SceneManager</a>
@@ -219,6 +246,9 @@ $(function() {
 </li>
 <li>getTicks()
 : <a class="el" href="classTimer.html#a31069f8a9597ff7cea5899b30d2e7f7a">Timer</a>
+</li>
+<li>GetTotalTime()
+: <a class="el" href="classTimeUtility.html#af2ee8fc7082e02518bb2b292346a1526">TimeUtility</a>
 </li>
 <li>GetTransform()
 : <a class="el" href="classGameObject.html#aa56a1cffac7ac7f336137bc8604f61f8">GameObject</a>
@@ -347,6 +377,9 @@ $(function() {
 <li>red()
 : <a class="el" href="classColor.html#a2da8d2f80faad74da939aadf5b174768">Color</a>
 </li>
+<li>registerInstance()
+: <a class="el" href="classDIContainer.html#a3adda24f6027fbda6341acecede71b15">DIContainer</a>
+</li>
 <li>removeGameObjectByName()
 : <a class="el" href="classScene.html#a98584cbd2f74018bbb52fbbd4cd4b112">Scene</a>
 </li>
@@ -362,6 +395,9 @@ $(function() {
 <li>RenderScene()
 : <a class="el" href="classScene.html#a8d9949c150fa695d00078031938d14ac">Scene</a>
 , <a class="el" href="classSceneManager.html#a03e3156da326c5fc02ae809b2c59034a">SceneManager</a>
+</li>
+<li>resolve()
+: <a class="el" href="classDIContainer.html#ab2af2d5d7c07a95e180e3fe01c17610d">DIContainer</a>
 </li>
 <li>run()
 : <a class="el" href="classGameLoop.html#a819f7585c0841dbad50444dc08312ae1">GameLoop</a>
@@ -401,6 +437,9 @@ $(function() {
 <li>SetFontSize()
 : <a class="el" href="classText.html#ab7a79fc8775c7935b2515fde15cbc127">Text</a>
 </li>
+<li>SetFPSLimit()
+: <a class="el" href="classEngine.html#abae1a9fd9e8b8b5ab2e938324d58dc69">Engine</a>
+</li>
 <li>SetLayer()
 : <a class="el" href="classGameObject.html#a9d77f9c92686dacd0bccb5cb9f2aeac8">GameObject</a>
 </li>
@@ -428,12 +467,19 @@ $(function() {
 <li>SetTransform()
 : <a class="el" href="classGameObject.html#a0aa1842e6bcd14add28cb71347d6ca5d">GameObject</a>
 </li>
+<li>Shutdown()
+: <a class="el" href="classEngine.html#a3dbd2c0a65e642baa7eaa97caa6e4e64">Engine</a>
+</li>
+<li>Start()
+: <a class="el" href="classEngine.html#a1fbe9f5cb4abc3572e432cae1f154817">Engine</a>
+</li>
 <li>start()
 : <a class="el" href="classThread.html#a1f53ee62bd30a7924186ef26150ce262">Thread</a>
 , <a class="el" href="classTimer.html#a3a8b5272198d029779dc9302a54305a8">Timer</a>
 </li>
 <li>Stop()
 : <a class="el" href="classAudioSource.html#afcfa9a28255f0aac30aa218d4e293123">AudioSource</a>
+, <a class="el" href="classEngine.html#a55059f0c0a33f3a84300a89ebd10b855">Engine</a>
 </li>
 <li>stop()
 : <a class="el" href="classThread.html#abd50159ecd409936f454c2321f673616">Thread</a>
@@ -454,6 +500,9 @@ $(function() {
 </li>
 <li>TimeScale()
 : <a class="el" href="classTime.html#a713d855de85a659e685e0aadaafcd94e">Time</a>
+</li>
+<li>TimeUtility()
+: <a class="el" href="classTimeUtility.html#a616756b01fe4e6511ffdabb26381d0b2">TimeUtility</a>
 </li>
 <li>toSDLRect()
 : <a class="el" href="classSDLRect.html#a65c861525ff2aaa206ba1be58e7819e0">SDLRect</a>
@@ -536,7 +585,7 @@ $(function() {
 : <a class="el" href="classInput.html#af2db35ba67c8a8ccd23bef6a482fc291">Input</a>
 </li>
 <li>~IOFacade()
-: <a class="el" href="classIOFacade.html#ac3a1f975c731199c93541327f2666d83">IOFacade</a>
+: <a class="el" href="classIOFacade.html#a92a836ecf11f55edf01dda59b0f4534f">IOFacade</a>
 </li>
 <li>~SDLSurface()
 : <a class="el" href="classSDLSurface.html#ad220d0db8e92aa664bf07c4d374b2d07">SDLSurface</a>

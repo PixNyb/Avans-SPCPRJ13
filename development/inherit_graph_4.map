@@ -1,3 +1,3 @@
 <map id="Grafische Klasse Hi&amp;euml;rarchie" name="Grafische Klasse Hi&amp;euml;rarchie">
-<area shape="rect" id="node1" href="$classEvent.html" title="Base class for events in the game engine." alt="" coords="5,5,64,32"/>
+<area shape="rect" id="node1" href="$classDIContainer.html" title="The dependency injection container." alt="" coords="5,5,104,32"/>
 </map>

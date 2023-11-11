@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rotation_483',['rotation',['../structTransform.html#a48a4c4b708092229dad7a066115c3a27',1,'Transform']]]
+  ['parent_531',['parent',['../classGameObject.html#aae2ba1fd3e39a32f1de627c2c39b4ae2',1,'GameObject']]],
+  ['position_532',['position',['../structTransform.html#ad0426334399b7c5b9c0e4dead6764e66',1,'Transform::position()'],['../classGeometry.html#a3e79de44c8cdb7fe1f5797e781a9713a',1,'Geometry::position()']]]
 ];
