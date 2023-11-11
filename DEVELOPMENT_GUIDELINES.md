@@ -23,6 +23,8 @@ Gebruik de Clang Formatter om code te formatteren volgens de `C++ Coding Style G
 - Plaats accolades op een nieuwe regel voor functies en klassen.
 - Voeg spaties toe rond operatoren (bijv. x = 5, niet x=5).
 - Beperk regellengte tot 80-100 tekens.
+- Gebruik `#ifndef`-header guards om headerbestanden te beschermen tegen dubbele inclusie.
+- Gebruik `#include <...>` voor systeem- en externe bibliotheekheaders en `#include "..."` voor lokale headers.
 
 Voor meer informatie, zie [LLVM Coding Standards](https://llvm.org/docs/CodingStandards.html).
 
