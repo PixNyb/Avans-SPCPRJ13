@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
     GameLoop gameLoop;
 
-//    gameLoop.run(); // Start de game loop.
+    gameLoop.run(); // Start de game loop.
 
     return 0;
 }

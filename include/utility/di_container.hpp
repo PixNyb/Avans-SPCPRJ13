@@ -53,9 +53,7 @@ class DIContainer {
      * @warning You can bind any type to any instance, but you should only bind abstract base types to instances.
      */
     template <typename T>
-    void registerInstance(std::shared_ptr<T> instance, InstanceScope scope = DEFAULT_INSTANCE_SCOPE) {
-        instances[scope][typeid(T).hash_code()] = instance;
-    }
+    void registerInstance(std::shared_ptr<T> instance, InstanceScope scope = DEFAULT_INSTANCE_SCOPE);
 
     /**
      * @brief Resolves an instance
@@ -64,15 +62,25 @@ class DIContainer {
      * @return std::shared_ptr<T> Nullptr if the instance is not found, otherwise the instance
      */
     template <typename T>
-    std::shared_ptr<T> resolve(InstanceScope scope = DEFAULT_INSTANCE_SCOPE) {
-        auto& scopeInstances = instances[scope];
-
-        auto it = scopeInstances.find(typeid(T).hash_code());
-        if (it != scopeInstances.end()) {
-            return std::static_pointer_cast<T>(it->second);
-        }
-        return nullptr;
-    }
+    std::shared_ptr<T> resolve(InstanceScope scope = DEFAULT_INSTANCE_SCOPE);
 };
+
+
+template <typename T>
+void DIContainer::registerInstance(std::shared_ptr<T> instance, InstanceScope scope)
+{
+    instances[scope][typeid(T).hash_code()] = instance;
+}
+
+template <typename T> std::shared_ptr<T> DIContainer::resolve(InstanceScope scope)
+{
+    auto& scopeInstances = instances[scope];
+
+    auto it = scopeInstances.find(typeid(T).hash_code());
+    if (it != scopeInstances.end()) {
+        return std::static_pointer_cast<T>(it->second);
+    }
+    return nullptr;
+}
 
 #endif // AVANS_SPCPRJ13_DI_CONTAINER_HPP

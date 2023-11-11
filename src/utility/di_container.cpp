@@ -1,7 +1,6 @@
 /**
  * @file di_container.cpp
  * @author "Melvin van Bree"
- * @brief TODO
  * @version 0.1
  * @date 10/11/2023
  *
