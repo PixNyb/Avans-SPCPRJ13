@@ -1,6 +1,6 @@
 #include "engine.hpp"
 #include "scene_manager.hpp"
-#include "time_utility.h"
+#include "time_utility.hpp"
 #include <thread>
 
 Engine* Engine::instancePtr = nullptr;

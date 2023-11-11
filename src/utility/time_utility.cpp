@@ -9,8 +9,8 @@
  *
  */
 
-#include "time_utility.h"
-#include "performance_utility.h"
+#include "time_utility.hpp"
+#include "performance_utility.hpp"
 
 float TimeUtility::GetTotalTime() const
 {
