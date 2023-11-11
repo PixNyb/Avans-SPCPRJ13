@@ -93,6 +93,8 @@ Code Formatting</h1>
 <li>Plaats accolades op een nieuwe regel voor functies en klassen.</li>
 <li>Voeg spaties toe rond operatoren (bijv. x = 5, niet x=5).</li>
 <li>Beperk regellengte tot 80-100 tekens.</li>
+<li>Gebruik <code>#ifndef</code>-header guards om headerbestanden te beschermen tegen dubbele inclusie.</li>
+<li>Gebruik <code>#include &lt;...&gt;</code> voor systeem- en externe bibliotheekheaders en <code>#include "..."</code> voor lokale headers.</li>
 </ul>
 <p>Voor meer informatie, zie <a href="https://llvm.org/docs/CodingStandards.html">LLVM Coding Standards</a>.</p>
 <p>Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code te formatteren. Voor Visual Studio Code is er bijvoorbeeld de <a href="https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd">clangd</a> extensie.</p>
