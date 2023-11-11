@@ -9,6 +9,8 @@
 struct Point {
     double x;
     double y;
+
+    Point(double x, double y) : x(x), y(y) {}
 };
 
 #endif // DEFUNBOBENGINE_POINT_H
