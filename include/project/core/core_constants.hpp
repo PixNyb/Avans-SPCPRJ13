@@ -23,6 +23,9 @@ namespace CoreConstants {
         const Color DEFAULT_COLOR = Color::white();
         const Alignment DEFAULT_ALIGNMENT = Alignment::left;
     }
+    namespace Engine {
+        const int DEFAULT_FPS = 60;
+    }
 }
 
 #endif // DEFUNBOBENGINE_CORECONSTANTS_HPP
