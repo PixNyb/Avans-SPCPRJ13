@@ -18,7 +18,7 @@
 Gebruik de Clang Formatter om code te formatteren volgens de `C++ Coding Style Guide` van `LLVM`. Hier zijn enkele basisregels:
 
 - Gebruik 4 spaties voor inspringing (geen tabbladen).
-- Gebruik CamelCase voor functie- en variabelennamen.
+- Gebruik PascalCase voor functie- en variabelennamen.
 - Gebruik snake_case voor bestandsnamen.
 - Plaats accolades op een nieuwe regel voor functies en klassen.
 - Voeg spaties toe rond operatoren (bijv. x = 5, niet x=5).
