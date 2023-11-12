@@ -18,9 +18,9 @@
 #ifndef DEFUNBOBENGINE_INPUTHANDLER_HPP
 #define DEFUNBOBENGINE_INPUTHANDLER_HPP
 
+#include <vector>
 #include "event.hpp"
 #include "io_facade.hpp"
-#include <vector>
 
 /**
  * @class SDL2InputHandler
@@ -30,9 +30,8 @@
  * interface. It is responsible for initializing SDL2's input system and retrieving
  * input events each frame, which can then be interpreted by the game engine.
  */
-class SDL2InputHandler : public IOFacade
-{
-  public:
+class SDL2InputHandler : public IOFacade {
+public:
     /**
      * @brief Initializes SDL2 input handling.
      *
@@ -49,7 +48,7 @@ class SDL2InputHandler : public IOFacade
      * event vector.
      * @param events A reference to a vector where the polled events will be stored.
      */
-    void pollEvents(std::vector<Event> &events) override;
+    void pollEvents(std::vector<Event>& events) override;
 };
 
-#endif // DEFUNBOBENGINE_INPUTHANDLER_HPP
+#endif //DEFUNBOBENGINE_INPUTHANDLER_HPP

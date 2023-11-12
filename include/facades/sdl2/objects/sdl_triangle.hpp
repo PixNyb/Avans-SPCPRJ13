@@ -30,9 +30,8 @@
  * It provides a method to render the triangle onto an SDL_Renderer, using the filledPolygonRGBA
  * function from the SDL2_gfx library to draw a filled triangle.
  */
-class SDLTriangle
-{
-  public:
+class SDLTriangle {
+public:
     Sint16 vx[3];
     Sint16 vy[3];
 
@@ -45,24 +44,20 @@ class SDLTriangle
      * @param x3 The x-coordinate of the third vertex.
      * @param y3 The y-coordinate of the third vertex.
      */
-    SDLTriangle(Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2, Sint16 x3, Sint16 y3)
-    {
-        vx[0] = x1;
-        vy[0] = y1;
-        vx[1] = x2;
-        vy[1] = y2;
-        vx[2] = x3;
-        vy[2] = y3;
+    SDLTriangle(Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2, Sint16 x3, Sint16 y3) {
+        vx[0] = x1; vy[0] = y1;
+        vx[1] = x2; vy[1] = y2;
+        vx[2] = x3; vy[2] = y3;
     }
 
     /**
      * @brief Renders the triangle on the provided SDL_Renderer.
      * @param renderer The SDL_Renderer to draw the triangle on.
      */
-    void draw(SDL_Renderer *renderer) const
-    {
+    void draw(SDL_Renderer* renderer) const {
         filledPolygonRGBA(renderer, vx, vy, 3, 255, 255, 255, 255); // TODO: add color
     }
+
 };
 
-#endif // DEFUNBOBENGINE_SDL_TRIANGLE_HPP
+#endif //DEFUNBOBENGINE_SDL_TRIANGLE_HPP

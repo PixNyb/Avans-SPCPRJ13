@@ -7,7 +7,5 @@
 /**
  * @brief The base class for all colliders.
  */
-class Collider : public Component
-{
-};
+class Collider : public Component {};
 #endif // COLLIDER2D_H_

@@ -17,24 +17,25 @@
 /**
  * @brief Encapsulates SDL_GetPerformanceCounter and SDL_GetPerformanceFrequency
  */
-class PerformanceUtility
-{
+class PerformanceUtility {
   public:
     /**
      * @brief Gets the current performance counter
-     * @details This is used to get a more precise performance indicator. It is usually multiplied
-     * by the frequency to get the time in seconds.
+     * @details This is used to get a more precise performance indicator. It is usually multiplied by the frequency to get the time in seconds.
      * @return uint64_t The current performance counter
      */
-    static uint64_t GetPerformanceCounter() { return SDL_GetPerformanceCounter(); }
+    static uint64_t GetPerformanceCounter() {
+        return SDL_GetPerformanceCounter();
+    }
 
     /**
      * @brief Gets the performance frequency. The amount of counter ticks per second.
-     * @details This is used to get a more precise performance indicator. It is usually multiplied
-     * by the counter to get the time in seconds.
+     * @details This is used to get a more precise performance indicator. It is usually multiplied by the counter to get the time in seconds.
      * @return uint64_t The performance frequency
      */
-    static uint64_t GetPerformanceFrequency() { return SDL_GetPerformanceFrequency(); }
+    static uint64_t GetPerformanceFrequency() {
+        return SDL_GetPerformanceFrequency();
+    }
 };
 
 #endif // DEFUNBOBENGINE_PERFORMANCE_UTILITY_HPP

@@ -21,11 +21,10 @@ class Scene
     virtual ~Scene() = default;
 
     /**
-     * @brief Updates all game objects in the scene.
-     * @param deltaTime The time passed since the last frame.
+    * @brief Updates all game objects in the scene.
+    * @param deltaTime The time passed since the last frame.
      */
-    virtual void Update(float deltaTime)
-    {
+    virtual void Update(float deltaTime){
         // TODO: Call an update on game object?
     }
 
@@ -40,31 +39,28 @@ class Scene
     void AddGameObject(const std::shared_ptr<GameObject> &gameObject);
 
     /**
-     * @brief Creates a game object and adds it to the scene, should be the preferred method of
-     * creating game objects for clear ownership
-     * @return The created game object as a weak pointer because the created game object is owned by
-     * the scene
+     * @brief Creates a game object and adds it to the scene, should be the preferred method of creating game objects for clear ownership
+     * @return The created game object as a weak pointer because the created game object is owned by the scene
      */
     std::weak_ptr<GameObject> CreateGameObject();
 
     /**
-     * @brief Creates a game object and adds it to the scene, should be the preferred method of
-     * creating game objects for clear ownership
+     * @brief Creates a game object and adds it to the scene, should be the preferred method of creating game objects for clear ownership
      * @tparam GameObjectType The type of game object to create.
      * @tparam Args The types of arguments to forward to the GameObject constructor.
      * @param args The arguments to forward to the GameObject constructor.
-     * @return The created game object as a weak pointer because the created game object is owned by
-     * the scene.
+     * @return The created game object as a weak pointer because the created game object is owned by the scene.
      */
     template <typename GameObjectType, typename... Args>
-    std::weak_ptr<GameObjectType> CreateGameObject(Args &&...args);
+    std::weak_ptr<GameObjectType> CreateGameObject(Args&&... args);
 
     /**
      * @brief Gets all game objects by type
      * @tparam T Type of the game object
      * @return A vector containing all game objects of the specified type
      */
-    template <typename T> std::vector<std::weak_ptr<T>> GetAllByType();
+    template<typename T>
+    std::vector<std::weak_ptr<T>> GetAllByType();
 
     /**
      * @brief Finds a game object by name

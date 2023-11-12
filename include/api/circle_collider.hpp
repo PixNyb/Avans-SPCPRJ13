@@ -8,9 +8,8 @@
 /**
  * @brief A collider which represents a circular collision area.
  */
-class CircleCollider : public Collider
-{
-  public:
+class CircleCollider : public Collider {
+public:
     /**
      * @brief Get the collider's radius
      * @return The radius
@@ -23,7 +22,7 @@ class CircleCollider : public Collider
      */
     void Radius(double newRadius) { radius = newRadius; }
 
-  private:
+private:
     double radius;
 };
 

@@ -25,19 +25,19 @@
  * with its position in the form of a Vector2D inherited from the Geometry class. It
  * implements the draw method to provide the logic for rendering the circle.
  */
-class Circle : public Geometry
-{
-  private:
+class Circle : public Geometry {
+private:
     float radius; ///< The radius of the circle.
 
-  public:
+public:
     /**
      * @brief Constructs a new Circle object.
      *
      * @param pos The position of the circle's center.
      * @param r The radius of the circle.
      */
-    Circle(const Vector2D &pos, float r) : Geometry(pos), radius(r) {}
+    Circle(const Vector2D& pos, float r)
+            : Geometry(pos), radius(r) {}
 
     /**
      * @brief Draws the circle using the rendering system.
@@ -46,10 +46,9 @@ class Circle : public Geometry
      * to the screen. The actual rendering implementation would depend on the
      * graphics library being used.
      */
-    void draw() const override
-    {
+    void draw() const override {
         // Rendering logic goes here
     }
 };
 
-#endif // DEFUNBOBENGINE_CIRCLE_HPP
+#endif //DEFUNBOBENGINE_CIRCLE_HPP

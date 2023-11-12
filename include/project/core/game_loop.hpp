@@ -27,14 +27,12 @@
  * It provides mechanisms to run the update and render cycles at a consistent
  * timing and to check whether the game is currently running.
  */
-class GameLoop
-{
-  public:
+class GameLoop {
+public:
     /**
      * @brief Construct a new Game Loop object.
      *
-     * Initializes the game loop control flag to false, indicating the loop is not running
-     * initially.
+     * Initializes the game loop control flag to false, indicating the loop is not running initially.
      */
     GameLoop();
 
@@ -75,8 +73,8 @@ class GameLoop
      */
     bool isRunning() const;
 
-  private:
+private:
     bool running; ///< Flag indicating whether the game loop is currently running.
 };
 
-#endif // DEFUNBOBENGINE_GAME_LOOP_HPP
+#endif //DEFUNBOBENGINE_GAME_LOOP_HPP

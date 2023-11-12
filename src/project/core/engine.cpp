@@ -3,13 +3,12 @@
 #include "time_utility.hpp"
 #include <thread>
 
-Engine *Engine::instancePtr = nullptr;
+Engine* Engine::instancePtr = nullptr;
 
-Engine::Engine()
-{
+Engine::Engine() {
     container.registerInstance<SceneManager>(std::make_shared<SceneManager>());
     // TODO: Change to actual facade
-    //    privateContainer.registerInstance<IOFacade>(std::make_shared<mock_io_facade>());
+//    privateContainer.registerInstance<IOFacade>(std::make_shared<mock_io_facade>());
 }
 
 void Engine::Start()
@@ -19,8 +18,7 @@ void Engine::Start()
     TimeUtility time;
     float lastFPSUpdateTime = time.GetTotalTime();
 
-    while (isRunning)
-    {
+    while (isRunning) {
         float deltaTime = time.GetDeltaTime();
 
         // Start of the frame
@@ -37,8 +35,7 @@ void Engine::Start()
 
         // Calculate FPS
         frameCount++;
-        if (time.GetTotalTime() - lastFPSUpdateTime >= 1.0f)
-        {
+        if (time.GetTotalTime() - lastFPSUpdateTime >= 1.0f) {
             currentFPS = frameCount;
             frameCount = 0;
             lastFPSUpdateTime = time.GetTotalTime();
@@ -54,23 +51,30 @@ void Engine::Start()
         }
     }
 }
-void Engine::Stop() { isRunning = false; }
+void Engine::Stop() {
+    isRunning = false;
+}
 
-void Engine::Shutdown()
-{
+void Engine::Shutdown() {
     Stop();
 
-    if (auto sceneManager = Get<SceneManager>(); sceneManager != nullptr)
+    if(auto sceneManager = Get<SceneManager>(); sceneManager != nullptr)
         sceneManager->ClearScene();
 }
 
-int Engine::GetFPS() const { return currentFPS; }
+int Engine::GetFPS() const {
+    return currentFPS;
+}
 
-void Engine::SetFPSLimit(float fps) { FPS_LIMIT = fps; }
+void Engine::SetFPSLimit(float fps) {
+    FPS_LIMIT = fps;
+}
 
 template <typename T> std::shared_ptr<T> Engine::GetLocal()
 {
     return container.resolve<T>(InstanceScope::Engine);
 }
 
-template <typename T> std::shared_ptr<T> Engine::Get() { return container.resolve<T>(); }
+template <typename T> std::shared_ptr<T> Engine::Get() {
+    return container.resolve<T>();
+}

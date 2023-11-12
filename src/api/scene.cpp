@@ -67,8 +67,7 @@ bool Scene::SetActiveStatus(const std::string &name, bool isActive)
     auto gameObject = findGameObjectByName(name);
     auto gameObjectPtr = gameObject.lock();
 
-    if (gameObjectPtr == nullptr)
-        return false;
+    if (gameObjectPtr == nullptr) return false;
 
     gameObjectPtr->SetActive(isActive);
     return true;

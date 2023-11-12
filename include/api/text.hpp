@@ -10,25 +10,19 @@
 /**
  * @brief Enumeration for different text alignments.
  */
-enum class Alignment
-{
-    left,
-    center,
-    right
-};
+enum class Alignment { left, center, right };
 
 /**
  * @brief Class representing a piece of text which can be rendered.
  */
-class Text : public UIObject
-{
-  private:
-    std::string text;    ///< The text string.
-    int fontSize;        ///< The font size of the text.
+class Text : public UIObject {
+private:
+    std::string text;      ///< The text string.
+    int fontSize;          ///< The font size of the text.
     Alignment alignment; ///< The alignment of the text.
-    Color textColor;     ///< The color of the text.
+    Color textColor;       ///< The color of the text.
 
-  public:
+public:
     /**
      * @brief Default constructor for Text.
      *

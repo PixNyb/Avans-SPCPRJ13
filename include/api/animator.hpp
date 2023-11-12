@@ -8,18 +8,17 @@
 #include <map>
 #include <vector>
 
-class Animator : public BehaviourScript
-{
-  private:
-    AnimationState currentState;
-    std::map<std::string, AnimationState> possibleStates;
+class Animator : public BehaviourScript {
+private:
+  AnimationState currentState;
+  std::map<std::string, AnimationState> possibleStates;
 
-  public:
-    Animator();
-    void Update();
-    void Stop();
-    void Play(bool looping);
-    // Getters, Setters, and other public member functions ...
+public:
+  Animator();
+  void Update();
+  void Stop();
+  void Play(bool looping);
+  // Getters, Setters, and other public member functions ...
 };
 
 #endif // AVANS_SPCPRJ13_ANIMATOR_H

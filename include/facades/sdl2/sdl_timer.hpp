@@ -29,20 +29,18 @@
  * Timer offers start, stop, pause, and resume functionalities to manage time intervals.
  * It can be used to track elapsed time since a particular event or to create a countdown timer.
  */
-class Timer
-{
-  private:
-    Uint32 startTicks;  ///< The ticks at the moment the timer was started.
+class Timer {
+private:
+    Uint32 startTicks; ///< The ticks at the moment the timer was started.
     Uint32 pausedTicks; ///< The ticks counted at the moment the timer was paused.
-    bool paused;        ///< Timer pause state.
-    bool started;       ///< Timer start state.
+    bool paused; ///< Timer pause state.
+    bool started; ///< Timer start state.
 
-  public:
+public:
     /**
      * @brief Construct a new Timer object.
      *
-     * Initializes the timer, setting all ticks counts to zero and the timer to not started or
-     * paused.
+     * Initializes the timer, setting all ticks counts to zero and the timer to not started or paused.
      */
     Timer();
 
@@ -81,4 +79,4 @@ class Timer
     Uint32 getTicks() const;
 };
 
-#endif // DEFUNBOBENGINE_TIMER_HPP
+#endif //DEFUNBOBENGINE_TIMER_HPP

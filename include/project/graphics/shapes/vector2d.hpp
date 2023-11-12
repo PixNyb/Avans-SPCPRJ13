@@ -22,9 +22,8 @@
  * throughout the game engine wherever 2D coordinates or vectors are needed, such as
  * in position calculations, physics, and rendering.
  */
-class Vector2D
-{
-  public:
+class Vector2D {
+public:
     float x; ///< The x component of the vector.
     float y; ///< The y component of the vector.
 
@@ -36,4 +35,4 @@ class Vector2D
     Vector2D(float x = 0.0f, float y = 0.0f) : x(x), y(y) {}
 };
 
-#endif // DEFUNBOBENGINE_VECTOR2D_HPP
+#endif //DEFUNBOBENGINE_VECTOR2D_HPP

@@ -27,9 +27,8 @@
  * of input devices and provides functions to query the state of keys and mouse buttons.
  * It should be updated every frame to process the latest input events.
  */
-class Input
-{
-  public:
+class Input {
+public:
     /**
      * @brief Construct a new Input object.
      *
@@ -61,4 +60,4 @@ class Input
     // Other input-related methods can be defined here.
 };
 
-#endif // DEFUNBOBENGINE_INPUT_HPP
+#endif //DEFUNBOBENGINE_INPUT_HPP

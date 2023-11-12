@@ -4,14 +4,13 @@
 #define AVANS_SPCPRJ13_RIGIDBODY_H
 
 #include "component.hpp"
-#include "point.hpp"
 #include <string>
+#include "point.hpp"
 
 /**
  * @brief Enumeration for different rigid body types
  */
-enum class BodyType
-{
+enum class BodyType {
     staticBody,
     kinematicBody,
     dynamicBody
@@ -20,17 +19,16 @@ enum class BodyType
 /**
  * @brief A component representing a rigid body.
  */
-class RigidBody : public Component
-{
-  public:
+class RigidBody : public Component {
+public:
     /**
      * @brief Apply force to this rigid body.
      * @param forceDirection A point, used as a vector to indicate direction
      *        and magnitude of the force to be applied.
      */
-    void AddForce(const Point &forceDirection);
+    void AddForce(const Point& forceDirection);
 
-  private:
+private:
     double mass;
     double gravityScale;
     BodyType bodyType;

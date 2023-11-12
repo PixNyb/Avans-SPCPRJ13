@@ -18,15 +18,14 @@
  * @enum EventType
  * @brief Enumerates the types of events that the game engine can process.
  */
-enum class EventType
-{
-    None,            ///< Represents no event.
-    KeyPress,        ///< Represents a key press event.
-    KeyRelease,      ///< Represents a key release event.
-    MouseButtonDown, ///< Represents a mouse button down event.
-    MouseButtonUp,   ///< Represents a mouse button up event.
-    MouseMove,       ///< Represents a mouse movement event.
-    WindowClose,     ///< Represents a window close event.
+enum class EventType {
+    None,           ///< Represents no event.
+    KeyPress,       ///< Represents a key press event.
+    KeyRelease,     ///< Represents a key release event.
+    MouseButtonDown,///< Represents a mouse button down event.
+    MouseButtonUp,  ///< Represents a mouse button up event.
+    MouseMove,      ///< Represents a mouse movement event.
+    WindowClose,    ///< Represents a window close event.
 };
 
-#endif // DEFUNBOBENGINE_EVENT_TYPE_HPP
+#endif //DEFUNBOBENGINE_EVENT_TYPE_HPP
