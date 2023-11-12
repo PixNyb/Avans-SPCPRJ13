@@ -1,4 +1,4 @@
-# SPCPRJ13 Repository
+# SPCPRJ13 DeFunBobEngine
 
 Welkom in de repository van SPCPRJ13. Dit is de repository waarin de code van de `DeFunBobEngine` game engine staat. Deze game engine is gemaakt voor het vak `SPCPRJ13` van de opleiding HBO-ICT van Avans Hogeschool 's-Hertogenbosch.
 

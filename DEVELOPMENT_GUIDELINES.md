@@ -44,28 +44,28 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 - Gebruik `//` voor enkele regel commentaar en `/* */` voor meerdere regels.
 - Houd de [Doxygen commentaarstijl](https://www.doxygen.nl/manual/docblocks.html) aan voor documentatie.
 
-```console
-// Dit is een voorbeeld van een enkele regel commentaar.
+  ```console
+  // Dit is een voorbeeld van een enkele regel commentaar.
 
-/**
- * Dit is een voorbeeld van een meerdere regels commentaar.
- * Dit is de tweede regel.
- * Door gebruik te maken van 2 sterretjes op de eerste regel, wordt door doxygen de commentaar als documentatie gezien.
- */
-```
+  /**
+  * Dit is een voorbeeld van een meerdere regels commentaar.
+  * Dit is de tweede regel.
+  * Door gebruik te maken van 2 sterretjes op de eerste regel, wordt door doxygen de commentaar als documentatie gezien.
+  */
+  ```
 
 - Denk eraan om bij bestanden die door doxygen worden gegenereerd, bovenaan het bestand een `@file`-tag toe te voegen.
 
-```console
-/// @file
+  ```console
+  /// @file
 
-// Of
+  // Of
 
-/**
- * @file
- * @brief This file contains the implementation of the Foo class.
- */
-```
+  /**
+  * @file
+  * @brief This file contains the implementation of the Foo class.
+  */
+  ```
 
 ## CMake-bestanden
 
