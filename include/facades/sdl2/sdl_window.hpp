@@ -75,10 +75,22 @@ public:
      */
     SDL_Window* GetSDLWindow() const;
 
+    /**
+     * @brief Delays execution for a specified duration.
+     *
+     * Introduces a pause in processing, useful for controlling frame rates.
+     * @param ms Delay duration in milliseconds.
+     */
     void Delay(unsigned int ms) {
         SDL_Delay(ms);
     }
 
+    /**
+     * @brief Creates an SDL_Renderer associated with the window.
+     *
+     * Initializes the renderer for this window, enabling accelerated rendering.
+     * If the renderer cannot be created, an error message is displayed.
+     */
     void CreateRenderer() {
         if (SdlWindow){
             SdlRenderer = SDL_CreateRenderer(SdlWindow, -1, SDL_RENDERER_ACCELERATED);
@@ -88,10 +100,21 @@ public:
         }
     }
 
+    /**
+    * @brief Clears the rendering target.
+    *
+    * Prepares the screen for new rendering operations by clearing existing content.
+    */
     void ClearScreen() {
         SDL_RenderClear(SdlRenderer);
     }
 
+
+    /**
+     * @brief Presents the rendered content on the screen.
+     *
+     * Updates the window with rendered graphics, finalizing the current frame.
+     */
     void PresentScreen() {
         SDL_RenderPresent(SdlRenderer);
     }
