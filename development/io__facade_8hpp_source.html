@@ -75,36 +75,39 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef DEFUNBOBENGINE_IO_FACADE_HPP</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define DEFUNBOBENGINE_IO_FACADE_HPP</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="event_8hpp.html">event.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sdl__window_8hpp.html">sdl_window.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="event_8hpp.html">event.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sdl__window_8hpp.html">sdl_window.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classIOFacade.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="classIOFacade.html">IOFacade</a> {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classSDLWindow.html">SDLWindow</a> sdlWindow;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classIOFacade.html#a92a836ecf11f55edf01dda59b0f4534f">   44</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classIOFacade.html#a92a836ecf11f55edf01dda59b0f4534f">~IOFacade</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classIOFacade.html#a58ecacdb7eb8885b1c108d7989fd9440">   52</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIOFacade.html#a58ecacdb7eb8885b1c108d7989fd9440">init</a>() = 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classIOFacade.html#aed7cc9609a52c4d69e958cfe791ce8c2">   61</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIOFacade.html#aed7cc9609a52c4d69e958cfe791ce8c2">pollEvents</a>(std::vector&lt;Event&gt;&amp; events) = 0;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIOFacade.html#ac42049f6fb802e3ecd1b2fb9866ee98a">createWindow</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* title, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height) = 0;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classIOFacade.html#a18e399fbe5a3b7b7d58ad6636f597bcc">   82</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIOFacade.html#a18e399fbe5a3b7b7d58ad6636f597bcc">delay</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ms) = 0;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> destroyWindow() {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">//        sdlWindow.destroy()</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_IO_FACADE_HPP</span></div>
-<div class="ttc" id="aclassIOFacade_html"><div class="ttname"><a href="classIOFacade.html">IOFacade</a></div><div class="ttdoc">Interface for input/output handling in the game engine.</div><div class="ttdef"><b>Definition:</b> io_facade.hpp:38</div></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classIOFacade.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="classIOFacade.html">IOFacade</a></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classSDLWindow.html">SDLWindow</a> sdlWindow;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classIOFacade.html#a92a836ecf11f55edf01dda59b0f4534f">   46</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classIOFacade.html#a92a836ecf11f55edf01dda59b0f4534f">~IOFacade</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classIOFacade.html#a58ecacdb7eb8885b1c108d7989fd9440">   54</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIOFacade.html#a58ecacdb7eb8885b1c108d7989fd9440">init</a>() = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classIOFacade.html#aed7cc9609a52c4d69e958cfe791ce8c2">   63</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIOFacade.html#aed7cc9609a52c4d69e958cfe791ce8c2">pollEvents</a>(std::vector&lt;Event&gt; &amp;events) = 0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIOFacade.html#ac42049f6fb802e3ecd1b2fb9866ee98a">createWindow</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *title, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height) = 0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classIOFacade.html#a18e399fbe5a3b7b7d58ad6636f597bcc">   84</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIOFacade.html#a18e399fbe5a3b7b7d58ad6636f597bcc">delay</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ms) = 0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> destroyWindow()</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">//        sdlWindow.destroy()</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_IO_FACADE_HPP</span></div>
+<div class="ttc" id="aclassIOFacade_html"><div class="ttname"><a href="classIOFacade.html">IOFacade</a></div><div class="ttdoc">Interface for input/output handling in the game engine.</div><div class="ttdef"><b>Definition:</b> io_facade.hpp:39</div></div>
 <div class="ttc" id="aclassIOFacade_html_a18e399fbe5a3b7b7d58ad6636f597bcc"><div class="ttname"><a href="classIOFacade.html#a18e399fbe5a3b7b7d58ad6636f597bcc">IOFacade::delay</a></div><div class="ttdeci">virtual void delay(unsigned int ms)=0</div><div class="ttdoc">delay execution for a specified number of milliseconds.</div></div>
 <div class="ttc" id="aclassIOFacade_html_a58ecacdb7eb8885b1c108d7989fd9440"><div class="ttname"><a href="classIOFacade.html#a58ecacdb7eb8885b1c108d7989fd9440">IOFacade::init</a></div><div class="ttdeci">virtual void init()=0</div><div class="ttdoc">Initializes the input handling system.</div></div>
 <div class="ttc" id="aclassIOFacade_html_a92a836ecf11f55edf01dda59b0f4534f"><div class="ttname"><a href="classIOFacade.html#a92a836ecf11f55edf01dda59b0f4534f">IOFacade::~IOFacade</a></div><div class="ttdeci">virtual ~IOFacade()=default</div><div class="ttdoc">Virtual destructor for IOFacade.</div></div>
 <div class="ttc" id="aclassIOFacade_html_ac42049f6fb802e3ecd1b2fb9866ee98a"><div class="ttname"><a href="classIOFacade.html#ac42049f6fb802e3ecd1b2fb9866ee98a">IOFacade::createWindow</a></div><div class="ttdeci">virtual void createWindow(const char *title, int width, int height)=0</div><div class="ttdoc">Creates a window with the specified properties.</div><div class="ttdef"><b>Definition:</b> io_facade.cpp:14</div></div>
 <div class="ttc" id="aclassIOFacade_html_aed7cc9609a52c4d69e958cfe791ce8c2"><div class="ttname"><a href="classIOFacade.html#aed7cc9609a52c4d69e958cfe791ce8c2">IOFacade::pollEvents</a></div><div class="ttdeci">virtual void pollEvents(std::vector&lt; Event &gt; &amp;events)=0</div><div class="ttdoc">Polls for input events and populates the provided event vector.</div></div>
-<div class="ttc" id="aclassSDLWindow_html"><div class="ttname"><a href="classSDLWindow.html">SDLWindow</a></div><div class="ttdoc">Manages creation, display, and destruction of an SDL_Window.</div><div class="ttdef"><b>Definition:</b> sdl_window.hpp:32</div></div>
+<div class="ttc" id="aclassSDLWindow_html"><div class="ttname"><a href="classSDLWindow.html">SDLWindow</a></div><div class="ttdoc">Manages creation, display, and destruction of an SDL_Window.</div><div class="ttdef"><b>Definition:</b> sdl_window.hpp:33</div></div>
 <div class="ttc" id="aevent_8hpp_html"><div class="ttname"><a href="event_8hpp.html">event.hpp</a></div><div class="ttdoc">This file contains the Event class definition.</div></div>
 <div class="ttc" id="asdl__window_8hpp_html"><div class="ttname"><a href="sdl__window_8hpp.html">sdl_window.hpp</a></div><div class="ttdoc">This file contains the SDLWindow class definition for managing an SDL_Window.</div></div>
 </div><!-- fragment --></div><!-- contents -->

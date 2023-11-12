@@ -77,22 +77,20 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classSDLRect.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSDLRect.html">SDLRect</a> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> x, y, width, height;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classSDLRect.html#ad190ab1ecdea778ab4de83afd4914eae">   39</a></span>&#160;    <a class="code" href="classSDLRect.html#ad190ab1ecdea778ab4de83afd4914eae">SDLRect</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            : x(x), y(y), width(width), height(height) {}</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classSDLRect.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSDLRect.html">SDLRect</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> x, y, width, height;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classSDLRect.html#ad190ab1ecdea778ab4de83afd4914eae">   40</a></span>&#160;    <a class="code" href="classSDLRect.html#ad190ab1ecdea778ab4de83afd4914eae">SDLRect</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height) : x(x), y(y), width(width), height(height) {}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classSDLRect.html#a65c861525ff2aaa206ba1be58e7819e0">   46</a></span>&#160;    SDL_Rect <a class="code" href="classSDLRect.html#a65c861525ff2aaa206ba1be58e7819e0">toSDLRect</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> {x, y, width, height};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_SDL_RECT_HPP</span></div>
-<div class="ttc" id="aclassSDLRect_html"><div class="ttname"><a href="classSDLRect.html">SDLRect</a></div><div class="ttdoc">Encapsulates the properties of a rectangle.</div><div class="ttdef"><b>Definition:</b> sdl_rect.hpp:28</div></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classSDLRect.html#a65c861525ff2aaa206ba1be58e7819e0">   46</a></span>&#160;    SDL_Rect <a class="code" href="classSDLRect.html#a65c861525ff2aaa206ba1be58e7819e0">toSDLRect</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> {x, y, width, height}; }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_SDL_RECT_HPP</span></div>
+<div class="ttc" id="aclassSDLRect_html"><div class="ttname"><a href="classSDLRect.html">SDLRect</a></div><div class="ttdoc">Encapsulates the properties of a rectangle.</div><div class="ttdef"><b>Definition:</b> sdl_rect.hpp:29</div></div>
 <div class="ttc" id="aclassSDLRect_html_a65c861525ff2aaa206ba1be58e7819e0"><div class="ttname"><a href="classSDLRect.html#a65c861525ff2aaa206ba1be58e7819e0">SDLRect::toSDLRect</a></div><div class="ttdeci">SDL_Rect toSDLRect() const</div><div class="ttdoc">Converts this SDLRect to an SDL_Rect structure.</div><div class="ttdef"><b>Definition:</b> sdl_rect.hpp:46</div></div>
-<div class="ttc" id="aclassSDLRect_html_ad190ab1ecdea778ab4de83afd4914eae"><div class="ttname"><a href="classSDLRect.html#ad190ab1ecdea778ab4de83afd4914eae">SDLRect::SDLRect</a></div><div class="ttdeci">SDLRect(int x, int y, int width, int height)</div><div class="ttdoc">Constructs a new SDLRect with specified position and size.</div><div class="ttdef"><b>Definition:</b> sdl_rect.hpp:39</div></div>
+<div class="ttc" id="aclassSDLRect_html_ad190ab1ecdea778ab4de83afd4914eae"><div class="ttname"><a href="classSDLRect.html#ad190ab1ecdea778ab4de83afd4914eae">SDLRect::SDLRect</a></div><div class="ttdeci">SDLRect(int x, int y, int width, int height)</div><div class="ttdoc">Constructs a new SDLRect with specified position and size.</div><div class="ttdef"><b>Definition:</b> sdl_rect.hpp:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

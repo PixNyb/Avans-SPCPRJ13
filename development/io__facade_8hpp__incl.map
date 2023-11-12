@@ -1,8 +1,8 @@
 <map id="include/facades/io_facade.hpp" name="include/facades/io_facade.hpp">
-<area shape="rect" id="node1" title="This file contains the IOFacade interface definition." alt="" coords="65,5,205,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,68,121"/>
-<area shape="rect" id="node3" href="$event_8hpp.html" title="This file contains the Event class definition." alt="" coords="92,95,179,121"/>
-<area shape="rect" id="node5" href="$sdl__window_8hpp.html" title="This file contains the SDLWindow class definition for managing an SDL_Window." alt="" coords="203,95,329,121"/>
-<area shape="rect" id="node4" href="$event__type_8hpp.html" title="This file contains the EventType enum." alt="" coords="74,169,197,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="237,169,295,196"/>
+<area shape="rect" id="node1" title="This file contains the IOFacade interface definition." alt="" coords="127,5,267,47"/>
+<area shape="rect" id="node2" href="$event_8hpp.html" title="This file contains the Event class definition." alt="" coords="23,95,110,121"/>
+<area shape="rect" id="node4" href="$sdl__window_8hpp.html" title="This file contains the SDLWindow class definition for managing an SDL_Window." alt="" coords="135,95,260,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="285,95,347,121"/>
+<area shape="rect" id="node3" href="$event__type_8hpp.html" title="This file contains the EventType enum." alt="" coords="5,169,128,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="168,169,227,196"/>
 </map>

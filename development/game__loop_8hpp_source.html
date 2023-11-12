@@ -75,26 +75,27 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef DEFUNBOBENGINE_GAME_LOOP_HPP</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define DEFUNBOBENGINE_GAME_LOOP_HPP</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classGameLoop.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGameLoop.html">GameLoop</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classGameLoop.html#a1b3a349263c8c243400c8cc8fe718655">GameLoop</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classGameLoop.html#ae6c558d0d751a068dbafe2cae465ec1f">~GameLoop</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGameLoop.html#a819f7585c0841dbad50444dc08312ae1">run</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGameLoop.html#a1675362ab49b71a946cd7fefec664db0">update</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGameLoop.html#acf569cf445d5bfeffca7784501097ca5">render</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classGameLoop.html#a9f7b8214a7ff7e065793eb2dbae5deae">isRunning</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">bool</span> running; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_GAME_LOOP_HPP</span></div>
-<div class="ttc" id="aclassGameLoop_html"><div class="ttname"><a href="classGameLoop.html">GameLoop</a></div><div class="ttdoc">Manages the main execution loop of the game engine.</div><div class="ttdef"><b>Definition:</b> game_loop.hpp:30</div></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classGameLoop.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGameLoop.html">GameLoop</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classGameLoop.html#a1b3a349263c8c243400c8cc8fe718655">GameLoop</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classGameLoop.html#ae6c558d0d751a068dbafe2cae465ec1f">~GameLoop</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGameLoop.html#a819f7585c0841dbad50444dc08312ae1">run</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGameLoop.html#a1675362ab49b71a946cd7fefec664db0">update</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGameLoop.html#acf569cf445d5bfeffca7784501097ca5">render</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classGameLoop.html#a9f7b8214a7ff7e065793eb2dbae5deae">isRunning</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">bool</span> running; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_GAME_LOOP_HPP</span></div>
+<div class="ttc" id="aclassGameLoop_html"><div class="ttname"><a href="classGameLoop.html">GameLoop</a></div><div class="ttdoc">Manages the main execution loop of the game engine.</div><div class="ttdef"><b>Definition:</b> game_loop.hpp:31</div></div>
 <div class="ttc" id="aclassGameLoop_html_a1675362ab49b71a946cd7fefec664db0"><div class="ttname"><a href="classGameLoop.html#a1675362ab49b71a946cd7fefec664db0">GameLoop::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the game state.</div><div class="ttdef"><b>Definition:</b> game_loop.cpp:21</div></div>
 <div class="ttc" id="aclassGameLoop_html_a1b3a349263c8c243400c8cc8fe718655"><div class="ttname"><a href="classGameLoop.html#a1b3a349263c8c243400c8cc8fe718655">GameLoop::GameLoop</a></div><div class="ttdeci">GameLoop()</div><div class="ttdoc">Construct a new Game Loop object.</div><div class="ttdef"><b>Definition:</b> game_loop.cpp:7</div></div>
 <div class="ttc" id="aclassGameLoop_html_a819f7585c0841dbad50444dc08312ae1"><div class="ttname"><a href="classGameLoop.html#a819f7585c0841dbad50444dc08312ae1">GameLoop::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Starts the game loop.</div><div class="ttdef"><b>Definition:</b> game_loop.cpp:11</div></div>

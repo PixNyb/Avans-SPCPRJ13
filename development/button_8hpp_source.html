@@ -79,29 +79,30 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; <span class="comment">// TODO: Add listener for button clicks and attach to input manager somehow</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classButton.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classButton.html">Button</a> : <span class="keyword">public</span> <a class="code" href="classUIObject.html">UIObject</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classButton.html">Button</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classButton.html">Button</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="classGameObject.html#af542b33c8de269343e22c5629e6b66c0">name</a>, <span class="keyword">const</span> std::string &amp;<a class="code" href="classGameObject.html#a66891b8bfd67373dde0155ae7808bbb4">tag</a>, <span class="keywordtype">int</span> <a class="code" href="classGameObject.html#a77b865c8396028f6250dcff11aa76421">layer</a>, <span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classButton.html#a67258126e72dd44e60fcc5ae3e2a94e0">Click</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classButton.html#ae31adb0f8429e0c6dbf4dc38b7ce484d">   29</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classButton.html#ae31adb0f8429e0c6dbf4dc38b7ce484d">OnClick</a>(std::function&lt;<span class="keywordtype">void</span>()&gt; callback) { onClick = std::move(callback); }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> interactable;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::function&lt;void()&gt; onClick;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_BUTTON_H</span></div>
-<div class="ttc" id="aclassButton_html"><div class="ttname"><a href="classButton.html">Button</a></div><div class="ttdoc">Instances of this class are clickable user interface items.</div><div class="ttdef"><b>Definition:</b> button.hpp:14</div></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// TODO: Add listener for button clicks and attach to input manager somehow</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classButton.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classButton.html">Button</a> : <span class="keyword">public</span> <a class="code" href="classUIObject.html">UIObject</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classButton.html">Button</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classButton.html">Button</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="classGameObject.html#af542b33c8de269343e22c5629e6b66c0">name</a>, <span class="keyword">const</span> std::string &amp;<a class="code" href="classGameObject.html#a66891b8bfd67373dde0155ae7808bbb4">tag</a>, <span class="keywordtype">int</span> <a class="code" href="classGameObject.html#a77b865c8396028f6250dcff11aa76421">layer</a>, <span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classButton.html#a67258126e72dd44e60fcc5ae3e2a94e0">Click</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classButton.html#ae31adb0f8429e0c6dbf4dc38b7ce484d">   30</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classButton.html#ae31adb0f8429e0c6dbf4dc38b7ce484d">OnClick</a>(std::function&lt;<span class="keywordtype">void</span>()&gt; callback) { onClick = std::move(callback); }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> interactable;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::function&lt;void()&gt; onClick;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_BUTTON_H</span></div>
+<div class="ttc" id="aclassButton_html"><div class="ttname"><a href="classButton.html">Button</a></div><div class="ttdoc">Instances of this class are clickable user interface items.</div><div class="ttdef"><b>Definition:</b> button.hpp:15</div></div>
 <div class="ttc" id="aclassButton_html_a67258126e72dd44e60fcc5ae3e2a94e0"><div class="ttname"><a href="classButton.html#a67258126e72dd44e60fcc5ae3e2a94e0">Button::Click</a></div><div class="ttdeci">void Click()</div><div class="ttdoc">This function is called when the button is clicked, which will trigger a call to the registered onCli...</div><div class="ttdef"><b>Definition:</b> button.cpp:10</div></div>
-<div class="ttc" id="aclassButton_html_ae31adb0f8429e0c6dbf4dc38b7ce484d"><div class="ttname"><a href="classButton.html#ae31adb0f8429e0c6dbf4dc38b7ce484d">Button::OnClick</a></div><div class="ttdeci">void OnClick(std::function&lt; void()&gt; callback)</div><div class="ttdoc">Register the onClick handler to be used when the button is clicked.</div><div class="ttdef"><b>Definition:</b> button.hpp:29</div></div>
+<div class="ttc" id="aclassButton_html_ae31adb0f8429e0c6dbf4dc38b7ce484d"><div class="ttname"><a href="classButton.html#ae31adb0f8429e0c6dbf4dc38b7ce484d">Button::OnClick</a></div><div class="ttdeci">void OnClick(std::function&lt; void()&gt; callback)</div><div class="ttdoc">Register the onClick handler to be used when the button is clicked.</div><div class="ttdef"><b>Definition:</b> button.hpp:30</div></div>
 <div class="ttc" id="aclassGameObject_html_a66891b8bfd67373dde0155ae7808bbb4"><div class="ttname"><a href="classGameObject.html#a66891b8bfd67373dde0155ae7808bbb4">GameObject::tag</a></div><div class="ttdeci">std::string tag</div><div class="ttdoc">The tag/type of the GameObject.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:38</div></div>
 <div class="ttc" id="aclassGameObject_html_a77b865c8396028f6250dcff11aa76421"><div class="ttname"><a href="classGameObject.html#a77b865c8396028f6250dcff11aa76421">GameObject::layer</a></div><div class="ttdeci">int layer</div><div class="ttdoc">The layer of the GameObject.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:39</div></div>
 <div class="ttc" id="aclassGameObject_html_af542b33c8de269343e22c5629e6b66c0"><div class="ttname"><a href="classGameObject.html#af542b33c8de269343e22c5629e6b66c0">GameObject::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">The name of the GameObject.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:32</div></div>
-<div class="ttc" id="aclassUIObject_html"><div class="ttname"><a href="classUIObject.html">UIObject</a></div><div class="ttdef"><b>Definition:</b> ui_object.hpp:9</div></div>
+<div class="ttc" id="aclassUIObject_html"><div class="ttname"><a href="classUIObject.html">UIObject</a></div><div class="ttdef"><b>Definition:</b> ui_object.hpp:10</div></div>
 <div class="ttc" id="aui__object_8hpp_html"><div class="ttname"><a href="ui__object_8hpp.html">ui_object.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -77,29 +77,30 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classTimer.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTimer.html">Timer</a> {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    Uint32 startTicks; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    Uint32 pausedTicks; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> paused; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> started; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classTimer.html#a5f16e8da27d2a5a5242dead46de05d97">   45</a></span>&#160;    <a class="code" href="classTimer.html#a5f16e8da27d2a5a5242dead46de05d97">Timer</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classTimer.html#a3a8b5272198d029779dc9302a54305a8">   52</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimer.html#a3a8b5272198d029779dc9302a54305a8">start</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classTimer.html#a63f0eb44b27402196590a03781515dba">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimer.html#a63f0eb44b27402196590a03781515dba">stop</a>();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classTimer.html#a0289effad7b573c508bc27e405900a23">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimer.html#a0289effad7b573c508bc27e405900a23">pause</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classTimer.html#aa4dd50d7ed48ac73efed2950749d35d6">   73</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimer.html#aa4dd50d7ed48ac73efed2950749d35d6">unpause</a>();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classTimer.html#a31069f8a9597ff7cea5899b30d2e7f7a">   79</a></span>&#160;    Uint32 <a class="code" href="classTimer.html#a31069f8a9597ff7cea5899b30d2e7f7a">getTicks</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_TIMER_HPP</span></div>
-<div class="ttc" id="aclassTimer_html"><div class="ttname"><a href="classTimer.html">Timer</a></div><div class="ttdoc">Class for managing time-related events in the game engine.</div><div class="ttdef"><b>Definition:</b> sdl_timer.hpp:32</div></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classTimer.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTimer.html">Timer</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    Uint32 startTicks;  </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Uint32 pausedTicks; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> paused;        </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span> started;       </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classTimer.html#a5f16e8da27d2a5a5242dead46de05d97">   47</a></span>&#160;    <a class="code" href="classTimer.html#a5f16e8da27d2a5a5242dead46de05d97">Timer</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classTimer.html#a3a8b5272198d029779dc9302a54305a8">   54</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimer.html#a3a8b5272198d029779dc9302a54305a8">start</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classTimer.html#a63f0eb44b27402196590a03781515dba">   61</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimer.html#a63f0eb44b27402196590a03781515dba">stop</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classTimer.html#a0289effad7b573c508bc27e405900a23">   68</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimer.html#a0289effad7b573c508bc27e405900a23">pause</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classTimer.html#aa4dd50d7ed48ac73efed2950749d35d6">   75</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimer.html#aa4dd50d7ed48ac73efed2950749d35d6">unpause</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classTimer.html#a31069f8a9597ff7cea5899b30d2e7f7a">   81</a></span>&#160;    Uint32 <a class="code" href="classTimer.html#a31069f8a9597ff7cea5899b30d2e7f7a">getTicks</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_TIMER_HPP</span></div>
+<div class="ttc" id="aclassTimer_html"><div class="ttname"><a href="classTimer.html">Timer</a></div><div class="ttdoc">Class for managing time-related events in the game engine.</div><div class="ttdef"><b>Definition:</b> sdl_timer.hpp:33</div></div>
 <div class="ttc" id="aclassTimer_html_a0289effad7b573c508bc27e405900a23"><div class="ttname"><a href="classTimer.html#a0289effad7b573c508bc27e405900a23">Timer::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pauses the timer if it is running.</div></div>
 <div class="ttc" id="aclassTimer_html_a31069f8a9597ff7cea5899b30d2e7f7a"><div class="ttname"><a href="classTimer.html#a31069f8a9597ff7cea5899b30d2e7f7a">Timer::getTicks</a></div><div class="ttdeci">Uint32 getTicks() const</div><div class="ttdoc">Gets the timer's elapsed time in ticks.</div></div>
 <div class="ttc" id="aclassTimer_html_a3a8b5272198d029779dc9302a54305a8"><div class="ttname"><a href="classTimer.html#a3a8b5272198d029779dc9302a54305a8">Timer::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts or restarts the timer.</div></div>
