@@ -77,22 +77,21 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="collider_8hpp.html">collider.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classCircleCollider.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCircleCollider.html">CircleCollider</a> : <span class="keyword">public</span> <a class="code" href="classCollider.html">Collider</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classCircleCollider.html#a22729fde6bfaae5fd546ca76fb52dfd1">   18</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classCircleCollider.html#a22729fde6bfaae5fd546ca76fb52dfd1">Radius</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> radius; }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classCircleCollider.html#a1b715e2190e215f282c007f98d0a6b6a">   24</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCircleCollider.html#a1b715e2190e215f282c007f98d0a6b6a">Radius</a>(<span class="keywordtype">double</span> newRadius) { radius = newRadius; }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">double</span> radius;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_CIRCLECOLLIDER_H</span></div>
-<div class="ttc" id="aclassCircleCollider_html"><div class="ttname"><a href="classCircleCollider.html">CircleCollider</a></div><div class="ttdoc">A collider which represents a circular collision area.</div><div class="ttdef"><b>Definition:</b> circle_collider.hpp:12</div></div>
-<div class="ttc" id="aclassCircleCollider_html_a1b715e2190e215f282c007f98d0a6b6a"><div class="ttname"><a href="classCircleCollider.html#a1b715e2190e215f282c007f98d0a6b6a">CircleCollider::Radius</a></div><div class="ttdeci">void Radius(double newRadius)</div><div class="ttdoc">Set the collider's radius.</div><div class="ttdef"><b>Definition:</b> circle_collider.hpp:24</div></div>
-<div class="ttc" id="aclassCircleCollider_html_a22729fde6bfaae5fd546ca76fb52dfd1"><div class="ttname"><a href="classCircleCollider.html#a22729fde6bfaae5fd546ca76fb52dfd1">CircleCollider::Radius</a></div><div class="ttdeci">double Radius() const</div><div class="ttdoc">Get the collider's radius.</div><div class="ttdef"><b>Definition:</b> circle_collider.hpp:18</div></div>
-<div class="ttc" id="aclassCollider_html"><div class="ttname"><a href="classCollider.html">Collider</a></div><div class="ttdoc">The base class for all colliders.</div><div class="ttdef"><b>Definition:</b> collider.hpp:11</div></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classCircleCollider.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCircleCollider.html">CircleCollider</a> : <span class="keyword">public</span> <a class="code" href="classCollider.html">Collider</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classCircleCollider.html#a22729fde6bfaae5fd546ca76fb52dfd1">   17</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classCircleCollider.html#a22729fde6bfaae5fd546ca76fb52dfd1">Radius</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> radius; }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classCircleCollider.html#a1b715e2190e215f282c007f98d0a6b6a">   23</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCircleCollider.html#a1b715e2190e215f282c007f98d0a6b6a">Radius</a>(<span class="keywordtype">double</span> newRadius) { radius = newRadius; }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">double</span> radius;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_CIRCLECOLLIDER_H</span></div>
+<div class="ttc" id="aclassCircleCollider_html"><div class="ttname"><a href="classCircleCollider.html">CircleCollider</a></div><div class="ttdoc">A collider which represents a circular collision area.</div><div class="ttdef"><b>Definition:</b> circle_collider.hpp:11</div></div>
+<div class="ttc" id="aclassCircleCollider_html_a1b715e2190e215f282c007f98d0a6b6a"><div class="ttname"><a href="classCircleCollider.html#a1b715e2190e215f282c007f98d0a6b6a">CircleCollider::Radius</a></div><div class="ttdeci">void Radius(double newRadius)</div><div class="ttdoc">Set the collider's radius.</div><div class="ttdef"><b>Definition:</b> circle_collider.hpp:23</div></div>
+<div class="ttc" id="aclassCircleCollider_html_a22729fde6bfaae5fd546ca76fb52dfd1"><div class="ttname"><a href="classCircleCollider.html#a22729fde6bfaae5fd546ca76fb52dfd1">CircleCollider::Radius</a></div><div class="ttdeci">double Radius() const</div><div class="ttdoc">Get the collider's radius.</div><div class="ttdef"><b>Definition:</b> circle_collider.hpp:17</div></div>
+<div class="ttc" id="aclassCollider_html"><div class="ttname"><a href="classCollider.html">Collider</a></div><div class="ttdoc">The base class for all colliders.</div><div class="ttdef"><b>Definition:</b> collider.hpp:10</div></div>
 <div class="ttc" id="acollider_8hpp_html"><div class="ttname"><a href="collider_8hpp.html">collider.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

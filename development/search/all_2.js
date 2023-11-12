@@ -22,7 +22,7 @@ var searchData=
   ['condition_43',['Condition',['../classComponent.html#aa6f7549ef990afc861ca7547dba9da56',1,'Component']]],
   ['contents_44',['contents',['../classScene.html#a756e2e6ebc6797dd249a6055699f022d',1,'Scene']]],
   ['create_45',['create',['../classSDLWindow.html#add373000c5b55b3ff84153cdac943d64',1,'SDLWindow::create()'],['../classWindow.html#aaafb0b50bd7ddcdc2ecea1a13a557cc7',1,'Window::create()']]],
-  ['creategameobject_46',['CreateGameObject',['../classScene.html#ada8488415f4f1da74419c00644f9c9b5',1,'Scene::CreateGameObject()'],['../classScene.html#af50d7f379a68e3c7e9eb4cd885772712',1,'Scene::CreateGameObject(Args &amp;&amp;...args)']]],
+  ['creategameobject_46',['CreateGameObject',['../classScene.html#ada8488415f4f1da74419c00644f9c9b5',1,'Scene::CreateGameObject()'],['../classScene.html#a723ba9340878ea5fced1b55d9228e4b4',1,'Scene::CreateGameObject(Args &amp;&amp;... args)']]],
   ['createwindow_47',['createWindow',['../classIOFacade.html#ac42049f6fb802e3ecd1b2fb9866ee98a',1,'IOFacade']]],
   ['cyan_48',['cyan',['../classColor.html#aa62d952a80ad59ec032849d658769014',1,'Color']]]
 ];

@@ -75,26 +75,25 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef DEFUNBOBENGINE_IMOUSE_LISTENER_H</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define DEFUNBOBENGINE_IMOUSE_LISTENER_H</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="color_8hpp.html">color.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="point_8hpp.html">point.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="color_8hpp.html">color.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classIMouseListener.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classIMouseListener.html">IMouseListener</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classIMouseListener.html#a7c5c6d4a6646608e6a640de7d2b2c8a4">   19</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classIMouseListener.html#a7c5c6d4a6646608e6a640de7d2b2c8a4">~IMouseListener</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classIMouseListener.html#a31bea49f2143ecd1931273a74cfd5eba">   24</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIMouseListener.html#a31bea49f2143ecd1931273a74cfd5eba">OnMouseMoved</a>() = 0;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classIMouseListener.html#a93715198ff969b5ced894b11177c7445">   29</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIMouseListener.html#a93715198ff969b5ced894b11177c7445">OnMouseClicked</a>() = 0;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classIMouseListener.html#afcb033c0cce2ea238c4a76f07f1ffc79">   34</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIMouseListener.html#afcb033c0cce2ea238c4a76f07f1ffc79">OnMousePressed</a>() = 0;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classIMouseListener.html#af72b6d9a955e5768b20845486de539b5">   39</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIMouseListener.html#af72b6d9a955e5768b20845486de539b5">OnMouseReleased</a>() = 0;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_IMOUSE_LISTENER_H</span></div>
-<div class="ttc" id="aclassIMouseListener_html"><div class="ttname"><a href="classIMouseListener.html">IMouseListener</a></div><div class="ttdoc">Interface for objects wanting to respond to mouse events.</div><div class="ttdef"><b>Definition:</b> imouse_listener.hpp:14</div></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classIMouseListener.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classIMouseListener.html">IMouseListener</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classIMouseListener.html#a7c5c6d4a6646608e6a640de7d2b2c8a4">   18</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classIMouseListener.html#a7c5c6d4a6646608e6a640de7d2b2c8a4">~IMouseListener</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classIMouseListener.html#a31bea49f2143ecd1931273a74cfd5eba">   23</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIMouseListener.html#a31bea49f2143ecd1931273a74cfd5eba">OnMouseMoved</a>() = 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classIMouseListener.html#a93715198ff969b5ced894b11177c7445">   28</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIMouseListener.html#a93715198ff969b5ced894b11177c7445">OnMouseClicked</a>() = 0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classIMouseListener.html#afcb033c0cce2ea238c4a76f07f1ffc79">   33</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIMouseListener.html#afcb033c0cce2ea238c4a76f07f1ffc79">OnMousePressed</a>() = 0;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classIMouseListener.html#af72b6d9a955e5768b20845486de539b5">   38</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIMouseListener.html#af72b6d9a955e5768b20845486de539b5">OnMouseReleased</a>() = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_IMOUSE_LISTENER_H</span></div>
+<div class="ttc" id="aclassIMouseListener_html"><div class="ttname"><a href="classIMouseListener.html">IMouseListener</a></div><div class="ttdoc">Interface for objects wanting to respond to mouse events.</div><div class="ttdef"><b>Definition:</b> imouse_listener.hpp:13</div></div>
 <div class="ttc" id="aclassIMouseListener_html_a31bea49f2143ecd1931273a74cfd5eba"><div class="ttname"><a href="classIMouseListener.html#a31bea49f2143ecd1931273a74cfd5eba">IMouseListener::OnMouseMoved</a></div><div class="ttdeci">virtual void OnMouseMoved()=0</div><div class="ttdoc">Called whenever the mouse is moved.</div></div>
 <div class="ttc" id="aclassIMouseListener_html_a7c5c6d4a6646608e6a640de7d2b2c8a4"><div class="ttname"><a href="classIMouseListener.html#a7c5c6d4a6646608e6a640de7d2b2c8a4">IMouseListener::~IMouseListener</a></div><div class="ttdeci">virtual ~IMouseListener()=default</div><div class="ttdoc">Virtual destructor.</div></div>
 <div class="ttc" id="aclassIMouseListener_html_a93715198ff969b5ced894b11177c7445"><div class="ttname"><a href="classIMouseListener.html#a93715198ff969b5ced894b11177c7445">IMouseListener::OnMouseClicked</a></div><div class="ttdeci">virtual void OnMouseClicked()=0</div><div class="ttdoc">Called whenever a mouse button is clicked.</div></div>

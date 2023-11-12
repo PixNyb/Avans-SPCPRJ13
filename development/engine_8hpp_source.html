@@ -72,35 +72,37 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="engine_8hpp.html">Ga naar de documentatie van dit bestand.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef AVANS_SPCPRJ13_ENGINE_HPP</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define AVANS_SPCPRJ13_ENGINE_HPP</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;core_constants.hpp&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="di__container_8hpp.html">di_container.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classEngine.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classEngine.html">Engine</a></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classEngine.html">Engine</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">static</span> <a class="code" href="classEngine.html">Engine</a> *instancePtr;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classDIContainer.html">DIContainer</a> container;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> isRunning = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">float</span> FPS_LIMIT = CoreConstants::Engine::DEFAULT_FPS;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> currentFPS = 0;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classEngine.html">Engine</a>(<a class="code" href="classEngine.html">Engine</a> &amp;other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> <a class="code" href="classEngine.html">Engine</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; std::shared_ptr&lt;T&gt; <a class="code" href="classEngine.html#a268ea2b76970145979eafcd8a89eb543">Get</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; std::shared_ptr&lt;T&gt; <a class="code" href="classEngine.html#af6622db88bc766fa01c900858972fc37">GetLocal</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef AVANS_SPCPRJ13_ENGINE_HPP</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define AVANS_SPCPRJ13_ENGINE_HPP</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;core_constants.hpp&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="di__container_8hpp.html">di_container.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classEngine.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classEngine.html">Engine</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classEngine.html">Engine</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">static</span> <a class="code" href="classEngine.html">Engine</a> *instancePtr;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classDIContainer.html">DIContainer</a> container;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> isRunning = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">float</span> FPS_LIMIT = CoreConstants::Engine::DEFAULT_FPS;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">int</span> currentFPS = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classEngine.html">Engine</a>(<a class="code" href="classEngine.html">Engine</a> &amp;other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> <a class="code" href="classEngine.html">Engine</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::shared_ptr&lt;T&gt; <a class="code" href="classEngine.html#a268ea2b76970145979eafcd8a89eb543">Get</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::shared_ptr&lt;T&gt; <a class="code" href="classEngine.html#af6622db88bc766fa01c900858972fc37">GetLocal</a>();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classEngine.html#ac21ca2e625a8880c6623e0593ec58ac1">   75</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classEngine.html">Engine</a> *<a class="code" href="classEngine.html#ac21ca2e625a8880c6623e0593ec58ac1">GetInstance</a>()</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
@@ -125,16 +127,16 @@ $(function() {
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;};</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_ENGINE_HPP</span></div>
-<div class="ttc" id="aclassDIContainer_html"><div class="ttname"><a href="classDIContainer.html">DIContainer</a></div><div class="ttdoc">The dependency injection container.</div><div class="ttdef"><b>Definition:</b> di_container.hpp:45</div></div>
-<div class="ttc" id="aclassEngine_html"><div class="ttname"><a href="classEngine.html">Engine</a></div><div class="ttdef"><b>Definition:</b> engine.hpp:22</div></div>
-<div class="ttc" id="aclassEngine_html_a1fbe9f5cb4abc3572e432cae1f154817"><div class="ttname"><a href="classEngine.html#a1fbe9f5cb4abc3572e432cae1f154817">Engine::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Starts the game loop.</div><div class="ttdef"><b>Definition:</b> engine.cpp:15</div></div>
-<div class="ttc" id="aclassEngine_html_a268ea2b76970145979eafcd8a89eb543"><div class="ttname"><a href="classEngine.html#a268ea2b76970145979eafcd8a89eb543">Engine::Get</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; Get()</div><div class="ttdoc">Gets a public available instance (like SceneManager)</div><div class="ttdef"><b>Definition:</b> engine.cpp:76</div></div>
-<div class="ttc" id="aclassEngine_html_a3dbd2c0a65e642baa7eaa97caa6e4e64"><div class="ttname"><a href="classEngine.html#a3dbd2c0a65e642baa7eaa97caa6e4e64">Engine::Shutdown</a></div><div class="ttdeci">void Shutdown()</div><div class="ttdoc">Shuts down the engine.</div><div class="ttdef"><b>Definition:</b> engine.cpp:59</div></div>
-<div class="ttc" id="aclassEngine_html_a55059f0c0a33f3a84300a89ebd10b855"><div class="ttname"><a href="classEngine.html#a55059f0c0a33f3a84300a89ebd10b855">Engine::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stops the game loop.</div><div class="ttdef"><b>Definition:</b> engine.cpp:57</div></div>
+<div class="ttc" id="aclassDIContainer_html"><div class="ttname"><a href="classDIContainer.html">DIContainer</a></div><div class="ttdoc">The dependency injection container.</div><div class="ttdef"><b>Definition:</b> di_container.hpp:42</div></div>
+<div class="ttc" id="aclassEngine_html"><div class="ttname"><a href="classEngine.html">Engine</a></div><div class="ttdef"><b>Definition:</b> engine.hpp:21</div></div>
+<div class="ttc" id="aclassEngine_html_a1fbe9f5cb4abc3572e432cae1f154817"><div class="ttname"><a href="classEngine.html#a1fbe9f5cb4abc3572e432cae1f154817">Engine::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Starts the game loop.</div><div class="ttdef"><b>Definition:</b> engine.cpp:14</div></div>
+<div class="ttc" id="aclassEngine_html_a268ea2b76970145979eafcd8a89eb543"><div class="ttname"><a href="classEngine.html#a268ea2b76970145979eafcd8a89eb543">Engine::Get</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; Get()</div><div class="ttdoc">Gets a public available instance (like SceneManager)</div><div class="ttdef"><b>Definition:</b> engine.cpp:78</div></div>
+<div class="ttc" id="aclassEngine_html_a3dbd2c0a65e642baa7eaa97caa6e4e64"><div class="ttname"><a href="classEngine.html#a3dbd2c0a65e642baa7eaa97caa6e4e64">Engine::Shutdown</a></div><div class="ttdeci">void Shutdown()</div><div class="ttdoc">Shuts down the engine.</div><div class="ttdef"><b>Definition:</b> engine.cpp:58</div></div>
+<div class="ttc" id="aclassEngine_html_a55059f0c0a33f3a84300a89ebd10b855"><div class="ttname"><a href="classEngine.html#a55059f0c0a33f3a84300a89ebd10b855">Engine::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stops the game loop.</div><div class="ttdef"><b>Definition:</b> engine.cpp:54</div></div>
 <div class="ttc" id="aclassEngine_html_abae1a9fd9e8b8b5ab2e938324d58dc69"><div class="ttname"><a href="classEngine.html#abae1a9fd9e8b8b5ab2e938324d58dc69">Engine::SetFPSLimit</a></div><div class="ttdeci">void SetFPSLimit(float fps)</div><div class="ttdoc">Sets the FPS of the engine.</div><div class="ttdef"><b>Definition:</b> engine.cpp:69</div></div>
 <div class="ttc" id="aclassEngine_html_ac21ca2e625a8880c6623e0593ec58ac1"><div class="ttname"><a href="classEngine.html#ac21ca2e625a8880c6623e0593ec58ac1">Engine::GetInstance</a></div><div class="ttdeci">static Engine * GetInstance()</div><div class="ttdoc">Gets the instance of the engine.</div><div class="ttdef"><b>Definition:</b> engine.hpp:75</div></div>
-<div class="ttc" id="aclassEngine_html_ae6e3d3842d973d79811e24525c95b5a8"><div class="ttname"><a href="classEngine.html#ae6e3d3842d973d79811e24525c95b5a8">Engine::GetFPS</a></div><div class="ttdeci">int GetFPS() const</div><div class="ttdoc">Gets the FPS of the engine.</div><div class="ttdef"><b>Definition:</b> engine.cpp:67</div></div>
-<div class="ttc" id="aclassEngine_html_af6622db88bc766fa01c900858972fc37"><div class="ttname"><a href="classEngine.html#af6622db88bc766fa01c900858972fc37">Engine::GetLocal</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; GetLocal()</div><div class="ttdoc">Gets a locally scoped instance for the engine (like facades)</div><div class="ttdef"><b>Definition:</b> engine.cpp:71</div></div>
+<div class="ttc" id="aclassEngine_html_ae6e3d3842d973d79811e24525c95b5a8"><div class="ttname"><a href="classEngine.html#ae6e3d3842d973d79811e24525c95b5a8">Engine::GetFPS</a></div><div class="ttdeci">int GetFPS() const</div><div class="ttdoc">Gets the FPS of the engine.</div><div class="ttdef"><b>Definition:</b> engine.cpp:65</div></div>
+<div class="ttc" id="aclassEngine_html_af6622db88bc766fa01c900858972fc37"><div class="ttname"><a href="classEngine.html#af6622db88bc766fa01c900858972fc37">Engine::GetLocal</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; GetLocal()</div><div class="ttdoc">Gets a locally scoped instance for the engine (like facades)</div><div class="ttdef"><b>Definition:</b> engine.cpp:73</div></div>
 <div class="ttc" id="adi__container_8hpp_html"><div class="ttname"><a href="di__container_8hpp.html">di_container.hpp</a></div><div class="ttdoc">Dependency injection container.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

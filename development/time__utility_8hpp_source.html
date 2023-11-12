@@ -77,31 +77,30 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;SDL_timer.h&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classTimeUtility.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTimeUtility.html">TimeUtility</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    uint64_t startTime;   </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    uint64_t prevTime;    </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    uint64_t currentTime; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">float</span> deltaTime;      </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classTimeUtility.html#a616756b01fe4e6511ffdabb26381d0b2">   26</a></span>&#160;    <a class="code" href="classTimeUtility.html#a616756b01fe4e6511ffdabb26381d0b2">TimeUtility</a>() : startTime(0), prevTime(0), currentTime(0), deltaTime(0.0f) {}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> StartFrame();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    [[nodiscard]] <span class="keywordtype">float</span> <a class="code" href="classTimeUtility.html#a043125535af3ea7863e8e20bb8763a63">GetElapsedTimeSinceFrameStart</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    [[nodiscard]] <span class="keywordtype">float</span> <a class="code" href="classTimeUtility.html#af2ee8fc7082e02518bb2b292346a1526">GetTotalTime</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    [[nodiscard]] <span class="keywordtype">float</span> <a class="code" href="classTimeUtility.html#a2f731df724660c20b2d7d924f46e50ed">GetDeltaTime</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_TIMEUTILITY_H</span></div>
-<div class="ttc" id="aclassTimeUtility_html"><div class="ttname"><a href="classTimeUtility.html">TimeUtility</a></div><div class="ttdef"><b>Definition:</b> time_utility.hpp:18</div></div>
-<div class="ttc" id="aclassTimeUtility_html_a043125535af3ea7863e8e20bb8763a63"><div class="ttname"><a href="classTimeUtility.html#a043125535af3ea7863e8e20bb8763a63">TimeUtility::GetElapsedTimeSinceFrameStart</a></div><div class="ttdeci">float GetElapsedTimeSinceFrameStart() const</div><div class="ttdoc">Gets the current elapsed time since the start of the frame.</div><div class="ttdef"><b>Definition:</b> time_utility.cpp:21</div></div>
-<div class="ttc" id="aclassTimeUtility_html_a2f731df724660c20b2d7d924f46e50ed"><div class="ttname"><a href="classTimeUtility.html#a2f731df724660c20b2d7d924f46e50ed">TimeUtility::GetDeltaTime</a></div><div class="ttdeci">float GetDeltaTime() const</div><div class="ttdoc">Gets the time between the previous frame and the current frame.</div><div class="ttdef"><b>Definition:</b> time_utility.cpp:27</div></div>
-<div class="ttc" id="aclassTimeUtility_html_a616756b01fe4e6511ffdabb26381d0b2"><div class="ttname"><a href="classTimeUtility.html#a616756b01fe4e6511ffdabb26381d0b2">TimeUtility::TimeUtility</a></div><div class="ttdeci">TimeUtility()</div><div class="ttdoc">The time between the previous frame and the current frame.</div><div class="ttdef"><b>Definition:</b> time_utility.hpp:26</div></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classTimeUtility.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTimeUtility.html">TimeUtility</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    uint64_t startTime; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    uint64_t prevTime; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    uint64_t currentTime; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">float</span> deltaTime; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classTimeUtility.html#a616756b01fe4e6511ffdabb26381d0b2">   25</a></span>&#160;    <a class="code" href="classTimeUtility.html#a616756b01fe4e6511ffdabb26381d0b2">TimeUtility</a>() : startTime(0), prevTime(0), currentTime(0), deltaTime(0.0f) {}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> StartFrame();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    [[nodiscard]] <span class="keywordtype">float</span> <a class="code" href="classTimeUtility.html#a043125535af3ea7863e8e20bb8763a63">GetElapsedTimeSinceFrameStart</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    [[nodiscard]] <span class="keywordtype">float</span> <a class="code" href="classTimeUtility.html#af2ee8fc7082e02518bb2b292346a1526">GetTotalTime</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    [[nodiscard]] <span class="keywordtype">float</span> <a class="code" href="classTimeUtility.html#a2f731df724660c20b2d7d924f46e50ed">GetDeltaTime</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_TIMEUTILITY_H</span></div>
+<div class="ttc" id="aclassTimeUtility_html"><div class="ttname"><a href="classTimeUtility.html">TimeUtility</a></div><div class="ttdef"><b>Definition:</b> time_utility.hpp:17</div></div>
+<div class="ttc" id="aclassTimeUtility_html_a043125535af3ea7863e8e20bb8763a63"><div class="ttname"><a href="classTimeUtility.html#a043125535af3ea7863e8e20bb8763a63">TimeUtility::GetElapsedTimeSinceFrameStart</a></div><div class="ttdeci">float GetElapsedTimeSinceFrameStart() const</div><div class="ttdoc">Gets the current elapsed time since the start of the frame.</div><div class="ttdef"><b>Definition:</b> time_utility.cpp:20</div></div>
+<div class="ttc" id="aclassTimeUtility_html_a2f731df724660c20b2d7d924f46e50ed"><div class="ttname"><a href="classTimeUtility.html#a2f731df724660c20b2d7d924f46e50ed">TimeUtility::GetDeltaTime</a></div><div class="ttdeci">float GetDeltaTime() const</div><div class="ttdoc">Gets the time between the previous frame and the current frame.</div><div class="ttdef"><b>Definition:</b> time_utility.cpp:25</div></div>
+<div class="ttc" id="aclassTimeUtility_html_a616756b01fe4e6511ffdabb26381d0b2"><div class="ttname"><a href="classTimeUtility.html#a616756b01fe4e6511ffdabb26381d0b2">TimeUtility::TimeUtility</a></div><div class="ttdeci">TimeUtility()</div><div class="ttdoc">The time between the previous frame and the current frame.</div><div class="ttdef"><b>Definition:</b> time_utility.hpp:25</div></div>
 <div class="ttc" id="aclassTimeUtility_html_af2ee8fc7082e02518bb2b292346a1526"><div class="ttname"><a href="classTimeUtility.html#af2ee8fc7082e02518bb2b292346a1526">TimeUtility::GetTotalTime</a></div><div class="ttdeci">float GetTotalTime() const</div><div class="ttdoc">Gets the total time since the start of the timer.</div><div class="ttdef"><b>Definition:</b> time_utility.cpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
