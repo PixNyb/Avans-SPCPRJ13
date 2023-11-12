@@ -40,7 +40,7 @@ var searchData=
   ['settextcolor_210',['SetTextColor',['../classText.html#af5a0352e342f533959996276c7b0cd50',1,'Text']]],
   ['settransform_211',['SetTransform',['../classGameObject.html#a0aa1842e6bcd14add28cb71347d6ca5d',1,'GameObject']]],
   ['shutdown_212',['Shutdown',['../classEngine.html#a3dbd2c0a65e642baa7eaa97caa6e4e64',1,'Engine']]],
-  ['spcprj13_20repository_213',['SPCPRJ13 Repository',['../index.html',1,'']]],
+  ['spcprj13_20defunbobengine_213',['SPCPRJ13 DeFunBobEngine',['../index.html',1,'']]],
   ['sprite_214',['Sprite',['../classSprite.html',1,'']]],
   ['sprite_2ehpp_215',['sprite.hpp',['../sprite_8hpp.html',1,'']]],
   ['start_216',['Start',['../classEngine.html#a1fbe9f5cb4abc3572e432cae1f154817',1,'Engine']]],

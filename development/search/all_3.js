@@ -5,7 +5,7 @@ var searchData=
   ['default_5finstance_5fscope_51',['DEFAULT_INSTANCE_SCOPE',['../di__container_8hpp.html#ad63b94811145ec5073fe96214ac11bbd',1,'di_container.hpp']]],
   ['delay_52',['delay',['../classIOFacade.html#a18e399fbe5a3b7b7d58ad6636f597bcc',1,'IOFacade']]],
   ['deltatime_53',['DeltaTime',['../classTime.html#a8ee525887d3216e0a291692a36831d27',1,'Time']]],
-  ['deprecated_20lijst_54',['Deprecated Lijst',['../deprecated.html',1,'']]],
+  ['deprecated_20list_54',['Deprecated List',['../deprecated.html',1,'']]],
   ['destroy_55',['destroy',['../classSDLWindow.html#a258f7a5d3b88f9855dd7c47e938f6eea',1,'SDLWindow::destroy()'],['../classWindow.html#aa89262ad2538473c8d7e4d8dd641849d',1,'Window::destroy()']]],
   ['development_20guidelines_56',['Development Guidelines',['../md_DEVELOPMENT_GUIDELINES.html',1,'']]],
   ['di_5fcontainer_2ecpp_57',['di_container.cpp',['../di__container_8cpp.html',1,'']]],
