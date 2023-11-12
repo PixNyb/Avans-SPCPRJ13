@@ -27,7 +27,7 @@ Voor het bijhouden van de voortgang van het project wordt er gebruik gemaakt van
 - Clone de repository
 
 ```bash
-git clone git@github.com:PixNyb/Avans-SPCPRJ13.git
+git clone git@github.com:PixNyb/Avans-SPCPRJ13-ENGINE.git
 ```
 
 - Gebruik CMake om de code te compileren
