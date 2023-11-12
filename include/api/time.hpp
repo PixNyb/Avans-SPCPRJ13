@@ -6,8 +6,9 @@
 /**
  * @brief Class representing game time.
  */
-class Time {
-public:
+class Time
+{
+  public:
     /**
      * @brief The interval in seconds from the last frame to the current one (Read Only)
      */
@@ -25,9 +26,9 @@ public:
      */
     static void TimeScale(double newTimeScale);
 
-private:
+  private:
     static double deltaTime;
     static double timeScale;
 };
 
-#endif //DEFUNBOBENGINE_TIME_HPP
+#endif // DEFUNBOBENGINE_TIME_HPP

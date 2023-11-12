@@ -10,9 +10,10 @@
 /**
  * @brief Instances of this class are clickable user interface items.
  */
- // TODO: Add listener for button clicks and attach to input manager somehow
-class Button : public UIObject {
-public:
+// TODO: Add listener for button clicks and attach to input manager somehow
+class Button : public UIObject
+{
+  public:
     Button();
     Button(const std::string &name, const std::string &tag, int layer, float width, float height);
     /**
@@ -28,7 +29,7 @@ public:
      */
     void OnClick(std::function<void()> callback) { onClick = std::move(callback); }
 
-private:
+  private:
     /**
      * @brief When false, the button will not react to clicks.
      */

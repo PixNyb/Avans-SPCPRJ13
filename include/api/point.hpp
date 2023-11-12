@@ -6,7 +6,8 @@
 /**
  * @brief Struct representing both a 2D point and a 2D vector.
  */
-struct Point {
+struct Point
+{
     double x;
     double y;
 

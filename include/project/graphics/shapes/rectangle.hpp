@@ -26,12 +26,13 @@
  * The draw method is used to render the rectangle to the screen using the rendering logic
  * specific to the graphics library being used.
  */
-class Rectangle : public Geometry {
-private:
+class Rectangle : public Geometry
+{
+  private:
     float height; ///< The height of the rectangle.
-    float width; ///< The width of the rectangle.
+    float width;  ///< The width of the rectangle.
 
-public:
+  public:
     /**
      * @brief Constructs a new Rectangle object.
      *
@@ -39,8 +40,7 @@ public:
      * @param h The height of the rectangle.
      * @param w The width of the rectangle.
      */
-    Rectangle(const Vector2D& pos, float h, float w)
-            : Geometry(pos), height(h), width(w) {}
+    Rectangle(const Vector2D &pos, float h, float w) : Geometry(pos), height(h), width(w) {}
 
     /**
      * @brief Draws the rectangle using the rendering system.
@@ -49,9 +49,10 @@ public:
      * to the screen. The actual rendering implementation would depend on the
      * graphics library being used.
      */
-    void draw() const override {
+    void draw() const override
+    {
         // Rendering logic goes here
     }
 };
 
-#endif //DEFUNBOBENGINE_RECTANGLE_HPP
+#endif // DEFUNBOBENGINE_RECTANGLE_HPP

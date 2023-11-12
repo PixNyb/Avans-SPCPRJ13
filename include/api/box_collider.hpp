@@ -7,8 +7,9 @@
 /**
  * @brief A collider which represents a rectangular collision area.
  */
-class BoxCollider : public Collider {
-public:
+class BoxCollider : public Collider
+{
+  public:
     /**
      * @brief The collider's width
      * @return The current width
@@ -33,7 +34,7 @@ public:
      */
     void Height(double newHeight) { height = newHeight; }
 
-private:
+  private:
     double width;
     double height;
 };

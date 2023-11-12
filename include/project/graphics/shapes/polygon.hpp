@@ -27,19 +27,22 @@
  * render the shape to the screen. The draw method needs to be implemented to provide
  * rendering logic specific to the graphics library being used.
  */
-class Polygon : public Geometry {
-private:
+class Polygon : public Geometry
+{
+  private:
     std::vector<Vector2D> vertices; ///< The vertices of the polygon.
 
-public:
+  public:
     /**
      * @brief Constructs a new Polygon object.
      *
      * @param pos The position of the polygon's reference point.
      * @param verts A list of vertices that define the polygon.
      */
-    Polygon(const Vector2D& pos, const std::vector<Vector2D>& verts)
-            : Geometry(pos), vertices(verts) {}
+    Polygon(const Vector2D &pos, const std::vector<Vector2D> &verts)
+        : Geometry(pos), vertices(verts)
+    {
+    }
 
     /**
      * @brief Draws the polygon using the rendering system.
@@ -49,9 +52,10 @@ public:
      * graphics library being used, and might involve drawing lines between each
      * pair of vertices or using a more complex polygon filling algorithm.
      */
-    void draw() const override {
+    void draw() const override
+    {
         // Rendering logic goes here
     }
 };
 
-#endif //DEFUNBOBENGINE_POLYGON_HPP
+#endif // DEFUNBOBENGINE_POLYGON_HPP

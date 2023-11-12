@@ -4,11 +4,12 @@
 #define AVANS_SPCPRJ13_SPRITE_H
 
 #include "behaviour_script.hpp"
-#include <string>
 #include "color.hpp"
+#include <string>
 
-class Sprite : public BehaviourScript {
-private:
+class Sprite : public BehaviourScript
+{
+  private:
     std::string sprite;
     Color color;
     bool flipX;
@@ -16,9 +17,9 @@ private:
     int sortingLayer;
     int orderInLayer;
 
-public:
-  Sprite();
-  // Getters, Setters, and other public member functions ...
+  public:
+    Sprite();
+    // Getters, Setters, and other public member functions ...
 };
 
 #endif // AVANS_SPCPRJ13_SPRITE_H

@@ -24,16 +24,17 @@
  * Geometry defines a common interface for all geometric shapes. Each shape will have a
  * position defined by a Vector2D object and must implement its own drawing functionality.
  */
-class Geometry {
-protected:
+class Geometry
+{
+  protected:
     Vector2D position; ///< Position of the geometric shape in 2D space.
 
-public:
+  public:
     /**
      * @brief Constructs a Geometry object with a specified position.
      * @param pos The position of the geometric shape.
      */
-    Geometry(const Vector2D& pos) : position(pos) {}
+    Geometry(const Vector2D &pos) : position(pos) {}
 
     /**
      * @brief Virtual destructor for Geometry.
@@ -48,4 +49,4 @@ public:
     virtual void draw() const = 0;
 };
 
-#endif //DEFUNBOBENGINE_GEOMETRY_HPP
+#endif // DEFUNBOBENGINE_GEOMETRY_HPP

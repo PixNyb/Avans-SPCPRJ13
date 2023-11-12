@@ -22,8 +22,9 @@
  * The SDLCircle class encapsulates the properties of a circle, such as its
  * position and radius, and provides a method to draw it on an SDL_Renderer.
  */
-class SDLCircle {
-public:
+class SDLCircle
+{
+  public:
     int x, y, radius;
 
     /**
@@ -32,15 +33,15 @@ public:
      * @param y The y coordinate of the circle's center.
      * @param radius The radius of the circle.
      */
-    SDLCircle(int x, int y, int radius)
-            : x(x), y(y), radius(radius) {}
+    SDLCircle(int x, int y, int radius) : x(x), y(y), radius(radius) {}
 
     /**
-    * @brief Draws the circle on the given SDL_Renderer.
-    * @param renderer The renderer on which to draw the circle.
-    */
-    void draw(SDL_Renderer* renderer) const {
+     * @brief Draws the circle on the given SDL_Renderer.
+     * @param renderer The renderer on which to draw the circle.
+     */
+    void draw(SDL_Renderer *renderer) const
+    {
         filledCircleRGBA(renderer, x, y, radius, 255, 255, 255, 255); // TODO: add color
     }
 };
-#endif //DEFUNBOBENGINE_SDL_CIRCLE_HPP
+#endif // DEFUNBOBENGINE_SDL_CIRCLE_HPP

@@ -22,9 +22,9 @@
 #ifndef DEFUNBOBENGINE_IO_FACADE_HPP
 #define DEFUNBOBENGINE_IO_FACADE_HPP
 
-#include <vector>
 #include "event.hpp"
 #include "sdl_window.hpp"
+#include <vector>
 
 /**
  * @class IOFacade
@@ -35,9 +35,11 @@
  * to initialize the input system and to poll for input events, returning them
  * in a consistent format.
  */
-class IOFacade {
+class IOFacade
+{
     SDLWindow sdlWindow;
-public:
+
+  public:
     /**
      * @brief Virtual destructor for IOFacade.
      */
@@ -58,22 +60,22 @@ public:
      * the input system and translate them into a vector of Event objects.
      * @param events A reference to a vector where the polled events will be stored.
      */
-    virtual void pollEvents(std::vector<Event>& events) = 0;
+    virtual void pollEvents(std::vector<Event> &events) = 0;
 
     /**
-    * @brief Creates a window with the specified properties.
-    *
-    * This method must be implemented by the concrete subclass to handle the creation
-            * of a window. It should specify the window's title, width, and height, and delegate
-    * the actual creation process to a window management system, such as SDL2, abstracted
-            * by the sdl_window.hpp class. The method should manage the lifecycle of the window
-            * and ensure it integrates properly with the input/output handling system of the engine.
-    *
-    * @param title The title to be displayed on the window's title bar.
-    * @param width The width of the window in pixels.
-    * @param height The height of the window in pixels.
-    */
-    virtual void createWindow(const char* title, int width, int height) = 0;
+     * @brief Creates a window with the specified properties.
+     *
+     * This method must be implemented by the concrete subclass to handle the creation
+     * of a window. It should specify the window's title, width, and height, and delegate
+     * the actual creation process to a window management system, such as SDL2, abstracted
+     * by the sdl_window.hpp class. The method should manage the lifecycle of the window
+     * and ensure it integrates properly with the input/output handling system of the engine.
+     *
+     * @param title The title to be displayed on the window's title bar.
+     * @param width The width of the window in pixels.
+     * @param height The height of the window in pixels.
+     */
+    virtual void createWindow(const char *title, int width, int height) = 0;
 
     /**
      * @brief delay execution for a specified number of milliseconds.
@@ -81,9 +83,10 @@ public:
      */
     virtual void delay(unsigned int ms) = 0;
 
-    virtual void destroyWindow() {
-//        sdlWindow.destroy()
+    virtual void destroyWindow()
+    {
+        //        sdlWindow.destroy()
     }
 };
 
-#endif //DEFUNBOBENGINE_IO_FACADE_HPP
+#endif // DEFUNBOBENGINE_IO_FACADE_HPP

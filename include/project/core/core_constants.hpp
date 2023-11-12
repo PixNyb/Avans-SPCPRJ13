@@ -16,16 +16,19 @@
 #include "text.hpp"
 #include <string>
 
-namespace CoreConstants {
-    namespace Text {
-        const int DEFAULT_SIZE = 12;
-        const std::string DEFAULT_FONT = "Sans.ttf";
-        const Color DEFAULT_COLOR = Color::white();
-        const Alignment DEFAULT_ALIGNMENT = Alignment::left;
-    }
-    namespace Engine {
-        const int DEFAULT_FPS = 60;
-    }
+namespace CoreConstants
+{
+namespace Text
+{
+const int DEFAULT_SIZE = 12;
+const std::string DEFAULT_FONT = "Sans.ttf";
+const Color DEFAULT_COLOR = Color::white();
+const Alignment DEFAULT_ALIGNMENT = Alignment::left;
+} // namespace Text
+namespace Engine
+{
+const int DEFAULT_FPS = 60;
 }
+} // namespace CoreConstants
 
 #endif // DEFUNBOBENGINE_CORECONSTANTS_HPP

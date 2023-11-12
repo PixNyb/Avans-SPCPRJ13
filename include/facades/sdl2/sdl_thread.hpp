@@ -25,18 +25,19 @@
  * @class Thread
  * @brief A wrapper class for SDL_Thread to manage threading in the game engine.
  *
- * This class abstracts the details of thread creation and control using SDL's threading capabilities.
- * It provides methods to start, stop, and pause execution of threads and encapsulates the thread
- * callback function within the class scope.
+ * This class abstracts the details of thread creation and control using SDL's threading
+ * capabilities. It provides methods to start, stop, and pause execution of threads and encapsulates
+ * the thread callback function within the class scope.
  */
-class Thread {
-    SDL_Thread* thread;
-    static int threadFunction(void* data);
+class Thread
+{
+    SDL_Thread *thread;
+    static int threadFunction(void *data);
 
-public:
+  public:
     /**
-    * @brief Construct a new Thread object.
-    */
+     * @brief Construct a new Thread object.
+     */
     Thread();
 
     /**
@@ -55,9 +56,9 @@ public:
     void stop();
 
     /**
-    * @brief Pauses the thread. Implementation depends on how pause functionality is handled.
-    */
+     * @brief Pauses the thread. Implementation depends on how pause functionality is handled.
+     */
     void pause();
 };
 
-#endif //DEFUNBOBENGINE_THREAD_HPP
+#endif // DEFUNBOBENGINE_THREAD_HPP

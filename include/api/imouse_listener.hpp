@@ -3,15 +3,16 @@
 #ifndef DEFUNBOBENGINE_IMOUSE_LISTENER_H
 #define DEFUNBOBENGINE_IMOUSE_LISTENER_H
 
-#include <string>
-#include "point.hpp"
 #include "color.hpp"
+#include "point.hpp"
+#include <string>
 
 /**
  * @brief Interface for objects wanting to respond to mouse events.
  */
-class IMouseListener {
-public:
+class IMouseListener
+{
+  public:
     /**
      * @brief Virtual destructor.
      */
@@ -38,4 +39,4 @@ public:
     virtual void OnMouseReleased() = 0;
 };
 
-#endif //DEFUNBOBENGINE_IMOUSE_LISTENER_H
+#endif // DEFUNBOBENGINE_IMOUSE_LISTENER_H
