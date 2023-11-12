@@ -9,7 +9,7 @@
  * managing an SDL_Window. It encapsulates SDL window creation and destruction
  * and provides access to the underlying SDL_Window structure.
  *
- * The create function initializes the SDL_Window, and the destroy function
+ * The Create function initializes the SDL_Window, and the Destroy function
  * ensures it is properly destroyed when no longer needed.
  *
  * @copyright Copyright (c) 2023
@@ -30,13 +30,12 @@
  * lifecycle and providing a means to retrieve the SDL_Window pointer.
  */
 class SDLWindow {
-    SDL_Window* sdl_window; ///< Pointer to the SDL_Window managed by this class.
-
+    SDL_Window* SdlWindow; ///< Pointer to the SDL_Window managed by this class.
 public:
     /**
-     * @brief Construct a new Window object but does not create the window.
+     * @brief Construct a new SDLWindow object but does not create the window.
      *
-     * The actual window is created using the create function. This allows for
+     * The actual window is created using the Create function. This allows for
      * delayed window creation or re-creation if needed.
      * @param title The title of the window.
      * @param width The width of the window in pixels.
@@ -45,7 +44,7 @@ public:
     SDLWindow(const char* title, int width, int height);
 
     /**
-     * @brief Destroys the Window object, ensuring the SDL_Window is properly destroyed.
+     * @brief Destroys the SDLWindow object, ensuring the SDL_Window is properly destroyed.
      */
     ~SDLWindow();
 
@@ -57,21 +56,25 @@ public:
      * @param width The width of the window in pixels.
      * @param height The height of the window in pixels.
      */
-    void create(const char* title, int width, int height);
+    void Create(const char* title, int width, int height);
 
     /**
      * @brief Destroys the SDL_Window managed by this object.
      *
      * This function is called by the destructor and can also be called manually
-     * to destroy the window without destroying the Window object itself.
+     * to destroy the window without destroying the SDLWindow object itself.
      */
-    void destroy();
+    void Destroy();
 
     /**
      * @brief Retrieves the underlying SDL_Window pointer.
      * @return SDL_Window* A pointer to the managed SDL_Window.
      */
-    SDL_Window* getSDLWindow() const;
+    SDL_Window* GetSDLWindow() const;
+
+    void Delay(unsigned int ms) {
+        SDL_Delay(ms);
+    }
 };
 
 #endif //DEFUNBOBENGINE_WINDOW_HPP

@@ -47,17 +47,17 @@ public:
     /**
      * @brief Starts the thread, invoking the associated thread function.
      */
-    void start();
+    void Start();
 
     /**
      * @brief Stops the thread, making sure it exits cleanly.
      */
-    void stop();
+    void Stop();
 
     /**
     * @brief Pauses the thread. Implementation depends on how pause functionality is handled.
     */
-    void pause();
+    void Pause();
 };
 
 #endif //DEFUNBOBENGINE_THREAD_HPP
