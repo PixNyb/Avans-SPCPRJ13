@@ -33,7 +33,7 @@
 class GraphicsFacade : public IOFacade {
 private:
     std::unique_ptr<SDLWindow> SdlWindow; /**< Unique pointer to SDLWindow for managing the graphics window. */
-    std::unique_ptr<SDLInit> SdlInit; Unique pointer to SDLInit for SDL initialization. */
+    std::unique_ptr<SDLInit> SdlInit; /**< Unique pointer to SDLInit for SDL initialization. */
 public:
     /**
      * @brief Default constructor for GraphicsFacade.
