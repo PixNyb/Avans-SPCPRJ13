@@ -19,6 +19,7 @@
 
 #include "io_facade.hpp"
 #include "sdl_render.hpp"
+#include "sdl_init.hpp"
 #include <memory>
 
 /**
@@ -31,7 +32,7 @@
 class GraphicsFacade : public IOFacade {
 private:
     std::unique_ptr<SDLWindow> SdlWindow; /**< Unique pointer to SDLWindow for managing the graphics window. */
-    std::unique_ptr<SDLRender> SdlRenderer; /**< Unique pointer to SDLRenderer for managing the graphics window. */
+    std::unique_ptr<SDLInit> SdlInit;
 public:
     /**
      * @brief Default constructor for GraphicsFacade.
@@ -52,7 +53,9 @@ public:
      * This function should be called to set up the necessary graphics components before
      * any graphics operations are performed.
      */
-    void Init() override;
+    void Init() override {
+        SdlInit = std::make_unique<SDLInit>();
+    }
 
     /**
     * @brief Polls and processes graphics-related events.
@@ -71,9 +74,33 @@ public:
         }
     }
 
+    void ClearScreen() {
+        if (SdlWindow){
+            SdlWindow->ClearScreen();
+        }
+    }
+
+    void CreateRenderer()
+    {
+        if (SdlWindow){
+            SdlWindow->CreateRenderer();
+        }
+    }
+
+    void PresentScreen()
+    {
+        if (SdlWindow){
+            SdlWindow->PresentScreen();
+        }
+    }
+
     void Delay(unsigned int ms) override {
         SdlWindow->Delay(ms);
     }
+
+
+
+
 
 };
 

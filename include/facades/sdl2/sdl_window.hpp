@@ -20,6 +20,8 @@
 #define DEFUNBOBENGINE_WINDOW_HPP
 
 #include <SDL.h>
+#include "sdl_render.hpp"
+#include <iostream>
 
 /**
  * @class SDLWindow
@@ -31,6 +33,7 @@
  */
 class SDLWindow {
     SDL_Window* SdlWindow; ///< Pointer to the SDL_Window managed by this class.
+    SDL_Renderer* SdlRenderer;
 public:
     /**
      * @brief Construct a new SDLWindow object but does not create the window.
@@ -74,6 +77,23 @@ public:
 
     void Delay(unsigned int ms) {
         SDL_Delay(ms);
+    }
+
+    void CreateRenderer() {
+        if (SdlWindow){
+            SdlRenderer = SDL_CreateRenderer(SdlWindow, -1, SDL_RENDERER_ACCELERATED);
+            if (!SdlRenderer) {
+                std::cerr << "Renderer could not be created! SDL Error: " << SDL_GetError() << std::endl;
+            }
+        }
+    }
+
+    void ClearScreen() {
+        SDL_RenderClear(SdlRenderer);
+    }
+
+    void PresentScreen() {
+        SDL_RenderPresent(SdlRenderer);
     }
 };
 

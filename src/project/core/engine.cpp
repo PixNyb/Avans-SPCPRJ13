@@ -19,6 +19,10 @@ void Engine::Start()
     TimeUtility time;
     float lastFPSUpdateTime = time.GetTotalTime();
 
+    // Initialize GraphicsFacade
+    Get<GraphicsFacade>()->Init();
+
+
     while (isRunning) {
         float deltaTime = time.GetDeltaTime();
 
@@ -30,7 +34,6 @@ void Engine::Start()
         Get<SceneManager>()->Update(deltaTime);
 
         // Render stuff goes here
-        Get<GraphicsFacade>()->SetupWindow("FunBobEngine", 1080, 1920);
 
         // End of the frame
 
