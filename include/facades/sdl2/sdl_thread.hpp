@@ -20,6 +20,8 @@
 #define DEFUNBOBENGINE_THREAD_HPP
 
 #include <SDL.h>
+#include <iostream>
+#include <string>
 
 /**
  * @class Thread
@@ -31,13 +33,11 @@
  */
 class Thread {
     SDL_Thread* thread;
+    std::string threadName;
     static int threadFunction(void* data);
 
 public:
-    /**
-    * @brief Construct a new Thread object.
-    */
-    Thread();
+    explicit Thread(const std::string& name) : thread(nullptr), threadName(name) {}
 
     /**
      * @brief Destroy the Thread object, ensuring the thread is properly cleaned up.
@@ -47,7 +47,7 @@ public:
     /**
      * @brief Starts the thread, invoking the associated thread function.
      */
-    void Start();
+    void Start(void* data);
 
     /**
      * @brief Stops the thread, making sure it exits cleanly.
