@@ -17,12 +17,6 @@ void GraphicsFacade::PollEvents(std::vector<Event>& events) {
     // implement features
 }
 
-void GraphicsFacade::SetupWindow(const char* title, int width, int height) {
-    if (!SdlWindow) {
-        SdlWindow = std::make_unique<SDLWindow>(title, width, height);
-    }
-}
-
 void GraphicsFacade::CreateWindow(const char* title, int width, int height) {
     if (!SdlWindow) {
         SdlWindow = std::make_unique<SDLWindow>(title, width, height);
