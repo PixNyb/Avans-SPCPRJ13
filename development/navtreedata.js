@@ -34,7 +34,8 @@ var NAVTREE =
         [ "Doxygen", "index.html#autotoc_md16", null ]
       ] ],
       [ "Proof Of Concepts", "index.html#autotoc_md17", null ],
-      [ "Development Guidelines", "index.html#autotoc_md18", null ]
+      [ "Gebruik", "index.html#autotoc_md18", null ],
+      [ "Development Guidelines", "index.html#autotoc_md19", null ]
     ] ],
     [ "Development Guidelines", "md_DEVELOPMENT_GUIDELINES.html", [
       [ "Inhoudsopgave", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md1", null ],
@@ -47,6 +48,7 @@ var NAVTREE =
       [ "Code Reviews", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md8", null ],
       [ "Documentatie", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md9", null ]
     ] ],
+    [ "Gebruik", "md_USAGE.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -80,7 +82,7 @@ var NAVTREEINDEX =
 [
 "animation__state_8cpp.html",
 "classSceneManager.html#ad3837c7342ec60a585d87c3d71cc142f",
-"transform_8cpp.html"
+"time_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
