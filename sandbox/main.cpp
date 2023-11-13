@@ -9,17 +9,18 @@
  *
  */
 
-#include <iostream>
-#include "physics_facade.hpp"
 #include "box_collider.hpp"
-
+#include "game_object.hpp"
+#include "physics_facade.hpp"
+#include <iostream>
+#include <memory>
 
 int main(int argc, char *argv[])
 {
     std::vector<std::shared_ptr<GameObject>> objects;
     auto obj = std::make_shared<GameObject>();
-    Point point {0, 0};
-    Transform trs {point, 0, 1};
+    Point point{0, 0};
+    Transform trs{point, 0, 1};
     obj->SetTransform(trs);
     auto body = std::make_shared<RigidBody>(10, 1, BodyType::dynamicBody);
     auto collider = std::make_shared<BoxCollider>();
@@ -28,9 +29,9 @@ int main(int argc, char *argv[])
     objects.push_back(obj);
     auto comp = obj->GetComponent<Collider>();
     PhysicsFacade pf;
-//    pf.PopulateWorld(objects);
+    pf.PopulateWorld(objects);
     std::cout << "Sandbox" << std::endl;
-//    auto engine = Engine::getInstance();
+    //    auto engine = Engine::getInstance();
 
     return 1;
 }

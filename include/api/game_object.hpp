@@ -27,18 +27,19 @@
  * GameObjects can be added to the game world and can have their components
  * updated and rendered.
  */
-class GameObject {
-protected:
-    std::string name; ///< The name of the GameObject.
+class GameObject
+{
+  protected:
     std::vector<std::shared_ptr<Component>>
-            components;                     ///< The list of components attached to the GameObject.
-    Transform transform;                ///< The transform of the GameObject.
-    std::shared_ptr<GameObject> parent; ///< The parent of the GameObject.
-    bool active;                        ///< The active flag of the GameObject.
+        components;                     ///< The list of components attached to the GameObject.
+    std::string name;                   ///< The name of the GameObject.
     std::string tag;                    ///< The tag/type of the GameObject.
     int layer;                          ///< The layer of the GameObject.
+    bool active;                        ///< The active flag of the GameObject.
+    Transform transform;                ///< The transform of the GameObject.
+    std::shared_ptr<GameObject> parent; ///< The parent of the GameObject.
 
-public:
+  public:
     /**
      * @brief Default constructor for GameObject.
      */
@@ -154,34 +155,36 @@ public:
     void AddComponent(std::shared_ptr<Component> component);
 
     /**
-    * @brief Get the first component of the specified type. Must be
-    *        a valid subclass of Component.
-    * @return Pointer to Component instance.
-    */
-    template<class T>
-    std::shared_ptr<T> GetComponent() const {
-        for (std::shared_ptr<Component> component: components)
+     * @brief Get the first component of the specified type. Must be
+     *        a valid subclass of Component.
+     * @return Pointer to Component instance.
+     */
+    template <class T> std::shared_ptr<T> GetComponent() const
+    {
+        for (std::shared_ptr<Component> component : components)
         {
             auto componentPtr = std::dynamic_pointer_cast<T>(component);
-            if (componentPtr) return componentPtr;
+            if (componentPtr)
+                return componentPtr;
         }
 
         return std::shared_ptr<T>{};
     }
 
     /**
-    * @brief Get all the components of the specified type. Must be
-    *        a valid subclass of Component.
-    * @return Pointers to Component instance.
-    */
-    template<class T>
-    std::vector<std::shared_ptr<T>> GetComponents() const {
+     * @brief Get all the components of the specified type. Must be
+     *        a valid subclass of Component.
+     * @return Pointers to Component instance.
+     */
+    template <class T> std::vector<std::shared_ptr<T>> GetComponents() const
+    {
         std::vector<std::shared_ptr<T>> typeComponents;
 
-        for (std::shared_ptr<Component> component: components)
+        for (std::shared_ptr<Component> component : components)
         {
             auto componentPtr = std::dynamic_pointer_cast<T>(component);
-            if (componentPtr) typeComponents.push_back(componentPtr);
+            if (componentPtr)
+                typeComponents.push_back(componentPtr);
         }
 
         return typeComponents;
