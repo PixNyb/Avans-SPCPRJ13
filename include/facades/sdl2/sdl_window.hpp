@@ -91,23 +91,14 @@ public:
      * Initializes the renderer for this window, enabling accelerated rendering.
      * If the renderer cannot be created, an error message is displayed.
      */
-    void CreateRenderer() {
-        if (SdlWindow){
-            SdlRenderer = SDL_CreateRenderer(SdlWindow, -1, SDL_RENDERER_ACCELERATED);
-            if (!SdlRenderer) {
-                std::cerr << "Renderer could not be created! SDL Error: " << SDL_GetError() << std::endl;
-            }
-        }
-    }
+    void CreateRenderer();
 
     /**
     * @brief Clears the rendering target.
     *
     * Prepares the screen for new rendering operations by clearing existing content.
     */
-    void ClearScreen() {
-        SDL_RenderClear(SdlRenderer);
-    }
+    void ClearScreen();
 
 
     /**
@@ -115,9 +106,7 @@ public:
      *
      * Updates the window with rendered graphics, finalizing the current frame.
      */
-    void PresentScreen() {
-        SDL_RenderPresent(SdlRenderer);
-    }
+    void PresentScreen();
 };
 
 #endif //DEFUNBOBENGINE_WINDOW_HPP

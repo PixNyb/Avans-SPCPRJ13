@@ -50,4 +50,21 @@ void SDLWindow::Destroy()
     }
 }
 
+void SDLWindow::CreateRenderer() {
+    if (SdlWindow){
+        SdlRenderer = SDL_CreateRenderer(SdlWindow, -1, SDL_RENDERER_ACCELERATED);
+        if (!SdlRenderer) {
+            std::cerr << "Renderer could not be created! SDL Error: " << SDL_GetError() << std::endl;
+        }
+    }
+}
+
+void SDLWindow::ClearScreen() {
+    SDL_RenderClear(SdlRenderer);
+}
+
+void SDLWindow::PresentScreen() {
+    SDL_RenderPresent(SdlRenderer);
+}
+
 SDL_Window *SDLWindow::GetSDLWindow() const { return SdlWindow; }
