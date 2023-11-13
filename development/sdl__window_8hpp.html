@@ -95,13 +95,17 @@ $(document).ready(function(){initNavTree('sdl__window_8hpp.html',''); initResiza
 <p>This file contains the <a class="el" href="classSDLWindow.html" title="Manages creation, display, and destruction of an SDL_Window.">SDLWindow</a> class definition for managing an SDL_Window.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;SDL.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="sdl__render_8hpp_source.html">sdl_render.hpp</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for sdl_window.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="sdl__window_8hpp__incl.png" border="0" usemap="#ainclude_2facades_2sdl2_2sdl__window_8hpp" alt=""/></div>
 <map name="ainclude_2facades_2sdl2_2sdl__window_8hpp" id="ainclude_2facades_2sdl2_2sdl__window_8hpp">
 <area shape="rect" title="This file contains the SDLWindow class definition for managing an SDL_Window." alt="" coords="5,5,160,47"/>
-<area shape="rect" title=" " alt="" coords="53,95,112,121"/>
+<area shape="rect" title=" " alt="" coords="5,169,64,196"/>
+<area shape="rect" href="sdl__render_8hpp.html" title="This file contains the SDLRender class definition." alt="" coords="24,95,141,121"/>
+<area shape="rect" title=" " alt="" coords="165,95,245,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -109,12 +113,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="sdl__window_8hpp__dep__incl.png" border="0" usemap="#ainclude_2facades_2sdl2_2sdl__window_8hppdep" alt=""/></div>
 <map name="ainclude_2facades_2sdl2_2sdl__window_8hppdep" id="ainclude_2facades_2sdl2_2sdl__window_8hppdep">
-<area shape="rect" title="This file contains the SDLWindow class definition for managing an SDL_Window." alt="" coords="280,5,435,47"/>
-<area shape="rect" href="io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="203,95,343,136"/>
-<area shape="rect" href="sdl__window_8cpp.html" title="Implementation of the Window class that wraps SDL2 window functionalities." alt="" coords="367,95,518,136"/>
-<area shape="rect" href="sdl2__input__handler_8hpp_source.html" title=" " alt="" coords="5,184,160,225"/>
-<area shape="rect" href="window_8hpp.html" title="This file contains the Window class definition." alt="" coords="185,184,362,225"/>
-<area shape="rect" href="io__facade_8cpp.html" title="This file contains the IOFacade interface definition." alt="" coords="386,191,577,218"/>
+<area shape="rect" title="This file contains the SDLWindow class definition for managing an SDL_Window." alt="" coords="297,5,451,47"/>
+<area shape="rect" href="io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="220,95,360,136"/>
+<area shape="rect" href="sdl__window_8cpp.html" title="Implementation of the Window class that wraps SDL2 window functionalities." alt="" coords="384,95,535,136"/>
+<area shape="rect" href="graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="5,184,188,225"/>
+<area shape="rect" href="sdl2__input__handler_8hpp_source.html" title=" " alt="" coords="213,184,367,225"/>
+<area shape="rect" href="window_8hpp.html" title="This file contains the Window class definition." alt="" coords="392,184,569,225"/>
 </map>
 </div>
 </div>
@@ -132,7 +136,7 @@ Classes</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2023-11-08</dd></dl>
 <p>The <a class="el" href="classSDLWindow.html" title="Manages creation, display, and destruction of an SDL_Window.">SDLWindow</a> class provides a simple interface for creating, displaying, and managing an SDL_Window. It encapsulates SDL window creation and destruction and provides access to the underlying SDL_Window structure.</p>
-<p>The create function initializes the SDL_Window, and the destroy function ensures it is properly destroyed when no longer needed.</p>
+<p>The Create function initializes the SDL_Window, and the Destroy function ensures it is properly destroyed when no longer needed.</p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

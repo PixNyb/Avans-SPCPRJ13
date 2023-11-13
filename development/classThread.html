@@ -100,32 +100,32 @@ $(document).ready(function(){initNavTree('classThread.html',''); initResizable()
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a95c703fb8f2f27cb64f475a8c940864a"><td class="memItemLeft" align="right" valign="top"><a id="a95c703fb8f2f27cb64f475a8c940864a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThread.html#a95c703fb8f2f27cb64f475a8c940864a">Thread</a> ()</td></tr>
-<tr class="memdesc:a95c703fb8f2f27cb64f475a8c940864a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classThread.html" title="A wrapper class for SDL_Thread to manage threading in the game engine.">Thread</a> object. <br /></td></tr>
-<tr class="separator:a95c703fb8f2f27cb64f475a8c940864a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afabab6261387695b79996169e9bf7056"><td class="memItemLeft" align="right" valign="top"><a id="afabab6261387695b79996169e9bf7056"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Thread</b> (const std::string &amp;name)</td></tr>
+<tr class="separator:afabab6261387695b79996169e9bf7056"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37d9edd3a1a776cbc27dedff949c9726"><td class="memItemLeft" align="right" valign="top"><a id="a37d9edd3a1a776cbc27dedff949c9726"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThread.html#a37d9edd3a1a776cbc27dedff949c9726">~Thread</a> ()</td></tr>
 <tr class="memdesc:a37d9edd3a1a776cbc27dedff949c9726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classThread.html" title="A wrapper class for SDL_Thread to manage threading in the game engine.">Thread</a> object, ensuring the thread is properly cleaned up. <br /></td></tr>
 <tr class="separator:a37d9edd3a1a776cbc27dedff949c9726"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f53ee62bd30a7924186ef26150ce262"><td class="memItemLeft" align="right" valign="top"><a id="a1f53ee62bd30a7924186ef26150ce262"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThread.html#a1f53ee62bd30a7924186ef26150ce262">start</a> ()</td></tr>
-<tr class="memdesc:a1f53ee62bd30a7924186ef26150ce262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the thread, invoking the associated thread function. <br /></td></tr>
-<tr class="separator:a1f53ee62bd30a7924186ef26150ce262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd50159ecd409936f454c2321f673616"><td class="memItemLeft" align="right" valign="top"><a id="abd50159ecd409936f454c2321f673616"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThread.html#abd50159ecd409936f454c2321f673616">stop</a> ()</td></tr>
-<tr class="memdesc:abd50159ecd409936f454c2321f673616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the thread, making sure it exits cleanly. <br /></td></tr>
-<tr class="separator:abd50159ecd409936f454c2321f673616"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcc2de06c6c2854c02d36c79a2d1c4bd"><td class="memItemLeft" align="right" valign="top"><a id="afcc2de06c6c2854c02d36c79a2d1c4bd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThread.html#afcc2de06c6c2854c02d36c79a2d1c4bd">pause</a> ()</td></tr>
-<tr class="memdesc:afcc2de06c6c2854c02d36c79a2d1c4bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses the thread. Implementation depends on how pause functionality is handled. <br /></td></tr>
-<tr class="separator:afcc2de06c6c2854c02d36c79a2d1c4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cadc0353934a7cca79666608c3aa76e"><td class="memItemLeft" align="right" valign="top"><a id="a9cadc0353934a7cca79666608c3aa76e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThread.html#a9cadc0353934a7cca79666608c3aa76e">Start</a> (void *data)</td></tr>
+<tr class="memdesc:a9cadc0353934a7cca79666608c3aa76e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the thread, invoking the associated thread function. <br /></td></tr>
+<tr class="separator:a9cadc0353934a7cca79666608c3aa76e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5994590ea53d7b36ca9fc2bffedb8941"><td class="memItemLeft" align="right" valign="top"><a id="a5994590ea53d7b36ca9fc2bffedb8941"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThread.html#a5994590ea53d7b36ca9fc2bffedb8941">Stop</a> ()</td></tr>
+<tr class="memdesc:a5994590ea53d7b36ca9fc2bffedb8941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the thread, making sure it exits cleanly. <br /></td></tr>
+<tr class="separator:a5994590ea53d7b36ca9fc2bffedb8941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d22f28bef2580dace692bb52f1df2a8"><td class="memItemLeft" align="right" valign="top"><a id="a9d22f28bef2580dace692bb52f1df2a8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThread.html#a9d22f28bef2580dace692bb52f1df2a8">Pause</a> ()</td></tr>
+<tr class="memdesc:a9d22f28bef2580dace692bb52f1df2a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses the thread. Implementation depends on how pause functionality is handled. <br /></td></tr>
+<tr class="separator:a9d22f28bef2580dace692bb52f1df2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A wrapper class for SDL_Thread to manage threading in the game engine. </p>
 <p>This class abstracts the details of thread creation and control using SDL's threading capabilities. It provides methods to start, stop, and pause execution of threads and encapsulates the thread callback function within the class scope. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/facades/sdl2/<a class="el" href="sdl__thread_8hpp_source.html">sdl_thread.hpp</a></li>
+<li>src/facades/sdl2/sdl_thread.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

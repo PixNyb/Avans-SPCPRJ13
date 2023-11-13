@@ -95,26 +95,27 @@ $(document).ready(function(){initNavTree('sdl__render_8hpp_source.html',''); ini
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classRender.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRender.html">Render</a> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    SDL_Renderer* renderer;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classSDLRender.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSDLRender.html">SDLRender</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    SDL_Renderer* Renderer;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classRender.html#adf1c5e8050929cce717e77ce6f4e40e4">   37</a></span>&#160;    <a class="code" href="classRender.html#adf1c5e8050929cce717e77ce6f4e40e4">Render</a>(SDL_Renderer* renderer);</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classSDLRender.html#a0b7ee3ec62fc11e406b4409be8be6e35">   37</a></span>&#160;    <a class="code" href="classSDLRender.html#a0b7ee3ec62fc11e406b4409be8be6e35">SDLRender</a>(SDL_Renderer* Renderer);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classRender.html#a79647e82f82b76fbfc01c9dee38e9d1f">   45</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRender.html#a79647e82f82b76fbfc01c9dee38e9d1f">clear</a>() {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        SDL_RenderClear(renderer);</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classSDLRender.html#a82a4d75eeb0c4eb99e7d53d7be907e08">   45</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSDLRender.html#a82a4d75eeb0c4eb99e7d53d7be907e08">Clear</a>() {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        SDL_RenderClear(Renderer);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classRender.html#a0897ca618fc24c34905187a8a64bcaa9">   55</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRender.html#a0897ca618fc24c34905187a8a64bcaa9">present</a>() {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        SDL_RenderPresent(renderer);</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classSDLRender.html#a5d507e73430bc5f1e786bb1cdc55fd05">   55</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSDLRender.html#a5d507e73430bc5f1e786bb1cdc55fd05">Present</a>() {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        SDL_RenderPresent(Renderer);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_RENDER_HPP</span></div>
-<div class="ttc" id="aclassRender_html"><div class="ttname"><a href="classRender.html">Render</a></div><div class="ttdoc">Wrapper class for SDL_Renderer to provide rendering utilities.</div><div class="ttdef"><b>Definition:</b> sdl_render.hpp:29</div></div>
-<div class="ttc" id="aclassRender_html_a0897ca618fc24c34905187a8a64bcaa9"><div class="ttname"><a href="classRender.html#a0897ca618fc24c34905187a8a64bcaa9">Render::present</a></div><div class="ttdeci">void present()</div><div class="ttdoc">Updates the screen with any rendering performed since the previous call.</div><div class="ttdef"><b>Definition:</b> sdl_render.hpp:55</div></div>
-<div class="ttc" id="aclassRender_html_a79647e82f82b76fbfc01c9dee38e9d1f"><div class="ttname"><a href="classRender.html#a79647e82f82b76fbfc01c9dee38e9d1f">Render::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears the rendering target with the current drawing color.</div><div class="ttdef"><b>Definition:</b> sdl_render.hpp:45</div></div>
-<div class="ttc" id="aclassRender_html_adf1c5e8050929cce717e77ce6f4e40e4"><div class="ttname"><a href="classRender.html#adf1c5e8050929cce717e77ce6f4e40e4">Render::Render</a></div><div class="ttdeci">Render(SDL_Renderer *renderer)</div><div class="ttdoc">Constructs a Render object with the specified SDL_Renderer.</div></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_RENDER_HPP</span></div>
+<div class="ttc" id="aclassSDLRender_html"><div class="ttname"><a href="classSDLRender.html">SDLRender</a></div><div class="ttdef"><b>Definition:</b> sdl_render.hpp:29</div></div>
+<div class="ttc" id="aclassSDLRender_html_a0b7ee3ec62fc11e406b4409be8be6e35"><div class="ttname"><a href="classSDLRender.html#a0b7ee3ec62fc11e406b4409be8be6e35">SDLRender::SDLRender</a></div><div class="ttdeci">SDLRender(SDL_Renderer *Renderer)</div><div class="ttdoc">Constructs a Render object with the specified SDL_Renderer.</div></div>
+<div class="ttc" id="aclassSDLRender_html_a5d507e73430bc5f1e786bb1cdc55fd05"><div class="ttname"><a href="classSDLRender.html#a5d507e73430bc5f1e786bb1cdc55fd05">SDLRender::Present</a></div><div class="ttdeci">void Present()</div><div class="ttdoc">Updates the screen with any rendering performed since the previous call.</div><div class="ttdef"><b>Definition:</b> sdl_render.hpp:55</div></div>
+<div class="ttc" id="aclassSDLRender_html_a82a4d75eeb0c4eb99e7d53d7be907e08"><div class="ttname"><a href="classSDLRender.html#a82a4d75eeb0c4eb99e7d53d7be907e08">SDLRender::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Clears the rendering target with the current drawing color.</div><div class="ttdef"><b>Definition:</b> sdl_render.hpp:45</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

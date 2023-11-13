@@ -1,16 +1,19 @@
 var searchData=
 [
-  ['parent_145',['parent',['../classGameObject.html#aae2ba1fd3e39a32f1de627c2c39b4ae2',1,'GameObject']]],
-  ['pause_146',['Pause',['../classAudioSource.html#a70732968279954b9e56cb3d51d508b50',1,'AudioSource']]],
-  ['pause_147',['pause',['../classTimer.html#a0289effad7b573c508bc27e405900a23',1,'Timer::pause()'],['../classThread.html#afcc2de06c6c2854c02d36c79a2d1c4bd',1,'Thread::pause()']]],
-  ['performanceutility_148',['PerformanceUtility',['../classPerformanceUtility.html',1,'']]],
-  ['play_149',['Play',['../classAudioSource.html#afc2ea09b57477c34083d937f50e83166',1,'AudioSource']]],
-  ['point_150',['Point',['../structPoint.html',1,'']]],
-  ['point_2ehpp_151',['point.hpp',['../point_8hpp.html',1,'']]],
-  ['pollevents_152',['pollEvents',['../classIOFacade.html#aed7cc9609a52c4d69e958cfe791ce8c2',1,'IOFacade::pollEvents()'],['../classSDL2InputHandler.html#abcb8634234b18640a784aaeafbff18ab',1,'SDL2InputHandler::pollEvents()']]],
-  ['polygon_153',['Polygon',['../classPolygon.html',1,'Polygon'],['../classPolygon.html#a68cbc449f198fe50abfdc10ada19596b',1,'Polygon::Polygon()']]],
-  ['polygon_2ehpp_154',['polygon.hpp',['../polygon_8hpp.html',1,'']]],
-  ['position_155',['position',['../structTransform.html#ad0426334399b7c5b9c0e4dead6764e66',1,'Transform::position()'],['../classGeometry.html#a3e79de44c8cdb7fe1f5797e781a9713a',1,'Geometry::position()']]],
-  ['present_156',['present',['../classRender.html#a0897ca618fc24c34905187a8a64bcaa9',1,'Render']]],
-  ['public_157',['Public',['../di__container_8hpp.html#a9329b70dc6690349dc4fca57d567cf7ea3d067bedfe2f4677470dd6ccf64d05ed',1,'di_container.hpp']]]
+  ['parent_150',['parent',['../classGameObject.html#aae2ba1fd3e39a32f1de627c2c39b4ae2',1,'GameObject']]],
+  ['pause_151',['Pause',['../classAudioSource.html#a70732968279954b9e56cb3d51d508b50',1,'AudioSource::Pause()'],['../classThread.html#a9d22f28bef2580dace692bb52f1df2a8',1,'Thread::Pause()']]],
+  ['pause_152',['pause',['../classTimer.html#a0289effad7b573c508bc27e405900a23',1,'Timer']]],
+  ['performanceutility_153',['PerformanceUtility',['../classPerformanceUtility.html',1,'']]],
+  ['play_154',['Play',['../classAudioSource.html#afc2ea09b57477c34083d937f50e83166',1,'AudioSource']]],
+  ['point_155',['Point',['../structPoint.html',1,'']]],
+  ['point_2ehpp_156',['point.hpp',['../point_8hpp.html',1,'']]],
+  ['pollevents_157',['PollEvents',['../classGraphicsFacade.html#abda789469d7b66d9013f8352a93d3877',1,'GraphicsFacade']]],
+  ['pollevents_158',['pollEvents',['../classSDL2InputHandler.html#abcb8634234b18640a784aaeafbff18ab',1,'SDL2InputHandler']]],
+  ['pollevents_159',['PollEvents',['../classIOFacade.html#ae83138d361fe83705d6099eaa2bc6595',1,'IOFacade']]],
+  ['polygon_160',['Polygon',['../classPolygon.html',1,'Polygon'],['../classPolygon.html#a68cbc449f198fe50abfdc10ada19596b',1,'Polygon::Polygon()']]],
+  ['polygon_2ehpp_161',['polygon.hpp',['../polygon_8hpp.html',1,'']]],
+  ['position_162',['position',['../structTransform.html#ad0426334399b7c5b9c0e4dead6764e66',1,'Transform::position()'],['../classGeometry.html#a3e79de44c8cdb7fe1f5797e781a9713a',1,'Geometry::position()']]],
+  ['present_163',['Present',['../classSDLRender.html#a5d507e73430bc5f1e786bb1cdc55fd05',1,'SDLRender']]],
+  ['presentscreen_164',['PresentScreen',['../classGraphicsFacade.html#a70a3945d7c0d1c8ca6ecab9d8d4f50d3',1,'GraphicsFacade::PresentScreen()'],['../classSDLWindow.html#a99de7a60d60ab2639435304193118670',1,'SDLWindow::PresentScreen()']]],
+  ['public_165',['Public',['../di__container_8hpp.html#a9329b70dc6690349dc4fca57d567cf7ea3d067bedfe2f4677470dd6ccf64d05ed',1,'di_container.hpp']]]
 ];

@@ -34,6 +34,7 @@ var hierarchy =
     [ "IMouseListener", "classIMouseListener.html", null ],
     [ "Input", "classInput.html", null ],
     [ "IOFacade", "classIOFacade.html", [
+      [ "GraphicsFacade", "classGraphicsFacade.html", null ],
       [ "SDL2InputHandler", "classSDL2InputHandler.html", null ]
     ] ],
     [ "PerformanceUtility", "classPerformanceUtility.html", null ],
@@ -42,7 +43,9 @@ var hierarchy =
     [ "Scene", "classScene.html", null ],
     [ "SceneManager", "classSceneManager.html", null ],
     [ "SDLCircle", "classSDLCircle.html", null ],
+    [ "SDLInit", "classSDLInit.html", null ],
     [ "SDLRect", "classSDLRect.html", null ],
+    [ "SDLRender", "classSDLRender.html", null ],
     [ "SDLSurface", "classSDLSurface.html", null ],
     [ "SDLTexture", "classSDLTexture.html", null ],
     [ "SDLTriangle", "classSDLTriangle.html", null ],

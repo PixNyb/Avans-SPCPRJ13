@@ -173,8 +173,9 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 </td></tr>
 <tr><td><img src="inherit_graph_13.png" border="0" usemap="#aIOFacade" alt=""/>
 <map name="aIOFacade" id="aIOFacade">
-<area shape="rect" href="classIOFacade.html" title="Interface for input/output handling in the game engine." alt="" coords="5,5,87,32"/>
-<area shape="rect" href="classSDL2InputHandler.html" title="Handles input events using SDL2." alt="" coords="135,5,273,32"/>
+<area shape="rect" href="classIOFacade.html" title="Interface for input/output handling in the game engine." alt="" coords="5,31,87,57"/>
+<area shape="rect" href="classGraphicsFacade.html" title="Manages graphics operations and interfaces with SDL for window management." alt="" coords="142,5,266,32"/>
+<area shape="rect" href="classSDL2InputHandler.html" title="Handles input events using SDL2." alt="" coords="135,56,273,83"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_14.png" border="0" usemap="#aPerformanceUtility" alt=""/>
@@ -207,62 +208,72 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 <area shape="rect" href="classSDLCircle.html" title="Represents a circle that can be rendered using SDL2_gfx." alt="" coords="5,5,89,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_20.png" border="0" usemap="#aSDLRect" alt=""/>
+<tr><td><img src="inherit_graph_20.png" border="0" usemap="#aSDLInit" alt=""/>
+<map name="aSDLInit" id="aSDLInit">
+<area shape="rect" href="classSDLInit.html" title="Class for initializing and cleaning up SDL." alt="" coords="5,5,73,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_21.png" border="0" usemap="#aSDLRect" alt=""/>
 <map name="aSDLRect" id="aSDLRect">
 <area shape="rect" href="classSDLRect.html" title="Encapsulates the properties of a rectangle." alt="" coords="5,5,81,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_21.png" border="0" usemap="#aSDLSurface" alt=""/>
+<tr><td><img src="inherit_graph_22.png" border="0" usemap="#aSDLRender" alt=""/>
+<map name="aSDLRender" id="aSDLRender">
+<area shape="rect" href="classSDLRender.html" title=" " alt="" coords="5,5,99,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_23.png" border="0" usemap="#aSDLSurface" alt=""/>
 <map name="aSDLSurface" id="aSDLSurface">
 <area shape="rect" href="classSDLSurface.html" title="Manages an SDL_Surface loaded from a file." alt="" coords="5,5,101,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_22.png" border="0" usemap="#aSDLTexture" alt=""/>
+<tr><td><img src="inherit_graph_24.png" border="0" usemap="#aSDLTexture" alt=""/>
 <map name="aSDLTexture" id="aSDLTexture">
 <area shape="rect" href="classSDLTexture.html" title="Manages an SDL_Texture loaded from a file." alt="" coords="5,5,100,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_23.png" border="0" usemap="#aSDLTriangle" alt=""/>
+<tr><td><img src="inherit_graph_25.png" border="0" usemap="#aSDLTriangle" alt=""/>
 <map name="aSDLTriangle" id="aSDLTriangle">
 <area shape="rect" href="classSDLTriangle.html" title="Encapsulates the properties of a triangle and provides a drawing method." alt="" coords="5,5,103,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_24.png" border="0" usemap="#aSDLWindow" alt=""/>
+<tr><td><img src="inherit_graph_26.png" border="0" usemap="#aSDLWindow" alt=""/>
 <map name="aSDLWindow" id="aSDLWindow">
 <area shape="rect" href="classSDLWindow.html" title="Manages creation, display, and destruction of an SDL_Window." alt="" coords="5,5,104,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_25.png" border="0" usemap="#aThread" alt=""/>
+<tr><td><img src="inherit_graph_27.png" border="0" usemap="#aThread" alt=""/>
 <map name="aThread" id="aThread">
 <area shape="rect" href="classThread.html" title="A wrapper class for SDL_Thread to manage threading in the game engine." alt="" coords="5,5,72,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_26.png" border="0" usemap="#aTime" alt=""/>
+<tr><td><img src="inherit_graph_28.png" border="0" usemap="#aTime" alt=""/>
 <map name="aTime" id="aTime">
 <area shape="rect" href="classTime.html" title="Class representing game time." alt="" coords="5,5,60,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_27.png" border="0" usemap="#aTimer" alt=""/>
+<tr><td><img src="inherit_graph_29.png" border="0" usemap="#aTimer" alt=""/>
 <map name="aTimer" id="aTimer">
 <area shape="rect" href="classTimer.html" title="Class for managing time&#45;related events in the game engine." alt="" coords="5,5,65,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_28.png" border="0" usemap="#aTimeUtility" alt=""/>
+<tr><td><img src="inherit_graph_30.png" border="0" usemap="#aTimeUtility" alt=""/>
 <map name="aTimeUtility" id="aTimeUtility">
 <area shape="rect" href="classTimeUtility.html" title=" " alt="" coords="5,5,100,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_29.png" border="0" usemap="#aTransform" alt=""/>
+<tr><td><img src="inherit_graph_31.png" border="0" usemap="#aTransform" alt=""/>
 <map name="aTransform" id="aTransform">
 <area shape="rect" href="structTransform.html" title="Instances of this class represent specific 2D transformations." alt="" coords="5,5,92,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_30.png" border="0" usemap="#aVector2D" alt=""/>
+<tr><td><img src="inherit_graph_32.png" border="0" usemap="#aVector2D" alt=""/>
 <map name="aVector2D" id="aVector2D">
 <area shape="rect" href="classVector2D.html" title="Represents a two&#45;dimensional vector." alt="" coords="5,5,87,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_31.png" border="0" usemap="#aWindow" alt=""/>
+<tr><td><img src="inherit_graph_33.png" border="0" usemap="#aWindow" alt=""/>
 <map name="aWindow" id="aWindow">
 <area shape="rect" href="classWindow.html" title="Manages a game window through an abstract facade interface." alt="" coords="5,5,80,32"/>
 </map>

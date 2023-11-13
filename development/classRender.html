@@ -85,9 +85,6 @@ $(document).ready(function(){initNavTree('classRender.html',''); initResizable()
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classRender-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Render Class Reference</div>  </div>
 </div><!--header-->
@@ -97,107 +94,10 @@ $(document).ready(function(){initNavTree('classRender.html',''); initResizable()
  <a href="classRender.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="sdl__render_8hpp_source.html">sdl_render.hpp</a>&gt;</code></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:adf1c5e8050929cce717e77ce6f4e40e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRender.html#adf1c5e8050929cce717e77ce6f4e40e4">Render</a> (SDL_Renderer *renderer)</td></tr>
-<tr class="memdesc:adf1c5e8050929cce717e77ce6f4e40e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classRender.html" title="Wrapper class for SDL_Renderer to provide rendering utilities.">Render</a> object with the specified SDL_Renderer.  <a href="classRender.html#adf1c5e8050929cce717e77ce6f4e40e4">More...</a><br /></td></tr>
-<tr class="separator:adf1c5e8050929cce717e77ce6f4e40e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79647e82f82b76fbfc01c9dee38e9d1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRender.html#a79647e82f82b76fbfc01c9dee38e9d1f">clear</a> ()</td></tr>
-<tr class="memdesc:a79647e82f82b76fbfc01c9dee38e9d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the rendering target with the current drawing color.  <a href="classRender.html#a79647e82f82b76fbfc01c9dee38e9d1f">More...</a><br /></td></tr>
-<tr class="separator:a79647e82f82b76fbfc01c9dee38e9d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0897ca618fc24c34905187a8a64bcaa9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRender.html#a0897ca618fc24c34905187a8a64bcaa9">present</a> ()</td></tr>
-<tr class="memdesc:a0897ca618fc24c34905187a8a64bcaa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the screen with any rendering performed since the previous call.  <a href="classRender.html#a0897ca618fc24c34905187a8a64bcaa9">More...</a><br /></td></tr>
-<tr class="separator:a0897ca618fc24c34905187a8a64bcaa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Wrapper class for SDL_Renderer to provide rendering utilities. </p>
 <p>This class is designed to abstract the lower-level rendering details provided by SDL_Renderer and to expose a simpler interface for clearing and presenting operations. It is intended to be used as part of the rendering loop of a game engine. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="adf1c5e8050929cce717e77ce6f4e40e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf1c5e8050929cce717e77ce6f4e40e4">&#9670;&nbsp;</a></span>Render()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Render::Render </td>
-          <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>renderer</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructs a <a class="el" href="classRender.html" title="Wrapper class for SDL_Renderer to provide rendering utilities.">Render</a> object with the specified SDL_Renderer. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">renderer</td><td>A pointer to an SDL_Renderer responsible for rendering operations. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a79647e82f82b76fbfc01c9dee38e9d1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79647e82f82b76fbfc01c9dee38e9d1f">&#9670;&nbsp;</a></span>clear()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Render::clear </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Clears the rendering target with the current drawing color. </p>
-<p>This function clears the entire rendering target, setting it to the color previously set by SDL_SetRenderDrawColor. </p>
-
-</div>
-</div>
-<a id="a0897ca618fc24c34905187a8a64bcaa9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0897ca618fc24c34905187a8a64bcaa9">&#9670;&nbsp;</a></span>present()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Render::present </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Updates the screen with any rendering performed since the previous call. </p>
-<p>This function presents the current rendering, typically called after all rendering operations have been completed for the current frame. </p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/facades/sdl2/<a class="el" href="sdl__render_8hpp_source.html">sdl_render.hpp</a></li>
 </ul>
 </div><!-- contents -->
