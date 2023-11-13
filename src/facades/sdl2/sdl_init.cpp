@@ -1,6 +1,13 @@
-//
-// Created by Robin on 13-11-2023.
-//
+/**
+ * @file sdl_init.cpp
+ * @author Robin Pijnappels
+ * @brief This file contains the SDLInit class implementation.
+ * @version 0.1
+ * @date 2023-11-13
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
 
 #include "sdl_init.hpp"
 

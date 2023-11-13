@@ -59,8 +59,6 @@ public:
      */
     virtual void PollEvents(std::vector<Event>& events) = 0;
 
-    virtual void SetupWindow(const char* title, int width, int height) = 0;
-
     /**
     * @brief Creates a window with the specified properties.
     *

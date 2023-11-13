@@ -15,8 +15,6 @@
 int main(int argc, char *argv[])
 {
     std::cout << "Sandbox" << std::endl;
-    auto engine = Engine::GetInstance();
-    engine->Start();
 
     return 1;
 }

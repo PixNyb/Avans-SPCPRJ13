@@ -35,14 +35,26 @@ private:
     std::unique_ptr<SDLWindow> SdlWindow; /**< Unique pointer to SDLWindow for managing the graphics window. */
     std::unique_ptr<SDLInit> SdlInit; /**< Unique pointer to SDLInit for SDL initialization. */
 public:
+
     /**
-     * @brief Default constructor for GraphicsFacade.
+     * @brief Constructs a new GraphicsFacade object.
      *
-     * Initializes the GraphicsFacade object with default values.
+     * This constructor initializes the GraphicsFacade object, setting up the necessary
+     * components for managing graphics operations in the DefunBobEngine. It prepares the
+     * class for subsequent initialization of the SDL graphics subsystem and window management.
+     * The actual initialization of SDL and window creation is deferred until the Init and
+     * CreateWindow methods are called.
      */
     GraphicsFacade();
 
-
+    /**
+     * @brief Destroys the GraphicsFacade object.
+     *
+     * This destructor ensures the proper deallocation and cleanup of resources used by
+     * the GraphicsFacade. It handles the release of the SDL-related resources and other
+     * graphics components managed by this class. Ensuring that all resources are correctly
+     * released is critical for preventing memory leaks and other resource management issues.
+     */
     virtual ~GraphicsFacade();
 
     /**
@@ -58,16 +70,6 @@ public:
     * @param events A vector of Event objects to be filled with polled events.
     */
     void PollEvents(std::vector<Event>& events) override;
-
-    /**
-     * @brief Sets up the graphics window.
-     *
-     * Configures the window properties but does not create it immediately.
-     * @param title Window title.
-     * @param width Window width.
-     * @param height Window height.
-     */
-    void SetupWindow(const char* title, int width, int height);
 
     /**
      * @brief Creates the graphics window.
