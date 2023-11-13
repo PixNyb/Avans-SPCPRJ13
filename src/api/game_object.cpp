@@ -64,9 +64,9 @@ void GameObject::SetName(const std::string &name) { this->name = name; }
 
 std::string GameObject::GetName() const { return name; }
 
-int GameObject::GetTag() const { return tag; }
+std::string GameObject::GetTag() const { return tag; }
 
-void GameObject::SetTag(int tag) { this->tag = tag; }
+void GameObject::SetTag(std::string tag) { this->tag = tag; }
 
 int GameObject::GetLayer() const { return layer; }
 

@@ -15,15 +15,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          submodules: recursive
 
       - name: Install Doxygen
         run: sudo apt-get install -y doxygen graphviz
-
-      - name: Cache docs
-        uses: actions/cache@v2
-        with:
-          path: docs
-          key: docs-cache-${{ runner.os }}
 
       - name: Get branch name or tag name
         id: extract_info
@@ -34,7 +30,7 @@ jobs:
 
       - name: Update Doxygen version
         run: |
-          sed -i "s/PROJECT_NUMBER.*/PROJECT_NUMBER = $GITHUB_SHA/" Doxyfile
+          sed -i "s/PROJECT_NUMBER.*/PROJECT_NUMBER = ${{ env.BUILD_INFO }}/" Doxyfile
           sed -i "s/OUTPUT_DIRECTORY.*/OUTPUT_DIRECTORY = docs\/${{ env.BUILD_INFO }}/" Doxyfile
 
       - name: Generate Doxygen documentation
@@ -47,7 +43,7 @@ jobs:
       - name: Get latest release tag
         id: get_latest_tag
         run: |
-          echo "LATEST_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+          echo "LATEST_TAG=$(git tag --sort=committerdate | grep -E '[0-9]' | tail -1)" >> $GITHUB_ENV
 
       - name: Add redirect to latest release tag if there is one, if not, redirect to current build
         run: |
@@ -57,21 +53,58 @@ jobs:
             echo "<meta http-equiv=\"refresh\" content=\"0; url=./${{ env.LATEST_TAG }}/index.html\" />" > docs/index.html
           fi
 
-      - name: Upload documentation artifacts
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: docs
+      - name: Tar docs
+        run: |
+          tar -czvf docs.tar.gz docs
 
-  deploy:
+      - name: Upload docs
+        uses: actions/upload-artifact@v2
+        with:
+          name: docs.tar.gz
+          path: docs.tar.gz
+
+  commit:
     needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      pages: write
-      id-token: write
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: docs
+
+      - name: Get branch name or tag name
+        id: extract_info
+        run: |
+          ref=${{ github.ref }}
+          IFS='/' read -ra ADDR <<< "$ref"
+          echo "BUILD_INFO=${ADDR[2]}" >> $GITHUB_ENV
+
+      - name: Download docs
+        uses: actions/download-artifact@v2
+        with:
+          name: docs.tar.gz
+
+      - name: Extract docs to current directory
+        run: |
+          tar -xzvf docs.tar.gz -C .
+          if [ -d "${{ env.BUILD_INFO }}" ]; then
+            rm -rf ${{ env.BUILD_INFO }}
+          fi
+          mv -f docs/* .
+          rm docs.tar.gz
+
+      - name: Commit docs
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git add ${{ env.BUILD_INFO }} index.html
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update docs for ${{ env.BUILD_INFO }}"
+            git push origin docs
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

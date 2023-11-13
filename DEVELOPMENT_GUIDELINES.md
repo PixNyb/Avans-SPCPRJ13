@@ -18,11 +18,13 @@
 Gebruik de Clang Formatter om code te formatteren volgens de `C++ Coding Style Guide` van `LLVM`. Hier zijn enkele basisregels:
 
 - Gebruik 4 spaties voor inspringing (geen tabbladen).
-- Gebruik CamelCase voor functie- en variabelennamen.
+- Gebruik PascalCase voor functie- en variabelennamen.
 - Gebruik snake_case voor bestandsnamen.
 - Plaats accolades op een nieuwe regel voor functies en klassen.
 - Voeg spaties toe rond operatoren (bijv. x = 5, niet x=5).
 - Beperk regellengte tot 80-100 tekens.
+- Gebruik `#ifndef`-header guards om headerbestanden te beschermen tegen dubbele inclusie.
+- Gebruik `#include <...>` voor systeem- en externe bibliotheekheaders en `#include "..."` voor lokale headers.
 
 Voor meer informatie, zie [LLVM Coding Standards](https://llvm.org/docs/CodingStandards.html).
 
@@ -42,28 +44,28 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 - Gebruik `//` voor enkele regel commentaar en `/* */` voor meerdere regels.
 - Houd de [Doxygen commentaarstijl](https://www.doxygen.nl/manual/docblocks.html) aan voor documentatie.
 
-```console
-// Dit is een voorbeeld van een enkele regel commentaar.
+  ```console
+  // Dit is een voorbeeld van een enkele regel commentaar.
 
-/**
- * Dit is een voorbeeld van een meerdere regels commentaar.
- * Dit is de tweede regel.
- * Door gebruik te maken van 2 sterretjes op de eerste regel, wordt door doxygen de commentaar als documentatie gezien.
- */
-```
+  /**
+  * Dit is een voorbeeld van een meerdere regels commentaar.
+  * Dit is de tweede regel.
+  * Door gebruik te maken van 2 sterretjes op de eerste regel, wordt door doxygen de commentaar als documentatie gezien.
+  */
+  ```
 
 - Denk eraan om bij bestanden die door doxygen worden gegenereerd, bovenaan het bestand een `@file`-tag toe te voegen.
 
-```console
-/// @file
+  ```console
+  /// @file
 
-// Of
+  // Of
 
-/**
- * @file
- * @brief This file contains the implementation of the Foo class.
- */
-```
+  /**
+  * @file
+  * @brief This file contains the implementation of the Foo class.
+  */
+  ```
 
 ## CMake-bestanden
 

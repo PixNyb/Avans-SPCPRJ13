@@ -50,12 +50,29 @@ endforeach()
 list(REMOVE_DUPLICATES HEADER_DIRS)
 
 # Add executable
-add_executable(DeFunBobEngine ${SOURCES})
+add_library(DeFunBobEngine ${SOURCES})
 
 # Include headers
 foreach(_headerDir ${HEADER_DIRS})
-    target_include_directories(DeFunBobEngine PRIVATE ${_headerDir})
+    target_include_directories(DeFunBobEngine PUBLIC ${_headerDir})
 endforeach()
+
+# Copy the cmake folder to the build directory
+file(COPY ${PROJECT_SOURCE_DIR}/cmake DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+# Install library and header files
+install(TARGETS DeFunBobEngine DESTINATION lib)
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include/${PROJECT_NAME})
+
+# Add uninstall target
+configure_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake"
+    IMMEDIATE @ONLY
+)
+
+add_custom_target(uninstall
+    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake
+)
 
 # Add SDL2
 find_package(SDL2 CONFIG REQUIRED)
@@ -88,3 +105,6 @@ target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_net::SDL2
 # Add box2d
 find_package(box2d CONFIG REQUIRED)
 target_link_libraries(DeFunBobEngine PRIVATE box2d::box2d)
+
+# Add sandbox
+add_subdirectory(sandbox)

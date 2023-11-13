@@ -35,7 +35,7 @@ protected:
     Transform transform;                ///< The transform of the GameObject.
     std::shared_ptr<GameObject> parent; ///< The parent of the GameObject.
     bool active;                        ///< The active flag of the GameObject.
-    int tag;                            ///< The tag/type of the GameObject.
+    std::string tag;                    ///< The tag/type of the GameObject.
     int layer;                          ///< The layer of the GameObject.
 
 public:
@@ -79,13 +79,13 @@ public:
      * @brief Get the tag of the GameObject.
      * @return The tag of the GameObject.
      */
-    int GetTag() const;
+    std::string GetTag() const;
 
     /**
      * @brief Set the tag of the GameObject.
      * @param tag The new tag of the GameObject.
      */
-    void SetTag(int tag);
+    void SetTag(std::string tag);
 
     /**
      * @brief Get the layer of the GameObject.

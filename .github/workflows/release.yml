@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -16,10 +15,8 @@ jobs:
       - name: Cache vcpkg
         uses: actions/cache@v2
         with:
-          path: vcpkg
-          key: vcpkg-${{ runner.os }}-${{ hashFiles('**/vcpkg.json') }}
-          restore-keys: |
-            vcpkg-${{ runner.os }}-
+          path: vcpkg/installed
+          key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/vcpkg.json') }}
 
       - name: Install CMake
         run: |
@@ -45,27 +42,60 @@ jobs:
         run: | 
           zip -r sdk.zip include
           tar -czf sdk.tar.gz include
+          
+      - name: Generate checksum for sdk.zip
+        run: sha256sum sdk.zip > sdk.zip.sha256
 
-      - name: Upload compiled binaries
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GH_TOKEN }}
-          file: build/DeFunBobEngine
-          asset_name: DeFunBobEngine
-          tag: ${{ github.ref }}
+      - name: Generate checksum for sdk.tar.gz
+        run: sha256sum sdk.tar.gz > sdk.tar.gz.sha256
 
+      - name: Generate checksum for DeFunBobEngine
+        run: cd build && sha256sum libDeFunBobEngine.a > libDeFunBobEngine.sha256 && cd ..
+  
       - name: Upload SDK archive
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GH_TOKEN }}
           file: sdk.zip
-          asset_name: DeFunBobEngine-sdk.zip
+          asset_name: libDeFunBobEngine-sdk.zip
           tag: ${{ github.ref }}
-
+          
       - name: Upload SDK tarball
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GH_TOKEN }}
           file: sdk.tar.gz
-          asset_name: DeFunBobEngine-sdk.tar.gz
+          asset_name: libDeFunBobEngine-sdk.tar.gz
+          tag: ${{ github.ref }}
+            
+      - name: Upload compiled library
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GH_TOKEN }}
+          file: build/libDeFunBobEngine.a
+          asset_name: libDeFunBobEngine.a
+          tag: ${{ github.ref }}
+
+      - name: Upload SDK archive checksum
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GH_TOKEN }}
+          file: sdk.zip.sha256
+          asset_name: libDeFunBobEngine-sdk.zip.sha256
+          tag: ${{ github.ref }}
+
+      - name: Upload SDK tarball checksum
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GH_TOKEN }}
+          file: sdk.tar.gz.sha256
+          asset_name: libDeFunBobEngine-sdk.tar.gz.sha256
+          tag: ${{ github.ref }}
+      
+      - name: Upload library checksum
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GH_TOKEN }}
+          file: build/libDeFunBobEngine.sha256
+          asset_name: libDeFunBobEngine.sha256
           tag: ${{ github.ref }}
