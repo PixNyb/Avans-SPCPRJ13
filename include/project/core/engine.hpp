@@ -74,12 +74,9 @@ class Engine
      */
     static Engine *GetInstance()
     {
-        if (instancePtr == nullptr)
-        {
+        if (!instancePtr) {
             instancePtr = new Engine();
-            return instancePtr;
         }
-
         return instancePtr;
     }
 

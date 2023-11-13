@@ -94,6 +94,7 @@ public:
     void CreateRenderer() {
         if (SdlWindow){
             SdlRenderer = SDL_CreateRenderer(SdlWindow, -1, SDL_RENDERER_ACCELERATED);
+            std::cerr << "Renderer created! " << std::endl;
             if (!SdlRenderer) {
                 std::cerr << "Renderer could not be created! SDL Error: " << SDL_GetError() << std::endl;
             }

@@ -3,6 +3,9 @@
 //
 
 #include "game_loop.hpp"
+#include "graphics_facade.hpp"
+#include "engine.hpp"
+#include <thread>
 
 GameLoop::GameLoop() : running(true) {}
 

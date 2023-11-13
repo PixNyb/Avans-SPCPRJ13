@@ -9,7 +9,7 @@ Engine* Engine::instancePtr = nullptr;
 
 Engine::Engine() {
     container.registerInstance<SceneManager>(std::make_shared<SceneManager>());
-    container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>());
+    container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>(), InstanceScope::Engine);
 }
 
 void Engine::Start()
@@ -18,10 +18,15 @@ void Engine::Start()
     int frameCount = 0;
     TimeUtility time;
     float lastFPSUpdateTime = time.GetTotalTime();
+    auto graphicsFacade = GetLocal<GraphicsFacade>();
 
-    // Initialize GraphicsFacade
-    Get<GraphicsFacade>()->Init();
-
+    if (!graphicsFacade) {
+        std::cerr << "GraphicsFacade instance is null" << std::endl;
+        return;
+    }
+    graphicsFacade->Init();
+    graphicsFacade->CreateWindow("Init window", 800, 600);
+    graphicsFacade->CreateRenderer();
 
     while (isRunning) {
         float deltaTime = time.GetDeltaTime();
@@ -34,6 +39,9 @@ void Engine::Start()
         Get<SceneManager>()->Update(deltaTime);
 
         // Render stuff goes here
+        graphicsFacade->ClearScreen();
+
+        graphicsFacade->PresentScreen();
 
         // End of the frame
 

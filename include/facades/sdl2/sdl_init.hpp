@@ -33,11 +33,7 @@ public:
      * The constructor attempts to initialize SDL. If initialization fails,
      * an error message is displayed to standard error output.
      */
-    SDLInit() {
-        if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-            std::cerr << "SDL could not initialize! SDL_Error: " << SDL_GetError() << "\n";
-        }
-    }
+    SDLInit();
 
     /**
      * @brief Destroys the SDLInit object and cleans up SDL.

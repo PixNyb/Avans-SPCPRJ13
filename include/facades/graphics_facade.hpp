@@ -40,22 +40,17 @@ public:
      *
      * Initializes the GraphicsFacade object with default values.
      */
-    GraphicsFacade() = default;
-    /**
-     * @brief Virtual destructor for GraphicsFacade.
-     *
-     * Ensures proper cleanup of resources when the GraphicsFacade object is destroyed.
-     */
-    virtual ~GraphicsFacade() {}
+    GraphicsFacade();
+
+
+    virtual ~GraphicsFacade();
 
     /**
      * @brief Initializes the graphics system.
      *
      * Sets up the necessary components for graphics operations, including SDL initialization.
      */
-    void Init() override {
-        SdlInit = std::make_unique<SDLInit>();
-    }
+    void Init() override;
 
     /**
     * @brief Polls and processes graphics-related events.
@@ -72,9 +67,7 @@ public:
      * @param width Window width.
      * @param height Window height.
      */
-    void SetupWindow(const char* title, int width, int height) {
-        SdlWindow = std::make_unique<SDLWindow>(title, width, height);
-    }
+    void SetupWindow(const char* title, int width, int height);
 
     /**
      * @brief Creates the graphics window.
@@ -84,48 +77,28 @@ public:
      * @param width Window width.
      * @param height Window height.
      */
-    void CreateWindow(const char* title, int width, int height) override {
-        if (SdlWindow) {
-            SdlWindow->Create(title, width, height);
-        } else {
-            SdlWindow = std::make_unique<SDLWindow>(title, width, height);
-        }
-    }
+    void CreateWindow(const char* title, int width, int height) override;
 
     /**
      * @brief Clears the rendering target.
      *
      * Prepares the screen for new rendering operations by clearing existing content.
      */
-    void ClearScreen() {
-        if (SdlWindow){
-            SdlWindow->ClearScreen();
-        }
-    }
+    void ClearScreen();
 
     /**
      * @brief Creates the rendering context.
      *
      * Initializes the renderer for the graphics window.
      */
-    void CreateRenderer()
-    {
-        if (SdlWindow){
-            SdlWindow->CreateRenderer();
-        }
-    }
+    void CreateRenderer();
 
     /**
     * @brief Presents the rendered content on the screen.
     *
     * Updates the window with rendered graphics, finalizing the current frame.
     */
-    void PresentScreen()
-    {
-        if (SdlWindow){
-            SdlWindow->PresentScreen();
-        }
-    }
+    void PresentScreen();
 
     /**
      * @brief Delays execution for a specified duration.
@@ -133,14 +106,7 @@ public:
      * Introduces a pause in processing, useful for controlling frame rates.
      * @param ms Delay duration in milliseconds.
      */
-    void Delay(unsigned int ms) override {
-        SdlWindow->Delay(ms);
-    }
-
-
-
-
-
+    void Delay(unsigned int ms) override;
 };
 
 
