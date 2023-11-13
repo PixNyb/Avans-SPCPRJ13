@@ -36,7 +36,6 @@
  * in a consistent format.
  */
 class IOFacade {
-private:
 public:
     /**
      * @brief Virtual destructor for IOFacade.
