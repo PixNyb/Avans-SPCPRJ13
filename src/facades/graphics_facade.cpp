@@ -17,11 +17,12 @@ void GraphicsFacade::PollEvents(std::vector<Event>& events) {
     // implement features
 }
 
-void GraphicsFacade::CreateWindow(const char* title, int width, int height) {
+void GraphicsFacade::CreateWindow(const std::string& title, int width, int height) {
+    const char* c_title = title.c_str();
     if (!SdlWindow) {
-        SdlWindow = std::make_unique<SDLWindow>(title, width, height);
+        SdlWindow = std::make_unique<SDLWindow>(c_title, width, height);
     }
-    SdlWindow->Create(title, width, height);
+    SdlWindow->Create(c_title, width, height);
 }
 
 void GraphicsFacade::ClearScreen() {

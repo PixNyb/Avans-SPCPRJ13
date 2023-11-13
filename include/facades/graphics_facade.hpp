@@ -79,7 +79,8 @@ public:
      * @param width Window width.
      * @param height Window height.
      */
-    void CreateWindow(const char* title, int width, int height) override;
+    void CreateWindow(const std::string& title, int width, int height) override;
+
 
     /**
      * @brief Clears the rendering target.
