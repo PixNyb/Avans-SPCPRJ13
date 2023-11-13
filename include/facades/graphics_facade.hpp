@@ -86,21 +86,21 @@ public:
      *
      * Prepares the screen for new rendering operations by clearing existing content.
      */
-    void ClearScreen();
+    void ClearScreen() override;
 
     /**
      * @brief Creates the rendering context.
      *
      * Initializes the renderer for the graphics window.
      */
-    void CreateRenderer();
+    void CreateRenderer() override;
 
     /**
     * @brief Presents the rendered content on the screen.
     *
     * Updates the window with rendered graphics, finalizing the current frame.
     */
-    void PresentScreen();
+    void PresentScreen() override;
 
     /**
      * @brief Delays execution for a specified duration.
