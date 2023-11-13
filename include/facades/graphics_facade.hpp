@@ -87,6 +87,8 @@ public:
     void CreateWindow(const char* title, int width, int height) override {
         if (SdlWindow) {
             SdlWindow->Create(title, width, height);
+        } else {
+            SdlWindow = std::make_unique<SDLWindow>(title, width, height);
         }
     }
 
