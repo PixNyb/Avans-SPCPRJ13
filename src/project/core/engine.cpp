@@ -1,5 +1,7 @@
 #include "engine.hpp"
 #include "scene_manager.hpp"
+#include "io_facade.hpp"
+#include "graphics_facade.hpp"
 #include "time_utility.hpp"
 #include <thread>
 
@@ -7,8 +9,7 @@ Engine* Engine::instancePtr = nullptr;
 
 Engine::Engine() {
     container.registerInstance<SceneManager>(std::make_shared<SceneManager>());
-    // TODO: Change to actual facade
-//    privateContainer.registerInstance<IOFacade>(std::make_shared<mock_io_facade>());
+    container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>());
 }
 
 void Engine::Start()
@@ -17,6 +18,10 @@ void Engine::Start()
     int frameCount = 0;
     TimeUtility time;
     float lastFPSUpdateTime = time.GetTotalTime();
+
+    // Initialize GraphicsFacade
+    Get<GraphicsFacade>()->Init();
+
 
     while (isRunning) {
         float deltaTime = time.GetDeltaTime();
@@ -29,7 +34,6 @@ void Engine::Start()
         Get<SceneManager>()->Update(deltaTime);
 
         // Render stuff goes here
-        // ...
 
         // End of the frame
 
@@ -46,8 +50,7 @@ void Engine::Start()
         float targetMs = 1000.0f / FPS_LIMIT;
         if (targetMs > elapsedMs)
         {
-            // TODO: Place in IOFacade
-            SDL_Delay(static_cast<unsigned int>(targetMs - elapsedMs));
+            Get<GraphicsFacade>()->Delay(static_cast<unsigned int>(targetMs - elapsedMs));
         }
     }
 }

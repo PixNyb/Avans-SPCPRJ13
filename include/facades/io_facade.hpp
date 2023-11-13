@@ -36,7 +36,6 @@
  * in a consistent format.
  */
 class IOFacade {
-    SDLWindow sdlWindow;
 public:
     /**
      * @brief Virtual destructor for IOFacade.
@@ -49,7 +48,7 @@ public:
      * Must be implemented by the concrete subclass to set up the specific input
      * system in use, such as SDL2 or GLFW.
      */
-    virtual void init() = 0;
+    virtual void Init() = 0;
 
     /**
      * @brief Polls for input events and populates the provided event vector.
@@ -58,7 +57,7 @@ public:
      * the input system and translate them into a vector of Event objects.
      * @param events A reference to a vector where the polled events will be stored.
      */
-    virtual void pollEvents(std::vector<Event>& events) = 0;
+    virtual void PollEvents(std::vector<Event>& events) = 0;
 
     /**
     * @brief Creates a window with the specified properties.
@@ -73,17 +72,14 @@ public:
     * @param width The width of the window in pixels.
     * @param height The height of the window in pixels.
     */
-    virtual void createWindow(const char* title, int width, int height) = 0;
+    virtual void CreateWindow(const char* title, int width, int height) = 0;
 
     /**
      * @brief delay execution for a specified number of milliseconds.
      * @param ms The number of milliseconds to delay execution.
      */
-    virtual void delay(unsigned int ms) = 0;
+    virtual void Delay(unsigned int ms)  = 0;
 
-    virtual void destroyWindow() {
-//        sdlWindow.destroy()
-    }
 };
 
 #endif //DEFUNBOBENGINE_IO_FACADE_HPP
