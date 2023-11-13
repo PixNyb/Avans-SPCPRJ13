@@ -1,6 +1,7 @@
 /**
  * @file game_object.hpp
  * @author Roël Couwenberg (contact@roelc.me)
+ * @author Daan Groot (d.groot3@student.avans.nl)
  * @brief This file contains the GameObject class definition.
  * @version 0.1
  * @date 2023-11-08
@@ -159,6 +160,14 @@ public:
     */
     template<class T>
     std::shared_ptr<T> GetComponent() const;
+
+    /**
+    * @brief Get all the components of the specified type. Must be
+    *        a valid subclass of Component.
+    * @return Pointers to Component instance.
+    */
+    template<class T>
+    std::vector<std::shared_ptr<T>> GetComponents() const;
 };
 
 #endif // AVANS_SPCPRJ13_GAMEOBJECT_H

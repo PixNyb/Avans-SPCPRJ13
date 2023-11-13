@@ -17,20 +17,24 @@
 #include <memory>
 #include <map>
 #include "game_object.hpp"
+#include "rigidbody.hpp"
+#include "collider.hpp"
 
 
 class PhysicsFacade {
 private:
-    std::vector<std::shared_ptr<GameObject>> game_objects; ////< the list of gameobjects in the engine
-    std::map<std::shared_ptr<GameObject>, std::unique_ptr<b2Body>> bodies; ///< The map with bodies in the physicsfacade.
+    std::map<std::shared_ptr<GameObject>, b2Body*> bodies; ///< The map with bodies in the physicsfacade.
     std::unique_ptr<b2World> world; ////< The world in which the bodies can move.
-
 public:
-    PhysicsFacade(std::vector<std::shared_ptr<GameObject>> &game_objects);
+    PhysicsFacade();
 
     ~PhysicsFacade();
 
-    void PopulateWorld();
+    void MakeBody(std::shared_ptr<GameObject> game_object);
+
+    void SetFixture(b2Body* body, b2Shape* shape, const std::shared_ptr<RigidBody>& rigidBody, double area);
+
+    void PopulateWorld(std::vector<std::shared_ptr<GameObject>> game_objects);
 
     void Step();
 };

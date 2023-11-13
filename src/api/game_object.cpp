@@ -1,6 +1,7 @@
 /**
  * @file game_object.cpp
  * @author Roël Couwenberg (contact@roelc.me)
+ * @author Daan Groot (d.groot3@student.avans.nl)
  * @brief This file contains the GameObject class implementation.
  * @version 0.1
  * @date 2023-11-08
@@ -44,6 +45,19 @@ std::shared_ptr<T> GameObject::GetComponent() const {
     }
 
     return std::shared_ptr<T>{};
+}
+
+template<class T>
+std::vector<std::shared_ptr<T>> GameObject::GetComponents() const {
+    std::vector<std::shared_ptr<T>> typeComponents;
+
+    for (std::shared_ptr<Component> component: components)
+    {
+        auto componentPtr = std::dynamic_pointer_cast<T>(component);
+        if (componentPtr) typeComponents.push_back(componentPtr);
+    }
+
+    return typeComponents;
 }
 
 void GameObject::SetName(const std::string &name) { this->name = name; }
