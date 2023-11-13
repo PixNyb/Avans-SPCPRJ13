@@ -26,7 +26,6 @@ void SDLWindow::Create(const char *title, int width, int height)
 {
     if (SdlWindow)
     {
-        // If a window already exists, destroy it before creating a new one.
         SDL_DestroyWindow(SdlWindow);
     }
 
@@ -37,9 +36,8 @@ void SDLWindow::Create(const char *title, int width, int height)
         );
 
     if (!SdlWindow)
-    { // Make sure to check the correct variable.
+    {
         SDL_Log("Window could not be created: %s", SDL_GetError());
-        // Handle error accordingly.
     }
 }
 

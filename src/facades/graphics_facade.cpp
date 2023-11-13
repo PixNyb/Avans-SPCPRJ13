@@ -2,7 +2,6 @@
 #include <iostream>
 
 GraphicsFacade::GraphicsFacade() {
-    std::cout << "GraphicsFacade init" << std::endl;
     try {
         SdlInit = std::make_unique<SDLInit>();
     } catch (const std::exception& e) {
@@ -10,13 +9,9 @@ GraphicsFacade::GraphicsFacade() {
     }
 }
 
-GraphicsFacade::~GraphicsFacade() {
-    std::cout << "GraphicsFacade destroyed" << std::endl;
-}
+GraphicsFacade::~GraphicsFacade() {}
 
-void GraphicsFacade::Init() {
-//    SdlInit = std::make_unique<SDLInit
-}
+void GraphicsFacade::Init() {}
 
 void GraphicsFacade::PollEvents(std::vector<Event>& events) {
     // implement features
