@@ -40,6 +40,10 @@ public:
      */
     virtual ~Geometry() {}
 
+    Vector2D GetPosition() const  {
+        return position;
+    }
+
     /**
      * @brief Pure virtual function for drawing the geometric shape.
      *

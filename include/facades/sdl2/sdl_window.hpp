@@ -76,6 +76,12 @@ public:
     SDL_Window* GetSDLWindow() const;
 
     /**
+     * @brief Retrieves the underlying SDL_Render pointer.
+     * @return SDL_Render* A pointer to the managed SDL_Render.
+     */
+    SDL_Renderer* GetRenderer() const;
+
+    /**
      * @brief Delays execution for a specified duration.
      *
      * Introduces a pause in processing, useful for controlling frame rates.

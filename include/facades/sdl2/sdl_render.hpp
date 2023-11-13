@@ -52,6 +52,8 @@ public:
      */
     void Present();
 
+    SDL_Renderer* GetRenderer() const;
+
 };
 
 #endif //DEFUNBOBENGINE_RENDER_HPP

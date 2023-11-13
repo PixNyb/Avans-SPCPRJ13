@@ -22,6 +22,7 @@
 #include "sdl_render.hpp"
 #include "sdl_init.hpp"
 #include <memory>
+#include <SDL.h>
 
 /**
  * @class GraphicsFacade
@@ -110,6 +111,8 @@ public:
      * @param ms Delay duration in milliseconds.
      */
     void Delay(unsigned int ms) override;
+
+    void DrawShape(Circle circle, SDL_Renderer* renderer) override;
 };
 
 

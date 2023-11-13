@@ -25,6 +25,9 @@
 #include <vector>
 #include "event.hpp"
 #include "sdl_window.hpp"
+#include "circle.hpp"
+#include "rectangle.hpp"
+#include <SDL.h>
 
 /**
  * @class IOFacade
@@ -72,7 +75,7 @@ public:
     * @param width The width of the window in pixels.
     * @param height The height of the window in pixels.
     */
-    virtual void CreateWindow(const char* title, int width, int height) = 0;
+    virtual void CreateWindow(const std::string& title, int width, int height) = 0;
 
     /**
      * @brief delay execution for a specified number of milliseconds.
@@ -106,6 +109,12 @@ public:
      * the rendering pipeline for each frame.
      */
     virtual void PresentScreen() = 0;
+
+    virtual void DrawShape(Circle circle, SDL_Renderer* renderer) = 0;
+//
+//    virtual void DrawShape(Rectangle rectangle) = 0;
+//
+//    virtual void DrawShape() = 0;
 
 };
 

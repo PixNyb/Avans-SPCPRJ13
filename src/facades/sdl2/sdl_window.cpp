@@ -68,3 +68,4 @@ void SDLWindow::PresentScreen() {
 }
 
 SDL_Window *SDLWindow::GetSDLWindow() const { return SdlWindow; }
+SDL_Renderer *SDLWindow::GetRenderer() const { return SdlRenderer; }

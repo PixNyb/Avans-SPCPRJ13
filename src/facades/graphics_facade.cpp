@@ -1,4 +1,5 @@
 #include "graphics_facade.hpp"
+#include "sdl_circle.hpp"
 #include <iostream>
 
 GraphicsFacade::GraphicsFacade() {
@@ -47,4 +48,14 @@ void GraphicsFacade::Delay(unsigned int ms) {
     if (SdlWindow) {
         SdlWindow->Delay(ms);
     }
+}
+
+void GraphicsFacade::DrawShape(Circle circle, SDL_Renderer* renderer) {
+    const Vector2D& pos = circle.GetPosition();
+    int x = static_cast<int>(pos.x);
+    int y = static_cast<int>(pos.y);
+    int rad = static_cast<int>(circle.GetRadius());
+
+    SDLCircle sdlCircle(x, y, rad);
+    sdlCircle.draw(renderer);
 }

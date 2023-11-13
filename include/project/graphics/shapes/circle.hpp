@@ -46,8 +46,10 @@ public:
      * to the screen. The actual rendering implementation would depend on the
      * graphics library being used.
      */
-    void Draw() const override {
-        // Rendering logic goes here
+    void Draw() const override {}
+
+    float GetRadius() const {
+        return radius;
     }
 };
 
