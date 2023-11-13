@@ -15,7 +15,7 @@ GraphicsFacade::~GraphicsFacade() {
 }
 
 void GraphicsFacade::Init() {
-    SdlInit = std::make_unique<SDLInit>();
+//    SdlInit = std::make_unique<SDLInit
 }
 
 void GraphicsFacade::PollEvents(std::vector<Event>& events) {

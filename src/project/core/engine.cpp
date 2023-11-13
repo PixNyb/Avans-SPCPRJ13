@@ -18,7 +18,7 @@ void Engine::Start()
     int frameCount = 0;
     TimeUtility time;
     float lastFPSUpdateTime = time.GetTotalTime();
-    auto graphicsFacade = GetLocal<GraphicsFacade>();
+    auto graphicsFacade = GetLocal<IOFacade>();
 
     if (!graphicsFacade) {
         std::cerr << "GraphicsFacade instance is null" << std::endl;
@@ -40,7 +40,6 @@ void Engine::Start()
 
         // Render stuff goes here
         graphicsFacade->ClearScreen();
-
         graphicsFacade->PresentScreen();
 
         // End of the frame
@@ -58,10 +57,11 @@ void Engine::Start()
         float targetMs = 1000.0f / FPS_LIMIT;
         if (targetMs > elapsedMs)
         {
-            Get<GraphicsFacade>()->Delay(static_cast<unsigned int>(targetMs - elapsedMs));
+            graphicsFacade->Delay(static_cast<unsigned int>(targetMs - elapsedMs));
         }
     }
 }
+
 void Engine::Stop() {
     isRunning = false;
 }

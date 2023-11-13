@@ -59,6 +59,8 @@ public:
      */
     virtual void PollEvents(std::vector<Event>& events) = 0;
 
+    virtual void SetupWindow(const char* title, int width, int height) = 0;
+
     /**
     * @brief Creates a window with the specified properties.
     *
@@ -79,6 +81,12 @@ public:
      * @param ms The number of milliseconds to delay execution.
      */
     virtual void Delay(unsigned int ms)  = 0;
+
+    virtual void ClearScreen() = 0;
+
+    virtual void CreateRenderer() = 0;
+
+    virtual void PresentScreen() = 0;
 
 };
 
