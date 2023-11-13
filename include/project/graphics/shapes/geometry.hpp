@@ -45,7 +45,7 @@ public:
      *
      * Implementations of this function should contain the rendering logic specific to the shape.
      */
-    virtual void draw() const = 0;
+    virtual void Draw() const = 0;
 };
 
 #endif //DEFUNBOBENGINE_GEOMETRY_HPP

@@ -49,7 +49,7 @@ public:
      * graphics library being used, and might involve drawing lines between each
      * pair of vertices or using a more complex polygon filling algorithm.
      */
-    void draw() const override {
+    void Draw() const override {
         // Rendering logic goes here
     }
 };

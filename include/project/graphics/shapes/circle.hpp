@@ -46,7 +46,7 @@ public:
      * to the screen. The actual rendering implementation would depend on the
      * graphics library being used.
      */
-    void draw() const override {
+    void Draw() const override {
         // Rendering logic goes here
     }
 };
