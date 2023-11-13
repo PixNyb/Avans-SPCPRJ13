@@ -14,8 +14,14 @@
 #include "circle_collider.hpp"
 #include "box_collider.hpp"
 
-PhysicsFacade::PhysicsFacade() {
-}
+const float TimeStep = 1.0f / 60.0f;
+const int32 VelocityIterations = 12;
+const int32 PositionIterations = 4;
+const int TimeIterations = 60;
+const double PixelScale = 0.5;
+const double GravityScale = 10.0;
+
+PhysicsFacade::PhysicsFacade() = default;
 
 void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> game_object) {
     b2BodyDef bodyDef;
@@ -66,10 +72,36 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> game_
             SetFixture(body, &boxShape, game_object->GetComponent<RigidBody>(), area);
         }
     }
+
+    //// set
 }
 
 void PhysicsFacade::Step() {
+    //// run physics world
+    world->Step(TimeStep, VelocityIterations, PositionIterations);
+    world->DebugDraw();
+    //// update all gameobjects
+    for (auto object_pair = bodies.begin(); object_pair != bodies.end(); ++object_pair) {
+        auto game_object = object_pair->first;
+        auto body = object_pair->second;
+        auto oldTransform =  game_object->GetTransform();
 
+        for (const auto& boxCollider: game_object->GetComponents<BoxCollider>())
+        {
+            oldTransform.position.x += (body->GetPosition().x / PixelScale) - game_object->GetTransform().position.x;
+            oldTransform.position.y += (body->GetPosition().y / PixelScale) - game_object->GetTransform().position.y;
+            oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);
+            game_object->SetTransform(oldTransform);
+        }
+
+        for (const auto& circleCollider: game_object->GetComponents<CircleCollider>())
+        {
+            oldTransform.position.x += (body->GetPosition().x / PixelScale) - game_object->GetTransform().position.x;
+            oldTransform.position.y += (body->GetPosition().y / PixelScale) - game_object->GetTransform().position.y;
+            oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);
+            game_object->SetTransform(oldTransform);
+        }
+    }
 }
 
 void PhysicsFacade::SetFixture(b2Body *body, b2Shape *shape, const std::shared_ptr<RigidBody> &rigidBody, double area) {
@@ -88,4 +120,5 @@ void PhysicsFacade::SetFixture(b2Body *body, b2Shape *shape, const std::shared_p
     body->CreateFixture(&fixtureDef);
 }
 
+PhysicsFacade::~PhysicsFacade() = default;
 

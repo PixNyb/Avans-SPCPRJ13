@@ -25,14 +25,13 @@ class PhysicsFacade {
 private:
     std::map<std::shared_ptr<GameObject>, b2Body*> bodies; ///< The map with bodies in the physicsfacade.
     std::unique_ptr<b2World> world; ////< The world in which the bodies can move.
+    void SetFixture(b2Body* body, b2Shape* shape, const std::shared_ptr<RigidBody>& rigidBody, double area);
 public:
     PhysicsFacade();
 
     ~PhysicsFacade();
 
     void MakeBody(std::shared_ptr<GameObject> game_object);
-
-    void SetFixture(b2Body* body, b2Shape* shape, const std::shared_ptr<RigidBody>& rigidBody, double area);
 
     void PopulateWorld(std::vector<std::shared_ptr<GameObject>> game_objects);
 

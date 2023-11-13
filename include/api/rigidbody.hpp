@@ -28,6 +28,8 @@ public:
      */
     void AddForce(const Point& forceDirection);
 
+    RigidBody(double mass, double gravityScale, BodyType bodyType);
+
     double GetMass();
 
     double GetGravityScale();

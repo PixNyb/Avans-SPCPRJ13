@@ -36,30 +36,6 @@ void GameObject::AddComponent(std::shared_ptr<Component> component)
     components.push_back(component);
 }
 
-template<class T>
-std::shared_ptr<T> GameObject::GetComponent() const {
-    for (std::shared_ptr<Component> component: components)
-    {
-        auto componentPtr = std::dynamic_pointer_cast<T>(component);
-        if (componentPtr) return componentPtr;
-    }
-
-    return std::shared_ptr<T>{};
-}
-
-template<class T>
-std::vector<std::shared_ptr<T>> GameObject::GetComponents() const {
-    std::vector<std::shared_ptr<T>> typeComponents;
-
-    for (std::shared_ptr<Component> component: components)
-    {
-        auto componentPtr = std::dynamic_pointer_cast<T>(component);
-        if (componentPtr) typeComponents.push_back(componentPtr);
-    }
-
-    return typeComponents;
-}
-
 void GameObject::SetName(const std::string &name) { this->name = name; }
 
 std::string GameObject::GetName() const { return name; }

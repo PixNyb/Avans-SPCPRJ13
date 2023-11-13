@@ -16,3 +16,9 @@ BodyType RigidBody::GetBodyType() {
     return bodyType;
 }
 
+RigidBody::RigidBody(double mass, double gravityScale, BodyType bodyType) {
+    this->mass = mass;
+    this->gravityScale = gravityScale;
+    this->bodyType = bodyType;
+}
+

@@ -8,3 +8,13 @@
  * @copyright Copyright (c) 2023
  *
  */
+#include "collider.hpp"
+
+void Collider::Update() {
+    //
+}
+
+void Collider::Condition() {
+    //
+}
+
