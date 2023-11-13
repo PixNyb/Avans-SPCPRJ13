@@ -25,8 +25,6 @@ void Engine::Start()
         return;
     }
     graphicsFacade->Init();
-    graphicsFacade->CreateWindow("Init window", 800, 600);
-    graphicsFacade->CreateRenderer();
 
     while (isRunning) {
         float deltaTime = time.GetDeltaTime();

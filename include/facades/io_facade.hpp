@@ -80,10 +80,31 @@ public:
      */
     virtual void Delay(unsigned int ms)  = 0;
 
+    /**
+     * @brief Clears the rendering target.
+     *
+     * This method should be implemented by derived classes to prepare the screen
+     * for new rendering operations by clearing existing content. It ensures a clean
+     * slate for each frame's rendering process.
+     */
     virtual void ClearScreen() = 0;
 
+    /**
+     * @brief Creates the rendering context.
+     *
+     * Must be implemented by derived classes to initialize the renderer for the
+     * graphics window. This method sets up the necessary context for rendering
+     * graphics in the game engine.
+     */
     virtual void CreateRenderer() = 0;
 
+    /**
+     * @brief Presents the rendered content on the screen.
+     *
+     * Implemented by derived classes, this method updates the window with the
+     * currently rendered graphics, finalizing the frame. It's the last step in
+     * the rendering pipeline for each frame.
+     */
     virtual void PresentScreen() = 0;
 
 };
