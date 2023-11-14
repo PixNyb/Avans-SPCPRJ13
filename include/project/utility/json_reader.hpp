@@ -12,7 +12,7 @@
 #ifndef DEFUNBOBENGINE_JSON_READER_HPP
 #define DEFUNBOBENGINE_JSON_READER_HPP
 
-#include "json/value.h"
+#include "nlohmann/json.hpp"
 
 class JSONReader {
 public:
@@ -23,7 +23,7 @@ public:
      * @param filePath Path to the file that is to be converted.
      * @return A JSON object.
      */
-    Json::Value ConvertFileToJson(const std::string &filePath);
+    nlohmann::json ConvertFileToJson(const std::string &filePath);
 
 };
 

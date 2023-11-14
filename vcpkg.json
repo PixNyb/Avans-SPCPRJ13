@@ -21,7 +21,7 @@
     "name" : "sdl2-ttf",
     "version>=" : "2.20.2"
   }, {
-    "name" : "jsoncpp",
-    "version>=" : "1.9.5#1"
+    "name" : "nlohmann-json",
+    "version>=" : "3.11.2"
   } ]
 }

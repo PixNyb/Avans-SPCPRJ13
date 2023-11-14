@@ -85,6 +85,5 @@ target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2
 find_package(SDL2_net CONFIG REQUIRED)
 target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_net::SDL2_net>,SDL2_net::SDL2_net,SDL2_net::SDL2_net-static>)
 
-# Add jsoncpp
-find_package(jsoncpp CONFIG REQUIRED)
-target_link_libraries(DeFunBobEngine PRIVATE JsonCpp::JsonCpp)
+find_package(nlohmann_json CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE nlohmann_json::nlohmann_json)
