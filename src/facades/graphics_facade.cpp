@@ -1,3 +1,14 @@
+/**
+ * @file graphics_facade.cpp
+ * @author Robin Pijnappels (rm.pijnappels@student.avans.nl)
+ * @brief This file contains the GraphicsFacade class implementation.
+ * @version 0.1
+ * @date 2023-11-08
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "graphics_facade.hpp"
 #include "sdl_circle.hpp"
 #include "sdl_rect.hpp"

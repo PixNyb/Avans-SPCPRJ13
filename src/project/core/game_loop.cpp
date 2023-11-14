@@ -1,6 +1,13 @@
-//
-// Created by Robin Pijnappels on 07/11/2023.
-//
+/**
+ * @file game_loop.cpp
+ * @author Robin Pijnappels (rm.pijnappels@student.avans.nl)
+ * @brief This file contains the GameLoop class implementation.
+ * @version 0.1
+ * @date 2023-11-08
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
 
 #include "game_loop.hpp"
 #include "graphics_facade.hpp"
