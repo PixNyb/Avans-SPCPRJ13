@@ -46,6 +46,17 @@ public:
     SDL_Rect toSDLRect() const {
         return {x, y, width, height};
     }
+
+    /**
+     * @brief Draws the rectangle using SDL rendering functions.
+     *
+     * This method renders the rectangle represented by this SDLRect object on the screen
+     * using the provided SDL_Renderer. The method currently sets the drawing color to white,
+     * but this can be adjusted for color customization.
+     *
+     * @param renderer A pointer to an SDL_Renderer to draw the rectangle.
+     */
+    void Draw(SDL_Renderer* renderer) const;
 };
 
 #endif //DEFUNBOBENGINE_SDL_RECT_HPP

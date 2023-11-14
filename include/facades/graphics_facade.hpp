@@ -22,6 +22,7 @@
 #include "sdl_render.hpp"
 #include "sdl_init.hpp"
 #include <memory>
+#include <SDL.h>
 
 /**
  * @class GraphicsFacade
@@ -35,27 +36,34 @@ private:
     std::unique_ptr<SDLWindow> SdlWindow; /**< Unique pointer to SDLWindow for managing the graphics window. */
     std::unique_ptr<SDLInit> SdlInit; /**< Unique pointer to SDLInit for SDL initialization. */
 public:
+
     /**
-     * @brief Default constructor for GraphicsFacade.
+     * @brief Constructs a new GraphicsFacade object.
      *
-     * Initializes the GraphicsFacade object with default values.
+     * This constructor initializes the GraphicsFacade object, setting up the necessary
+     * components for managing graphics operations in the DefunBobEngine. It prepares the
+     * class for subsequent initialization of the SDL graphics subsystem and window management.
+     * The actual initialization of SDL and window creation is deferred until the Init and
+     * CreateWindow methods are called.
      */
-    GraphicsFacade() = default;
+    GraphicsFacade();
+
     /**
-     * @brief Virtual destructor for GraphicsFacade.
+     * @brief Destroys the GraphicsFacade object.
      *
-     * Ensures proper cleanup of resources when the GraphicsFacade object is destroyed.
+     * This destructor ensures the proper deallocation and cleanup of resources used by
+     * the GraphicsFacade. It handles the release of the SDL-related resources and other
+     * graphics components managed by this class. Ensuring that all resources are correctly
+     * released is critical for preventing memory leaks and other resource management issues.
      */
-    virtual ~GraphicsFacade() {}
+    virtual ~GraphicsFacade();
 
     /**
      * @brief Initializes the graphics system.
      *
      * Sets up the necessary components for graphics operations, including SDL initialization.
      */
-    void Init() override {
-        SdlInit = std::make_unique<SDLInit>();
-    }
+    void Init() override;
 
     /**
     * @brief Polls and processes graphics-related events.
@@ -65,18 +73,6 @@ public:
     void PollEvents(std::vector<Event>& events) override;
 
     /**
-     * @brief Sets up the graphics window.
-     *
-     * Configures the window properties but does not create it immediately.
-     * @param title Window title.
-     * @param width Window width.
-     * @param height Window height.
-     */
-    void SetupWindow(const char* title, int width, int height) {
-        SdlWindow = std::make_unique<SDLWindow>(title, width, height);
-    }
-
-    /**
      * @brief Creates the graphics window.
      *
      * Initializes and displays the window based on previously set properties.
@@ -84,48 +80,29 @@ public:
      * @param width Window width.
      * @param height Window height.
      */
-    void CreateWindow(const char* title, int width, int height) override {
-        if (SdlWindow) {
-            SdlWindow->Create(title, width, height);
-        } else {
-            SdlWindow = std::make_unique<SDLWindow>(title, width, height);
-        }
-    }
+    void CreateWindow(const std::string& title, int width, int height) override;
+
 
     /**
      * @brief Clears the rendering target.
      *
      * Prepares the screen for new rendering operations by clearing existing content.
      */
-    void ClearScreen() {
-        if (SdlWindow){
-            SdlWindow->ClearScreen();
-        }
-    }
+    void ClearScreen() override;
 
     /**
      * @brief Creates the rendering context.
      *
      * Initializes the renderer for the graphics window.
      */
-    void CreateRenderer()
-    {
-        if (SdlWindow){
-            SdlWindow->CreateRenderer();
-        }
-    }
+    void CreateRenderer() override;
 
     /**
     * @brief Presents the rendered content on the screen.
     *
     * Updates the window with rendered graphics, finalizing the current frame.
     */
-    void PresentScreen()
-    {
-        if (SdlWindow){
-            SdlWindow->PresentScreen();
-        }
-    }
+    void PresentScreen() override;
 
     /**
      * @brief Delays execution for a specified duration.
@@ -133,14 +110,32 @@ public:
      * Introduces a pause in processing, useful for controlling frame rates.
      * @param ms Delay duration in milliseconds.
      */
-    void Delay(unsigned int ms) override {
-        SdlWindow->Delay(ms);
-    }
+    void Delay(unsigned int ms) override;
 
+    /**
+     * @brief Draws a circle on the screen.
+     *
+     * @param circle A Circle object containing properties like position, radius, and color.
+     * @param renderer A pointer to an SDL_Renderer to draw the circle.
+     */
+    void DrawShape(Circle circle, SDL_Renderer* renderer) override;
 
+    /**
+     * @brief Draws a rectangle on the screen.
+     *
+     * @param rectangle A Rectangle object containing properties like position, dimensions, and color.
+     * @param renderer A pointer to an SDL_Renderer to draw the rectangle.
+     */
+    void DrawShape(Rectangle rectangle, SDL_Renderer* renderer) override;
 
-
-
+    /**
+     * @brief Draws a Triangle shape on the rendering target.
+     *
+     *
+     * @param triangle A Triangle object containing the vertices and other properties of the shape.
+     * @param renderer A pointer to an SDL_Renderer to draw the triangle.
+     */
+    void DrawShape(Triangle triangle, SDL_Renderer* renderer) override;
 };
 
 

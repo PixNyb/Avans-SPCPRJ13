@@ -39,8 +39,6 @@ public:
     * @brief Draws the circle on the given SDL_Renderer.
     * @param renderer The renderer on which to draw the circle.
     */
-    void draw(SDL_Renderer* renderer) const {
-        filledCircleRGBA(renderer, x, y, radius, 255, 255, 255, 255); // TODO: add color
-    }
+    void Draw(SDL_Renderer* renderer) const;
 };
 #endif //DEFUNBOBENGINE_SDL_CIRCLE_HPP
