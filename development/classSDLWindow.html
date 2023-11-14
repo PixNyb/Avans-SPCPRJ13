@@ -116,6 +116,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4ec4d7d979c3b0ae88055a171ca2e3e2"><td class="memItemLeft" align="right" valign="top">SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDLWindow.html#a4ec4d7d979c3b0ae88055a171ca2e3e2">GetSDLWindow</a> () const</td></tr>
 <tr class="memdesc:a4ec4d7d979c3b0ae88055a171ca2e3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the underlying SDL_Window pointer.  <a href="classSDLWindow.html#a4ec4d7d979c3b0ae88055a171ca2e3e2">More...</a><br /></td></tr>
 <tr class="separator:a4ec4d7d979c3b0ae88055a171ca2e3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5101f020bea412f2b12fa23ae2d07cc"><td class="memItemLeft" align="right" valign="top">SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDLWindow.html#ad5101f020bea412f2b12fa23ae2d07cc">GetRenderer</a> () const</td></tr>
+<tr class="memdesc:ad5101f020bea412f2b12fa23ae2d07cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the underlying SDL_Render pointer.  <a href="classSDLWindow.html#ad5101f020bea412f2b12fa23ae2d07cc">More...</a><br /></td></tr>
+<tr class="separator:ad5101f020bea412f2b12fa23ae2d07cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7304afc64c7661e8e58996076ec23a08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDLWindow.html#a7304afc64c7661e8e58996076ec23a08">Delay</a> (unsigned int ms)</td></tr>
 <tr class="memdesc:a7304afc64c7661e8e58996076ec23a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delays execution for a specified duration.  <a href="classSDLWindow.html#a7304afc64c7661e8e58996076ec23a08">More...</a><br /></td></tr>
 <tr class="separator:a7304afc64c7661e8e58996076ec23a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,9 +186,6 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void SDLWindow::ClearScreen </td>
@@ -194,11 +194,6 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Clears the rendering target. </p>
@@ -255,9 +250,6 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void SDLWindow::CreateRenderer </td>
@@ -266,11 +258,6 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Creates an SDL_Renderer associated with the window. </p>
@@ -332,6 +319,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad5101f020bea412f2b12fa23ae2d07cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5101f020bea412f2b12fa23ae2d07cc">&#9670;&nbsp;</a></span>GetRenderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Renderer * SDLWindow::GetRenderer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the underlying SDL_Render pointer. </p>
+<dl class="section return"><dt>Returns</dt><dd>SDL_Render* A pointer to the managed SDL_Render. </dd></dl>
+
+</div>
+</div>
 <a id="a4ec4d7d979c3b0ae88055a171ca2e3e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ec4d7d979c3b0ae88055a171ca2e3e2">&#9670;&nbsp;</a></span>GetSDLWindow()</h2>
 
@@ -357,9 +364,6 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void SDLWindow::PresentScreen </td>
@@ -368,11 +372,6 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Presents the rendered content on the screen. </p>

@@ -1,4 +1,7 @@
 <map id="include/facades/sdl2/sdl_init.hpp" name="include/facades/sdl2/sdl_init.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="19,5,174,47"/>
-<area shape="rect" id="node2" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="5,95,188,136"/>
+<area shape="rect" id="node1" title=" " alt="" coords="191,5,345,47"/>
+<area shape="rect" id="node2" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="82,95,265,136"/>
+<area shape="rect" id="node5" href="$sdl__init_8cpp.html" title="This file contains the SDLInit class implementation." alt="" coords="289,95,439,136"/>
+<area shape="rect" id="node3" href="$graphics__facade_8cpp.html" title="This file contains the GraphicsFacade class implementation." alt="" coords="5,184,160,225"/>
+<area shape="rect" id="node4" href="$game__loop_8cpp.html" title="This file contains the GameLoop class implementation." alt="" coords="184,184,347,225"/>
 </map>

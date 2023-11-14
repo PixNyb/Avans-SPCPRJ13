@@ -103,14 +103,14 @@ $(document).ready(function(){initNavTree('circle_8hpp_source.html',''); initResi
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classCircle.html#ab8d56b80e421550e708481e1270c5a7f">   39</a></span>&#160;    <a class="code" href="classCircle.html#ab8d56b80e421550e708481e1270c5a7f">Circle</a>(<span class="keyword">const</span> <a class="code" href="classVector2D.html">Vector2D</a>&amp; pos, <span class="keywordtype">float</span> r)</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            : <a class="code" href="classGeometry.html">Geometry</a>(pos), radius(r) {}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classCircle.html#a1761e05fd2be436df2414eba613b473d">   49</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCircle.html#a1761e05fd2be436df2414eba613b473d">draw</a>()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">// Rendering logic goes here</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_CIRCLE_HPP</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">float</span> GetRadius()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> radius;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_CIRCLE_HPP</span></div>
 <div class="ttc" id="aclassCircle_html"><div class="ttname"><a href="classCircle.html">Circle</a></div><div class="ttdoc">Represents a circle and extends the Geometry class.</div><div class="ttdef"><b>Definition:</b> circle.hpp:28</div></div>
-<div class="ttc" id="aclassCircle_html_a1761e05fd2be436df2414eba613b473d"><div class="ttname"><a href="classCircle.html#a1761e05fd2be436df2414eba613b473d">Circle::draw</a></div><div class="ttdeci">void draw() const override</div><div class="ttdoc">Draws the circle using the rendering system.</div><div class="ttdef"><b>Definition:</b> circle.hpp:49</div></div>
 <div class="ttc" id="aclassCircle_html_ab8d56b80e421550e708481e1270c5a7f"><div class="ttname"><a href="classCircle.html#ab8d56b80e421550e708481e1270c5a7f">Circle::Circle</a></div><div class="ttdeci">Circle(const Vector2D &amp;pos, float r)</div><div class="ttdoc">Constructs a new Circle object.</div><div class="ttdef"><b>Definition:</b> circle.hpp:39</div></div>
 <div class="ttc" id="aclassGeometry_html"><div class="ttname"><a href="classGeometry.html">Geometry</a></div><div class="ttdoc">Abstract base class for geometric shapes.</div><div class="ttdef"><b>Definition:</b> geometry.hpp:27</div></div>
 <div class="ttc" id="aclassVector2D_html"><div class="ttname"><a href="classVector2D.html">Vector2D</a></div><div class="ttdoc">Represents a two-dimensional vector.</div><div class="ttdef"><b>Definition:</b> vector2d.hpp:25</div></div>

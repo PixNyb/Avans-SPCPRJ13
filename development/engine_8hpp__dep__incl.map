@@ -1,0 +1,4 @@
+<map id="include/project/core/engine.hpp" name="include/project/core/engine.hpp">
+<area shape="rect" id="node1" title="Engine is the core of the engine. It is responsible for managing the game loop and managing the DICon..." alt="" coords="11,5,162,47"/>
+<area shape="rect" id="node2" href="$game__loop_8cpp.html" title="This file contains the GameLoop class implementation." alt="" coords="5,95,168,136"/>
+</map>

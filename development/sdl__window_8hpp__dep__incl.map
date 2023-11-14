@@ -1,8 +1,10 @@
 <map id="include/facades/sdl2/sdl_window.hpp" name="include/facades/sdl2/sdl_window.hpp">
-<area shape="rect" id="node1" title="This file contains the SDLWindow class definition for managing an SDL_Window." alt="" coords="297,5,451,47"/>
-<area shape="rect" id="node2" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="220,95,360,136"/>
-<area shape="rect" id="node6" href="$sdl__window_8cpp.html" title="Implementation of the Window class that wraps SDL2 window functionalities." alt="" coords="384,95,535,136"/>
-<area shape="rect" id="node3" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="5,184,188,225"/>
-<area shape="rect" id="node4" href="$sdl2__input__handler_8hpp_source.html" title=" " alt="" coords="213,184,367,225"/>
-<area shape="rect" id="node5" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="392,184,569,225"/>
+<area shape="rect" id="node1" title="This file contains the SDLWindow class definition for managing an SDL_Window." alt="" coords="373,5,528,47"/>
+<area shape="rect" id="node2" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="297,95,437,136"/>
+<area shape="rect" id="node8" href="$sdl__window_8cpp.html" title="Implementation of the Window class that wraps SDL2 window functionalities." alt="" coords="461,95,611,136"/>
+<area shape="rect" id="node3" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="82,184,265,225"/>
+<area shape="rect" id="node6" href="$sdl2__input__handler_8hpp_source.html" title=" " alt="" coords="289,184,444,225"/>
+<area shape="rect" id="node7" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="469,184,646,225"/>
+<area shape="rect" id="node4" href="$graphics__facade_8cpp.html" title="This file contains the GraphicsFacade class implementation." alt="" coords="5,273,160,315"/>
+<area shape="rect" id="node5" href="$game__loop_8cpp.html" title="This file contains the GameLoop class implementation." alt="" coords="184,273,347,315"/>
 </map>

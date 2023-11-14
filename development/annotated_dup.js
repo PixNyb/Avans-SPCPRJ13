@@ -47,6 +47,7 @@ var annotated_dup =
     [ "Timer", "classTimer.html", "classTimer" ],
     [ "TimeUtility", "classTimeUtility.html", "classTimeUtility" ],
     [ "Transform", "structTransform.html", "structTransform" ],
+    [ "Triangle", "classTriangle.html", "classTriangle" ],
     [ "UIObject", "classUIObject.html", "classUIObject" ],
     [ "Vector2D", "classVector2D.html", "classVector2D" ],
     [ "Window", "classWindow.html", "classWindow" ]

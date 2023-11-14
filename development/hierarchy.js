@@ -55,6 +55,7 @@ var hierarchy =
     [ "Timer", "classTimer.html", null ],
     [ "TimeUtility", "classTimeUtility.html", null ],
     [ "Transform", "structTransform.html", null ],
+    [ "Triangle", "classTriangle.html", null ],
     [ "Vector2D", "classVector2D.html", null ],
     [ "Window", "classWindow.html", null ]
 ];

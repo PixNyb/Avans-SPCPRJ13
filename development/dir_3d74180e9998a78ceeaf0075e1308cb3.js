@@ -12,6 +12,9 @@ var dir_3d74180e9998a78ceeaf0075e1308cb3 =
     [ "rectangle.hpp", "rectangle_8hpp.html", [
       [ "Rectangle", "classRectangle.html", "classRectangle" ]
     ] ],
+    [ "triangle.hpp", "triangle_8hpp.html", [
+      [ "Triangle", "classTriangle.html", "classTriangle" ]
+    ] ],
     [ "vector2d.hpp", "vector2d_8hpp.html", [
       [ "Vector2D", "classVector2D.html", "classVector2D" ]
     ] ]
