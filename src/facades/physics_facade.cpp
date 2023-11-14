@@ -13,6 +13,8 @@
 #include "rigidbody.hpp"
 #include "circle_collider.hpp"
 #include "box_collider.hpp"
+#include <SDL.h>
+#include "debug_renderer.hpp"
 
 const float TimeStep = 1.0f / 60.0f;
 const int32 VelocityIterations = 12;
@@ -120,9 +122,10 @@ void PhysicsFacade::SetFixture(b2Body *body, b2Shape *shape, const std::shared_p
     body->CreateFixture(&fixtureDef);
 }
 
-PhysicsFacade::~PhysicsFacade() = default;
-
-void ShowDebug() {
-
+void PhysicsFacade::ShowDebug() {
+    DebugRenderer dr;
+    dr.Run(std::move(world));
 }
+
+PhysicsFacade::~PhysicsFacade() = default;
 

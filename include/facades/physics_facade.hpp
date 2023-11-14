@@ -36,6 +36,8 @@ public:
     void PopulateWorld(std::vector<std::shared_ptr<GameObject>> game_objects);
 
     void Step();
+
+    void ShowDebug();
 };
 
 

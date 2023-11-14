@@ -31,9 +31,11 @@ int main(int argc, char *argv[])
     objects.push_back(obj);
     PhysicsFacade pf;
     pf.PopulateWorld(objects);
-    while (true) {
-        pf.Step();
-    }
+    pf.ShowDebug();
+
+//    while (true) {
+//        pf.Step();
+//    }
     std::cout << "Sandbox" << std::endl;
     //    auto engine = Engine::getInstance();
 
