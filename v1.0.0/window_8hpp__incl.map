@@ -1,0 +1,16 @@
+<map id="include/project/graphics/window.hpp" name="include/project/graphics/window.hpp">
+<area shape="rect" id="node1" title="This file contains the Window class definition." alt="" coords="373,5,550,47"/>
+<area shape="rect" id="node2" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="405,95,518,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="101,169,163,196"/>
+<area shape="rect" id="node4" href="$event_8hpp.html" title="This file contains the Event class definition." alt="" coords="187,169,274,196"/>
+<area shape="rect" id="node6" href="$sdl__window_8hpp.html" title="This file contains the SDLWindow class definition for managing an SDL_Window." alt="" coords="299,169,424,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="232,319,291,345"/>
+<area shape="rect" id="node10" href="$circle_8hpp.html" title="This file contains the Circle class definition." alt="" coords="499,169,584,196"/>
+<area shape="rect" id="node13" href="$rectangle_8hpp.html" title="This file contains the Rectangle class definition." alt="" coords="609,169,719,196"/>
+<area shape="rect" id="node14" href="$triangle_8hpp.html" title="Defines the Triangle class for geometric calculations." alt="" coords="743,169,843,196"/>
+<area shape="rect" id="node5" href="$event__type_8hpp.html" title="This file contains the EventType enum." alt="" coords="5,244,128,271"/>
+<area shape="rect" id="node8" href="$sdl__render_8hpp.html" title="This file contains the SDLRender class definition." alt="" coords="203,244,320,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="344,244,424,271"/>
+<area shape="rect" id="node11" href="$geometry_8hpp.html" title="This file contains the Geometry class definition." alt="" coords="618,244,729,271"/>
+<area shape="rect" id="node12" href="$vector2d_8hpp.html" title="This file contains the Vector2D class definition." alt="" coords="675,319,781,345"/>
+</map>

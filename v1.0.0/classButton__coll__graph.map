@@ -1,0 +1,7 @@
+<map id="Button" name="Button">
+<area shape="rect" id="node1" title="Instances of this class are clickable user interface items." alt="" coords="24,336,89,363"/>
+<area shape="rect" id="node2" href="$classUIObject.html" title=" " alt="" coords="17,260,96,287"/>
+<area shape="rect" id="node3" href="$classGameObject.html" title="The GameObject class represents an object in the game world." alt="" coords="5,184,108,211"/>
+<area shape="rect" id="node4" href="$structTransform.html" title="Instances of this class represent specific 2D transformations." alt="" coords="13,95,100,121"/>
+<area shape="rect" id="node5" href="$structPoint.html" title="Struct representing both a 2D point and a 2D vector." alt="" coords="29,5,84,32"/>
+</map>

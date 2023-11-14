@@ -1,0 +1,5 @@
+<map id="GameObject" name="GameObject">
+<area shape="rect" id="node1" title="The GameObject class represents an object in the game world." alt="" coords="5,184,108,211"/>
+<area shape="rect" id="node2" href="$structTransform.html" title="Instances of this class represent specific 2D transformations." alt="" coords="13,95,100,121"/>
+<area shape="rect" id="node3" href="$structPoint.html" title="Struct representing both a 2D point and a 2D vector." alt="" coords="29,5,84,32"/>
+</map>

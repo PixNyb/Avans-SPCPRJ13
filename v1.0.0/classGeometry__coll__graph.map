@@ -1,0 +1,4 @@
+<map id="Geometry" name="Geometry">
+<area shape="rect" id="node1" title="Abstract base class for geometric shapes." alt="" coords="5,95,92,121"/>
+<area shape="rect" id="node2" href="$classVector2D.html" title="Represents a two&#45;dimensional vector." alt="" coords="8,5,89,32"/>
+</map>

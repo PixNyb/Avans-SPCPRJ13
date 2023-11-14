@@ -1,0 +1,4 @@
+<map id="Collider" name="Collider">
+<area shape="rect" id="node1" title="The base class for all colliders." alt="" coords="18,80,90,107"/>
+<area shape="rect" id="node2" href="$classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="5,5,103,32"/>
+</map>

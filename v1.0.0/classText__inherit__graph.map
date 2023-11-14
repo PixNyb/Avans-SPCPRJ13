@@ -1,0 +1,5 @@
+<map id="Text" name="Text">
+<area shape="rect" id="node1" title="Class representing a piece of text which can be rendered." alt="" coords="32,155,81,181"/>
+<area shape="rect" id="node2" href="$classUIObject.html" title=" " alt="" coords="17,80,96,107"/>
+<area shape="rect" id="node3" href="$classGameObject.html" title="The GameObject class represents an object in the game world." alt="" coords="5,5,108,32"/>
+</map>
