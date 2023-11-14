@@ -9,6 +9,7 @@
  */
 
 #include "prefab_manager.hpp"
+#include "format"
 
 PrefabManager::PrefabManager() : prefabs()
 {}
@@ -22,12 +23,10 @@ GameObject PrefabManager::GetPrefab(std::string tag)
 {
     auto it = prefabs.find(tag);
 
-    // TODO: Throw and exception.
     if (it == prefabs.end())
-        return GameObject();
+        throw std::exception(std::format("No prefab was found matching the tag: {0}", tag).c_str());
 
-    // TODO: Add copy functionality.
-    return GameObject();
+    return GameObject(it->second);
 }
 
 bool PrefabManager::HasPrefab(std::string tag) const

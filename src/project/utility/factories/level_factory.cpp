@@ -4,6 +4,9 @@
 
 #include "level_factory.hpp"
 
+LevelFactory::LevelFactory(std::shared_ptr<PrefabManager> &PrefabManager) : prefabManager(PrefabManager)
+{}
+
 Scene LevelFactory::CreateScene(nlohmann::json sceneJson) const
 {
     auto scene = Scene();
