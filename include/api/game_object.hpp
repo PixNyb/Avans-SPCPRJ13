@@ -58,6 +58,14 @@ class GameObject
      */
     GameObject(const std::string &name, const Transform &transform);
 
+    GameObject(const GameObject& other);
+
+    GameObject &operator=(const GameObject &other);
+
+    GameObject(GameObject &&other) noexcept = delete;
+
+    GameObject& operator=(GameObject &&other) noexcept = delete;
+
     /**
      * @brief Destructor for GameObject.
      */
