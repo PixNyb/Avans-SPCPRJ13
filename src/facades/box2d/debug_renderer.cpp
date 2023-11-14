@@ -10,7 +10,7 @@
 
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
-const float TIME_STEP = 1.0f / 60.0f;
+const float TIME_STEP = 1.0f / 240.0f;
 const int VELOCITY_ITERATIONS = 6;
 const int POSITION_ITERATIONS = 2;
 
@@ -34,6 +34,9 @@ void DebugRenderer::CloseSDL() {
 void DebugRenderer::RenderBox(b2Body* body) {
     b2Vec2 position = body->GetPosition();
     float angle = body->GetAngle();
+
+    float width;
+    float height;
 
     SDL_Rect boxRect;
     boxRect.x = static_cast<int>(position.x) - 25;
@@ -63,21 +66,21 @@ void DebugRenderer::Run(std::unique_ptr<b2World> bWorld) {
 
     world = bWorld.get();
 
-    b2BodyDef boxBodyDef;
-    boxBodyDef.type = b2_dynamicBody;
-    boxBodyDef.position.Set(SCREEN_WIDTH / 2, 0);
-
-    b2Body* boxBody = world->CreateBody(&boxBodyDef);
-
-    b2PolygonShape dynamicBox;
-    dynamicBox.SetAsBox(25.0f, 25.0f);
-
-    b2FixtureDef fixtureDef;
-    fixtureDef.shape = &dynamicBox;
-    fixtureDef.density = 1.0f;
-    fixtureDef.friction = 0.3f;
-
-    boxBody->CreateFixture(&fixtureDef);
+//    b2BodyDef boxBodyDef;
+//    boxBodyDef.type = b2_dynamicBody;
+//    boxBodyDef.position.Set(SCREEN_WIDTH / 2, 0);
+//
+//    b2Body* boxBody = world->CreateBody(&boxBodyDef);
+//
+//    b2PolygonShape dynamicBox;
+//    dynamicBox.SetAsBox(25.0f, 25.0f);
+//
+//    b2FixtureDef fixtureDef;
+//    fixtureDef.shape = &dynamicBox;
+//    fixtureDef.density = 1.0f;
+//    fixtureDef.friction = 0.3f;
+//
+//    boxBody->CreateFixture(&fixtureDef);
 
     bool quit = false;
     SDL_Event e;

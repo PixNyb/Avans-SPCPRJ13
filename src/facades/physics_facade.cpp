@@ -45,7 +45,7 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> game_object) {
 void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> game_objects) {
     //// PhysicsFacade receives a list of gameobjects that contain a rigidbody
     //// create the world where the bodies will be placed
-    b2Vec2 gravity(0, -9.8);
+    b2Vec2 gravity(0.0f, -9.8f);
     world = std::make_unique<b2World>(gravity);
 
     //// create a b2body for every gameobject
