@@ -19,17 +19,21 @@ int main(int argc, char *argv[])
 {
     std::vector<std::shared_ptr<GameObject>> objects;
     auto obj = std::make_shared<GameObject>();
-    Point point{0, 0};
-    Transform trs{point, 0, 1};
-    obj->SetTransform(trs);
+    Point point{10, 10};
+    Transform trs{point, 20, 1};
     auto body = std::make_shared<RigidBody>(10, 1, BodyType::dynamicBody);
     auto collider = std::make_shared<BoxCollider>();
     collider->Width(20);
     collider->Height(20);
+    obj->AddComponent(body);
+    obj->AddComponent(collider);
+    obj->SetTransform(trs);
     objects.push_back(obj);
-    auto comp = obj->GetComponent<Collider>();
     PhysicsFacade pf;
     pf.PopulateWorld(objects);
+    while (true) {
+        pf.Step();
+    }
     std::cout << "Sandbox" << std::endl;
     //    auto engine = Engine::getInstance();
 

@@ -33,9 +33,9 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> game_object) {
     if (rigidbody->GetBodyType() == BodyType::kinematicBody)
         bodyDef.type = b2_kinematicBody;
     bodyDef.allowSleep = true;
-    auto transform = (*game_object).GetComponent<Transform>();
-    bodyDef.position.Set(static_cast<float>(transform->position.x), static_cast<float>(transform->position.y));
-    bodyDef.angle = static_cast<float>(transform->rotation);
+    auto transform = (*game_object).GetTransform();
+    bodyDef.position.Set(static_cast<float>(transform.position.x), static_cast<float>(transform.position.y));
+    bodyDef.angle = static_cast<float>(transform.rotation);
     auto body = world->CreateBody(&bodyDef);
     bodies.insert(std::pair<std::shared_ptr<GameObject>, b2Body *>(game_object, body));
 }
@@ -121,4 +121,8 @@ void PhysicsFacade::SetFixture(b2Body *body, b2Shape *shape, const std::shared_p
 }
 
 PhysicsFacade::~PhysicsFacade() = default;
+
+void ShowDebug() {
+
+}
 
