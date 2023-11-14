@@ -1,6 +1,13 @@
-//
-// Created by maxro on 14/11/2023.
-//
+/**
+ * @file prefab_manager.cpp
+ * @author Max Groenendaal
+ * @brief Implementation of the prefab manager.
+ * @version 0.1
+ * @date 14/11/2023
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
 
 #include "prefab_manager.hpp"
 
