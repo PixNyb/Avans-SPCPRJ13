@@ -6,7 +6,6 @@
  * @date 14/11/2023
  *
  * @copyright Copyright (c) 2023
- *
  */
 
 #include "prefab_manager.hpp"
