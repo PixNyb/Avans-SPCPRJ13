@@ -59,7 +59,7 @@ void GraphicsFacade::DrawShape(Circle circle, SDL_Renderer* renderer) {
     int rad = static_cast<int>(circle.GetRadius());
 
     SDLCircle sdlCircle(x, y, rad);
-    sdlCircle.draw(renderer);
+    sdlCircle.Draw(renderer);
 }
 
 void GraphicsFacade::DrawShape(Rectangle rectangle, SDL_Renderer* renderer){

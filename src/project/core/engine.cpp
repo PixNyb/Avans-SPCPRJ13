@@ -79,6 +79,13 @@ void Engine::SetFPSLimit(float fps) {
     FPS_LIMIT = fps;
 }
 
+Engine *Engine::GetInstance() {
+    if (!instancePtr) {
+        instancePtr = new Engine();
+    }
+    return instancePtr;
+}
+
 template <typename T> std::shared_ptr<T> Engine::GetLocal()
 {
     return container.resolve<T>(InstanceScope::Engine);
@@ -87,3 +94,4 @@ template <typename T> std::shared_ptr<T> Engine::GetLocal()
 template <typename T> std::shared_ptr<T> Engine::Get() {
     return container.resolve<T>();
 }
+

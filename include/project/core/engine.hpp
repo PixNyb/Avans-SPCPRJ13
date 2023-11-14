@@ -72,13 +72,7 @@ class Engine
      * @brief Gets the instance of the engine
      * @return Engine*
      */
-    static Engine *GetInstance()
-    {
-        if (!instancePtr) {
-            instancePtr = new Engine();
-        }
-        return instancePtr;
-    }
+    static Engine *GetInstance();
 
     /**
      * @brief Starts the game loop

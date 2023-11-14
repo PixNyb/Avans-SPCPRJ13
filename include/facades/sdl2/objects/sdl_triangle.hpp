@@ -54,9 +54,7 @@ public:
      * @brief Renders the triangle on the provided SDL_Renderer.
      * @param renderer The SDL_Renderer to draw the triangle on.
      */
-    void Draw(SDL_Renderer* renderer) const {
-        filledPolygonRGBA(renderer, vx, vy, 3, 255, 255, 255, 255); // TODO: add color
-    }
+    void Draw(SDL_Renderer* renderer) const;
 
 };
 

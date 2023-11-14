@@ -56,15 +56,7 @@ public:
      *
      * @param renderer A pointer to an SDL_Renderer to draw the rectangle.
      */
-    void Draw(SDL_Renderer* renderer) const {
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // TODO: Add color customization
-
-        // Convert SDLRect to SDL_Rect
-        SDL_Rect sdlRect = toSDLRect();
-
-        // Draw the rectangle (filled)
-        SDL_RenderFillRect(renderer, &sdlRect);
-    }
+    void Draw(SDL_Renderer* renderer) const;
 };
 
 #endif //DEFUNBOBENGINE_SDL_RECT_HPP
