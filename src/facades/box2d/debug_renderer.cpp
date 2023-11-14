@@ -13,11 +13,14 @@ const int SCREEN_HEIGHT = 600;
 const float TIME_STEP = 1.0f / 240.0f;
 const int VELOCITY_ITERATIONS = 6;
 const int POSITION_ITERATIONS = 2;
+const double PixelScale = 0.5;
 
 b2World* world;
 
 SDL_Window* window;
 SDL_Renderer* renderer;
+
+
 
 void DebugRenderer::InitSDL() {
     SDL_Init(SDL_INIT_VIDEO);
@@ -35,19 +38,20 @@ void DebugRenderer::RenderBox(b2Body* body) {
     b2Vec2 position = body->GetPosition();
     float angle = body->GetAngle();
 
-    float width;
-    float height;
+    int sdlX = static_cast<int>(position.x * PixelScale);
+    int sdlY = SCREEN_HEIGHT - static_cast<int>(position.y * PixelScale);
 
     SDL_Rect boxRect;
-    boxRect.x = static_cast<int>(position.x) - 25;
-    boxRect.y = static_cast<int>(position.y) - 25;
+    boxRect.x = sdlX;
+    boxRect.y = sdlY;
     boxRect.w = 50;
     boxRect.h = 50;
 
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
     SDL_RenderDrawRect(renderer, &boxRect);
-    SDL_RenderDrawLine(renderer, static_cast<int>(position.x), static_cast<int>(position.y),
-                       static_cast<int>(position.x + 25 * cos(angle)), static_cast<int>(position.y + 25 * sin(angle)));
+    SDL_RenderDrawLine(renderer, sdlX, sdlY,
+                       static_cast<int>((position.x + 25 * cos(angle)) * PixelScale),
+                       SCREEN_HEIGHT - static_cast<int>((position.y + 25 * sin(angle)) * PixelScale));
 }
 
 void DebugRenderer::Render() {

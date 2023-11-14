@@ -36,8 +36,8 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> game_object) {
         bodyDef.type = b2_kinematicBody;
     bodyDef.allowSleep = true;
     auto transform = (*game_object).GetTransform();
-    bodyDef.position.Set(static_cast<float>(transform.position.x), static_cast<float>(transform.position.y));
-    bodyDef.angle = static_cast<float>(transform.rotation);
+    bodyDef.position.Set(static_cast<float>(transform.position.x) * PixelScale, static_cast<float>(transform.position.y) * PixelScale);
+    bodyDef.angle = static_cast<float>(transform.rotation) * b2_pi / 180;
     auto body = world->CreateBody(&bodyDef);
     bodies.insert(std::pair<std::shared_ptr<GameObject>, b2Body *>(game_object, body));
 }
@@ -61,7 +61,7 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> game_
         //// create circles
         for (auto &circleCollider: game_object->GetComponents<CircleCollider>()) {
             b2CircleShape circleShape{};
-            circleShape.m_radius = static_cast<float>(circleCollider->Radius());
+            circleShape.m_radius = static_cast<float>(circleCollider->Radius() * PixelScale);
             double area = game_object->GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody ? ((circleCollider->Radius() * circleCollider->Radius()) * 2) : 0.0f;
             SetFixture(body, &circleShape, game_object->GetComponent<RigidBody>(), area);
         }
@@ -69,7 +69,7 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> game_
         //// create boxes
         for (auto &boxCollider: game_object->GetComponents<BoxCollider>()) {
             b2PolygonShape boxShape{};
-            boxShape.SetAsBox(static_cast<float>(boxCollider->Width() / 2.0), static_cast<float>(boxCollider->Height()));
+            boxShape.SetAsBox(static_cast<float>(boxCollider->Width() / 2.0 * PixelScale), static_cast<float>(boxCollider->Height() / 2.0 * PixelScale));
             double area = game_object->GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody ? (boxCollider->Width() * boxCollider->Height()) : 0.0f;
             SetFixture(body, &boxShape, game_object->GetComponent<RigidBody>(), area);
         }
@@ -124,7 +124,28 @@ void PhysicsFacade::SetFixture(b2Body *body, b2Shape *shape, const std::shared_p
 
 void PhysicsFacade::ShowDebug() {
     DebugRenderer dr;
+    CreateGround();
     dr.Run(std::move(world));
+}
+
+void PhysicsFacade::CreateGround() {
+    // Define the ground body
+    b2BodyDef groundBodyDef;
+    groundBodyDef.position.Set(0.0f, 100.0f); // Set the position of the ground body
+    groundBodyDef.type = b2BodyType::b2_staticBody;
+    // Create the ground body
+    b2Body* groundBody = world->CreateBody(&groundBodyDef);
+
+    // Define the ground shape (as a static box)
+    b2PolygonShape groundBox;
+    groundBox.SetAsBox(5000.0f, 1.0f); // Set the dimensions of the ground box
+
+    // Create the ground fixture
+    b2FixtureDef fixtureDef;
+    fixtureDef.shape = &groundBox;
+
+    // Attach the fixture to the ground body
+    groundBody->CreateFixture(&fixtureDef);
 }
 
 PhysicsFacade::~PhysicsFacade() = default;

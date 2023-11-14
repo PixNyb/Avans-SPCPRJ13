@@ -38,6 +38,8 @@ public:
     void Step();
 
     void ShowDebug();
+
+    void CreateGround();
 };
 
 

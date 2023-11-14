@@ -15,7 +15,6 @@ public:
 
     void CloseSDL();
 
-    void CreateGround();
 
     void Render();
 
