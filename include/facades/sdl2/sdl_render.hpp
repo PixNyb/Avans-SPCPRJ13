@@ -42,9 +42,7 @@ public:
      * This function clears the entire rendering target, setting it to the color
      * previously set by SDL_SetRenderDrawColor.
      */
-    void Clear() {
-        SDL_RenderClear(Renderer);
-    }
+    void Clear();
 
     /**
      * @brief Updates the screen with any rendering performed since the previous call.
@@ -52,9 +50,9 @@ public:
      * This function presents the current rendering, typically called after all rendering
      * operations have been completed for the current frame.
      */
-    void Present() {
-        SDL_RenderPresent(Renderer);
-    }
+    void Present();
+
+    SDL_Renderer* GetRenderer() const;
 
 };
 

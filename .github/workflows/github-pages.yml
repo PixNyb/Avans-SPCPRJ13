@@ -43,7 +43,9 @@ jobs:
       - name: Get latest release tag
         id: get_latest_tag
         run: |
-          echo "LATEST_TAG=$(git tag --sort=committerdate | grep -E '[0-9]' | tail -1)" >> $GITHUB_ENV
+          RELEASE=$(curl -s https://api.github.com/repos/PixNyb/Avans-SPCPRJ13-ENGINE/releases/latest)
+          TAG=$(echo $RELEASE | jq -r '.tag_name')
+          echo "LATEST_TAG=$TAG" >> $GITHUB_ENV
 
       - name: Add redirect to latest release tag if there is one, if not, redirect to current build
         run: |
@@ -104,7 +106,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update docs for ${{ env.BUILD_INFO }}"
-            git push origin docs
+            git push origin doxygen
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

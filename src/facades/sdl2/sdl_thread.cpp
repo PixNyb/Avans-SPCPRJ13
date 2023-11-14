@@ -1,3 +1,14 @@
+/**
+ * @file sdl_thread.cpp
+ * @author Robin Pijnappels
+ * @brief This file contains the SDLThread class implementation.
+ * @version 0.1
+ * @date 2023-11-13
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "sdl_thread.hpp"
 
 // This function will run on the thread

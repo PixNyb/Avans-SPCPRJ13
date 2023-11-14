@@ -9,7 +9,7 @@ Engine* Engine::instancePtr = nullptr;
 
 Engine::Engine() {
     container.registerInstance<SceneManager>(std::make_shared<SceneManager>());
-    container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>());
+    container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>(), InstanceScope::Engine);
 }
 
 void Engine::Start()
@@ -18,10 +18,13 @@ void Engine::Start()
     int frameCount = 0;
     TimeUtility time;
     float lastFPSUpdateTime = time.GetTotalTime();
+    auto graphicsFacade = GetLocal<IOFacade>();
 
-    // Initialize GraphicsFacade
-    Get<GraphicsFacade>()->Init();
-
+    if (!graphicsFacade) {
+        std::cerr << "GraphicsFacade instance is null" << std::endl;
+        return;
+    }
+    graphicsFacade->Init();
 
     while (isRunning) {
         float deltaTime = time.GetDeltaTime();
@@ -34,6 +37,8 @@ void Engine::Start()
         Get<SceneManager>()->Update(deltaTime);
 
         // Render stuff goes here
+        graphicsFacade->ClearScreen();
+        graphicsFacade->PresentScreen();
 
         // End of the frame
 
@@ -50,10 +55,11 @@ void Engine::Start()
         float targetMs = 1000.0f / FPS_LIMIT;
         if (targetMs > elapsedMs)
         {
-            Get<GraphicsFacade>()->Delay(static_cast<unsigned int>(targetMs - elapsedMs));
+            graphicsFacade->Delay(static_cast<unsigned int>(targetMs - elapsedMs));
         }
     }
 }
+
 void Engine::Stop() {
     isRunning = false;
 }
@@ -73,6 +79,13 @@ void Engine::SetFPSLimit(float fps) {
     FPS_LIMIT = fps;
 }
 
+Engine *Engine::GetInstance() {
+    if (!instancePtr) {
+        instancePtr = new Engine();
+    }
+    return instancePtr;
+}
+
 template <typename T> std::shared_ptr<T> Engine::GetLocal()
 {
     return container.resolve<T>(InstanceScope::Engine);
@@ -81,3 +94,4 @@ template <typename T> std::shared_ptr<T> Engine::GetLocal()
 template <typename T> std::shared_ptr<T> Engine::Get() {
     return container.resolve<T>();
 }
+

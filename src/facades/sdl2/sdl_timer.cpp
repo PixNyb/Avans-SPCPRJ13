@@ -1,3 +1,14 @@
+/**
+ * @file sdl_timer.cpp
+ * @author Robin Pijnappels
+ * @brief This file contains the SDLTimer class implementation.
+ * @version 0.1
+ * @date 2023-11-13
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "sdl_timer.hpp"
 
 Timer::Timer() : startTicks(0), pausedTicks(0), paused(false), started(false) {

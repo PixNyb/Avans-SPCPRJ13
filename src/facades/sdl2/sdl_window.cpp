@@ -26,7 +26,6 @@ void SDLWindow::Create(const char *title, int width, int height)
 {
     if (SdlWindow)
     {
-        // If a window already exists, destroy it before creating a new one.
         SDL_DestroyWindow(SdlWindow);
     }
 
@@ -37,9 +36,8 @@ void SDLWindow::Create(const char *title, int width, int height)
         );
 
     if (!SdlWindow)
-    { // Make sure to check the correct variable.
+    {
         SDL_Log("Window could not be created: %s", SDL_GetError());
-        // Handle error accordingly.
     }
 }
 
@@ -52,4 +50,22 @@ void SDLWindow::Destroy()
     }
 }
 
+void SDLWindow::CreateRenderer() {
+    if (SdlWindow){
+        SdlRenderer = SDL_CreateRenderer(SdlWindow, -1, SDL_RENDERER_ACCELERATED);
+        if (!SdlRenderer) {
+            std::cerr << "Renderer could not be created! SDL Error: " << SDL_GetError() << std::endl;
+        }
+    }
+}
+
+void SDLWindow::ClearScreen() {
+    SDL_RenderClear(SdlRenderer);
+}
+
+void SDLWindow::PresentScreen() {
+    SDL_RenderPresent(SdlRenderer);
+}
+
 SDL_Window *SDLWindow::GetSDLWindow() const { return SdlWindow; }
+SDL_Renderer *SDLWindow::GetRenderer() const { return SdlRenderer; }
