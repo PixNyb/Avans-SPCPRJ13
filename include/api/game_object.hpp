@@ -152,6 +152,26 @@ class GameObject
      * @param component The component to add to the GameObject.
      */
     void AddComponent(std::shared_ptr<Component> component);
+
+    /**
+     * @brief Get the component of the specified type.
+     * @tparam T The type of the component.
+     * @return The component of the specified type.
+     */
+    template <typename T>
+    std::shared_ptr<T> GetComponent() const
+    {
+        for (auto &component : components)
+        {
+            auto castedComponent = std::dynamic_pointer_cast<T>(component);
+            if (castedComponent != nullptr)
+            {
+                return castedComponent;
+            }
+        }
+
+        return nullptr;
+    }
 };
 
 #endif // AVANS_SPCPRJ13_GAMEOBJECT_H

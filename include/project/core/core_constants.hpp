@@ -26,6 +26,11 @@ namespace CoreConstants {
     namespace Engine {
         const int DEFAULT_FPS = 60;
     }
+    namespace Debug {
+        const bool EnableDebug = true;
+        // Make sure it's false when you're not debugging
+        const bool DrawColliders = true && EnableDebug;
+    }
 }
 
 #endif // DEFUNBOBENGINE_CORECONSTANTS_HPP

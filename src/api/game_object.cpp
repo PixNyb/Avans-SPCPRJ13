@@ -13,7 +13,7 @@
 #include "component.hpp"
 #include <memory>
 
-GameObject::GameObject() : name(""), active(true), tag(0), layer(0), transform()
+GameObject::GameObject() : name(""), active(true), tag(""), layer(0), transform()
 {
     // Constructor default initialization
 }

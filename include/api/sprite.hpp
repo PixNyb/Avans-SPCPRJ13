@@ -7,7 +7,7 @@
 #include <string>
 #include "color.hpp"
 
-class Sprite : public BehaviourScript {
+class Sprite : public Component {
 private:
     std::string sprite;
     Color color;
