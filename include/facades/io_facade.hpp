@@ -27,6 +27,7 @@
 #include "sdl_window.hpp"
 #include "circle.hpp"
 #include "rectangle.hpp"
+#include "triangle.hpp"
 #include <SDL.h>
 
 /**
@@ -110,11 +111,41 @@ public:
      */
     virtual void PresentScreen() = 0;
 
+    /**
+     * @brief Draws a circle on the screen.
+     *
+     * This function should be implemented by the derived classes to handle the rendering
+     * of a Circle object on the screen using the provided SDL_Renderer. It should take
+     * the circle's properties such as position, radius, and color into account while rendering.
+     *
+     * @param circle A Circle object containing properties like position, radius, and color.
+     * @param renderer A pointer to an SDL_Renderer to draw the circle.
+     */
     virtual void DrawShape(Circle circle, SDL_Renderer* renderer) = 0;
-//
-//    virtual void DrawShape(Rectangle rectangle) = 0;
-//
-//    virtual void DrawShape() = 0;
+
+    /**
+     * @brief Draws a rectangle on the screen.
+     *
+     * This function should be implemented by the derived classes to handle the rendering
+     * of a Rectangle object on the screen using the provided SDL_Renderer. It should consider
+     * the rectangle's properties such as position, dimensions, and color during the rendering process.
+     *
+     * @param rectangle A Rectangle object containing properties like position, dimensions, and color.
+     * @param renderer A pointer to an SDL_Renderer to draw the rectangle.
+     */
+    virtual void DrawShape(Rectangle rectangle, SDL_Renderer* renderer) = 0;
+
+    /**
+     * @brief Draws a Triangle shape on the rendering target.
+     *
+     * This virtual function is intended to be implemented in GraphicsFacade class to handle
+     * the rendering of Triangle objects. The method should use the properties of the
+     * Triangle (such as its vertices) to draw it on the provided SDL_Renderer.
+     *
+     * @param triangle A Triangle object containing the vertices and other properties of the shape.
+     * @param renderer A pointer to an SDL_Renderer to draw the triangle.
+     */
+    virtual void DrawShape(Triangle triangle, SDL_Renderer* renderer) = 0;
 
 };
 

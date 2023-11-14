@@ -43,13 +43,6 @@ public:
     Vector2D GetPosition() const  {
         return position;
     }
-
-    /**
-     * @brief Pure virtual function for drawing the geometric shape.
-     *
-     * Implementations of this function should contain the rendering logic specific to the shape.
-     */
-    virtual void Draw() const = 0;
 };
 
 #endif //DEFUNBOBENGINE_GEOMETRY_HPP

@@ -112,7 +112,30 @@ public:
      */
     void Delay(unsigned int ms) override;
 
+    /**
+     * @brief Draws a circle on the screen.
+     *
+     * @param circle A Circle object containing properties like position, radius, and color.
+     * @param renderer A pointer to an SDL_Renderer to draw the circle.
+     */
     void DrawShape(Circle circle, SDL_Renderer* renderer) override;
+
+    /**
+     * @brief Draws a rectangle on the screen.
+     *
+     * @param rectangle A Rectangle object containing properties like position, dimensions, and color.
+     * @param renderer A pointer to an SDL_Renderer to draw the rectangle.
+     */
+    void DrawShape(Rectangle rectangle, SDL_Renderer* renderer) override;
+
+    /**
+     * @brief Draws a Triangle shape on the rendering target.
+     *
+     *
+     * @param triangle A Triangle object containing the vertices and other properties of the shape.
+     * @param renderer A pointer to an SDL_Renderer to draw the triangle.
+     */
+    void DrawShape(Triangle triangle, SDL_Renderer* renderer) override;
 };
 
 

@@ -40,18 +40,7 @@ public:
      */
     Polygon(const Vector2D& pos, const std::vector<Vector2D>& verts)
             : Geometry(pos), vertices(verts) {}
-
-    /**
-     * @brief Draws the polygon using the rendering system.
-     *
-     * Implementations should use the position and vertices to draw the polygon
-     * to the screen. The actual rendering implementation would depend on the
-     * graphics library being used, and might involve drawing lines between each
-     * pair of vertices or using a more complex polygon filling algorithm.
-     */
-    void Draw() const override {
-        // Rendering logic goes here
-    }
+            
 };
 
 #endif //DEFUNBOBENGINE_POLYGON_HPP
