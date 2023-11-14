@@ -174,7 +174,7 @@ class GameObject
     /**
      * @brief Get all the components of the specified type. Must be
      *        a valid subclass of Component.
-     * @return Pointers to Component instance.
+     * @return Vector with pointers to Component instances.
      */
     template <class T> std::vector<std::shared_ptr<T>> GetComponents() const
     {
