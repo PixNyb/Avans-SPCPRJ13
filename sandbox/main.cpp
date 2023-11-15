@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     //// create object
     auto obj = std::make_shared<GameObject>();
     Point point{600, 2500};
-    Transform trs{point, 20, 1};
+    Transform trs{point, 200, 1};
     auto body = std::make_shared<RigidBody>(10, 1, BodyType::dynamicBody);
     auto collider = std::make_shared<BoxCollider>();
     collider->Width(20);
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     PhysicsFacade pf;
     pf.PopulateWorld(objects);
     //pf.AddForce(obj, 0, 400);
-    pf.AddRotation(obj, 10);
+    pf.AddRotation(obj, 100);
     pf.ShowDebug();
 
 //    while (true) {

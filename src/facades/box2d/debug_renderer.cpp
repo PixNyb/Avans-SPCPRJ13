@@ -47,11 +47,12 @@ void DebugRenderer::RenderBox(b2Body* body) {
     boxRect.w = 50;
     boxRect.h = 50;
 
+
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
     SDL_RenderDrawRect(renderer, &boxRect);
-    SDL_RenderDrawLine(renderer, sdlX, sdlY,
-                       static_cast<int>((position.x + 25 * cos(angle)) * PixelScale),
-                       SCREEN_HEIGHT - static_cast<int>((position.y + 25 * sin(angle)) * PixelScale));
+    SDL_RenderDrawLine(renderer, sdlX + 25, sdlY + 25,
+                       static_cast<int>((position.x + 50 * cos(angle)) * PixelScale),
+                       SCREEN_HEIGHT - static_cast<int>((position.y + 50 * sin(angle)) * PixelScale));
 }
 
 void DebugRenderer::Render() {

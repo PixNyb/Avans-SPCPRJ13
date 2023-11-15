@@ -37,7 +37,7 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject) {
     auto transform = (*gameObject).GetTransform();
     bodyDef.position.Set(static_cast<float>(transform.position.x) * PixelScale,
                          static_cast<float>(transform.position.y) * PixelScale);
-    bodyDef.angle = static_cast<float>(transform.rotation) * b2_pi / 180;
+    bodyDef.angle = static_cast<float>(transform.rotation);
     auto body = world->CreateBody(&bodyDef);
     bodies.insert(std::pair<std::shared_ptr<GameObject>, b2Body *>(gameObject, body));
 }
