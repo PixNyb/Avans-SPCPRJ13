@@ -1,10 +1,26 @@
-/// @file
+/**
+ * @file time.hpp
+ * @author Robin Pijnappels
+ * @version 0.1
+ * @date 2023-11-12
+ *
+ * @brief Defines the Time class for managing game time in the DefunBobEngine.
+ * The Time class provides static methods and properties to handle time-related functionalities,
+ * such as tracking the delta time between frames and setting a global time scale.
+ * This class is essential for managing animations, physics, and other time-dependent processes in games.
+ *
+ * @copyright Copyright (c) 2023
+ */
 
 #ifndef DEFUNBOBENGINE_TIME_HPP
 #define DEFUNBOBENGINE_TIME_HPP
 
 /**
- * @brief Class representing game time.
+ * @class Time
+ * @brief Represents game time, providing static methods to access and manipulate it.
+ *
+ * The Time class offers functionalities related to game time, like getting the time elapsed
+ * between frames (delta time) and controlling the rate at which time passes (time scale).
  */
 class Time {
 public:
