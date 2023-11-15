@@ -28,8 +28,8 @@
  */
 class Rectangle : public Geometry {
 private:
-    float height; ///< The height of the rectangle.
-    float width; ///< The width of the rectangle.
+    int height; ///< The height of the rectangle.
+    int width; ///< The width of the rectangle.
 
 public:
     /**
@@ -39,19 +39,18 @@ public:
      * @param h The height of the rectangle.
      * @param w The width of the rectangle.
      */
-    Rectangle(const Vector2D& pos, float h, float w)
+    Rectangle(const Vector2D& pos, int h, int w)
             : Geometry(pos), height(h), width(w) {}
 
-    /**
-     * @brief Draws the rectangle using the rendering system.
-     *
-     * Implementations should use the position, width, and height to draw the rectangle
-     * to the screen. The actual rendering implementation would depend on the
-     * graphics library being used.
-     */
-    void draw() const override {
-        // Rendering logic goes here
+
+    int GetHeight() const {
+        return height;
     }
+
+    int GetWidth() const {
+        return width;
+    }
+
 };
 
 #endif //DEFUNBOBENGINE_RECTANGLE_HPP

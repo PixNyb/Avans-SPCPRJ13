@@ -39,15 +39,9 @@ public:
     Circle(const Vector2D& pos, float r)
             : Geometry(pos), radius(r) {}
 
-    /**
-     * @brief Draws the circle using the rendering system.
-     *
-     * Implementations should use the position and radius to draw the circle
-     * to the screen. The actual rendering implementation would depend on the
-     * graphics library being used.
-     */
-    void draw() const override {
-        // Rendering logic goes here
+
+    float GetRadius() const {
+        return radius;
     }
 };
 

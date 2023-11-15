@@ -58,6 +58,10 @@ Alle POC's worden met behulp van CMake gecompileerd. De POC's kunnen individueel
 - [SDL Physics](poc/sdl-input-physics/README.md)
 - [SDL Render](poc/sdl-render/README.md)
 
+## Gebruik
+
+De documentatie over het gebruik van de game engine is te vinden in [USAGE.md](USAGE.md).
+
 ## Development Guidelines
 
 De development guidelines zijn gedefiniëerd in [DEVELOPMENT_GUIDELINES.md](DEVELOPMENT_GUIDELINES.md).

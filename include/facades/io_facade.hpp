@@ -25,6 +25,10 @@
 #include <vector>
 #include "event.hpp"
 #include "sdl_window.hpp"
+#include "circle.hpp"
+#include "rectangle.hpp"
+#include "triangle.hpp"
+#include <SDL.h>
 
 /**
  * @class IOFacade
@@ -36,7 +40,6 @@
  * in a consistent format.
  */
 class IOFacade {
-    SDLWindow sdlWindow;
 public:
     /**
      * @brief Virtual destructor for IOFacade.
@@ -49,7 +52,7 @@ public:
      * Must be implemented by the concrete subclass to set up the specific input
      * system in use, such as SDL2 or GLFW.
      */
-    virtual void init() = 0;
+    virtual void Init() = 0;
 
     /**
      * @brief Polls for input events and populates the provided event vector.
@@ -58,7 +61,7 @@ public:
      * the input system and translate them into a vector of Event objects.
      * @param events A reference to a vector where the polled events will be stored.
      */
-    virtual void pollEvents(std::vector<Event>& events) = 0;
+    virtual void PollEvents(std::vector<Event>& events) = 0;
 
     /**
     * @brief Creates a window with the specified properties.
@@ -73,17 +76,77 @@ public:
     * @param width The width of the window in pixels.
     * @param height The height of the window in pixels.
     */
-    virtual void createWindow(const char* title, int width, int height) = 0;
+    virtual void CreateWindow(const std::string& title, int width, int height) = 0;
 
     /**
      * @brief delay execution for a specified number of milliseconds.
      * @param ms The number of milliseconds to delay execution.
      */
-    virtual void delay(unsigned int ms) = 0;
+    virtual void Delay(unsigned int ms)  = 0;
 
-    virtual void destroyWindow() {
-//        sdlWindow.destroy()
-    }
+    /**
+     * @brief Clears the rendering target.
+     *
+     * This method should be implemented by derived classes to prepare the screen
+     * for new rendering operations by clearing existing content. It ensures a clean
+     * slate for each frame's rendering process.
+     */
+    virtual void ClearScreen() = 0;
+
+    /**
+     * @brief Creates the rendering context.
+     *
+     * Must be implemented by derived classes to initialize the renderer for the
+     * graphics window. This method sets up the necessary context for rendering
+     * graphics in the game engine.
+     */
+    virtual void CreateRenderer() = 0;
+
+    /**
+     * @brief Presents the rendered content on the screen.
+     *
+     * Implemented by derived classes, this method updates the window with the
+     * currently rendered graphics, finalizing the frame. It's the last step in
+     * the rendering pipeline for each frame.
+     */
+    virtual void PresentScreen() = 0;
+
+    /**
+     * @brief Draws a circle on the screen.
+     *
+     * This function should be implemented by the derived classes to handle the rendering
+     * of a Circle object on the screen using the provided SDL_Renderer. It should take
+     * the circle's properties such as position, radius, and color into account while rendering.
+     *
+     * @param circle A Circle object containing properties like position, radius, and color.
+     * @param renderer A pointer to an SDL_Renderer to draw the circle.
+     */
+    virtual void DrawShape(Circle circle, SDL_Renderer* renderer) = 0;
+
+    /**
+     * @brief Draws a rectangle on the screen.
+     *
+     * This function should be implemented by the derived classes to handle the rendering
+     * of a Rectangle object on the screen using the provided SDL_Renderer. It should consider
+     * the rectangle's properties such as position, dimensions, and color during the rendering process.
+     *
+     * @param rectangle A Rectangle object containing properties like position, dimensions, and color.
+     * @param renderer A pointer to an SDL_Renderer to draw the rectangle.
+     */
+    virtual void DrawShape(Rectangle rectangle, SDL_Renderer* renderer) = 0;
+
+    /**
+     * @brief Draws a Triangle shape on the rendering target.
+     *
+     * This virtual function is intended to be implemented in GraphicsFacade class to handle
+     * the rendering of Triangle objects. The method should use the properties of the
+     * Triangle (such as its vertices) to draw it on the provided SDL_Renderer.
+     *
+     * @param triangle A Triangle object containing the vertices and other properties of the shape.
+     * @param renderer A pointer to an SDL_Renderer to draw the triangle.
+     */
+    virtual void DrawShape(Triangle triangle, SDL_Renderer* renderer) = 0;
+
 };
 
 #endif //DEFUNBOBENGINE_IO_FACADE_HPP
