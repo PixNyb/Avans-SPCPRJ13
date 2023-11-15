@@ -154,23 +154,39 @@ class GameObject
     void AddComponent(std::shared_ptr<Component> component);
 
     /**
-     * @brief Get the component of the specified type.
-     * @tparam T The type of the component.
-     * @return The component of the specified type.
+     * @brief Get the first component of the specified type. Must be
+     *        a valid subclass of Component.
+     * @return Pointer to Component instance.
      */
-    template <typename T>
-    std::shared_ptr<T> GetComponent() const
+    template <class T> std::shared_ptr<T> GetComponent() const
     {
-        for (auto &component : components)
+        for (std::shared_ptr<Component> component : components)
         {
-            auto castedComponent = std::dynamic_pointer_cast<T>(component);
-            if (castedComponent != nullptr)
-            {
-                return castedComponent;
-            }
+            auto componentPtr = std::dynamic_pointer_cast<T>(component);
+            if (componentPtr)
+                return componentPtr;
         }
 
-        return nullptr;
+        return std::shared_ptr<T>{};
+    }
+
+    /**
+     * @brief Get all the components of the specified type. Must be
+     *        a valid subclass of Component.
+     * @return Vector with pointers to Component instances.
+     */
+    template <class T> std::vector<std::shared_ptr<T>> GetComponents() const
+    {
+        std::vector<std::shared_ptr<T>> typeComponents;
+
+        for (std::shared_ptr<Component> component : components)
+        {
+            auto componentPtr = std::dynamic_pointer_cast<T>(component);
+            if (componentPtr)
+                typeComponents.push_back(componentPtr);
+        }
+
+        return typeComponents;
     }
 };
 

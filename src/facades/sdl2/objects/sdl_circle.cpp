@@ -12,5 +12,5 @@
 #include "sdl_circle.hpp"
 
 void SDLCircle::Draw(SDL_Renderer* renderer) const {
-    filledCircleRGBA(renderer, x, y, radius, 255, 255, 255, 255); // TODO: add color
+    filledCircleRGBA(renderer, x, y, radius, 255, 0, 0, 255); // TODO: add color
 }

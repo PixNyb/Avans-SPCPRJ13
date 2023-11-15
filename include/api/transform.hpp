@@ -37,6 +37,9 @@ struct Transform
     Point position;  ///< Translation (shift)
     double rotation; ///< Rotation, in radians
     double scale;    ///< Multiplication factor
+
+    Transform operator +(const Transform &other) const;
+    Transform operator -(const Transform &other) const;
 };
 
 #endif // AVANS_SPCPRJ13_TRANSFORM_H

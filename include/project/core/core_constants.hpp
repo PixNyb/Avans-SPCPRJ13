@@ -28,8 +28,7 @@ namespace CoreConstants {
     }
     namespace Debug {
         const bool EnableDebug = true;
-        // Make sure it's false when you're not debugging
-        const bool DrawColliders = true && EnableDebug;
+        const bool DrawColliders = true;
     }
 }
 

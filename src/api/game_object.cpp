@@ -49,7 +49,7 @@ void GameObject::SetLayer(int layer) { this->layer = layer; }
 
 const Transform &GameObject::GetTransform() const { return transform; }
 
-void GameObject::SetTransform(const Transform &transform) { this->transform = transform; }
+void GameObject::SetTransform(const Transform &t) { this->transform = t; }
 
 bool GameObject::IsActive() const { return active; }
 

@@ -39,6 +39,10 @@ public:
    */
   virtual ~Component() = default;
 
+  virtual Component& operator=(Component& other){
+      return *this;
+  }
+
   /**
    * @brief Check if the Component is active.
    *

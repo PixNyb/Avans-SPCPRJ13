@@ -11,6 +11,14 @@ struct Point {
     double y;
 
     Point(double x, double y) : x(x), y(y) {}
+
+    Point operator+(const Point &other) const {
+            return {x + other.x, y + other.y};
+    }
+
+    Point operator-(const Point &other) const {
+            return {x - other.x, y - other.y};
+    }
 };
 
 #endif // DEFUNBOBENGINE_POINT_H

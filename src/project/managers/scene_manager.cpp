@@ -23,7 +23,7 @@ std::weak_ptr<Scene> SceneManager::GetScene() { return currentScene; }
 
 bool SceneManager::HasScene() const { return currentScene != nullptr; }
 
-void SceneManager::Update(float deltaTime)
+void SceneManager::Update(double deltaTime)
 {
     if (currentScene != nullptr)
     {

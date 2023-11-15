@@ -23,7 +23,9 @@ GraphicsFacade::GraphicsFacade() {
     }
 }
 
-GraphicsFacade::~GraphicsFacade() {}
+GraphicsFacade::~GraphicsFacade() {
+
+}
 
 void GraphicsFacade::Init() {}
 
@@ -63,7 +65,13 @@ void GraphicsFacade::Delay(unsigned int ms) {
     }
 }
 
-void GraphicsFacade::DrawShape(Circle circle, SDL_Renderer* renderer) {
+void GraphicsFacade::DrawShape(Circle circle) {
+    auto renderer = SdlWindow->GetRenderer();
+    if(!renderer) {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
+    }
+
     const Vector2D& pos = circle.GetPosition();
     int x = static_cast<int>(pos.x);
     int y = static_cast<int>(pos.y);
@@ -73,14 +81,26 @@ void GraphicsFacade::DrawShape(Circle circle, SDL_Renderer* renderer) {
     sdlCircle.Draw(renderer);
 }
 
-void GraphicsFacade::DrawShape(Rectangle rectangle, SDL_Renderer* renderer){
+void GraphicsFacade::DrawShape(Rectangle rectangle){
+    auto renderer = SdlWindow->GetRenderer();
+    if(!renderer) {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
+    }
+
     const Vector2D& pos = rectangle.GetPosition();
 
     SDLRect rect(static_cast<int>(pos.x), static_cast<int>(pos.y), rectangle.GetWidth(), rectangle.GetHeight());
     rect.Draw(renderer);
 }
 
-void GraphicsFacade::DrawShape(Triangle triangle, SDL_Renderer *renderer) {
+void GraphicsFacade::DrawShape(Triangle triangle) {
+    auto renderer = SdlWindow->GetRenderer();
+    if(!renderer) {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
+    }
+
     // Retrieve the vertices of the Triangle
     const Vector2D& v1 = triangle.GetVertex1();
     const Vector2D& v2 = triangle.GetVertex2();

@@ -121,7 +121,7 @@ public:
      * @param circle A Circle object containing properties like position, radius, and color.
      * @param renderer A pointer to an SDL_Renderer to draw the circle.
      */
-    virtual void DrawShape(Circle circle, SDL_Renderer* renderer) = 0;
+    virtual void DrawShape(Circle circle) = 0;
 
     /**
      * @brief Draws a rectangle on the screen.
@@ -133,7 +133,7 @@ public:
      * @param rectangle A Rectangle object containing properties like position, dimensions, and color.
      * @param renderer A pointer to an SDL_Renderer to draw the rectangle.
      */
-    virtual void DrawShape(Rectangle rectangle, SDL_Renderer* renderer) = 0;
+    virtual void DrawShape(Rectangle rectangle) = 0;
 
     /**
      * @brief Draws a Triangle shape on the rendering target.
@@ -145,7 +145,7 @@ public:
      * @param triangle A Triangle object containing the vertices and other properties of the shape.
      * @param renderer A pointer to an SDL_Renderer to draw the triangle.
      */
-    virtual void DrawShape(Triangle triangle, SDL_Renderer* renderer) = 0;
+    virtual void DrawShape(Triangle triangle) = 0;
 
 };
 
