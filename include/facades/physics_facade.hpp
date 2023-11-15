@@ -1,7 +1,7 @@
 /**
  * @file physics_facade.hpp
  * @author Daan Groot (d.groot3@student.avans.nl)
- * @brief This file contains the Collider class definition.
+ * @brief This file contains the PhysicsFacade class definition.
  * @version 0.1
  * @date 2023-11-08
  *
@@ -25,20 +25,49 @@ class PhysicsFacade {
 private:
     std::map<std::shared_ptr<GameObject>, b2Body*> bodies; ///< The map with bodies in the physicsfacade.
     std::unique_ptr<b2World> world; ////< The world in which the bodies can move.
+
+    /**
+     * Creates a shape on a body through a fixture
+     * @param body the body that the fixture is placed on
+     * @param shape the shape you want to add to the body
+     * @param rigidBody the rigidbody of the gameobject/body this fixture will belong to
+     * @param area the area of the shape
+     */
     void SetFixture(b2Body* body, b2Shape* shape, const std::shared_ptr<RigidBody>& rigidBody, double area);
 public:
+
     PhysicsFacade();
 
     ~PhysicsFacade();
 
+    /**
+    * @brief Create a body from a gameobject
+    */
     void MakeBody(std::shared_ptr<GameObject> game_object);
 
+    /**
+    * @brief Destroy a body from a gameobject
+    */
+    void DestroyBody(std::shared_ptr<GameObject> game_object);
+
+    /**
+    * @brief Populate the b2World through a list of gameobjects
+    */
     void PopulateWorld(std::vector<std::shared_ptr<GameObject>> game_objects);
 
+    /**
+    * @brief Execute the step function on the b2World
+    */
     void Step();
 
+    /**
+    * @brief Simulate all bodies in the b2World in a window
+    */
     void ShowDebug();
 
+    /**
+    * @brief Create a ground object for testing purposes
+    */
     void CreateGround();
 };
 

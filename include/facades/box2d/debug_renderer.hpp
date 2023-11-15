@@ -15,7 +15,6 @@ public:
 
     void CloseSDL();
 
-
     void Render();
 
     void RenderBox(b2Body* body);

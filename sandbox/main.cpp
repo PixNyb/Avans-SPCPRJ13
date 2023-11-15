@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
     //// create object
     auto obj = std::make_shared<GameObject>();
-    Point point{200, 2500};
+    Point point{600, 2500};
     Transform trs{point, 20, 1};
     auto body = std::make_shared<RigidBody>(10, 1, BodyType::dynamicBody);
     auto collider = std::make_shared<BoxCollider>();
@@ -30,18 +30,6 @@ int main(int argc, char *argv[])
     obj->AddComponent(body);
     obj->AddComponent(collider);
     obj->SetTransform(trs);
-
-    //// create floor
-//    auto floor = std::make_shared<GameObject>();
-//    Point point2{10, 10};
-//    Transform trs2{point2, 20, 1};
-//    auto body2 = std::make_shared<RigidBody>(10, 1, BodyType::staticBody);
-//    auto collider2 = std::make_shared<BoxCollider>();
-//    collider->Width(1000);
-//    collider->Height(20);
-//    floor->AddComponent(body2);
-//    floor->AddComponent(collider2);
-//    floor->SetTransform(trs2);
 
     objects.push_back(obj);
 //    objects.push_back(floor);
