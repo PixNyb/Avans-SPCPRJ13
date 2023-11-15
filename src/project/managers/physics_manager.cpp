@@ -22,11 +22,15 @@ void PhysicsManager::CreateWorld(std::vector<std::shared_ptr<GameObject>> game_o
 }
 
 void PhysicsManager::RemoveBody(std::shared_ptr<GameObject> game_object) {
-
+    physicsFacade.DestroyBody(std::move(game_object));
 }
 
 void PhysicsManager::CreateBody(std::shared_ptr<GameObject> game_object) {
     physicsFacade.MakeBody(std::move(game_object));
+}
+
+void PhysicsManager::Step() {
+    physicsFacade.Step();
 }
 
 

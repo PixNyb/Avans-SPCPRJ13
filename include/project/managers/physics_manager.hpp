@@ -23,9 +23,13 @@ private:
 public:
     PhysicsManager();
     ~PhysicsManager() = default;
+
     void CreateWorld(std::vector<std::shared_ptr<GameObject>>);
+
     void RemoveBody(std::shared_ptr<GameObject>);
+
     void CreateBody(std::shared_ptr<GameObject>);
+
     void Step();
 };
 
