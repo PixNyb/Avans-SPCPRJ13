@@ -24,9 +24,9 @@ const double GravityScale = 10.0;
 
 PhysicsFacade::PhysicsFacade() = default;
 
-void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> game_object) {
+void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject) {
     b2BodyDef bodyDef;
-    auto rigidbody = (*game_object).GetComponent<RigidBody>();
+    auto rigidbody = (*gameObject).GetComponent<RigidBody>();
     if (rigidbody->GetBodyType() == BodyType::staticBody)
         bodyDef.type = b2_staticBody;
     if (rigidbody->GetBodyType() == BodyType::dynamicBody)
@@ -34,23 +34,23 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> game_object) {
     if (rigidbody->GetBodyType() == BodyType::kinematicBody)
         bodyDef.type = b2_kinematicBody;
     bodyDef.allowSleep = true;
-    auto transform = (*game_object).GetTransform();
+    auto transform = (*gameObject).GetTransform();
     bodyDef.position.Set(static_cast<float>(transform.position.x) * PixelScale,
                          static_cast<float>(transform.position.y) * PixelScale);
     bodyDef.angle = static_cast<float>(transform.rotation) * b2_pi / 180;
     auto body = world->CreateBody(&bodyDef);
-    bodies.insert(std::pair<std::shared_ptr<GameObject>, b2Body *>(game_object, body));
+    bodies.insert(std::pair<std::shared_ptr<GameObject>, b2Body *>(gameObject, body));
 }
 
-void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> game_objects) {
+void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects) {
     //// PhysicsFacade receives a list of gameobjects that contain a rigidbody
     //// create the world where the bodies will be placed
     b2Vec2 gravity(0.0f, -9.8f);
     world = std::make_unique<b2World>(gravity);
 
     //// create a b2body for every gameobject
-    for (auto &game_object: game_objects) {
-        MakeBody(game_object);
+    for (auto &gameObject: gameObjects) {
+        MakeBody(gameObject);
     }
 
     //// add fixtures for every body
@@ -85,24 +85,24 @@ void PhysicsFacade::Step() {
 
     //// update all gameobjects
     for (auto object_pair = bodies.begin(); object_pair != bodies.end(); ++object_pair) {
-        auto game_object = object_pair->first;
+        auto gameObject = object_pair->first;
         auto body = object_pair->second;
-        auto oldTransform = game_object->GetTransform();
+        auto oldTransform = gameObject->GetTransform();
 
         //// update all boxcolliders on the gameobject
-        for (const auto &boxCollider: game_object->GetComponents<BoxCollider>()) {
-            oldTransform.position.x += (body->GetPosition().x / PixelScale) - game_object->GetTransform().position.x;
-            oldTransform.position.y += (body->GetPosition().y / PixelScale) - game_object->GetTransform().position.y;
+        for (const auto &boxCollider: gameObject->GetComponents<BoxCollider>()) {
+            oldTransform.position.x += (body->GetPosition().x / PixelScale) - gameObject->GetTransform().position.x;
+            oldTransform.position.y += (body->GetPosition().y / PixelScale) - gameObject->GetTransform().position.y;
             oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);
-            game_object->SetTransform(oldTransform);
+            gameObject->SetTransform(oldTransform);
         }
 
         //// update all circlecolliders on the gameobject
-        for (const auto &circleCollider: game_object->GetComponents<CircleCollider>()) {
-            oldTransform.position.x += (body->GetPosition().x / PixelScale) - game_object->GetTransform().position.x;
-            oldTransform.position.y += (body->GetPosition().y / PixelScale) - game_object->GetTransform().position.y;
+        for (const auto &circleCollider: gameObject->GetComponents<CircleCollider>()) {
+            oldTransform.position.x += (body->GetPosition().x / PixelScale) - gameObject->GetTransform().position.x;
+            oldTransform.position.y += (body->GetPosition().y / PixelScale) - gameObject->GetTransform().position.y;
             oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);
-            game_object->SetTransform(oldTransform);
+            gameObject->SetTransform(oldTransform);
         }
     }
 }
@@ -156,7 +156,14 @@ void PhysicsFacade::AddForce(std::shared_ptr<GameObject> gameObject, float vx, f
     float newVY = vy * 100;
     auto iterator = bodies.find(gameObject);
     if (iterator != bodies.end()) {
-        bodies.at(gameObject)->ApplyForce( b2Vec2(newVX,newVY), bodies.at(gameObject)->GetWorldCenter(), false);
+        bodies.at(gameObject)->ApplyForce( b2Vec2(newVX,newVY), bodies.at(gameObject)->GetWorldCenter(), true);
+    }
+}
+
+void PhysicsFacade::AddRotation(std::shared_ptr<GameObject> gameObject, float amount) {
+    auto iterator = bodies.find(gameObject);
+    if (iterator != bodies.end()) {
+        bodies.at(gameObject)->ApplyAngularImpulse(amount, false);
     }
 }
 

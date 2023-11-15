@@ -62,6 +62,12 @@ public:
     void AddForce(std::shared_ptr<GameObject> gameObject, float vx, float vy);
 
     /**
+    * @brief Add a force to an object
+    * can be used for jumping or boosts in speed
+    */
+    void AddRotation(std::shared_ptr<GameObject> gameObject, float amount);
+
+    /**
     * @brief Execute the step function on the b2World
     */
     void Step();

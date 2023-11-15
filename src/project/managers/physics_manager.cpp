@@ -37,4 +37,8 @@ void PhysicsManager::AddForce(std::shared_ptr<GameObject> gameObject, float vx, 
     physicsFacade.AddForce(gameObject, vx, vy);
 }
 
+void PhysicsManager::AddRotation(std::shared_ptr<GameObject> gameObject, float amount) {
+    physicsFacade.AddRotation(gameObject, amount);
+}
+
 

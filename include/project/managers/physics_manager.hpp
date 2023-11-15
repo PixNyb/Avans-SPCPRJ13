@@ -32,6 +32,8 @@ public:
 
     void AddForce(std::shared_ptr<GameObject> gameObject, float vx, float vy);
 
+    void AddRotation(std::shared_ptr<GameObject> gameObject, float amount);
+
     void Step();
 };
 
