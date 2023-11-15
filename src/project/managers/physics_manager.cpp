@@ -33,8 +33,8 @@ void PhysicsManager::Step() {
     physicsFacade.Step();
 }
 
-void PhysicsManager::AddForce(std::shared_ptr<GameObject> gameObject) {
-
+void PhysicsManager::AddForce(std::shared_ptr<GameObject> gameObject, float vx, float vy) {
+    physicsFacade.AddForce(gameObject, vx, vy);
 }
 
 

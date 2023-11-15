@@ -30,7 +30,7 @@ public:
 
     void CreateBody(std::shared_ptr<GameObject> gameObject);
 
-    void AddForce(std::shared_ptr<GameObject> gameObject);
+    void AddForce(std::shared_ptr<GameObject> gameObject, float vx, float vy);
 
     void Step();
 };
