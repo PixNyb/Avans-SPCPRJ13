@@ -63,6 +63,8 @@ void RenderManager::Render()
         auto transform = camera->GetTransform();
         renderPoint.x = transform.position.x;
         renderPoint.y = transform.position.y;
+        renderPoint.x -= camera->GetAspectWidth() / 2;
+        renderPoint.y -= camera->GetAspectHeight() / 2;
     }
 
     // Go through layers in-order (lowest to highest)

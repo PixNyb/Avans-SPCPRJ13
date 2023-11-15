@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
     auto camera = std::make_shared<Camera>();
     camera->SetAspectHeight(500);
     camera->SetAspectWidth(500);
-    camera->SetTransform(Transform(Point(0, 0), 0, 1));
+    camera->SetTransform(Transform(Point(220, 220), 0, 1));
     scene->SetCamera(camera);
 
     sceneManager->SetScene(scene);
