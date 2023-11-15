@@ -17,20 +17,24 @@ PhysicsManager::PhysicsManager() {
 
 }
 
-void PhysicsManager::CreateWorld(std::vector<std::shared_ptr<GameObject>> game_objects) {
-    physicsFacade.PopulateWorld(std::move(game_objects));
+void PhysicsManager::CreateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects) {
+    physicsFacade.PopulateWorld(std::move(gameObjects));
 }
 
-void PhysicsManager::RemoveBody(std::shared_ptr<GameObject> game_object) {
-    physicsFacade.DestroyBody(std::move(game_object));
+void PhysicsManager::RemoveBody(std::shared_ptr<GameObject> gameObject) {
+    physicsFacade.DestroyBody(std::move(gameObject));
 }
 
-void PhysicsManager::CreateBody(std::shared_ptr<GameObject> game_object) {
-    physicsFacade.MakeBody(std::move(game_object));
+void PhysicsManager::CreateBody(std::shared_ptr<GameObject> gameObject) {
+    physicsFacade.MakeBody(std::move(gameObject));
 }
 
 void PhysicsManager::Step() {
     physicsFacade.Step();
+}
+
+void PhysicsManager::AddForce(std::shared_ptr<GameObject> gameObject) {
+
 }
 
 

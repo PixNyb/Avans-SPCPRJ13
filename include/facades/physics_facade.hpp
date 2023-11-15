@@ -43,17 +43,23 @@ public:
     /**
     * @brief Create a body from a gameobject
     */
-    void MakeBody(std::shared_ptr<GameObject> game_object);
+    void MakeBody(std::shared_ptr<GameObject> gameObject);
 
     /**
     * @brief Destroy a body from a gameobject
     */
-    void DestroyBody(std::shared_ptr<GameObject> game_object);
+    void DestroyBody(std::shared_ptr<GameObject> gameObject);
 
     /**
     * @brief Populate the b2World through a list of gameobjects
     */
-    void PopulateWorld(std::vector<std::shared_ptr<GameObject>> game_objects);
+    void PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects);
+
+    /**
+    * @brief Add a force to an object
+    * can be used for jumping or boosts in speed
+    */
+    void AddForce(std::shared_ptr<GameObject> gameObject, float vx, float vy);
 
     /**
     * @brief Execute the step function on the b2World

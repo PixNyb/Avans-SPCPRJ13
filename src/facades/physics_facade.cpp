@@ -121,7 +121,7 @@ void PhysicsFacade::SetFixture(b2Body *body, b2Shape *shape, const std::shared_p
 
 void PhysicsFacade::ShowDebug() {
     DebugRenderer debugRenderer;
-    //CreateGround();
+    CreateGround();
     debugRenderer.Run(std::move(world));
 }
 
@@ -145,10 +145,19 @@ void PhysicsFacade::CreateGround() {
     groundBody->CreateFixture(&fixtureDef);
 }
 
-void PhysicsFacade::DestroyBody(std::shared_ptr<GameObject> game_object) {
-    auto iterator = bodies.find(game_object);
+void PhysicsFacade::DestroyBody(std::shared_ptr<GameObject> gameObject) {
+    auto iterator = bodies.find(gameObject);
     if (iterator != bodies.end())
-        world->DestroyBody(bodies.at(game_object));
+        world->DestroyBody(bodies.at(gameObject));
+}
+
+void PhysicsFacade::AddForce(std::shared_ptr<GameObject> gameObject, float vx, float vy) {
+    float newVX = vx * 100;
+    float newVY = vy * 100;
+    auto iterator = bodies.find(gameObject);
+    if (iterator != bodies.end()) {
+        bodies.at(gameObject)->ApplyForce( b2Vec2(newVX,newVY), bodies.at(gameObject)->GetWorldCenter(), false);
+    }
 }
 
 PhysicsFacade::~PhysicsFacade() = default;

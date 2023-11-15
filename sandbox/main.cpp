@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
 //    objects.push_back(floor);
     PhysicsFacade pf;
     pf.PopulateWorld(objects);
+    pf.AddForce(obj, 0, 400);
     pf.ShowDebug();
 
 //    while (true) {
