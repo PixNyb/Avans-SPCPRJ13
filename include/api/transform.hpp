@@ -16,11 +16,11 @@
 #define AVANS_SPCPRJ13_TRANSFORM_H
 
 #include "point.hpp"
-
+/**
 * @brief Represents a 2D transformation including position, rotation, and scale.
 *
 * Instances of this struct are used to define the transformation properties of game objects,
-        * including their position in the game world, rotation angle, and scaling factor.
+       * including their position in the game world, rotation angle, and scaling factor.
 */
 struct Transform
 {

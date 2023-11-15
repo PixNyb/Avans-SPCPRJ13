@@ -18,12 +18,6 @@
 
 SceneManager::SceneManager() {}
 
-
-
-#include "managers/scene_manager.hpp"
-
-SceneManager::SceneManager() {}
-
 SceneManager::~SceneManager() = default;
 
 void SceneManager::SetScene(std::shared_ptr<Scene> scene) { currentScene = std::move(scene); }
