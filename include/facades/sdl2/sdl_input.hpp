@@ -48,14 +48,14 @@ public:
      *
      * Polls for new events from SDL and updates the state of input devices accordingly.
      */
-    void update();
+    void Update();
 
     /**
      * @brief Check if a specific key is currently pressed.
      * @param key The SDL_Scancode representing the key to check.
      * @return true if the key is pressed, false otherwise.
      */
-    bool isKeyPressed(SDL_Scancode key) const;
+    bool IsKeyPressed(SDL_Scancode key) const;
 
     // Other input-related methods can be defined here.
 };

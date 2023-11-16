@@ -40,12 +40,9 @@ public:
      */
     virtual ~Geometry() {}
 
-    /**
-     * @brief Pure virtual function for drawing the geometric shape.
-     *
-     * Implementations of this function should contain the rendering logic specific to the shape.
-     */
-    virtual void draw() const = 0;
+    Vector2D GetPosition() const  {
+        return position;
+    }
 };
 
 #endif //DEFUNBOBENGINE_GEOMETRY_HPP

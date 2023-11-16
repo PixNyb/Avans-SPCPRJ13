@@ -54,8 +54,25 @@ add_library(DeFunBobEngine ${SOURCES})
 
 # Include headers
 foreach(_headerDir ${HEADER_DIRS})
-    target_include_directories(DeFunBobEngine PRIVATE ${_headerDir})
+    target_include_directories(DeFunBobEngine PUBLIC ${_headerDir})
 endforeach()
+
+# Copy the cmake folder to the build directory
+file(COPY ${PROJECT_SOURCE_DIR}/cmake DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+# Install library and header files
+install(TARGETS DeFunBobEngine DESTINATION lib)
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include/${PROJECT_NAME})
+
+# Add uninstall target
+configure_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake"
+    IMMEDIATE @ONLY
+)
+
+add_custom_target(uninstall
+    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake
+)
 
 # Add SDL2
 find_package(SDL2 CONFIG REQUIRED)
@@ -85,5 +102,9 @@ target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2
 find_package(SDL2_net CONFIG REQUIRED)
 target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_net::SDL2_net>,SDL2_net::SDL2_net,SDL2_net::SDL2_net-static>)
 
+# Add nlohmann_json
 find_package(nlohmann_json CONFIG REQUIRED)
 target_link_libraries(DeFunBobEngine PRIVATE nlohmann_json::nlohmann_json)
+
+# Add sandbox
+add_subdirectory(sandbox)
