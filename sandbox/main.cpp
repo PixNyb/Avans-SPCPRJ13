@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     obj->SetTransform(trs);
 
     auto obj2 = std::make_shared<GameObject>();
-    Point point2{0, 200};
+    Point point2{0, 40};
     Transform trs2{point2, 0, 1};
     auto body2 = std::make_shared<RigidBody>(10, 1, BodyType::staticBody);
     auto collider2 = std::make_shared<BoxCollider>();

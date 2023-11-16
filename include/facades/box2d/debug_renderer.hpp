@@ -43,7 +43,7 @@ public:
      * Renders a specific shape
      * @param gameObject the gameobject that contains the shape
      */
-    void RenderShapes(std::shared_ptr<GameObject> gameObject);
+    void RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body* body);
 
 };
 

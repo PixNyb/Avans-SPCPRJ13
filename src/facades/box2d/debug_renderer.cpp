@@ -43,11 +43,11 @@ void DebugRenderer::CloseSDL() {
     SDL_Quit();
 }
 
-void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject) {
-    b2Vec2 position(static_cast<float>(gameObject->GetTransform().position.x), static_cast<float>(gameObject->GetTransform().position.y));
+void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body* body) {
+    b2Vec2 position(static_cast<float>(body->GetTransform().p.x), static_cast<float>(body->GetTransform().p.y));
 
-    int sdlX = static_cast<int>(position.x * PixelScale);
-    int sdlY = SCREEN_HEIGHT - static_cast<int>(position.y * PixelScale);
+    int sdlX = static_cast<int>(position.x);
+    int sdlY = SCREEN_HEIGHT - static_cast<int>(position.y);
 
     SDL_Rect boxRect;
     boxRect.x = sdlX;
@@ -69,7 +69,7 @@ void DebugRenderer::Render(std::map<std::shared_ptr<GameObject>, b2Body*>& bodie
     SDL_RenderClear(renderer);
 
     for (auto const& item : bodies) {
-        RenderShapes(item.first);
+        RenderShapes(item.first, item.second);
     }
 
     SDL_RenderPresent(renderer);
