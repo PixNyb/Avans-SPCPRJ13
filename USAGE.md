@@ -7,3 +7,48 @@ Voor het aanmaken van een window moeten we eerst zorgen dat de Engine klasse is 
 vanuit daar kunnen we de GraphicsFacade aanroepen om een Window aan te maken. Daarna moet je ook een Render aanmaken waaraan content toegevoegd kan worden.
 
 TODO: Verder uitwerken als straks alles op zijn plek staat (woensdag)
+
+## Level format
+Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief.
+De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de PrefabManager.
+Hier worden vervolgens name, tag, active, layer en objects (children) nog bij gedefinieert. 
+In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk GameObject.
+```json
+{
+  "objects": [
+    {
+      "prefab": "Character",
+      "name": "Character1",
+      "tag": "character",
+      "active": true,
+      "layer": 1,
+      "objects": []
+    },
+    {
+      "prefab": "Tree",
+      "name": "Tree1",
+      "tag": "tree",
+      "active": true,
+      "layer": 1,
+      "objects": []
+    },
+    {
+      "prefab": "Tree",
+      "name": "Tree2",
+      "tag": "tree",
+      "active": true,
+      "layer": 2,
+      "objects": [
+        {
+          "prefab": "Tree",
+          "name": "SubTree",
+          "tag": "tree",
+          "active": true,
+          "layer": 3,
+          "objects": []
+        }
+      ]
+    }
+  ]
+}
+```
