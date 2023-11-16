@@ -3,16 +3,34 @@
 #ifndef AVANS_SPCPRJ13_AUDIOSOURCE_H
 #define AVANS_SPCPRJ13_AUDIOSOURCE_H
 
-#include <string>
 #include "component.hpp"
+#include <string>
 
 /**
  * @brief Component which can play audio.
  */
-class AudioSource : public Component {
-public:
+class AudioSource : public Component
+{
+  public:
+    /**
+     * @brief Construct a new Audio Source object
+     */
     AudioSource();
+
+    /**
+     * @brief Construct a new Audio Source object
+     *
+     * @param audioClipPath Path to a locally stored audio file.
+     */
     AudioSource(const std::string &audioClipPath);
+
+    /**
+     * @brief Copy constructor for Component.
+     *
+     * Initializes a new Component with the values of an existing one.
+     * @param other The Component to copy values from.
+     */
+    AudioSource(const AudioSource &other);
 
     /**
      * @brief Call this method to start playing audio.
@@ -36,7 +54,7 @@ public:
      */
     void Stop();
 
-private:
+  private:
     /**
      * @brief Path to a locally stored audio file.
      */
