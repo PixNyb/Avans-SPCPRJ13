@@ -12,7 +12,7 @@ class AbstractSceneFactory {
   public:
     AbstractSceneFactory() = default;
 
-    virtual Scene CreateScene(nlohmann::json sceneJson) const = 0;
+    virtual Scene CreateScene(nlohmann::json sceneJson) = 0;
 
 };
 

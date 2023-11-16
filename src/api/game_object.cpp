@@ -34,8 +34,11 @@ GameObject::GameObject(const GameObject &other)
 {
     name = other.name;
 
-    // TODO: Add copy for components.
-    components = other.components;
+    // TODO: Update the clone functionality to make a deep copy.
+    std::vector<std::shared_ptr<Component>> comps;
+    for (const auto& comp : other.components)
+        comps.push_back(std::make_shared<Component>(*comp));
+    components = comps;
 
     transform = other.transform;
     active = other.active;

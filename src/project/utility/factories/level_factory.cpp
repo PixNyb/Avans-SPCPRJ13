@@ -7,24 +7,39 @@
 LevelFactory::LevelFactory(std::shared_ptr<PrefabManager> &PrefabManager) : prefabManager(PrefabManager)
 {}
 
-Scene LevelFactory::CreateScene(nlohmann::json sceneJson) const
+Scene LevelFactory::CreateScene(nlohmann::json sceneJson)
 {
     auto scene = Scene();
 
     nlohmann::json objects = sceneJson.at("objects");
-    for (const nlohmann::json& jsonObject : objects)
-    {
-        std::string name = jsonObject.at("name").template get<std::string>();
-        auto gameObject = std::make_shared<GameObject>(name);
-
-        gameObject->SetTag(jsonObject.at("tag").template get<std::string>());
-
-        gameObject->SetActive(jsonObject.at("active").template get<bool>());
-
-        gameObject->SetLayer(jsonObject.at("layer").template get<int>());
-
-        scene.AddGameObject(gameObject);
-    }
+    addObjects(scene, objects);
 
     return scene;
+}
+
+std::vector<std::shared_ptr<GameObject>> LevelFactory::addObjects(Scene &scene, const nlohmann::json& objectsJson) {
+    std::vector<std::shared_ptr<GameObject>> objects = {};
+    for (const nlohmann::json& jsonObject : objectsJson)
+    {
+        auto gameObject = prefabManager->GetPrefab(jsonObject.at("prefab").template get<std::string >());
+
+        gameObject.SetName(jsonObject.at("name").template get<std::string>());
+
+        gameObject.SetTag(jsonObject.at("tag").template get<std::string>());
+
+        gameObject.SetActive(jsonObject.at("active").template get<bool>());
+
+        gameObject.SetLayer(jsonObject.at("layer").template get<int>());
+
+        auto ptr = std::make_shared<GameObject>(gameObject);
+        // Recursive function call.
+        auto children = LevelFactory::addObjects(scene, jsonObject.at("objects"));
+        for (const auto& child : children)
+            child->SetParent(ptr);
+
+        scene.AddGameObject(ptr);
+        objects.push_back(ptr);
+    }
+
+    return objects;
 }

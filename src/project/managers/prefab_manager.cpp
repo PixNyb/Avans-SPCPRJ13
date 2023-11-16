@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2023
  */
 
-#include "prefab_manager.hpp"
+#include "../../../include/project/managers/prefab_manager.hpp"
 #include "format"
 
 PrefabManager::PrefabManager() : prefabs()

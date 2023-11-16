@@ -11,9 +11,9 @@
 #ifndef DEFUNBOBENGINE_PREFAB_MANAGER_HPP
 #define DEFUNBOBENGINE_PREFAB_MANAGER_HPP
 
+#include "../../api/game_object.hpp"
 #include <map>
 #include <string>
-#include "../api/game_object.hpp"
 
 class PrefabManager {
   private:
