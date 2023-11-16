@@ -27,7 +27,7 @@ class PrefabManager {
      * @param tag The unique key that can later be used to retrieve the prefab.
      * @param prefab The prefab that is to be registered.
      */
-    void RegisterPrefab(std::string tag, GameObject prefab);
+    void RegisterPrefab(const std::string &tag, const GameObject& prefab);
 
     /**
      * @brief Gets a prefab based on a tag.
@@ -41,13 +41,13 @@ class PrefabManager {
      * @param tag Defines which tag to check for.
      * @return True if there is already a prefab registered by the specified tag.
      */
-    bool HasPrefab(std::string tag) const;
+    bool HasPrefab(const std::string &tag) const;
 
     /**
      * @brief Removes a prefab based on the specified tag.
      * @param tag Specifies which prefab is too be removed.
      */
-    void RemovePrefab(std::string tag);
+    void RemovePrefab(const std::string &tag);
 
     /**
      * @brief Clears all of the currently registered prefabs.
