@@ -1,6 +1,13 @@
-//
-// Created by maxro on 11/11/2023.
-//
+/**
+* @file json_reader.cpp
+* @author Maxuuuu
+* @brief Implementation of the JSONReader.
+* @version 0.1
+* @date 11/11/2023
+*
+* @copyright Copyright (c) 2023
+*
+*/
 
 #include <fstream>
 #include "nlohmann/json.hpp"

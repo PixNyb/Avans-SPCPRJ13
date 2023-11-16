@@ -1,6 +1,6 @@
 /**
  * @file prefab_manager.hpp
- * @author Max Groenendaal
+ * @author Maxuuuu
  * @brief Manages prefabs
  * @version 0.1
  * @date 14/11/2023

@@ -1,6 +1,6 @@
 /**
  * @file prefab_manager.cpp
- * @author Max Groenendaal
+ * @author Maxuuuu
  * @brief Implementation of the prefab manager.
  * @version 0.1
  * @date 14/11/2023

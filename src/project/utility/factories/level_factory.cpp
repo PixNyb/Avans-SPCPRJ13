@@ -1,6 +1,13 @@
-//
-// Created by maxro on 12/11/2023.
-//
+/**
+* @file level_factory.cpp
+* @author Maxuuuu
+* @brief Implementation of the level factory.
+* @version 0.1
+* @date 11/11/2023
+*
+* @copyright Copyright (c) 2023
+*
+ */
 
 #include "level_factory.hpp"
 

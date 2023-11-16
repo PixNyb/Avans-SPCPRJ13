@@ -1,6 +1,6 @@
 /**
  * @file json_reader.hpp
- * @author max groenendaal
+ * @author Maxuuuu
  * @brief Converts data sources to json
  * @version 0.1
  * @date 11/11/2023
