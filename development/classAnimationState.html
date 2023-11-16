@@ -92,13 +92,73 @@ $(document).ready(function(){initNavTree('classAnimationState.html',''); initRes
 <div class="title">AnimationState Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the states of an animation.  
+ <a href="classAnimationState.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="animation__state_8hpp_source.html">animation_state.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad0ff0ef23c02f9a6e91c5032e46d0aa0"><td class="memItemLeft" align="right" valign="top"><a id="ad0ff0ef23c02f9a6e91c5032e46d0aa0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> (<a class="el" href="classGameObject.html">GameObject</a> &amp;gameObject)</td></tr>
+<tr class="memitem:a06e31ec743f5dc82f9ef3c30b3822dfd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationState.html#a06e31ec743f5dc82f9ef3c30b3822dfd">AnimationState</a> ()</td></tr>
+<tr class="memdesc:a06e31ec743f5dc82f9ef3c30b3822dfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classAnimationState.html" title="Manages the states of an animation.">AnimationState</a> object.  <a href="classAnimationState.html#a06e31ec743f5dc82f9ef3c30b3822dfd">More...</a><br /></td></tr>
+<tr class="separator:a06e31ec743f5dc82f9ef3c30b3822dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0ff0ef23c02f9a6e91c5032e46d0aa0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationState.html#ad0ff0ef23c02f9a6e91c5032e46d0aa0">Update</a> (<a class="el" href="classGameObject.html">GameObject</a> &amp;gameObject)</td></tr>
+<tr class="memdesc:ad0ff0ef23c02f9a6e91c5032e46d0aa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the animation state of the given game object.  <a href="classAnimationState.html#ad0ff0ef23c02f9a6e91c5032e46d0aa0">More...</a><br /></td></tr>
 <tr class="separator:ad0ff0ef23c02f9a6e91c5032e46d0aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the states of an animation. </p>
+<p>This class is responsible for handling different states of an animation. It maintains a map of states and provides functionalities to update the animation based on the current state. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a06e31ec743f5dc82f9ef3c30b3822dfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06e31ec743f5dc82f9ef3c30b3822dfd">&#9670;&nbsp;</a></span>AnimationState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AnimationState::AnimationState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new <a class="el" href="classAnimationState.html" title="Manages the states of an animation.">AnimationState</a> object. </p>
+<p>Initializes a new instance of the <a class="el" href="classAnimationState.html" title="Manages the states of an animation.">AnimationState</a> class. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad0ff0ef23c02f9a6e91c5032e46d0aa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ff0ef23c02f9a6e91c5032e46d0aa0">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimationState::Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGameObject.html">GameObject</a> &amp;&#160;</td>
+          <td class="paramname"><em>gameObject</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the animation state of the given game object. </p>
+<p>This function updates the state of an animation based on the current state and the properties of the provided game object.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gameObject</td><td>The game object whose animation state is to be updated. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/api/<a class="el" href="animation__state_8hpp_source.html">animation_state.hpp</a></li>
 <li>src/api/<a class="el" href="animation__state_8cpp.html">animation_state.cpp</a></li>

@@ -1,4 +1,4 @@
 <map id="include/api/button.hpp" name="include/api/button.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,172,32"/>
-<area shape="rect" id="node2" href="$button_8cpp.html" title=" " alt="" coords="19,80,158,107"/>
+<area shape="rect" id="node1" title="Defines the Button class as a part of the user interface in a game engine. Button is a UIObject subcl..." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="$button_8cpp.html" title="This file contains the Button class implementation." alt="" coords="19,80,158,107"/>
 </map>

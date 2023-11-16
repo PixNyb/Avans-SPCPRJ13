@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" href="$classGameObject.html" title="The GameObject class represents an object in the game world." alt="" coords="5,31,108,57"/>
-<area shape="rect" id="node2" href="$classUIObject.html" title=" " alt="" coords="156,31,235,57"/>
-<area shape="rect" id="node3" href="$classButton.html" title="Instances of this class are clickable user interface items." alt="" coords="283,5,348,32"/>
-<area shape="rect" id="node4" href="$classText.html" title="Class representing a piece of text which can be rendered." alt="" coords="291,56,340,83"/>
+<area shape="rect" id="node2" href="$classUIObject.html" title="Represents a user interface object in the game engine." alt="" coords="156,31,235,57"/>
+<area shape="rect" id="node3" href="$classButton.html" title="Represents a clickable user interface element." alt="" coords="283,5,348,32"/>
+<area shape="rect" id="node4" href="$classText.html" title="Represents a piece of text in the user interface." alt="" coords="291,56,340,83"/>
 </map>

@@ -1,5 +1,6 @@
 <map id="include/facades/graphics_facade.hpp" name="include/facades/graphics_facade.hpp">
-<area shape="rect" id="node1" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="82,5,265,47"/>
+<area shape="rect" id="node1" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="191,5,374,47"/>
 <area shape="rect" id="node2" href="$graphics__facade_8cpp.html" title="This file contains the GraphicsFacade class implementation." alt="" coords="5,95,160,136"/>
-<area shape="rect" id="node3" href="$game__loop_8cpp.html" title="This file contains the GameLoop class implementation." alt="" coords="184,95,347,136"/>
+<area shape="rect" id="node3" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="184,102,381,129"/>
+<area shape="rect" id="node4" href="$game__loop_8cpp.html" title="This file contains the GameLoop class implementation." alt="" coords="405,95,568,136"/>
 </map>

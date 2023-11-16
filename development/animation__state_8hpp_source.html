@@ -90,25 +90,28 @@ $(document).ready(function(){initNavTree('animation__state_8hpp_source.html','')
 </div><!--header-->
 <div class="contents">
 <a href="animation__state_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef AVANS_SPCPRJ13_ANIMATIONSTATE_H</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define AVANS_SPCPRJ13_ANIMATIONSTATE_H</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="game__object_8hpp.html">game_object.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classAnimationState.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAnimationState.html">AnimationState</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  std::map&lt;std::string, AnimationState&gt; states;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="classAnimationState.html">AnimationState</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">void</span> Update(<a class="code" href="classGameObject.html">GameObject</a> &amp;gameObject);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">// Getters, Setters, and other public member functions ...</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_ANIMATIONSTATE_H</span></div>
-<div class="ttc" id="aclassAnimationState_html"><div class="ttname"><a href="classAnimationState.html">AnimationState</a></div><div class="ttdef"><b>Definition:</b> animation_state.hpp:10</div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef AVANS_SPCPRJ13_ANIMATIONSTATE_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define AVANS_SPCPRJ13_ANIMATIONSTATE_H</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="game__object_8hpp.html">game_object.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classAnimationState.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAnimationState.html">AnimationState</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  std::map&lt;std::string, AnimationState&gt; states;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classAnimationState.html#a06e31ec743f5dc82f9ef3c30b3822dfd">AnimationState</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classAnimationState.html#ad0ff0ef23c02f9a6e91c5032e46d0aa0">Update</a>(<a class="code" href="classGameObject.html">GameObject</a> &amp;gameObject);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// Getters, Setters, and other public member functions ...</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_ANIMATIONSTATE_H</span></div>
+<div class="ttc" id="aclassAnimationState_html"><div class="ttname"><a href="classAnimationState.html">AnimationState</a></div><div class="ttdoc">Manages the states of an animation.</div><div class="ttdef"><b>Definition:</b> animation_state.hpp:27</div></div>
+<div class="ttc" id="aclassAnimationState_html_a06e31ec743f5dc82f9ef3c30b3822dfd"><div class="ttname"><a href="classAnimationState.html#a06e31ec743f5dc82f9ef3c30b3822dfd">AnimationState::AnimationState</a></div><div class="ttdeci">AnimationState()</div><div class="ttdoc">Constructs a new AnimationState object.</div><div class="ttdef"><b>Definition:</b> animation_state.cpp:16</div></div>
+<div class="ttc" id="aclassAnimationState_html_ad0ff0ef23c02f9a6e91c5032e46d0aa0"><div class="ttname"><a href="classAnimationState.html#ad0ff0ef23c02f9a6e91c5032e46d0aa0">AnimationState::Update</a></div><div class="ttdeci">void Update(GameObject &amp;gameObject)</div><div class="ttdoc">Updates the animation state of the given game object.</div><div class="ttdef"><b>Definition:</b> animation_state.cpp:18</div></div>
 <div class="ttc" id="aclassGameObject_html"><div class="ttname"><a href="classGameObject.html">GameObject</a></div><div class="ttdoc">The GameObject class represents an object in the game world.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:30</div></div>
 <div class="ttc" id="agame__object_8hpp_html"><div class="ttname"><a href="game__object_8hpp.html">game_object.hpp</a></div><div class="ttdoc">This file contains the GameObject class definition.</div></div>
 </div><!-- fragment --></div><!-- contents -->

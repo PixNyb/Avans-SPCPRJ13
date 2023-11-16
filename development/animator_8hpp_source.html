@@ -90,34 +90,34 @@ $(document).ready(function(){initNavTree('animator_8hpp_source.html',''); initRe
 </div><!--header-->
 <div class="contents">
 <a href="animator_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef AVANS_SPCPRJ13_ANIMATOR_H</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define AVANS_SPCPRJ13_ANIMATOR_H</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="animation__state_8hpp.html">animation_state.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="behaviour__script_8hpp.html">behaviour_script.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classAnimator.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAnimator.html">Animator</a> : <span class="keyword">public</span> <a class="code" href="classBehaviourScript.html">BehaviourScript</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="classAnimationState.html">AnimationState</a> currentState;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  std::map&lt;std::string, AnimationState&gt; possibleStates;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="classAnimator.html">Animator</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classAnimator.html#a35688249383660ce5781ee81b00fa0c9">Update</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">void</span> Stop();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">void</span> Play(<span class="keywordtype">bool</span> looping);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">// Getters, Setters, and other public member functions ...</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_ANIMATOR_H</span></div>
-<div class="ttc" id="aanimation__state_8hpp_html"><div class="ttname"><a href="animation__state_8hpp.html">animation_state.hpp</a></div></div>
-<div class="ttc" id="abehaviour__script_8hpp_html"><div class="ttname"><a href="behaviour__script_8hpp.html">behaviour_script.hpp</a></div></div>
-<div class="ttc" id="aclassAnimationState_html"><div class="ttname"><a href="classAnimationState.html">AnimationState</a></div><div class="ttdef"><b>Definition:</b> animation_state.hpp:10</div></div>
-<div class="ttc" id="aclassAnimator_html"><div class="ttname"><a href="classAnimator.html">Animator</a></div><div class="ttdef"><b>Definition:</b> animator.hpp:11</div></div>
-<div class="ttc" id="aclassAnimator_html_a35688249383660ce5781ee81b00fa0c9"><div class="ttname"><a href="classAnimator.html#a35688249383660ce5781ee81b00fa0c9">Animator::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">Update the Component.</div><div class="ttdef"><b>Definition:</b> animator.cpp:10</div></div>
-<div class="ttc" id="aclassBehaviourScript_html"><div class="ttname"><a href="classBehaviourScript.html">BehaviourScript</a></div><div class="ttdef"><b>Definition:</b> behaviour_script.hpp:9</div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef AVANS_SPCPRJ13_ANIMATOR_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define AVANS_SPCPRJ13_ANIMATOR_H</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="animation__state_8hpp.html">animation_state.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="behaviour__script_8hpp.html">behaviour_script.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classAnimator.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAnimator.html">Animator</a> : <span class="keyword">public</span> <a class="code" href="classBehaviourScript.html">BehaviourScript</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="classAnimationState.html">AnimationState</a> currentState;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  std::map&lt;std::string, AnimationState&gt; possibleStates;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="classAnimator.html">Animator</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classAnimator.html#a35688249383660ce5781ee81b00fa0c9">Update</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> Stop();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> Play(<span class="keywordtype">bool</span> looping);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="comment">// Getters, Setters, and other public member functions ...</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_ANIMATOR_H</span></div>
+<div class="ttc" id="aanimation__state_8hpp_html"><div class="ttname"><a href="animation__state_8hpp.html">animation_state.hpp</a></div><div class="ttdoc">Defines the AnimationState class for handling different states of an animation.</div></div>
+<div class="ttc" id="abehaviour__script_8hpp_html"><div class="ttname"><a href="behaviour__script_8hpp.html">behaviour_script.hpp</a></div><div class="ttdoc">Defines the BehaviourScript class as part of a game engine framework. BehaviourScript is a base class...</div></div>
+<div class="ttc" id="aclassAnimationState_html"><div class="ttname"><a href="classAnimationState.html">AnimationState</a></div><div class="ttdoc">Manages the states of an animation.</div><div class="ttdef"><b>Definition:</b> animation_state.hpp:27</div></div>
+<div class="ttc" id="aclassAnimator_html"><div class="ttname"><a href="classAnimator.html">Animator</a></div><div class="ttdef"><b>Definition:</b> animator.hpp:20</div></div>
+<div class="ttc" id="aclassAnimator_html_a35688249383660ce5781ee81b00fa0c9"><div class="ttname"><a href="classAnimator.html#a35688249383660ce5781ee81b00fa0c9">Animator::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">Update the Component.</div><div class="ttdef"><b>Definition:</b> animator.cpp:20</div></div>
+<div class="ttc" id="aclassBehaviourScript_html"><div class="ttname"><a href="classBehaviourScript.html">BehaviourScript</a></div><div class="ttdoc">Base class for scriptable behavior in game objects.</div><div class="ttdef"><b>Definition:</b> behaviour_script.hpp:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

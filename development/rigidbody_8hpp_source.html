@@ -89,44 +89,43 @@ $(document).ready(function(){initNavTree('rigidbody_8hpp_source.html',''); initR
 <div class="title">rigidbody.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="rigidbody_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef AVANS_SPCPRJ13_RIGIDBODY_H</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define AVANS_SPCPRJ13_RIGIDBODY_H</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="component_8hpp.html">component.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="point_8hpp.html">point.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="rigidbody_8hpp.html#acf0ce63e34327e5bc336f9fe3d2d47a2">   13</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="rigidbody_8hpp.html#acf0ce63e34327e5bc336f9fe3d2d47a2">BodyType</a> {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    staticBody,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    kinematicBody,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    dynamicBody</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classRigidBody.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRigidBody.html">RigidBody</a> : <span class="keyword">public</span> <a class="code" href="classComponent.html">Component</a> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classRigidBody.html#a0f1d64a8196a16405227b98fc40e3c3d">   29</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRigidBody.html#a0f1d64a8196a16405227b98fc40e3c3d">AddForce</a>(<span class="keyword">const</span> <a class="code" href="structPoint.html">Point</a>&amp; forceDirection);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">double</span> mass;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">double</span> gravityScale;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="rigidbody_8hpp.html#acf0ce63e34327e5bc336f9fe3d2d47a2">BodyType</a> bodyType;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_RIGIDBODY_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef AVANS_SPCPRJ13_RIGIDBODY_H</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define AVANS_SPCPRJ13_RIGIDBODY_H</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="component_8hpp.html">component.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="point_8hpp.html">point.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">enum class</span> BodyType {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    staticBody,    </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    kinematicBody, </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    dynamicBody    </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classRigidBody.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRigidBody.html">RigidBody</a> : <span class="keyword">public</span> <a class="code" href="classComponent.html">Component</a> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classRigidBody.html#a0f1d64a8196a16405227b98fc40e3c3d">   49</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRigidBody.html#a0f1d64a8196a16405227b98fc40e3c3d">AddForce</a>(<span class="keyword">const</span> <a class="code" href="structPoint.html">Point</a>&amp; forceDirection);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">double</span> mass;        </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">double</span> gravityScale; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    BodyType bodyType;  </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_RIGIDBODY_H</span></div>
 <div class="ttc" id="aclassComponent_html"><div class="ttname"><a href="classComponent.html">Component</a></div><div class="ttdoc">The Component class is a base class for all components that can be added to a GameObject.</div><div class="ttdef"><b>Definition:</b> component.hpp:23</div></div>
-<div class="ttc" id="aclassRigidBody_html"><div class="ttname"><a href="classRigidBody.html">RigidBody</a></div><div class="ttdoc">A component representing a rigid body.</div><div class="ttdef"><b>Definition:</b> rigidbody.hpp:22</div></div>
-<div class="ttc" id="aclassRigidBody_html_a0f1d64a8196a16405227b98fc40e3c3d"><div class="ttname"><a href="classRigidBody.html#a0f1d64a8196a16405227b98fc40e3c3d">RigidBody::AddForce</a></div><div class="ttdeci">void AddForce(const Point &amp;forceDirection)</div><div class="ttdoc">Apply force to this rigid body.</div></div>
+<div class="ttc" id="aclassRigidBody_html"><div class="ttname"><a href="classRigidBody.html">RigidBody</a></div><div class="ttdoc">Represents a physics body in the game engine.</div><div class="ttdef"><b>Definition:</b> rigidbody.hpp:41</div></div>
+<div class="ttc" id="aclassRigidBody_html_a0f1d64a8196a16405227b98fc40e3c3d"><div class="ttname"><a href="classRigidBody.html#a0f1d64a8196a16405227b98fc40e3c3d">RigidBody::AddForce</a></div><div class="ttdeci">void AddForce(const Point &amp;forceDirection)</div><div class="ttdoc">Apply force to the rigid body.</div></div>
 <div class="ttc" id="acomponent_8hpp_html"><div class="ttname"><a href="component_8hpp.html">component.hpp</a></div><div class="ttdoc">This file contains the Component class definition.</div></div>
-<div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div></div>
-<div class="ttc" id="arigidbody_8hpp_html_acf0ce63e34327e5bc336f9fe3d2d47a2"><div class="ttname"><a href="rigidbody_8hpp.html#acf0ce63e34327e5bc336f9fe3d2d47a2">BodyType</a></div><div class="ttdeci">BodyType</div><div class="ttdoc">Enumeration for different rigid body types.</div><div class="ttdef"><b>Definition:</b> rigidbody.hpp:13</div></div>
-<div class="ttc" id="astructPoint_html"><div class="ttname"><a href="structPoint.html">Point</a></div><div class="ttdoc">Struct representing both a 2D point and a 2D vector.</div><div class="ttdef"><b>Definition:</b> point.hpp:9</div></div>
+<div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div><div class="ttdoc">Defines the Point struct for representing 2D points and vectors in the DefunBobEngine....</div></div>
+<div class="ttc" id="astructPoint_html"><div class="ttname"><a href="structPoint.html">Point</a></div><div class="ttdoc">Represents a 2D point or vector.</div><div class="ttdef"><b>Definition:</b> point.hpp:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_2d52abcd54c181b91d630da402923092.html">api</a></li><li class="navelem"><a class="el" href="rigidbody_8hpp.html">rigidbody.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_2d52abcd54c181b91d630da402923092.html">api</a></li><li class="navelem"><b>rigidbody.hpp</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

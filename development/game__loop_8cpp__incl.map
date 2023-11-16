@@ -21,12 +21,12 @@
 <area shape="rect" id="node14" href="$vector2d_8hpp.html" title="This file contains the Vector2D class definition." alt="" coords="1595,393,1701,420"/>
 <area shape="rect" id="node20" href="$core__constants_8hpp_source.html" title=" " alt="" coords="63,169,211,196"/>
 <area shape="rect" id="node29" href="$di__container_8hpp.html" title="Dependency injection container." alt="" coords="521,169,650,196"/>
-<area shape="rect" id="node21" href="$color_8hpp.html" title=" " alt="" coords="57,319,138,345"/>
-<area shape="rect" id="node22" href="$text_8hpp.html" title=" " alt="" coords="138,244,214,271"/>
+<area shape="rect" id="node21" href="$color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="57,319,138,345"/>
+<area shape="rect" id="node22" href="$text_8hpp.html" title="Defines the Text class for handling text rendering in UI elements within the game engine...." alt="" coords="138,244,214,271"/>
 <area shape="rect" id="node28" title=" " alt="" coords="5,468,64,495"/>
-<area shape="rect" id="node23" href="$ui__object_8hpp.html" title=" " alt="" coords="227,319,336,345"/>
+<area shape="rect" id="node23" href="$ui__object_8hpp.html" title="Defines the UIObject class for representing user interface elements in the game engine...." alt="" coords="227,319,336,345"/>
 <area shape="rect" id="node24" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="214,393,349,420"/>
-<area shape="rect" id="node27" href="$point_8hpp.html" title=" " alt="" coords="297,543,380,569"/>
+<area shape="rect" id="node27" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="297,543,380,569"/>
 <area shape="rect" id="node25" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="88,468,211,495"/>
 <area shape="rect" id="node26" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="235,468,349,495"/>
 <area shape="rect" id="node30" title=" " alt="" coords="526,244,650,271"/>

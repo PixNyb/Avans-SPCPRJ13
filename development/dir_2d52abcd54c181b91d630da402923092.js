@@ -46,7 +46,7 @@ var dir_2d52abcd54c181b91d630da402923092 =
     [ "point.hpp", "point_8hpp.html", [
       [ "Point", "structPoint.html", "structPoint" ]
     ] ],
-    [ "rigidbody.hpp", "rigidbody_8hpp.html", "rigidbody_8hpp" ],
+    [ "rigidbody.hpp", "rigidbody_8hpp_source.html", null ],
     [ "scene.hpp", "scene_8hpp.html", [
       [ "Scene", "classScene.html", "classScene" ]
     ] ],

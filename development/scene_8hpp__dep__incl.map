@@ -1,6 +1,7 @@
 <map id="include/api/scene.hpp" name="include/api/scene.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="109,5,272,32"/>
-<area shape="rect" id="node2" href="$scene__manager_8hpp.html" title="Manages scenes." alt="" coords="5,80,192,121"/>
-<area shape="rect" id="node4" href="$scene_8cpp.html" title=" " alt="" coords="217,87,351,114"/>
-<area shape="rect" id="node3" href="$scene__manager_8cpp.html" title="TODO." alt="" coords="19,169,178,211"/>
+<area shape="rect" id="node1" title="Defines the Scene class for managing and rendering game scenes in the game engine...." alt="" coords="216,5,379,32"/>
+<area shape="rect" id="node2" href="$scene__manager_8hpp.html" title="Manages scenes." alt="" coords="112,80,299,121"/>
+<area shape="rect" id="node5" href="$scene_8cpp.html" title="This file contains the Scene class implementation." alt="" coords="323,87,458,114"/>
+<area shape="rect" id="node3" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="5,177,203,203"/>
+<area shape="rect" id="node4" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="227,169,386,211"/>
 </map>

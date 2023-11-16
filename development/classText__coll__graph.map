@@ -1,7 +1,7 @@
 <map id="Text" name="Text">
-<area shape="rect" id="node1" title="Class representing a piece of text which can be rendered." alt="" coords="32,336,81,363"/>
-<area shape="rect" id="node2" href="$classUIObject.html" title=" " alt="" coords="17,260,96,287"/>
+<area shape="rect" id="node1" title="Represents a piece of text in the user interface." alt="" coords="32,336,81,363"/>
+<area shape="rect" id="node2" href="$classUIObject.html" title="Represents a user interface object in the game engine." alt="" coords="17,260,96,287"/>
 <area shape="rect" id="node3" href="$classGameObject.html" title="The GameObject class represents an object in the game world." alt="" coords="5,184,108,211"/>
-<area shape="rect" id="node4" href="$structTransform.html" title="Instances of this class represent specific 2D transformations." alt="" coords="13,95,100,121"/>
-<area shape="rect" id="node5" href="$structPoint.html" title="Struct representing both a 2D point and a 2D vector." alt="" coords="29,5,84,32"/>
+<area shape="rect" id="node4" href="$structTransform.html" title="Represents a 2D transformation including position, rotation, and scale." alt="" coords="13,95,100,121"/>
+<area shape="rect" id="node5" href="$structPoint.html" title="Represents a 2D point or vector." alt="" coords="29,5,84,32"/>
 </map>

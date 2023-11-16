@@ -1,4 +1,4 @@
 <map id="include/api/camera.hpp" name="include/api/camera.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,180,32"/>
-<area shape="rect" id="node2" href="$color_8hpp.html" title=" " alt="" coords="52,80,133,107"/>
+<area shape="rect" id="node1" title="Defines the Camera class for managing camera views in a game engine. The Camera class handles the ren..." alt="" coords="5,5,180,32"/>
+<area shape="rect" id="node2" href="$color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="52,80,133,107"/>
 </map>

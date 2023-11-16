@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('structTransform.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 
-<p>Instances of this class represent specific 2D transformations.  
+<p>Represents a 2D transformation including position, rotation, and scale.  
  <a href="structTransform.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="transform_8hpp_source.html">transform.hpp</a>&gt;</code></p>
@@ -103,8 +103,8 @@ Collaboration diagram for Transform:</div>
 <div class="dyncontent">
 <div class="center"><img src="structTransform__coll__graph.png" border="0" usemap="#aTransform_coll__map" alt="Collaboration graph"/></div>
 <map name="aTransform_coll__map" id="aTransform_coll__map">
-<area shape="rect" title="Instances of this class represent specific 2D transformations." alt="" coords="5,95,92,121"/>
-<area shape="rect" href="structPoint.html" title="Struct representing both a 2D point and a 2D vector." alt="" coords="21,5,76,32"/>
+<area shape="rect" title="Represents a 2D transformation including position, rotation, and scale." alt="" coords="5,95,92,121"/>
+<area shape="rect" href="structPoint.html" title="Represents a 2D point or vector." alt="" coords="21,5,76,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -112,10 +112,10 @@ Collaboration diagram for Transform:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa08ca4266efabc768973cdeea51945ab"><td class="memItemLeft" align="right" valign="top"><a id="aa08ca4266efabc768973cdeea51945ab"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTransform.html#aa08ca4266efabc768973cdeea51945ab">Transform</a> ()</td></tr>
-<tr class="memdesc:aa08ca4266efabc768973cdeea51945ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="structTransform.html" title="Instances of this class represent specific 2D transformations.">Transform</a> object. <br /></td></tr>
+<tr class="memdesc:aa08ca4266efabc768973cdeea51945ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="structTransform.html" title="Represents a 2D transformation including position, rotation, and scale.">Transform</a> object. <br /></td></tr>
 <tr class="separator:aa08ca4266efabc768973cdeea51945ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d81f040002266fa6a2bd08c298770e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTransform.html#a4d81f040002266fa6a2bd08c298770e4">Transform</a> (const <a class="el" href="structPoint.html">Point</a> &amp;<a class="el" href="structTransform.html#ad0426334399b7c5b9c0e4dead6764e66">position</a>, double <a class="el" href="structTransform.html#a48a4c4b708092229dad7a066115c3a27">rotation</a>, double <a class="el" href="structTransform.html#aa2f54b64399dd72c2a8c7b9d92c80306">scale</a>)</td></tr>
-<tr class="memdesc:a4d81f040002266fa6a2bd08c298770e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="structTransform.html" title="Instances of this class represent specific 2D transformations.">Transform</a> object.  <a href="structTransform.html#a4d81f040002266fa6a2bd08c298770e4">More...</a><br /></td></tr>
+<tr class="memdesc:a4d81f040002266fa6a2bd08c298770e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="structTransform.html" title="Represents a 2D transformation including position, rotation, and scale.">Transform</a> object with specified position, rotation, and scale.  <a href="structTransform.html#a4d81f040002266fa6a2bd08c298770e4">More...</a><br /></td></tr>
 <tr class="separator:a4d81f040002266fa6a2bd08c298770e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -134,7 +134,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 <tr class="separator:aa2f54b64399dd72c2a8c7b9d92c80306"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Instances of this class represent specific 2D transformations. </p>
+<div class="textblock"><p>Represents a 2D transformation including position, rotation, and scale. </p>
+<p>Instances of this struct are used to define the transformation properties of game objects, including their position in the game world, rotation angle, and scaling factor. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4d81f040002266fa6a2bd08c298770e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d81f040002266fa6a2bd08c298770e4">&#9670;&nbsp;</a></span>Transform()</h2>
@@ -168,12 +169,12 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="structTransform.html" title="Instances of this class represent specific 2D transformations.">Transform</a> object. </p>
+<p>Construct a new <a class="el" href="structTransform.html" title="Represents a 2D transformation including position, rotation, and scale.">Transform</a> object with specified position, rotation, and scale. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">position</td><td></td></tr>
-    <tr><td class="paramname">rotation</td><td></td></tr>
-    <tr><td class="paramname">scale</td><td></td></tr>
+    <tr><td class="paramname">position</td><td>The position component of the transform, represented as a <a class="el" href="structPoint.html" title="Represents a 2D point or vector.">Point</a>. </td></tr>
+    <tr><td class="paramname">rotation</td><td>The rotation component of the transform, in radians. </td></tr>
+    <tr><td class="paramname">scale</td><td>The scale component of the transform, as a multiplication factor. </td></tr>
   </table>
   </dd>
 </dl>

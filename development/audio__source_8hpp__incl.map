@@ -1,5 +1,5 @@
 <map id="include/api/audio_source.hpp" name="include/api/audio_source.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,216,32"/>
+<area shape="rect" id="node1" title="The AudioSource class provides audio playback functionality for game objects. This class is part of a..." alt="" coords="5,5,216,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="24,80,83,107"/>
 <area shape="rect" id="node3" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="107,80,229,107"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="src/project/core/main.cpp" name="src/project/core/main.cpp">
+<area shape="rect" id="node1" title="Entry point for the Engine, initializing and running the game loop." alt="" coords="5,5,192,32"/>
+<area shape="rect" id="node2" href="$game__loop_8hpp.html" title="This file contains the GameLoop class definition." alt="" coords="37,80,160,107"/>
+</map>

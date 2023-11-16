@@ -90,35 +90,43 @@ $(document).ready(function(){initNavTree('ui__object_8hpp_source.html',''); init
 </div><!--header-->
 <div class="contents">
 <a href="ui__object_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef AVANS_SPCPRJ13_UIOBJECT_H</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define AVANS_SPCPRJ13_UIOBJECT_H</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="game__object_8hpp.html">game_object.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="point_8hpp.html">point.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classUIObject.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classUIObject.html">UIObject</a> : <span class="keyword">public</span> <a class="code" href="classGameObject.html">GameObject</a> {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">float</span> width, height;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="classUIObject.html">UIObject</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="classUIObject.html">UIObject</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="classGameObject.html#af542b33c8de269343e22c5629e6b66c0">name</a>, <span class="keyword">const</span> std::string &amp;<a class="code" href="classGameObject.html#a66891b8bfd67373dde0155ae7808bbb4">tag</a>, <span class="keywordtype">int</span> <a class="code" href="classGameObject.html#a77b865c8396028f6250dcff11aa76421">layer</a>, <span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="comment">// Getters, Setters, and other public member functions ...</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> SetWidth(<span class="keywordtype">float</span> w);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    [[nodiscard]] <span class="keywordtype">float</span> GetWidth() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> SetHeight(<span class="keywordtype">float</span> h);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    [[nodiscard]] <span class="keywordtype">float</span> GetHeight() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_UIOBJECT_H</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef AVANS_SPCPRJ13_UIOBJECT_H</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define AVANS_SPCPRJ13_UIOBJECT_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="game__object_8hpp.html">game_object.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="point_8hpp.html">point.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classUIObject.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classUIObject.html">UIObject</a> : <span class="keyword">public</span> <a class="code" href="classGameObject.html">GameObject</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">float</span> width;  </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">float</span> height; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="classUIObject.html#a593f3d292eb4d25e8a1c31a5f6d0ba46">UIObject</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="classUIObject.html#a593f3d292eb4d25e8a1c31a5f6d0ba46">UIObject</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="classGameObject.html#af542b33c8de269343e22c5629e6b66c0">name</a>, <span class="keyword">const</span> std::string &amp;<a class="code" href="classGameObject.html#a66891b8bfd67373dde0155ae7808bbb4">tag</a>, <span class="keywordtype">int</span> <a class="code" href="classGameObject.html#a77b865c8396028f6250dcff11aa76421">layer</a>, <span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUIObject.html#ad435ba0b0b87d94d8e57fb3150c75310">SetWidth</a>(<span class="keywordtype">float</span> w);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    [[nodiscard]] <span class="keywordtype">float</span> <a class="code" href="classUIObject.html#a478cb2cf3859291ede378b09c5e279d8">GetWidth</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUIObject.html#afff7638f9e3706d8027c57f695450fd9">SetHeight</a>(<span class="keywordtype">float</span> h);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    [[nodiscard]] <span class="keywordtype">float</span> <a class="code" href="classUIObject.html#a72c3c7ca21884b8ea9bfca0d4677da90">GetHeight</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_UIOBJECT_H</span></div>
 <div class="ttc" id="aclassGameObject_html"><div class="ttname"><a href="classGameObject.html">GameObject</a></div><div class="ttdoc">The GameObject class represents an object in the game world.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:30</div></div>
 <div class="ttc" id="aclassGameObject_html_a66891b8bfd67373dde0155ae7808bbb4"><div class="ttname"><a href="classGameObject.html#a66891b8bfd67373dde0155ae7808bbb4">GameObject::tag</a></div><div class="ttdeci">std::string tag</div><div class="ttdoc">The tag/type of the GameObject.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:38</div></div>
 <div class="ttc" id="aclassGameObject_html_a77b865c8396028f6250dcff11aa76421"><div class="ttname"><a href="classGameObject.html#a77b865c8396028f6250dcff11aa76421">GameObject::layer</a></div><div class="ttdeci">int layer</div><div class="ttdoc">The layer of the GameObject.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:39</div></div>
 <div class="ttc" id="aclassGameObject_html_af542b33c8de269343e22c5629e6b66c0"><div class="ttname"><a href="classGameObject.html#af542b33c8de269343e22c5629e6b66c0">GameObject::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">The name of the GameObject.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:32</div></div>
-<div class="ttc" id="aclassUIObject_html"><div class="ttname"><a href="classUIObject.html">UIObject</a></div><div class="ttdef"><b>Definition:</b> ui_object.hpp:9</div></div>
+<div class="ttc" id="aclassUIObject_html"><div class="ttname"><a href="classUIObject.html">UIObject</a></div><div class="ttdoc">Represents a user interface object in the game engine.</div><div class="ttdef"><b>Definition:</b> ui_object.hpp:29</div></div>
+<div class="ttc" id="aclassUIObject_html_a478cb2cf3859291ede378b09c5e279d8"><div class="ttname"><a href="classUIObject.html#a478cb2cf3859291ede378b09c5e279d8">UIObject::GetWidth</a></div><div class="ttdeci">float GetWidth() const</div><div class="ttdoc">Gets the width of the UI object.</div><div class="ttdef"><b>Definition:</b> ui_object.cpp:29</div></div>
+<div class="ttc" id="aclassUIObject_html_a593f3d292eb4d25e8a1c31a5f6d0ba46"><div class="ttname"><a href="classUIObject.html#a593f3d292eb4d25e8a1c31a5f6d0ba46">UIObject::UIObject</a></div><div class="ttdeci">UIObject()</div><div class="ttdoc">Default constructor for UIObject.</div><div class="ttdef"><b>Definition:</b> ui_object.cpp:15</div></div>
+<div class="ttc" id="aclassUIObject_html_a72c3c7ca21884b8ea9bfca0d4677da90"><div class="ttname"><a href="classUIObject.html#a72c3c7ca21884b8ea9bfca0d4677da90">UIObject::GetHeight</a></div><div class="ttdeci">float GetHeight() const</div><div class="ttdoc">Gets the height of the UI object.</div><div class="ttdef"><b>Definition:</b> ui_object.cpp:33</div></div>
+<div class="ttc" id="aclassUIObject_html_ad435ba0b0b87d94d8e57fb3150c75310"><div class="ttname"><a href="classUIObject.html#ad435ba0b0b87d94d8e57fb3150c75310">UIObject::SetWidth</a></div><div class="ttdeci">void SetWidth(float w)</div><div class="ttdoc">Sets the width of the UI object.</div><div class="ttdef"><b>Definition:</b> ui_object.cpp:27</div></div>
+<div class="ttc" id="aclassUIObject_html_afff7638f9e3706d8027c57f695450fd9"><div class="ttname"><a href="classUIObject.html#afff7638f9e3706d8027c57f695450fd9">UIObject::SetHeight</a></div><div class="ttdeci">void SetHeight(float h)</div><div class="ttdoc">Sets the height of the UI object.</div><div class="ttdef"><b>Definition:</b> ui_object.cpp:31</div></div>
 <div class="ttc" id="agame__object_8hpp_html"><div class="ttname"><a href="game__object_8hpp.html">game_object.hpp</a></div><div class="ttdoc">This file contains the GameObject class definition.</div></div>
-<div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div></div>
+<div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div><div class="ttdoc">Defines the Point struct for representing 2D points and vectors in the DefunBobEngine....</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
