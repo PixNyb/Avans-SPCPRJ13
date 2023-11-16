@@ -48,7 +48,7 @@ public:
     /**
     * @brief Destroy a body from a gameobject
     */
-    void DestroyBody(std::shared_ptr<GameObject> gameObject);
+    void DestroyBody(const std::shared_ptr<GameObject>& gameObject);
 
     /**
     * @brief Populate the b2World through a list of gameobjects
@@ -59,13 +59,13 @@ public:
     * @brief Add a force to an object
     * can be used for jumping or boosts in speed
     */
-    void AddForce(std::shared_ptr<GameObject> gameObject, float vx, float vy);
+    void AddForce(const std::shared_ptr<GameObject>& gameObject, float vx, float vy);
 
     /**
     * @brief Add a force to an object
     * can be used for jumping or boosts in speed
     */
-    void AddRotation(std::shared_ptr<GameObject> gameObject, float amount);
+    void AddRotation(const std::shared_ptr<GameObject>& gameObject, float amount);
 
     /**
     * @brief Execute the step function on the b2World
@@ -76,11 +76,6 @@ public:
     * @brief Simulate all bodies in the b2World in a window
     */
     void ShowDebug();
-
-    /**
-    * @brief Create a ground object for testing purposes
-    */
-    void CreateGround();
 };
 
 

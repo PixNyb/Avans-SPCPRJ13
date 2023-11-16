@@ -10,34 +10,29 @@
  */
 
 #include "physics_manager.hpp"
-
 #include <utility>
-
-PhysicsManager::PhysicsManager() {
-
-}
 
 void PhysicsManager::CreateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects) {
     physicsFacade.PopulateWorld(std::move(gameObjects));
 }
 
-void PhysicsManager::RemoveBody(std::shared_ptr<GameObject> gameObject) {
-    physicsFacade.DestroyBody(std::move(gameObject));
+void PhysicsManager::RemoveBody(const std::shared_ptr<GameObject>& gameObject) {
+    physicsFacade.DestroyBody(gameObject);
 }
 
 void PhysicsManager::CreateBody(std::shared_ptr<GameObject> gameObject) {
-    physicsFacade.MakeBody(std::move(gameObject));
+    physicsFacade.MakeBody(gameObject);
 }
 
 void PhysicsManager::Step() {
     physicsFacade.Step();
 }
 
-void PhysicsManager::AddForce(std::shared_ptr<GameObject> gameObject, float vx, float vy) {
+void PhysicsManager::AddForce(const std::shared_ptr<GameObject>& gameObject, float vx, float vy) {
     physicsFacade.AddForce(gameObject, vx, vy);
 }
 
-void PhysicsManager::AddRotation(std::shared_ptr<GameObject> gameObject, float amount) {
+void PhysicsManager::AddRotation(const std::shared_ptr<GameObject>& gameObject, float amount) {
     physicsFacade.AddRotation(gameObject, amount);
 }
 

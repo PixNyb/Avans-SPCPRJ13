@@ -1,26 +1,35 @@
-//
-// Created by Eigenaar on 14-11-2023.
-//
+/**
+ * @file debug_renderer.cpp
+ * @author Daan Groot (d.groot3@student.avans.nl)
+ * @brief This file contains the debugrendere class implementation.
+ * @version 0.1
+ * @date 2023-11-16
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
 
 #include "box2d/debug_renderer.hpp"
-
-#include <iostream>
+#include "game_object.hpp"
+#include "box_collider.hpp"
+#include "circle_collider.hpp"
 #include <Box2D/Box2D.h>
 #include <SDL.h>
 
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
-const float TIME_STEP = 1.0f / 240.0f;
-const int VELOCITY_ITERATIONS = 6;
-const int POSITION_ITERATIONS = 2;
 const double PixelScale = 0.5;
-
-b2World* world;
 
 SDL_Window* window;
 SDL_Renderer* renderer;
 
+DebugRenderer::DebugRenderer() {
+    InitSDL();
+}
 
+DebugRenderer::~DebugRenderer() {
+    CloseSDL();
+}
 
 void DebugRenderer::InitSDL() {
     SDL_Init(SDL_INIT_VIDEO);
@@ -34,9 +43,8 @@ void DebugRenderer::CloseSDL() {
     SDL_Quit();
 }
 
-void DebugRenderer::RenderBox(b2Body* body) {
-    b2Vec2 position = body->GetPosition();
-    float angle = body->GetAngle();
+void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject) {
+    b2Vec2 position(static_cast<float>(gameObject->GetTransform().position.x), static_cast<float>(gameObject->GetTransform().position.y));
 
     int sdlX = static_cast<int>(position.x * PixelScale);
     int sdlY = SCREEN_HEIGHT - static_cast<int>(position.y * PixelScale);
@@ -44,48 +52,25 @@ void DebugRenderer::RenderBox(b2Body* body) {
     SDL_Rect boxRect;
     boxRect.x = sdlX;
     boxRect.y = sdlY;
-    boxRect.w = 50;
-    boxRect.h = 50;
+    for (const auto &boxCollider: gameObject->GetComponents<BoxCollider>()) {
+        boxRect.w = static_cast<int>(boxCollider->Width());
+        boxRect.h = static_cast<int>(boxCollider->Height());
+        SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+        SDL_RenderDrawRect(renderer, &boxRect);
+    }
 
-
-    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-    SDL_RenderDrawRect(renderer, &boxRect);
-    SDL_RenderDrawLine(renderer, sdlX + 25, sdlY + 25,
-                       static_cast<int>((position.x + 50 * cos(angle)) * PixelScale),
-                       SCREEN_HEIGHT - static_cast<int>((position.y + 50 * sin(angle)) * PixelScale));
+//    for (const auto &circleCollider: gameObject->GetComponents<CircleCollider>()) {
+//
+//    }
 }
 
-void DebugRenderer::Render() {
+void DebugRenderer::Render(std::map<std::shared_ptr<GameObject>, b2Body*>& bodies) {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
 
-    for (b2Body* body = world->GetBodyList(); body; body = body->GetNext()) {
-        RenderBox(body);
+    for (auto const& item : bodies) {
+        RenderShapes(item.first);
     }
 
     SDL_RenderPresent(renderer);
-}
-
-void DebugRenderer::Run(std::unique_ptr<b2World> bWorld) {
-    InitSDL();
-
-    world = bWorld.get();
-
-    bool quit = false;
-    SDL_Event e;
-
-    while (!quit) {
-        while (SDL_PollEvent(&e) != 0) {
-            if (e.type == SDL_QUIT) {
-                quit = true;
-            }
-        }
-
-        world->Step(TIME_STEP, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
-
-        Render();
-    }
-
-    delete world;
-    CloseSDL();
 }

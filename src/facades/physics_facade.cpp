@@ -15,12 +15,14 @@
 #include "box_collider.hpp"
 #include "debug_renderer.hpp"
 
-const float TimeStep = 1.0f / 60.0f;
+const float TimeStep = 1.0f / 240.0f;
 const int VelocityIterations = 12;
 const int PositionIterations = 4;
 const int TimeIterations = 60;
 const double PixelScale = 0.5;
 const double GravityScale = 10.0;
+bool DEBUG = true;
+DebugRenderer debugRenderer;
 
 PhysicsFacade::PhysicsFacade() = default;
 
@@ -105,6 +107,9 @@ void PhysicsFacade::Step() {
             gameObject->SetTransform(oldTransform);
         }
     }
+    if (DEBUG) {
+        ShowDebug();
+    }
 }
 
 void PhysicsFacade::SetFixture(b2Body *body, b2Shape *shape, const std::shared_ptr<RigidBody> &rigidBody, double area) {
@@ -120,38 +125,16 @@ void PhysicsFacade::SetFixture(b2Body *body, b2Shape *shape, const std::shared_p
 }
 
 void PhysicsFacade::ShowDebug() {
-    DebugRenderer debugRenderer;
-    CreateGround();
-    debugRenderer.Run(std::move(world));
+    debugRenderer.Render(bodies);
 }
 
-void PhysicsFacade::CreateGround() {
-    //// Define the ground body
-    b2BodyDef groundBodyDef;
-    groundBodyDef.position.Set(0.0f, 100.0f); // Set the position of the ground body
-    groundBodyDef.type = b2BodyType::b2_staticBody;
-    //// Create the ground body
-    b2Body *groundBody = world->CreateBody(&groundBodyDef);
-
-    //// Define the ground shape (as a static box)
-    b2PolygonShape groundBox;
-    groundBox.SetAsBox(5000.0f, 1.0f); // Set the dimensions of the ground box
-
-    //// Create the ground fixture
-    b2FixtureDef fixtureDef;
-    fixtureDef.shape = &groundBox;
-
-    //// Attach the fixture to the ground body
-    groundBody->CreateFixture(&fixtureDef);
-}
-
-void PhysicsFacade::DestroyBody(std::shared_ptr<GameObject> gameObject) {
+void PhysicsFacade::DestroyBody(const std::shared_ptr<GameObject>& gameObject) {
     auto iterator = bodies.find(gameObject);
     if (iterator != bodies.end())
         world->DestroyBody(bodies.at(gameObject));
 }
 
-void PhysicsFacade::AddForce(std::shared_ptr<GameObject> gameObject, float vx, float vy) {
+void PhysicsFacade::AddForce(const std::shared_ptr<GameObject>& gameObject, float vx, float vy) {
     float newVX = vx * 100;
     float newVY = vy * 100;
     auto iterator = bodies.find(gameObject);
@@ -160,7 +143,7 @@ void PhysicsFacade::AddForce(std::shared_ptr<GameObject> gameObject, float vx, f
     }
 }
 
-void PhysicsFacade::AddRotation(std::shared_ptr<GameObject> gameObject, float amount) {
+void PhysicsFacade::AddRotation(const std::shared_ptr<GameObject>& gameObject, float amount) {
     auto iterator = bodies.find(gameObject);
     if (iterator != bodies.end()) {
         bodies.at(gameObject)->ApplyAngularImpulse(amount, false);
