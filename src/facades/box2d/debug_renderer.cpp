@@ -13,6 +13,7 @@
 #include "game_object.hpp"
 #include "box_collider.hpp"
 #include "circle_collider.hpp"
+#include "polygon_collider.hpp"
 #include <Box2D/Box2D.h>
 #include <SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
@@ -62,6 +63,16 @@ void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body*
 
     for (const auto &circleCollider: gameObject->GetComponents<CircleCollider>()) {
         filledCircleRGBA(renderer, sdlX, sdlY, circleCollider->Radius(), 0, 255, 0, 255);
+    }
+
+    for (const auto &polygonCollider: gameObject->GetComponents<PolygonCollider>()) {
+        auto length = polygonCollider->Vertices().size();
+        std::vector<SDL_Point> points;
+        for (int i = 0; i < length; ++i) {
+            auto vert = polygonCollider->Vertices().at(i);
+            points.push_back(SDL_Point(vert.x, vert.y));
+        }
+        SDL_RenderDrawLines(renderer, points.data(), static_cast<int>(polygonCollider->Vertices().size()));
     }
 }
 

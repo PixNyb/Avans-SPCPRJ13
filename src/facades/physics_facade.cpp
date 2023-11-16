@@ -73,12 +73,14 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
         //// create polygons
         for (auto &polygonCollider: game_object->GetComponents<PolygonCollider>()) {
             b2PolygonShape polygonShape{};
-            int length = static_cast<int>(polygonCollider->Vertices().size());
-            b2Vec2 vertices[length];
+            auto length = polygonCollider->Vertices().size();
+            std::vector<b2Vec2> vertices;
             for (int i = 0; i < length; ++i) {
-                vertices[i].Set(polygonCollider->Vertices().at(i).x, polygonCollider->Vertices().at(i).y);
+                Point point = polygonCollider->Vertices().at(i);
+                vertices.emplace_back(point.x, point.y);
             }
-            polygonShape.Set(vertices, length);
+            b2Vec2* verticesArray = vertices.data();
+            polygonShape.Set(verticesArray, length);
             b2FixtureDef fixtureDef;
             fixtureDef.shape = &polygonShape;
             fixtureDef.density = 1.0f; // Set the density of the fixture
