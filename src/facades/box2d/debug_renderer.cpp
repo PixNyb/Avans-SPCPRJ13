@@ -15,6 +15,7 @@
 #include "circle_collider.hpp"
 #include <Box2D/Box2D.h>
 #include <SDL.h>
+#include <SDL2/SDL2_gfxPrimitives.h>
 
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
@@ -44,24 +45,24 @@ void DebugRenderer::CloseSDL() {
 }
 
 void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body* body) {
-    b2Vec2 position(static_cast<float>(body->GetTransform().p.x), static_cast<float>(body->GetTransform().p.y));
+    b2Vec2 position(static_cast<float>(body->GetPosition().x), static_cast<float>(body->GetPosition().y));
 
     int sdlX = static_cast<int>(position.x);
     int sdlY = SCREEN_HEIGHT - static_cast<int>(position.y);
 
-    SDL_Rect boxRect;
-    boxRect.x = sdlX;
-    boxRect.y = sdlY;
     for (const auto &boxCollider: gameObject->GetComponents<BoxCollider>()) {
+        SDL_Rect boxRect;
+        boxRect.x = sdlX;
+        boxRect.y = sdlY;
         boxRect.w = static_cast<int>(boxCollider->Width());
         boxRect.h = static_cast<int>(boxCollider->Height());
         SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
         SDL_RenderDrawRect(renderer, &boxRect);
     }
 
-//    for (const auto &circleCollider: gameObject->GetComponents<CircleCollider>()) {
-//
-//    }
+    for (const auto &circleCollider: gameObject->GetComponents<CircleCollider>()) {
+        filledCircleRGBA(renderer, sdlX, sdlY, circleCollider->Radius(), 0, 255, 0, 255);
+    }
 }
 
 void DebugRenderer::Render(std::map<std::shared_ptr<GameObject>, b2Body*>& bodies) {

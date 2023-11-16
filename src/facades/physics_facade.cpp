@@ -14,6 +14,7 @@
 #include "circle_collider.hpp"
 #include "box_collider.hpp"
 #include "debug_renderer.hpp"
+#include "polygon_collider.hpp"
 
 const float TimeStep = 1.0f / 240.0f;
 const int VelocityIterations = 12;
@@ -69,6 +70,22 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
             SetFixture(body, &circleShape, game_object->GetComponent<RigidBody>(), area);
         }
 
+        //// create polygons
+        for (auto &polygonCollider: game_object->GetComponents<PolygonCollider>()) {
+            b2PolygonShape polygonShape{};
+            int length = static_cast<int>(polygonCollider->Vertices().size());
+            b2Vec2 vertices[length];
+            for (int i = 0; i < length; ++i) {
+                vertices[i].Set(polygonCollider->Vertices().at(i).x, polygonCollider->Vertices().at(i).y);
+            }
+            polygonShape.Set(vertices, length);
+            b2FixtureDef fixtureDef;
+            fixtureDef.shape = &polygonShape;
+            fixtureDef.density = 1.0f; // Set the density of the fixture
+            fixtureDef.friction = 0.3f; // Set the friction of the fixture
+            body->CreateFixture(&fixtureDef);
+        }
+
         //// create boxes
         for (auto &boxCollider: game_object->GetComponents<BoxCollider>()) {
             b2PolygonShape boxShape{};
@@ -76,6 +93,7 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
                               static_cast<float>(boxCollider->Height() / 2.0 * PixelScale));
             double area = game_object->GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody ? (
                     boxCollider->Width() * boxCollider->Height()) : 0.0f;
+
             SetFixture(body, &boxShape, game_object->GetComponent<RigidBody>(), area);
         }
     }
