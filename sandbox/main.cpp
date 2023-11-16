@@ -46,15 +46,16 @@ int main(int argc, char *argv[])
 
     //// create polygon
     auto obj3 = std::make_shared<GameObject>();
-    Point point3{800, 1000};
+    Point point3{900, 1000};
     Transform trs3{point3, 0, 1};
     auto body3 = std::make_shared<RigidBody>(10, 1, BodyType::dynamicBody);
     auto collider3 = std::make_shared<PolygonCollider>();
     std::vector<Point> vertices;
-    vertices.emplace_back(1, 4);
-    vertices.emplace_back(3, 4);
-    vertices.emplace_back(5, 5);
-    vertices.emplace_back(5, 6);
+    vertices.emplace_back(10, 40);
+    vertices.emplace_back(30, 40);
+    vertices.emplace_back(50, 50);
+    vertices.emplace_back(50, 60);
+    vertices.emplace_back(10, 40);
     collider3->Vertices(vertices);
     obj3->AddComponent(body3);
     obj3->AddComponent(collider3);
