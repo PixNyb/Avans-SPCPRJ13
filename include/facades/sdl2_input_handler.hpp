@@ -18,9 +18,7 @@
 #ifndef DEFUNBOBENGINE_INPUTHANDLER_HPP
 #define DEFUNBOBENGINE_INPUTHANDLER_HPP
 
-#include <vector>
-#include "event.hpp"
-#include "io_facade.hpp"
+#include "IInputHandler.hpp"
 
 /**
  * @class SDL2InputHandler
@@ -30,16 +28,8 @@
  * interface. It is responsible for initializing SDL2's input system and retrieving
  * input events each frame, which can then be interpreted by the game engine.
  */
-class SDL2InputHandler : public IOFacade {
+class SDL2InputHandler : public IInputHandler {
 public:
-    /**
-     * @brief Initializes SDL2 input handling.
-     *
-     * This method sets up any necessary SDL2 structures and prepares the system to
-     * start processing input events.
-     */
-    void init() override;
-
     /**
      * @brief Polls for SDL2 input events and passes them to the engine.
      *
@@ -48,7 +38,15 @@ public:
      * event vector.
      * @param events A reference to a vector where the polled events will be stored.
      */
-    void pollEvents(std::vector<Event>& events) override;
+    void PollEvents(std::vector<Event>& events) override;
+
+    [[nodiscard]] std::shared_ptr<KeyEvent> getLastPolledKeyEvent() const override;
+
+    [[nodiscard]] std::shared_ptr<MouseEvent> getLastPolledMouseEvent() const override;
+
+private:
+    std::shared_ptr<KeyEvent> lastPolledKeyEvent;
+    std::shared_ptr<MouseEvent> lastPolledMouseEvent;
 };
 
 #endif //DEFUNBOBENGINE_INPUTHANDLER_HPP

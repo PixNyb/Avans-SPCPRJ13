@@ -15,6 +15,7 @@
 #define DEFUNBOBENGINE_EVENT_HPP
 
 #include "event_type.hpp"
+#include "SDL.h"
 
 /**
  * @class Event
@@ -25,18 +26,25 @@
  */
 class Event {
 public:
-    EventType type; ///< The type of the event.
-
     /**
      * @brief Constructs an event with a specified type.
      * @param type The type of the event.
+     * @param scancode Scancode of the key (or other relevant information).
      */
-    Event(EventType type) : type(type) {}
+    explicit Event(Uint32 type) : type(type) {}
 
     /**
      * @brief Virtual destructor for polymorphic deletion.
      */
-    virtual ~Event() {}
+    virtual ~Event() = default;
+
+    [[nodiscard]] Uint32 getType() const { return type; };
+
+    // Ordering the enums
+    bool operator<(const Event& other) const { return type < other.type; }
+
+private:
+    Uint32 type; ///< The type of the event.
 };
 
 #endif //DEFUNBOBENGINE_EVENT_HPP
