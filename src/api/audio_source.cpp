@@ -1,4 +1,13 @@
-/// @file
+/**
+ * @file audio_source.cpp
+ * @author Robin Pijnappels
+ * @brief This file contains the AudioSource class implementation.
+ * @version 0.1
+ * @date 2023-11-08
+ *
+ * Copyright Copyright (c) 2023
+ *
+ */
 
 #include "audio_source.hpp"
 

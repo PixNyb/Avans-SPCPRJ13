@@ -6,7 +6,6 @@
  * @date 2023-11-16
  *
  * @copyright Copyright (c) 2023
- *
  */
 
 #include "animation_state.hpp"

@@ -5,18 +5,23 @@
  * @version 0.1
  * @date 2023-11-08
  *
- * @copyright Copyright (c) 2023
+ * @brief Defines the Transform struct for representing 2D transformations in the game engine.
+ * Transform is a fundamental structure that encapsulates translation, rotation, and scaling in 2D space.
+ * It is widely used for positioning, rotating, and scaling game objects within the game world.
  *
+ * @copyright Copyright (c) 2023
  */
 
 #ifndef AVANS_SPCPRJ13_TRANSFORM_H
 #define AVANS_SPCPRJ13_TRANSFORM_H
 
 #include "point.hpp"
-
 /**
- * @brief Instances of this class represent specific 2D transformations.
- */
+* @brief Represents a 2D transformation including position, rotation, and scale.
+*
+* Instances of this struct are used to define the transformation properties of game objects,
+       * including their position in the game world, rotation angle, and scaling factor.
+*/
 struct Transform
 {
     /**
@@ -26,11 +31,11 @@ struct Transform
     Transform();
 
     /**
-     * @brief Construct a new Transform object.
+     * @brief Construct a new Transform object with specified position, rotation, and scale.
      *
-     * @param position
-     * @param rotation
-     * @param scale
+     * @param position The position component of the transform, represented as a Point.
+     * @param rotation The rotation component of the transform, in radians.
+     * @param scale The scale component of the transform, as a multiplication factor.
      */
     Transform(const Point &position, double rotation, double scale);
 

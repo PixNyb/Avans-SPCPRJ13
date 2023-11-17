@@ -6,7 +6,6 @@
  * @date 2023-11-16
  *
  * @copyright Copyright (c) 2023
- *
  */
 
 #ifndef AVANS_SPCPRJ13_ANIMATOR_H

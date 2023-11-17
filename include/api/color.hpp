@@ -1,10 +1,27 @@
-/// @file
+/**
+ * @file color.hpp
+ * @author Robin Pijnappels
+ * @version 0.1
+ * @date 2023-11-12
+ *
+ * @brief Defines the Color class for representing RGBA colors in the DefunBobEngine.
+ * The Color class provides a representation of colors using the red, green, blue, and alpha (transparency)
+ * components. It also includes predefined static instances of common colors for convenience.
+ * Each color component is a double value ranging from 0 to 1.
+ *
+ * @copyright Copyright (c) 2023
+ */
+
 
 #ifndef DEFUNBOBENGINE_COLOR_H
 #define DEFUNBOBENGINE_COLOR_H
 
 /**
-  * @brief Color represents a red-green-blue color with alpha.
+  * @class Color
+  * @brief Represents a color using red, green, blue, and alpha (transparency) components.
+  *
+  * The Color class encapsulates colors in RGBA format. It includes methods to create colors
+  * and static members representing common colors.
   */
 class Color {
 public:
