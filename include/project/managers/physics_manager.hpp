@@ -62,7 +62,17 @@ public:
      */
     void Step();
 
+    /**
+    * Sets the given gameobject to sleep
+    * @param gameObject the gameobject that is set asleep
+    */
     void Sleep(const std::shared_ptr<GameObject>& gameObject);
+
+    /**
+    * Sets the given gameobject to wake up
+    * @param gameObject the gameobject that is set awake
+    */
+    void Wake(const std::shared_ptr<GameObject>& gameObject);
 };
 
 

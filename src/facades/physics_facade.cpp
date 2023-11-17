@@ -147,5 +147,12 @@ void PhysicsFacade::Sleep(const std::shared_ptr<GameObject> &gameObject) {
     }
 }
 
+void PhysicsFacade::Wake(const std::shared_ptr<GameObject> &gameObject) {
+    auto iterator = bodies.find(gameObject);
+    if (iterator != bodies.end()) {
+        bodies.at(gameObject)->SetAwake(true);
+    }
+}
+
 PhysicsFacade::~PhysicsFacade() = default;
 

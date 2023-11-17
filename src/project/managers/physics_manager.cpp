@@ -21,7 +21,7 @@ void PhysicsManager::RemoveBody(const std::shared_ptr<GameObject>& gameObject) {
 }
 
 void PhysicsManager::CreateBody(std::shared_ptr<GameObject> gameObject) {
-    physicsFacade.MakeBody(gameObject);
+    physicsFacade.MakeBody(std::move(gameObject));
 }
 
 void PhysicsManager::Step() {
@@ -38,6 +38,10 @@ void PhysicsManager::AddRotation(const std::shared_ptr<GameObject>& gameObject, 
 
 void PhysicsManager::Sleep(const std::shared_ptr<GameObject> &gameObject) {
     physicsFacade.Sleep(gameObject);
+}
+
+void PhysicsManager::Wake(const std::shared_ptr<GameObject> &gameObject) {
+    physicsFacade.Wake(gameObject);
 }
 
 
