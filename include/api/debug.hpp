@@ -1,4 +1,17 @@
-/// @file
+/**
+ * @file debug.hpp
+ * @author Robin Pijnappels
+ * @version 0.1
+ * @date 2023-11-12
+ *
+ * @brief Defines a set of debugging utilities in the DefunBobEngine.
+ * This file includes functions for drawing debug lines, logging messages, errors, and warnings.
+ * These utilities are useful for development and debugging processes, providing visual and console-based
+ * feedback to assist in the game development process.
+ *
+ * @copyright Copyright (c) 2023
+ */
+
 
 #ifndef DEFUNBOBENGINE_DEBUG_HPP
 #define DEFUNBOBENGINE_DEBUG_HPP
@@ -8,7 +21,11 @@
 #include "point.hpp"
 
 /**
- * @brief Some convenient debugging functions.
+ * @namespace Debug
+ * @brief Provides convenient debugging functions.
+ *
+ * The Debug namespace contains functions for drawing in the game world and logging messages,
+ * which are essential tools for game developers to debug and visualize various aspects of their game.
  */
 namespace Debug {
 
