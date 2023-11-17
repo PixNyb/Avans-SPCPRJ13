@@ -37,13 +37,32 @@ public:
      */
     virtual ~Geometry() {}
 
+    /**
+     * Sets the color of the geometric shape.
+     * @param c The color to set.
+     */
     void SetFillColor(const Color& c) { fillColor.SetColor(c); }
+
+    /**
+     * Gets the color of the geometric shape.
+     * @return The color of the geometric shape.
+     */
     [[nodiscard]] Color SetFillColor() const { return fillColor.GetColor(); }
 
+    /**
+     * Set the rotation of the geometric shape.
+     *
+     * @param r The clockwise rotation of the geometric shape.
+     */
     void SetRotation(int r) { rotation = r; }
+
+    /**
+     * Get the rotation of the geometric shape.
+     *
+     * @return The clockwise rotation of the geometric shape.
+     */
     [[nodiscard]] double GetRotation() const { return rotation; }
 
-    // Get area
     /**
      * @brief Pure virtual method to get the area of a geometric shape.
      *

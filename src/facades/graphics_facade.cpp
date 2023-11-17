@@ -237,10 +237,17 @@ void GraphicsFacade::DrawText(const Text& text) {
         // Create the text surface
         auto sdlColor = SDLColorUtility::GetSDLColor(text.GetTextColor());
 
-        auto textSurface = TTF_RenderText_Solid(sdlFont, text.GetText().c_str(), sdlColor);
+        // Note: For some odd reason wrap length works in pixels instead of characters
+        auto textSurface = TTF_RenderUTF8_Blended_Wrapped(sdlFont, text.GetText().c_str(),
+                                                          sdlColor, text.GetWidth());
         if (!textSurface) {
                 std::cerr << "Failed to create text surface: " << TTF_GetError() << std::endl;
                 return;
+        }
+
+        // Limit height to text height if it's larger than the height
+        if(textSurface->h > text.GetHeight()) {
+            textSurface->h = text.GetHeight();
         }
 
         // Create the text texture

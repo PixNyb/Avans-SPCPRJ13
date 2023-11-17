@@ -112,13 +112,16 @@ int main(int argc, char *argv[])
     scene->SetCamera(camera);
 
     // FPS Counter
-    auto fpsCounter = std::make_shared<Text>();
-    fpsCounter->SetFontSize(30);
-    fpsCounter->SetTextColor(Color::green());
-    fpsCounter->SetTransform(Transform(Point(20, 20), -45, 1));
-    auto behaviourScriptC = std::make_shared<FPSBehaviourScript>(fpsCounter);
-    fpsCounter->AddComponent(behaviourScriptC);
-    scene->AddGameObject(fpsCounter);
+    auto fpsCounterLabel = std::make_shared<Text>();
+    fpsCounterLabel->SetHeight(30);
+    fpsCounterLabel->SetWidth(300);
+    fpsCounterLabel->SetFontSize(30);
+    fpsCounterLabel->SetTextColor(Color::green());
+    fpsCounterLabel->SetTransform(Transform(Point(20, 20), 0, 1));
+
+    auto behaviourScriptC = std::make_shared<FPSBehaviourScript>(fpsCounterLabel);
+    fpsCounterLabel->AddComponent(behaviourScriptC);
+    scene->AddGameObject(fpsCounterLabel);
 
     sceneManager->SetScene(scene);
 
