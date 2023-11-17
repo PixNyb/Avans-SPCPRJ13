@@ -1,7 +1,7 @@
 /**
  * @file RenderManager.cpp
  * @author "Melvin van Bree"
- * @brief TODO
+ * @brief Manager for rendering game objects
  * @version 0.1
  * @date 14/11/2023
  *
@@ -11,7 +11,6 @@
 
 #include "render_manager.hpp"
 #include "box_collider.hpp"
-#include "camera.hpp"
 #include "circle.hpp"
 #include "circle_collider.hpp"
 #include "core/engine.hpp"

@@ -17,6 +17,7 @@
 #include "graphics_facade.hpp"
 #include "scene.hpp"
 #include "scene_manager.hpp"
+#include "time.hpp"
 #include <cfloat>
 #include <iostream>
 #include <utility>
@@ -49,11 +50,22 @@ class TestBehaviourScript : public BehaviourScript {
 
     void OnUpdate() override
     {
-        float speed = 0.1;
-        if(ticks >= FLT_MAX - 1) ticks = 0;
+        float speedPerSecond = 1.5f;
 
-        float oscillation = std::sin(speed * ticks++);
-        float newScale = (2 + (1 + 2 * oscillation));
+        // Get delta time
+        float delta = Time::GetDeltaTime() * Time::TimeScale();
+
+        // Increment ticks with the adjusted speed
+        ticks += speedPerSecond * delta;
+
+        if (ticks >= FLT_MAX - 1)
+            ticks = 0;
+
+        // Compute oscillation based on time
+        float oscillation = std::sin(ticks);
+
+        // Compute new scale using the oscillation
+        float newScale = 3 + 2 * oscillation;
 
         // Update the radius
         auto transform = gameObject->GetTransform();
@@ -67,7 +79,7 @@ int main(int argc, char *argv[])
 
     // Engine
     auto engine = Engine::GetInstance();
-    engine->SetFPSLimit(60);
+    engine->SetFPSLimit(240);
     auto sceneManager = engine->Get<SceneManager>();
 
     // Graphics
@@ -113,8 +125,8 @@ int main(int argc, char *argv[])
 
     // FPS Counter
     auto fpsCounterLabel = std::make_shared<Text>();
-    fpsCounterLabel->SetHeight(30);
-    fpsCounterLabel->SetWidth(300);
+    fpsCounterLabel->SetHeight(80);
+    fpsCounterLabel->SetWidth(200);
     fpsCounterLabel->SetFontSize(30);
     fpsCounterLabel->SetTextColor(Color::green());
     fpsCounterLabel->SetTransform(Transform(Point(20, 20), 0, 1));
