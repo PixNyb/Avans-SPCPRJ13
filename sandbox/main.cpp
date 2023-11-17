@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
     // Engine
     auto engine = Engine::GetInstance();
-
+    engine->SetFPSLimit(60);
     auto sceneManager = engine->Get<SceneManager>();
 
     // Graphics
@@ -74,13 +74,13 @@ int main(int argc, char *argv[])
     auto obj = scene->CreateGameObject().lock();
     obj->SetName("circle");
     obj->AddComponent(component);
-    obj->SetTransform(Transform(Point(220 + 15,220 + 15), 0, 1));
+    obj->SetTransform(Transform(Point(0,0), 0, 1));
 
     // Box
     auto obj2 = scene->CreateGameObject().lock();
     obj2->SetName("box");
     obj2->AddComponent(boxComponent);
-    obj2->SetTransform(Transform(Point(220-15,220-15), 0, 1));
+    obj2->SetTransform(Transform(Point(0,0), 0, 1));
 
     // Scaling behaviour scripts
     auto behaviourScript = std::make_shared<TestBehaviourScript>(obj);
@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
     auto camera = std::make_shared<Camera>();
     camera->SetAspectHeight(500);
     camera->SetAspectWidth(500);
-    camera->SetTransform(Transform(Point(220, 220), 0, 1));
+    camera->SetTransform(Transform(Point(0, 0), 0, 1));
     scene->SetCamera(camera);
 
     sceneManager->SetScene(scene);
