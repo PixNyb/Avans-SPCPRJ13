@@ -19,9 +19,7 @@
 const float TimeStep = 1.0f / 240.0f;
 const int VelocityIterations = 12;
 const int PositionIterations = 4;
-const int TimeIterations = 60;
 const double PixelScale = 0.5;
-const double GravityScale = 10.0;
 bool DEBUG = true;
 DebugRenderer debugRenderer;
 
@@ -98,6 +96,8 @@ void PhysicsFacade::Step() {
         gameObject->SetTransform(oldTransform);
     }
     if (DEBUG) {
+        if (!debugRenderer.running)
+            debugRenderer.Start();
         ShowDebug();
     }
 }

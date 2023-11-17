@@ -20,7 +20,10 @@
 
 class DebugRenderer {
 public:
+    bool running;
+
     DebugRenderer();
+
     ~DebugRenderer();
 
     /**
@@ -43,7 +46,12 @@ public:
      * Renders a specific shape
      * @param gameObject the gameobject that contains the shape
      */
-    void RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body* body);
+    void RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body *body);
+
+    /**
+     * Starts the SDL init
+     */
+    void Start();
 
 };
 

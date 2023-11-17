@@ -19,6 +19,7 @@
 #include "game_object.hpp"
 #include "rigidbody.hpp"
 #include "collider.hpp"
+#include "debug_renderer.hpp"
 
 
 class PhysicsFacade {

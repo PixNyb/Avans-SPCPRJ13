@@ -13,7 +13,6 @@
 #include "game_object.hpp"
 #include "box_collider.hpp"
 #include "circle_collider.hpp"
-#include "polygon_collider.hpp"
 #include <Box2D/Box2D.h>
 #include <SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
@@ -26,7 +25,12 @@ SDL_Window* window;
 SDL_Renderer* renderer;
 
 DebugRenderer::DebugRenderer() {
+    running = false;
+}
+
+void DebugRenderer::Start() {
     InitSDL();
+    running = true;
 }
 
 DebugRenderer::~DebugRenderer() {
