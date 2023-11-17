@@ -26,7 +26,7 @@ GameObject PrefabManager::GetPrefab(std::string tag)
     auto it = prefabs.find(tag);
 
     if (it == prefabs.end())
-        throw std::runtime_error(fmt::format("No prefab was found matching the tag: {}", tag).c_str());
+        throw std::runtime_error(fmt::format("No prefab was found matching the tag: {}", tag));
 
     return GameObject(it->second);
 }
