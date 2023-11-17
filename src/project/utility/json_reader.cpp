@@ -9,9 +9,9 @@
 *
 */
 
-#include <fstream>
-#include "nlohmann/json.hpp"
 #include "json_reader.hpp"
+#include <fstream>
+#include <nlohmann/json.hpp>
 
 nlohmann::json JSONReader::ConvertFileToJson(const std::string &filePath) {
     std::ifstream file(filePath, std::ifstream::binary);

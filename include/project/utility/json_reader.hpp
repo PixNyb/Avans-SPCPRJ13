@@ -12,7 +12,7 @@
 #ifndef DEFUNBOBENGINE_JSON_READER_HPP
 #define DEFUNBOBENGINE_JSON_READER_HPP
 
-#include "nlohmann/json.hpp"
+#include <nlohmann/json.hpp>
 
 class JSONReader {
 public:

@@ -64,6 +64,8 @@ GameObject &GameObject::operator=(const GameObject &other)
     active = other.active;
     tag = other.tag;
     layer = other.layer;
+
+    return *this;
 }
 
 void GameObject::AddComponent(std::shared_ptr<Component> component)

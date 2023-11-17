@@ -12,8 +12,8 @@
 #ifndef DEFUNBOBENGINE_ABSTRACT_SCENE_FACTORY_HPP
 #define DEFUNBOBENGINE_ABSTRACT_SCENE_FACTORY_HPP
 
-#include "../../../api/scene.hpp"
-#include "nlohmann/json.hpp"
+#include "scene.hpp"
+#include <nlohmann/json.hpp>
 
 class AbstractSceneFactory {
   public:

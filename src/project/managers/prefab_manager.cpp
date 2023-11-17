@@ -8,8 +8,9 @@
  * @copyright Copyright (c) 2023
  */
 
-#include "../../../include/project/managers/prefab_manager.hpp"
-#include "format"
+#include "prefab_manager.hpp"
+#include "game_object.hpp"
+#include <format>
 
 PrefabManager::PrefabManager() : prefabs()
 {}

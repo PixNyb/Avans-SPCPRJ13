@@ -13,8 +13,8 @@
 #define DEFUNBOBENGINE_LEVEL_FACTORY_HPP
 
 #include "abstract_scene_factory.hpp"
-#include "memory"
-#include "../../managers/prefab_manager.hpp"
+#include "prefab_manager.hpp"
+#include <memory>
 
 class LevelFactory : public AbstractSceneFactory {
   private:
