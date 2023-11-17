@@ -74,7 +74,7 @@ void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body*
         std::vector<SDL_Point> points;
         for (int i = 0; i < length; ++i) {
             auto vert = polygonCollider->Vertices().at(i);
-            points.push_back(SDL_Point(vert.x, vert.y));
+            points.push_back(SDL_Point(vert.x, SCREEN_HEIGHT - vert.y));
         }
         SDL_RenderDrawLines(renderer, points.data(), static_cast<int>(polygonCollider->Vertices().size()));
     }
