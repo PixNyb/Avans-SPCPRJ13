@@ -36,4 +36,8 @@ void PhysicsManager::AddRotation(const std::shared_ptr<GameObject>& gameObject, 
     physicsFacade.AddRotation(gameObject, amount);
 }
 
+void PhysicsManager::Sleep(const std::shared_ptr<GameObject> &gameObject) {
+    physicsFacade.Sleep(gameObject);
+}
+
 

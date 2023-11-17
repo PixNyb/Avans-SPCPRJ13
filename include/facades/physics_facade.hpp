@@ -72,6 +72,8 @@ public:
     */
     void Step();
 
+    void Sleep(const std::shared_ptr<GameObject>& gameObject);
+
     /**
     * @brief Simulate all bodies in the b2World in a window
     */

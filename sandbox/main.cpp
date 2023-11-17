@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     vertices.emplace_back(10, 40);
     vertices.emplace_back(30, 40);
     vertices.emplace_back(50, 50);
-    vertices.emplace_back(50, 60);
+    vertices.emplace_back(50, 80);
     vertices.emplace_back(10, 40);
     collider3->Vertices(vertices);
     obj3->AddComponent(body3);

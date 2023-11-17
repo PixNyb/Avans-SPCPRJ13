@@ -81,11 +81,7 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
             }
             b2Vec2* verticesArray = vertices.data();
             polygonShape.Set(verticesArray, length);
-            b2FixtureDef fixtureDef;
-            fixtureDef.shape = &polygonShape;
-            fixtureDef.density = 1.0f; // Set the density of the fixture
-            fixtureDef.friction = 0.3f; // Set the friction of the fixture
-            body->CreateFixture(&fixtureDef);
+            SetFixture(body, &polygonShape, game_object->GetComponent<RigidBody>(), 20);
         }
 
         //// create boxes
@@ -95,7 +91,6 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
                               static_cast<float>(boxCollider->Height() / 2.0 * PixelScale));
             double area = game_object->GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody ? (
                     boxCollider->Width() * boxCollider->Height()) : 0.0f;
-
             SetFixture(body, &boxShape, game_object->GetComponent<RigidBody>(), area);
         }
     }
@@ -167,6 +162,13 @@ void PhysicsFacade::AddRotation(const std::shared_ptr<GameObject>& gameObject, f
     auto iterator = bodies.find(gameObject);
     if (iterator != bodies.end()) {
         bodies.at(gameObject)->ApplyAngularImpulse(amount, false);
+    }
+}
+
+void PhysicsFacade::Sleep(const std::shared_ptr<GameObject> &gameObject) {
+    auto iterator = bodies.find(gameObject);
+    if (iterator != bodies.end()) {
+        bodies.at(gameObject)->SetAwake(false);
     }
 }
 

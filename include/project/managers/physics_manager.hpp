@@ -61,6 +61,8 @@ public:
      * Simulates the world for 1 step
      */
     void Step();
+
+    void Sleep(const std::shared_ptr<GameObject>& gameObject);
 };
 
 
