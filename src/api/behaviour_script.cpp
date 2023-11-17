@@ -1,6 +1,14 @@
-//
-// Created by Robin Pijnappels on 31/10/2023.
-//
+/**
+ * @file behaviour_script.cpp
+ * @author Robin Pijnappels
+ * @brief This file contains the BehaviourScript class implementation.
+ * @version 0.1
+ * @date 2023-11-08
+ *
+ * Copyright Copyright (c) 2023
+ *
+ */
+
 
 #include "behaviour_script.hpp"
 #include "component.hpp"

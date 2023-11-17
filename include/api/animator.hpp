@@ -1,4 +1,13 @@
-/// @file
+/**
+ * @file animator.hpp
+ * @author Robin Pijnappels (rm.pijnappels@student.avans.nl)
+
+ * @version 0.1
+ * @date 2023-11-12
+ *
+ *
+ * @copyright Copyright (c) 2023
+ */
 
 #ifndef AVANS_SPCPRJ13_ANIMATOR_H
 #define AVANS_SPCPRJ13_ANIMATOR_H
