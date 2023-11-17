@@ -53,6 +53,8 @@ void RenderManager::Render()
             layers.insert(std::make_pair(layer, std::vector<std::weak_ptr<GameObject>>()));
         }
 
+        // TODO: Check game objects with geometry for render occlusion
+
         // Push game object onto layer
         layers[layer].push_back(gameObject);
     }
