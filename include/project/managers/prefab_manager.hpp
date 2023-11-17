@@ -17,9 +17,17 @@
 
 class PrefabManager {
   private:
+    /**
+     * @brief A map consisting of prefabs and the tags which they are identified by.
+     * @key A unique tag which can be used to identify a prefab.
+     * @value A registered prefab.
+     */
     std::map<std::string, GameObject> prefabs;
 
   public:
+    /**
+     * @brief Construct a new PrefabManager.
+     */
     PrefabManager();
 
     /**

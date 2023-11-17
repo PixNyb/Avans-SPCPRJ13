@@ -17,6 +17,9 @@
 
 class AbstractSceneFactory {
   public:
+    /**
+     * @brief Construct a new AbstractSceneFactory.
+     */
     AbstractSceneFactory() = default;
 
     /**

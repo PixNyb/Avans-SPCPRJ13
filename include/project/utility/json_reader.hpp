@@ -16,6 +16,9 @@
 
 class JSONReader {
 public:
+  /**
+   * @brief Constructs a new JSONReader.
+   */
     JSONReader() = default;
 
     /**

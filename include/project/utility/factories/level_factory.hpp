@@ -18,8 +18,17 @@
 
 class LevelFactory : public AbstractSceneFactory {
   private:
+    /**
+     * @brief The PrefabManager which is used to retrieve the registered prefabs.
+     */
     std::shared_ptr<PrefabManager> prefabManager;
 
+    /**
+     * @brief A recursive function which adds the objects in a JSON to the provided Scene.
+     * @param scene The Scene to which the GameObjects are to be added.
+     * @param objectsJson The JSON from which the GameObjects are to be retrieved.
+     * @return A vector of GameObjects that were just added to the Scene.
+     */
     std::vector<std::shared_ptr<GameObject>> addObjects(Scene &scene, const nlohmann::json& objectsJson);
 
   public:
