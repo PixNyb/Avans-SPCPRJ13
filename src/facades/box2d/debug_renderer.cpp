@@ -13,7 +13,7 @@
 #include "game_object.hpp"
 #include "box_collider.hpp"
 #include "circle_collider.hpp"
-#include <Box2D/Box2D.h>
+#include <box2d/box2d.h>
 #include <SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
 
