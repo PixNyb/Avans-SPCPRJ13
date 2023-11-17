@@ -20,6 +20,9 @@
 
 class DebugRenderer {
 public:
+    /**
+     * Determines whether the debug window is running
+     */
     bool running;
 
     DebugRenderer();
