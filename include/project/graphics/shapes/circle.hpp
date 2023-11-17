@@ -47,6 +47,22 @@ public:
     float GetRadius() const {
         return radius;
     }
+
+    int GetArea() override {
+        return 3.14 * radius * radius;
+    }
+
+    bool IsWithinArea(const Vector2D& start, const Vector2D& end) override {
+        auto rad = GetRadius();
+
+        if (start.x <= position.x + rad && start.y <= position.y + rad) {
+            if (end.x >= position.x - rad && end.y >= position.y - rad) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 };
 
 #endif //DEFUNBOBENGINE_CIRCLE_HPP

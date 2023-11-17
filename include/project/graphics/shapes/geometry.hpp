@@ -42,6 +42,23 @@ public:
 
     void SetRotation(int r) { rotation = r; }
     [[nodiscard]] double GetRotation() const { return rotation; }
+
+    // Get area
+    /**
+     * @brief Pure virtual method to get the area of a geometric shape.
+     *
+     * @return The area of the geometric shape.
+     */
+    virtual int GetArea() = 0;
+
+    /**
+     * @brief Pure virtual method to check if a geometric shape is within a given area.
+     *
+     * @param start The start of the area to check.
+     * @param end The end of the area to check.
+     * @return True if the shape is within the area, false otherwise.
+     */
+    virtual bool IsWithinArea(const Vector2D& start, const Vector2D& end) = 0;
 };
 
 #endif //DEFUNBOBENGINE_GEOMETRY_HPP

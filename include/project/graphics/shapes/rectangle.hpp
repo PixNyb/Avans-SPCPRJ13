@@ -54,6 +54,15 @@ public:
         return width;
     }
 
+    int GetArea() override {
+        return height * width;
+    }
+
+    bool IsWithinArea(const Vector2D& start, const Vector2D& end) override {
+        return (position.x >= start.x && position.y >= start.y) &&
+               (position.x + width <= end.x && position.y + height <= end.y);
+    }
+
 };
 
 #endif //DEFUNBOBENGINE_RECTANGLE_HPP

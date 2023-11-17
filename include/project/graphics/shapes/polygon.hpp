@@ -39,7 +39,33 @@ public:
      * @param verts A list of vertices that define the polygon.
      */
     Polygon(const std::vector<Vector2D>& verts) : vertices(verts) {}
-            
+
+    int GetArea() override {
+        int n = vertices.size();
+
+        if (n < 3) {
+            // A polygon with less than 3 vertices is not valid, and its area is zero.
+            return 0;
+        }
+
+        int area = 0;
+
+        for (int i = 0; i < n; ++i) {
+            int j = (i + 1) % n;
+            area += (vertices[i].x * vertices[j].y - vertices[j].x * vertices[i].y);
+        }
+
+        // The shoelace formula involves adding the product of the last and first vertices, so we
+        // add that product here.
+        area += (vertices[n - 1].x * vertices[0].y - vertices[0].x * vertices[n - 1].y);
+
+        return std::abs(area) / 2;
+    }
+
+    bool IsWithinArea(const Vector2D& start, const Vector2D& end) override {
+        // TODO: Implement
+        return true;
+    }
 };
 
 #endif //DEFUNBOBENGINE_POLYGON_HPP

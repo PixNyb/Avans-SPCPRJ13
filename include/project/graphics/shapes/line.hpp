@@ -19,6 +19,15 @@ struct Line : public Geometry {
   public:
     Vector2D start;
     Vector2D end;
+
+    int GetArea() override {
+        return 0;
+    }
+
+    bool IsWithinArea(const Vector2D& s, const Vector2D& e) override {
+        return (s.x > e.x && (start.x > s.x || end.x < e.x)) ||
+            (s.x <= e.x && (start.x < s.x || end.x > e.x));
+    }
 };
 
 #endif // DEFUNBOBENGINE_INCLUDE_PROJECT_GRAPHICS_SHAPES_LINE_HPP
