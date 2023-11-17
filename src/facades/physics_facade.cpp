@@ -92,33 +92,10 @@ void PhysicsFacade::Step() {
         auto body = object_pair->second;
         auto oldTransform = gameObject->GetTransform();
 
-        //// update all boxcolliders on the gameobject
-        for (const auto &boxCollider: gameObject->GetComponents<BoxCollider>()) {
-            oldTransform.position.x += (body->GetPosition().x / PixelScale) - gameObject->GetTransform().position.x;
-            oldTransform.position.y += (body->GetPosition().y / PixelScale) - gameObject->GetTransform().position.y;
-            oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);
-            gameObject->SetTransform(oldTransform);
-        }
-
-        //// update all circlecolliders on the gameobject
-        for (const auto &circleCollider: gameObject->GetComponents<CircleCollider>()) {
-            oldTransform.position.x += (body->GetPosition().x / PixelScale) - gameObject->GetTransform().position.x;
-            oldTransform.position.y += (body->GetPosition().y / PixelScale) - gameObject->GetTransform().position.y;
-            oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);
-            gameObject->SetTransform(oldTransform);
-        }
-
-        //// update all polygoncolliders on the gameobject
-        for (const auto &polygonCollider: gameObject->GetComponents<PolygonCollider>()) {
-            for (Point &point : polygonCollider->Vertices()) {
-                point.x += (oldTransform.position.x - body->GetPosition().x);
-                point.y += (oldTransform.position.y - body->GetPosition().y);
-            }
-            oldTransform.position.x += (body->GetPosition().x / PixelScale) - gameObject->GetTransform().position.x;
-            oldTransform.position.y += (body->GetPosition().y / PixelScale) - gameObject->GetTransform().position.y;
-            oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);
-            gameObject->SetTransform(oldTransform);
-        }
+        oldTransform.position.x += (body->GetPosition().x / PixelScale) - gameObject->GetTransform().position.x;
+        oldTransform.position.y += (body->GetPosition().y / PixelScale) - gameObject->GetTransform().position.y;
+        oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);
+        gameObject->SetTransform(oldTransform);
     }
     if (DEBUG) {
         ShowDebug();
