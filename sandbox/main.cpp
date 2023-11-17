@@ -44,25 +44,6 @@ int main(int argc, char *argv[])
     obj1->AddComponent(collider1);
     obj1->SetTransform(trs1);
 
-    //// create polygon
-    auto obj3 = std::make_shared<GameObject>();
-    Point point3{900, 1000};
-    Transform trs3{point3, 0, 1};
-    auto body3 = std::make_shared<RigidBody>(10, 1, BodyType::staticBody);
-    auto collider3 = std::make_shared<PolygonCollider>();
-    std::vector<Point> vertices;
-    vertices.emplace_back(0, 0);
-    vertices.emplace_back(100, 40);
-    vertices.emplace_back(200, 50);
-    vertices.emplace_back(400, 80);
-    vertices.emplace_back(700, 40);
-    vertices.emplace_back(2000, 0);
-    vertices.emplace_back(0, 0);
-    collider3->Vertices(vertices);
-    obj3->AddComponent(body3);
-    obj3->AddComponent(collider3);
-    obj3->SetTransform(trs3);
-
     //// create floor
     auto obj2 = std::make_shared<GameObject>();
     Point point2{0, 40};
@@ -78,7 +59,6 @@ int main(int argc, char *argv[])
     objects.push_back(obj);
     objects.push_back(obj1);
     objects.push_back(obj2);
-    objects.push_back(obj3);
     PhysicsManager physicsManager;
     physicsManager.CreateWorld(objects);
     physicsManager.AddForce(obj1, 20, 0);
