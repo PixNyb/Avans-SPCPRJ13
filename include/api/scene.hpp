@@ -1,4 +1,18 @@
-/// @file
+/**
+ * @file scene.hpp
+ * @author Robin Pijnappels
+ * @version 0.1
+ * @date 2023-11-12
+ *
+ * @brief Defines the Scene class for managing and rendering game scenes in the game engine.
+ * The Scene class is responsible for holding and managing game objects within a particular scene.
+ * It includes functionalities for updating, rendering, adding, and removing game objects, as well as
+ * querying and manipulating them based on various criteria. The Scene class is essential for creating
+ * and organizing the different parts of a game's world.
+ *
+ * @copyright Copyright (c) 2023
+ */
+
 
 #ifndef AVANS_SPCPRJ13_SCENE_H
 #define AVANS_SPCPRJ13_SCENE_H
@@ -8,7 +22,11 @@
 #include <vector>
 
 /**
- * @brief Class representing a scene which can be rendered by the Camera.
+ * @class Scene
+ * @brief Represents a scene in the game engine.
+ *
+ * A Scene is a container for game objects, providing methods for updating and rendering them.
+ * It is responsible for managing the lifecycle and interactions of the contained game objects.
  */
 class Scene
 {

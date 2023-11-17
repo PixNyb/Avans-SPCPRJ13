@@ -1,12 +1,15 @@
 /**
  * @file collider.hpp
- * @author Daan Groot (d.groot3@student.avans.nl)
- * @brief This file contains the Collider class definition.
+ * @author Robin Pijnappels
  * @version 0.1
- * @date 2023-11-08
+ * @date 2023-11-12
+ *
+ * @brief Defines the Collider class as a base for all collider components in a game engine.
+ * Collider is an abstract class that serves as a base for specialized collider types like BoxCollider and CircleCollider.
+ * It is a crucial part of the physics and collision detection system within the game engine,
+ * providing a framework for handling collisions between game objects.
  *
  * @copyright Copyright (c) 2023
- *
  */
 
 #ifndef COLLIDER2D_H_
@@ -15,26 +18,12 @@
 #include "component.hpp"
 
 /**
- * @brief The base class for all colliders.
+ * @class Collider
+ * @brief Base class for collider components.
+ *
+ * The Collider class is an abstract base class for all collider components used in the game engine.
+ * It provides a foundation for defining collision properties and behaviors for game objects.
  */
-class Collider : public Component {
-private:
-
-public:
-    /**
-    * @brief Update the Component.
-    *
-    * This method updates the collider by
-    */
-    void Update() override;
-
-    /**
-     * @brief Check a condition.
-     *
-     * This method should be overridden by subclasses to provide specific
-     * condition checking behavior.
-     */
-    void Condition() override;
-};
+class Collider : public Component {};
 
 #endif // COLLIDER2D_H_

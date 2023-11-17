@@ -1,4 +1,14 @@
-/// @file
+/**
+ * @file text.cpp
+ * @author Robin Pijnappels
+ * @brief This file contains the Text class implementation.
+ * @version 0.1
+ * @date 2023-11-08
+ *
+ * Copyright Copyright (c) 2023
+ *
+ */
+
 
 #include "text.hpp"
 #include "core_constants.hpp"
