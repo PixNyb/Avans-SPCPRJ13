@@ -26,7 +26,8 @@ class RenderManager
      * absolute coordinates)
      * @param gameObject Game object to render
      */
-    void Render(IOFacade &gfx, const Point &cameraPoint, const GameObject &gameObject);
+    void Render(IOFacade &gfx, const Point &cameraPoint, const std::weak_ptr<GameObject>
+        &gameObject);
   public:
     RenderManager();
     ~RenderManager();

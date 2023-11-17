@@ -19,7 +19,7 @@
 #include "geometry.hpp"
 #include "vector2d.hpp"
 
-class Triangle {
+class Triangle : public Geometry {
 private:
     Vector2D vertex1, vertex2, vertex3;
 

@@ -22,13 +22,15 @@
 #ifndef DEFUNBOBENGINE_IO_FACADE_HPP
 #define DEFUNBOBENGINE_IO_FACADE_HPP
 
-#include <vector>
-#include "event.hpp"
-#include "sdl_window.hpp"
 #include "circle.hpp"
+#include "event.hpp"
+#include "line.hpp"
 #include "rectangle.hpp"
+#include "sdl_window.hpp"
 #include "triangle.hpp"
+#include "core_constants.hpp"
 #include <SDL.h>
+#include <vector>
 
 /**
  * @class IOFacade
@@ -124,6 +126,19 @@ public:
     virtual void DrawShape(Circle circle) = 0;
 
     /**
+     * @brief Draws a line on the screen.
+     * @param start The coordinates of the start point.
+     * @param end The coordinates of the end point.
+     */
+    virtual void DrawLine(Line line) = 0;
+
+    /**
+     * @brief Draws a set of lines on the screen.
+     * @param lines A vector of Line objects.
+     */
+    virtual void DrawLines(std::vector<Line> lines) = 0;
+
+    /**
      * @brief Draws a rectangle on the screen.
      *
      * This function should be implemented by the derived classes to handle the rendering
@@ -147,6 +162,8 @@ public:
      */
     virtual void DrawShape(Triangle triangle) = 0;
 
+
+    virtual void DrawText(const Text& text) = 0;
 };
 
 #endif //DEFUNBOBENGINE_IO_FACADE_HPP

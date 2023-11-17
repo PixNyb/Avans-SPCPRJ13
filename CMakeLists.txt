@@ -13,6 +13,8 @@ if(BUILD_TESTS OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
     add_subdirectory(tests)
 endif()
 
+file(COPY ${PROJECT_SOURCE_DIR}/resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 # Generate coverage
 option(GENERATE_COVERAGE "Generate coverage" OFF)
 

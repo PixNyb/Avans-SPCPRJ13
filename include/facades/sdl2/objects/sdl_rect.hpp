@@ -27,7 +27,7 @@
  */
 class SDLRect {
 public:
-    int x, y, width, height;
+    int x, y, width, height, rotation;
 
     /**
      * @brief Constructs a new SDLRect with specified position and size.
@@ -36,8 +36,8 @@ public:
      * @param width The width of the rectangle.
      * @param height The height of the rectangle.
      */
-    SDLRect(int x, int y, int width, int height)
-            : x(x), y(y), width(width), height(height) {}
+    SDLRect(int x, int y, int width, int height, int rotation = 0)
+            : x(x), y(y), width(width), height(height), rotation(rotation) {}
 
     /**
     * @brief Converts this SDLRect to an SDL_Rect structure.

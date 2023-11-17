@@ -21,6 +21,21 @@
 #include <iostream>
 #include <utility>
 
+class FPSBehaviourScript: public BehaviourScript {
+    private:
+    std::shared_ptr<Text> gameObject;
+    public:
+    explicit FPSBehaviourScript(std::shared_ptr<Text> gameObject): BehaviourScript(),
+                                                                             gameObject
+                                                                            (std::move(gameObject)) {
+    }
+
+    void OnUpdate() override
+    {
+        gameObject->SetText("FPS: " + std::to_string(Engine::GetInstance()->GetFPS()));
+    }
+};
+
 class TestBehaviourScript : public BehaviourScript {
   private:
     std::shared_ptr<GameObject> gameObject;
@@ -95,6 +110,15 @@ int main(int argc, char *argv[])
     camera->SetAspectWidth(500);
     camera->SetTransform(Transform(Point(0, 0), 0, 1));
     scene->SetCamera(camera);
+
+    // FPS Counter
+    auto fpsCounter = std::make_shared<Text>();
+    fpsCounter->SetFontSize(30);
+    fpsCounter->SetTextColor(Color::green());
+    fpsCounter->SetTransform(Transform(Point(20, 20), -45, 1));
+    auto behaviourScriptC = std::make_shared<FPSBehaviourScript>(fpsCounter);
+    fpsCounter->AddComponent(behaviourScriptC);
+    scene->AddGameObject(fpsCounter);
 
     sceneManager->SetScene(scene);
 

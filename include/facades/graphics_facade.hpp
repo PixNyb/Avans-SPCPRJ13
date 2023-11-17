@@ -19,10 +19,11 @@
 #define DEFUNBOBENGINE_GRAPHICS_FACADE_HPP
 
 #include "io_facade.hpp"
-#include "sdl_render.hpp"
+#include "line.hpp"
 #include "sdl_init.hpp"
-#include <memory>
+#include "sdl_render.hpp"
 #include <SDL.h>
+#include <memory>
 
 /**
  * @class GraphicsFacade
@@ -35,6 +36,9 @@ class GraphicsFacade : public IOFacade {
 private:
     std::unique_ptr<SDLWindow> SdlWindow; /**< Unique pointer to SDLWindow for managing the graphics window. */
     std::unique_ptr<SDLInit> SdlInit; /**< Unique pointer to SDLInit for SDL initialization. */
+
+    void ResetColor();
+    void SetColor(Color color);
 public:
 
     /**
@@ -136,6 +140,13 @@ public:
      * @param renderer A pointer to an SDL_Renderer to draw the triangle.
      */
     void DrawShape(Triangle triangle) override;
+
+
+    void DrawLine(Line line) override;
+
+    void DrawLines(std::vector<Line> lines) override;
+
+    void DrawText(const Text& text) override;
 };
 
 

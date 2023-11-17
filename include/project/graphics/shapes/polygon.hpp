@@ -38,8 +38,7 @@ public:
      * @param pos The position of the polygon's reference point.
      * @param verts A list of vertices that define the polygon.
      */
-    Polygon(const Vector2D& pos, const std::vector<Vector2D>& verts)
-            : Geometry(pos), vertices(verts) {}
+    Polygon(const std::vector<Vector2D>& verts) : vertices(verts) {}
             
 };
 

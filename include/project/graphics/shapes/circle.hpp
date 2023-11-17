@@ -28,6 +28,7 @@
 class Circle : public Geometry {
 private:
     float radius; ///< The radius of the circle.
+    Vector2D position; ///< The position of the circle's center.
 
 public:
     /**
@@ -37,8 +38,11 @@ public:
      * @param r The radius of the circle.
      */
     Circle(const Vector2D& pos, float r)
-            : Geometry(pos), radius(r) {}
+            : position(pos), radius(r) {}
 
+    [[nodiscard]] Vector2D GetPosition() const {
+        return position;
+    }
 
     float GetRadius() const {
         return radius;

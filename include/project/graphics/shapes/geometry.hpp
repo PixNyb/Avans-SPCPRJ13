@@ -15,6 +15,7 @@
 #ifndef DEFUNBOBENGINE_GEOMETRY_HPP
 #define DEFUNBOBENGINE_GEOMETRY_HPP
 
+#include "shape_color.hpp"
 #include "vector2d.hpp"
 
 /**
@@ -26,23 +27,21 @@
  */
 class Geometry {
 protected:
-    Vector2D position; ///< Position of the geometric shape in 2D space.
+    ShapeColor fillColor; ///< Color of the geometric shape.
+    double rotation = 0; ///< Rotation of the geometric shape.
 
 public:
-    /**
-     * @brief Constructs a Geometry object with a specified position.
-     * @param pos The position of the geometric shape.
-     */
-    Geometry(const Vector2D& pos) : position(pos) {}
-
+    Geometry() : fillColor(Color::black()) {}
     /**
      * @brief Virtual destructor for Geometry.
      */
     virtual ~Geometry() {}
 
-    Vector2D GetPosition() const  {
-        return position;
-    }
+    void SetFillColor(const Color& c) { fillColor.SetColor(c); }
+    [[nodiscard]] Color SetFillColor() const { return fillColor.GetColor(); }
+
+    void SetRotation(int r) { rotation = r; }
+    [[nodiscard]] double GetRotation() const { return rotation; }
 };
 
 #endif //DEFUNBOBENGINE_GEOMETRY_HPP

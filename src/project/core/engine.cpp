@@ -66,6 +66,8 @@ void Engine::Start()
         // Render stuff goes here
         graphicsFacade->ClearScreen();
         Get<RenderManager>()->Render();
+//        graphicsFacade->DrawText("FPS: " + std::to_string(GetFPS()), 200, 200, 20, Color::red(),CoreConstants::Text::DEFAULT_FONT_PATH);
+
         graphicsFacade->PresentScreen();
 
         // End of the frame
