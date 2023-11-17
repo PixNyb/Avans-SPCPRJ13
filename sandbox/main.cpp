@@ -81,6 +81,7 @@ int main(int argc, char *argv[])
     objects.push_back(obj3);
     PhysicsManager physicsManager;
     physicsManager.CreateWorld(objects);
+    physicsManager.AddForce(obj1, 20, 0);
     while (true) {
         physicsManager.Step();
     }
