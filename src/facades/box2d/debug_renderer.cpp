@@ -48,10 +48,12 @@ void DebugRenderer::CloseSDL() {
 void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body* body) {
     b2Vec2 position(static_cast<float>(body->GetPosition().x), static_cast<float>(body->GetPosition().y));
 
-    int sdlX = static_cast<int>(position.x);
-    int sdlY = SCREEN_HEIGHT - static_cast<int>(position.y);
+    int sdlX;
+    int sdlY;
 
     for (const auto &boxCollider: gameObject->GetComponents<BoxCollider>()) {
+        sdlX = static_cast<int>(position.x);
+        sdlY = SCREEN_HEIGHT - static_cast<int>(position.y + boxCollider->Height());
         SDL_Rect boxRect;
         boxRect.x = sdlX;
         boxRect.y = sdlY;
@@ -62,6 +64,8 @@ void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body*
     }
 
     for (const auto &circleCollider: gameObject->GetComponents<CircleCollider>()) {
+        sdlX = static_cast<int>(position.x);
+        sdlY = SCREEN_HEIGHT - static_cast<int>(position.y + circleCollider->Radius());
         filledCircleRGBA(renderer, sdlX, sdlY, circleCollider->Radius(), 0, 255, 0, 255);
     }
 
