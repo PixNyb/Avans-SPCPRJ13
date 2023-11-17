@@ -15,7 +15,6 @@
  */
 
 #include "game_loop.hpp"
-#include "physics_facade.hpp"
 
 int main(int argc, char *argv[])
 {
