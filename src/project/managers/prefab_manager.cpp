@@ -10,7 +10,8 @@
 
 #include "prefab_manager.hpp"
 #include "game_object.hpp"
-#include <format>
+#include <fmt/core.h>
+
 
 PrefabManager::PrefabManager() : prefabs()
 {}
@@ -25,7 +26,7 @@ GameObject PrefabManager::GetPrefab(std::string tag)
     auto it = prefabs.find(tag);
 
     if (it == prefabs.end())
-        throw std::exception(std::format("No prefab was found matching the tag: {0}", tag).c_str());
+        throw std::exception(fmt::format("No prefab was found matching the tag: {}", tag).c_str());
 
     return GameObject(it->second);
 }

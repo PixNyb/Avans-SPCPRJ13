@@ -106,5 +106,9 @@ target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_net::SDL2
 find_package(nlohmann_json CONFIG REQUIRED)
 target_link_libraries(DeFunBobEngine PRIVATE nlohmann_json::nlohmann_json)
 
+# Add fmt
+find_package(fmt CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE fmt::fmt)
+
 # Add sandbox
 add_subdirectory(sandbox)
