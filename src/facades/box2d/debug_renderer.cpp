@@ -64,7 +64,7 @@ void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body*
     }
 
     for (const auto &circleCollider: gameObject->GetComponents<CircleCollider>()) {
-        sdlX = static_cast<int>(position.x);
+        sdlX = static_cast<int>(position.x + circleCollider->Radius() * 2);
         sdlY = SCREEN_HEIGHT - static_cast<int>(position.y + circleCollider->Radius());
         filledCircleRGBA(renderer, sdlX, sdlY, circleCollider->Radius(), 0, 255, 0, 255);
     }
