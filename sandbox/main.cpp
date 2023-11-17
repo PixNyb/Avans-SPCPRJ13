@@ -17,8 +17,7 @@
 #include <iostream>
 #include <memory>
 
-int main(int argc, char *argv[])
-{
+void TestPhysics() {
     std::vector<std::shared_ptr<GameObject>> objects;
 
     //// create box
@@ -62,11 +61,18 @@ int main(int argc, char *argv[])
     PhysicsManager physicsManager;
     physicsManager.CreateWorld(objects);
     physicsManager.AddForce(obj1, 20, 0);
+    physicsManager.SetDebug(true);
     while (true) {
         physicsManager.Step();
     }
+}
+
+int main(int argc, char *argv[])
+{
+    TestPhysics();
     std::cout << "Sandbox" << std::endl;
     //    auto engine = Engine::getInstance();
 
     return 1;
 }
+

@@ -36,6 +36,10 @@ private:
      */
     void SetFixture(b2Body* body, b2Shape* shape, const std::shared_ptr<RigidBody>& rigidBody, double area);
 public:
+    /**
+     * Determines whether the debug mode should be active
+     */
+    bool DEBUG;
 
     PhysicsFacade();
 

@@ -20,10 +20,11 @@ const float TimeStep = 1.0f / 240.0f;
 const int VelocityIterations = 12;
 const int PositionIterations = 4;
 const double PixelScale = 0.5;
-bool DEBUG = true;
 DebugRenderer debugRenderer;
 
-PhysicsFacade::PhysicsFacade() = default;
+PhysicsFacade::PhysicsFacade() {
+    DEBUG = false;
+}
 
 void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject) {
     b2BodyDef bodyDef;

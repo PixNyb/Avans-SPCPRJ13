@@ -73,6 +73,14 @@ public:
     * @param gameObject the gameobject that is set awake
     */
     void Wake(const std::shared_ptr<GameObject>& gameObject);
+
+    /**
+     * Sets the debug mode
+     * @param debug
+     */
+    void SetDebug(bool debug) {
+        physicsFacade.DEBUG = debug;
+    }
 };
 
 
