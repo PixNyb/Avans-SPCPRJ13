@@ -5,16 +5,15 @@
  * @version 0.1
  * @date 07/11/2023
  *
- * This file contains the main entry point of the Engine. It creates an instance of the GameLoop class
- * and starts the game loop. The GameLoop class is responsible for managing the core game processes,
- * including initializing the game state, handling input, updating game logic, and rendering frames.
- * The 'run' method of the GameLoop kicks off the continuous loop that drives the game.
+ * This file contains the main entry point of the Engine. It creates an instance of the GameLoop
+ * class and starts the game loop. The GameLoop class is responsible for managing the core game
+ * processes, including initializing the game state, handling input, updating game logic, and
+ * rendering frames. The 'run' method of the GameLoop kicks off the continuous loop that drives the
+ * game.
  *
  * @copyright Copyright (c) 2023
  *
  */
-
-#include "game_loop.hpp"
 
 int main(int argc, char *argv[])
 {
