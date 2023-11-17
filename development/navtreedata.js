@@ -26,16 +26,16 @@ var NAVTREE =
 [
   [ "DeFunBobEngine", "index.html", [
     [ "SPCPRJ13 DeFunBobEngine", "index.html", [
-      [ "Projectdetails", "index.html#autotoc_md11", null ],
-      [ "ClickUp Board", "index.html#autotoc_md12", null ],
-      [ "Aan de slag", "index.html#autotoc_md13", [
-        [ "Vereisten", "index.html#autotoc_md14", null ],
-        [ "Installatie", "index.html#autotoc_md15", null ],
-        [ "Doxygen", "index.html#autotoc_md16", null ]
+      [ "Projectdetails", "index.html#autotoc_md12", null ],
+      [ "ClickUp Board", "index.html#autotoc_md13", null ],
+      [ "Aan de slag", "index.html#autotoc_md14", [
+        [ "Vereisten", "index.html#autotoc_md15", null ],
+        [ "Installatie", "index.html#autotoc_md16", null ],
+        [ "Doxygen", "index.html#autotoc_md17", null ]
       ] ],
-      [ "Proof Of Concepts", "index.html#autotoc_md17", null ],
-      [ "Gebruik", "index.html#autotoc_md18", null ],
-      [ "Development Guidelines", "index.html#autotoc_md19", null ]
+      [ "Proof Of Concepts", "index.html#autotoc_md18", null ],
+      [ "Gebruik", "index.html#autotoc_md19", null ],
+      [ "Development Guidelines", "index.html#autotoc_md20", null ]
     ] ],
     [ "Development Guidelines", "md_DEVELOPMENT_GUIDELINES.html", [
       [ "Inhoudsopgave", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md1", null ],
@@ -44,12 +44,13 @@ var NAVTREE =
       [ "Commentaar", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md4", null ],
       [ "CMake-bestanden", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md5", null ],
       [ "Bouwproces", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md6", null ],
-      [ "Git en Versiebeheer", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md7", null ],
-      [ "Code Reviews", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md8", null ],
-      [ "Documentatie", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md9", null ]
+      [ "Testen", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md7", null ],
+      [ "Git en Versiebeheer", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md8", null ],
+      [ "Code Reviews", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md9", null ],
+      [ "Documentatie", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md10", null ]
     ] ],
     [ "Hoe de Engine te gebruiken?", "md_USAGE.html", [
-      [ "Window aanmaken", "md_USAGE.html#autotoc_md21", null ]
+      [ "Window aanmaken", "md_USAGE.html#autotoc_md22", null ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -84,7 +85,7 @@ var NAVTREEINDEX =
 [
 "animation__state_8cpp.html",
 "classScene.html#a82e0a11932a12439e02f5c958b6b6a26",
-"sdl2__input__handler_8hpp_source.html"
+"scene__manager_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -99,6 +99,7 @@ Inhoudsopgave</h1>
 <li><a href="#commentaar">Commentaar</a></li>
 <li><a href="#cmake-bestanden">CMake-bestanden</a></li>
 <li><a href="#bouwproces">Bouwproces</a></li>
+<li><a href="#testen">Testen</a></li>
 <li><a href="#git-en-versiebeheer">Git en Versiebeheer</a></li>
 <li><a href="#code-reviews">Code Reviews</a></li>
 <li><a href="#documentatie">Documentatie</a></li>
@@ -110,8 +111,8 @@ Code Formatting</h1>
 <p>Gebruik de Clang Formatter om code te formatteren volgens de <code>C++ Coding Style Guide</code> van <code>LLVM</code>. Hier zijn enkele basisregels:</p>
 <ul>
 <li>Gebruik 4 spaties voor inspringing (geen tabbladen).</li>
-<li>Gebruik PascalCase voor functie- en variabelennamen.</li>
-<li>Gebruik snake_case voor bestandsnamen.</li>
+<li>Gebruik <code>PascalCase</code> voor functie- en variabelennamen.</li>
+<li>Gebruik <code>snake_case</code> voor bestandsnamen.</li>
 <li>Plaats accolades op een nieuwe regel voor functies en klassen.</li>
 <li>Voeg spaties toe rond operatoren (bijv. x = 5, niet x=5).</li>
 <li>Beperk regellengte tot 80-100 tekens.</li>
@@ -172,6 +173,19 @@ Bouwproces</h1>
 <li>Maak gebruik van Continuous Integration (CI) om automatische builds en tests te garanderen.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md7"></a>
+Testen</h1>
+<ul>
+<li>Schrijf unit tests waar mogelijk om de functionaliteit van de code te testen.<ul>
+<li>Om unit test te schrijven, maak je gebruik van het <a href="https://cmake.org/cmake/help/latest/manual/ctest.1.html">CTest</a> framework van <a href="https://cmake.org/">CMake</a>.</li>
+<li>Dit doe je door een testbestand aan te maken in <code>tests/</code>.</li>
+<li>Een testbestand bevat een <code>main</code> functie die de tests uitvoert.</li>
+<li>Een testbestand is succesvol als het programma eindigt met een exit code van <code>0</code>.</li>
+</ul>
+</li>
+<li>Voer unit tests uit met behulp van het <code>ctest</code> commando.</li>
+</ul>
+<p><em>Voor het toevoegen van nieuwe tests hoeft er naast het aanmaken van de runnable geen extra configuratie te gebeuren. CMake zal automatisch de test detecteren en uitvoeren. Mochten er nieuwe requirements zijn voor het uitvoeren van de test, dan kunnen deze toegevoegd worden aan de <code>tests/CMakeLists.txt</code> file.</em></p>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Git en Versiebeheer</h1>
 <ul>
 <li>Gebruik Git voor versiebeheer en houd een <b>consistente</b> en <b>betekenisvolle</b> commitgeschiedenis bij.</li>
@@ -188,13 +202,13 @@ Git en Versiebeheer</h1>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Code Reviews</h1>
 <ul>
 <li>Voer regelmatig code reviews uit om codekwaliteit en naleving van de richtlijnen te waarborgen.</li>
 <li>Moedig feedback aan en wees bereid om wijzigingen aan te brengen op basis van suggesties.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Documentatie</h1>
 <ul>
 <li>Voeg doelmatige documentatie toe aan de code en gebruik <code>doxygen</code> om documentatie te genereren.</li>
