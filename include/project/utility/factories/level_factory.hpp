@@ -31,6 +31,13 @@ class LevelFactory : public AbstractSceneFactory {
      */
     std::vector<std::shared_ptr<GameObject>> addObjects(Scene &scene, const nlohmann::json& objectsJson);
 
+    /**
+     * @brief Converts JSON to a Transform struct.
+     * @param transformJson The JSON from which the Transform struct is to be retrieved.
+     * @return The new Transform struct created based on the provided JSON.
+     */
+    [[nodiscard]] Transform convertTransform(const nlohmann::json& transformJson) const;
+
   public:
     /**
      * @brief Constructor for the level factory.

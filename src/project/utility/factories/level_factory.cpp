@@ -25,10 +25,11 @@ Scene LevelFactory::CreateScene(nlohmann::json sceneJson)
 }
 
 std::vector<std::shared_ptr<GameObject>> LevelFactory::addObjects(Scene &scene, const nlohmann::json& objectsJson) {
-    std::vector<std::shared_ptr<GameObject>> objects = {};
-    for (const nlohmann::json& jsonObject : objectsJson)
+    std::vector<std::shared_ptr<GameObject>> objects;
+    for (const nlohmann::json &jsonObject : objectsJson)
     {
-        auto gameObject = prefabManager->GetPrefab(jsonObject.at("prefab").template get<std::string >());
+        auto gameObject =
+            prefabManager->GetPrefab(jsonObject.at("prefab").template get<std::string>());
 
         gameObject.SetName(jsonObject.at("name").template get<std::string>());
 
@@ -38,10 +39,12 @@ std::vector<std::shared_ptr<GameObject>> LevelFactory::addObjects(Scene &scene, 
 
         gameObject.SetLayer(jsonObject.at("layer").template get<int>());
 
+        gameObject.SetTransform(convertTransform(jsonObject.at("transform")));
+
         auto ptr = std::make_shared<GameObject>(gameObject);
         // Recursive function call.
         auto children = LevelFactory::addObjects(scene, jsonObject.at("objects"));
-        for (const auto& child : children)
+        for (const auto &child : children)
             child->SetParent(ptr);
 
         scene.AddGameObject(ptr);
@@ -49,4 +52,18 @@ std::vector<std::shared_ptr<GameObject>> LevelFactory::addObjects(Scene &scene, 
     }
 
     return objects;
+}
+
+Transform LevelFactory::convertTransform(const nlohmann::json &transformJson) const
+{
+    // Get Position from JSON.
+    auto positionJson = transformJson.at("position");
+    auto position = Point(positionJson.at("x").template get<int>(),
+                          positionJson.at("y").template get<int>());
+
+    // Get rotation and scale from JSON.
+    auto rotation = transformJson.at("rotation").template get<double>();
+    auto scale = transformJson.at("scale").template get<double>();
+
+    return {position, rotation, scale};
 }
