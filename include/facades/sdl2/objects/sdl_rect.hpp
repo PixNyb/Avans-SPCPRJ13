@@ -27,7 +27,11 @@
  */
 class SDLRect {
 public:
-    int x, y, width, height, rotation;
+    int x; ///< The x coordinate of the rectangle
+    int y; ///< The y coordinate of the rectangle
+    int width; ///< The width of the rectangle
+    int height; ///< The height of the rectangle
+    int rotation; ///< The degrees of rotation of the rectangle
 
     /**
      * @brief Constructs a new SDLRect with specified position and size.

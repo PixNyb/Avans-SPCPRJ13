@@ -39,6 +39,11 @@ public:
    */
   virtual ~Component() = default;
 
+  /**
+   * @brief Copy constructor for Component.
+   * @param other The Component to copy.
+   * @return Component& A reference to the new Component.
+   */
   virtual Component& operator=(Component& other){
       return *this;
   }

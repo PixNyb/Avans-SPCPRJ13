@@ -55,7 +55,7 @@ void Engine::Start()
         // Game logic goes here
 
 
-        // TODO: Remove
+        // TODO: Remove (Input manager required)
         SDL_Event event;
         while (SDL_PollEvent(&event)) {
         }
@@ -66,7 +66,6 @@ void Engine::Start()
         // Render stuff goes here
         graphicsFacade->ClearScreen();
         Get<RenderManager>()->Render();
-//        graphicsFacade->DrawText("FPS: " + std::to_string(GetFPS()), 200, 200, 20, Color::red(),CoreConstants::Text::DEFAULT_FONT_PATH);
 
         graphicsFacade->PresentScreen();
 

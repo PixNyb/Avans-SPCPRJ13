@@ -163,6 +163,15 @@ public:
     virtual void DrawShape(Triangle triangle) = 0;
 
 
+    /**
+     * @brief Draws a Text object on the rendering target.
+     *
+     * This virtual function is intended to be implemented in GraphicsFacade class to handle
+     * the rendering of Text objects. The method should use the properties of the
+     * Text (such as its content, font size, and color) to draw it on the provided SDL_Renderer.
+     *
+     * @param text A Text object containing the content and other properties of the text.
+     */
     virtual void DrawText(const Text& text) = 0;
 };
 

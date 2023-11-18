@@ -33,7 +33,7 @@
 class Scene
 {
   private:
-    std::shared_ptr<Camera> _camera;
+    std::shared_ptr<Camera> _camera; ///< The shared pointer to the active Camera object.
   public:
     /**
      * @brief This function is called by a Camera to render the scene on the engine.

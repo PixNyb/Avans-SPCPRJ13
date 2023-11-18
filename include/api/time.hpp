@@ -16,8 +16,6 @@
 #ifndef DEFUNBOBENGINE_TIME_HPP
 #define DEFUNBOBENGINE_TIME_HPP
 
-#include <SDL_timer.h>
-
 /**
  * @class Time
  * @brief Represents game time, providing static methods to access and manipulate it.
@@ -28,11 +26,11 @@
 class Time
 {
   private:
-    static uint64_t startTime;   /// The time when the class started
-    static uint64_t prevTime;    /// The time of the previous frame
-    static uint64_t currentTime; /// The time of the current frame
-    static double deltaTime;     /// The time between the previous frame and the current frame
-    static double timeScale;     /// The time scale of the game
+    static uint64_t startTime;   ///< The time when the class started
+    static uint64_t prevTime;    ///< The time of the previous frame
+    static uint64_t currentTime; ///< The time of the current frame
+    static double deltaTime;     ///< The time between the previous frame and the current frame
+    static double timeScale;     ///< The time scale of the game
 
   public:
     static void StartFrame();
@@ -41,19 +39,19 @@ class Time
      * @brief Gets the current elapsed time since the start of the frame
      * @details This means the time from when this function was called, not the time from the start
      * of the frame
-     * @return float The elapsed time in milliseconds
+     * @return The elapsed time in milliseconds
      */
     [[nodiscard]] static double GetElapsedTimeSinceFrameStart();
 
     /**
      * @brief Gets the total time since the start of the timer
-     * @return float The total time in seconds
+     * @return The total time in seconds
      */
     [[nodiscard]] static double GetTotalTime();
 
     /**
      * @brief Gets the time between the previous frame and the current frame
-     * @return float The delta time in seconds
+     * @return The delta time in seconds
      */
     [[nodiscard]] static double GetDeltaTime();
 

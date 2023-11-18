@@ -1,7 +1,7 @@
 /**
  * @file shape_color.hpp
  * @author "Melvin van Bree"
- * @brief TODO
+ * @brief ShapeColor is a class that represents a color in the game engine.
  * @version 0.1
  * @date 17/11/2023
  *

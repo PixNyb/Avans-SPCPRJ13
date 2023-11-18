@@ -37,7 +37,18 @@ private:
     std::unique_ptr<SDLWindow> SdlWindow; /**< Unique pointer to SDLWindow for managing the graphics window. */
     std::unique_ptr<SDLInit> SdlInit; /**< Unique pointer to SDLInit for SDL initialization. */
 
+    /**
+     * @brief resets the color to the default color specified in the Constants.
+     */
     void ResetColor();
+
+    /**
+     * @brief Sets the color for rendering operations.
+     *
+     * This method sets the color for subsequent rendering operations. It is used internally
+     * by the DrawShape methods to set the color of the shape to be drawn.
+     * @param color The color to be set.
+     */
     void SetColor(Color color);
 public:
 

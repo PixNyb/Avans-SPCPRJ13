@@ -31,6 +31,7 @@ protected:
     double rotation = 0; ///< Rotation of the geometric shape.
 
 public:
+
     Geometry() : fillColor(Color::black()) {}
     /**
      * @brief Virtual destructor for Geometry.

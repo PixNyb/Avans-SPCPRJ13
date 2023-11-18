@@ -16,6 +16,7 @@
 #define AVANS_SPCPRJ13_TRANSFORM_H
 
 #include "point.hpp"
+
 /**
 * @brief Represents a 2D transformation including position, rotation, and scale.
 *
@@ -43,7 +44,18 @@ struct Transform
     double rotation; ///< Rotation, in radians
     double scale;    ///< Multiplication factor
 
+    /**
+     * @brief Adds two transforms together.
+     * @param other The other transform to add to this one.
+     * @return Transform The sum of the two transforms.
+     */
     Transform operator +(const Transform &other) const;
+
+    /**
+     * @brief Subtracts two transforms from each other.
+     * @param other The other transform to subtract from this one.
+     * @return Transform The difference of the two transforms.
+     */
     Transform operator -(const Transform &other) const;
 };
 

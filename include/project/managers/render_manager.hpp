@@ -29,7 +29,14 @@ class RenderManager
     void Render(IOFacade &gfx, const Point &cameraPoint, const std::weak_ptr<GameObject>
         &gameObject);
   public:
+    /**
+     * @brief This is a constructor for the RenderManager
+     */
     RenderManager();
+
+    /**
+     * @brief This is a destructor for the RenderManager
+     */
     ~RenderManager();
     /**
      * @brief Renders all active game objects in the scene if possible

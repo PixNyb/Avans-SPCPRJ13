@@ -156,6 +156,8 @@ class GameObject
     /**
      * @brief Get the first component of the specified type. Must be
      *        a valid subclass of Component.
+     *
+     * @tparam T The type of component to get.
      * @return Pointer to Component instance.
      */
     template <class T> std::shared_ptr<T> GetComponent() const
@@ -173,6 +175,8 @@ class GameObject
     /**
      * @brief Get all the components of the specified type. Must be
      *        a valid subclass of Component.
+     *
+     * @tparam T The type of component to get.
      * @return Vector with pointers to Component instances.
      */
     template <class T> std::vector<std::shared_ptr<T>> GetComponents() const

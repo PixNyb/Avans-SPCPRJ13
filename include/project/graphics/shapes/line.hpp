@@ -1,7 +1,7 @@
 /**
  * @file Line.hpp
  * @author "Melvin van Bree"
- * @brief TODO
+ * @brief Line is a class that represents a line in the game engine.
  * @version 0.1
  * @date 17/11/2023
  *
@@ -14,6 +14,8 @@
 
 #include "point.hpp"
 #include "color.hpp"
+#include "geometry.hpp"
+#include "vector2d.hpp"
 
 struct Line : public Geometry {
   public:

@@ -31,12 +31,12 @@ class Sprite : public BehaviourScript
 {
 
   private:
-    std::string sprite; /**< The sprite image file path or identifier. */
-    Color color;        /**< The color tint applied to the sprite. */
-    bool flipX;         /**< Flag to flip the sprite horizontally. */
-    bool flipY;         /**< Flag to flip the sprite vertically. */
-    int sortingLayer;   /**< The sorting layer for rendering order. */
-    int orderInLayer;   /**< The specific order within the sorting layer. */
+    std::string sprite; ///< The sprite image file path or identifier.
+    Color color;        ///< The color tint applied to the sprite.
+    bool flipX;         ///< Flag to flip the sprite horizontally.
+    bool flipY;         ///< Flag to flip the sprite vertically.
+    int sortingLayer;   ///< The sorting layer for rendering order.
+    int orderInLayer;   ///< The specific order within the sorting layer.
 
   public:
     /**

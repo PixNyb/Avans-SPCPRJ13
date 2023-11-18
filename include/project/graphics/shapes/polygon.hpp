@@ -16,6 +16,8 @@
 #define DEFUNBOBENGINE_POLYGON_HPP
 
 #include "geometry.hpp"
+#include "vector2d.hpp"
+#include <cmath>
 #include <vector>
 
 /**

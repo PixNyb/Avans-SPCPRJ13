@@ -29,7 +29,7 @@
  */
 class BehaviourScript : public Component {
 protected:
-    bool hasStarted = false;
+    bool hasStarted = false; ///< Flag indicating whether the behaviour script has started.
 public:
     /**
      * @brief Initializes everything required for the behaviour script.

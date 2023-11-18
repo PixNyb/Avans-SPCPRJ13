@@ -12,7 +12,7 @@
 #ifndef DEFUNBOBENGINE_PERFORMANCE_UTILITY_HPP
 #define DEFUNBOBENGINE_PERFORMANCE_UTILITY_HPP
 
-#include <SDL.h>
+#include "SDL2/SDL.h"
 #include "color.hpp"
 
 class SDLColorUtility {
