@@ -18,7 +18,7 @@ var searchData=
   ['color_40',['Color',['../classColor.html#ab51fcb36b7936fcaf9549b65490dfe9c',1,'Color::Color()'],['../classColor.html',1,'Color']]],
   ['color_2ecpp_41',['color.cpp',['../color_8cpp.html',1,'']]],
   ['color_2ehpp_42',['color.hpp',['../color_8hpp.html',1,'']]],
-  ['component_43',['Component',['../classComponent.html#a8775db6d1a2c1afc2e77cd3c8f39da6f',1,'Component::Component()'],['../classComponent.html',1,'Component']]],
+  ['component_43',['Component',['../classComponent.html#a8775db6d1a2c1afc2e77cd3c8f39da6f',1,'Component::Component()'],['../classComponent.html#a889cb5b99bab68856f9b5a650669369c',1,'Component::Component(const Component &amp;other)'],['../classComponent.html',1,'Component']]],
   ['component_2ecpp_44',['component.cpp',['../component_8cpp.html',1,'']]],
   ['component_2ehpp_45',['component.hpp',['../component_8hpp.html',1,'']]],
   ['components_46',['components',['../classGameObject.html#a545e4ed29df0e16304d46c73404c0ce6',1,'GameObject']]],

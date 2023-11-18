@@ -1,6 +1,6 @@
 <map id="BehaviourScript" name="BehaviourScript">
 <area shape="rect" id="node1" title="Base class for scriptable behavior in game objects." alt="" coords="32,80,157,107"/>
-<area shape="rect" id="node3" href="$classAnimator.html" title=" " alt="" coords="5,155,88,181"/>
+<area shape="rect" id="node3" href="$classAnimator.html" title="The Animator class is a BehaviourScript that can be added to a GameObject to animate it according to ..." alt="" coords="5,155,88,181"/>
 <area shape="rect" id="node4" href="$classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="113,155,173,181"/>
 <area shape="rect" id="node2" href="$classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="46,5,143,32"/>
 </map>

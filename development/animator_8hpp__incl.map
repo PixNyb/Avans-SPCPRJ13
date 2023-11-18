@@ -1,6 +1,6 @@
 <map id="include/api/animator.hpp" name="include/api/animator.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="325,5,507,32"/>
-<area shape="rect" id="node2" href="$animation__state_8hpp.html" title="Defines the AnimationState class for handling different states of an animation." alt="" coords="281,80,437,107"/>
+<area shape="rect" id="node1" title="This file contains the Animator class definition." alt="" coords="325,5,507,32"/>
+<area shape="rect" id="node2" href="$animation__state_8hpp.html" title="This file contains the AnimationState class definition." alt="" coords="281,80,437,107"/>
 <area shape="rect" id="node9" title=" " alt="" coords="487,229,550,256"/>
 <area shape="rect" id="node10" title=" " alt="" coords="444,155,495,181"/>
 <area shape="rect" id="node11" href="$behaviour__script_8hpp.html" title="Defines the BehaviourScript class as part of a game engine framework. BehaviourScript is a base class..." alt="" coords="74,80,233,107"/>

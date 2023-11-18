@@ -1,6 +1,6 @@
 <map id="include/api/animation_state.hpp" name="include/api/animation_state.hpp">
-<area shape="rect" id="node1" title="Defines the AnimationState class for handling different states of an animation." alt="" coords="123,5,286,47"/>
-<area shape="rect" id="node2" href="$animator_8hpp.html" title=" " alt="" coords="5,95,188,121"/>
+<area shape="rect" id="node1" title="This file contains the AnimationState class definition." alt="" coords="123,5,286,47"/>
+<area shape="rect" id="node2" href="$animator_8hpp.html" title="This file contains the Animator class definition." alt="" coords="5,95,188,121"/>
 <area shape="rect" id="node4" href="$animation__state_8cpp.html" title="This file contains the AnimationState class implementation." alt="" coords="213,95,415,121"/>
 <area shape="rect" id="node3" href="$animator_8cpp.html" title="This file contains the Animator class implementation." alt="" coords="19,169,174,196"/>
 </map>

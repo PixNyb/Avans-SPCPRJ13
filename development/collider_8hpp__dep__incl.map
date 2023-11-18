@@ -3,7 +3,7 @@
 <area shape="rect" id="node2" href="$behaviour__script_8hpp.html" title="Defines the BehaviourScript class as part of a game engine framework. BehaviourScript is a base class..." alt="" coords="213,80,375,121"/>
 <area shape="rect" id="node7" href="$box__collider_8hpp.html" title="Defines the BoxCollider class for representing rectangular collision areas. BoxCollider is a subclass..." alt="" coords="399,87,602,114"/>
 <area shape="rect" id="node8" href="$circle__collider_8hpp.html" title="Defines the CircleCollider class for representing circular collision areas. CircleCollider is a subcl..." alt="" coords="627,80,759,121"/>
-<area shape="rect" id="node3" href="$animator_8hpp.html" title=" " alt="" coords="5,169,188,196"/>
+<area shape="rect" id="node3" href="$animator_8hpp.html" title="This file contains the Animator class definition." alt="" coords="5,169,188,196"/>
 <area shape="rect" id="node5" href="$sprite_8hpp.html" title="Defines the Sprite class for handling sprite rendering in the game engine. The Sprite class extends t..." alt="" coords="213,169,375,196"/>
 <area shape="rect" id="node6" href="$behaviour__script_8cpp.html" title="This file contains the BehaviourScript class implementation." alt="" coords="400,169,604,196"/>
 <area shape="rect" id="node4" href="$animator_8cpp.html" title="This file contains the Animator class implementation." alt="" coords="19,244,174,271"/>

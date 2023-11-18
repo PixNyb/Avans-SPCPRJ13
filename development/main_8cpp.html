@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>DeFunBobEngine: src/facades/sdl2/objects -&gt; include Relation</title>
+<title>DeFunBobEngine: src/project/core/main.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('dir_ed3b1104a493c9f51823852ab7a96a54.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -84,13 +84,46 @@ $(document).ready(function(){initNavTree('dir_ed3b1104a493c9f51823852ab7a96a54.h
 </iframe>
 </div>
 
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">main.cpp File Reference</div>  </div>
+</div><!--header-->
 <div class="contents">
-<h3>objects &rarr; include Relation</h3><table class="dirtab"><tr class="dirtab"><th class="dirtab">File in src/facades/sdl2/objects</th><th class="dirtab">Includes file in include</th></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="sdl__circle_8cpp.html">sdl_circle.cpp</a></td><td class="dirtab"><a class="el" href="dir_53a771c9ad71090a27bee26439f940f2.html">facades</a>&#160;/&#160;<a class="el" href="dir_0e4392474d6d3c0f3c6a065a1a5a9c9b.html">sdl2</a>&#160;/&#160;<a class="el" href="dir_0bde15225a6b0d64d038a7eec027a48c.html">objects</a>&#160;/&#160;<a class="el" href="sdl__circle_8hpp.html">sdl_circle.hpp</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="sdl__rect_8cpp.html">sdl_rect.cpp</a></td><td class="dirtab"><a class="el" href="dir_53a771c9ad71090a27bee26439f940f2.html">facades</a>&#160;/&#160;<a class="el" href="dir_0e4392474d6d3c0f3c6a065a1a5a9c9b.html">sdl2</a>&#160;/&#160;<a class="el" href="dir_0bde15225a6b0d64d038a7eec027a48c.html">objects</a>&#160;/&#160;<a class="el" href="sdl__rect_8hpp.html">sdl_rect.hpp</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="sdl__triangle_8cpp.html">sdl_triangle.cpp</a></td><td class="dirtab"><a class="el" href="dir_53a771c9ad71090a27bee26439f940f2.html">facades</a>&#160;/&#160;<a class="el" href="dir_0e4392474d6d3c0f3c6a065a1a5a9c9b.html">sdl2</a>&#160;/&#160;<a class="el" href="dir_0bde15225a6b0d64d038a7eec027a48c.html">objects</a>&#160;/&#160;<a class="el" href="sdl__triangle_8hpp.html">sdl_triangle.hpp</a></td></tr></table></div><!-- contents -->
+
+<p>Entry point for the <a class="el" href="classEngine.html">Engine</a>, initializing and running the game loop.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="game__loop_8hpp_source.html">game_loop.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for main.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#asrc_2project_2core_2main_8cpp" alt=""/></div>
+<map name="asrc_2project_2core_2main_8cpp" id="asrc_2project_2core_2main_8cpp">
+<area shape="rect" title="Entry point for the Engine, initializing and running the game loop." alt="" coords="5,5,192,32"/>
+<area shape="rect" href="game__loop_8hpp.html" title="This file contains the GameLoop class definition." alt="" coords="37,80,160,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top"><a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Entry point for the <a class="el" href="classEngine.html">Engine</a>, initializing and running the game loop. </p>
+<dl class="section author"><dt>Author</dt><dd>Robin Pijnappels </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>07/11/2023</dd></dl>
+<p>This file contains the main entry point of the <a class="el" href="classEngine.html">Engine</a>. It creates an instance of the <a class="el" href="classGameLoop.html" title="Manages the main execution loop of the game engine.">GameLoop</a> class and starts the game loop. The <a class="el" href="classGameLoop.html" title="Manages the main execution loop of the game engine.">GameLoop</a> class is responsible for managing the core game processes, including initializing the game state, handling input, updating game logic, and rendering frames. The 'run' method of the <a class="el" href="classGameLoop.html" title="Manages the main execution loop of the game engine.">GameLoop</a> kicks off the continuous loop that drives the game.</p>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023 </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_f6259ea8672e9cb212d805b21be6d211.html">facades</a></li><li class="navelem"><a class="el" href="dir_2946ea2eb85802d28ead3355a1c70924.html">sdl2</a></li><li class="navelem"><a class="el" href="dir_ed3b1104a493c9f51823852ab7a96a54.html">objects</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_00f0a3b1654669903f8939607e046ce9.html">project</a></li><li class="navelem"><a class="el" href="dir_426a260c7fe8cd0b82b50b5d6e5f941c.html">core</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

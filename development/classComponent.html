@@ -108,7 +108,7 @@ Inheritance diagram for Component:</div>
 <area shape="rect" href="classBehaviourScript.html" title="Base class for scriptable behavior in game objects." alt="" coords="133,80,258,107"/>
 <area shape="rect" href="classCollider.html" title="Base class for collider components." alt="" coords="282,80,354,107"/>
 <area shape="rect" href="classRigidBody.html" title="Represents a physics body in the game engine." alt="" coords="378,80,466,107"/>
-<area shape="rect" href="classAnimator.html" title=" " alt="" coords="63,155,146,181"/>
+<area shape="rect" href="classAnimator.html" title="The Animator class is a BehaviourScript that can be added to a GameObject to animate it according to ..." alt="" coords="63,155,146,181"/>
 <area shape="rect" href="classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="171,155,231,181"/>
 <area shape="rect" href="classBoxCollider.html" title="Represents a rectangular collision area." alt="" coords="264,155,361,181"/>
 <area shape="rect" href="classCircleCollider.html" title="Represents a circular collision area." alt="" coords="386,155,495,181"/>
@@ -123,6 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad82d7393e339c1b19cc17a0d55b5674d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">~Component</a> ()=default</td></tr>
 <tr class="memdesc:ad82d7393e339c1b19cc17a0d55b5674d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual destructor for <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a>.  <a href="classComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">More...</a><br /></td></tr>
 <tr class="separator:ad82d7393e339c1b19cc17a0d55b5674d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a889cb5b99bab68856f9b5a650669369c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a889cb5b99bab68856f9b5a650669369c">Component</a> (const <a class="el" href="classComponent.html">Component</a> &amp;other)</td></tr>
+<tr class="memdesc:a889cb5b99bab68856f9b5a650669369c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a>.  <a href="classComponent.html#a889cb5b99bab68856f9b5a650669369c">More...</a><br /></td></tr>
+<tr class="separator:a889cb5b99bab68856f9b5a650669369c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a281ca7be499022dffc55f924399ae5ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a281ca7be499022dffc55f924399ae5ed">IsActive</a> () const</td></tr>
 <tr class="memdesc:a281ca7be499022dffc55f924399ae5ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a> is active.  <a href="classComponent.html#a281ca7be499022dffc55f924399ae5ed">More...</a><br /></td></tr>
 <tr class="separator:a281ca7be499022dffc55f924399ae5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,7 +151,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>It contains an active flag and methods for getting/setting the active status, updating the component, and checking a condition. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8775db6d1a2c1afc2e77cd3c8f39da6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8775db6d1a2c1afc2e77cd3c8f39da6f">&#9670;&nbsp;</a></span>Component()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8775db6d1a2c1afc2e77cd3c8f39da6f">&#9670;&nbsp;</a></span>Component() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,6 +195,32 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Pure virtual destructor for <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a>. </p>
 <p>A pure virtual destructor is needed to make this class abstract. </p>
+
+</div>
+</div>
+<a id="a889cb5b99bab68856f9b5a650669369c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a889cb5b99bab68856f9b5a650669369c">&#9670;&nbsp;</a></span>Component() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Component::Component </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classComponent.html">Component</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy constructor for <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a>. </p>
+<p>Initializes a new <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a> with the values of an existing one. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a> to copy values from. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
