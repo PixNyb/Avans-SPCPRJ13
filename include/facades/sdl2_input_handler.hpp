@@ -38,15 +38,15 @@ public:
      * event vector.
      * @param events A reference to a vector where the polled events will be stored.
      */
-    void PollEvents(std::vector<Event>& events) override;
+    void PollEvents(std::vector<SDL_Event>& sdlEvents) override;
 
-    [[nodiscard]] std::shared_ptr<KeyEvent> getLastPolledKeyEvent() const override;
+    [[nodiscard]] std::vector<std::shared_ptr<KeyEvent>> getPolledKeyEvents() const override;
 
-    [[nodiscard]] std::shared_ptr<MouseEvent> getLastPolledMouseEvent() const override;
+    [[nodiscard]] std::vector<std::shared_ptr<MouseEvent>> getPolledMouseEvents() const override;
 
 private:
-    std::shared_ptr<KeyEvent> lastPolledKeyEvent;
-    std::shared_ptr<MouseEvent> lastPolledMouseEvent;
+    std::vector<std::shared_ptr<KeyEvent>> polledKeyEvents;
+    std::vector<std::shared_ptr<MouseEvent>> polledMouseEvents;
 };
 
 #endif //DEFUNBOBENGINE_INPUTHANDLER_HPP

@@ -12,11 +12,11 @@ class IInputHandler {
 public:
     virtual ~IInputHandler() = default;
 
-    virtual void PollEvents(std::vector<Event>& events) = 0;
+    virtual void PollEvents(std::vector<SDL_Event>& sdlEvents) = 0;
 
-    [[nodiscard]] virtual std::shared_ptr<KeyEvent> getLastPolledKeyEvent() const = 0;
+    [[nodiscard]] virtual std::vector<std::shared_ptr<KeyEvent>> getPolledKeyEvents() const = 0;
 
-    [[nodiscard]] virtual std::shared_ptr<MouseEvent> getLastPolledMouseEvent() const = 0;
+    [[nodiscard]] virtual std::vector<std::shared_ptr<MouseEvent>> getPolledMouseEvents() const = 0;
 };
 
 #endif //DEFUNBOBENGINE_IINPUTHANDLER_HPP

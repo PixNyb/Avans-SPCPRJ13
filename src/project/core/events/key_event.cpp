@@ -1,6 +1,6 @@
 #include "key_event.hpp"
 
-KeyEvent::KeyEvent(SDL_Event& sdlEvent) : Event(sdlEvent.type) {
+KeyEvent::KeyEvent(SDL_Event& sdlEvent) : Event(sdlEvent.type), sdlKeyboardEvent{} {
     sdlKeyboardEvent.keysym.scancode = sdlEvent.key.keysym.scancode;
 }
 

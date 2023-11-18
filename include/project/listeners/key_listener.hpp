@@ -5,7 +5,7 @@
 
 class KeyListener : public IKeyListener {
 public:
-    void OnKeyPressed(const std::shared_ptr<KeyEvent>&, const std::map<Event, std::vector<ActionType>>& actionTypeKeyBinds) override;
+    void OnKeyPressed(const std::shared_ptr<KeyEvent>& event, const std::map<Event, std::vector<ActionType>>& actionTypeKeyBinds) override;
     void OnKeyReleased() override;
 };
 

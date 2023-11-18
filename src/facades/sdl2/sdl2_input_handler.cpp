@@ -1,24 +1,20 @@
 #include "sdl2_input_handler.hpp"
 
-void SDL2InputHandler::PollEvents(std::vector<Event>& events) {
-    SDL_Event sdlEvent;
-
-    while (SDL_PollEvent(&sdlEvent)) {
+void SDL2InputHandler::PollEvents(std::vector<SDL_Event>& sdlEvents) {
+    for(SDL_Event sdlEvent : sdlEvents) {
         if (sdlEvent.type == SDL_KEYDOWN || sdlEvent.type == SDL_KEYUP) {
-            lastPolledKeyEvent = std::make_shared<KeyEvent>(sdlEvent);
-            events.push_back(*lastPolledKeyEvent);
+            polledKeyEvents.emplace_back(std::make_shared<KeyEvent>(sdlEvent));
         }
         else if (sdlEvent.type == SDL_MOUSEBUTTONDOWN || sdlEvent.type == SDL_MOUSEBUTTONUP || sdlEvent.type == SDL_MOUSEMOTION) {
-            lastPolledMouseEvent = std::make_shared<MouseEvent>(sdlEvent);
-            events.push_back(*lastPolledMouseEvent);
+            polledMouseEvents.emplace_back(std::make_shared<MouseEvent>(sdlEvent));
         }
     }
 }
 
-std::shared_ptr<KeyEvent> SDL2InputHandler::getLastPolledKeyEvent() const {
-    return lastPolledKeyEvent;
+std::vector<std::shared_ptr<KeyEvent>> SDL2InputHandler::getPolledKeyEvents() const {
+    return polledKeyEvents;
 }
 
-std::shared_ptr<MouseEvent> SDL2InputHandler::getLastPolledMouseEvent() const {
-    return lastPolledMouseEvent;
+std::vector<std::shared_ptr<MouseEvent>> SDL2InputHandler::getPolledMouseEvents() const {
+    return polledMouseEvents;
 }

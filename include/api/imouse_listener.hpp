@@ -39,17 +39,17 @@ public:
     /**
      * @brief Called whenever the mouse is moved.
      */
-    virtual void OnMouseMoved() = 0;
+    virtual void OnMouseMoved(const std::shared_ptr<MouseEvent>& event) = 0;
 
     /**
      * @brief Called whenever a mouse button is clicked.
      */
-    virtual void OnMouseClicked(const std::shared_ptr<MouseEvent>& event, const std::map<Event, std::vector<ActionType>>& actionTypeKeyBinds) = 0;
+    virtual void OnMouseClicked() = 0;
 
     /**
      * @brief Called each frame when a mouse button is still down.
      */
-    virtual void OnMousePressed() = 0;
+    virtual void OnMousePressed(const std::shared_ptr<MouseEvent>& event, const std::map<Event, std::vector<ActionType>>& actionTypeKeyBinds) = 0;
 
     /**
      * @brief Called whenever a mouse button is released.

@@ -1,22 +1,41 @@
 #include "input_manager.hpp"
 
-void InputManager::update() {
-    std::vector<Event> events;
+InputManager::InputManager() : sdlInputHandler(std::make_unique<SDL2InputHandler>()) {}
 
-    sdlInputHandler = std::make_unique<SDL2InputHandler>();
+void InputManager::update(std::vector<SDL_Event>& events) {
     sdlInputHandler->PollEvents(events);
 
-    // Update key listeners
-    for (const auto& listener : keyListeners) {
-        listener->OnKeyReleased();
-        listener->OnKeyPressed(sdlInputHandler->getLastPolledKeyEvent(), actionTypeKeyBinds);
+    for(const auto& keyEvent : sdlInputHandler->getPolledKeyEvents()) {
+        for (const auto& listener : keyListeners) {
+            switch(keyEvent->getType()) {
+                case SDL_KEYDOWN:
+                    listener->OnKeyPressed(keyEvent, actionTypeKeyBinds);
+                    break;
+                case SDL_KEYUP:
+                    listener->OnKeyReleased();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
-    for (const auto& listener : mouseListeners) {
-        listener->OnMouseMoved();
-        listener->OnMousePressed();
-        listener->OnMouseClicked(sdlInputHandler->getLastPolledMouseEvent(), actionTypeKeyBinds);
-        listener->OnMouseReleased();
+    for(const auto& mouseEvent : sdlInputHandler->getPolledMouseEvents()) {
+        for (const auto& listener : mouseListeners) {
+            switch(mouseEvent->getType()) {
+                case SDL_MOUSEMOTION:
+                    listener->OnMouseMoved(mouseEvent);
+                    break;
+                case SDL_MOUSEBUTTONDOWN:
+                    listener->OnMousePressed(mouseEvent, actionTypeKeyBinds);
+                    break;
+                case SDL_MOUSEBUTTONUP:
+                    listener->OnMouseReleased();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
 
@@ -34,6 +53,10 @@ bool InputManager::actionPressed(const ActionType& actionType) const {
 
 bool InputManager::actionReleased(const ActionType& actionType) const {
     return std::find(actionsReleased.begin(), actionsReleased.end(), actionType) != actionsReleased.end();
+}
+
+const std::unique_ptr<IInputHandler>& InputManager::getSDLInputHandler() const {
+    return sdlInputHandler;
 }
 
 void InputManager::bind(const Event& key, const ActionType& actionType) {

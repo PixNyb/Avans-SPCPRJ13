@@ -9,6 +9,7 @@ public:
     explicit KeyEvent(SDL_Event& sdlEvent);
 
     [[nodiscard]] SDL_Scancode getKeyCode() const;
+
 private:
     SDL_KeyboardEvent sdlKeyboardEvent;
 };

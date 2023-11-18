@@ -4,6 +4,8 @@ ActionType::ActionType(std::string enumName) : enumName(std::move(enumName)) {
     setDefaultEnums();
 }
 
+std::unordered_map<std::string, ActionType> ActionType::stringToEnumMap;
+
 const ActionType ActionType::NONE("NONE");
 const ActionType ActionType::JUMP("JUMP");
 const ActionType ActionType::PAUSE("PAUSE");

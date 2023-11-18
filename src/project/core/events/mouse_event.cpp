@@ -1,6 +1,6 @@
 #include "mouse_event.hpp"
 
-MouseEvent::MouseEvent(SDL_Event& sdlEvent) : Event(sdlEvent.type) {
+MouseEvent::MouseEvent(SDL_Event& sdlEvent) : Event(sdlEvent.type), sdlMouseButtonEvent{} {
     if (sdlEvent.type == SDL_MOUSEBUTTONDOWN || sdlEvent.type == SDL_MOUSEBUTTONUP) {
         sdlMouseButtonEvent = sdlEvent.button;
     } else if (sdlEvent.type == SDL_MOUSEMOTION) {

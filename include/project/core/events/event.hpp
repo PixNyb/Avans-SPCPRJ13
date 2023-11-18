@@ -14,7 +14,6 @@
 #ifndef DEFUNBOBENGINE_EVENT_HPP
 #define DEFUNBOBENGINE_EVENT_HPP
 
-#include "event_type.hpp"
 #include "SDL.h"
 
 /**
