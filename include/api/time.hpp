@@ -16,6 +16,8 @@
 #ifndef DEFUNBOBENGINE_TIME_HPP
 #define DEFUNBOBENGINE_TIME_HPP
 
+#include <cstdint>
+
 /**
  * @class Time
  * @brief Represents game time, providing static methods to access and manipulate it.
