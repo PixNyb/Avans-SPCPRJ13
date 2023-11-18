@@ -20,64 +20,64 @@
  * It contains an active flag and methods for getting/setting the active status,
  * updating the component, and checking a condition.
  */
-class Component {
-protected:
-  bool active; ///< The active flag of the Component.
+class Component
+{
+  protected:
+    bool active; ///< The active flag of the Component.
 
-public:
-  /**
-   * @brief Default constructor for Component.
-   *
-   * Initializes a new Component with default values.
-   */
-  Component();
+  public:
+    /**
+     * @brief Default constructor for Component.
+     *
+     * Initializes a new Component with default values.
+     */
+    Component();
 
-  /**
-   * @brief Pure virtual destructor for Component.
-   *
-   * A pure virtual destructor is needed to make this class abstract.
-   */
-  virtual ~Component() = default;
+    /**
+     * @brief Pure virtual destructor for Component.
+     *
+     * A pure virtual destructor is needed to make this class abstract.
+     */
+    virtual ~Component() = default;
 
-  /**
-   * @brief Copy constructor for Component.
-   * @param other The Component to copy.
-   * @return Component& A reference to the new Component.
-   */
-  virtual Component& operator=(Component& other){
-      return *this;
-  }
+    /**
+     * @brief Copy constructor for Component.
+     *
+     * Initializes a new Component with the values of an existing one.
+     * @param other The Component to copy values from.
+     */
+    Component(const Component &other);
 
-  /**
-   * @brief Check if the Component is active.
-   *
-   * @return True if the Component is active, false otherwise.
-   */
-  [[nodiscard]] bool IsActive() const;
+    /**
+     * @brief Check if the Component is active.
+     *
+     * @return True if the Component is active, false otherwise.
+     */
+    [[nodiscard]] bool IsActive() const;
 
-  /**
-   * @brief Set the active status of the Component.
-   *
-   * Sets the active status of the Component to the given value.
-   * @param active The new active status of the Component.
-   */
-  void SetActive(bool active);
+    /**
+     * @brief Set the active status of the Component.
+     *
+     * Sets the active status of the Component to the given value.
+     * @param active The new active status of the Component.
+     */
+    void SetActive(bool active);
 
-  /**
-   * @brief Update the Component.
-   *
-   * This method should be overridden by subclasses to provide specific update
-   * behavior.
-   */
-  virtual void Update();
+    /**
+     * @brief Update the Component.
+     *
+     * This method should be overridden by subclasses to provide specific update
+     * behavior.
+     */
+    virtual void Update();
 
-  /**
-   * @brief Check a condition.
-   *
-   * This method should be overridden by subclasses to provide specific
-   * condition checking behavior.
-   */
-  virtual void Condition();
+    /**
+     * @brief Check a condition.
+     *
+     * This method should be overridden by subclasses to provide specific
+     * condition checking behavior.
+     */
+    virtual void Condition();
 };
 
 #endif // AVANS_SPCPRJ13_COMPONENT_H

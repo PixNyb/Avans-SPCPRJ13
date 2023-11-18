@@ -1,20 +1,23 @@
 /**
  * @file animator.cpp
- * @author Robin Pijnappels
+ * @author Roël Couwenberg (contact@roelc.me)
  * @brief This file contains the Animator class implementation.
  * @version 0.1
- * @date 2023-11-08
+ * @date 2023-11-16
  *
  * @copyright Copyright (c) 2023
- *
  */
-
 
 #include "animator.hpp"
 
 Animator::Animator()
 {
     // Constructor implementation
+}
+
+Animator::Animator(const Animator &other)
+{
+    // Copy constructor implementation
 }
 
 void Animator::Update()

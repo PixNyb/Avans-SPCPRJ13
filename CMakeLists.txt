@@ -18,19 +18,6 @@ file(COPY ${PROJECT_SOURCE_DIR}/resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR
 # Generate coverage
 option(GENERATE_COVERAGE "Generate coverage" OFF)
 
-# If the option is set to true or we're running a debug build, generate coverage
-if(GENERATE_COVERAGE OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
-    if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-        include(ProcessorCount)
-        ProcessorCount(N)
-
-        if(NOT N EQUAL 0)
-            set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
-            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
-        endif()
-    endif()
-endif()
-
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -53,6 +40,20 @@ list(REMOVE_DUPLICATES HEADER_DIRS)
 
 # Add executable
 add_library(DeFunBobEngine ${SOURCES})
+
+# If the option is set to true or we're running a debug build, generate coverage
+if(GENERATE_COVERAGE OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
+    if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+        include(ProcessorCount)
+        ProcessorCount(N)
+
+        if(NOT N EQUAL 0)
+            set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
+            target_link_libraries(DeFunBobEngine PRIVATE gcov)
+        endif()
+    endif()
+endif()
 
 # Include headers
 foreach(_headerDir ${HEADER_DIRS})
