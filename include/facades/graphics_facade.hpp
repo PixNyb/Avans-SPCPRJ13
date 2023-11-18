@@ -82,10 +82,19 @@ public:
 
     /**
     * @brief Polls and processes graphics-related events.
-    *
-    * @param events A vector of Event objects to be filled with polled events.
     */
-    void PollEvents(std::vector<Event>& events) override;
+    std::vector<std::unique_ptr<Event>> PollEvents() override;
+
+    /**
+     * @brief Maps an SDL_Event to a custom Event.
+     *
+     * This method maps an SDL_Event to a custom Event, which is used to abstract the
+     * SDL event system from the rest of the engine. It is used internally by the PollEvents
+     * method to process SDL events and return them as custom events.
+     * @param sdlEvent The SDL_Event to be mapped.
+     * @return A unique pointer to the mapped Event.
+     */
+    std::unique_ptr<Event> MapSdlEventToCustomEvent(const SDL_Event& sdlEvent) override;
 
     /**
      * @brief Creates the graphics window.

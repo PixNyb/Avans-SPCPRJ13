@@ -37,6 +37,7 @@ public:
      * @brief Virtual destructor for polymorphic deletion.
      */
     virtual ~Event() {}
+
 };
 
 #endif //DEFUNBOBENGINE_EVENT_HPP

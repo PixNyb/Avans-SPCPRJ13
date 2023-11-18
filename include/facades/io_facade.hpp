@@ -57,13 +57,25 @@ public:
     virtual void Init() = 0;
 
     /**
-     * @brief Polls for input events and populates the provided event vector.
+     * @brief Polls for SDL input events.
      *
-     * Must be implemented by the concrete subclass to check for new events from
-     * the input system and translate them into a vector of Event objects.
-     * @param events A reference to a vector where the polled events will be stored.
+     * This function checks for new events from the SDL input system and returns them
+     * as a vector of SDL_Event objects.
+     * @return A vector containing all polled SDL_Event objects.
      */
-    virtual void PollEvents(std::vector<Event>& events) = 0;
+    virtual std::vector<std::unique_ptr<Event>> PollEvents() = 0;
+
+    /**
+     * @brief Maps an SDL_Event to a custom Event.
+     *
+     * This method should be implemented by the concrete subclass to map an SDL_Event
+     * to a custom Event object. It should take the SDL_Event as input and return a
+     * unique pointer to a custom Event object.
+     *
+     * @param sdlEvent The SDL_Event to be mapped.
+     * @return A unique pointer to a custom Event object.
+     */
+    virtual std::unique_ptr<Event> MapSdlEventToCustomEvent(const SDL_Event& sdlEvent) = 0;
 
     /**
     * @brief Creates a window with the specified properties.

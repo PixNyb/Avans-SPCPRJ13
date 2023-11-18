@@ -56,8 +56,10 @@ void Engine::Start()
 
 
         // TODO: Remove (Input manager required)
-        SDL_Event event;
-        while (SDL_PollEvent(&event)) {
+        // Polling events
+        auto events = graphicsFacade->PollEvents();
+        for (const auto& event : events) {
+//            HandleEvent(*event);
         }
 
         Get<SceneManager>()->Update(deltaTime);
@@ -114,3 +116,4 @@ Engine *Engine::GetInstance() {
     }
     return instancePtr;
 }
+
