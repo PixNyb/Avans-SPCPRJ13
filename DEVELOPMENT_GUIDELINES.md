@@ -87,6 +87,7 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 
 - Schrijf unit tests waar mogelijk om de functionaliteit van de code te testen.
   - Om unit test te schrijven, maak je gebruik van het [CTest](https://cmake.org/cmake/help/latest/manual/ctest.1.html) framework van [CMake](https://cmake.org/).
+  - We gebruiken ook Google Test (gtest) als het testframework voor het schrijven van de tests.
   - Dit doe je door een testbestand aan te maken in `tests/`.
   - Een testbestand bevat een `main` functie die de tests uitvoert.
   - Een testbestand is succesvol als het programma eindigt met een exit code van `0`.
