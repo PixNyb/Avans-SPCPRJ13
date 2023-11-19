@@ -17,6 +17,7 @@
 #include "sdl_triangle.hpp"
 #include <SDL_ttf.h>
 #include <iostream>
+#include <SDL_image.h>
 
 GraphicsFacade::GraphicsFacade() {
     try {
@@ -290,3 +291,74 @@ void GraphicsFacade::DrawText(const Text& text) {
         // Close the font
         TTF_CloseFont(sdlFont);
 }
+
+void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle rectangle) {
+    // Check if the texture has already been created and cached
+    SDL_Texture* sdlTexture = GetCachedSDLTexture(texture);
+
+    if (!sdlTexture) {
+        // If not cached, create it and cache it
+        sdlTexture = CreateSDLTextureFromTexture(texture);
+        CacheSDLTexture(texture, sdlTexture);
+    }
+    // Proceed to draw the sprite using sdlTexture
+    RenderSDLTexture(sdlTexture, rectangle);
+}
+
+void GraphicsFacade::RenderSDLTexture(SDL_Texture* sdlTexture, Rectangle rectangle) {
+    if (!sdlTexture) return;
+
+    auto renderer = SdlWindow->GetRenderer();
+    if(!renderer) {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
+    }
+
+    const Vector2D& pos = rectangle.GetPosition();
+
+    SDLRect rect(static_cast<int>(pos.x), static_cast<int>(pos.y), rectangle.GetWidth(),
+                 rectangle.GetHeight(), static_cast<int>(rectangle.GetRotation()));
+
+    SDL_QueryTexture(sdlTexture, NULL, NULL, &rect.w, &rect.h);
+
+    // Render the texture to the screen
+    SDL_RenderCopy(renderer, sdlTexture, NULL, &rectangle.);
+}
+
+SDL_Texture* GraphicsFacade::GetCachedSDLTexture(const Texture& texture) {
+    auto it = textureCache.find(texture.getFilePath());
+    if (it != textureCache.end()) {
+        return it->second;
+    }
+    return nullptr;
+}
+
+SDL_Texture* GraphicsFacade::CreateSDLTextureFromTexture(const Texture& texture) {
+    auto renderer = SdlWindow->GetRenderer();
+    if(!renderer) {
+        std::cerr << "Renderer is null" << std::endl;
+        return nullptr;
+    }
+    SDL_Surface* surface = IMG_Load(texture.getFilePath().c_str());
+    if (!surface) {
+        // Handle error
+        return nullptr;
+    }
+
+    SDL_Texture* sdlTexture = SDL_CreateTextureFromSurface(renderer, surface);
+    SDL_FreeSurface(surface);
+
+    if (!sdlTexture) {
+        std::cerr << "SDLTexture error" << std::endl;
+        return nullptr;
+    }
+
+    return sdlTexture;
+}
+
+void GraphicsFacade::CacheSDLTexture(const Texture& texture, SDL_Texture* sdlTexture) {
+    textureCache[texture.getFilePath()] = sdlTexture;
+}
+
+
+

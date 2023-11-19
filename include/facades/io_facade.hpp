@@ -29,6 +29,7 @@
 #include "sdl_window.hpp"
 #include "triangle.hpp"
 #include "core_constants.hpp"
+#include "texture.hpp"
 #include <SDL.h>
 #include <vector>
 
@@ -185,6 +186,51 @@ public:
      * @param text A Text object containing the content and other properties of the text.
      */
     virtual void DrawText(const Text& text) = 0;
+
+    /**
+     * @brief Draws a Texture object on the rendering target.
+     *
+     * This virtual function is intended to be implemented in GraphicsFacade class to handle
+     * the rendering of Texture objects. The method should use the properties of the
+     * Texture (such as its position and dimensions) to draw it on the provided SDL_Renderer.
+     *
+     * @param texture A Texture object containing the properties of the texture.
+     */
+    virtual void DrawSprite(const Texture& texture, Rectangle rectangle) = 0;
+
+
+    /**
+     * @brief Renders an SDL_Texture on the rendering target.
+     *
+     * This virtual function is intended to be implemented in GraphicsFacade class to handle
+     * the rendering of SDL_Texture objects. The method should use the properties of the
+     * Texture (such as its position and dimensions) to draw it on the provided SDL_Renderer.
+     *
+     * @param sdlTexture An SDL_Texture object containing the properties of the texture.
+     * @param rectangle The rectangle to render the texture in.
+     */
+    virtual void RenderSDLTexture(SDL_Texture* sdlTexture, Rectangle rectangle) = 0;
+
+    /**
+     * @brief Gets the cached SDL_Texture for a Texture object.
+     * @param texture The Texture object to retrieve the cached SDL_Texture for.
+     * @return The cached Texture.
+     */
+    virtual SDL_Texture* GetCachedSDLTexture(const Texture& texture) = 0;
+
+    /**
+     * @brief Creates an SDL_Texture from a Texture object.
+     * @param texture The Texture object to create the SDL_Texture from.
+     * @return The created SDL_Texture.
+     */
+    virtual SDL_Texture* CreateSDLTextureFromTexture(const Texture& texture) = 0;
+
+    /**
+     * @brief Caches an SDL_Texture for a Texture object.
+     * @param texture The Texture object to cache the SDL_Texture for.
+     * @param sdlTexture The SDL_Texture to cache.
+     */
+    virtual void CacheSDLTexture(const Texture& texture, SDL_Texture* sdlTexture) = 0;
 };
 
 #endif //DEFUNBOBENGINE_IO_FACADE_HPP

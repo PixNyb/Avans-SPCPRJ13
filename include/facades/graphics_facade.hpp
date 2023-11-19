@@ -24,6 +24,7 @@
 #include "sdl_render.hpp"
 #include <SDL.h>
 #include <memory>
+#include <map>
 
 /**
  * @class GraphicsFacade
@@ -36,6 +37,8 @@ class GraphicsFacade : public IOFacade {
 private:
     std::unique_ptr<SDLWindow> SdlWindow; /**< Unique pointer to SDLWindow for managing the graphics window. */
     std::unique_ptr<SDLInit> SdlInit; /**< Unique pointer to SDLInit for SDL initialization. */
+
+    std::map<std::string, SDL_Texture*> textureCache; /**< Map of texture file paths to SDL_Texture pointers. */
 
     /**
      * @brief resets the color to the default color specified in the Constants.
@@ -167,6 +170,43 @@ public:
     void DrawLines(std::vector<Line> lines) override;
 
     void DrawText(const Text& text) override;
+
+    /**
+     * @brief Creates a texture from an image file.
+     *
+     * This method creates a texture from an image file, which can then be used for rendering.
+     * @param texture The texture to be created.
+     */
+    void DrawSprite(const Texture& texture, Rectangle rectangle) override;
+
+    /**
+     * @brief Creates an SDL_Texture from an image file.
+     *
+     * This method creates an SDL_Texture from an image file, which can then be used for rendering.
+     * @param sdlTexture The SDL_Texture to be created.
+     * @param rectangle The rectangle to render the texture in.
+     */
+    void RenderSDLTexture(SDL_Texture* sdlTexture, Rectangle rectangle) override;
+
+    /**
+     * @brief Gets the cached texture if it exists.
+     * @param texture The texture to get the cached SDL_Texture for.
+     */
+    SDL_Texture* GetCachedSDLTexture(const Texture& texture) override;
+
+    /**
+     * @brief Creates an SDL_Texture from a Texture object.
+     * @param texture The Texture object to create the SDL_Texture from.
+     * @return The created SDL_Texture.
+     */
+    SDL_Texture* CreateSDLTextureFromTexture(const Texture& texture) override;
+
+    /**
+     * @brief Caches an SDL_Texture for a Texture object.
+     * @param texture The Texture object to cache the SDL_Texture for.
+     * @param sdlTexture The SDL_Texture to cache.
+     */
+    void CacheSDLTexture(const Texture& texture, SDL_Texture* sdlTexture) override;
 };
 
 
