@@ -12,14 +12,15 @@
 #ifndef DEFUNBOBENGINE_DEBUG_RENDERER_HPP
 #define DEFUNBOBENGINE_DEBUG_RENDERER_HPP
 
-#include <iostream>
-#include <Box2D/Box2D.h>
-#include <SDL.h>
 #include "game_object.hpp"
+#include <SDL.h>
+#include <box2d/box2d.h>
+#include <iostream>
 #include <map>
 
-class DebugRenderer {
-public:
+class DebugRenderer
+{
+  public:
     /**
      * Determines whether the debug window is running
      */
@@ -55,8 +56,6 @@ public:
      * Starts the SDL init
      */
     void Start();
-
 };
 
-
-#endif //DEFUNBOBENGINE_DEBUG_RENDERER_HPP
+#endif // DEFUNBOBENGINE_DEBUG_RENDERER_HPP

@@ -12,19 +12,20 @@
 #ifndef AVANS_SPCPRJ13_PHYSICS_FACADE_HPP
 #define AVANS_SPCPRJ13_PHYSICS_FACADE_HPP
 
-#include <box2d/box2d.h>
-#include <vector>
-#include <memory>
-#include <map>
-#include "game_object.hpp"
-#include "rigidbody.hpp"
 #include "collider.hpp"
 #include "debug_renderer.hpp"
+#include "game_object.hpp"
+#include "rigidbody.hpp"
+#include <box2d/box2d.h>
+#include <map>
+#include <memory>
+#include <vector>
 
-
-class PhysicsFacade {
-private:
-    std::map<std::shared_ptr<GameObject>, b2Body*> bodies; ///< The map with bodies in the physicsfacade.
+class PhysicsFacade
+{
+  private:
+    std::map<std::shared_ptr<GameObject>, b2Body *>
+        bodies;                     ///< The map with bodies in the physicsfacade.
     std::unique_ptr<b2World> world; ////< The world in which the bodies can move.
 
     /**
@@ -34,8 +35,10 @@ private:
      * @param rigidBody the rigidbody of the gameobject/body this fixture will belong to
      * @param area the area of the shape
      */
-    void SetFixture(b2Body* body, b2Shape* shape, const std::shared_ptr<RigidBody>& rigidBody, double area);
-public:
+    void SetFixture(b2Body *body, b2Shape *shape, const std::shared_ptr<RigidBody> &rigidBody,
+                    double area);
+
+  public:
     /**
      * Determines whether the debug mode should be active
      */
@@ -46,54 +49,53 @@ public:
     ~PhysicsFacade();
 
     /**
-    * @brief Create a body from a gameobject
-    */
+     * @brief Create a body from a gameobject
+     */
     void MakeBody(std::shared_ptr<GameObject> gameObject);
 
     /**
-    * @brief Destroy a body from a gameobject
-    */
-    void DestroyBody(const std::shared_ptr<GameObject>& gameObject);
+     * @brief Destroy a body from a gameobject
+     */
+    void DestroyBody(const std::shared_ptr<GameObject> &gameObject);
 
     /**
-    * @brief Populate the b2World through a list of gameobjects
-    */
+     * @brief Populate the b2World through a list of gameobjects
+     */
     void PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects);
 
     /**
-    * @brief Add a force to an object
-    * can be used for jumping or boosts in speed
-    */
-    void AddForce(const std::shared_ptr<GameObject>& gameObject, float vx, float vy);
+     * @brief Add a force to an object
+     * can be used for jumping or boosts in speed
+     */
+    void AddForce(const std::shared_ptr<GameObject> &gameObject, float vx, float vy);
 
     /**
-    * @brief Add a force to an object
-    * can be used for jumping or boosts in speed
-    */
-    void AddRotation(const std::shared_ptr<GameObject>& gameObject, float amount);
+     * @brief Add a force to an object
+     * can be used for jumping or boosts in speed
+     */
+    void AddRotation(const std::shared_ptr<GameObject> &gameObject, float amount);
 
     /**
-    * @brief Execute the step function on the b2World
-    */
+     * @brief Execute the step function on the b2World
+     */
     void Step();
 
     /**
      * Sets the given gameobject to sleep
      * @param gameObject the gameobject that is set asleep
      */
-    void Sleep(const std::shared_ptr<GameObject>& gameObject);
+    void Sleep(const std::shared_ptr<GameObject> &gameObject);
 
     /**
-    * Sets the given gameobject to wake up
-    * @param gameObject the gameobject that is set awake
-    */
-    void Wake(const std::shared_ptr<GameObject>& gameObject);
+     * Sets the given gameobject to wake up
+     * @param gameObject the gameobject that is set awake
+     */
+    void Wake(const std::shared_ptr<GameObject> &gameObject);
 
     /**
-    * @brief Simulate all bodies in the b2World in a window
-    */
+     * @brief Simulate all bodies in the b2World in a window
+     */
     void ShowDebug();
 };
 
-
-#endif //AVANS_SPCPRJ13_PHYSICS_FACADE_HPP
+#endif // AVANS_SPCPRJ13_PHYSICS_FACADE_HPP
