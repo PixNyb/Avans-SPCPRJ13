@@ -45,22 +45,22 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject) {
 }
 
 void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects) {
-    //// PhysicsFacade receives a list of gameobjects that contain a rigidbody
-    //// create the world where the bodies will be placed
+    // PhysicsFacade receives a list of gameobjects that contain a rigidbody
+    // create the world where the bodies will be placed
     b2Vec2 gravity(0.0f, -9.8f);
     world = std::make_unique<b2World>(gravity);
 
-    //// create a b2body for every gameobject
+    // create a b2body for every gameobject
     for (auto &gameObject: gameObjects) {
         MakeBody(gameObject);
     }
 
-    //// add fixtures for every body
+    // add fixtures for every body
     for (auto object_pair = bodies.begin(); object_pair != bodies.end(); ++object_pair) {
         auto game_object = object_pair->first;
         auto body = object_pair->second;
 
-        //// create circles
+        // create circles
         for (auto &circleCollider: game_object->GetComponents<CircleCollider>()) {
             b2CircleShape circleShape{};
             circleShape.m_radius = static_cast<float>(circleCollider->Radius() * PixelScale);
@@ -69,7 +69,7 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
             SetFixture(body, &circleShape, game_object->GetComponent<RigidBody>(), area);
         }
 
-        //// create boxes
+        // create boxes
         for (auto &boxCollider: game_object->GetComponents<BoxCollider>()) {
             b2PolygonShape boxShape{};
             boxShape.SetAsBox(static_cast<float>(boxCollider->Width() / 2.0 * PixelScale),
@@ -82,10 +82,10 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
 }
 
 void PhysicsFacade::Step() {
-    //// run physics world
+    // run physics world
     world->Step(TimeStep, VelocityIterations, PositionIterations);
 
-    //// update all gameobjects
+    // update all gameobjects
     for (auto object_pair = bodies.begin(); object_pair != bodies.end(); ++object_pair) {
         auto gameObject = object_pair->first;
         auto body = object_pair->second;
