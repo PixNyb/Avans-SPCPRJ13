@@ -30,6 +30,10 @@
         {
             "name": "box2d",
             "version>=": "2.4.1"
+        },
+        {
+            "name": "gtest",
+            "version>=": "1.14.0"
         }
     ]
 }
