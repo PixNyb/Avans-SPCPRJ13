@@ -52,6 +52,13 @@ foreach(TEST_EXECUTABLE ${TEST_EXECUTABLES})
     find_package(SDL2_net CONFIG REQUIRED)
     target_link_libraries(${TEST_EXECUTABLE} PRIVATE $<IF:$<TARGET_EXISTS:SDL2_net::SDL2_net>,SDL2_net::SDL2_net,SDL2_net::SDL2_net-static>)
 
+
+    find_package(nlohmann_json CONFIG REQUIRED)
+    target_link_libraries(${TEST_EXECUTABLE} PRIVATE nlohmann_json::nlohmann_json)
+
+    find_package(fmt CONFIG REQUIRED)
+    target_link_libraries(${TEST_EXECUTABLE} PRIVATE fmt::fmt)
+
     find_package(GTest CONFIG REQUIRED)
     target_link_libraries(${TEST_EXECUTABLE} PRIVATE GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
 

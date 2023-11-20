@@ -61,6 +61,32 @@ class GameObject : public std::enable_shared_from_this<GameObject>
     GameObject(const std::string &name, const Transform &transform);
 
     /**
+     * @brief Copy constructor that creates a deep copy of the provided GameObject.
+     * @param other The GameObject that is to be copied.
+     */
+    GameObject(const GameObject& other);
+
+    /**
+     * @brief Copy assignment operator that creates a deep copy of the provided GameObject.
+     * @param other The GameObject that is to be copied.
+     * @return The new copy of the GameObject.
+     */
+    GameObject &operator=(const GameObject &other);
+
+    /**
+     * @brief Move constructor which could be used to move a GameObject, this functionality is currently disabled.
+     * @param other The GameObject that is to be moved.
+     */
+    GameObject(GameObject &&other) noexcept = delete;
+
+    /**
+     * @brief Move assignment operator which could be used to move a GameObject, this functionality is currently disabled.
+     * @param other The GameObject that is to be moved.
+     * @return The new GameObject that it was moved to.
+     */
+    GameObject& operator=(GameObject &&other) noexcept = delete;
+
+    /**
      * @brief Destructor for GameObject.
      */
     virtual ~GameObject() = default;
