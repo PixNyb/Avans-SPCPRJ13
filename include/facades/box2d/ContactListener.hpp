@@ -1,0 +1,14 @@
+//
+// Created by Eigenaar on 20-11-2023.
+//
+
+#ifndef DEFUNBOBENGINE_CONTACTLISTENER_HPP
+#define DEFUNBOBENGINE_CONTACTLISTENER_HPP
+
+
+class ContactListener {
+
+};
+
+
+#endif //DEFUNBOBENGINE_CONTACTLISTENER_HPP
