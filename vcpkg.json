@@ -26,6 +26,14 @@
         {
             "name": "sdl2-ttf",
             "version>=": "2.20.2"
+        },
+        {
+            "name": "box2d",
+            "version>=": "2.4.1"
+        },
+        {
+            "name": "gtest",
+            "version>=": "1.14.0"
         }
     ]
 }

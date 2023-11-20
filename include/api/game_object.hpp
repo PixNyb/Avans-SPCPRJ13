@@ -18,6 +18,8 @@
 #include <string>
 #include <vector>
 
+class GameObjectList;
+
 /**
  * @class GameObject
  * @brief The GameObject class represents an object in the game world.
@@ -26,7 +28,7 @@
  * GameObjects can be added to the game world and can have their components
  * updated and rendered.
  */
-class GameObject
+class GameObject : public std::enable_shared_from_this<GameObject>
 {
   protected:
     std::string name; ///< The name of the GameObject.
@@ -152,6 +154,52 @@ class GameObject
      * @param component The component to add to the GameObject.
      */
     void AddComponent(std::shared_ptr<Component> component);
+
+    /**
+     * @brief Get the first component of the specified type. Must be
+     *        a valid subclass of Component.
+     *
+     * @tparam T The type of component to get.
+     * @return Pointer to Component instance.
+     */
+    template <class T> std::shared_ptr<T> GetComponent() const
+    {
+        for (std::shared_ptr<Component> component : components)
+        {
+            auto componentPtr = std::dynamic_pointer_cast<T>(component);
+            if (componentPtr)
+                return componentPtr;
+        }
+
+        return std::shared_ptr<T>{};
+    }
+
+    /**
+     * @brief Get all the components of the specified type. Must be
+     *        a valid subclass of Component.
+     *
+     * @tparam T The type of component to get.
+     * @return Vector with pointers to Component instances.
+     */
+    template <class T> std::vector<std::shared_ptr<T>> GetComponents() const
+    {
+        std::vector<std::shared_ptr<T>> typeComponents;
+
+        for (std::shared_ptr<Component> component : components)
+        {
+            auto componentPtr = std::dynamic_pointer_cast<T>(component);
+            if (componentPtr)
+                typeComponents.push_back(componentPtr);
+        }
+
+        return typeComponents;
+    }
+
+    /**
+     * @brief Gets an object list starting with the root node and ending with the origin node.
+     * @return The object list
+     */
+    std::unique_ptr<GameObjectList> GetObjectList();
 };
 
 #endif // AVANS_SPCPRJ13_GAMEOBJECT_H
