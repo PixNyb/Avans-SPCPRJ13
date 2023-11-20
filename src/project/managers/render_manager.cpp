@@ -15,6 +15,7 @@
 #include "circle_collider.hpp"
 #include "core/engine.hpp"
 #include "game_object.hpp"
+#include "game_object_list.hpp"
 #include "graphics_facade.hpp"
 #include "managers/scene_manager.hpp"
 #include "text.hpp"
@@ -39,23 +40,27 @@ void RenderManager::Render()
     // Prepare camera
     auto camera = scene->GetCamera();
 
-    // Prepare layers
     auto layers = std::map<int, std::vector<std::weak_ptr<GameObject>>>();
 
     for(auto& gameObject : scene->GetAllByType<GameObject>()){
-        auto gameObjectPtr = gameObject.lock();
-        if(!gameObjectPtr || !gameObjectPtr->IsActive()) continue;
+        // Loop from root to original object
+        for (auto obj : GameObjectList(gameObject))
+        {
+            auto currentObject = obj->cur;
+            // Now we can break right away since it's a parent - child relationship
+            if(!currentObject || !currentObject->IsActive()) break;
 
-        int layer = gameObjectPtr->GetLayer();
-        if(layers.contains(layer)){
-            // Ensure the layer for the game object exists
-            layers.insert(std::make_pair(layer, std::vector<std::weak_ptr<GameObject>>()));
+            int layer = currentObject->GetLayer();
+            if(layers.contains(layer)){
+                // Ensure the layer for the game object exists
+                layers.insert(std::make_pair(layer, std::vector<std::weak_ptr<GameObject>>()));
+            }
+
+            // TODO: Check game objects with geometry for render occlusion
+
+            // Push game object onto layer
+            layers[layer].push_back(gameObject);
         }
-
-        // TODO: Check game objects with geometry for render occlusion
-
-        // Push game object onto layer
-        layers[layer].push_back(gameObject);
     }
 
     // Make sure we have a render point regardless of whether we have a camera (menu might not
