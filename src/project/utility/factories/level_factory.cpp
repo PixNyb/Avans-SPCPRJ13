@@ -10,21 +10,22 @@
  */
 
 #include "level_factory.hpp"
+#include "level_scene.hpp"
 
 LevelFactory::LevelFactory(std::shared_ptr<PrefabManager> &PrefabManager) : prefabManager(PrefabManager)
 {}
 
-Scene LevelFactory::CreateScene(nlohmann::json sceneJson)
+std::shared_ptr<Scene> LevelFactory::CreateScene(nlohmann::json sceneJson)
 {
-    auto scene = Scene();
+    std::shared_ptr<Scene> scene = std::make_shared<LevelScene>();
 
     nlohmann::json objects = sceneJson.at("objects");
-    addObjects(scene, objects);
+    AddObjects(*scene, objects);
 
     return scene;
 }
 
-std::vector<std::shared_ptr<GameObject>> LevelFactory::addObjects(Scene &scene, const nlohmann::json& objectsJson) {
+std::vector<std::shared_ptr<GameObject>> LevelFactory::AddObjects(Scene &scene, const nlohmann::json& objectsJson) {
     std::vector<std::shared_ptr<GameObject>> objects;
     for (const nlohmann::json &jsonObject : objectsJson)
     {
@@ -39,11 +40,11 @@ std::vector<std::shared_ptr<GameObject>> LevelFactory::addObjects(Scene &scene, 
 
         gameObject.SetLayer(jsonObject.at("layer").template get<int>());
 
-        gameObject.SetTransform(convertTransform(jsonObject.at("transform")));
+        gameObject.SetTransform(ConvertTransform(jsonObject.at("transform")));
 
         auto ptr = std::make_shared<GameObject>(gameObject);
         // Recursive function call.
-        auto children = LevelFactory::addObjects(scene, jsonObject.at("objects"));
+        auto children = LevelFactory::AddObjects(scene, jsonObject.at("children"));
         for (const auto &child : children)
             child->SetParent(ptr);
 
@@ -54,7 +55,7 @@ std::vector<std::shared_ptr<GameObject>> LevelFactory::addObjects(Scene &scene, 
     return objects;
 }
 
-Transform LevelFactory::convertTransform(const nlohmann::json &transformJson) const
+Transform LevelFactory::ConvertTransform(const nlohmann::json &transformJson) const
 {
     // Get Position from JSON.
     auto positionJson = transformJson.at("position");

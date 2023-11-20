@@ -27,7 +27,7 @@ class AbstractSceneFactory {
      * @param sceneJson The scene JSON.
      * @return The scene constructed based on the JSON.
      */
-    virtual Scene CreateScene(nlohmann::json sceneJson) = 0;
+    virtual std::shared_ptr<Scene> CreateScene(nlohmann::json sceneJson) = 0;
 
 };
 

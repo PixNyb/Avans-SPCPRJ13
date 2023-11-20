@@ -18,8 +18,8 @@
 class PrefabManager {
   private:
     /**
-     * @brief A map consisting of prefabs and the tags which they are identified by.
-     * @key A unique tag which can be used to identify a prefab.
+     * @brief A map consisting of prefabs and the id's which they are identified by.
+     * @key A unique id which can be used to identify a prefab.
      * @value A registered prefab.
      */
     std::map<std::string, GameObject> prefabs;
@@ -32,30 +32,30 @@ class PrefabManager {
 
     /**
      * @brief Registers a prefab.
-     * @param tag The unique key that can later be used to retrieve the prefab.
+     * @param id The unique key that can later be used to retrieve the prefab.
      * @param prefab The prefab that is to be registered.
      */
-    void RegisterPrefab(const std::string &tag, const GameObject& prefab);
+    void RegisterPrefab(const std::string &id, const GameObject& prefab);
 
     /**
-     * @brief Gets a prefab based on a tag.
-     * @param tag Defines which prefab is meant to be returned.
-     * @return Returns the prefab that matches the provided tag.
+     * @brief Gets a prefab based on a id.
+     * @param id Defines which prefab is meant to be returned.
+     * @return Returns the prefab that matches the provided id.
      */
-    GameObject GetPrefab(std::string tag);
+    GameObject GetPrefab(std::string id);
 
     /**
-     * @brief Check if there is a prefab registered with a specified tag.
-     * @param tag Defines which tag to check for.
-     * @return True if there is already a prefab registered by the specified tag.
+     * @brief Check if there is a prefab registered with a specified id.
+     * @param id Defines which id to check for.
+     * @return True if there is already a prefab registered by the specified id.
      */
-    bool HasPrefab(const std::string &tag) const;
+    bool HasPrefab(const std::string &id) const;
 
     /**
-     * @brief Removes a prefab based on the specified tag.
-     * @param tag Specifies which prefab is too be removed.
+     * @brief Removes a prefab based on the specified id.
+     * @param id Specifies which prefab is too be removed.
      */
-    void RemovePrefab(const std::string &tag);
+    void RemovePrefab(const std::string &id);
 
     /**
      * @brief Clears all of the currently registered prefabs.

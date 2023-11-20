@@ -29,14 +29,14 @@ class LevelFactory : public AbstractSceneFactory {
      * @param objectsJson The JSON from which the GameObjects are to be retrieved.
      * @return A vector of GameObjects that were just added to the Scene.
      */
-    std::vector<std::shared_ptr<GameObject>> addObjects(Scene &scene, const nlohmann::json& objectsJson);
+    std::vector<std::shared_ptr<GameObject>> AddObjects(Scene &scene, const nlohmann::json& objectsJson);
 
     /**
      * @brief Converts JSON to a Transform struct.
      * @param transformJson The JSON from which the Transform struct is to be retrieved.
      * @return The new Transform struct created based on the provided JSON.
      */
-    [[nodiscard]] Transform convertTransform(const nlohmann::json& transformJson) const;
+    [[nodiscard]] Transform ConvertTransform(const nlohmann::json& transformJson) const;
 
   public:
     /**
@@ -50,7 +50,7 @@ class LevelFactory : public AbstractSceneFactory {
      * @param sceneJson The level JSON.
      * @return The scene created based on the level JSON.
      */
-    [[nodiscard]] Scene CreateScene(nlohmann::json sceneJson) override;
+    [[nodiscard]] std::shared_ptr<Scene> CreateScene(nlohmann::json sceneJson) override;
 };
 
 #endif // DEFUNBOBENGINE_LEVEL_FACTORY_HPP

@@ -16,31 +16,31 @@
 PrefabManager::PrefabManager() : prefabs()
 {}
 
-void PrefabManager::RegisterPrefab(const std::string& tag, const GameObject& prefab)
+void PrefabManager::RegisterPrefab(const std::string &id, const GameObject& prefab)
 {
-    prefabs.insert(std::pair(tag, prefab));
+    prefabs.insert(std::pair(id, prefab));
 }
 
-GameObject PrefabManager::GetPrefab(std::string tag)
+GameObject PrefabManager::GetPrefab(std::string id)
 {
-    auto it = prefabs.find(tag);
+    auto it = prefabs.find(id);
 
     if (it == prefabs.end())
-        throw std::runtime_error(fmt::format("No prefab was found matching the tag: {}", tag));
+        throw std::runtime_error(fmt::format("No prefab was found matching the id: {}", id));
 
     return GameObject(it->second);
 }
 
-bool PrefabManager::HasPrefab(const std::string& tag) const
+bool PrefabManager::HasPrefab(const std::string& id) const
 {
-    auto it = prefabs.find(tag);
+    auto it = prefabs.find(id);
 
     return it != prefabs.end();
 }
 
-void PrefabManager::RemovePrefab(const std::string& tag)
+void PrefabManager::RemovePrefab(const std::string& id)
 {
-    auto it = prefabs.find(tag);
+    auto it = prefabs.find(id);
 
     if (it == prefabs.end())
         return;

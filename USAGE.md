@@ -11,7 +11,7 @@ TODO: Verder uitwerken als straks alles op zijn plek staat (woensdag)
 ## Level format
 Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief.
 De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de PrefabManager.
-Hier worden vervolgens name, tag, active, layer, transform en objects (children) nog bij gedefinieert. 
+Hier worden vervolgens name, tag, active, layer, transform en children nog bij gedefinieert. 
 In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk GameObject.
 ```json
 {
@@ -30,7 +30,7 @@ In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk Ga
         "rotation": 0.0,
         "scale": 1.0
       },
-      "objects": []
+      "children": []
     },
     {
       "prefab": "Tree",
@@ -46,7 +46,7 @@ In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk Ga
         "rotation": 0.0,
         "scale": 1.0
       },
-      "objects": []
+      "children": []
     },
     {
       "prefab": "Tree",
@@ -62,7 +62,7 @@ In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk Ga
         "rotation": 0.0,
         "scale": 2.0
       },
-      "objects": [
+      "children": [
         {
           "prefab": "Tree",
           "name": "SubTree",
@@ -77,7 +77,7 @@ In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk Ga
             "rotation": 0.4,
             "scale": 1.0
           },
-          "objects": []
+          "children": []
         }
       ]
     }

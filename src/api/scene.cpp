@@ -11,6 +11,9 @@
 
 #include "scene.hpp"
 
+void Scene::RenderScene()
+{}
+
 void Scene::AddGameObject(const std::shared_ptr<GameObject> &gameObject)
 {
     contents.push_back(gameObject);

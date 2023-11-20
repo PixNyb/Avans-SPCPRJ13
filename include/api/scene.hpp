@@ -34,9 +34,7 @@ class Scene
     /**
      * @brief This function is called by a Camera to render the scene on the engine.
      */
-    virtual void RenderScene(){
-        // TODO: Write implementation.
-    };
+    virtual void RenderScene() = 0;
 
     virtual ~Scene() = default;
 
