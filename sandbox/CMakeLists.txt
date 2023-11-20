@@ -30,3 +30,7 @@ target_link_libraries(Sandbox PRIVATE $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2_ttf>,S
 # Add SDL2_net
 find_package(SDL2_net CONFIG REQUIRED)
 target_link_libraries(Sandbox PRIVATE $<IF:$<TARGET_EXISTS:SDL2_net::SDL2_net>,SDL2_net::SDL2_net,SDL2_net::SDL2_net-static>)
+
+# Add box2d
+find_package(box2d CONFIG REQUIRED)
+target_link_libraries(Sandbox PRIVATE box2d::box2d)
