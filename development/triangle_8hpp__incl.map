@@ -1,5 +1,7 @@
 <map id="include/project/graphics/shapes/triangle.hpp" name="include/project/graphics/shapes/triangle.hpp">
-<area shape="rect" id="node1" title="Defines the Triangle class for geometric calculations." alt="" coords="19,5,196,47"/>
-<area shape="rect" id="node2" href="$geometry_8hpp.html" title="This file contains the Geometry class definition." alt="" coords="5,95,116,121"/>
-<area shape="rect" id="node3" href="$vector2d_8hpp.html" title="This file contains the Vector2D class definition." alt="" coords="54,169,161,196"/>
+<area shape="rect" id="node1" title="Defines the Triangle class for geometric calculations." alt="" coords="75,5,252,47"/>
+<area shape="rect" id="node2" href="$geometry_8hpp.html" title="This file contains the Geometry class definition." alt="" coords="61,95,172,121"/>
+<area shape="rect" id="node5" href="$vector2d_8hpp.html" title="This file contains the Vector2D class definition." alt="" coords="157,169,263,196"/>
+<area shape="rect" id="node3" href="$shape__color_8hpp.html" title="ShapeColor is a class that represents a color in the game engine." alt="" coords="5,169,132,196"/>
+<area shape="rect" id="node4" href="$color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="28,244,109,271"/>
 </map>

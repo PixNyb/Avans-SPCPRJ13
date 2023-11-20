@@ -1,6 +1,7 @@
 <map id="src/facades/sdl2/sdl_init.cpp" name="src/facades/sdl2/sdl_init.cpp">
-<area shape="rect" id="node1" title="This file contains the SDLInit class implementation." alt="" coords="6,5,157,47"/>
+<area shape="rect" id="node1" title="This file contains the SDLInit class implementation." alt="" coords="62,5,213,47"/>
 <area shape="rect" id="node2" href="$sdl__init_8hpp.html" title=" " alt="" coords="33,95,130,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="155,95,235,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,169,64,196"/>
 <area shape="rect" id="node4" title=" " alt="" coords="88,169,168,196"/>
 </map>

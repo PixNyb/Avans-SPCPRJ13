@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['tag_619',['tag',['../classGameObject.html#a66891b8bfd67373dde0155ae7808bbb4',1,'GameObject']]],
-  ['transform_620',['transform',['../classGameObject.html#ad2de7705e8d1d7b5d0014448dd13f99a',1,'GameObject']]],
-  ['type_621',['type',['../classEvent.html#ac721e4f34b3b9a1ae302165412221724',1,'Event']]]
+  ['rotation_662',['rotation',['../structTransform.html#a48a4c4b708092229dad7a066115c3a27',1,'Transform::rotation()'],['../classSDLRect.html#ab979295c9126e6722dd2e896dcfb2014',1,'SDLRect::rotation()'],['../classGeometry.html#a34dd7a34d96a8008605417199a9e0cb6',1,'Geometry::rotation()']]]
 ];

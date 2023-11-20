@@ -3,6 +3,7 @@ var dir_0bde15225a6b0d64d038a7eec027a48c =
     [ "sdl_circle.hpp", "sdl__circle_8hpp.html", [
       [ "SDLCircle", "classSDLCircle.html", "classSDLCircle" ]
     ] ],
+    [ "sdl_colors.hpp", "sdl__colors_8hpp_source.html", null ],
     [ "sdl_rect.hpp", "sdl__rect_8hpp.html", [
       [ "SDLRect", "classSDLRect.html", "classSDLRect" ]
     ] ],

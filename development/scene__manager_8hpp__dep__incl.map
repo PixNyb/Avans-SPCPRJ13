@@ -1,5 +1,6 @@
 <map id="include/project/managers/scene_manager.hpp" name="include/project/managers/scene_manager.hpp">
-<area shape="rect" id="node1" title="Manages scenes." alt="" coords="112,5,299,47"/>
+<area shape="rect" id="node1" title="Manages scenes." alt="" coords="247,5,433,47"/>
 <area shape="rect" id="node2" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="5,102,203,129"/>
-<area shape="rect" id="node3" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="227,95,386,136"/>
+<area shape="rect" id="node3" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="227,95,453,136"/>
+<area shape="rect" id="node4" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="477,95,635,136"/>
 </map>

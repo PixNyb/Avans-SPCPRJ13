@@ -7,5 +7,5 @@ var classSceneManager =
     [ "HasScene", "classSceneManager.html#ad3837c7342ec60a585d87c3d71cc142f", null ],
     [ "RenderScene", "classSceneManager.html#a03e3156da326c5fc02ae809b2c59034a", null ],
     [ "SetScene", "classSceneManager.html#a38ed7d8f12aeb8b625e1097f54823af9", null ],
-    [ "Update", "classSceneManager.html#adbede64d5706507e65f0e9dd0eaddd6b", null ]
+    [ "Update", "classSceneManager.html#a2bb63a9c72fcbc5d25949f8e7c9df7d8", null ]
 ];

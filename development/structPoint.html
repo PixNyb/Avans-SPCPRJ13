@@ -104,6 +104,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a78b55e8d5466bb8c2cf60fa55f2562ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPoint.html#a78b55e8d5466bb8c2cf60fa55f2562ff">Point</a> (double <a class="el" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a>, double <a class="el" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a>)</td></tr>
 <tr class="memdesc:a78b55e8d5466bb8c2cf60fa55f2562ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="structPoint.html" title="Represents a 2D point or vector.">Point</a> with specified x and y values.  <a href="structPoint.html#a78b55e8d5466bb8c2cf60fa55f2562ff">More...</a><br /></td></tr>
 <tr class="separator:a78b55e8d5466bb8c2cf60fa55f2562ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bc39ec95c27d83d84e1df3fd8124fa2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPoint.html#a8bc39ec95c27d83d84e1df3fd8124fa2">operator+</a> (const <a class="el" href="structPoint.html">Point</a> &amp;other) const</td></tr>
+<tr class="memdesc:a8bc39ec95c27d83d84e1df3fd8124fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two points/vectors together.  <a href="structPoint.html#a8bc39ec95c27d83d84e1df3fd8124fa2">More...</a><br /></td></tr>
+<tr class="separator:a8bc39ec95c27d83d84e1df3fd8124fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17b65599126120074e6295ddad1ca906"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPoint.html#a17b65599126120074e6295ddad1ca906">operator-</a> (const <a class="el" href="structPoint.html">Point</a> &amp;other) const</td></tr>
+<tr class="memdesc:a17b65599126120074e6295ddad1ca906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts two points/vectors from each other.  <a href="structPoint.html#a17b65599126120074e6295ddad1ca906">More...</a><br /></td></tr>
+<tr class="separator:a17b65599126120074e6295ddad1ca906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -158,6 +164,77 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8bc39ec95c27d83d84e1df3fd8124fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bc39ec95c27d83d84e1df3fd8124fa2">&#9670;&nbsp;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structPoint.html">Point</a> Point::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structPoint.html">Point</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds two points/vectors together. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other point/vector to add to this one. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structPoint.html" title="Represents a 2D point or vector.">Point</a> The sum of the two points/vectors. </dd></dl>
+
+</div>
+</div>
+<a id="a17b65599126120074e6295ddad1ca906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17b65599126120074e6295ddad1ca906">&#9670;&nbsp;</a></span>operator-()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structPoint.html">Point</a> Point::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structPoint.html">Point</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subtracts two points/vectors from each other. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other point/vector to subtract from this one. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structPoint.html" title="Represents a 2D point or vector.">Point</a> The difference of the two points/vectors. </dd></dl>
 
 </div>
 </div>

@@ -117,6 +117,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4d81f040002266fa6a2bd08c298770e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTransform.html#a4d81f040002266fa6a2bd08c298770e4">Transform</a> (const <a class="el" href="structPoint.html">Point</a> &amp;<a class="el" href="structTransform.html#ad0426334399b7c5b9c0e4dead6764e66">position</a>, double <a class="el" href="structTransform.html#a48a4c4b708092229dad7a066115c3a27">rotation</a>, double <a class="el" href="structTransform.html#aa2f54b64399dd72c2a8c7b9d92c80306">scale</a>)</td></tr>
 <tr class="memdesc:a4d81f040002266fa6a2bd08c298770e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="structTransform.html" title="Represents a 2D transformation including position, rotation, and scale.">Transform</a> object with specified position, rotation, and scale.  <a href="structTransform.html#a4d81f040002266fa6a2bd08c298770e4">More...</a><br /></td></tr>
 <tr class="separator:a4d81f040002266fa6a2bd08c298770e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af54121ba06c77f98fa3ea1af90062106"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTransform.html">Transform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTransform.html#af54121ba06c77f98fa3ea1af90062106">operator+</a> (const <a class="el" href="structTransform.html">Transform</a> &amp;other) const</td></tr>
+<tr class="memdesc:af54121ba06c77f98fa3ea1af90062106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two transforms together.  <a href="structTransform.html#af54121ba06c77f98fa3ea1af90062106">More...</a><br /></td></tr>
+<tr class="separator:af54121ba06c77f98fa3ea1af90062106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad73a521adb133336e5ec9dbcb9720825"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTransform.html">Transform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTransform.html#ad73a521adb133336e5ec9dbcb9720825">operator-</a> (const <a class="el" href="structTransform.html">Transform</a> &amp;other) const</td></tr>
+<tr class="memdesc:ad73a521adb133336e5ec9dbcb9720825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts two transforms from each other.  <a href="structTransform.html#ad73a521adb133336e5ec9dbcb9720825">More...</a><br /></td></tr>
+<tr class="separator:ad73a521adb133336e5ec9dbcb9720825"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -178,6 +184,61 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af54121ba06c77f98fa3ea1af90062106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af54121ba06c77f98fa3ea1af90062106">&#9670;&nbsp;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTransform.html">Transform</a> Transform::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structTransform.html">Transform</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds two transforms together. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other transform to add to this one. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structTransform.html" title="Represents a 2D transformation including position, rotation, and scale.">Transform</a> The sum of the two transforms. </dd></dl>
+
+</div>
+</div>
+<a id="ad73a521adb133336e5ec9dbcb9720825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad73a521adb133336e5ec9dbcb9720825">&#9670;&nbsp;</a></span>operator-()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTransform.html">Transform</a> Transform::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structTransform.html">Transform</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subtracts two transforms from each other. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other transform to subtract from this one. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structTransform.html" title="Represents a 2D transformation including position, rotation, and scale.">Transform</a> The difference of the two transforms. </dd></dl>
 
 </div>
 </div>

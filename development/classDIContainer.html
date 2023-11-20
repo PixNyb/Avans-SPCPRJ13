@@ -104,10 +104,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3adda24f6027fbda6341acecede71b15"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classDIContainer.html#a3adda24f6027fbda6341acecede71b15">registerInstance</a> (std::shared_ptr&lt; T &gt; instance, <a class="el" href="di__container_8hpp.html#a9329b70dc6690349dc4fca57d567cf7e">InstanceScope</a> scope=<a class="el" href="di__container_8hpp.html#ad63b94811145ec5073fe96214ac11bbd">DEFAULT_INSTANCE_SCOPE</a>)</td></tr>
 <tr class="memdesc:a3adda24f6027fbda6341acecede71b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an instance.  <a href="classDIContainer.html#a3adda24f6027fbda6341acecede71b15">More...</a><br /></td></tr>
 <tr class="separator:a3adda24f6027fbda6341acecede71b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2af2d5d7c07a95e180e3fe01c17610d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab2af2d5d7c07a95e180e3fe01c17610d"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classDIContainer.html#ab2af2d5d7c07a95e180e3fe01c17610d">resolve</a> (<a class="el" href="di__container_8hpp.html#a9329b70dc6690349dc4fca57d567cf7e">InstanceScope</a> scope=<a class="el" href="di__container_8hpp.html#ad63b94811145ec5073fe96214ac11bbd">DEFAULT_INSTANCE_SCOPE</a>)</td></tr>
-<tr class="memdesc:ab2af2d5d7c07a95e180e3fe01c17610d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves an instance.  <a href="classDIContainer.html#ab2af2d5d7c07a95e180e3fe01c17610d">More...</a><br /></td></tr>
-<tr class="separator:ab2af2d5d7c07a95e180e3fe01c17610d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a4e656327271848d6fe72c1a79923de"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a1a4e656327271848d6fe72c1a79923de"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classDIContainer.html#a1a4e656327271848d6fe72c1a79923de">resolve</a> (<a class="el" href="di__container_8hpp.html#a9329b70dc6690349dc4fca57d567cf7e">InstanceScope</a> scope=<a class="el" href="di__container_8hpp.html#ad63b94811145ec5073fe96214ac11bbd">DEFAULT_INSTANCE_SCOPE</a>)</td></tr>
+<tr class="memdesc:a1a4e656327271848d6fe72c1a79923de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves an instance.  <a href="classDIContainer.html#a1a4e656327271848d6fe72c1a79923de">More...</a><br /></td></tr>
+<tr class="separator:a1a4e656327271848d6fe72c1a79923de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The dependency injection container. </p>
@@ -120,6 +120,9 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void DIContainer::registerInstance </td>
@@ -139,6 +142,11 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Registers an instance. </p>
@@ -159,22 +167,30 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ab2af2d5d7c07a95e180e3fe01c17610d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2af2d5d7c07a95e180e3fe01c17610d">&#9670;&nbsp;</a></span>resolve()</h2>
+<a id="a1a4e656327271848d6fe72c1a79923de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a4e656327271848d6fe72c1a79923de">&#9670;&nbsp;</a></span>resolve()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; T &gt; DIContainer::resolve </td>
+          <td class="memname">std::shared_ptr&lt;T&gt; DIContainer::resolve </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="di__container_8hpp.html#a9329b70dc6690349dc4fca57d567cf7e">InstanceScope</a>&#160;</td>
           <td class="paramname"><em>scope</em> = <code><a class="el" href="di__container_8hpp.html#ad63b94811145ec5073fe96214ac11bbd">DEFAULT_INSTANCE_SCOPE</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Resolves an instance. </p>

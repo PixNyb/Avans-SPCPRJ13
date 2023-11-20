@@ -1,7 +1,7 @@
 var hierarchy =
 [
     [ "AnimationState", "classAnimationState.html", null ],
-    [ "Camera", "classCamera.html", null ],
+    [ "BehaviourScriptManager", "classBehaviourScriptManager.html", null ],
     [ "Color", "classColor.html", null ],
     [ "Component", "classComponent.html", [
       [ "AudioSource", "classAudioSource.html", null ],
@@ -18,8 +18,8 @@ var hierarchy =
     [ "DIContainer", "classDIContainer.html", null ],
     [ "Engine", "classEngine.html", null ],
     [ "Event", "classEvent.html", null ],
-    [ "GameLoop", "classGameLoop.html", null ],
     [ "GameObject", "classGameObject.html", [
+      [ "Camera", "classCamera.html", null ],
       [ "UIObject", "classUIObject.html", [
         [ "Button", "classButton.html", null ],
         [ "Text", "classText.html", null ]
@@ -27,8 +27,10 @@ var hierarchy =
     ] ],
     [ "Geometry", "classGeometry.html", [
       [ "Circle", "classCircle.html", null ],
+      [ "Line", "structLine.html", null ],
       [ "Polygon", "classPolygon.html", null ],
-      [ "Rectangle", "classRectangle.html", null ]
+      [ "Rectangle", "classRectangle.html", null ],
+      [ "Triangle", "classTriangle.html", null ]
     ] ],
     [ "IKeyListener", "classIKeyListener.html", null ],
     [ "IMouseListener", "classIMouseListener.html", null ],
@@ -40,9 +42,11 @@ var hierarchy =
     [ "PerformanceUtility", "classPerformanceUtility.html", null ],
     [ "Point", "structPoint.html", null ],
     [ "Render", "classRender.html", null ],
+    [ "RenderManager", "classRenderManager.html", null ],
     [ "Scene", "classScene.html", null ],
     [ "SceneManager", "classSceneManager.html", null ],
     [ "SDLCircle", "classSDLCircle.html", null ],
+    [ "SDLColorUtility", "classSDLColorUtility.html", null ],
     [ "SDLInit", "classSDLInit.html", null ],
     [ "SDLRect", "classSDLRect.html", null ],
     [ "SDLRender", "classSDLRender.html", null ],
@@ -50,12 +54,11 @@ var hierarchy =
     [ "SDLTexture", "classSDLTexture.html", null ],
     [ "SDLTriangle", "classSDLTriangle.html", null ],
     [ "SDLWindow", "classSDLWindow.html", null ],
+    [ "ShapeColor", "classShapeColor.html", null ],
     [ "Thread", "classThread.html", null ],
     [ "Time", "classTime.html", null ],
     [ "Timer", "classTimer.html", null ],
-    [ "TimeUtility", "classTimeUtility.html", null ],
     [ "Transform", "structTransform.html", null ],
-    [ "Triangle", "classTriangle.html", null ],
     [ "Vector2D", "classVector2D.html", null ],
     [ "Window", "classWindow.html", null ]
 ];

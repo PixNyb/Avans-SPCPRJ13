@@ -1,7 +1,8 @@
 <map id="include/api/scene.hpp" name="include/api/scene.hpp">
-<area shape="rect" id="node1" title="Defines the Scene class for managing and rendering game scenes in the game engine...." alt="" coords="216,5,379,32"/>
-<area shape="rect" id="node2" href="$scene__manager_8hpp.html" title="Manages scenes." alt="" coords="112,80,299,121"/>
-<area shape="rect" id="node5" href="$scene_8cpp.html" title="This file contains the Scene class implementation." alt="" coords="323,87,458,114"/>
+<area shape="rect" id="node1" title="Defines the Scene class for managing and rendering game scenes in the game engine...." alt="" coords="351,5,513,32"/>
+<area shape="rect" id="node2" href="$scene__manager_8hpp.html" title="Manages scenes." alt="" coords="247,80,433,121"/>
+<area shape="rect" id="node6" href="$scene_8cpp.html" title="This file contains the Scene class implementation." alt="" coords="458,87,593,114"/>
 <area shape="rect" id="node3" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="5,177,203,203"/>
-<area shape="rect" id="node4" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="227,169,386,211"/>
+<area shape="rect" id="node4" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="227,169,453,211"/>
+<area shape="rect" id="node5" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="477,169,635,211"/>
 </map>

@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('classScene.html',''); initResizable();
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classScene-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Scene Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">Scene Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -101,13 +101,13 @@ $(document).ready(function(){initNavTree('classScene.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8d9949c150fa695d00078031938d14ac"><td class="memItemLeft" align="right" valign="top"><a id="a8d9949c150fa695d00078031938d14ac"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a8d9949c150fa695d00078031938d14ac">RenderScene</a> ()=0</td></tr>
-<tr class="memdesc:a8d9949c150fa695d00078031938d14ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called by a <a class="el" href="classCamera.html">Camera</a> to render the scene on the engine. <br /></td></tr>
-<tr class="separator:a8d9949c150fa695d00078031938d14ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a310ca6a34dc40f51c4f4b2130fb821a1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a310ca6a34dc40f51c4f4b2130fb821a1">Update</a> (float deltaTime)</td></tr>
-<tr class="memdesc:a310ca6a34dc40f51c4f4b2130fb821a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all game objects in the scene.  <a href="classScene.html#a310ca6a34dc40f51c4f4b2130fb821a1">More...</a><br /></td></tr>
-<tr class="separator:a310ca6a34dc40f51c4f4b2130fb821a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0e6f0b1a917a4b7662fe7867614811a"><td class="memItemLeft" align="right" valign="top"><a id="af0e6f0b1a917a4b7662fe7867614811a"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#af0e6f0b1a917a4b7662fe7867614811a">RenderScene</a> ()</td></tr>
+<tr class="memdesc:af0e6f0b1a917a4b7662fe7867614811a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called by a <a class="el" href="classCamera.html">Camera</a> to render the scene on the engine. TODO: Check if this is really the case? <br /></td></tr>
+<tr class="separator:af0e6f0b1a917a4b7662fe7867614811a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f4e92c27d08a916de15f9b4ecb73b97"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a4f4e92c27d08a916de15f9b4ecb73b97">Update</a> (double deltaTime)</td></tr>
+<tr class="memdesc:a4f4e92c27d08a916de15f9b4ecb73b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all game objects in the scene.  <a href="classScene.html#a4f4e92c27d08a916de15f9b4ecb73b97">More...</a><br /></td></tr>
+<tr class="separator:a4f4e92c27d08a916de15f9b4ecb73b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4ef168b772654613b77c19852f3e6be"><td class="memItemLeft" align="right" valign="top"><a id="ae4ef168b772654613b77c19852f3e6be"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#ae4ef168b772654613b77c19852f3e6be">AddGameObject</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject)</td></tr>
 <tr class="memdesc:ae4ef168b772654613b77c19852f3e6be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a game object, might be required for stuff like prefabs. <br /></td></tr>
@@ -119,10 +119,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a723ba9340878ea5fced1b55d9228e4b4"><td class="memTemplItemLeft" align="right" valign="top">std::weak_ptr&lt; GameObjectType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classScene.html#a723ba9340878ea5fced1b55d9228e4b4">CreateGameObject</a> (Args &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a723ba9340878ea5fced1b55d9228e4b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a game object and adds it to the scene, should be the preferred method of creating game objects for clear ownership.  <a href="classScene.html#a723ba9340878ea5fced1b55d9228e4b4">More...</a><br /></td></tr>
 <tr class="separator:a723ba9340878ea5fced1b55d9228e4b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a040961eca187b2846866675791d01847"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a040961eca187b2846866675791d01847"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::weak_ptr&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classScene.html#a040961eca187b2846866675791d01847">GetAllByType</a> ()</td></tr>
-<tr class="memdesc:a040961eca187b2846866675791d01847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all game objects by type.  <a href="classScene.html#a040961eca187b2846866675791d01847">More...</a><br /></td></tr>
-<tr class="separator:a040961eca187b2846866675791d01847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9baf4257542188401d54ca3f98bff82"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab9baf4257542188401d54ca3f98bff82"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::weak_ptr&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classScene.html#ab9baf4257542188401d54ca3f98bff82">GetAllByType</a> ()</td></tr>
+<tr class="memdesc:ab9baf4257542188401d54ca3f98bff82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all game objects by type.  <a href="classScene.html#ab9baf4257542188401d54ca3f98bff82">More...</a><br /></td></tr>
+<tr class="separator:ab9baf4257542188401d54ca3f98bff82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4347c1f657acfd61825133d6e2781354"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a4347c1f657acfd61825133d6e2781354">findGameObjectByName</a> (const std::string &amp;name)</td></tr>
 <tr class="memdesc:a4347c1f657acfd61825133d6e2781354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a game object by name.  <a href="classScene.html#a4347c1f657acfd61825133d6e2781354">More...</a><br /></td></tr>
 <tr class="separator:a4347c1f657acfd61825133d6e2781354"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,6 +145,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a8b8fbebd1546b8dba7c8bd7f573c6242"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a8b8fbebd1546b8dba7c8bd7f573c6242">SetActiveStatus</a> (const std::string &amp;name, bool isActive)</td></tr>
 <tr class="memdesc:a8b8fbebd1546b8dba7c8bd7f573c6242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the active status of a specific game object by name.  <a href="classScene.html#a8b8fbebd1546b8dba7c8bd7f573c6242">More...</a><br /></td></tr>
 <tr class="separator:a8b8fbebd1546b8dba7c8bd7f573c6242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53bf75ca3b9cbfff3783ba91b265558c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a53bf75ca3b9cbfff3783ba91b265558c">SetCamera</a> (std::shared_ptr&lt; <a class="el" href="classCamera.html">Camera</a> &gt; camera)</td></tr>
+<tr class="memdesc:a53bf75ca3b9cbfff3783ba91b265558c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the camera of the scene.  <a href="classScene.html#a53bf75ca3b9cbfff3783ba91b265558c">More...</a><br /></td></tr>
+<tr class="separator:a53bf75ca3b9cbfff3783ba91b265558c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb6296d57fe304856109765319e71091"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classCamera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#acb6296d57fe304856109765319e71091">GetCamera</a> ()</td></tr>
+<tr class="memdesc:acb6296d57fe304856109765319e71091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the camera of the scene.  <a href="classScene.html#acb6296d57fe304856109765319e71091">More...</a><br /></td></tr>
+<tr class="separator:acb6296d57fe304856109765319e71091"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -267,18 +273,29 @@ template&lt;typename GameObjectType , typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="a040961eca187b2846866675791d01847"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a040961eca187b2846866675791d01847">&#9670;&nbsp;</a></span>GetAllByType()</h2>
+<a id="ab9baf4257542188401d54ca3f98bff82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9baf4257542188401d54ca3f98bff82">&#9670;&nbsp;</a></span>GetAllByType()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::weak_ptr&lt; T &gt; &gt; Scene::GetAllByType</td>
+          <td class="memname">std::vector&lt;std::weak_ptr&lt;T&gt; &gt; Scene::GetAllByType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets all game objects by type. </p>
@@ -289,6 +306,34 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing all game objects of the specified type </dd></dl>
+
+</div>
+</div>
+<a id="acb6296d57fe304856109765319e71091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb6296d57fe304856109765319e71091">&#9670;&nbsp;</a></span>GetCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classCamera.html">Camera</a>&gt; Scene::GetCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the camera of the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>camera </dd></dl>
 
 </div>
 </div>
@@ -412,8 +457,42 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a310ca6a34dc40f51c4f4b2130fb821a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a310ca6a34dc40f51c4f4b2130fb821a1">&#9670;&nbsp;</a></span>Update()</h2>
+<a id="a53bf75ca3b9cbfff3783ba91b265558c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53bf75ca3b9cbfff3783ba91b265558c">&#9670;&nbsp;</a></span>SetCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::SetCamera </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classCamera.html">Camera</a> &gt;&#160;</td>
+          <td class="paramname"><em>camera</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the camera of the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camera</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4f4e92c27d08a916de15f9b4ecb73b97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f4e92c27d08a916de15f9b4ecb73b97">&#9670;&nbsp;</a></span>Update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -424,7 +503,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">virtual void Scene::Update </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>deltaTime</em></td><td>)</td>
           <td></td>
         </tr>

@@ -6,11 +6,15 @@ var dir_3d74180e9998a78ceeaf0075e1308cb3 =
     [ "geometry.hpp", "geometry_8hpp.html", [
       [ "Geometry", "classGeometry.html", "classGeometry" ]
     ] ],
+    [ "line.hpp", "line_8hpp_source.html", null ],
     [ "polygon.hpp", "polygon_8hpp.html", [
       [ "Polygon", "classPolygon.html", "classPolygon" ]
     ] ],
     [ "rectangle.hpp", "rectangle_8hpp.html", [
       [ "Rectangle", "classRectangle.html", "classRectangle" ]
+    ] ],
+    [ "shape_color.hpp", "shape__color_8hpp.html", [
+      [ "ShapeColor", "classShapeColor.html", "classShapeColor" ]
     ] ],
     [ "triangle.hpp", "triangle_8hpp.html", [
       [ "Triangle", "classTriangle.html", "classTriangle" ]
