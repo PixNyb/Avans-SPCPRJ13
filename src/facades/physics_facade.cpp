@@ -15,6 +15,7 @@
 #include "box_collider.hpp"
 #include "debug_renderer.hpp"
 #include "polygon_collider.hpp"
+#include "contact_listener.hpp"
 
 const float TimeStep = 1.0f / 240.0f;
 const int VelocityIterations = 12;
@@ -49,6 +50,8 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
     // create the world where the bodies will be placed
     b2Vec2 gravity(0.0f, -9.8f);
     world = std::make_unique<b2World>(gravity);
+    auto* contactListener = new ContactListener();
+    world->SetContactListener(contactListener);
 
     // create a b2body for every gameobject
     for (auto &gameObject: gameObjects) {
@@ -119,22 +122,22 @@ void PhysicsFacade::ShowDebug() {
     debugRenderer.Render(bodies);
 }
 
-void PhysicsFacade::DestroyBody(const std::shared_ptr<GameObject>& gameObject) {
+void PhysicsFacade::DestroyBody(const std::shared_ptr<GameObject> &gameObject) {
     auto iterator = bodies.find(gameObject);
     if (iterator != bodies.end())
         world->DestroyBody(bodies.at(gameObject));
 }
 
-void PhysicsFacade::AddForce(const std::shared_ptr<GameObject>& gameObject, float vx, float vy) {
+void PhysicsFacade::AddForce(const std::shared_ptr<GameObject> &gameObject, float vx, float vy) {
     float newVX = vx * 100;
     float newVY = vy * 100;
     auto iterator = bodies.find(gameObject);
     if (iterator != bodies.end()) {
-        bodies.at(gameObject)->ApplyForce( b2Vec2(newVX,newVY), bodies.at(gameObject)->GetWorldCenter(), true);
+        bodies.at(gameObject)->ApplyForce(b2Vec2(newVX, newVY), bodies.at(gameObject)->GetWorldCenter(), true);
     }
 }
 
-void PhysicsFacade::AddRotation(const std::shared_ptr<GameObject>& gameObject, float amount) {
+void PhysicsFacade::AddRotation(const std::shared_ptr<GameObject> &gameObject, float amount) {
     auto iterator = bodies.find(gameObject);
     if (iterator != bodies.end()) {
         bodies.at(gameObject)->ApplyAngularImpulse(amount, false);
