@@ -1,12 +1,12 @@
 /**
  * @file animation_state.hpp
- * @author Robin Pijnappels (rm.pijnappels@student.avans.nl)
- * @brief Defines the AnimationState class for handling different states of an animation.
+ * @author Roël Couwenberg (contact@roelc.me)
+ * @brief This file contains the AnimationState class definition.
  * @version 0.1
- * @date 2023-11-12
- *
+ * @date 2023-11-16
  *
  * @copyright Copyright (c) 2023
+ *
  */
 
 #ifndef AVANS_SPCPRJ13_ANIMATIONSTATE_H
