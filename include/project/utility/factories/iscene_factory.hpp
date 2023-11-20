@@ -23,6 +23,11 @@ class ISceneFactory {
     ISceneFactory() = default;
 
     /**
+     * @brief Destroy the AbstractSceneFactory.
+     */
+    virtual ~ISceneFactory() = default;
+
+    /**
      * @brief Creates a scene based on a provided JSON.
      * @param sceneJson The scene JSON.
      * @return The scene constructed based on the JSON.
