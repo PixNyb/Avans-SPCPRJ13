@@ -1,11 +1,11 @@
 /**
  * @file inputhandler.hpp
  * @author Robin Pijnappels (rm.pijnappels@student.avans.nl)
- * @brief This file contains the SDL2InputHandler class definition.
+ * @brief This file contains the SDLEventListener class definition.
  * @version 0.1
  * @date 2023-11-08
  *
- * SDL2InputHandler is a concrete implementation of the IOFacade interface
+ * SDLEventListener is a concrete implementation of the IOFacade interface
  * specific to the SDL2 library. It initializes SDL2 input handling and polls
  * for input events, passing them back to the engine for further processing.
  *
@@ -18,29 +18,33 @@
 #ifndef DEFUNBOBENGINE_INPUTHANDLER_HPP
 #define DEFUNBOBENGINE_INPUTHANDLER_HPP
 
-#include "IInputHandler.hpp"
 #include "key_code.hpp"
+#include "key_event.hpp"
+#include "mouse_event.hpp"
 #include <SDL.h>
+#include <memory>
+#include <vector>
 
 /**
- * @class SDL2InputHandler
+ * @class SDLEventListener
  * @brief Handles input events using SDL2.
  *
- * SDL2InputHandler implements the input handling mechanism defined by the IOFacade
+ * SDLEventListener implements the input handling mechanism defined by the IOFacade
  * interface. It is responsible for initializing SDL2's input system and retrieving
  * input events each frame, which can then be interpreted by the game engine.
  */
-class SDL2InputHandler : public IInputHandler {
-public:
-    void PollEvents() override;
+class SDLEventListener
+{
+  public:
+    void PollEvents();
 
-    [[nodiscard]] std::vector<std::shared_ptr<KeyEvent>> GetPolledKeyEvents() const override;
+    [[nodiscard]] std::vector<std::shared_ptr<KeyEvent>> GetPolledKeyEvents() const;
 
-    [[nodiscard]] std::vector<std::shared_ptr<MouseEvent>> GetPolledMouseEvents() const override;
+    [[nodiscard]] std::vector<std::shared_ptr<MouseEvent>> GetPolledMouseEvents() const;
 
-private:
+  private:
     std::vector<std::shared_ptr<KeyEvent>> polledKeyEvents;
     std::vector<std::shared_ptr<MouseEvent>> polledMouseEvents;
 };
 
-#endif //DEFUNBOBENGINE_INPUTHANDLER_HPP
+#endif // DEFUNBOBENGINE_INPUTHANDLER_HPP

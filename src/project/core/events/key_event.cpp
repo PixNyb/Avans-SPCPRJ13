@@ -11,10 +11,9 @@
 
 #include "key_event.hpp"
 
-KeyEvent::KeyEvent(KeyCode& keyCode, bool isKeyDown) : Event(keyCode) {
+KeyEvent::KeyEvent(KeyCode keyCode, bool isKeyDown) : Event(keyCode)
+{
     this->isKeyDown = isKeyDown;
 }
 
-bool KeyEvent::GetIsKeyDown() const {
-    return isKeyDown;
-}
+bool KeyEvent::GetIsKeyDown() const { return isKeyDown; }

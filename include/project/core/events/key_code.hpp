@@ -1,7 +1,10 @@
 #ifndef DEFUNBOBENGINE_KEY_CODE_HPP
 #define DEFUNBOBENGINE_KEY_CODE_HPP
 
-enum class KeyCode {
+#include <cstddef>
+
+enum class KeyCode
+{
     INVALID = NULL,
     ERROR_ROLLOVER = 0x01,
     POST_FAIL = 0x02,
@@ -240,4 +243,4 @@ enum class KeyCode {
     MEDIA_CALCULATOR = 0xFB
 };
 
-#endif //DEFUNBOBENGINE_KEY_CODE_HPP
+#endif // DEFUNBOBENGINE_KEY_CODE_HPP

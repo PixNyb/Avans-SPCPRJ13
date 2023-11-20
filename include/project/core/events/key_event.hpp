@@ -14,14 +14,15 @@
 
 #include "event.hpp"
 
-class KeyEvent : public Event {
-public:
-    explicit KeyEvent(KeyCode& keyCode, bool isKeyDown);
+class KeyEvent : public Event
+{
+  public:
+    explicit KeyEvent(KeyCode keyCode, bool isKeyDown);
 
     bool GetIsKeyDown() const;
 
-private:
+  private:
     bool isKeyDown;
 };
 
-#endif //DEFUNBOBENGINE_KEY_EVENT_HPP
+#endif // DEFUNBOBENGINE_KEY_EVENT_HPP

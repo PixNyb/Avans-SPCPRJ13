@@ -14,8 +14,8 @@
 #ifndef DEFUNBOBENGINE_EVENT_HPP
 #define DEFUNBOBENGINE_EVENT_HPP
 
-#include <cstdint>
 #include "key_code.hpp"
+#include <cstdint>
 
 /**
  * @class Event
@@ -24,14 +24,15 @@
  * Event serves as a base class for all types of events. It contains a member that
  * specifies the type of event, allowing event handlers to process it accordingly.
  */
-class Event {
-public:
+class Event
+{
+  public:
     /**
      * @brief Constructs an event with a specified type.
      * @param type The type of the event.
      * @param scancode Scancode of the key (or other relevant information).
      */
-    explicit Event(KeyCode& keyCode) : keyCode(keyCode) {}
+    explicit Event(KeyCode keyCode) : keyCode(keyCode) {}
 
     /**
      * @brief Virtual destructor for polymorphic deletion.
@@ -47,17 +48,18 @@ public:
     /**
      * @brief Overloaded less-than operator for ordering events based on their types.
      * @param other The Event to compare with.
-     * @return True if the type of this event is less than the type of the other event, false otherwise.
+     * @return True if the type of this event is less than the type of the other event, false
+     * otherwise.
      */
-    bool operator<(const Event& other) const { return keyCode < other.keyCode; }
+    bool operator<(const Event &other) const { return keyCode < other.keyCode; }
 
     void MarkProcessed() { isProcessed = true; }
 
     bool IsProcessed() const { return isProcessed; }
 
-private:
+  private:
     KeyCode keyCode; ///< The type of the event.
     bool isProcessed = false;
 };
 
-#endif //DEFUNBOBENGINE_EVENT_HPP
+#endif // DEFUNBOBENGINE_EVENT_HPP

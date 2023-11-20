@@ -14,10 +14,12 @@
 
 #include "event.hpp"
 
-class MouseEvent : public Event {
-public:
-    explicit MouseEvent(KeyCode& keyCode);
-private:
+class MouseEvent : public Event
+{
+  public:
+    explicit MouseEvent(KeyCode keyCode);
+
+  private:
 };
 
-#endif //DEFUNBOBENGINE_MOUSE_EVENT_HPP
+#endif // DEFUNBOBENGINE_MOUSE_EVENT_HPP

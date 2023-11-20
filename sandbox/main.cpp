@@ -9,63 +9,46 @@
  *
  */
 
-#include "input_manager.hpp"
+#include "engine.hpp"
+#include "i_input_facade.hpp"
+#include "key_code.hpp"
+#include "key_event.hpp"
 #include "key_listener.hpp"
 #include "mouse_listener.hpp"
-#include "key_code.hpp"
 #include <SDL.h>
+#include <SDL_events.h>
+#include <thread>
 
-void simulateKeyPress(KeyCode key) {
-    SDL_Event keyEvent;
+SDL_Event createKeyEvent(KeyCode key, bool isKeyDown)
+{
+    SDL_Event event;
+    event.type = isKeyDown ? SDL_KEYDOWN : SDL_KEYUP;
+    event.key.keysym.scancode = static_cast<SDL_Scancode>(key);
+    event.key.keysym.sym = static_cast<SDL_Keycode>(key);
+    event.key.keysym.mod = KMOD_NONE;
+    event.key.repeat = 0;
 
-    keyEvent.type = SDL_KEYDOWN;
-    keyEvent.key.keysym.sym = static_cast<SDL_Keycode>(key);
-    keyEvent.key.keysym.mod = KMOD_NONE;
-
-    SDL_PushEvent(&keyEvent);
-
-    InputManager inputManager;
-
-    //Register key
-    std::unique_ptr<IKeyListener> keyListener = std::make_unique<KeyListener>();
-    inputManager.RegisterKeyListener(std::move(keyListener));
-
-    inputManager.Update();
-
-    inputManager.Bind(*inputManager.GetSDLInputHandler()->GetPolledKeyEvents().back(), ActionType::GOUP);
-
-    inputManager.Update();
+    return event;
 }
 
-
-//void simulateMousePress() {
-//    SDL_Event mouseEvent;
-//    mouseEvent.type = SDL_MOUSEMOTION;
-//    mouseEvent.motion.x = 10;
-//    mouseEvent.motion.y = 20;
-//    mouseEvent.button.button = SDL_BUTTON_LEFT;
-//    SDL_PushEvent(&mouseEvent);
-//
-//    InputManager inputManager;
-//
-//    //Register mouse
-//    std::unique_ptr<IMouseListener> mouseListener = std::make_unique<MouseListener>();
-//    inputManager.registerMouse(std::move(mouseListener));
-//
-//    std::vector<SDL_Event> events;
-//    events.push_back(mouseEvent);
-//
-//    inputManager.update();
-//
-//    inputManager.bind(*inputManager.getSDLInputHandler()->getPolledMouseEvents().back(), ActionType::PAUSE);
-//
-//    inputManager.update();
-//}
+void simulateKeyPress(KeyCode key)
+{
+    SDL_Event event = createKeyEvent(key, true);
+    SDL_PushEvent(&event);
+}
 
 int main(int argc, char *argv[])
 {
-    simulateKeyPress(KeyCode::UP_ARROW);
-//    simulateMousePress();
+    auto engine = Engine::GetInstance();
+    auto inputManager = engine->Get<IInputFacade>();
 
-    return 1;
+    inputManager->Bind(KeyEvent(KeyCode::UP_ARROW, true), ActionType::JUMP);
+
+    std::thread engineThread([&]() { engine->Start(); });
+
+    simulateKeyPress(KeyCode::UP_ARROW);
+
+    engineThread.join();
+
+    return 0;
 }
