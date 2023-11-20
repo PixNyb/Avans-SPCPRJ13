@@ -16,9 +16,9 @@
 
 class MouseListener : public IMouseListener {
 public:
-    void OnMouseMoved(const std::shared_ptr<MouseEvent>& event) override;
+    void OnMouseMoved() override;
     void OnMouseClicked() override;
-    void OnMousePressed(const std::shared_ptr<MouseEvent>& event, const std::map<Event, std::vector<ActionType>>& actionTypeKeyBinds) override;
+    void OnMousePressed() override;
     void OnMouseReleased() override;
 };
 

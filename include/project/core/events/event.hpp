@@ -14,7 +14,8 @@
 #ifndef DEFUNBOBENGINE_EVENT_HPP
 #define DEFUNBOBENGINE_EVENT_HPP
 
-#include "SDL.h"
+#include <cstdint>
+#include "key_code.hpp"
 
 /**
  * @class Event
@@ -30,7 +31,7 @@ public:
      * @param type The type of the event.
      * @param scancode Scancode of the key (or other relevant information).
      */
-    explicit Event(Uint32 type) : type(type) {}
+    explicit Event(KeyCode& keyCode) : keyCode(keyCode) {}
 
     /**
      * @brief Virtual destructor for polymorphic deletion.
@@ -41,17 +42,17 @@ public:
      * @brief Retrieves the type of the event.
      * @return The type of the event as a Uint32 value.
      */
-    [[nodiscard]] Uint32 getType() const { return type; };
+    [[nodiscard]] KeyCode GetKeyCode() const { return keyCode; };
 
     /**
      * @brief Overloaded less-than operator for ordering events based on their types.
      * @param other The Event to compare with.
      * @return True if the type of this event is less than the type of the other event, false otherwise.
      */
-    bool operator<(const Event& other) const { return type < other.type; }
+    bool operator<(const Event& other) const { return keyCode < other.keyCode; }
 
 private:
-    Uint32 type; ///< The type of the event.
+    KeyCode keyCode; ///< The type of the event.
 };
 
 #endif //DEFUNBOBENGINE_EVENT_HPP

@@ -30,48 +30,47 @@ class InputManager {
 
     /**
      * @brief Updates the input manager with the latest SDL events.
-     * @param events A vector of SDL events to process.
      */
-    void update(std::vector<SDL_Event>& events);
+    void Update();
 
     /**
      * @brief Registers a mouse listener for receiving mouse events.
      * @param mouseListener A unique pointer to an IMouseListener.
      */
-    void registerMouse(std::unique_ptr<IMouseListener> mouseListener);
+    void RegisterMouse(std::unique_ptr<IMouseListener> mouseListener);
 
     /**
     * @brief Registers a key listener for receiving key events.
     * @param keyListener A unique pointer to an IKeyListener.
     */
-    void registerKey(std::unique_ptr<IKeyListener> keyListener);
+    void RegisterKey(std::unique_ptr<IKeyListener> keyListener);
 
     /**
      * @brief Checks if a specific action is currently pressed.
      * @param actionType The ActionType to check.
      * @return True if the action is currently pressed, false otherwise.
      */
-    [[nodiscard]] bool actionPressed(const ActionType& actionType) const;
+    [[nodiscard]] bool ActionPressed(const ActionType& actionType) const;
 
     /**
      * @brief Checks if a specific action has been released.
      * @param actionType The ActionType to check.
      * @return True if the action has been released, false otherwise.
      */
-    [[nodiscard]] bool actionReleased(const ActionType& actionType) const;
+    [[nodiscard]] bool ActionReleased(const ActionType& actionType) const;
 
     /**
      * @brief Binds an action to a specific event.
      * @param key The Event representing the input event.
      * @param actionType The ActionType to associate with the event.
      */
-    void bind(const Event& key, const ActionType& actionType);
+    void Bind(const Event& key, const ActionType& actionType);
 
     /**
      * @brief Retrieves the SDL input handler.
      * @return A const reference to the unique pointer of the SDL input handler.
      */
-    [[nodiscard]] const std::unique_ptr<IInputHandler>& getSDLInputHandler() const;
+    [[nodiscard]] const std::unique_ptr<IInputHandler>& GetSDLInputHandler() const;
 
   private:
     std::vector<ActionType> actionsReleased;

@@ -13,16 +13,15 @@
 #define DEFUNBOBENGINE_KEY_EVENT_HPP
 
 #include "event.hpp"
-#include <SDL.h>
 
 class KeyEvent : public Event {
 public:
-    explicit KeyEvent(SDL_Event& sdlEvent);
+    explicit KeyEvent(KeyCode& keyCode, bool isKeyDown);
 
-    [[nodiscard]] SDL_Scancode getKeyCode() const;
+    bool GetIsKeyDown();
 
 private:
-    SDL_KeyboardEvent sdlKeyboardEvent;
+    bool isKeyDown;
 };
 
 #endif //DEFUNBOBENGINE_KEY_EVENT_HPP

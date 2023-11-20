@@ -10,22 +10,29 @@
  */
 
 #include "sdl2_input_handler.hpp"
+#include "key_type.hpp"
 
-void SDL2InputHandler::PollEvents(std::vector<SDL_Event>& sdlEvents) {
-    for(SDL_Event sdlEvent : sdlEvents) {
-        if (sdlEvent.type == SDL_KEYDOWN || sdlEvent.type == SDL_KEYUP) {
-            polledKeyEvents.emplace_back(std::make_shared<KeyEvent>(sdlEvent));
+void SDL2InputHandler::PollEvents() {
+    SDL_Event event;
+    while (SDL_PollEvent(&event)) {
+        auto keyCode = static_cast<KeyCode>(event.key.keysym.sym);
+
+        if(event.type == SDL_KEYUP) {
+            polledKeyEvents.emplace_back(std::make_shared<KeyEvent>(keyCode, false));
         }
-        else if (sdlEvent.type == SDL_MOUSEBUTTONDOWN || sdlEvent.type == SDL_MOUSEBUTTONUP || sdlEvent.type == SDL_MOUSEMOTION) {
-            polledMouseEvents.emplace_back(std::make_shared<MouseEvent>(sdlEvent));
+        else if (event.type == SDL_KEYDOWN) {
+            polledKeyEvents.emplace_back(std::make_shared<KeyEvent>(keyCode, true));
         }
-    }
+        else if(event.type == SDL_MOUSEMOTION || event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP) {
+            polledMouseEvents.emplace_back(std::make_shared<MouseEvent>(keyCode));
+        }
+    };
 }
 
-std::vector<std::shared_ptr<KeyEvent>> SDL2InputHandler::getPolledKeyEvents() const {
-    return polledKeyEvents;
-}
-
-std::vector<std::shared_ptr<MouseEvent>> SDL2InputHandler::getPolledMouseEvents() const {
-    return polledMouseEvents;
-}
+//std::vector<std::shared_ptr<KeyEvent>> SDL2InputHandler::getPolledKeyEvents() const {
+//    return polledKeyEvents;
+//}
+//
+//std::vector<std::shared_ptr<MouseEvent>> SDL2InputHandler::getPolledMouseEvents() const {
+//    return polledMouseEvents;
+//}

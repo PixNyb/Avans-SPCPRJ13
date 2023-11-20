@@ -13,64 +13,68 @@
 
 InputManager::InputManager() : sdlInputHandler(std::make_unique<SDL2InputHandler>()) {}
 
-void InputManager::update(std::vector<SDL_Event>& events) {
-    sdlInputHandler->PollEvents(events);
+void InputManager::Update() {
+    sdlInputHandler->PollEvents();
+    std::shared_ptr<KeyEvent> event = sdlInputHandler->GetPolledKeyEvents().back();
 
-    for(const auto& keyEvent : sdlInputHandler->getPolledKeyEvents()) {
-        for (const auto& listener : keyListeners) {
-            switch(keyEvent->getType()) {
-                case SDL_KEYDOWN:
-                    listener->OnKeyPressed(keyEvent, actionTypeKeyBinds);
-                    break;
-                case SDL_KEYUP:
-                    listener->OnKeyReleased();
-                    break;
-                default:
-                    break;
-            }
-        }
+    if(keyEvent->GetIsKeyDown()) {
+        listener->OnKeyPressed();
+    }
+    else {
+        listener->OnKeyReleased();
     }
 
-    for(const auto& mouseEvent : sdlInputHandler->getPolledMouseEvents()) {
-        for (const auto& listener : mouseListeners) {
-            switch(mouseEvent->getType()) {
-                case SDL_MOUSEMOTION:
-                    listener->OnMouseMoved(mouseEvent);
-                    break;
-                case SDL_MOUSEBUTTONDOWN:
-                    listener->OnMousePressed(mouseEvent, actionTypeKeyBinds);
-                    break;
-                case SDL_MOUSEBUTTONUP:
-                    listener->OnMouseReleased();
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
+//    for(const auto& keyEvent : sdlInputHandler->GetPolledKeyEvents()) {
+//        for (const auto& listener : keyListeners) {
+//            if(keyEvent->GetIsKeyDown()) {
+//                listener->OnKeyPressed();
+//            }
+//            else {
+//                listener->OnKeyReleased();
+//            }
+//        }
+//    }
+
+//    for(const auto& mouseEvent : sdlInputHandler->getPolledMouseEvents()) {
+//        for (const auto& listener : mouseListeners) {
+//            switch(mouseEvent->getType()) {
+//                case :
+//                    listener->OnMouseMoved();
+//                    break;
+//                case :
+//                    listener->OnMousePressed();
+//                    break;
+//                case :
+//                    listener->OnMouseReleased();
+//                    break;
+//                default:
+//                    break;
+//            }
+//        }
+//    }
 }
 
-void InputManager::registerMouse(std::unique_ptr<IMouseListener> mouseListener) {
+void InputManager::RegisterMouse(std::unique_ptr<IMouseListener> mouseListener) {
     mouseListeners.push_back(std::move(mouseListener));
 }
 
-void InputManager::registerKey(std::unique_ptr<IKeyListener> keyListener) {
+void InputManager::RegisterKey(std::unique_ptr<IKeyListener> keyListener) {
     keyListeners.push_back(std::move(keyListener));
 }
 
-bool InputManager::actionPressed(const ActionType& actionType) const {
+bool InputManager::ActionPressed(const ActionType& actionType) const {
     return std::find(actionsPressed.begin(), actionsPressed.end(), actionType) != actionsPressed.end();
 }
 
-bool InputManager::actionReleased(const ActionType& actionType) const {
+bool InputManager::ActionReleased(const ActionType& actionType) const {
     return std::find(actionsReleased.begin(), actionsReleased.end(), actionType) != actionsReleased.end();
 }
 
-const std::unique_ptr<IInputHandler>& InputManager::getSDLInputHandler() const {
+const std::unique_ptr<IInputHandler>& InputManager::GetSDLInputHandler() const {
     return sdlInputHandler;
 }
 
-void InputManager::bind(const Event& key, const ActionType& actionType) {
+void InputManager::Bind(const Event& key, const ActionType& actionType) {
     auto it = actionTypeKeyBinds.find(key);
 
     if(it == actionTypeKeyBinds.end()) {

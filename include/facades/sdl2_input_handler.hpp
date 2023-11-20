@@ -30,11 +30,11 @@
  */
 class SDL2InputHandler : public IInputHandler {
 public:
-    void PollEvents(std::vector<SDL_Event>& sdlEvents) override;
+    void PollEvents() override;
 
-    [[nodiscard]] std::vector<std::shared_ptr<KeyEvent>> getPolledKeyEvents() const override;
+    [[nodiscard]] std::vector<std::shared_ptr<KeyEvent>> GetPolledKeyEvents() const override;
 
-    [[nodiscard]] std::vector<std::shared_ptr<MouseEvent>> getPolledMouseEvents() const override;
+    [[nodiscard]] std::vector<std::shared_ptr<MouseEvent>> GetPolledMouseEvents() const override;
 
 private:
     std::vector<std::shared_ptr<KeyEvent>> polledKeyEvents;

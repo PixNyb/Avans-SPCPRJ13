@@ -13,11 +13,17 @@
 #define DEFUNBOBENGINE_KEY_LISTENER_HPP
 
 #include "ikey_listener.hpp"
+#include "key_event.hpp"
 
 class KeyListener : public IKeyListener {
 public:
-    void OnKeyPressed(const std::shared_ptr<KeyEvent>& event, const std::map<Event, std::vector<ActionType>>& actionTypeKeyBinds) override;
+    void OnKeyPressed() override;
     void OnKeyReleased() override;
+
+    void SetKeyEvent(const KeyEvent& keyEvent);
+
+private:
+    KeyEvent keyEvent;
 };
 
 #endif //DEFUNBOBENGINE_KEY_LISTENER_HPP

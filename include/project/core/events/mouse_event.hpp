@@ -13,11 +13,10 @@
 #define DEFUNBOBENGINE_MOUSE_EVENT_HPP
 
 #include "event.hpp"
-#include "SDL.h"
 
 class MouseEvent : public Event {
 public:
-    explicit MouseEvent(SDL_Event& sdlEvent);
+    explicit MouseEvent(KeyCode& keyCode);
 
     [[nodiscard]] Uint8 getMouseButton() const;
 

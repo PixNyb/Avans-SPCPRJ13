@@ -31,11 +31,11 @@ void simulateKeyPress(char key) {
     std::vector<SDL_Event> events;
     events.push_back(keyEvent);
 
-    inputManager.update(events);
+    inputManager.update(keyListener);
 
     inputManager.bind(*inputManager.getSDLInputHandler()->getPolledKeyEvents().back(), ActionType::GOUP);
 
-    inputManager.update(events);
+    inputManager.update(keyListener);
 }
 
 
@@ -56,11 +56,11 @@ void simulateMousePress() {
     std::vector<SDL_Event> events;
     events.push_back(mouseEvent);
 
-    inputManager.update(events);
+    inputManager.update();
 
     inputManager.bind(*inputManager.getSDLInputHandler()->getPolledMouseEvents().back(), ActionType::PAUSE);
 
-    inputManager.update(events);
+    inputManager.update();
 }
 
 int main(int argc, char *argv[])

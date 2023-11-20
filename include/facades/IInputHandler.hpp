@@ -33,14 +33,8 @@ class IInputHandler {
 public:
     virtual ~IInputHandler() = default;
 
-    /**
-     * @brief Polls for input events and populates the provided event vector.
-     *
-     * Must be implemented by the concrete subclass to check for new events from
-     * the input system and translates them into a vector of Event objects.
-     * @param sdlEvents A reference to a vector where the polled events will be stored.
-     */
-    virtual void PollEvents(std::vector<SDL_Event>& sdlEvents) = 0;
+
+    virtual void PollEvents() = 0;
 
     /**
      * @brief Retrieves a vector of shared pointers to KeyEvents that have been polled.
@@ -49,7 +43,7 @@ public:
      * that have been captured from the input system.
      * @return A vector of shared pointers to KeyEvent objects.
      */
-    [[nodiscard]] virtual std::vector<std::shared_ptr<KeyEvent>> getPolledKeyEvents() const = 0;
+    [[nodiscard]] virtual std::vector<std::shared_ptr<KeyEvent>> GetPolledKeyEvents() const = 0;
 
     /**
      * @brief Retrieves a vector of shared pointers to MouseEvents that have been polled.
@@ -58,7 +52,7 @@ public:
      * that have been captured from the input system.
      * @return A vector of shared pointers to MouseEvent objects.
      */
-    [[nodiscard]] virtual std::vector<std::shared_ptr<MouseEvent>> getPolledMouseEvents() const = 0;
+    [[nodiscard]] virtual std::vector<std::shared_ptr<MouseEvent>> GetPolledMouseEvents() const = 0;
 };
 
 #endif //DEFUNBOBENGINE_IINPUTHANDLER_HPP
