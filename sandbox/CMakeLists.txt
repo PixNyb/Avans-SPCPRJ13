@@ -38,3 +38,7 @@ target_link_libraries(DeFunBobEngine PRIVATE nlohmann_json::nlohmann_json)
 # Add fmt
 find_package(fmt CONFIG REQUIRED)
 target_link_libraries(DeFunBobEngine PRIVATE fmt::fmt)
+
+# Add box2d
+find_package(box2d CONFIG REQUIRED)
+target_link_libraries(Sandbox PRIVATE box2d::box2d)

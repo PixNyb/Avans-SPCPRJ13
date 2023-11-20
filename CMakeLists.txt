@@ -13,6 +13,8 @@ if(BUILD_TESTS OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
     add_subdirectory(tests)
 endif()
 
+file(COPY ${PROJECT_SOURCE_DIR}/resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 # Generate coverage
 option(GENERATE_COVERAGE "Generate coverage" OFF)
 
@@ -110,6 +112,10 @@ target_link_libraries(DeFunBobEngine PRIVATE nlohmann_json::nlohmann_json)
 # Add fmt
 find_package(fmt CONFIG REQUIRED)
 target_link_libraries(DeFunBobEngine PRIVATE fmt::fmt)
+
+# Add box2d
+find_package(box2d CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE box2d::box2d)
 
 # Add sandbox
 add_subdirectory(sandbox)

@@ -19,6 +19,7 @@
 #define DEFUNBOBENGINE_SDL_TEXTURE_HPP
 
 #include <SDL.h>
+#include <string>
 
 /**
  * @class SDLTexture
@@ -29,28 +30,29 @@
  * for use with SDL rendering operations. The texture is created given a renderer
  * and a file path to an image resource.
  */
-class SDLTexture {
-private:
-    SDL_Texture* texture;
+class SDLTexture
+{
+  private:
+    SDL_Texture *texture;
 
-public:
+  public:
     /**
      * @brief Constructs an SDLTexture by loading from the specified file path.
      * @param renderer The SDL_Renderer that will be used to create the texture.
      * @param filePath The path to the image file to load as an SDL_Texture.
      */
-    SDLTexture(SDL_Renderer* renderer, const char* filePath);
+    SDLTexture(SDL_Renderer *renderer, const std::string &filePath);
 
     /**
      * @brief Destroys the SDLTexture, freeing the managed SDL_Texture resource.
      */
-    ~SDLTexture();
+    ~SDLTexture() { SDL_DestroyTexture(texture); };
 
     /**
      * @brief Retrieves the underlying SDL_Texture pointer.
      * @return SDL_Texture* A pointer to the managed SDL_Texture.
      */
-    SDL_Texture* getSDLTexture() const;
+    SDL_Texture *GetSDLTexture() const;
 };
 
-#endif //DEFUNBOBENGINE_SDL_TEXTURE_HPP
+#endif // DEFUNBOBENGINE_SDL_TEXTURE_HPP

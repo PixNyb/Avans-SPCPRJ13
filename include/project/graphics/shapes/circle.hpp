@@ -28,6 +28,7 @@
 class Circle : public Geometry {
 private:
     float radius; ///< The radius of the circle.
+    Vector2D position; ///< The position of the circle's center.
 
 public:
     /**
@@ -37,11 +38,30 @@ public:
      * @param r The radius of the circle.
      */
     Circle(const Vector2D& pos, float r)
-            : Geometry(pos), radius(r) {}
+            : position(pos), radius(r) {}
 
+    [[nodiscard]] Vector2D GetPosition() const {
+        return position;
+    }
 
     float GetRadius() const {
         return radius;
+    }
+
+    int GetArea() override {
+        return 3.14 * radius * radius;
+    }
+
+    bool IsWithinArea(const Vector2D& start, const Vector2D& end) override {
+        auto rad = GetRadius();
+
+        if (start.x <= position.x + rad && start.y <= position.y + rad) {
+            if (end.x >= position.x - rad && end.y >= position.y - rad) {
+                return true;
+            }
+        }
+
+        return false;
     }
 };
 

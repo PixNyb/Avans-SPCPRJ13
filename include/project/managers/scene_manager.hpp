@@ -26,7 +26,7 @@ class SceneManager
          * @brief Updates the current scene
          * @param deltaTime The time passed since the last frame
          */
-        void Update(float deltaTime);
+        void Update(double deltaTime);
 
         /**
          * @brief Renders the current scene
