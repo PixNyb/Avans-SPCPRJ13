@@ -1,3 +1,14 @@
+/**
+ * @file sdl2_input_handler.cpp
+ * @author Martijn Vermeer
+ * @brief This file contains the sdl input handler class implementation.
+ * @version 0.1
+ * @date 2023-11-20
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "sdl2_input_handler.hpp"
 
 void SDL2InputHandler::PollEvents(std::vector<SDL_Event>& sdlEvents) {

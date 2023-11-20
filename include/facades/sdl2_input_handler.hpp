@@ -30,14 +30,6 @@
  */
 class SDL2InputHandler : public IInputHandler {
 public:
-    /**
-     * @brief Polls for SDL2 input events and passes them to the engine.
-     *
-     * This method retrieves all pending SDL2 events and translates them into a
-     * generic format understood by the engine, accumulating them in the provided
-     * event vector.
-     * @param events A reference to a vector where the polled events will be stored.
-     */
     void PollEvents(std::vector<SDL_Event>& sdlEvents) override;
 
     [[nodiscard]] std::vector<std::shared_ptr<KeyEvent>> getPolledKeyEvents() const override;

@@ -38,6 +38,7 @@ public:
 
     /**
      * @brief Called whenever the mouse is moved.
+     * @param event A shared pointer to a MouseEvent object representing the mouse movement event.
      */
     virtual void OnMouseMoved(const std::shared_ptr<MouseEvent>& event) = 0;
 
@@ -48,6 +49,9 @@ public:
 
     /**
      * @brief Called each frame when a mouse button is still down.
+     * @param event A shared pointer to a MouseEvent object representing the mouse event.
+     * @param actionTypeKeyBinds A map associating Event objects with vectors of ActionType objects.
+     *                           The map defines the actions to be performed for different mouse events.
      */
     virtual void OnMousePressed(const std::shared_ptr<MouseEvent>& event, const std::map<Event, std::vector<ActionType>>& actionTypeKeyBinds) = 0;
 

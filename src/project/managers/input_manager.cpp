@@ -1,3 +1,14 @@
+/**
+ * @file input_manager.cpp
+ * @author Martijn Vermeer
+ * @brief This file contains the input manager class implementation.
+ * @version 0.1
+ * @date 2023-11-20
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "input_manager.hpp"
 
 InputManager::InputManager() : sdlInputHandler(std::make_unique<SDL2InputHandler>()) {}

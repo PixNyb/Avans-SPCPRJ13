@@ -40,7 +40,9 @@ class IKeyListener {
         /**
          * @brief This method will be caled whenever a key is pressed.
          *        Override for implementing the desired behaviour.
-
+         * @param event A shared pointer to a KeyEvent object representing the key event.
+         * @param actionTypeKeyBinds A map associating Event objects with vectors of ActionType objects.
+         *                           The map defines the actions to be performed for different key events.
          */
         virtual void OnKeyPressed(const std::shared_ptr<KeyEvent>& event, const std::map<Event, std::vector<ActionType>>& actionTypeKeyBinds) = 0;
 

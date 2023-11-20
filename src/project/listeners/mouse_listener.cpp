@@ -1,3 +1,14 @@
+/**
+ * @file mouse_listener.cpp
+ * @author Martijn Vermeer
+ * @brief This file contains the mouse listener class implementation.
+ * @version 0.1
+ * @date 2023-11-20
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "listeners/mouse_listener.hpp"
 
 void MouseListener::OnMouseMoved(const std::shared_ptr<MouseEvent>& event) {

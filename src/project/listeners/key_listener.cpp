@@ -1,3 +1,14 @@
+/**
+ * @file key_listener.cpp
+ * @author Martijn Vermeer
+ * @brief This file contains the key listener class implementation.
+ * @version 0.1
+ * @date 2023-11-20
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "listeners/key_listener.hpp"
 
 void KeyListener::OnKeyPressed(const std::shared_ptr<KeyEvent>& event, const std::map<Event, std::vector<ActionType>>& actionTypeKeyBinds) {

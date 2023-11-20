@@ -1,3 +1,14 @@
+/**
+ * @file action_type.cpp
+ * @author Martijn Vermeer
+ * @brief This file contains the action type class implementation.
+ * @version 0.1
+ * @date 2023-11-20
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "action_type.hpp"
 
 ActionType::ActionType(std::string enumName) : enumName(std::move(enumName)) {
@@ -14,7 +25,6 @@ const ActionType ActionType::GORIGHT("GORIGHT");
 const ActionType ActionType::GOUP("GOUP");
 const ActionType ActionType::GODOWN("GODOWN");
 
-//// Initialize the map
 void ActionType::setDefaultEnums() {
     for(const auto& actionTypePair : ActionType::stringToEnumMap) {
         stringToEnumMap.emplace(actionTypePair.second.enumName, actionTypePair.first);
