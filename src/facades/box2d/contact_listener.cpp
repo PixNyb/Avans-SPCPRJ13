@@ -11,11 +11,26 @@
 
 #include "contact_listener.hpp"
 #include <iostream>
+#include <utility>
 
 void ContactListener::BeginContact(b2Contact* contact) {
-    std::cout << "contact" << std::endl;
+    auto bodyA = contact->GetFixtureA()->GetBody();
+    auto bodyB = contact->GetFixtureB()->GetBody();
+
+    for (auto &gameObject: gameObjects) {
+        if (bodyA->GetPosition().x == gameObject->GetTransform().position.x && bodyA->GetPosition().y == gameObject->GetTransform().position.y) {
+            std::cout << gameObject->GetTag() << " is touching something" << std::endl;
+        }
+        if (bodyB->GetPosition().x == gameObject->GetTransform().position.x && bodyB->GetPosition().y == gameObject->GetTransform().position.y) {
+            std::cout << gameObject->GetTag() << " is touching something" << std::endl;
+        }
+    }
 }
 
 void ContactListener::EndContact(b2Contact* contact) {
     std::cout << "end contact" << std::endl;
+}
+
+ContactListener::ContactListener(std::vector<std::shared_ptr<GameObject>> gameObjects) {
+    this->gameObjects = std::move(gameObjects);
 }

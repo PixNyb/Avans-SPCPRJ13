@@ -14,14 +14,16 @@
 
 
 #include <memory>
+#include <vector>
 #include "box2d/b2_world_callbacks.h"
-#include "collider.hpp"
+#include "box2d/b2_contact.h"
+#include "game_object.hpp"
 
 class ContactListener : public b2ContactListener{
 private:
-    std::shared_ptr<Collider> collider;
+    std::vector<std::shared_ptr<GameObject>> gameObjects;
 public:
-    ContactListener() = default;
+    ContactListener(std::vector<std::shared_ptr<GameObject>> gameObjects);
 
     ~ContactListener() = default;
 

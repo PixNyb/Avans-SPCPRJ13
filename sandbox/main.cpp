@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
     obj->AddComponent(body);
     obj->AddComponent(collider);
     obj->SetTransform(trs);
+    obj->SetTag("box");
 
     // create circle
     auto obj1 = std::make_shared<GameObject>();
@@ -43,6 +44,7 @@ int main(int argc, char *argv[])
     obj1->AddComponent(body1);
     obj1->AddComponent(collider1);
     obj1->SetTransform(trs1);
+    obj1->SetTag("circle");
 
     // create floor
     auto obj2 = std::make_shared<GameObject>();
@@ -55,6 +57,7 @@ int main(int argc, char *argv[])
     obj2->AddComponent(body2);
     obj2->AddComponent(collider2);
     obj2->SetTransform(trs2);
+    obj2->SetTag("floor");
 
     objects.push_back(obj);
     objects.push_back(obj1);

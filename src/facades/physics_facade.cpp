@@ -45,13 +45,20 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject) {
     bodies.insert(std::pair<std::shared_ptr<GameObject>, b2Body *>(gameObject, body));
 }
 
+std::vector<std::shared_ptr<GameObject>> PhysicsFacade::GetAllGameObjects() {
+    std::vector<std::shared_ptr<GameObject>> gameObjects;
+    for (const auto& pair : bodies) {
+        gameObjects.push_back(pair.first);
+    }
+
+    return gameObjects;
+}
+
 void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects) {
     // PhysicsFacade receives a list of gameobjects that contain a rigidbody
     // create the world where the bodies will be placed
     b2Vec2 gravity(0.0f, -9.8f);
     world = std::make_unique<b2World>(gravity);
-    auto* contactListener = new ContactListener();
-    world->SetContactListener(contactListener);
 
     // create a b2body for every gameobject
     for (auto &gameObject: gameObjects) {
@@ -82,6 +89,9 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
             SetFixture(body, &boxShape, game_object->GetComponent<RigidBody>(), area);
         }
     }
+
+    auto *contactListener = new ContactListener(GetAllGameObjects());
+    world->SetContactListener(contactListener);
 }
 
 void PhysicsFacade::Step() {
@@ -94,8 +104,8 @@ void PhysicsFacade::Step() {
         auto body = object_pair->second;
         auto oldTransform = gameObject->GetTransform();
 
-        oldTransform.position.x += (body->GetPosition().x / PixelScale) - gameObject->GetTransform().position.x;
-        oldTransform.position.y += (body->GetPosition().y / PixelScale) - gameObject->GetTransform().position.y;
+        oldTransform.position.x += body->GetPosition().x - gameObject->GetTransform().position.x;
+        oldTransform.position.y += body->GetPosition().y - gameObject->GetTransform().position.y;
         oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);
         gameObject->SetTransform(oldTransform);
     }
