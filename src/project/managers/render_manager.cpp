@@ -37,36 +37,32 @@ void RenderManager::Render()
     auto scene = sceneManager->GetScene().lock();
     if(!scene) return;
 
-    // Prepare camera
-    auto camera = scene->GetCamera();
-
     auto layers = std::map<int, std::vector<std::weak_ptr<GameObject>>>();
 
-    for(auto& gameObject : scene->GetAllByType<GameObject>()){
-        // Loop from root to original object
-        for (auto obj : GameObjectList(gameObject))
-        {
-            auto currentObject = obj->cur;
-            // Now we can break right away since it's a parent - child relationship
-            if(!currentObject || !currentObject->IsActive()) break;
+    for (auto& gameObjectPtr : scene->GetAllByType<GameObject>()) {
+        auto objectList = gameObjectPtr.lock()->GetObjectList();
 
-            int layer = currentObject->GetLayer();
-            if(layers.contains(layer)){
-                // Ensure the layer for the game object exists
-                layers.insert(std::make_pair(layer, std::vector<std::weak_ptr<GameObject>>()));
+        for (const auto& gameObjectNode : *objectList) {
+            auto currentGameObject = gameObjectNode->cur;
+
+            // Skip inactive game objects and their ancestors
+            if (!currentGameObject || !currentGameObject->IsActive()) {
+                break;
             }
 
-            // TODO: Check game objects with geometry for render occlusion
-
-            // Push game object onto layer
-            layers[layer].push_back(gameObject);
+            int layer = currentGameObject->GetLayer();
+            layers[layer].emplace_back(currentGameObject);
         }
     }
 
     // Make sure we have a render point regardless of whether we have a camera (menu might not
     // always have a camera)
     Point renderPoint = Point(0, 0);
+
+    // Prepare camera
+    auto camera = scene->GetCamera();
     if(camera){
+        // Apply camera transform
         auto transform = camera->GetTransform();
         renderPoint.x = transform.position.x;
         renderPoint.y = transform.position.y;

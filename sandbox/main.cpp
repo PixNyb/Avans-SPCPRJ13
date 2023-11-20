@@ -40,7 +40,7 @@ class FPSBehaviourScript: public BehaviourScript {
 class TestBehaviourScript : public BehaviourScript {
   private:
     std::shared_ptr<GameObject> gameObject;
-    float ticks = 0;
+    double ticks = 0;
   public:
 
     explicit TestBehaviourScript(std::shared_ptr<GameObject> gameObject): BehaviourScript(),
@@ -53,7 +53,7 @@ class TestBehaviourScript : public BehaviourScript {
         float speedPerSecond = 1.5f;
 
         // Get delta time
-        float delta = Time::GetDeltaTime() * Time::TimeScale();
+        double delta = Time::GetDeltaTime() * Time::TimeScale();
 
         // Increment ticks with the adjusted speed
         ticks += speedPerSecond * delta;
@@ -62,10 +62,10 @@ class TestBehaviourScript : public BehaviourScript {
             ticks = 0;
 
         // Compute oscillation based on time
-        float oscillation = std::sin(ticks);
+        double oscillation = std::sin(ticks);
 
         // Compute new scale using the oscillation
-        float newScale = 3 + 2 * oscillation;
+        double newScale = 3 + 2 * oscillation;
 
         // Update the radius
         auto transform = gameObject->GetTransform();
@@ -104,10 +104,14 @@ int main(int argc, char *argv[])
     obj->SetTransform(Transform(Point(0,0), 0, 1));
 
     // Box
-    auto obj2 = scene->CreateGameObject().lock();
+    auto obj2 = std::make_shared<GameObject>();
     obj2->SetName("box");
     obj2->AddComponent(boxComponent);
     obj2->SetTransform(Transform(Point(0,0), 0, 1));
+
+    // Use this to test:
+    obj2->SetActive(true);
+    obj->SetParent(obj2);
 
     // Scaling behaviour scripts
     auto behaviourScript = std::make_shared<TestBehaviourScript>(obj);

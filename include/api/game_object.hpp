@@ -13,10 +13,13 @@
 #define AVANS_SPCPRJ13_GAMEOBJECT_H
 
 #include "component.hpp"
+#include "game_object_list.hpp"
 #include "transform.hpp"
 #include <memory>
 #include <string>
 #include <vector>
+
+class GameObjectList;
 
 /**
  * @class GameObject
@@ -26,7 +29,7 @@
  * GameObjects can be added to the game world and can have their components
  * updated and rendered.
  */
-class GameObject
+class GameObject : public std::enable_shared_from_this<GameObject>
 {
   protected:
     std::string name; ///< The name of the GameObject.
@@ -192,6 +195,12 @@ class GameObject
 
         return typeComponents;
     }
+
+    /**
+     * @brief Gets an object list starting with the root node and ending with the origin node.
+     * @return The object list
+     */
+    std::unique_ptr<GameObjectList> GetObjectList();
 };
 
 #endif // AVANS_SPCPRJ13_GAMEOBJECT_H

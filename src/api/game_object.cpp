@@ -11,6 +11,8 @@
 
 #include "game_object.hpp"
 #include "component.hpp"
+#include "game_object_list.hpp"
+#include "transform.hpp"
 #include <memory>
 
 GameObject::GameObject() : name(""), active(true), tag(""), layer(0), transform()
@@ -58,3 +60,7 @@ void GameObject::SetActive(bool active) { this->active = active; }
 bool GameObject::IsActiveInWorld() const { return active; }
 
 bool GameObject::IsActiveSelf() const { return active; }
+
+std::unique_ptr<GameObjectList> GameObject::GetObjectList(){
+    return std::make_unique<GameObjectList>(this->shared_from_this());
+}

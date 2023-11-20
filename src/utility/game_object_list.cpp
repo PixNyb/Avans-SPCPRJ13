@@ -46,13 +46,15 @@ bool GameObjectListIterator::operator!=(const GameObjectListIterator &other) con
 {
     return !(*this == other);
 }
-std::shared_ptr<GameObjectNode> GameObjectListIterator::operator*() const {
+std::shared_ptr<GameObjectNode>& GameObjectListIterator::operator*() {
     return currentNode;
 }
 
-// Game object lists
-void GameObjectList::BuildList(const std::weak_ptr<GameObject>& gameObject)
+GameObjectList::GameObjectList(const std::weak_ptr<GameObject>& gameObject)
 {
+    origin = std::make_shared<GameObjectNode>();
+    root = std::make_shared<GameObjectNode>();
+
     auto originObject = gameObject.lock();
     origin->cur = originObject;
 
@@ -73,12 +75,6 @@ void GameObjectList::BuildList(const std::weak_ptr<GameObject>& gameObject)
 
     root = curNode;
 }
-GameObjectList::GameObjectList(const std::weak_ptr<GameObject>& gameObject)
-{
-    origin = std::make_shared<GameObjectNode>();
-    root = std::make_shared<GameObjectNode>();
-    BuildList(gameObject);
-}
 std::shared_ptr<GameObjectNode> GameObjectList::Root() {
     return root;
 }
@@ -90,4 +86,22 @@ GameObjectListIterator GameObjectList::begin() const {
 }
 GameObjectListIterator GameObjectList::end() const {
     return GameObjectListIterator(nullptr);
+}
+
+std::shared_ptr<GameObjectNode> GameObjectList::FindNode(const std::string &name)
+{
+    for(const auto& obj : *this){
+        if(obj->cur->GetName() == name)
+            return obj;
+    }
+    return nullptr;
+}
+
+std::shared_ptr<GameObjectNode> GameObjectList::FindNode(const GameObject *ref)
+{
+    for(const auto& obj : *this){
+        if(obj->cur.get() == ref)
+            return obj;
+    }
+    return nullptr;
 }
