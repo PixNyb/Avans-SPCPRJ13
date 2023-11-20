@@ -12,11 +12,11 @@
 #ifndef DEFUNBOBENGINE_LEVEL_FACTORY_HPP
 #define DEFUNBOBENGINE_LEVEL_FACTORY_HPP
 
-#include "abstract_scene_factory.hpp"
+#include "iscene_factory.hpp"
 #include "prefab_manager.hpp"
 #include <memory>
 
-class LevelFactory : public AbstractSceneFactory {
+class LevelFactory : public ISceneFactory {
   private:
     /**
      * @brief The PrefabManager which is used to retrieve the registered prefabs.

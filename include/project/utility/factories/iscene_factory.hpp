@@ -1,5 +1,5 @@
 /**
-* @file level_factory.hpp
+* @file iscene_factory.hpp
 * @author Maxuuuu
 * @brief Abstract factory for creating scenes.
 * @version 0.1
@@ -9,18 +9,18 @@
 *
 */
 
-#ifndef DEFUNBOBENGINE_ABSTRACT_SCENE_FACTORY_HPP
-#define DEFUNBOBENGINE_ABSTRACT_SCENE_FACTORY_HPP
+#ifndef DEFUNBOBENGINE_ISCENE_FACTORY_HPP
+#define DEFUNBOBENGINE_ISCENE_FACTORY_HPP
 
 #include "scene.hpp"
 #include <nlohmann/json.hpp>
 
-class AbstractSceneFactory {
+class ISceneFactory {
   public:
     /**
      * @brief Construct a new AbstractSceneFactory.
      */
-    AbstractSceneFactory() = default;
+    ISceneFactory() = default;
 
     /**
      * @brief Creates a scene based on a provided JSON.
@@ -31,4 +31,4 @@ class AbstractSceneFactory {
 
 };
 
-#endif // DEFUNBOBENGINE_ABSTRACT_SCENE_FACTORY_HPP
+#endif // DEFUNBOBENGINE_ISCENE_FACTORY_HPP
