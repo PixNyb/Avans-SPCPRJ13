@@ -103,11 +103,12 @@ Inheritance diagram for GameObject:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameObject__inherit__graph.png" border="0" usemap="#aGameObject_inherit__map" alt="Inheritance graph"/></div>
 <map name="aGameObject_inherit__map" id="aGameObject_inherit__map">
-<area shape="rect" title="The GameObject class represents an object in the game world." alt="" coords="40,5,143,32"/>
-<area shape="rect" href="classCamera.html" title=" " alt="" coords="5,80,79,107"/>
-<area shape="rect" href="classUIObject.html" title="Represents a user interface object in the game engine." alt="" coords="103,80,181,107"/>
-<area shape="rect" href="classButton.html" title="Represents a clickable user interface element." alt="" coords="68,155,133,181"/>
-<area shape="rect" href="classText.html" title="Represents a piece of text in the user interface." alt="" coords="157,155,207,181"/>
+<area shape="rect" title="The GameObject class represents an object in the game world." alt="" coords="55,95,158,121"/>
+<area shape="rect" href="classCamera.html" title=" " alt="" coords="21,169,94,196"/>
+<area shape="rect" href="classUIObject.html" title="Represents a user interface object in the game engine." alt="" coords="118,169,197,196"/>
+<area shape="rect" title=" " alt="" coords="5,5,208,47"/>
+<area shape="rect" href="classButton.html" title="Represents a clickable user interface element." alt="" coords="83,244,149,271"/>
+<area shape="rect" href="classText.html" title="Represents a piece of text in the user interface." alt="" coords="173,244,222,271"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -115,9 +116,10 @@ Collaboration diagram for GameObject:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameObject__coll__graph.png" border="0" usemap="#aGameObject_coll__map" alt="Collaboration graph"/></div>
 <map name="aGameObject_coll__map" id="aGameObject_coll__map">
-<area shape="rect" title="The GameObject class represents an object in the game world." alt="" coords="5,184,108,211"/>
-<area shape="rect" href="structTransform.html" title="Represents a 2D transformation including position, rotation, and scale." alt="" coords="13,95,100,121"/>
-<area shape="rect" href="structPoint.html" title="Represents a 2D point or vector." alt="" coords="29,5,84,32"/>
+<area shape="rect" title="The GameObject class represents an object in the game world." alt="" coords="77,199,179,225"/>
+<area shape="rect" title=" " alt="" coords="5,95,208,136"/>
+<area shape="rect" href="structTransform.html" title="Represents a 2D transformation including position, rotation, and scale." alt="" coords="233,102,319,129"/>
+<area shape="rect" href="structPoint.html" title="Represents a 2D point or vector." alt="" coords="249,5,303,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -190,6 +192,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:a4096808c06891eb8160065ee34997878"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGameObject.html#a4096808c06891eb8160065ee34997878">GetComponents</a> () const</td></tr>
 <tr class="memdesc:a4096808c06891eb8160065ee34997878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the components of the specified type. Must be a valid subclass of <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a>.  <a href="classGameObject.html#a4096808c06891eb8160065ee34997878">More...</a><br /></td></tr>
 <tr class="separator:a4096808c06891eb8160065ee34997878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35cefcc5d483c1c89a4958ead55f8e6c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classGameObjectList.html">GameObjectList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a35cefcc5d483c1c89a4958ead55f8e6c">GetObjectList</a> ()</td></tr>
+<tr class="memdesc:a35cefcc5d483c1c89a4958ead55f8e6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object list starting with the root node and ending with the origin node.  <a href="classGameObject.html#a35cefcc5d483c1c89a4958ead55f8e6c">More...</a><br /></td></tr>
+<tr class="separator:a35cefcc5d483c1c89a4958ead55f8e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -433,6 +438,26 @@ template&lt;class T &gt; </div>
 
 <p>Get the name of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The name of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a35cefcc5d483c1c89a4958ead55f8e6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35cefcc5d483c1c89a4958ead55f8e6c">&#9670;&nbsp;</a></span>GetObjectList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classGameObjectList.html">GameObjectList</a> &gt; GameObject::GetObjectList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets an object list starting with the root node and ending with the origin node. </p>
+<dl class="section return"><dt>Returns</dt><dd>The object list </dd></dl>
 
 </div>
 </div>

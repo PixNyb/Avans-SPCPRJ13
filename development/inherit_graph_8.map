@@ -1,7 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classGameObject.html" title="The GameObject class represents an object in the game world." alt="" coords="5,31,108,57"/>
-<area shape="rect" id="node2" href="$classCamera.html" title=" " alt="" coords="159,5,232,32"/>
-<area shape="rect" id="node3" href="$classUIObject.html" title="Represents a user interface object in the game engine." alt="" coords="156,56,235,83"/>
-<area shape="rect" id="node4" href="$classButton.html" title="Represents a clickable user interface element." alt="" coords="283,31,348,57"/>
-<area shape="rect" id="node5" href="$classText.html" title="Represents a piece of text in the user interface." alt="" coords="291,81,340,108"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,23,151,65"/>
+<area shape="rect" id="node2" href="$classGameObject.html" title="The GameObject class represents an object in the game world." alt="" coords="199,31,301,57"/>
+<area shape="rect" id="node3" href="$classCamera.html" title=" " alt="" coords="352,5,425,32"/>
+<area shape="rect" id="node4" href="$classUIObject.html" title="Represents a user interface object in the game engine." alt="" coords="349,56,428,83"/>
+<area shape="rect" id="node5" href="$classButton.html" title="Represents a clickable user interface element." alt="" coords="476,31,541,57"/>
+<area shape="rect" id="node6" href="$classText.html" title="Represents a piece of text in the user interface." alt="" coords="484,81,533,108"/>
 </map>

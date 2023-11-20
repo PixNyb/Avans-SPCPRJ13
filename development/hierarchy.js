@@ -18,15 +18,20 @@ var hierarchy =
     ] ],
     [ "DebugRenderer", "classDebugRenderer.html", null ],
     [ "DIContainer", "classDIContainer.html", null ],
-    [ "Engine", "classEngine.html", null ],
-    [ "Event", "classEvent.html", null ],
-    [ "GameObject", "classGameObject.html", [
-      [ "Camera", "classCamera.html", null ],
-      [ "UIObject", "classUIObject.html", [
-        [ "Button", "classButton.html", null ],
-        [ "Text", "classText.html", null ]
+    [ "std::enable_shared_from_this", null, [
+      [ "GameObject", "classGameObject.html", [
+        [ "Camera", "classCamera.html", null ],
+        [ "UIObject", "classUIObject.html", [
+          [ "Button", "classButton.html", null ],
+          [ "Text", "classText.html", null ]
+        ] ]
       ] ]
     ] ],
+    [ "Engine", "classEngine.html", null ],
+    [ "Event", "classEvent.html", null ],
+    [ "GameObjectList", "classGameObjectList.html", null ],
+    [ "GameObjectListIterator", "classGameObjectListIterator.html", null ],
+    [ "GameObjectNode", "classGameObjectNode.html", null ],
     [ "Geometry", "classGeometry.html", [
       [ "Circle", "classCircle.html", null ],
       [ "Line", "structLine.html", null ],

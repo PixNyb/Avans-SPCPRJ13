@@ -9,6 +9,7 @@ var classGameObject =
     [ "GetComponents", "classGameObject.html#a4096808c06891eb8160065ee34997878", null ],
     [ "GetLayer", "classGameObject.html#a3f5c50c6cf0f7c63ab75257f959f200e", null ],
     [ "GetName", "classGameObject.html#a986731c4dfb08336dbf0731e6514bad9", null ],
+    [ "GetObjectList", "classGameObject.html#a35cefcc5d483c1c89a4958ead55f8e6c", null ],
     [ "GetParent", "classGameObject.html#aa6788e19c6016d6de2e8374af223ab0b", null ],
     [ "GetTag", "classGameObject.html#a559f77edc1be0bc69ec7225d85f3ee12", null ],
     [ "GetTransform", "classGameObject.html#aa56a1cffac7ac7f336137bc8604f61f8", null ],
