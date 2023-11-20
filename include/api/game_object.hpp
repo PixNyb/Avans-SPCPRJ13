@@ -13,7 +13,6 @@
 #define AVANS_SPCPRJ13_GAMEOBJECT_H
 
 #include "component.hpp"
-#include "game_object_list.hpp"
 #include "transform.hpp"
 #include <memory>
 #include <string>
