@@ -40,13 +40,39 @@ enum class BodyType {
  */
 class RigidBody : public Component {
 public:
-    /**
+     /**
      * @brief Apply force to the rigid body.
      *
      * Adds a force to the rigid body, influencing its motion according to physics simulations.
      * @param forceDirection A Point representing the direction and magnitude of the force.
      */
     void AddForce(const Point& forceDirection);
+
+    /**
+     * Constructs a RigidBody
+     * @param mass is the mass the body has in kg's
+     * @param gravityScale is the amount of times the gravity should be applied on this body
+     * @param bodyType is the type of body defined in the BodyType enum
+     */
+    RigidBody(double mass, double gravityScale, BodyType bodyType);
+
+    /**
+     * Gets the mass of this body in kg's
+     * @return double
+     */
+    double GetMass() const;
+
+    /**
+     * Gets the gravityscale of this body
+     * @return double
+     */
+    double GetGravityScale() const;
+
+    /**
+     * Gets the body type of this body
+     * @return variant of enum BodyType
+     */
+    BodyType GetBodyType();
 
 private:
     double mass;        /**< The mass of the rigid body. */

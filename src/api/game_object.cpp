@@ -1,6 +1,7 @@
 /**
  * @file game_object.cpp
  * @author Roël Couwenberg (contact@roelc.me)
+ * @author Daan Groot (d.groot3@student.avans.nl)
  * @brief This file contains the GameObject class implementation.
  * @version 0.1
  * @date 2023-11-08
