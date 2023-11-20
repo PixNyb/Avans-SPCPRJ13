@@ -9,17 +9,19 @@
  *
  */
 
-#include <vector>
-#include <memory>
-#include <thread>
-#include "game_object.hpp"
-#include "rigidbody.hpp"
 #include "box_collider.hpp"
 #include "circle_collider.hpp"
+#include "game_object.hpp"
 #include "physics_manager.hpp"
+#include "rigidbody.hpp"
+#include "gtest/gtest.h"
+#include <iostream>
+#include <memory>
+#include <thread>
+#include <vector>
 
-int main() {
-    bool running = true;
+TEST(PhysicsTest, TestPhysics)
+{
     std::vector<std::shared_ptr<GameObject>> objects;
 
     // create box
@@ -63,16 +65,28 @@ int main() {
     PhysicsManager physicsManager;
     physicsManager.CreateWorld(objects);
     physicsManager.AddForce(obj1, 20, 0);
-    physicsManager.SetDebug(true);
 
+    bool running = true;
     int stepCounter = 0;
-    while (running) {
+    while (running)
+    {
         if (stepCounter == 500)
             running = false;
         physicsManager.Step();
         ++stepCounter;
     }
 
-    return 0;
+    EXPECT_EQ(obj->GetTransform().position.x, 600);
+    EXPECT_LT(obj->GetTransform().position.y, 1000);
+    EXPECT_GT(obj1->GetTransform().position.x, 800);
+    EXPECT_LT(obj1->GetTransform().position.x, 820);
+    EXPECT_LT(obj1->GetTransform().position.y, 1000);
+    EXPECT_EQ(obj2->GetTransform().position.x, 0);
+    EXPECT_EQ(obj2->GetTransform().position.y, 40);
 }
 
+int main(int argc, char **argv)
+{
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
