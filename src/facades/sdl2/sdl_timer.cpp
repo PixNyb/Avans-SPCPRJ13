@@ -11,47 +11,57 @@
 
 #include "sdl_timer.hpp"
 
-Timer::Timer() : startTicks(0), pausedTicks(0), paused(false), started(false) {
-}
+Timer::Timer() : startTicks(0), pausedTicks(0), paused(false), started(false) {}
 
-void Timer::start() {
+void Timer::Start()
+{
     started = true;
     paused = false;
     startTicks = SDL_GetTicks();
     pausedTicks = 0;
 }
 
-void Timer::stop() {
+void Timer::Stop()
+{
     started = false;
     paused = false;
     startTicks = 0;
     pausedTicks = 0;
 }
 
-void Timer::pause() {
+void Timer::Pause()
+{
     // Only pause if the timer is running and isn't already paused
-    if (started && !paused) {
+    if (started && !paused)
+    {
         paused = true;
         pausedTicks = SDL_GetTicks() - startTicks;
         startTicks = 0;
     }
 }
 
-void Timer::unpause() {
+void Timer::Unpause()
+{
     // Only unpause if the timer is paused
-    if (started && paused) {
+    if (started && paused)
+    {
         paused = false;
         startTicks = SDL_GetTicks() - pausedTicks;
         pausedTicks = 0;
     }
 }
 
-Uint32 Timer::getTicks() const {
+Uint32 Timer::GetTicks() const
+{
     Uint32 time = 0;
-    if (started) {
-        if (paused) {
+    if (started)
+    {
+        if (paused)
+        {
             time = pausedTicks;
-        } else {
+        }
+        else
+        {
             time = SDL_GetTicks() - startTicks;
         }
     }

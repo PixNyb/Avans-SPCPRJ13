@@ -25,14 +25,14 @@
  * Geometry defines a common interface for all geometric shapes. Each shape will have a
  * position defined by a Vector2D object and must implement its own drawing functionality.
  */
-class Geometry {
-protected:
+class Geometry
+{
+  protected:
     ShapeColor fillColor; ///< Color of the geometric shape.
-    double rotation = 0; ///< Rotation of the geometric shape.
+    double rotation = 0;  ///< Rotation of the geometric shape.
 
-public:
-
-    Geometry() : fillColor(Color::black()) {}
+  public:
+    Geometry() : fillColor(Color::Black()) {}
     /**
      * @brief Virtual destructor for Geometry.
      */
@@ -42,7 +42,7 @@ public:
      * Sets the color of the geometric shape.
      * @param c The color to set.
      */
-    void SetFillColor(const Color& c) { fillColor.SetColor(c); }
+    void SetFillColor(const Color &c) { fillColor.SetColor(c); }
 
     /**
      * Gets the color of the geometric shape.
@@ -78,7 +78,7 @@ public:
      * @param end The end of the area to check.
      * @return True if the shape is within the area, false otherwise.
      */
-    virtual bool IsWithinArea(const Vector2D& start, const Vector2D& end) = 0;
+    virtual bool IsWithinArea(const Vector2D &start, const Vector2D &end) = 0;
 };
 
-#endif //DEFUNBOBENGINE_GEOMETRY_HPP
+#endif // DEFUNBOBENGINE_GEOMETRY_HPP
