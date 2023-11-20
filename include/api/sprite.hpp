@@ -17,32 +17,33 @@
 #define AVANS_SPCPRJ13_SPRITE_H
 
 #include "behaviour_script.hpp"
-#include <string>
 #include "color.hpp"
+#include <string>
 
 /**
  * @class Sprite
  * @brief Represents a graphical sprite in the game engine.
  *
- * Sprite extends BehaviourScript to handle sprite-based graphics. It manages the visual representation
- * of game objects, including image, color, orientation, and rendering order.
+ * Sprite extends BehaviourScript to handle sprite-based graphics. It manages the visual
+ * representation of game objects, including image, color, orientation, and rendering order.
  */
-class Sprite : public BehaviourScript {
-private:
-    std::string sprite; /**< The sprite image file path or identifier. */
-    Color color; /**< The color tint applied to the sprite. */
-    bool flipX; /**< Flag to flip the sprite horizontally. */
-    bool flipY; /**< Flag to flip the sprite vertically. */
-    int sortingLayer; /**< The sorting layer for rendering order. */
-    int orderInLayer; /**< The specific order within the sorting layer. */
+class Sprite : public BehaviourScript
+{
 
+  private:
+    std::string sprite; ///< The sprite image file path or identifier.
+    Color color;        ///< The color tint applied to the sprite.
+    bool flipX;         ///< Flag to flip the sprite horizontally.
+    bool flipY;         ///< Flag to flip the sprite vertically.
+    int sortingLayer;   ///< The sorting layer for rendering order.
+    int orderInLayer;   ///< The specific order within the sorting layer.
 
-public:
+  public:
     /**
      * @brief Constructs a new Sprite object with default settings.
      */
-  Sprite();
-  // Getters, Setters, and other public member functions ...
+    Sprite();
+    // Getters, Setters, and other public member functions ...
 };
 
 #endif // AVANS_SPCPRJ13_SPRITE_H

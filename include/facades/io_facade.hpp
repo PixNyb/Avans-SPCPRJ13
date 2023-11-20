@@ -22,13 +22,15 @@
 #ifndef DEFUNBOBENGINE_IO_FACADE_HPP
 #define DEFUNBOBENGINE_IO_FACADE_HPP
 
-#include <vector>
-#include "event.hpp"
-#include "sdl_window.hpp"
 #include "circle.hpp"
+#include "event.hpp"
+#include "line.hpp"
 #include "rectangle.hpp"
+#include "sdl_window.hpp"
 #include "triangle.hpp"
+#include "core_constants.hpp"
 #include <SDL.h>
+#include <vector>
 
 /**
  * @class IOFacade
@@ -121,7 +123,20 @@ public:
      * @param circle A Circle object containing properties like position, radius, and color.
      * @param renderer A pointer to an SDL_Renderer to draw the circle.
      */
-    virtual void DrawShape(Circle circle, SDL_Renderer* renderer) = 0;
+    virtual void DrawShape(Circle circle) = 0;
+
+    /**
+     * @brief Draws a line on the screen.
+     * @param start The coordinates of the start point.
+     * @param end The coordinates of the end point.
+     */
+    virtual void DrawLine(Line line) = 0;
+
+    /**
+     * @brief Draws a set of lines on the screen.
+     * @param lines A vector of Line objects.
+     */
+    virtual void DrawLines(std::vector<Line> lines) = 0;
 
     /**
      * @brief Draws a rectangle on the screen.
@@ -133,7 +148,7 @@ public:
      * @param rectangle A Rectangle object containing properties like position, dimensions, and color.
      * @param renderer A pointer to an SDL_Renderer to draw the rectangle.
      */
-    virtual void DrawShape(Rectangle rectangle, SDL_Renderer* renderer) = 0;
+    virtual void DrawShape(Rectangle rectangle) = 0;
 
     /**
      * @brief Draws a Triangle shape on the rendering target.
@@ -145,8 +160,19 @@ public:
      * @param triangle A Triangle object containing the vertices and other properties of the shape.
      * @param renderer A pointer to an SDL_Renderer to draw the triangle.
      */
-    virtual void DrawShape(Triangle triangle, SDL_Renderer* renderer) = 0;
+    virtual void DrawShape(Triangle triangle) = 0;
 
+
+    /**
+     * @brief Draws a Text object on the rendering target.
+     *
+     * This virtual function is intended to be implemented in GraphicsFacade class to handle
+     * the rendering of Text objects. The method should use the properties of the
+     * Text (such as its content, font size, and color) to draw it on the provided SDL_Renderer.
+     *
+     * @param text A Text object containing the content and other properties of the text.
+     */
+    virtual void DrawText(const Text& text) = 0;
 };
 
 #endif //DEFUNBOBENGINE_IO_FACADE_HPP

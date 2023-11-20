@@ -15,6 +15,7 @@
 #ifndef DEFUNBOBENGINE_GEOMETRY_HPP
 #define DEFUNBOBENGINE_GEOMETRY_HPP
 
+#include "shape_color.hpp"
 #include "vector2d.hpp"
 
 /**
@@ -26,23 +27,58 @@
  */
 class Geometry {
 protected:
-    Vector2D position; ///< Position of the geometric shape in 2D space.
+    ShapeColor fillColor; ///< Color of the geometric shape.
+    double rotation = 0; ///< Rotation of the geometric shape.
 
 public:
-    /**
-     * @brief Constructs a Geometry object with a specified position.
-     * @param pos The position of the geometric shape.
-     */
-    Geometry(const Vector2D& pos) : position(pos) {}
 
+    Geometry() : fillColor(Color::black()) {}
     /**
      * @brief Virtual destructor for Geometry.
      */
     virtual ~Geometry() {}
 
-    Vector2D GetPosition() const  {
-        return position;
-    }
+    /**
+     * Sets the color of the geometric shape.
+     * @param c The color to set.
+     */
+    void SetFillColor(const Color& c) { fillColor.SetColor(c); }
+
+    /**
+     * Gets the color of the geometric shape.
+     * @return The color of the geometric shape.
+     */
+    [[nodiscard]] Color SetFillColor() const { return fillColor.GetColor(); }
+
+    /**
+     * Set the rotation of the geometric shape.
+     *
+     * @param r The clockwise rotation of the geometric shape.
+     */
+    void SetRotation(int r) { rotation = r; }
+
+    /**
+     * Get the rotation of the geometric shape.
+     *
+     * @return The clockwise rotation of the geometric shape.
+     */
+    [[nodiscard]] double GetRotation() const { return rotation; }
+
+    /**
+     * @brief Pure virtual method to get the area of a geometric shape.
+     *
+     * @return The area of the geometric shape.
+     */
+    virtual int GetArea() = 0;
+
+    /**
+     * @brief Pure virtual method to check if a geometric shape is within a given area.
+     *
+     * @param start The start of the area to check.
+     * @param end The end of the area to check.
+     * @return True if the shape is within the area, false otherwise.
+     */
+    virtual bool IsWithinArea(const Vector2D& start, const Vector2D& end) = 0;
 };
 
 #endif //DEFUNBOBENGINE_GEOMETRY_HPP

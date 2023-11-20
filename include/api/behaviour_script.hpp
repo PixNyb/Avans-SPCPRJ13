@@ -28,14 +28,19 @@
  * start, update, and collision triggers.
  */
 class BehaviourScript : public Component {
+protected:
+    bool hasStarted = false; ///< Flag indicating whether the behaviour script has started.
 public:
     /**
-     * @brief TODO
+     * @brief Initializes everything required for the behaviour script.
+     * @note This is required because not everything might be known while constructing a component
+     * @warning DO set the hasStarted variable to true in this function or call the parent function
      */
     virtual void OnStart();
 
     /**
-     * @brief TODO
+     * @brief Calls the update function of the behaviour script.
+     * @note It only calls active behaviour scripts.
      */
     virtual void OnUpdate();
 
@@ -56,6 +61,12 @@ public:
      *        collider attached to this object (2D physics only).
      */
     virtual void OnTriggerStay2D(const Collider& collider);
+
+    /**
+     * @brief Checks if the behaviour script has started.
+     * @return True if the behaviour script has started, false otherwise.
+     */
+    bool HasStarted() const;
 };
 
 #endif // AVANS_SPCPRJ13_BEHAVIOURSCRIPT_H

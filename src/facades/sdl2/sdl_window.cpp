@@ -60,6 +60,7 @@ void SDLWindow::CreateRenderer() {
 }
 
 void SDLWindow::ClearScreen() {
+    SDL_SetRenderDrawColor(SdlRenderer, 255, 255, 255, 255);
     SDL_RenderClear(SdlRenderer);
 }
 
