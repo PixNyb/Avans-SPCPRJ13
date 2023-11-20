@@ -15,6 +15,7 @@
 #include "circle_collider.hpp"
 #include "core/engine.hpp"
 #include "game_object.hpp"
+#include "game_object_list.hpp"
 #include "graphics_facade.hpp"
 #include "managers/scene_manager.hpp"
 #include "text.hpp"
@@ -36,32 +37,32 @@ void RenderManager::Render()
     auto scene = sceneManager->GetScene().lock();
     if(!scene) return;
 
-    // Prepare camera
-    auto camera = scene->GetCamera();
-
-    // Prepare layers
     auto layers = std::map<int, std::vector<std::weak_ptr<GameObject>>>();
 
-    for(auto& gameObject : scene->GetAllByType<GameObject>()){
-        auto gameObjectPtr = gameObject.lock();
-        if(!gameObjectPtr || !gameObjectPtr->IsActive()) continue;
+    for (auto& gameObjectPtr : scene->GetAllByType<GameObject>()) {
+        auto objectList = gameObjectPtr.lock()->GetObjectList();
 
-        int layer = gameObjectPtr->GetLayer();
-        if(layers.contains(layer)){
-            // Ensure the layer for the game object exists
-            layers.insert(std::make_pair(layer, std::vector<std::weak_ptr<GameObject>>()));
+        for (const auto& gameObjectNode : *objectList) {
+            auto currentGameObject = gameObjectNode->cur;
+
+            // Skip inactive game objects and their ancestors
+            if (!currentGameObject || !currentGameObject->IsActive()) {
+                break;
+            }
+
+            int layer = currentGameObject->GetLayer();
+            layers[layer].emplace_back(currentGameObject);
         }
-
-        // TODO: Check game objects with geometry for render occlusion
-
-        // Push game object onto layer
-        layers[layer].push_back(gameObject);
     }
 
     // Make sure we have a render point regardless of whether we have a camera (menu might not
     // always have a camera)
     Point renderPoint = Point(0, 0);
+
+    // Prepare camera
+    auto camera = scene->GetCamera();
     if(camera){
+        // Apply camera transform
         auto transform = camera->GetTransform();
         renderPoint.x = transform.position.x;
         renderPoint.y = transform.position.y;

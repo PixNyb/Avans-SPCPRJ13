@@ -10,10 +10,11 @@
  */
 
 #include "behaviour_script_manager.hpp"
-#include "core/engine.hpp"
-#include "managers/scene_manager.hpp"
-#include "game_object.hpp"
 #include "behaviour_script.hpp"
+#include "core/engine.hpp"
+#include "game_object.hpp"
+#include "game_object_list.hpp"
+#include "managers/scene_manager.hpp"
 
 BehaviourScriptManager::BehaviourScriptManager() = default;
 BehaviourScriptManager::~BehaviourScriptManager() = default;
@@ -26,20 +27,24 @@ void BehaviourScriptManager::Update()
     auto scene = sceneManager->GetScene().lock();
     if(!scene) return;
 
-    auto gameObjects = scene->GetAllByType<GameObject>();
-    for(auto& gameObject : gameObjects){
-        auto gameObjectPtr = gameObject.lock();
-        if(!gameObjectPtr) continue;
-        auto scripts = gameObjectPtr->GetComponents<BehaviourScript>();
+    auto sceneGameObjects = scene->GetAllByType<GameObject>();
+    for(auto& sceneGameObject : sceneGameObjects){
+        auto objectList = sceneGameObject.lock()->GetObjectList();
+        for (const auto&gameObjectNode : *objectList){
 
-        for(auto& script : scripts){
-            if(!script || !script->IsActive()) continue;
+            auto currentObject = gameObjectNode->cur;
+            // Skip inactive game objects
+            if(!currentObject || !currentObject->IsActive()) break;
 
-            if(!script->HasStarted())
-                script->OnStart();
+            auto scripts = currentObject->GetComponents<BehaviourScript>();
+            for(auto& script : scripts){
+                if(!script || !script->IsActive()) continue;
 
-            script->OnUpdate();
+                if(!script->HasStarted())
+                    script->OnStart();
+
+                script->OnUpdate();
+            }
         }
     }
-
 }
