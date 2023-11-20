@@ -93,7 +93,20 @@ $(document).ready(function(){initNavTree('md_USAGE.html',''); initResizable(); }
 <h1><a class="anchor" id="autotoc_md22"></a>
 Window aanmaken</h1>
 <p>Voor het aanmaken van een window moeten we eerst zorgen dat de <a class="el" href="classEngine.html">Engine</a> klasse is geintialiseerd, vanuit daar kunnen we de <a class="el" href="classGraphicsFacade.html" title="Manages graphics operations and interfaces with SDL for window management.">GraphicsFacade</a> aanroepen om een <a class="el" href="classWindow.html" title="Manages a game window through an abstract facade interface.">Window</a> aan te maken. Daarna moet je ook een <a class="el" href="classRender.html" title="Wrapper class for SDL_Renderer to provide rendering utilities.">Render</a> aanmaken waaraan content toegevoegd kan worden.</p>
-<p>TODO: Verder uitwerken als straks alles op zijn plek staat (woensdag) </p>
+<p>TODO: Verder uitwerken als straks alles op zijn plek staat (woensdag)</p>
+<h1><a class="anchor" id="autotoc_md23"></a>
+Physics Simulatie Gebruiken</h1>
+<p>De physics manager is voor de engine het aanspreekpunt om een wereld te starten, aan te passen en te beinvloeden. De physics manager heeft functies die elk hun doel omschrijven. Hiermee kun je bodies aanmaken, verwijderen, uit- en aanzetten en beinvloeden met krachten.</p>
+<div class="fragment"><div class="line">// Creates the world and populates it with the given gameobjects</div>
+<div class="line">void PhysicsManager::CreateWorld(std::vector&lt;std::shared_ptr&lt;GameObject&gt;&gt; gameObjects) {</div>
+<div class="line">    physicsFacade.PopulateWorld(std::move(gameObjects));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">// Simulates the world for 1 step</div>
+<div class="line">void PhysicsManager::Step() {</div>
+<div class="line">    physicsFacade.Step();</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>De CreateWorld functie roep je als eerste aan. Vervolgens kun je de simulatie starten met de Step() functie. Per aanroep van deze functie zet de wereld 1 stap en beweegt hij de objecten die hij bevat. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -46,6 +46,9 @@ var dir_2d52abcd54c181b91d630da402923092 =
     [ "point.hpp", "point_8hpp.html", [
       [ "Point", "structPoint.html", "structPoint" ]
     ] ],
+    [ "polygon_collider.hpp", "polygon__collider_8hpp.html", [
+      [ "PolygonCollider", "classPolygonCollider.html", "classPolygonCollider" ]
+    ] ],
     [ "rigidbody.hpp", "rigidbody_8hpp_source.html", null ],
     [ "scene.hpp", "scene_8hpp.html", [
       [ "Scene", "classScene.html", "classScene" ]

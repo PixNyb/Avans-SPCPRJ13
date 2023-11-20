@@ -50,7 +50,8 @@ var NAVTREE =
       [ "Documentatie", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md10", null ]
     ] ],
     [ "Hoe de Engine te gebruiken?", "md_USAGE.html", [
-      [ "Window aanmaken", "md_USAGE.html#autotoc_md22", null ]
+      [ "Window aanmaken", "md_USAGE.html#autotoc_md22", null ],
+      [ "Physics Simulatie Gebruiken", "md_USAGE.html#autotoc_md23", null ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -84,8 +85,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "animation__state_8cpp.html",
-"classSDLRender.html#a0b7ee3ec62fc11e406b4409be8be6e35",
-"md_DEVELOPMENT_GUIDELINES.html#autotoc_md1"
+"classRectangle.html#a9f7026bcacefa5e265586baccee5f4cd",
+"functions_func_w.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

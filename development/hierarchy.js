@@ -11,10 +11,12 @@ var hierarchy =
       ] ],
       [ "Collider", "classCollider.html", [
         [ "BoxCollider", "classBoxCollider.html", null ],
-        [ "CircleCollider", "classCircleCollider.html", null ]
+        [ "CircleCollider", "classCircleCollider.html", null ],
+        [ "PolygonCollider", "classPolygonCollider.html", null ]
       ] ],
       [ "RigidBody", "classRigidBody.html", null ]
     ] ],
+    [ "DebugRenderer", "classDebugRenderer.html", null ],
     [ "DIContainer", "classDIContainer.html", null ],
     [ "Engine", "classEngine.html", null ],
     [ "Event", "classEvent.html", null ],
@@ -40,6 +42,8 @@ var hierarchy =
       [ "SDL2InputHandler", "classSDL2InputHandler.html", null ]
     ] ],
     [ "PerformanceUtility", "classPerformanceUtility.html", null ],
+    [ "PhysicsFacade", "classPhysicsFacade.html", null ],
+    [ "PhysicsManager", "classPhysicsManager.html", null ],
     [ "Point", "structPoint.html", null ],
     [ "Render", "classRender.html", null ],
     [ "RenderManager", "classRenderManager.html", null ],

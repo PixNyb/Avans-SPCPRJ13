@@ -1,0 +1,18 @@
+<map id="include/project/managers/physics_manager.hpp" name="include/project/managers/physics_manager.hpp">
+<area shape="rect" id="node1" title="This file contains the PhysicsManager class definition." alt="" coords="723,5,909,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="681,319,743,345"/>
+<area shape="rect" id="node3" title=" " alt="" coords="779,319,856,345"/>
+<area shape="rect" id="node4" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="645,244,779,271"/>
+<area shape="rect" id="node9" href="$physics__facade_8hpp.html" title="This file contains the PhysicsFacade class definition." alt="" coords="298,95,449,121"/>
+<area shape="rect" id="node5" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="180,319,303,345"/>
+<area shape="rect" id="node6" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="435,319,549,345"/>
+<area shape="rect" id="node8" title=" " alt="" coords="97,319,156,345"/>
+<area shape="rect" id="node7" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="288,393,371,420"/>
+<area shape="rect" id="node10" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="98,169,195,196"/>
+<area shape="rect" id="node11" href="$debug__renderer_8hpp.html" title="This file contains the debugrendere class defenition." alt="" coords="411,169,562,196"/>
+<area shape="rect" id="node13" title=" " alt="" coords="315,244,434,271"/>
+<area shape="rect" id="node15" title=" " alt="" coords="240,244,291,271"/>
+<area shape="rect" id="node16" href="$rigidbody_8hpp_source.html" title=" " alt="" coords="5,244,115,271"/>
+<area shape="rect" id="node12" title=" " alt="" coords="457,244,516,271"/>
+<area shape="rect" id="node14" title=" " alt="" coords="540,244,620,271"/>
+</map>
