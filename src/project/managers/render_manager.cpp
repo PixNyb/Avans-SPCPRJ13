@@ -41,21 +41,17 @@ void RenderManager::Render()
 
     auto layers = std::map<int, std::vector<std::weak_ptr<GameObject>>>();
 
-    for (auto &gameObject : scene->GetAllByType<GameObject>())
+    for (auto &gameObjectPtr : scene->GetAllByType<GameObject>())
     {
-        auto gameObjectPtr = gameObject.lock();
-        if (!gameObjectPtr || !gameObjectPtr->IsActive())
-            continue;
+        auto objectList = gameObjectPtr.lock()->GetObjectList();
 
-        int layer = gameObjectPtr->GetLayer();
-        if (layers.contains(layer))
+        for (const auto &gameObjectNode : *objectList)
         {
-            // Ensure the layer for the game object exists
-            layers.insert(std::make_pair(layer, std::vector<std::weak_ptr<GameObject>>()));
-        }
+            auto currentGameObject = gameObjectNode->cur;
 
             // Skip inactive game objects and their ancestors
-            if (!currentGameObject || !currentGameObject->IsActive()) {
+            if (!currentGameObject || !currentGameObject->IsActive())
+            {
                 break;
             }
 
@@ -67,8 +63,12 @@ void RenderManager::Render()
     // Make sure we have a render point regardless of whether we have a camera (menu might not
     // always have a camera)
     Point renderPoint = Point(0, 0);
+
+    // Prepare camera
+    auto camera = scene->GetCamera();
     if (camera)
     {
+        // Apply camera transform
         auto transform = camera->GetTransform();
         renderPoint.x = transform.position.x;
         renderPoint.y = transform.position.y;
