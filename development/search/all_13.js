@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['vector2d_338',['Vector2D',['../classVector2D.html',1,'Vector2D'],['../classVector2D.html#a99cbcc8c511a0f07f57751e111126a34',1,'Vector2D::Vector2D()']]],
-  ['vector2d_2ehpp_339',['vector2d.hpp',['../vector2d_8hpp.html',1,'']]],
-  ['vertices_340',['Vertices',['../classPolygonCollider.html#aac171bda7a91159c88c68d332d052723',1,'PolygonCollider::Vertices(const std::vector&lt; Point &gt; &amp;vertices)'],['../classPolygonCollider.html#acb23a795bfc2d68ea79a46011491f762',1,'PolygonCollider::Vertices() const']]]
+  ['ui_5fobject_2ecpp_355',['ui_object.cpp',['../ui__object_8cpp.html',1,'']]],
+  ['ui_5fobject_2ehpp_356',['ui_object.hpp',['../ui__object_8hpp.html',1,'']]],
+  ['uiobject_357',['UIObject',['../classUIObject.html',1,'UIObject'],['../classUIObject.html#a593f3d292eb4d25e8a1c31a5f6d0ba46',1,'UIObject::UIObject()'],['../classUIObject.html#aeb148949bc54c00be61374bdfb14810f',1,'UIObject::UIObject(const std::string &amp;name, const std::string &amp;tag, int layer, float width, float height)']]],
+  ['unpause_358',['Unpause',['../classTimer.html#a18bae6d4516c122edd3489b7dccefa70',1,'Timer']]],
+  ['update_359',['Update',['../classAnimationState.html#ad0ff0ef23c02f9a6e91c5032e46d0aa0',1,'AnimationState::Update()'],['../classAnimator.html#a35688249383660ce5781ee81b00fa0c9',1,'Animator::Update()'],['../classComponent.html#a53ec66587fb3229c44cadac8a555001d',1,'Component::Update()'],['../classScene.html#a4f4e92c27d08a916de15f9b4ecb73b97',1,'Scene::Update()'],['../classInput.html#af80dcfde6dbfe39bf3bc0345c75595ce',1,'Input::Update()'],['../classBehaviourScriptManager.html#a6b8eb50721daaa8668c4f96d8f272b44',1,'BehaviourScriptManager::Update()'],['../classSceneManager.html#a2bb63a9c72fcbc5d25949f8e7c9df7d8',1,'SceneManager::Update()']]]
 ];

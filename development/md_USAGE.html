@@ -95,6 +95,77 @@ Window aanmaken</h1>
 <p>Voor het aanmaken van een window moeten we eerst zorgen dat de <a class="el" href="classEngine.html">Engine</a> klasse is geintialiseerd, vanuit daar kunnen we de <a class="el" href="classGraphicsFacade.html" title="Manages graphics operations and interfaces with SDL for window management.">GraphicsFacade</a> aanroepen om een <a class="el" href="classWindow.html" title="Manages a game window through an abstract facade interface.">Window</a> aan te maken. Daarna moet je ook een <a class="el" href="classRender.html" title="Wrapper class for SDL_Renderer to provide rendering utilities.">Render</a> aanmaken waaraan content toegevoegd kan worden.</p>
 <p>TODO: Verder uitwerken als straks alles op zijn plek staat (woensdag)</p>
 <h1><a class="anchor" id="autotoc_md23"></a>
+Level format</h1>
+<p>Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief. De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de <a class="el" href="classPrefabManager.html">PrefabManager</a>. Hier worden vervolgens name, tag, active, layer, transform en children nog bij gedefinieert. In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </p><div class="fragment"><div class="line">{</div>
+<div class="line">  &quot;objects&quot;: [</div>
+<div class="line">    {</div>
+<div class="line">      &quot;prefab&quot;: &quot;Character&quot;,</div>
+<div class="line">      &quot;name&quot;: &quot;Character1&quot;,</div>
+<div class="line">      &quot;tag&quot;: &quot;character&quot;,</div>
+<div class="line">      &quot;active&quot;: true,</div>
+<div class="line">      &quot;layer&quot;: 1,</div>
+<div class="line">      &quot;transform&quot;: {</div>
+<div class="line">        &quot;position&quot;: {</div>
+<div class="line">          &quot;x&quot;: 1,</div>
+<div class="line">          &quot;y&quot;: 1</div>
+<div class="line">        },</div>
+<div class="line">        &quot;rotation&quot;: 0.0,</div>
+<div class="line">        &quot;scale&quot;: 1.0</div>
+<div class="line">      },</div>
+<div class="line">      &quot;children&quot;: []</div>
+<div class="line">    },</div>
+<div class="line">    {</div>
+<div class="line">      &quot;prefab&quot;: &quot;Tree&quot;,</div>
+<div class="line">      &quot;name&quot;: &quot;Tree1&quot;,</div>
+<div class="line">      &quot;tag&quot;: &quot;tree&quot;,</div>
+<div class="line">      &quot;active&quot;: true,</div>
+<div class="line">      &quot;layer&quot;: 1,</div>
+<div class="line">      &quot;transform&quot;: {</div>
+<div class="line">        &quot;position&quot;: {</div>
+<div class="line">          &quot;x&quot;: 4,</div>
+<div class="line">          &quot;y&quot;: 1</div>
+<div class="line">        },</div>
+<div class="line">        &quot;rotation&quot;: 0.0,</div>
+<div class="line">        &quot;scale&quot;: 1.0</div>
+<div class="line">      },</div>
+<div class="line">      &quot;children&quot;: []</div>
+<div class="line">    },</div>
+<div class="line">    {</div>
+<div class="line">      &quot;prefab&quot;: &quot;Tree&quot;,</div>
+<div class="line">      &quot;name&quot;: &quot;Tree2&quot;,</div>
+<div class="line">      &quot;tag&quot;: &quot;tree&quot;,</div>
+<div class="line">      &quot;active&quot;: true,</div>
+<div class="line">      &quot;layer&quot;: 2,</div>
+<div class="line">      &quot;transform&quot;: {</div>
+<div class="line">        &quot;position&quot;: {</div>
+<div class="line">          &quot;x&quot;: 0,</div>
+<div class="line">          &quot;y&quot;: 6</div>
+<div class="line">        },</div>
+<div class="line">        &quot;rotation&quot;: 0.0,</div>
+<div class="line">        &quot;scale&quot;: 2.0</div>
+<div class="line">      },</div>
+<div class="line">      &quot;children&quot;: [</div>
+<div class="line">        {</div>
+<div class="line">          &quot;prefab&quot;: &quot;Tree&quot;,</div>
+<div class="line">          &quot;name&quot;: &quot;SubTree&quot;,</div>
+<div class="line">          &quot;tag&quot;: &quot;tree&quot;,</div>
+<div class="line">          &quot;active&quot;: true,</div>
+<div class="line">          &quot;layer&quot;: 3,</div>
+<div class="line">          &quot;transform&quot;: {</div>
+<div class="line">            &quot;position&quot;: {</div>
+<div class="line">              &quot;x&quot;: 2,</div>
+<div class="line">              &quot;y&quot;: 7</div>
+<div class="line">            },</div>
+<div class="line">            &quot;rotation&quot;: 0.4,</div>
+<div class="line">            &quot;scale&quot;: 1.0</div>
+<div class="line">          },</div>
+<div class="line">          &quot;children&quot;: []</div>
+<div class="line">        }</div>
+<div class="line">      ]</div>
+<div class="line">    }</div>
+<div class="line">  ]</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md24"></a>
 Physics Simulatie Gebruiken</h1>
 <p>De physics manager is voor de engine het aanspreekpunt om een wereld te starten, aan te passen en te beinvloeden. De physics manager heeft functies die elk hun doel omschrijven. Hiermee kun je bodies aanmaken, verwijderen, uit- en aanzetten en beinvloeden met krachten.</p>
 <div class="fragment"><div class="line">// Creates the world and populates it with the given gameobjects</div>

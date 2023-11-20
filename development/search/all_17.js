@@ -1,18 +1,5 @@
 var searchData=
 [
-  ['_7ecomponent_352',['~Component',['../classComponent.html#ad82d7393e339c1b19cc17a0d55b5674d',1,'Component']]],
-  ['_7eevent_353',['~Event',['../classEvent.html#ab864fd85c758006c42cd7a1b3369b483',1,'Event']]],
-  ['_7egameobject_354',['~GameObject',['../classGameObject.html#a67ae2fa6e7916c799700cd659975d8ea',1,'GameObject']]],
-  ['_7egeometry_355',['~Geometry',['../classGeometry.html#aedd2e92f79197c6f0671c5d14cf72578',1,'Geometry']]],
-  ['_7egraphicsfacade_356',['~GraphicsFacade',['../classGraphicsFacade.html#ad4b91729ff4081f43195fcec815ed5f6',1,'GraphicsFacade']]],
-  ['_7eikeylistener_357',['~IKeyListener',['../classIKeyListener.html#af7eefe126dbc69ca7493a9c15ad01eb2',1,'IKeyListener']]],
-  ['_7eimouselistener_358',['~IMouseListener',['../classIMouseListener.html#a7c5c6d4a6646608e6a640de7d2b2c8a4',1,'IMouseListener']]],
-  ['_7einput_359',['~Input',['../classInput.html#af2db35ba67c8a8ccd23bef6a482fc291',1,'Input']]],
-  ['_7eiofacade_360',['~IOFacade',['../classIOFacade.html#a92a836ecf11f55edf01dda59b0f4534f',1,'IOFacade']]],
-  ['_7erendermanager_361',['~RenderManager',['../classRenderManager.html#a221c4de19c04ad31cc1e729b9eb60c3b',1,'RenderManager']]],
-  ['_7esdlinit_362',['~SDLInit',['../classSDLInit.html#a1bbbdf87b2dc3949d42a276ccbc6e886',1,'SDLInit']]],
-  ['_7esdlsurface_363',['~SDLSurface',['../classSDLSurface.html#ad220d0db8e92aa664bf07c4d374b2d07',1,'SDLSurface']]],
-  ['_7esdltexture_364',['~SDLTexture',['../classSDLTexture.html#a8aebee812fa7e94b82e3b36d072828f3',1,'SDLTexture']]],
-  ['_7esdlwindow_365',['~SDLWindow',['../classSDLWindow.html#a7a0af0daec54970ff2262b67a6ece281',1,'SDLWindow']]],
-  ['_7ethread_366',['~Thread',['../classThread.html#a37d9edd3a1a776cbc27dedff949c9726',1,'Thread']]]
+  ['y_372',['y',['../structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8',1,'Point::y()'],['../classSDLRect.html#ac96c75c3b94ec788afca976a096140d0',1,'SDLRect::y()'],['../classVector2D.html#a85215519d3f71d0e6be7d636346f3b7d',1,'Vector2D::y()']]],
+  ['yellow_373',['Yellow',['../classColor.html#a40cb2f5f6aadc39f45154ff5ef6777ab',1,'Color']]]
 ];

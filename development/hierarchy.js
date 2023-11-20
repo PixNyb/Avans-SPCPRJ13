@@ -46,13 +46,20 @@ var hierarchy =
       [ "GraphicsFacade", "classGraphicsFacade.html", null ],
       [ "SDL2InputHandler", "classSDL2InputHandler.html", null ]
     ] ],
+    [ "ISceneFactory", "classISceneFactory.html", [
+      [ "LevelFactory", "classLevelFactory.html", null ]
+    ] ],
+    [ "JSONReader", "classJSONReader.html", null ],
     [ "PerformanceUtility", "classPerformanceUtility.html", null ],
     [ "PhysicsFacade", "classPhysicsFacade.html", null ],
     [ "PhysicsManager", "classPhysicsManager.html", null ],
     [ "Point", "structPoint.html", null ],
+    [ "PrefabManager", "classPrefabManager.html", null ],
     [ "Render", "classRender.html", null ],
     [ "RenderManager", "classRenderManager.html", null ],
-    [ "Scene", "classScene.html", null ],
+    [ "Scene", "classScene.html", [
+      [ "LevelScene", "classLevelScene.html", null ]
+    ] ],
     [ "SceneManager", "classSceneManager.html", null ],
     [ "SDLCircle", "classSDLCircle.html", null ],
     [ "SDLColorUtility", "classSDLColorUtility.html", null ],

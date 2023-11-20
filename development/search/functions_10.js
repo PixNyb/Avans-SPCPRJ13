@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['uiobject_706',['UIObject',['../classUIObject.html#a593f3d292eb4d25e8a1c31a5f6d0ba46',1,'UIObject::UIObject()'],['../classUIObject.html#aeb148949bc54c00be61374bdfb14810f',1,'UIObject::UIObject(const std::string &amp;name, const std::string &amp;tag, int layer, float width, float height)']]],
-  ['unpause_707',['Unpause',['../classTimer.html#a18bae6d4516c122edd3489b7dccefa70',1,'Timer']]],
-  ['update_708',['Update',['../classAnimationState.html#ad0ff0ef23c02f9a6e91c5032e46d0aa0',1,'AnimationState::Update()'],['../classAnimator.html#a35688249383660ce5781ee81b00fa0c9',1,'Animator::Update()'],['../classComponent.html#a53ec66587fb3229c44cadac8a555001d',1,'Component::Update()'],['../classScene.html#a4f4e92c27d08a916de15f9b4ecb73b97',1,'Scene::Update()'],['../classInput.html#af80dcfde6dbfe39bf3bc0345c75595ce',1,'Input::Update()'],['../classBehaviourScriptManager.html#a6b8eb50721daaa8668c4f96d8f272b44',1,'BehaviourScriptManager::Update()'],['../classSceneManager.html#a2bb63a9c72fcbc5d25949f8e7c9df7d8',1,'SceneManager::Update()']]]
+  ['text_750',['Text',['../classText.html#ab3e26143fccc52699bcc5149cae852bc',1,'Text::Text()'],['../classText.html#a5df2162d782edf497ce8e44271a71b19',1,'Text::Text(const std::string &amp;name, const std::string &amp;tag, int layer, float width, float height)']]],
+  ['timer_751',['Timer',['../classTimer.html#a5f16e8da27d2a5a5242dead46de05d97',1,'Timer']]],
+  ['timescale_752',['TimeScale',['../classTime.html#a07ad3186e0359655b3b4c5f63c0345a9',1,'Time::TimeScale()'],['../classTime.html#af403a61c9201ba86f9a12e1a4978f291',1,'Time::TimeScale(double newTimeScale)']]],
+  ['tosdlrect_753',['toSDLRect',['../classSDLRect.html#a65c861525ff2aaa206ba1be58e7819e0',1,'SDLRect']]],
+  ['transform_754',['Transform',['../structTransform.html#aa08ca4266efabc768973cdeea51945ab',1,'Transform::Transform()'],['../structTransform.html#a4d81f040002266fa6a2bd08c298770e4',1,'Transform::Transform(const Point &amp;position, double rotation, double scale)']]],
+  ['triangle_755',['Triangle',['../classTriangle.html#a8a0618cd91383d2736c0698ff2672739',1,'Triangle']]]
 ];

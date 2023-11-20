@@ -1,0 +1,20 @@
+<map id="src/project/utility/factories/level_factory.cpp" name="src/project/utility/factories/level_factory.cpp">
+<area shape="rect" id="node1" title="Implementation of the level factory." alt="" coords="79,5,277,47"/>
+<area shape="rect" id="node2" href="$level__factory_8hpp.html" title="Creates levels." alt="" coords="193,95,326,121"/>
+<area shape="rect" id="node18" href="$level__scene_8hpp.html" title="Defines the LevelScene class for creating a level." alt="" coords="5,169,132,196"/>
+<area shape="rect" id="node3" href="$iscene__factory_8hpp.html" title="Abstract factory for creating scenes." alt="" coords="217,169,360,196"/>
+<area shape="rect" id="node9" title=" " alt="" coords="182,468,259,495"/>
+<area shape="rect" id="node16" href="$prefab__manager_8hpp.html" title="Manages prefabs." alt="" coords="597,319,753,345"/>
+<area shape="rect" id="node4" href="$scene_8hpp.html" title="Defines the Scene class for managing and rendering game scenes in the game engine...." alt="" coords="245,244,333,271"/>
+<area shape="rect" id="node15" title=" " alt="" coords="357,244,503,271"/>
+<area shape="rect" id="node5" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="500,393,635,420"/>
+<area shape="rect" id="node11" title=" " alt="" coords="328,468,391,495"/>
+<area shape="rect" id="node12" href="$camera_8hpp.html" title="Defines the Camera class for managing camera views in a game engine. The Camera class handles the ren..." alt="" coords="394,319,493,345"/>
+<area shape="rect" id="node14" title=" " alt="" coords="259,319,319,345"/>
+<area shape="rect" id="node6" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="563,468,686,495"/>
+<area shape="rect" id="node7" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="425,468,539,495"/>
+<area shape="rect" id="node10" title=" " alt="" coords="715,468,774,495"/>
+<area shape="rect" id="node8" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="441,543,523,569"/>
+<area shape="rect" id="node13" href="$color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="395,393,476,420"/>
+<area shape="rect" id="node17" title=" " alt="" coords="659,393,710,420"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="include/project/utility/factories/iscene_factory.hpp" name="include/project/utility/factories/iscene_factory.hpp">
+<area shape="rect" id="node1" title="Abstract factory for creating scenes." alt="" coords="332,5,540,47"/>
+<area shape="rect" id="node2" href="$scene_8hpp.html" title="Defines the Scene class for managing and rendering game scenes in the game engine...." alt="" coords="321,95,409,121"/>
+<area shape="rect" id="node13" title=" " alt="" coords="433,95,580,121"/>
+<area shape="rect" id="node3" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="183,244,318,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="5,319,83,345"/>
+<area shape="rect" id="node9" title=" " alt="" coords="475,319,538,345"/>
+<area shape="rect" id="node10" href="$camera_8hpp.html" title="Defines the Camera class for managing camera views in a game engine. The Camera class handles the ren..." alt="" coords="316,169,415,196"/>
+<area shape="rect" id="node12" title=" " alt="" coords="499,169,559,196"/>
+<area shape="rect" id="node4" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="189,319,312,345"/>
+<area shape="rect" id="node5" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="336,319,451,345"/>
+<area shape="rect" id="node8" title=" " alt="" coords="107,319,165,345"/>
+<area shape="rect" id="node6" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="352,393,435,420"/>
+<area shape="rect" id="node11" href="$color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="342,244,423,271"/>
+</map>

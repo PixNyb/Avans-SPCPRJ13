@@ -1,0 +1,18 @@
+<map id="include/project/utility/factories/level_factory.hpp" name="include/project/utility/factories/level_factory.hpp">
+<area shape="rect" id="node1" title="Creates levels." alt="" coords="87,5,286,47"/>
+<area shape="rect" id="node2" href="$iscene__factory_8hpp.html" title="Abstract factory for creating scenes." alt="" coords="115,95,258,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="13,393,91,420"/>
+<area shape="rect" id="node15" href="$prefab__manager_8hpp.html" title="Manages prefabs." alt="" coords="403,244,559,271"/>
+<area shape="rect" id="node3" href="$scene_8hpp.html" title="Defines the Scene class for managing and rendering game scenes in the game engine...." alt="" coords="213,169,301,196"/>
+<area shape="rect" id="node14" title=" " alt="" coords="43,169,189,196"/>
+<area shape="rect" id="node4" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="266,319,401,345"/>
+<area shape="rect" id="node10" title=" " alt="" coords="115,393,178,420"/>
+<area shape="rect" id="node11" href="$camera_8hpp.html" title="Defines the Camera class for managing camera views in a game engine. The Camera class handles the ren..." alt="" coords="144,244,243,271"/>
+<area shape="rect" id="node13" title=" " alt="" coords="267,244,327,271"/>
+<area shape="rect" id="node5" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="341,393,464,420"/>
+<area shape="rect" id="node6" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="203,393,317,420"/>
+<area shape="rect" id="node9" title=" " alt="" coords="488,393,547,420"/>
+<area shape="rect" id="node7" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="219,468,301,495"/>
+<area shape="rect" id="node12" href="$color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="153,319,234,345"/>
+<area shape="rect" id="node16" title=" " alt="" coords="429,319,480,345"/>
+</map>

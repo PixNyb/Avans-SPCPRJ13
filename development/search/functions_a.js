@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['magenta_624',['Magenta',['../classColor.html#acf86fbf11116a0d956b52b8e8762b285',1,'Color']]],
-  ['makebody_625',['MakeBody',['../classPhysicsFacade.html#a947492ef0668e4d01de02986d7a13b31',1,'PhysicsFacade']]]
+  ['levelfactory_666',['LevelFactory',['../classLevelFactory.html#a977859a72107f9b9f778ca8488e66aa9',1,'LevelFactory']]],
+  ['log_667',['Log',['../namespaceDebug.html#a1c69b0423a8f8161fd8c6c203a77aeab',1,'Debug']]],
+  ['logerror_668',['LogError',['../namespaceDebug.html#aa6bd25ff0b91cd3c28a0db6f9b33e10f',1,'Debug']]],
+  ['logwarning_669',['LogWarning',['../namespaceDebug.html#a8cbee46d3f3d0d7154a1976b74c13c95',1,'Debug']]]
 ];

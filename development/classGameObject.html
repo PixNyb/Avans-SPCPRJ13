@@ -135,6 +135,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae7855de528883d9864e90f727cb57c90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#ae7855de528883d9864e90f727cb57c90">GameObject</a> (const std::string &amp;<a class="el" href="classGameObject.html#af542b33c8de269343e22c5629e6b66c0">name</a>, const <a class="el" href="structTransform.html">Transform</a> &amp;<a class="el" href="classGameObject.html#ad2de7705e8d1d7b5d0014448dd13f99a">transform</a>)</td></tr>
 <tr class="memdesc:ae7855de528883d9864e90f727cb57c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> that sets the name and transform.  <a href="classGameObject.html#ae7855de528883d9864e90f727cb57c90">More...</a><br /></td></tr>
 <tr class="separator:ae7855de528883d9864e90f727cb57c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13374d070cfe6a1459539d54c671eba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#ab13374d070cfe6a1459539d54c671eba">GameObject</a> (const <a class="el" href="classGameObject.html">GameObject</a> &amp;other)</td></tr>
+<tr class="memdesc:ab13374d070cfe6a1459539d54c671eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor that creates a deep copy of the provided <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>.  <a href="classGameObject.html#ab13374d070cfe6a1459539d54c671eba">More...</a><br /></td></tr>
+<tr class="separator:ab13374d070cfe6a1459539d54c671eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0973a6654325520aa4abd99e06f135f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGameObject.html">GameObject</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#ab0973a6654325520aa4abd99e06f135f">operator=</a> (const <a class="el" href="classGameObject.html">GameObject</a> &amp;other)</td></tr>
+<tr class="memdesc:ab0973a6654325520aa4abd99e06f135f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator that creates a deep copy of the provided <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>.  <a href="classGameObject.html#ab0973a6654325520aa4abd99e06f135f">More...</a><br /></td></tr>
+<tr class="separator:ab0973a6654325520aa4abd99e06f135f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a229d57eb3dbba228d55c51f403d89a56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a229d57eb3dbba228d55c51f403d89a56">GameObject</a> (<a class="el" href="classGameObject.html">GameObject</a> &amp;&amp;other) noexcept=delete</td></tr>
+<tr class="memdesc:a229d57eb3dbba228d55c51f403d89a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor which could be used to move a <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>, this functionality is currently disabled.  <a href="classGameObject.html#a229d57eb3dbba228d55c51f403d89a56">More...</a><br /></td></tr>
+<tr class="separator:a229d57eb3dbba228d55c51f403d89a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe1d5bfb975be0ca3062cfcee08646a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGameObject.html">GameObject</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#afe1d5bfb975be0ca3062cfcee08646a0">operator=</a> (<a class="el" href="classGameObject.html">GameObject</a> &amp;&amp;other) noexcept=delete</td></tr>
+<tr class="memdesc:afe1d5bfb975be0ca3062cfcee08646a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator which could be used to move a <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>, this functionality is currently disabled.  <a href="classGameObject.html#afe1d5bfb975be0ca3062cfcee08646a0">More...</a><br /></td></tr>
+<tr class="separator:afe1d5bfb975be0ca3062cfcee08646a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67ae2fa6e7916c799700cd659975d8ea"><td class="memItemLeft" align="right" valign="top"><a id="a67ae2fa6e7916c799700cd659975d8ea"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a67ae2fa6e7916c799700cd659975d8ea">~GameObject</a> ()=default</td></tr>
 <tr class="memdesc:a67ae2fa6e7916c799700cd659975d8ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. <br /></td></tr>
@@ -232,7 +244,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>It contains a name, a list of components, an active flag, a tag, and a layer. GameObjects can be added to the game world and can have their components updated and rendered. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1e50d4cace9d1d2c12bfd4f73f43d089"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e50d4cace9d1d2c12bfd4f73f43d089">&#9670;&nbsp;</a></span>GameObject() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e50d4cace9d1d2c12bfd4f73f43d089">&#9670;&nbsp;</a></span>GameObject() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -266,7 +278,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </div>
 </div>
 <a id="ae7855de528883d9864e90f727cb57c90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7855de528883d9864e90f727cb57c90">&#9670;&nbsp;</a></span>GameObject() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7855de528883d9864e90f727cb57c90">&#9670;&nbsp;</a></span>GameObject() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,6 +308,66 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </td></tr>
     <tr><td class="paramname">transform</td><td>The transform of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab13374d070cfe6a1459539d54c671eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab13374d070cfe6a1459539d54c671eba">&#9670;&nbsp;</a></span>GameObject() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject::GameObject </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGameObject.html">GameObject</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy constructor that creates a deep copy of the provided <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> that is to be copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a229d57eb3dbba228d55c51f403d89a56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a229d57eb3dbba228d55c51f403d89a56">&#9670;&nbsp;</a></span>GameObject() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject::GameObject </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGameObject.html">GameObject</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move constructor which could be used to move a <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>, this functionality is currently disabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> that is to be moved. </td></tr>
   </table>
   </dd>
 </dl>
@@ -586,6 +658,68 @@ template&lt;class T &gt; </div>
 
 <p>Check if the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> is active itself. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> is active itself, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ab0973a6654325520aa4abd99e06f135f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0973a6654325520aa4abd99e06f135f">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGameObject.html">GameObject</a> &amp; GameObject::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGameObject.html">GameObject</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy assignment operator that creates a deep copy of the provided <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> that is to be copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new copy of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </dd></dl>
+
+</div>
+</div>
+<a id="afe1d5bfb975be0ca3062cfcee08646a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1d5bfb975be0ca3062cfcee08646a0">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGameObject.html">GameObject</a>&amp; GameObject::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGameObject.html">GameObject</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move assignment operator which could be used to move a <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>, this functionality is currently disabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> that is to be moved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> that it was moved to. </dd></dl>
 
 </div>
 </div>

@@ -1,13 +1,19 @@
 var searchData=
 [
-  ['pause_641',['Pause',['../classAudioSource.html#a70732968279954b9e56cb3d51d508b50',1,'AudioSource::Pause()'],['../classThread.html#a9d22f28bef2580dace692bb52f1df2a8',1,'Thread::Pause()'],['../classTimer.html#a9b8c57bf9675da635a82d68d9b4d05e5',1,'Timer::Pause()']]],
-  ['play_642',['Play',['../classAudioSource.html#afc2ea09b57477c34083d937f50e83166',1,'AudioSource']]],
-  ['point_643',['Point',['../structPoint.html#a78b55e8d5466bb8c2cf60fa55f2562ff',1,'Point']]],
-  ['pollevents_644',['pollEvents',['../classSDL2InputHandler.html#abcb8634234b18640a784aaeafbff18ab',1,'SDL2InputHandler']]],
-  ['pollevents_645',['PollEvents',['../classGraphicsFacade.html#abda789469d7b66d9013f8352a93d3877',1,'GraphicsFacade::PollEvents()'],['../classIOFacade.html#ae83138d361fe83705d6099eaa2bc6595',1,'IOFacade::PollEvents()']]],
-  ['polygon_646',['Polygon',['../classPolygon.html#a5c606b03157c7ca6a8d1ee3a70e45b22',1,'Polygon']]],
-  ['polygoncollider_647',['PolygonCollider',['../classPolygonCollider.html#afa14f978d2e2a25b329dac2e0ee1d3c8',1,'PolygonCollider']]],
-  ['populateworld_648',['PopulateWorld',['../classPhysicsFacade.html#a4a8cf544a84dde1e9eceb5aba4209b43',1,'PhysicsFacade']]],
-  ['present_649',['Present',['../classSDLRender.html#a5d507e73430bc5f1e786bb1cdc55fd05',1,'SDLRender']]],
-  ['presentscreen_650',['PresentScreen',['../classGraphicsFacade.html#ab1361534af676ff41f136d5b4eb5d38e',1,'GraphicsFacade::PresentScreen()'],['../classIOFacade.html#a427010f0cd482f33f528c7731cb23f43',1,'IOFacade::PresentScreen()'],['../classSDLWindow.html#a99de7a60d60ab2639435304193118670',1,'SDLWindow::PresentScreen()']]]
+  ['onclick_672',['OnClick',['../classButton.html#ae31adb0f8429e0c6dbf4dc38b7ce484d',1,'Button']]],
+  ['onkeypressed_673',['OnKeyPressed',['../classIKeyListener.html#a3f9fc9fb7be9d621bc7f496a0ec81968',1,'IKeyListener']]],
+  ['onkeyreleased_674',['OnKeyReleased',['../classIKeyListener.html#aa59c51d6c3b9372d038f97c00c4f45ee',1,'IKeyListener']]],
+  ['onmouseclicked_675',['OnMouseClicked',['../classIMouseListener.html#a93715198ff969b5ced894b11177c7445',1,'IMouseListener']]],
+  ['onmousemoved_676',['OnMouseMoved',['../classIMouseListener.html#a31bea49f2143ecd1931273a74cfd5eba',1,'IMouseListener']]],
+  ['onmousepressed_677',['OnMousePressed',['../classIMouseListener.html#afcb033c0cce2ea238c4a76f07f1ffc79',1,'IMouseListener']]],
+  ['onmousereleased_678',['OnMouseReleased',['../classIMouseListener.html#af72b6d9a955e5768b20845486de539b5',1,'IMouseListener']]],
+  ['onstart_679',['OnStart',['../classBehaviourScript.html#a80bffa3fec52a1131a1fbdc11417540b',1,'BehaviourScript']]],
+  ['ontriggerenter2d_680',['OnTriggerEnter2D',['../classBehaviourScript.html#a3979d4d8de424b94121af67fbeafa888',1,'BehaviourScript']]],
+  ['ontriggerexit2d_681',['OnTriggerExit2D',['../classBehaviourScript.html#a1874a74dfe35d4da4f4a0df9679142b6',1,'BehaviourScript']]],
+  ['ontriggerstay2d_682',['OnTriggerStay2D',['../classBehaviourScript.html#afa3948dcf4348944f9e06cb824c3f23c',1,'BehaviourScript']]],
+  ['onupdate_683',['OnUpdate',['../classBehaviourScript.html#a23e6fc57ffe64b760dfb801d10f634ff',1,'BehaviourScript']]],
+  ['operator_2b_684',['operator+',['../structPoint.html#a8bc39ec95c27d83d84e1df3fd8124fa2',1,'Point::operator+()'],['../structTransform.html#af54121ba06c77f98fa3ea1af90062106',1,'Transform::operator+()']]],
+  ['operator_2d_685',['operator-',['../structPoint.html#a17b65599126120074e6295ddad1ca906',1,'Point::operator-()'],['../structTransform.html#ad73a521adb133336e5ec9dbcb9720825',1,'Transform::operator-()']]],
+  ['operator_3d_686',['operator=',['../classGameObject.html#ab0973a6654325520aa4abd99e06f135f',1,'GameObject::operator=(const GameObject &amp;other)'],['../classGameObject.html#afe1d5bfb975be0ca3062cfcee08646a0',1,'GameObject::operator=(GameObject &amp;&amp;other) noexcept=delete']]],
+  ['origin_687',['Origin',['../classGameObjectList.html#a14b0758b194a1ad0ede9ad020f0cbb5b',1,'GameObjectList']]]
 ];
