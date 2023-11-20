@@ -96,25 +96,24 @@ $(document).ready(function(){initNavTree('sdl__texture_8hpp_source.html',''); in
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classSDLTexture.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSDLTexture.html">SDLTexture</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    SDL_Texture* texture;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classSDLTexture.html#a81be78a7c4ac048d0bb4e7e13ae6edd2">SDLTexture</a>(SDL_Renderer* renderer, <span class="keyword">const</span> std::string&amp; filePath);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classSDLTexture.html#a8aebee812fa7e94b82e3b36d072828f3">   48</a></span>&#160;    <a class="code" href="classSDLTexture.html#a8aebee812fa7e94b82e3b36d072828f3">~SDLTexture</a>() {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        SDL_DestroyTexture(texture);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    SDL_Texture* <a class="code" href="classSDLTexture.html#a0324b3e115398a3b7fe4e55b36c06cc4">getSDLTexture</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_SDL_TEXTURE_HPP</span></div>
-<div class="ttc" id="aclassSDLTexture_html"><div class="ttname"><a href="classSDLTexture.html">SDLTexture</a></div><div class="ttdoc">Manages an SDL_Texture loaded from a file.</div><div class="ttdef"><b>Definition:</b> sdl_texture.hpp:33</div></div>
-<div class="ttc" id="aclassSDLTexture_html_a0324b3e115398a3b7fe4e55b36c06cc4"><div class="ttname"><a href="classSDLTexture.html#a0324b3e115398a3b7fe4e55b36c06cc4">SDLTexture::getSDLTexture</a></div><div class="ttdeci">SDL_Texture * getSDLTexture() const</div><div class="ttdoc">Retrieves the underlying SDL_Texture pointer.</div><div class="ttdef"><b>Definition:</b> sdl_texture.cpp:21</div></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classSDLTexture.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSDLTexture.html">SDLTexture</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    SDL_Texture *texture;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classSDLTexture.html#a81be78a7c4ac048d0bb4e7e13ae6edd2">SDLTexture</a>(SDL_Renderer *renderer, <span class="keyword">const</span> std::string &amp;filePath);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classSDLTexture.html#a8aebee812fa7e94b82e3b36d072828f3">   49</a></span>&#160;    <a class="code" href="classSDLTexture.html#a8aebee812fa7e94b82e3b36d072828f3">~SDLTexture</a>() { SDL_DestroyTexture(texture); };</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    SDL_Texture *<a class="code" href="classSDLTexture.html#ad1e571177eaf3c42816b144e50f08f9d">GetSDLTexture</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_SDL_TEXTURE_HPP</span></div>
+<div class="ttc" id="aclassSDLTexture_html"><div class="ttname"><a href="classSDLTexture.html">SDLTexture</a></div><div class="ttdoc">Manages an SDL_Texture loaded from a file.</div><div class="ttdef"><b>Definition:</b> sdl_texture.hpp:34</div></div>
 <div class="ttc" id="aclassSDLTexture_html_a81be78a7c4ac048d0bb4e7e13ae6edd2"><div class="ttname"><a href="classSDLTexture.html#a81be78a7c4ac048d0bb4e7e13ae6edd2">SDLTexture::SDLTexture</a></div><div class="ttdeci">SDLTexture(SDL_Renderer *renderer, const std::string &amp;filePath)</div><div class="ttdoc">Constructs an SDLTexture by loading from the specified file path.</div><div class="ttdef"><b>Definition:</b> sdl_texture.cpp:15</div></div>
-<div class="ttc" id="aclassSDLTexture_html_a8aebee812fa7e94b82e3b36d072828f3"><div class="ttname"><a href="classSDLTexture.html#a8aebee812fa7e94b82e3b36d072828f3">SDLTexture::~SDLTexture</a></div><div class="ttdeci">~SDLTexture()</div><div class="ttdoc">Destroys the SDLTexture, freeing the managed SDL_Texture resource.</div><div class="ttdef"><b>Definition:</b> sdl_texture.hpp:48</div></div>
+<div class="ttc" id="aclassSDLTexture_html_a8aebee812fa7e94b82e3b36d072828f3"><div class="ttname"><a href="classSDLTexture.html#a8aebee812fa7e94b82e3b36d072828f3">SDLTexture::~SDLTexture</a></div><div class="ttdeci">~SDLTexture()</div><div class="ttdoc">Destroys the SDLTexture, freeing the managed SDL_Texture resource.</div><div class="ttdef"><b>Definition:</b> sdl_texture.hpp:49</div></div>
+<div class="ttc" id="aclassSDLTexture_html_ad1e571177eaf3c42816b144e50f08f9d"><div class="ttname"><a href="classSDLTexture.html#ad1e571177eaf3c42816b144e50f08f9d">SDLTexture::GetSDLTexture</a></div><div class="ttdeci">SDL_Texture * GetSDLTexture() const</div><div class="ttdoc">Retrieves the underlying SDL_Texture pointer.</div><div class="ttdef"><b>Definition:</b> sdl_texture.cpp:22</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

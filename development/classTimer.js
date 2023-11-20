@@ -1,9 +1,9 @@
 var classTimer =
 [
     [ "Timer", "classTimer.html#a5f16e8da27d2a5a5242dead46de05d97", null ],
-    [ "getTicks", "classTimer.html#a31069f8a9597ff7cea5899b30d2e7f7a", null ],
-    [ "pause", "classTimer.html#a0289effad7b573c508bc27e405900a23", null ],
-    [ "start", "classTimer.html#a3a8b5272198d029779dc9302a54305a8", null ],
-    [ "stop", "classTimer.html#a63f0eb44b27402196590a03781515dba", null ],
-    [ "unpause", "classTimer.html#aa4dd50d7ed48ac73efed2950749d35d6", null ]
+    [ "GetTicks", "classTimer.html#ad2c1eb5143ae3cc17ec55265b5e9982d", null ],
+    [ "Pause", "classTimer.html#a9b8c57bf9675da635a82d68d9b4d05e5", null ],
+    [ "Start", "classTimer.html#a4e607b129b392c11adddd9641a320436", null ],
+    [ "Stop", "classTimer.html#a6379e797f968aaee6ac3bb12dc6b81c5", null ],
+    [ "Unpause", "classTimer.html#a18bae6d4516c122edd3489b7dccefa70", null ]
 ];

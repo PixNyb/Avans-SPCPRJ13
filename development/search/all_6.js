@@ -42,17 +42,17 @@ var searchData=
   ['getscene_135',['GetScene',['../classSceneManager.html#a7a6e586528ef56626b6e89452afd7b80',1,'SceneManager']]],
   ['getsdlcolor_136',['GetSDLColor',['../classSDLColorUtility.html#a89f56fa081b6cf276106c1cbc687b3ca',1,'SDLColorUtility']]],
   ['getsdlsurface_137',['getSDLSurface',['../classSDLSurface.html#a6a60509888b3f009f18d6878ec8c01bf',1,'SDLSurface']]],
-  ['getsdltexture_138',['getSDLTexture',['../classSDLTexture.html#a0324b3e115398a3b7fe4e55b36c06cc4',1,'SDLTexture']]],
+  ['getsdltexture_138',['GetSDLTexture',['../classSDLTexture.html#ad1e571177eaf3c42816b144e50f08f9d',1,'SDLTexture']]],
   ['getsdlwindow_139',['GetSDLWindow',['../classSDLWindow.html#a4ec4d7d979c3b0ae88055a171ca2e3e2',1,'SDLWindow']]],
   ['gettag_140',['GetTag',['../classGameObject.html#a559f77edc1be0bc69ec7225d85f3ee12',1,'GameObject']]],
   ['gettext_141',['GetText',['../classText.html#a8003413af57b0e8fd5a143f2cfb5af9f',1,'Text']]],
   ['gettextcolor_142',['GetTextColor',['../classText.html#ac0a93525b5ec069bfe236f724fb57989',1,'Text']]],
-  ['getticks_143',['getTicks',['../classTimer.html#a31069f8a9597ff7cea5899b30d2e7f7a',1,'Timer']]],
+  ['getticks_143',['GetTicks',['../classTimer.html#ad2c1eb5143ae3cc17ec55265b5e9982d',1,'Timer']]],
   ['gettotaltime_144',['GetTotalTime',['../classTime.html#a5cecf47408221c22b81942d77cdd9e7f',1,'Time']]],
   ['gettransform_145',['GetTransform',['../classGameObject.html#aa56a1cffac7ac7f336137bc8604f61f8',1,'GameObject']]],
   ['getwidth_146',['GetWidth',['../classUIObject.html#a478cb2cf3859291ede378b09c5e279d8',1,'UIObject']]],
   ['graphics_5ffacade_2ecpp_147',['graphics_facade.cpp',['../graphics__facade_8cpp.html',1,'']]],
   ['graphics_5ffacade_2ehpp_148',['graphics_facade.hpp',['../graphics__facade_8hpp.html',1,'']]],
   ['graphicsfacade_149',['GraphicsFacade',['../classGraphicsFacade.html',1,'GraphicsFacade'],['../classGraphicsFacade.html#a4417e412a682712ac912ead41852c3f5',1,'GraphicsFacade::GraphicsFacade()']]],
-  ['green_150',['green',['../classColor.html#afe54f27029bd479c049dcac05d11be53',1,'Color']]]
+  ['green_150',['Green',['../classColor.html#af63920f9b1ae0aa657ba58bd90dee806',1,'Color']]]
 ];

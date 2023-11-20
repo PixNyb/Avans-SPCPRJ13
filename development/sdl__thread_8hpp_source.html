@@ -97,29 +97,30 @@ $(document).ready(function(){initNavTree('sdl__thread_8hpp_source.html',''); ini
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classThread.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classThread.html">Thread</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    SDL_Thread* thread;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::string threadName;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> threadFunction(<span class="keywordtype">void</span>* data);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classThread.html">Thread</a>(<span class="keyword">const</span> std::string&amp; name) : thread(<span class="keyword">nullptr</span>), threadName(name) {}</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classThread.html#a37d9edd3a1a776cbc27dedff949c9726">~Thread</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classThread.html#a9cadc0353934a7cca79666608c3aa76e">Start</a>(<span class="keywordtype">void</span>* data);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classThread.html#a5994590ea53d7b36ca9fc2bffedb8941">Stop</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classThread.html#a9d22f28bef2580dace692bb52f1df2a8">Pause</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_THREAD_HPP</span></div>
-<div class="ttc" id="aclassThread_html"><div class="ttname"><a href="classThread.html">Thread</a></div><div class="ttdoc">A wrapper class for SDL_Thread to manage threading in the game engine.</div><div class="ttdef"><b>Definition:</b> sdl_thread.hpp:34</div></div>
-<div class="ttc" id="aclassThread_html_a37d9edd3a1a776cbc27dedff949c9726"><div class="ttname"><a href="classThread.html#a37d9edd3a1a776cbc27dedff949c9726">Thread::~Thread</a></div><div class="ttdeci">~Thread()</div><div class="ttdoc">Destroy the Thread object, ensuring the thread is properly cleaned up.</div><div class="ttdef"><b>Definition:</b> sdl_thread.cpp:20</div></div>
-<div class="ttc" id="aclassThread_html_a5994590ea53d7b36ca9fc2bffedb8941"><div class="ttname"><a href="classThread.html#a5994590ea53d7b36ca9fc2bffedb8941">Thread::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stops the thread, making sure it exits cleanly.</div><div class="ttdef"><b>Definition:</b> sdl_thread.cpp:33</div></div>
-<div class="ttc" id="aclassThread_html_a9cadc0353934a7cca79666608c3aa76e"><div class="ttname"><a href="classThread.html#a9cadc0353934a7cca79666608c3aa76e">Thread::Start</a></div><div class="ttdeci">void Start(void *data)</div><div class="ttdoc">Starts the thread, invoking the associated thread function.</div><div class="ttdef"><b>Definition:</b> sdl_thread.cpp:26</div></div>
-<div class="ttc" id="aclassThread_html_a9d22f28bef2580dace692bb52f1df2a8"><div class="ttname"><a href="classThread.html#a9d22f28bef2580dace692bb52f1df2a8">Thread::Pause</a></div><div class="ttdeci">void Pause()</div><div class="ttdoc">Pauses the thread. Implementation depends on how pause functionality is handled.</div><div class="ttdef"><b>Definition:</b> sdl_thread.cpp:40</div></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classThread.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classThread.html">Thread</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    SDL_Thread *thread;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::string threadName;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> ThreadFunction(<span class="keywordtype">void</span> *data);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classThread.html">Thread</a>(<span class="keyword">const</span> std::string &amp;name) : thread(<span class="keyword">nullptr</span>), threadName(name) {}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classThread.html#a37d9edd3a1a776cbc27dedff949c9726">~Thread</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classThread.html#a9cadc0353934a7cca79666608c3aa76e">Start</a>(<span class="keywordtype">void</span> *data);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classThread.html#a5994590ea53d7b36ca9fc2bffedb8941">Stop</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classThread.html#a9d22f28bef2580dace692bb52f1df2a8">Pause</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_THREAD_HPP</span></div>
+<div class="ttc" id="aclassThread_html"><div class="ttname"><a href="classThread.html">Thread</a></div><div class="ttdoc">A wrapper class for SDL_Thread to manage threading in the game engine.</div><div class="ttdef"><b>Definition:</b> sdl_thread.hpp:35</div></div>
+<div class="ttc" id="aclassThread_html_a37d9edd3a1a776cbc27dedff949c9726"><div class="ttname"><a href="classThread.html#a37d9edd3a1a776cbc27dedff949c9726">Thread::~Thread</a></div><div class="ttdeci">~Thread()</div><div class="ttdoc">Destroy the Thread object, ensuring the thread is properly cleaned up.</div><div class="ttdef"><b>Definition:</b> sdl_thread.cpp:21</div></div>
+<div class="ttc" id="aclassThread_html_a5994590ea53d7b36ca9fc2bffedb8941"><div class="ttname"><a href="classThread.html#a5994590ea53d7b36ca9fc2bffedb8941">Thread::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stops the thread, making sure it exits cleanly.</div><div class="ttdef"><b>Definition:</b> sdl_thread.cpp:38</div></div>
+<div class="ttc" id="aclassThread_html_a9cadc0353934a7cca79666608c3aa76e"><div class="ttname"><a href="classThread.html#a9cadc0353934a7cca79666608c3aa76e">Thread::Start</a></div><div class="ttdeci">void Start(void *data)</div><div class="ttdoc">Starts the thread, invoking the associated thread function.</div><div class="ttdef"><b>Definition:</b> sdl_thread.cpp:29</div></div>
+<div class="ttc" id="aclassThread_html_a9d22f28bef2580dace692bb52f1df2a8"><div class="ttname"><a href="classThread.html#a9d22f28bef2580dace692bb52f1df2a8">Thread::Pause</a></div><div class="ttdeci">void Pause()</div><div class="ttdoc">Pauses the thread. Implementation depends on how pause functionality is handled.</div><div class="ttdef"><b>Definition:</b> sdl_thread.cpp:47</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

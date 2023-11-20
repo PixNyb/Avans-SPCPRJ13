@@ -97,30 +97,35 @@ $(document).ready(function(){initNavTree('core__constants_8hpp_source.html','');
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="text_8hpp.html">text.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span>CoreConstants {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">namespace </span><a class="code" href="classText.html">Text</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> DEFAULT_SIZE = 12;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">// TODO: Implement better way to handle this</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">const</span> std::string DEFAULT_FONT_PATH = <span class="stringliteral">&quot;../resources/fonts/OpenSans-Normal.ttf&quot;</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">const</span> <a class="code" href="classColor.html">Color</a> DEFAULT_COLOR = <a class="code" href="classColor.html#a2da8d2f80faad74da939aadf5b174768">Color::red</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">const</span> <a class="code" href="text_8hpp.html#acdfaca60ec19c0265bac2692d7982726">Alignment</a> DEFAULT_ALIGNMENT = Alignment::left;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">namespace </span>Renderer{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> <a class="code" href="classColor.html">Color</a> DEFAULT_RENDER_COLOR = <a class="code" href="classColor.html#accb1b1c202f260a57710fbd1434857ff">Color::white</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">namespace </span><a class="code" href="classEngine.html">Engine</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> DEFAULT_FPS = 60;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">namespace </span><a class="code" href="namespaceDebug.html">Debug</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> EnableDebug = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> DrawColliders = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_CORECONSTANTS_HPP</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span>CoreConstants</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="classText.html">Text</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> DEFAULT_SIZE = 12;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// TODO: Implement better way to handle this</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">const</span> std::string DEFAULT_FONT_PATH = <span class="stringliteral">&quot;../resources/fonts/OpenSans-Normal.ttf&quot;</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">const</span> <a class="code" href="classColor.html">Color</a> DEFAULT_COLOR = <a class="code" href="classColor.html#aa2b9275a891e30c5b7fc9a3e37c47809">Color::Red</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">const</span> <a class="code" href="text_8hpp.html#acdfaca60ec19c0265bac2692d7982726">Alignment</a> DEFAULT_ALIGNMENT = Alignment::left;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;} <span class="comment">// namespace Text</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>Renderer</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">const</span> <a class="code" href="classColor.html">Color</a> DEFAULT_RENDER_COLOR = <a class="code" href="classColor.html#a0020082b0a7de0e2cc27148813a3c702">Color::White</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="classEngine.html">Engine</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> DEFAULT_FPS = 60;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceDebug.html">Debug</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">const</span> <span class="keywordtype">bool</span> EnableDebug = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">const</span> <span class="keywordtype">bool</span> DrawColliders = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;} <span class="comment">// namespace Debug</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;} <span class="comment">// namespace CoreConstants</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_CORECONSTANTS_HPP</span></div>
 <div class="ttc" id="aclassColor_html"><div class="ttname"><a href="classColor.html">Color</a></div><div class="ttdoc">Represents a color using red, green, blue, and alpha (transparency) components.</div><div class="ttdef"><b>Definition:</b> color.hpp:26</div></div>
-<div class="ttc" id="aclassColor_html_a2da8d2f80faad74da939aadf5b174768"><div class="ttname"><a href="classColor.html#a2da8d2f80faad74da939aadf5b174768">Color::red</a></div><div class="ttdeci">static const Color &amp; red()</div><div class="ttdoc">One of the standard colors (read-only): red.</div><div class="ttdef"><b>Definition:</b> color.hpp:71</div></div>
-<div class="ttc" id="aclassColor_html_accb1b1c202f260a57710fbd1434857ff"><div class="ttname"><a href="classColor.html#accb1b1c202f260a57710fbd1434857ff">Color::white</a></div><div class="ttdeci">static const Color &amp; white()</div><div class="ttdoc">One of the standard colors (read-only): white.</div><div class="ttdef"><b>Definition:</b> color.hpp:65</div></div>
+<div class="ttc" id="aclassColor_html_a0020082b0a7de0e2cc27148813a3c702"><div class="ttname"><a href="classColor.html#a0020082b0a7de0e2cc27148813a3c702">Color::White</a></div><div class="ttdeci">static const Color &amp; White()</div><div class="ttdoc">One of the standard colors (read-only): white.</div><div class="ttdef"><b>Definition:</b> color.hpp:65</div></div>
+<div class="ttc" id="aclassColor_html_aa2b9275a891e30c5b7fc9a3e37c47809"><div class="ttname"><a href="classColor.html#aa2b9275a891e30c5b7fc9a3e37c47809">Color::Red</a></div><div class="ttdeci">static const Color &amp; Red()</div><div class="ttdoc">One of the standard colors (read-only): red.</div><div class="ttdef"><b>Definition:</b> color.hpp:71</div></div>
 <div class="ttc" id="aclassEngine_html"><div class="ttname"><a href="classEngine.html">Engine</a></div><div class="ttdef"><b>Definition:</b> engine.hpp:21</div></div>
 <div class="ttc" id="aclassText_html"><div class="ttname"><a href="classText.html">Text</a></div><div class="ttdoc">Represents a piece of text in the user interface.</div><div class="ttdef"><b>Definition:</b> text.hpp:41</div></div>
 <div class="ttc" id="acolor_8hpp_html"><div class="ttname"><a href="color_8hpp.html">color.hpp</a></div><div class="ttdoc">Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ...</div></div>

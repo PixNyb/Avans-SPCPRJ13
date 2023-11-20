@@ -25,12 +25,12 @@ var searchData=
   ['components_52',['components',['../classGameObject.html#a545e4ed29df0e16304d46c73404c0ce6',1,'GameObject']]],
   ['condition_53',['Condition',['../classComponent.html#aa6f7549ef990afc861ca7547dba9da56',1,'Component']]],
   ['contents_54',['contents',['../classScene.html#a756e2e6ebc6797dd249a6055699f022d',1,'Scene']]],
-  ['create_55',['create',['../classWindow.html#aaafb0b50bd7ddcdc2ecea1a13a557cc7',1,'Window']]],
-  ['create_56',['Create',['../classSDLWindow.html#a8da4ccd59902e2782d87879c9393d690',1,'SDLWindow']]],
+  ['create_55',['Create',['../classSDLWindow.html#a8da4ccd59902e2782d87879c9393d690',1,'SDLWindow']]],
+  ['create_56',['create',['../classWindow.html#aaafb0b50bd7ddcdc2ecea1a13a557cc7',1,'Window']]],
   ['createbody_57',['CreateBody',['../classPhysicsManager.html#af83e47b4ab0a5c4cb9a5efeba37c140b',1,'PhysicsManager']]],
-  ['creategameobject_58',['CreateGameObject',['../classScene.html#ada8488415f4f1da74419c00644f9c9b5',1,'Scene::CreateGameObject()'],['../classScene.html#a723ba9340878ea5fced1b55d9228e4b4',1,'Scene::CreateGameObject(Args &amp;&amp;... args)']]],
+  ['creategameobject_58',['CreateGameObject',['../classScene.html#ada8488415f4f1da74419c00644f9c9b5',1,'Scene::CreateGameObject()'],['../classScene.html#af50d7f379a68e3c7e9eb4cd885772712',1,'Scene::CreateGameObject(Args &amp;&amp;...args)']]],
   ['createrenderer_59',['CreateRenderer',['../classGraphicsFacade.html#a91d74ddc63aa1f443c4734786b3dceb6',1,'GraphicsFacade::CreateRenderer()'],['../classIOFacade.html#a5d9d1e7a25e4feee2c13af9352c1de3f',1,'IOFacade::CreateRenderer()'],['../classSDLWindow.html#a2146f09a5f4747d1fde063ae98a6e33b',1,'SDLWindow::CreateRenderer()']]],
   ['createwindow_60',['CreateWindow',['../classGraphicsFacade.html#a08819ac96155cc90519ff0482ad5b336',1,'GraphicsFacade::CreateWindow()'],['../classIOFacade.html#a87baa59ab531091f7fa8f71af13e3f48',1,'IOFacade::CreateWindow()']]],
   ['createworld_61',['CreateWorld',['../classPhysicsManager.html#af6458e7b31290e79c54bba685363a914',1,'PhysicsManager']]],
-  ['cyan_62',['cyan',['../classColor.html#aa62d952a80ad59ec032849d658769014',1,'Color']]]
+  ['cyan_62',['Cyan',['../classColor.html#a9deda219e45165e6116a1b816b9ac392',1,'Color']]]
 ];
