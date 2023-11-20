@@ -19,13 +19,13 @@ GameObject::GameObject() : name(""), active(true), tag(""), layer(0), transform(
 }
 
 GameObject::GameObject(const std::string &name)
-    : name(name), active(true), tag(0), layer(0), transform()
+    : name(name), active(true), tag(""), layer(0), transform()
 {
     // Constructor with name initialization
 }
 
 GameObject::GameObject(const std::string &name, const Transform &transform)
-    : name(name), transform(transform), active(true), tag(0), layer(0)
+    : name(name), transform(transform), active(true), tag(""), layer(0)
 {
     // Constructor with name and transform initialization
 }

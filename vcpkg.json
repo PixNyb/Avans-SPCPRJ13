@@ -26,6 +26,10 @@
         {
             "name": "sdl2-ttf",
             "version>=": "2.20.2"
+        },
+        {
+            "name": "gtest",
+            "version>=": "1.14.0"
         }
     ]
 }
