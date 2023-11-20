@@ -9,7 +9,9 @@
  *
  */
 
-#include "listeners/key_listener.hpp"
+#include "key_listener.hpp"
+
+KeyListener::KeyListener(KeyCode keyCode, bool isKeyDown) : keyEvent(keyCode, isKeyDown) {}
 
 void KeyListener::SetKeyEvent(const KeyEvent& keyEvent) {
     this->keyEvent = keyEvent;
@@ -17,8 +19,9 @@ void KeyListener::SetKeyEvent(const KeyEvent& keyEvent) {
 
 void KeyListener::OnKeyPressed() {
 
-    this->keyEvent;
-
+    if(keyEvent.GetKeyCode() == KeyCode::UP_ARROW) {
+        std::cout << "Up arrow was pressed: " << std::endl;
+    }
 
 //    auto it = actionTypeKeyBinds.find(*event);
 //

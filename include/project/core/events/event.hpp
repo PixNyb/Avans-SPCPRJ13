@@ -51,8 +51,13 @@ public:
      */
     bool operator<(const Event& other) const { return keyCode < other.keyCode; }
 
+    void MarkProcessed() { isProcessed = true; }
+
+    bool IsProcessed() const { return isProcessed; }
+
 private:
     KeyCode keyCode; ///< The type of the event.
+    bool isProcessed = false;
 };
 
 #endif //DEFUNBOBENGINE_EVENT_HPP

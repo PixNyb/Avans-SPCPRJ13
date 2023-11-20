@@ -9,7 +9,7 @@
  *
  */
 
-#include "listeners/mouse_listener.hpp"
+#include "mouse_listener.hpp"
 
 void MouseListener::OnMouseMoved() {
     // Get latest mouse state.

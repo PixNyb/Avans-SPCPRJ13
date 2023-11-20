@@ -19,6 +19,8 @@
 #define DEFUNBOBENGINE_INPUTHANDLER_HPP
 
 #include "IInputHandler.hpp"
+#include "key_code.hpp"
+#include <SDL.h>
 
 /**
  * @class SDL2InputHandler

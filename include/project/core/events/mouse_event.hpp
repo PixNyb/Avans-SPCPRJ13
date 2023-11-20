@@ -17,12 +17,7 @@
 class MouseEvent : public Event {
 public:
     explicit MouseEvent(KeyCode& keyCode);
-
-    [[nodiscard]] Uint8 getMouseButton() const;
-
-    [[nodiscard]] SDL_Point getMousePos() const;
 private:
-    SDL_MouseButtonEvent sdlMouseButtonEvent;
 };
 
 #endif //DEFUNBOBENGINE_MOUSE_EVENT_HPP

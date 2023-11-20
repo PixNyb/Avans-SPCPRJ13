@@ -16,8 +16,10 @@
 #ifndef AVANS_SPCPRJ13_INPUT_MANAGER_HPP
 #define AVANS_SPCPRJ13_INPUT_MANAGER_HPP
 
-#include "../../api/imouse_listener.hpp"
-#include "../../api/ikey_listener.hpp"
+//#include "../../api/imouse_listener.hpp"
+//#include "../../api/ikey_listener.hpp"
+#include "key_listener.hpp"
+#include "mouse_listener.hpp"
 #include "action_type.hpp"
 #include "sdl2_input_handler.hpp"
 #include <vector>
@@ -43,7 +45,7 @@ class InputManager {
     * @brief Registers a key listener for receiving key events.
     * @param keyListener A unique pointer to an IKeyListener.
     */
-    void RegisterKey(std::unique_ptr<IKeyListener> keyListener);
+    void RegisterKeyListener(std::unique_ptr<IKeyListener> keyListener);
 
     /**
      * @brief Checks if a specific action is currently pressed.

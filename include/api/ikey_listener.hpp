@@ -16,12 +16,6 @@
 #ifndef IKEYLISTENER_H_
 #define IKEYLISTENER_H_
 
-#include "key_event.hpp"
-#include "action_type.hpp"
-#include <map>
-#include <vector>
-#include <memory>
-
 /**
  * @class IKeyListener
  * @brief Interface for objects that respond to keyboard events.

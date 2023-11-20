@@ -10,12 +10,15 @@
  */
 
 #include "sdl2_input_handler.hpp"
-#include "key_type.hpp"
 
 void SDL2InputHandler::PollEvents() {
     SDL_Event event;
+
+    int sdlKeyCode = static_cast<int>(event.key.keysym.scancode);
+    KeyCode a = static_cast<KeyCode>(sdlKeyCode);
+
     while (SDL_PollEvent(&event)) {
-        auto keyCode = static_cast<KeyCode>(event.key.keysym.sym);
+        auto keyCode = static_cast<KeyCode>(event.key.keysym.scancode);
 
         if(event.type == SDL_KEYUP) {
             polledKeyEvents.emplace_back(std::make_shared<KeyEvent>(keyCode, false));
@@ -29,10 +32,10 @@ void SDL2InputHandler::PollEvents() {
     };
 }
 
-//std::vector<std::shared_ptr<KeyEvent>> SDL2InputHandler::getPolledKeyEvents() const {
-//    return polledKeyEvents;
-//}
-//
-//std::vector<std::shared_ptr<MouseEvent>> SDL2InputHandler::getPolledMouseEvents() const {
-//    return polledMouseEvents;
-//}
+std::vector<std::shared_ptr<KeyEvent>> SDL2InputHandler::GetPolledKeyEvents() const {
+    return polledKeyEvents;
+}
+
+std::vector<std::shared_ptr<MouseEvent>> SDL2InputHandler::GetPolledMouseEvents() const {
+    return polledMouseEvents;
+}

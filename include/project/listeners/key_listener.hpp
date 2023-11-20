@@ -14,9 +14,16 @@
 
 #include "ikey_listener.hpp"
 #include "key_event.hpp"
+#include "action_type.hpp"
+#include <map>
+#include <vector>
+#include <memory>
+#include <iostream>
 
 class KeyListener : public IKeyListener {
 public:
+    KeyListener(KeyCode keyCode = KeyCode::INVALID, bool isKeyDown = false);
+
     void OnKeyPressed() override;
     void OnKeyReleased() override;
 

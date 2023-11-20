@@ -18,7 +18,7 @@ class KeyEvent : public Event {
 public:
     explicit KeyEvent(KeyCode& keyCode, bool isKeyDown);
 
-    bool GetIsKeyDown();
+    bool GetIsKeyDown() const;
 
 private:
     bool isKeyDown;

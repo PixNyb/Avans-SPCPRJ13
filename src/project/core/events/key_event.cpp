@@ -14,3 +14,7 @@
 KeyEvent::KeyEvent(KeyCode& keyCode, bool isKeyDown) : Event(keyCode) {
     this->isKeyDown = isKeyDown;
 }
+
+bool KeyEvent::GetIsKeyDown() const {
+    return isKeyDown;
+}

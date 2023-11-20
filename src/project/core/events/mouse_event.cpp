@@ -20,15 +20,15 @@ MouseEvent::MouseEvent(KeyCode& keyCode) : Event(keyCode) {
 //    }
 }
 
-Uint8 MouseEvent::getMouseButton() const {
-    return sdlMouseButtonEvent.button;
-}
+//Uint8 MouseEvent::getMouseButton() const {
+//    return sdlMouseButtonEvent.button;
+//}
 
-SDL_Point MouseEvent::getMousePos() const {
-    SDL_Point point;
-
-    point.x = sdlMouseButtonEvent.x;
-    point.y = sdlMouseButtonEvent.y;
-
-    return point;
-}
+//SDL_Point MouseEvent::getMousePos() const {
+//    SDL_Point point;
+//
+//    point.x = sdlMouseButtonEvent.x;
+//    point.y = sdlMouseButtonEvent.y;
+//
+//    return point;
+//}

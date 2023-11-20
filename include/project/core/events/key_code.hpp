@@ -2,6 +2,7 @@
 #define DEFUNBOBENGINE_KEY_CODE_HPP
 
 enum class KeyCode {
+    INVALID = NULL,
     ERROR_ROLLOVER = 0x01,
     POST_FAIL = 0x02,
     ERROR_UNDEFINED = 0x03,

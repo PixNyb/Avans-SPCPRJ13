@@ -15,25 +15,33 @@ InputManager::InputManager() : sdlInputHandler(std::make_unique<SDL2InputHandler
 
 void InputManager::Update() {
     sdlInputHandler->PollEvents();
-    std::shared_ptr<KeyEvent> event = sdlInputHandler->GetPolledKeyEvents().back();
 
-    if(keyEvent->GetIsKeyDown()) {
-        listener->OnKeyPressed();
-    }
-    else {
-        listener->OnKeyReleased();
-    }
-
-//    for(const auto& keyEvent : sdlInputHandler->GetPolledKeyEvents()) {
-//        for (const auto& listener : keyListeners) {
-//            if(keyEvent->GetIsKeyDown()) {
-//                listener->OnKeyPressed();
-//            }
-//            else {
-//                listener->OnKeyReleased();
-//            }
-//        }
+//    std::shared_ptr<KeyEvent> event = sdlInputHandler->GetPolledKeyEvents().back();
+//    std::unique_ptr<IKeyListener> keyListener = std::make_unique<KeyListener>();
+//
+//    if(event->GetIsKeyDown()) {
+//        keyListener->OnKeyPressed();
 //    }
+//    else {
+//        keyListener->OnKeyReleased();
+//    }
+
+    for(const auto& keyEvent : sdlInputHandler->GetPolledKeyEvents()) {
+        if(keyEvent->IsProcessed()) {
+            continue;
+        }
+
+        keyEvent->MarkProcessed();
+
+        for (const auto& listener : keyListeners) {
+            if(keyEvent->GetIsKeyDown()) {
+                listener->OnKeyPressed();
+            }
+            else {
+                listener->OnKeyReleased();
+            }
+        }
+    }
 
 //    for(const auto& mouseEvent : sdlInputHandler->getPolledMouseEvents()) {
 //        for (const auto& listener : mouseListeners) {
@@ -58,7 +66,7 @@ void InputManager::RegisterMouse(std::unique_ptr<IMouseListener> mouseListener) 
     mouseListeners.push_back(std::move(mouseListener));
 }
 
-void InputManager::RegisterKey(std::unique_ptr<IKeyListener> keyListener) {
+void InputManager::RegisterKeyListener(std::unique_ptr<IKeyListener> keyListener) {
     keyListeners.push_back(std::move(keyListener));
 }
 
