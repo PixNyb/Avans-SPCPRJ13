@@ -15,6 +15,7 @@
 #include "circle_collider.hpp"
 #include "core/engine.hpp"
 #include "game_object.hpp"
+#include "game_object_list.hpp"
 #include "graphics_facade.hpp"
 #include "managers/scene_manager.hpp"
 #include "text.hpp"
@@ -38,10 +39,6 @@ void RenderManager::Render()
     if (!scene)
         return;
 
-    // Prepare camera
-    auto camera = scene->GetCamera();
-
-    // Prepare layers
     auto layers = std::map<int, std::vector<std::weak_ptr<GameObject>>>();
 
     for (auto &gameObject : scene->GetAllByType<GameObject>())
@@ -57,10 +54,14 @@ void RenderManager::Render()
             layers.insert(std::make_pair(layer, std::vector<std::weak_ptr<GameObject>>()));
         }
 
-        // TODO: Check game objects with geometry for render occlusion
+            // Skip inactive game objects and their ancestors
+            if (!currentGameObject || !currentGameObject->IsActive()) {
+                break;
+            }
 
-        // Push game object onto layer
-        layers[layer].push_back(gameObject);
+            int layer = currentGameObject->GetLayer();
+            layers[layer].emplace_back(currentGameObject);
+        }
     }
 
     // Make sure we have a render point regardless of whether we have a camera (menu might not
