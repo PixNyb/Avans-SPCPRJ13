@@ -35,6 +35,30 @@ public:
     Color(double red, double green, double blue, double alpha);
 
     /**
+     * @brief Returns the red component of the color.
+     * @return The red component, 0 ≤ r ≤ 1.
+     */
+    double GetRed() const;
+
+    /**
+     * @brief Returns the green component of the color.
+     * @return The green component, 0 ≤ g ≤ 1.
+     */
+    double GetGreen() const;
+
+        /**
+         * @brief Returns the blue component of the color.
+         * @return The blue component, 0 ≤ b ≤ 1.
+         */
+    double GetBlue() const;
+
+    /**
+     * @brief Returns the alpha (transparency) component of the color.
+     * @return The alpha component, 0 ≤ alpha ≤ 1.
+     */
+    double GetAlpha() const;
+
+    /**
      * @brief One of the standard colors (read-only): white.
      * @return A reference to a statically allocated Color instance.
      */

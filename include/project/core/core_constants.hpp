@@ -19,12 +19,20 @@
 namespace CoreConstants {
     namespace Text {
         const int DEFAULT_SIZE = 12;
-        const std::string DEFAULT_FONT = "Sans.ttf";
-        const Color DEFAULT_COLOR = Color::white();
+        // TODO: Implement better way to handle this
+        const std::string DEFAULT_FONT_PATH = "../resources/fonts/OpenSans-Normal.ttf";
+        const Color DEFAULT_COLOR = Color::red();
         const Alignment DEFAULT_ALIGNMENT = Alignment::left;
+    }
+    namespace Renderer{
+        const Color DEFAULT_RENDER_COLOR = Color::white();
     }
     namespace Engine {
         const int DEFAULT_FPS = 60;
+    }
+    namespace Debug {
+        const bool EnableDebug = true;
+        const bool DrawColliders = true;
     }
 }
 

@@ -24,3 +24,7 @@ Color::Color(double red, double green, double blue, double alpha)
     : r{red}, g{green}, b{blue}, a{alpha}
 {
 }
+double Color::GetRed() const { return r; }
+double Color::GetGreen() const { return g; }
+double Color::GetBlue() const { return b; }
+double Color::GetAlpha() const { return a; }

@@ -19,7 +19,7 @@
 #include "geometry.hpp"
 #include "vector2d.hpp"
 
-class Triangle {
+class Triangle : public Geometry {
 private:
     Vector2D vertex1, vertex2, vertex3;
 
@@ -39,6 +39,22 @@ public:
     Vector2D GetVertex2() const { return vertex2; }
     Vector2D GetVertex3() const { return vertex3; }
 
+    int GetArea() override {
+        // Calculate the area of the triangle using the shoelace formula.
+        return abs((vertex1.x * (vertex2.y - vertex3.y) +
+                    vertex2.x * (vertex3.y - vertex1.y) +
+                    vertex3.x * (vertex1.y - vertex2.y)) / 2);
+    }
+
+    bool IsWithinArea(const Vector2D& start, const Vector2D& end) override {
+        auto vertices = {vertex1, vertex2, vertex3};
+        for (auto& vertex : vertices) {
+            if (vertex.x < start.x || vertex.x > end.x || vertex.y < start.y || vertex.y > end.y) {
+                return false;
+            }
+        }
+        return true;
+    }
 };
 
 #endif //DEFUNBOBENGINE_TRIANGLE_HPP

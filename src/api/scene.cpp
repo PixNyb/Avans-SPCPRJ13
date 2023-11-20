@@ -97,15 +97,3 @@ std::weak_ptr<GameObjectType> Scene::CreateGameObject(Args &&...args)
     AddGameObject(gameObject);
     return gameObject;
 }
-
-template <typename T> std::vector<std::weak_ptr<T>> Scene::GetAllByType()
-{
-    std::vector<std::weak_ptr<T>> result;
-    for (auto &go : contents)
-    {
-        auto casted = std::dynamic_pointer_cast<T>(go);
-        if (casted != nullptr)
-            result.push_back(casted);
-    }
-    return result;
-}

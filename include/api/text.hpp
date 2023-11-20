@@ -31,6 +31,9 @@ enum class Alignment { left, center, right };
 /**
  * @class Text
  * @brief Represents a piece of text in the user interface.
+ * @warning If you don't set width and height properly, text is not going to be shown.
+ * @note Height is boxed, width is wrapped. So if the text exceeds the width, it will be wrapped.
+ * If it exceeds the height, it will be boxed, so overflow will be invisible.
  *
  * Text is a UIObject that manages the display of text, including its content, appearance,
  * and position within the user interface.
@@ -39,6 +42,7 @@ class Text : public UIObject {
 private:
     std::string text;      ///< The text string.
     int fontSize;          ///< The font size of the text.
+    // TODO: Implement alignment
     Alignment alignment; ///< The alignment of the text.
     Color textColor;       ///< The color of the text.
 

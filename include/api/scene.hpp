@@ -18,7 +18,9 @@
 #define AVANS_SPCPRJ13_SCENE_H
 
 #include "game_object.hpp"
+#include "camera.hpp"
 #include <memory>
+#include <utility>
 #include <vector>
 
 /**
@@ -30,19 +32,23 @@
  */
 class Scene
 {
+  private:
+    std::shared_ptr<Camera> _camera; ///< The shared pointer to the active Camera object.
   public:
     /**
      * @brief This function is called by a Camera to render the scene on the engine.
+     * TODO: Check if this is really the case?
      */
-    virtual void RenderScene() = 0;
+    virtual void RenderScene();
 
+    Scene() = default;
     virtual ~Scene() = default;
 
     /**
     * @brief Updates all game objects in the scene.
     * @param deltaTime The time passed since the last frame.
      */
-    virtual void Update(float deltaTime){
+    virtual void Update(double deltaTime){
         // TODO: Call an update on game object?
     }
 
@@ -77,8 +83,18 @@ class Scene
      * @tparam T Type of the game object
      * @return A vector containing all game objects of the specified type
      */
-    template<typename T>
-    std::vector<std::weak_ptr<T>> GetAllByType();
+    template <typename T>
+    std::vector<std::weak_ptr<T>> inline GetAllByType()
+    {
+        std::vector<std::weak_ptr<T>> result;
+        for (auto &go : contents)
+        {
+            auto casted = std::dynamic_pointer_cast<T>(go);
+            if (casted != nullptr)
+                result.push_back(casted);
+        }
+        return result;
+    }
 
     /**
      * @brief Finds a game object by name
@@ -126,6 +142,22 @@ class Scene
      * @return True if the game object was found and the status was updated, otherwise false.
      */
     bool SetActiveStatus(const std::string &name, bool isActive);
+
+    /**
+     * @brief Sets the camera of the scene
+     * @param camera
+     */
+    void SetCamera(std::shared_ptr<Camera> camera){
+        _camera = std::move(camera);
+    }
+
+    /**
+     * @brief Gets the camera of the scene
+     * @return camera
+     */
+    std::shared_ptr<Camera> GetCamera(){
+        return _camera;
+    }
 };
 
 #endif // AVANS_SPCPRJ13_SCENE_H

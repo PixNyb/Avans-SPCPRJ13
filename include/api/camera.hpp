@@ -16,8 +16,9 @@
 #define AVANS_SPCPRJ13_CAMERA_H
 
 #include "color.hpp"
+#include "game_object.hpp"
 
-class Camera {
+class Camera : public GameObject {
 private:
     Color backgroundColor;
     double aspectWidth;

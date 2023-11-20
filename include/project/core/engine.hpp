@@ -57,16 +57,19 @@ class Engine
      * @tparam T The type of the instance
      * @return std::shared_ptr<T>
      */
-    template <typename T>
-    std::shared_ptr<T> Get();
+    template <typename T> std::shared_ptr<T> Get() {
+        return container.resolve<T>();
+    }
 
     /**
      * @brief Gets a locally scoped instance for the engine (like facades)
      * @tparam T The type of the instance
      * @return std::shared_ptr<T>
      */
-    template <typename T>
-    std::shared_ptr<T> GetLocal();
+    template <typename T> std::shared_ptr<T> GetLocal()
+    {
+        return container.resolve<T>(InstanceScope::Engine);
+    }
 
     /**
      * @brief Gets the instance of the engine
