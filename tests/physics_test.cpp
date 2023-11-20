@@ -50,7 +50,7 @@ TEST(PhysicsTest, TestPhysics)
     // create floor
     auto obj2 = std::make_shared<GameObject>();
     Point point2{0, 40};
-    Transform trs2{point2, 0, 1};
+    Transform trs2{point2, 20, 1};
     auto body2 = std::make_shared<RigidBody>(10, 1, BodyType::staticBody);
     auto collider2 = std::make_shared<BoxCollider>();
     collider2->Width(5000);
@@ -64,7 +64,7 @@ TEST(PhysicsTest, TestPhysics)
     objects.push_back(obj2);
     PhysicsManager physicsManager;
     physicsManager.CreateWorld(objects);
-    //physicsManager.AddForce(obj1, 20, 0);
+    physicsManager.AddForce(obj1, 20, 0);
 
     bool running = true;
     int stepCounter = 0;
