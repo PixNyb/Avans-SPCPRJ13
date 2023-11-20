@@ -1,7 +1,6 @@
 /**
  * @file game_object.hpp
  * @author Roël Couwenberg (contact@roelc.me)
- * @author Daan Groot (d.groot3@student.avans.nl)
  * @brief This file contains the GameObject class definition.
  * @version 0.1
  * @date 2023-11-08
@@ -30,14 +29,14 @@
 class GameObject
 {
   protected:
+    std::string name; ///< The name of the GameObject.
     std::vector<std::shared_ptr<Component>>
         components;                     ///< The list of components attached to the GameObject.
-    std::string name;                   ///< The name of the GameObject.
-    std::string tag;                    ///< The tag/type of the GameObject.
-    int layer;                          ///< The layer of the GameObject.
-    bool active;                        ///< The active flag of the GameObject.
     Transform transform;                ///< The transform of the GameObject.
     std::shared_ptr<GameObject> parent; ///< The parent of the GameObject.
+    bool active;                        ///< The active flag of the GameObject.
+    std::string tag;                    ///< The tag/type of the GameObject.
+    int layer;                          ///< The layer of the GameObject.
 
   public:
     /**
@@ -157,6 +156,8 @@ class GameObject
     /**
      * @brief Get the first component of the specified type. Must be
      *        a valid subclass of Component.
+     *
+     * @tparam T The type of component to get.
      * @return Pointer to Component instance.
      */
     template <class T> std::shared_ptr<T> GetComponent() const
@@ -174,6 +175,8 @@ class GameObject
     /**
      * @brief Get all the components of the specified type. Must be
      *        a valid subclass of Component.
+     *
+     * @tparam T The type of component to get.
      * @return Vector with pointers to Component instances.
      */
     template <class T> std::vector<std::shared_ptr<T>> GetComponents() const
