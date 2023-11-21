@@ -114,25 +114,4 @@ void SDLInputFacade::Bind(const Event &event, const ActionType &actionType)
           RegisterMouseListener(std::make_unique<MouseListener>(dynamic_cast<const MouseEvent&>(event)));
      else
          throw std::invalid_argument("Event type is not supported.");
-
-    // KeyEvent *keyEvent = dynamic_cast<KeyEvent *>(&event);
-    // MouseEvent *mouseEvent = dynamic_cast<MouseEvent *>(&event);
-
-    // if (keyEvent != nullptr)
-    //     RegisterKeyListener(
-    //         std::make_unique<KeyListener>(keyEvent->GetKeyCode(), keyEvent->GetIsKeyDown()));
-    // else if (mouseEvent != nullptr)
-    //     // RegisterMouseListener(std::make_unique<MouseListener>(mouseEvent->GetKeyCode())
-    //     std::logic_error("Mouse events are not yet supported.");
-    // else
-    //     throw std::invalid_argument("Event type is not supported.");
-
-//    RegisterKeyListener(std::make_unique<KeyListener>(event.GetKeyCode(), true));
-
-    // TODO: Check this?
-//    auto it = actionTypeKeyBinds.find(event);
-//    if (it == actionTypeKeyBinds.end())
-//        actionTypeKeyBinds[event].push_back(actionType);
-//    else
-//        actionTypeKeyBinds.emplace(event, std::vector<ActionType>{actionType});
 }

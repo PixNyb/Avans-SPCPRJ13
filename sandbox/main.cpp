@@ -56,12 +56,18 @@ int main(int argc, char *argv[])
     auto inputManager = engine->Get<IInputFacade>();
 
     inputManager->Bind(KeyEvent(KeyCode::UP_ARROW, EventType::KEYPRESSED), ActionType::JUMP);
+    inputManager->Bind(KeyEvent(KeyCode::DOWN_ARROW, EventType::KEYPRESSED), ActionType::GODOWN);
     inputManager->Bind(MouseEvent(KeyCode::MOUSE_LEFT, 0, 0, EventType::MOUSEPRESSED), ActionType::PAUSE);
 
     std::thread engineThread([&]() { engine->Start(); });
 
-    SimulateKeyPress(KeyCode::UP_ARROW);
-    SimulateMousePress(KeyCode::MOUSE_LEFT);
+    while(true) {
+        inputManager->Update();
+    }
+
+
+//    SimulateKeyPress(KeyCode::UP_ARROW);
+//    SimulateMousePress(KeyCode::MOUSE_LEFT);
 
     engineThread.join();
 
