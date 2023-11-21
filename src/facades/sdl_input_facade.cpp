@@ -20,16 +20,6 @@ void SDLInputFacade::Update()
 {
     eventListener->PollEvents();
 
-    //    std::shared_ptr<KeyEvent> event = sdlInputHandler->GetPolledKeyEvents().back();
-    //    std::unique_ptr<IKeyListener> keyListener = std::make_unique<KeyListener>();
-    //
-    //    if(event->GetIsKeyDown()) {
-    //        keyListener->OnKeyPressed();
-    //    }
-    //    else {
-    //        keyListener->OnKeyReleased();
-    //    }
-
     for (const auto &keyEvent : eventListener->GetPolledKeyEvents())
     {
         if (keyEvent->IsProcessed())
@@ -95,6 +85,16 @@ bool SDLInputFacade::ActionReleased(const ActionType &actionType) const
 
 void SDLInputFacade::Bind(const Event &event, const ActionType &actionType)
 {
+    KeyEvent *keyEvent = const_cast<KeyEvent*>(dynamic_cast<const KeyEvent*>(&event));
+    MouseEvent *mouseEvent = const_cast<MouseEvent*>(dynamic_cast<const MouseEvent*>(&event));
+
+     if (keyEvent != nullptr)
+         RegisterKeyListener(std::make_unique<KeyListener>(dynamic_cast<const KeyEvent&>(event)));
+     else if (mouseEvent != nullptr)
+          RegisterMouseListener(std::make_unique<MouseListener>(dynamic_cast<const MouseEvent&>(event)));
+     else
+         throw std::invalid_argument("Event type is not supported.");
+
     // KeyEvent *keyEvent = dynamic_cast<KeyEvent *>(&event);
     // MouseEvent *mouseEvent = dynamic_cast<MouseEvent *>(&event);
 
@@ -107,12 +107,12 @@ void SDLInputFacade::Bind(const Event &event, const ActionType &actionType)
     // else
     //     throw std::invalid_argument("Event type is not supported.");
 
-    RegisterKeyListener(std::make_unique<KeyListener>(event.GetKeyCode(), true));
+//    RegisterKeyListener(std::make_unique<KeyListener>(event.GetKeyCode(), true));
 
     // TODO: Check this?
-    auto it = actionTypeKeyBinds.find(event);
-    if (it == actionTypeKeyBinds.end())
-        actionTypeKeyBinds[event].push_back(actionType);
-    else
-        actionTypeKeyBinds.emplace(event, std::vector<ActionType>{actionType});
+//    auto it = actionTypeKeyBinds.find(event);
+//    if (it == actionTypeKeyBinds.end())
+//        actionTypeKeyBinds[event].push_back(actionType);
+//    else
+//        actionTypeKeyBinds.emplace(event, std::vector<ActionType>{actionType});
 }

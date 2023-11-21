@@ -11,6 +11,8 @@
 
 #include "mouse_listener.hpp"
 
+MouseListener::MouseListener(const MouseEvent &mouseEvent) : mouseEvent(mouseEvent) {}
+
 void MouseListener::OnMouseMoved() {
     // Get latest mouse state.
 //    SDL_PumpEvents();
@@ -26,13 +28,7 @@ void MouseListener::OnMouseClicked() {
 }
 
 void MouseListener::OnMousePressed() {
-//    auto it = actionTypeKeyBinds.find(*event);
-//
-//    if (it != actionTypeKeyBinds.end()) {
-//        for (const ActionType& actionType : it->second) {
-//            const ActionType enumOfType = ActionType::convertStringToEnum(actionType.getName());
-//        }
-//    }
+
 }
 
 void MouseListener::OnMouseReleased() {

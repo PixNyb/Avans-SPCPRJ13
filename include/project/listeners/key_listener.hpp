@@ -22,12 +22,10 @@
 
 class KeyListener : public IKeyListener {
 public:
-    KeyListener(KeyCode keyCode = KeyCode::INVALID, bool isKeyDown = false);
+    KeyListener(const KeyEvent &keyEvent);
 
     void OnKeyPressed() override;
     void OnKeyReleased() override;
-
-    void SetKeyEvent(const KeyEvent& keyEvent);
 
 private:
     KeyEvent keyEvent;

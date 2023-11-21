@@ -11,35 +11,21 @@
 
 #include "key_listener.hpp"
 
-KeyListener::KeyListener(KeyCode keyCode, bool isKeyDown) : keyEvent(keyCode, isKeyDown) {}
-
-void KeyListener::SetKeyEvent(const KeyEvent& keyEvent) {
-    this->keyEvent = keyEvent;
-}
+KeyListener::KeyListener(const KeyEvent& keyEvent) : keyEvent(keyEvent) {}
 
 void KeyListener::OnKeyPressed() {
-
-    if(keyEvent.GetKeyCode() == KeyCode::UP_ARROW) {
-        std::cout << "Up arrow was pressed: " << std::endl;
+    switch(keyEvent.GetKeyCode()) {
+    case KeyCode::UP_ARROW:
+        break;
+    case KeyCode::DOWN_ARROW:
+        break;
+    case KeyCode::LEFT_ARROW:
+        break;
+    case KeyCode::RIGHT_ARROW:
+        break;
+    default:
+        break;
     }
-
-//    auto it = actionTypeKeyBinds.find(*event);
-//
-//    if (it != actionTypeKeyBinds.end()) {
-//        for (const ActionType& actionType : it->second) {
-//            const ActionType enumOfType = ActionType::convertStringToEnum(actionType.getName());
-//
-//            if (enumOfType == ActionType::JUMP) {
-//            } else if (enumOfType == ActionType::GODOWN) {
-//            } else if (enumOfType == ActionType::GOUP) {
-//            } else if (enumOfType == ActionType::GOLEFT) {
-//            } else if (enumOfType == ActionType::GORIGHT) {
-//            } else if (enumOfType == ActionType::PAUSE) {
-//            } else {
-//            }
-//        }
-//    }
-
 }
 
 void KeyListener::OnKeyReleased() {

@@ -13,13 +13,19 @@
 #define DEFUNBOBENGINE_MOUSE_LISTENER_HPP
 
 #include "imouse_listener.hpp"
+#include "mouse_event.hpp"
 
 class MouseListener : public IMouseListener {
-public:
+  public:
+    MouseListener(const MouseEvent &mouseEvent);
+
     void OnMouseMoved() override;
     void OnMouseClicked() override;
     void OnMousePressed() override;
     void OnMouseReleased() override;
+
+  private:
+    MouseEvent mouseEvent;
 };
 
 #endif //DEFUNBOBENGINE_MOUSE_LISTENER_HPP
