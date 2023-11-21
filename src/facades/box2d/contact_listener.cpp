@@ -13,16 +13,21 @@
 #include <iostream>
 #include <utility>
 
+const double MeterToPixel = 50;
+const double PixelToMeter = 1/MeterToPixel;
+
 void ContactListener::BeginContact(b2Contact* contact) {
     auto bodyA = contact->GetFixtureA()->GetBody();
     auto bodyB = contact->GetFixtureB()->GetBody();
 
     for (auto &gameObject: gameObjects) {
-        if (bodyA->GetPosition().x == gameObject->GetTransform().position.x && bodyA->GetPosition().y == gameObject->GetTransform().position.y) {
-            std::cout << gameObject->GetTag() << " is touching something" << std::endl;
-        }
-        if (bodyB->GetPosition().x == gameObject->GetTransform().position.x && bodyB->GetPosition().y == gameObject->GetTransform().position.y) {
-            std::cout << gameObject->GetTag() << " is touching something" << std::endl;
+        if (bodyA->GetPosition().x * MeterToPixel == gameObject->GetTransform().position.x && bodyA->GetPosition().y * MeterToPixel == gameObject->GetTransform().position.y) {
+            std::string tag = "empty";
+            for (auto &gameObject2: gameObjects) {
+                if (bodyB->GetPosition().x * MeterToPixel == gameObject2->GetTransform().position.x && bodyB->GetPosition().y * MeterToPixel == gameObject2->GetTransform().position.y)
+                    tag = gameObject2->GetTag();
+            }
+            std::cout << gameObject->GetTag() << " is touching " << tag << std::endl;
         }
     }
 }

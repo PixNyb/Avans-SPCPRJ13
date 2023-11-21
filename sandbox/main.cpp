@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
     // create box
     auto obj = std::make_shared<GameObject>();
-    Point point{600, 1000};
+    Point point{20, 200};
     Transform trs{point, 0, 1};
     auto body = std::make_shared<RigidBody>(10, 1, BodyType::dynamicBody);
     auto collider = std::make_shared<BoxCollider>();
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
     // create circle
     auto obj1 = std::make_shared<GameObject>();
-    Point point1{800, 1000};
+    Point point1{200, 400};
     Transform trs1{point1, 0, 1};
     auto body1 = std::make_shared<RigidBody>(10, 1, BodyType::dynamicBody);
     auto collider1 = std::make_shared<CircleCollider>();
@@ -47,12 +47,25 @@ int main(int argc, char *argv[])
     obj1->SetTag("circle");
 
     // create floor
+    auto obj3 = std::make_shared<GameObject>();
+    Point point3{0, 100};
+    Transform trs3{point3, 0, 1};
+    auto body3 = std::make_shared<RigidBody>(10, 1, BodyType::dynamicBody);
+    auto collider3 = std::make_shared<BoxCollider>();
+    collider3->Width(800);
+    collider3->Height(20);
+    obj3->AddComponent(body3);
+    obj3->AddComponent(collider3);
+    obj3->SetTransform(trs3);
+    obj3->SetTag("floor");
+
+    // create floor
     auto obj2 = std::make_shared<GameObject>();
     Point point2{0, 40};
-    Transform trs2{point2, 0.01, 1};
+    Transform trs2{point2, 0, 1};
     auto body2 = std::make_shared<RigidBody>(10, 1, BodyType::staticBody);
     auto collider2 = std::make_shared<BoxCollider>();
-    collider2->Width(5000);
+    collider2->Width(800);
     collider2->Height(20);
     obj2->AddComponent(body2);
     obj2->AddComponent(collider2);
@@ -62,6 +75,7 @@ int main(int argc, char *argv[])
     objects.push_back(obj);
     objects.push_back(obj1);
     objects.push_back(obj2);
+//    objects.push_back(obj3);
     PhysicsManager physicsManager;
     physicsManager.CreateWorld(objects);
     physicsManager.AddForce(obj1, 20, 0);

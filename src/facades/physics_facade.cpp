@@ -20,7 +20,8 @@
 const float TimeStep = 1.0f / 240.0f;
 const int VelocityIterations = 12;
 const int PositionIterations = 4;
-const double PixelScale = 0.5;
+const double MeterToPixel = 50;
+const double PixelToMeter = 1/MeterToPixel;
 DebugRenderer debugRenderer;
 
 PhysicsFacade::PhysicsFacade() {
@@ -38,8 +39,8 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject) {
         bodyDef.type = b2_kinematicBody;
     bodyDef.allowSleep = true;
     auto transform = (*gameObject).GetTransform();
-    bodyDef.position.Set(static_cast<float>(transform.position.x) * PixelScale,
-                         static_cast<float>(transform.position.y) * PixelScale);
+    bodyDef.position.Set(static_cast<float>(transform.position.x) * PixelToMeter,
+                         static_cast<float>(transform.position.y) * PixelToMeter);
     bodyDef.angle = static_cast<float>(transform.rotation);
     auto body = world->CreateBody(&bodyDef);
     bodies.insert(std::pair<std::shared_ptr<GameObject>, b2Body *>(gameObject, body));
@@ -73,7 +74,7 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
         // create circles
         for (auto &circleCollider: game_object->GetComponents<CircleCollider>()) {
             b2CircleShape circleShape{};
-            circleShape.m_radius = static_cast<float>(circleCollider->Radius() * PixelScale);
+            circleShape.m_radius = static_cast<float>(circleCollider->Radius() * PixelToMeter);
             double area = game_object->GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody ? (
                     (circleCollider->Radius() * circleCollider->Radius()) * 2) : 0.0f;
             SetFixture(body, &circleShape, game_object->GetComponent<RigidBody>(), area);
@@ -82,8 +83,8 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
         // create boxes
         for (auto &boxCollider: game_object->GetComponents<BoxCollider>()) {
             b2PolygonShape boxShape{};
-            boxShape.SetAsBox(static_cast<float>(boxCollider->Width() / 2.0 * PixelScale),
-                              static_cast<float>(boxCollider->Height() / 2.0 * PixelScale));
+            boxShape.SetAsBox(static_cast<float>(boxCollider->Width() / 2 * PixelToMeter),
+                              static_cast<float>(boxCollider->Height() / 2 * PixelToMeter));
             double area = game_object->GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody ? (
                     boxCollider->Width() * boxCollider->Height()) : 0.0f;
             SetFixture(body, &boxShape, game_object->GetComponent<RigidBody>(), area);
@@ -103,9 +104,8 @@ void PhysicsFacade::Step() {
         auto gameObject = object_pair->first;
         auto body = object_pair->second;
         auto oldTransform = gameObject->GetTransform();
-
-        oldTransform.position.x += body->GetPosition().x - gameObject->GetTransform().position.x;
-        oldTransform.position.y += body->GetPosition().y - gameObject->GetTransform().position.y;
+        oldTransform.position.x += (body->GetPosition().x * MeterToPixel) - gameObject->GetTransform().position.x;
+        oldTransform.position.y += (body->GetPosition().y * MeterToPixel) - gameObject->GetTransform().position.y;
         oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);
         gameObject->SetTransform(oldTransform);
     }
