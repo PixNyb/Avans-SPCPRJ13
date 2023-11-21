@@ -11,11 +11,17 @@
 
 #include "sdl_event_listener.hpp"
 
+SDLEventListener::~SDLEventListener()
+{
+    polledKeyEvents.clear();
+    polledMouseEvents.clear();
+}
+
 void SDLEventListener::PollEvents()
 {
     polledKeyEvents.clear();
     polledMouseEvents.clear();
-    
+
     SDL_Event event;
 
     while (SDL_PollEvent(&event))

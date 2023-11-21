@@ -36,6 +36,8 @@
 class SDLEventListener
 {
   public:
+    ~SDLEventListener();
+
     void PollEvents();
 
     [[nodiscard]] std::vector<std::shared_ptr<KeyEvent>> GetPolledKeyEvents() const;
