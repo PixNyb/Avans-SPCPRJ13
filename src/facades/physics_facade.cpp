@@ -46,15 +46,6 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject) {
     bodies.insert(std::pair<std::shared_ptr<GameObject>, b2Body *>(gameObject, body));
 }
 
-std::vector<std::shared_ptr<GameObject>> PhysicsFacade::GetAllGameObjects() {
-    std::vector<std::shared_ptr<GameObject>> gameObjects;
-    for (const auto& pair : bodies) {
-        gameObjects.push_back(pair.first);
-    }
-
-    return gameObjects;
-}
-
 void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects) {
     // PhysicsFacade receives a list of gameobjects that contain a rigidbody
     // create the world where the bodies will be placed
@@ -91,7 +82,7 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
         }
     }
 
-    auto *contactListener = new ContactListener(GetAllGameObjects());
+    auto *contactListener = new ContactListener(bodies);
     world->SetContactListener(contactListener);
 }
 
@@ -104,6 +95,7 @@ void PhysicsFacade::Step() {
         auto gameObject = object_pair->first;
         auto body = object_pair->second;
         auto oldTransform = gameObject->GetTransform();
+        //TODO: body position is the center of the body (transform is the top left of the SDL shape)
         oldTransform.position.x += (body->GetPosition().x * MeterToPixel) - gameObject->GetTransform().position.x;
         oldTransform.position.y += (body->GetPosition().y * MeterToPixel) - gameObject->GetTransform().position.y;
         oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);

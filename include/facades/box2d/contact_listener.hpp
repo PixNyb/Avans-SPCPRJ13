@@ -15,21 +15,24 @@
 
 #include <memory>
 #include <vector>
+#include <map>
 #include "box2d/b2_world_callbacks.h"
 #include "box2d/b2_contact.h"
 #include "game_object.hpp"
 
-class ContactListener : public b2ContactListener{
+class ContactListener : public b2ContactListener {
 private:
-    std::vector<std::shared_ptr<GameObject>> gameObjects;
+    std::map<std::shared_ptr<GameObject>, b2Body *>
+            gameObjects;
 public:
-    ContactListener(std::vector<std::shared_ptr<GameObject>> gameObjects);
+    ContactListener(std::map<std::shared_ptr<GameObject>, b2Body *>
+                    gameObjects);
 
     ~ContactListener() = default;
 
-    void BeginContact(b2Contact* contact);
+    void BeginContact(b2Contact *contact);
 
-    void EndContact(b2Contact* contact);
+    void EndContact(b2Contact *contact);
 };
 
 

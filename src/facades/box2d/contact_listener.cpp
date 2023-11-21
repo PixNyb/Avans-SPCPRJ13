@@ -19,23 +19,25 @@ const double PixelToMeter = 1/MeterToPixel;
 void ContactListener::BeginContact(b2Contact* contact) {
     auto bodyA = contact->GetFixtureA()->GetBody();
     auto bodyB = contact->GetFixtureB()->GetBody();
+    std::string tag = "empty";
+    std::string tag2 = "empty";
 
-    for (auto &gameObject: gameObjects) {
-        if (bodyA->GetPosition().x * MeterToPixel == gameObject->GetTransform().position.x && bodyA->GetPosition().y * MeterToPixel == gameObject->GetTransform().position.y) {
-            std::string tag = "empty";
-            for (auto &gameObject2: gameObjects) {
-                if (bodyB->GetPosition().x * MeterToPixel == gameObject2->GetTransform().position.x && bodyB->GetPosition().y * MeterToPixel == gameObject2->GetTransform().position.y)
-                    tag = gameObject2->GetTag();
-            }
-            std::cout << gameObject->GetTag() << " is touching " << tag << std::endl;
+    for (auto &pair: gameObjects) {
+        if (pair.second == bodyA) {
+            tag = pair.first->GetTag();
         }
+        if (pair.second == bodyB)
+            tag2 = pair.first->GetTag();
     }
+    std::cout << tag << " is touching " << tag2 << std::endl;
+
 }
 
 void ContactListener::EndContact(b2Contact* contact) {
     std::cout << "end contact" << std::endl;
 }
 
-ContactListener::ContactListener(std::vector<std::shared_ptr<GameObject>> gameObjects) {
-    this->gameObjects = std::move(gameObjects);
+ContactListener::ContactListener(std::map<std::shared_ptr<GameObject>, b2Body *> gameObjects) {
+    this->gameObjects = gameObjects;
 }
+
