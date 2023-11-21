@@ -34,6 +34,14 @@ class IInputFacadeTest : public testing::Test {
     }
 };
 
+TEST_F(IInputFacadeTest, BindTest) {
+    auto mockKeyEvent = KeyEvent(KeyCode::UP_ARROW, EventType::KEYPRESSED);
+
+//    EXPECT_CALL(*mockInputFacade, Bind(*mockKeyEvent, ActionType::PAUSE)).Times(1);
+
+    mockInputFacade->Bind(mockKeyEvent, ActionType::JUMP);
+}
+
 TEST_F(IInputFacadeTest, UpdateTest) {
     EXPECT_CALL(*mockInputFacade, Update()).Times(1);
     mockInputFacade->Update();
@@ -42,4 +50,4 @@ TEST_F(IInputFacadeTest, UpdateTest) {
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
-}
+};
