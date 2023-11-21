@@ -19,7 +19,7 @@
 
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
-const double MeterToPixel = 50;
+const double MeterToPixel = 5;
 const double PixelToMeter = 1/MeterToPixel;
 
 SDL_Window *window;

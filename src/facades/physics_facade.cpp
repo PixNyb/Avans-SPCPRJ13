@@ -17,10 +17,10 @@
 #include "polygon_collider.hpp"
 #include "contact_listener.hpp"
 
-const float TimeStep = 1.0f / 240.0f;
+const float TimeStep = 1.0f / 480.0f;
 const int VelocityIterations = 12;
 const int PositionIterations = 4;
-const double MeterToPixel = 50;
+const double MeterToPixel = 5;
 const double PixelToMeter = 1/MeterToPixel;
 DebugRenderer debugRenderer;
 

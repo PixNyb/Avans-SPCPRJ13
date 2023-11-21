@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
     // create box
     auto obj = std::make_shared<GameObject>();
-    Point point{20, 200};
+    Point point{20, 600};
     Transform trs{point, 0, 1};
     auto body = std::make_shared<RigidBody>(10, 1, BodyType::dynamicBody);
     auto collider = std::make_shared<BoxCollider>();
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
     // create circle
     auto obj1 = std::make_shared<GameObject>();
-    Point point1{200, 400};
+    Point point1{200, 600};
     Transform trs1{point1, 0, 1};
     auto body1 = std::make_shared<RigidBody>(10, 1, BodyType::dynamicBody);
     auto collider1 = std::make_shared<CircleCollider>();
