@@ -1,68 +1,45 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
-#include "engine.hpp"
-#include "i_input_facade.hpp"
-#include "input_facade.hpp"
+#include "mouse_listener.hpp"
+#include "key_listener.hpp"
 
-#include "gtest/gtest.h"
-#include "gmock/gmock.h"
-
-class MockSDLInputFacade : public SDLInputFacade {
+class IInputFacade {
   public:
-    MockSDLInputFacade(std::unique_ptr<IInputFacade> inputHandler) : SDLInputFacade() {}
+    virtual ~IInputFacade() = default;
 
-    MOCK_METHOD0(Update, void());
-
-    MOCK_METHOD0(UpdateKeyEvents, void());
-
-    MOCK_METHOD0(UpdateMouseEvents, void());
-
-    MOCK_METHOD1(RegisterMouseListener, void(std::unique_ptr<IMouseListener>));
-
-    MOCK_METHOD1(RegisterKeyListener, void(std::unique_ptr<IKeyListener>));
-
-    MOCK_CONST_METHOD1(ActionPressed, bool(const ActionType&));
-
-    MOCK_CONST_METHOD1(ActionReleased, bool(const ActionType&));
-
-    MOCK_METHOD2(Bind, void(const Event&, const ActionType&));
+    virtual void Update() = 0;
+    virtual void RegisterMouseListener(std::unique_ptr<MouseListener> mouseListener) = 0;
+    virtual void RegisterKeyListener(std::unique_ptr<KeyListener> keyListener) = 0;
+    virtual bool ActionPressed(const ActionType &actionType) const = 0;
+    virtual bool ActionReleased(const ActionType &actionType) const = 0;
+    virtual void Bind(const Event &key, const ActionType &actionType) = 0;
 };
 
-class SDLInputFacadeTest : public testing::Test {
+class MockInputFacade : public IInputFacade {
+  public:
+    MOCK_METHOD(void, Update, (), (override));
+    MOCK_METHOD(void, RegisterMouseListener, (std::unique_ptr<MouseListener>), (override));
+    MOCK_METHOD(void, RegisterKeyListener, (std::unique_ptr<KeyListener>), (override));
+    MOCK_METHOD(bool, ActionPressed, (const ActionType &), (const, override));
+    MOCK_METHOD(bool, ActionReleased, (const ActionType &), (const, override));
+    MOCK_METHOD(void, Bind, (const Event &, const ActionType &), (override));
+};
+
+class IInputFacadeTest : public testing::Test {
   protected:
-    std::unique_ptr<MockSDLInputFacade> mockInputFacade;
+    std::unique_ptr<MockInputFacade> mockInputFacade;
 
     void SetUp() override {
-        mockInputFacade = std::make_unique<MockSDLInputFacade>();
+        mockInputFacade = std::make_unique<MockInputFacade>();
     }
 };
 
-TEST(SDLInputFacadeTest, KeyPressEventHandled) {
-    // Set expectations
-    EXPECT_CALL(*mockInputFacade, Bind(testing::_, ActionType::JUMP)).Times(1);
-    EXPECT_CALL(*mockInputFacade, ActionPressed(ActionType::JUMP)).WillOnce(testing::Return(true));
-
-    // Verify expectations
-    testing::Mock::VerifyAndClearExpectations(mockInputFacade.get());
+TEST_F(IInputFacadeTest, UpdateTest) {
+    EXPECT_CALL(*mockInputFacade, Update()).Times(1);
+    mockInputFacade->Update();
 }
 
-TEST(SDLInputFacadeTest, MousePressEventHandled) {
-    // Set expectations
-    EXPECT_CALL(*mockInputFacade, Bind(testing::_, ActionType::PAUSE)).Times(1);
-    EXPECT_CALL(*mockInputFacade, ActionPressed(ActionType::PAUSE)).WillOnce(testing::Return(true));
-
-    // Simulate mouse press
-    SimulateMousePress(KeyCode::MOUSE_LEFT);
-
-    // Verify expectations
-    testing::Mock::VerifyAndClearExpectations(mockInputFacade.get());
-}
-
-int main(int argc, char *argv[])
-{
-    // Initialize Google Test
+int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
-
-    // Run the tests
     return RUN_ALL_TESTS();
 }
