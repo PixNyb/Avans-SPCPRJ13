@@ -38,6 +38,6 @@ void ContactListener::EndContact(b2Contact* contact) {
 }
 
 ContactListener::ContactListener(std::map<std::shared_ptr<GameObject>, b2Body *> gameObjects) {
-    this->gameObjects = gameObjects;
+    this->gameObjects = std::move(gameObjects);
 }
 
