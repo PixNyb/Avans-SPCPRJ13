@@ -24,6 +24,8 @@ class MouseListener : public IMouseListener {
     void OnMousePressed() override;
     void OnMouseReleased() override;
 
+    MouseEvent GetMouseEvent();
+
   private:
     MouseEvent mouseEvent;
 };

@@ -27,6 +27,7 @@ public:
     void OnKeyPressed() override;
     void OnKeyReleased() override;
 
+    KeyEvent GetKeyEvent();
 private:
     KeyEvent keyEvent;
 };

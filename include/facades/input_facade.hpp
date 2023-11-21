@@ -40,13 +40,13 @@ class SDLInputFacade : public IInputFacade
      * @brief Registers a mouse listener for receiving mouse events.
      * @param mouseListener A unique pointer to an IMouseListener.
      */
-    void RegisterMouseListener(std::unique_ptr<IMouseListener> mouseListener) override;
+    void RegisterMouseListener(std::unique_ptr<MouseListener> mouseListener) override;
 
     /**
      * @brief Registers a key listener for receiving key events.
      * @param keyListener A unique pointer to an IKeyListener.
      */
-    void RegisterKeyListener(std::unique_ptr<IKeyListener> keyListener) override;
+    void RegisterKeyListener(std::unique_ptr<KeyListener> keyListener) override;
 
     /**
      * @brief Checks if a specific action is currently pressed.
@@ -74,8 +74,8 @@ class SDLInputFacade : public IInputFacade
 
     std::vector<ActionType> actionsReleased;
     std::vector<ActionType> actionsPressed;
-    std::vector<std::unique_ptr<IKeyListener>> keyListeners;
-    std::vector<std::unique_ptr<IMouseListener>> mouseListeners;
+    std::vector<std::unique_ptr<KeyListener>> keyListeners;
+    std::vector<std::unique_ptr<MouseListener>> mouseListeners;
 
     void UpdateMouseEvents();
     void UpdateKeyEvents();

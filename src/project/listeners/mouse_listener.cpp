@@ -13,6 +13,11 @@
 
 MouseListener::MouseListener(const MouseEvent &mouseEvent) : mouseEvent(mouseEvent) {}
 
+MouseEvent MouseListener::GetMouseEvent()
+{
+    return mouseEvent;
+}
+
 void MouseListener::OnMouseMoved() {
     mouseEvent.GetXPos();
     mouseEvent.GetYPos();

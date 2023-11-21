@@ -13,8 +13,8 @@
 #define DEFUNBOBENGINE_IINPUTHANDLER_HPP
 
 #include "event.hpp"
-#include "ikey_listener.hpp"
-#include "imouse_listener.hpp"
+#include "key_listener.hpp"
+#include "mouse_listener.hpp"
 #include "key_event.hpp"
 #include "mouse_event.hpp"
 #include <iostream>
@@ -38,9 +38,9 @@ class IInputFacade
 
     virtual void Update() = 0;
 
-    virtual void RegisterMouseListener(std::unique_ptr<IMouseListener> mouseListener) = 0;
+    virtual void RegisterMouseListener(std::unique_ptr<MouseListener> mouseListener) = 0;
 
-    virtual void RegisterKeyListener(std::unique_ptr<IKeyListener> keyListener) = 0;
+    virtual void RegisterKeyListener(std::unique_ptr<KeyListener> keyListener) = 0;
 
     virtual bool ActionPressed(const ActionType &actionType) const = 0;
 

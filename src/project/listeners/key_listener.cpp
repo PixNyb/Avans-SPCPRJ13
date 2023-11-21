@@ -13,6 +13,10 @@
 
 KeyListener::KeyListener(const KeyEvent& keyEvent) : keyEvent(keyEvent) {}
 
+KeyEvent KeyListener::GetKeyEvent() {
+    return keyEvent;
+}
+
 void KeyListener::OnKeyPressed() {
     switch(keyEvent.GetKeyCode()) {
     case KeyCode::UP_ARROW:

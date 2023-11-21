@@ -13,6 +13,9 @@
 
 void SDLEventListener::PollEvents()
 {
+    polledKeyEvents.clear();
+    polledMouseEvents.clear();
+    
     SDL_Event event;
 
     while (SDL_PollEvent(&event))
