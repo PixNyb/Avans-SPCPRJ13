@@ -17,11 +17,34 @@ LevelManager::LevelManager(std::shared_ptr<SceneManager> &sManager, std::shared_
       jsonReader(jReader)
 {}
 
-LevelManager::~LevelManager()
-{}
+LevelManager::~LevelManager() = default;
 
 void LevelManager::RegisterLevel(int id, std::string filePath)
-{}
+{
+    levels.insert(std::pair(id, filePath));
+}
 
 void LevelManager::LoadLevel(int id)
-{}
+{
+    auto path = levels.find(id);
+
+    // No level found with the following id.
+    if (path == levels.end())
+        return;
+
+    try
+    {
+        // Read level JSON.
+        auto levelJson = jsonReader->ConvertFileToJson(path->second);
+
+        // Create level based on the JSON.
+        auto level = levelFactory->CreateScene(levelJson);
+
+        // Update the current scene.
+        sceneManager->SetScene(level);
+    }
+    catch (std::exception &e) // TODO: Check for other exception typing.
+    {
+        // TODO: Rethrow error or just return?
+    }
+}
