@@ -11,25 +11,11 @@
 
 #include "mouse_event.hpp"
 
-MouseEvent::MouseEvent(KeyCode keyCode) : Event(keyCode)
+MouseEvent::MouseEvent(KeyCode keyCode, int x, int y, EventType eventType) : Event(keyCode, eventType)
 {
-    //    if (sdlEvent.type == SDL_MOUSEBUTTONDOWN || sdlEvent.type == SDL_MOUSEBUTTONUP) {
-    //        sdlMouseButtonEvent = sdlEvent.button;
-    //    } else if (sdlEvent.type == SDL_MOUSEMOTION) {
-    //        sdlMouseButtonEvent.x = sdlEvent.motion.x;
-    //        sdlMouseButtonEvent.y = sdlEvent.motion.y;
-    //    }
+    this->x = x;
+    this->y = y;
 }
 
-// Uint8 MouseEvent::getMouseButton() const {
-//     return sdlMouseButtonEvent.button;
-// }
-
-// SDL_Point MouseEvent::getMousePos() const {
-//     SDL_Point point;
-//
-//     point.x = sdlMouseButtonEvent.x;
-//     point.y = sdlMouseButtonEvent.y;
-//
-//     return point;
-// }
+int MouseEvent::GetXPos() const { return x; }
+int MouseEvent::GetYPos() const { return y; }

@@ -17,12 +17,9 @@
 class KeyEvent : public Event
 {
   public:
-    explicit KeyEvent(KeyCode keyCode, bool isKeyDown);
-
-    bool GetIsKeyDown() const;
+    explicit KeyEvent(KeyCode keyCode, EventType eventType);
 
   private:
-    bool isKeyDown;
 };
 
 #endif // DEFUNBOBENGINE_KEY_EVENT_HPP

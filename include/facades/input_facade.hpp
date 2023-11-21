@@ -24,6 +24,7 @@
 #include <map>
 #include <memory>
 #include <vector>
+#include <stdexcept>
 
 class SDLInputFacade : public IInputFacade
 {
@@ -75,7 +76,9 @@ class SDLInputFacade : public IInputFacade
     std::vector<ActionType> actionsPressed;
     std::vector<std::unique_ptr<IKeyListener>> keyListeners;
     std::vector<std::unique_ptr<IMouseListener>> mouseListeners;
-    std::map<Event, std::vector<ActionType>> actionTypeKeyBinds;
+
+    void UpdateMouseEvents();
+    void UpdateKeyEvents();
 };
 
 #endif // AVANS_SPCPRJ13_INPUT_MANAGER_HPP

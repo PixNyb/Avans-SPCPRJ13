@@ -17,9 +17,14 @@
 class MouseEvent : public Event
 {
   public:
-    explicit MouseEvent(KeyCode keyCode);
+    explicit MouseEvent(KeyCode keyCode, int x, int y, EventType);
+
+    int GetXPos() const;
+    int GetYPos() const;
 
   private:
+    int x;
+    int y;
 };
 
 #endif // DEFUNBOBENGINE_MOUSE_EVENT_HPP

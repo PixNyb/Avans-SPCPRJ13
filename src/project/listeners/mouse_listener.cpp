@@ -14,13 +14,8 @@
 MouseListener::MouseListener(const MouseEvent &mouseEvent) : mouseEvent(mouseEvent) {}
 
 void MouseListener::OnMouseMoved() {
-    // Get latest mouse state.
-//    SDL_PumpEvents();
-//
-//    int x = event->getMousePos().x;
-//    int y = event->getMousePos().y;
-//
-//    SDL_GetMouseState(&x, &y);
+    mouseEvent.GetXPos();
+    mouseEvent.GetYPos();
 }
 
 void MouseListener::OnMouseClicked() {
@@ -28,7 +23,17 @@ void MouseListener::OnMouseClicked() {
 }
 
 void MouseListener::OnMousePressed() {
-
+    switch(mouseEvent.GetKeyCode())
+    {
+    case KeyCode::MOUSE_LEFT:
+        break;
+    case KeyCode::MOUSE_RIGHT:
+        break;
+    case KeyCode::MOUSE_MIDDLE:
+        break;
+    default:
+        break;
+    }
 }
 
 void MouseListener::OnMouseReleased() {

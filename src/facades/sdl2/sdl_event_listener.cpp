@@ -19,20 +19,34 @@ void SDLEventListener::PollEvents()
     {
         auto keyCode = static_cast<KeyCode>(event.key.keysym.scancode);
 
+        // Get latest mouse state.
+        SDL_PumpEvents();
+
+        int x;
+        int y;
+
+        SDL_GetMouseState(&x, &y);
+
         switch (event.type)
         {
-        case SDL_KEYUP:
-            polledKeyEvents.emplace_back(std::make_shared<KeyEvent>(keyCode, false));
+        case SDL_KEYDOWN:
+            polledKeyEvents.emplace_back(std::make_shared<KeyEvent>(keyCode, EventType::KEYPRESSED));
             break;
 
-        case SDL_KEYDOWN:
-            polledKeyEvents.emplace_back(std::make_shared<KeyEvent>(keyCode, true));
+        case SDL_KEYUP:
+            polledKeyEvents.emplace_back(std::make_shared<KeyEvent>(keyCode, EventType::KEYRELEASED));
             break;
 
         case SDL_MOUSEMOTION:
+            polledMouseEvents.emplace_back(std::make_shared<MouseEvent>(keyCode, x, y, EventType::MOUSEMOVED));
+            break;
+
         case SDL_MOUSEBUTTONDOWN:
+            polledMouseEvents.emplace_back(std::make_shared<MouseEvent>(keyCode, x, y, EventType::MOUSEPRESSED));
+            break;
+
         case SDL_MOUSEBUTTONUP:
-            polledMouseEvents.emplace_back(std::make_shared<MouseEvent>(keyCode));
+            polledMouseEvents.emplace_back(std::make_shared<MouseEvent>(keyCode, x, y, EventType::MOUSERELEASED));
             break;
 
         default:

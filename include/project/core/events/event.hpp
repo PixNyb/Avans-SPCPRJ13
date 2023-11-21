@@ -15,6 +15,7 @@
 #define DEFUNBOBENGINE_EVENT_HPP
 
 #include "key_code.hpp"
+#include "event_type.hpp"
 #include <cstdint>
 
 /**
@@ -32,7 +33,7 @@ class Event
      * @param type The type of the event.
      * @param scancode Scancode of the key (or other relevant information).
      */
-    explicit Event(KeyCode keyCode) : keyCode(keyCode) {}
+    explicit Event(KeyCode keyCode, EventType eventType) : keyCode(keyCode), eventType(eventType) {}
 
     /**
      * @brief Virtual destructor for polymorphic deletion.
@@ -43,7 +44,9 @@ class Event
      * @brief Retrieves the type of the event.
      * @return The type of the event as a Uint32 value.
      */
-    [[nodiscard]] KeyCode GetKeyCode() const { return keyCode; };
+    KeyCode GetKeyCode() const { return keyCode; };
+
+    EventType GetEventType() const { return eventType; }
 
     /**
      * @brief Overloaded less-than operator for ordering events based on their types.
@@ -60,6 +63,7 @@ class Event
   private:
     KeyCode keyCode; ///< The type of the event.
     bool isProcessed = false;
+    EventType eventType;
 };
 
 #endif // DEFUNBOBENGINE_EVENT_HPP

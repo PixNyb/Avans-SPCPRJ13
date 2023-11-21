@@ -12,7 +12,6 @@
 #include "input_facade.hpp"
 #include "key_event.hpp"
 #include "mouse_event.hpp"
-#include <stdexcept>
 
 SDLInputFacade::SDLInputFacade() : eventListener(std::make_unique<SDLEventListener>()) {}
 
@@ -20,6 +19,12 @@ void SDLInputFacade::Update()
 {
     eventListener->PollEvents();
 
+    UpdateKeyEvents();
+    UpdateMouseEvents();
+}
+
+void SDLInputFacade::UpdateKeyEvents()
+{
     for (const auto &keyEvent : eventListener->GetPolledKeyEvents())
     {
         if (keyEvent->IsProcessed())
@@ -31,34 +36,49 @@ void SDLInputFacade::Update()
 
         for (const auto &listener : keyListeners)
         {
-            if (keyEvent->GetIsKeyDown())
-            {
+            switch(keyEvent->GetEventType()) {
+            case EventType::KEYPRESSED:
                 listener->OnKeyPressed();
-            }
-            else
-            {
+                break;
+            case EventType::KEYRELEASED:
                 listener->OnKeyReleased();
+                break;
+            default:
+                break;
             }
         }
     }
+}
 
-    //    for(const auto& mouseEvent : sdlInputHandler->getPolledMouseEvents()) {
-    //        for (const auto& listener : mouseListeners) {
-    //            switch(mouseEvent->getType()) {
-    //                case :
-    //                    listener->OnMouseMoved();
-    //                    break;
-    //                case :
-    //                    listener->OnMousePressed();
-    //                    break;
-    //                case :
-    //                    listener->OnMouseReleased();
-    //                    break;
-    //                default:
-    //                    break;
-    //            }
-    //        }
-    //    }
+void SDLInputFacade::UpdateMouseEvents()
+{
+    for(const auto& mouseEvent : eventListener->GetPolledMouseEvents()) {
+        if (mouseEvent->IsProcessed())
+        {
+            continue;
+        }
+
+        mouseEvent->MarkProcessed();
+
+        for (const auto& listener : mouseListeners) {
+            switch(mouseEvent->GetEventType()) {
+            case EventType::MOUSEMOVED:
+                listener->OnMouseMoved();
+                break;
+            case EventType::MOUSEPRESSED:
+                listener->OnMousePressed();
+                break;
+            case EventType::MOUSERELEASED:
+                listener->OnMouseReleased();
+                break;
+            case EventType::MOUSECLICKED:
+                listener->OnMouseClicked();
+                break;
+            default:
+                break;
+            }
+        }
+    }
 }
 
 void SDLInputFacade::RegisterMouseListener(std::unique_ptr<IMouseListener> mouseListener)
