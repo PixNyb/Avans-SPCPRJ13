@@ -1,8 +1,25 @@
+/**
+ * @file key_code.hpp
+ * @author Martijn Vermeer
+ * @brief This file contains the key code class definition.
+ * @version 0.1
+ * @date 2023-11-21
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #ifndef DEFUNBOBENGINE_KEY_CODE_HPP
 #define DEFUNBOBENGINE_KEY_CODE_HPP
 
 #include <cstddef>
 
+/**
+ * @enum KeyCode
+ * @brief Enumerates key codes for keyboard and mouse events.
+ *
+ * The KeyCode enum class defines a set of key codes representing keyboard and mouse events.
+ */
 enum class KeyCode
 {
     INVALID = NULL,

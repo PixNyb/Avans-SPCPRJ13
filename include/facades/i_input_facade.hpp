@@ -13,10 +13,10 @@
 #define DEFUNBOBENGINE_IINPUTHANDLER_HPP
 
 #include "event.hpp"
-#include "key_listener.hpp"
-#include "mouse_listener.hpp"
 #include "key_event.hpp"
+#include "key_listener.hpp"
 #include "mouse_event.hpp"
+#include "mouse_listener.hpp"
 #include <iostream>
 #include <memory>
 #include <vector>
@@ -34,18 +34,33 @@
 class IInputFacade
 {
   public:
+    /**
+     * @brief Virtual destructor for IInputFacade.
+     */
     virtual ~IInputFacade() = default;
 
+    /**
+     * @brief Update the input state, usually called per frame.
+     */
     virtual void Update() = 0;
 
+    /**
+     * @brief Register a mouse listener to receive mouse-related events.
+     * @param mouseListener A unique pointer to the MouseListener to register.
+     */
     virtual void RegisterMouseListener(std::unique_ptr<MouseListener> mouseListener) = 0;
 
+    /**
+     * @brief Register a key listener to receive key-related events.
+     * @param keyListener A unique pointer to the KeyListener to register.
+     */
     virtual void RegisterKeyListener(std::unique_ptr<KeyListener> keyListener) = 0;
 
-    virtual bool ActionPressed(const ActionType &actionType) const = 0;
-
-    virtual bool ActionReleased(const ActionType &actionType) const = 0;
-
+    /**
+     * @brief Bind a key event to a specific action.
+     * @param key The key event to bind.
+     * @param actionType The type of action to associate with the key event.
+     */
     virtual void Bind(const Event &key, const ActionType &actionType) = 0;
 };
 

@@ -13,19 +13,20 @@
 #define AVANS_SPCPRJ13_ACTION_TYPE_HPP
 
 /**
+ * @class ActionType
  * @brief Enumerates the possible actions that can be performed in a game.
  *
- * The ActionType enum class defines a set of actions that a game entity can take.
+ * The ActionType enum class defines a set of actions that can be performed by a game entity.
  */
 enum class ActionType
 {
-    NONE,
-    JUMP,
-    PAUSE,
-    GOLEFT,
-    GORIGHT,
-    GOUP,
-    GODOWN,
+    NONE,    ///< No specific action.
+    JUMP,    ///< Jump action.
+    PAUSE,   ///< Pause the game.
+    GOLEFT,  ///< Move left.
+    GORIGHT, ///< Move right.
+    GOUP,    ///< Move up.
+    GODOWN,  ///< Move down.
 };
 
 #endif // AVANS_SPCPRJ13_ACTION_TYPE_HPP

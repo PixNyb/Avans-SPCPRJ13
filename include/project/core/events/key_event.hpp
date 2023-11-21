@@ -14,9 +14,21 @@
 
 #include "event.hpp"
 
+/**
+ * @class KeyEvent
+ * @brief Represents a keyboard event.
+ *
+ * The KeyEvent class is derived from the base Event class and provides specific
+ * functionality for keyboard events.
+ */
 class KeyEvent : public Event
 {
   public:
+    /**
+     * @brief Constructs a KeyEvent object.
+     * @param keyCode The code associated with the pressed or released key.
+     * @param eventType The type of keyboard event (key pressed or key released).
+     */
     explicit KeyEvent(KeyCode keyCode, EventType eventType);
 
   private:

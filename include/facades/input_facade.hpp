@@ -5,10 +5,6 @@
  * @version 0.1
  * @date 2023-11-20
  *
- * The InputManager class handles input events such as key presses and mouse actions.
- * It allows the registration of listeners for key and mouse events, tracks the state of
- * pressed and released actions, and provides methods for binding actions to events.
- *
  * @copyright Copyright (c) 2023
  *
  */
@@ -23,9 +19,26 @@
 #include "sdl_event_listener.hpp"
 #include <map>
 #include <memory>
-#include <vector>
 #include <stdexcept>
+#include <vector>
 
+/**
+ * @class SDLInputFacade
+ * @brief Manages input events using SDL2 and provides an interface for handling input.
+ *
+ * The SDLInputFacade class implements the IInputFacade interface, managing input events
+ * such as key presses and mouse actions. It allows the registration of listeners for key
+ * and mouse events, tracks the state of pressed and released actions, and provides methods
+ * for binding actions to events.
+ *
+ * @see IInputFacade
+ * @see MouseListener
+ * @see KeyListener
+ * @see SDLEventListener
+ * @see ActionType
+ * @see Event
+ * @version 0.1
+ */
 class SDLInputFacade : public IInputFacade
 {
   public:
@@ -49,20 +62,6 @@ class SDLInputFacade : public IInputFacade
     void RegisterKeyListener(std::unique_ptr<KeyListener> keyListener) override;
 
     /**
-     * @brief Checks if a specific action is currently pressed.
-     * @param actionType The ActionType to check.
-     * @return True if the action is currently pressed, false otherwise.
-     */
-    bool ActionPressed(const ActionType &actionType) const override;
-
-    /**
-     * @brief Checks if a specific action has been released.
-     * @param actionType The ActionType to check.
-     * @return True if the action has been released, false otherwise.
-     */
-    bool ActionReleased(const ActionType &actionType) const override;
-
-    /**
      * @brief Binds an action to a specific event.
      * @param key The Event representing the input event.
      * @param actionType The ActionType to associate with the event.
@@ -70,14 +69,22 @@ class SDLInputFacade : public IInputFacade
     void Bind(const Event &key, const ActionType &actionType) override;
 
   private:
-    std::unique_ptr<SDLEventListener> eventListener;
+    std::unique_ptr<SDLEventListener>
+        eventListener;                       ///< SDL event listener for handling input events.
+    std::vector<ActionType> actionsReleased; ///< List of actions that have been released.
+    std::vector<ActionType> actionsPressed;  ///< List of actions that are currently pressed.
+    std::vector<std::unique_ptr<KeyListener>> keyListeners; ///< List of registered key listeners.
+    std::vector<std::unique_ptr<MouseListener>>
+        mouseListeners; ///< List of registered mouse listeners.
 
-    std::vector<ActionType> actionsReleased;
-    std::vector<ActionType> actionsPressed;
-    std::vector<std::unique_ptr<KeyListener>> keyListeners;
-    std::vector<std::unique_ptr<MouseListener>> mouseListeners;
-
+    /**
+     * @brief Updates mouse-related events.
+     */
     void UpdateMouseEvents();
+
+    /**
+     * @brief Updates key-related events.
+     */
     void UpdateKeyEvents();
 };
 

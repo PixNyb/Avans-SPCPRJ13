@@ -10,8 +10,6 @@
  */
 
 #include "input_facade.hpp"
-#include "key_event.hpp"
-#include "mouse_event.hpp"
 
 SDLInputFacade::SDLInputFacade() : eventListener(std::make_unique<SDLEventListener>()) {}
 
@@ -36,8 +34,10 @@ void SDLInputFacade::UpdateKeyEvents()
 
         for (const auto &listener : keyListeners)
         {
-            if(listener->GetKeyEvent().GetKeyCode() == keyEvent->GetKeyCode()) {
-                switch(keyEvent->GetEventType()) {
+            if (listener->GetKeyEvent().GetKeyCode() == keyEvent->GetKeyCode())
+            {
+                switch (keyEvent->GetEventType())
+                {
                 case EventType::KEYPRESSED:
                     listener->OnKeyPressed();
                     break;
@@ -54,7 +54,8 @@ void SDLInputFacade::UpdateKeyEvents()
 
 void SDLInputFacade::UpdateMouseEvents()
 {
-    for(const auto& mouseEvent : eventListener->GetPolledMouseEvents()) {
+    for (const auto &mouseEvent : eventListener->GetPolledMouseEvents())
+    {
         if (mouseEvent->IsProcessed())
         {
             continue;
@@ -62,8 +63,9 @@ void SDLInputFacade::UpdateMouseEvents()
 
         mouseEvent->MarkProcessed();
 
-        for (const auto& listener : mouseListeners) {
-            if(listener->GetMouseEvent().GetKeyCode() == mouseEvent->GetKeyCode())
+        for (const auto &listener : mouseListeners)
+        {
+            if (listener->GetMouseEvent().GetKeyCode() == mouseEvent->GetKeyCode())
             {
                 switch (mouseEvent->GetEventType())
                 {
@@ -97,27 +99,16 @@ void SDLInputFacade::RegisterKeyListener(std::unique_ptr<KeyListener> keyListene
     keyListeners.push_back(std::move(keyListener));
 }
 
-bool SDLInputFacade::ActionPressed(const ActionType &actionType) const
-{
-    return std::find(actionsPressed.begin(), actionsPressed.end(), actionType) !=
-           actionsPressed.end();
-}
-
-bool SDLInputFacade::ActionReleased(const ActionType &actionType) const
-{
-    return std::find(actionsReleased.begin(), actionsReleased.end(), actionType) !=
-           actionsReleased.end();
-}
-
 void SDLInputFacade::Bind(const Event &event, const ActionType &actionType)
 {
-    KeyEvent *keyEvent = const_cast<KeyEvent*>(dynamic_cast<const KeyEvent*>(&event));
-    MouseEvent *mouseEvent = const_cast<MouseEvent*>(dynamic_cast<const MouseEvent*>(&event));
+    KeyEvent *keyEvent = const_cast<KeyEvent *>(dynamic_cast<const KeyEvent *>(&event));
+    MouseEvent *mouseEvent = const_cast<MouseEvent *>(dynamic_cast<const MouseEvent *>(&event));
 
-     if (keyEvent != nullptr)
-         RegisterKeyListener(std::make_unique<KeyListener>(dynamic_cast<const KeyEvent&>(event)));
-     else if (mouseEvent != nullptr)
-         RegisterMouseListener(std::make_unique<MouseListener>(dynamic_cast<const MouseEvent&>(event)));
-     else
-         throw std::invalid_argument("Event type is not supported.");
+    if (keyEvent != nullptr)
+        RegisterKeyListener(std::make_unique<KeyListener>(dynamic_cast<const KeyEvent &>(event)));
+    else if (mouseEvent != nullptr)
+        RegisterMouseListener(
+            std::make_unique<MouseListener>(dynamic_cast<const MouseEvent &>(event)));
+    else
+        throw std::invalid_argument("Event type is not supported.");
 }

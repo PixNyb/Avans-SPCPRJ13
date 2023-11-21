@@ -5,17 +5,14 @@
  * @version 0.1
  * @date 2023-11-08
  *
- * The Event class is a base class for all events within the game engine. It holds the
- * type of the event, and specific event classes can extend it to provide additional
- * information relevant to that event type.
- *
+ * @copyright Copyright (c) 2023
  */
 
 #ifndef DEFUNBOBENGINE_EVENT_HPP
 #define DEFUNBOBENGINE_EVENT_HPP
 
-#include "key_code.hpp"
 #include "event_type.hpp"
+#include "key_code.hpp"
 #include <cstdint>
 
 /**
@@ -46,6 +43,10 @@ class Event
      */
     KeyCode GetKeyCode() const { return keyCode; };
 
+    /**
+     * @brief Retrieves the type of the event.
+     * @return The type of the event.
+     */
     EventType GetEventType() const { return eventType; }
 
     /**
@@ -56,14 +57,21 @@ class Event
      */
     bool operator<(const Event &other) const { return keyCode < other.keyCode; }
 
+    /**
+     * @brief Marks the event as processed.
+     */
     void MarkProcessed() { isProcessed = true; }
 
+    /**
+     * @brief Checks if the event has been processed.
+     * @return True if the event has been processed, false otherwise.
+     */
     bool IsProcessed() const { return isProcessed; }
 
   private:
-    KeyCode keyCode; ///< The type of the event.
-    bool isProcessed = false;
-    EventType eventType;
+    KeyCode keyCode;          ///< The key code associated with the event.
+    bool isProcessed = false; ///< The type of the event.
+    EventType eventType;      ///< Flag indicating whether the event has been processed.
 };
 
 #endif // DEFUNBOBENGINE_EVENT_HPP
