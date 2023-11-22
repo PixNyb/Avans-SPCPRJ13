@@ -42,6 +42,11 @@ class LevelManager {
      */
     std::shared_ptr<JSONReader> jsonReader;
 
+    /**
+     * @brief The file extension used for the level files.
+     */
+    std::string levelFileExtension;
+
   public:
     /**
      * @brief Construct a new LevelManager;

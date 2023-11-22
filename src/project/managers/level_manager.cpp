@@ -9,18 +9,30 @@
  */
 
 #include "level_manager.hpp"
+#include <fmt/core.h>
+#include <iostream>
 
 LevelManager::LevelManager(std::shared_ptr<SceneManager> &sManager, std::shared_ptr<PrefabManager> &pManager, std::shared_ptr<JSONReader> &jReader)
     : levels(),
       sceneManager(sManager),
       levelFactory(std::make_unique<LevelFactory>(pManager)),
-      jsonReader(jReader)
+      jsonReader(jReader),
+      levelFileExtension(".json")
 {}
 
 LevelManager::~LevelManager() = default;
 
 void LevelManager::RegisterLevel(int id, std::string filePath)
 {
+    // Check if file exists.
+    if (!std::filesystem::exists(filePath))
+        throw std::runtime_error(fmt::format("No file was found at: '{}'", filePath));
+
+    // Check for file extension.
+    if (filePath.length() < levelFileExtension.length() ||
+        (0 != filePath.compare(filePath.length() - levelFileExtension.length(), levelFileExtension.length(), levelFileExtension)))
+        throw std::runtime_error(fmt::format("Level file is of a unsupported type. Expected type: '{}'", levelFileExtension));
+
     levels.insert(std::pair(id, filePath));
 }
 
@@ -46,5 +58,6 @@ void LevelManager::LoadLevel(int id)
     catch (std::exception &e) // TODO: Check for other exception typing.
     {
         // TODO: Rethrow error or just return?
+        std::cout << e.what() << std::endl;
     }
 }
