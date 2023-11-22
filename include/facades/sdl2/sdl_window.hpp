@@ -19,8 +19,8 @@
 #ifndef DEFUNBOBENGINE_WINDOW_HPP
 #define DEFUNBOBENGINE_WINDOW_HPP
 
-#include <SDL.h>
 #include "sdl_render.hpp"
+#include <SDL.h>
 #include <iostream>
 
 /**
@@ -31,10 +31,12 @@
  * create and destroy a window. It is responsible for handling the window's
  * lifecycle and providing a means to retrieve the SDL_Window pointer.
  */
-class SDLWindow {
-    SDL_Window* SdlWindow; ///< Pointer to the SDL_Window managed by this class.
-    SDL_Renderer* SdlRenderer;
-public:
+class SDLWindow
+{
+    SDL_Window *SdlWindow; ///< Pointer to the SDL_Window managed by this class.
+    SDL_Renderer *SdlRenderer;
+
+  public:
     /**
      * @brief Construct a new SDLWindow object but does not create the window.
      *
@@ -44,7 +46,7 @@ public:
      * @param width The width of the window in pixels.
      * @param height The height of the window in pixels.
      */
-    SDLWindow(const char* title, int width, int height);
+    SDLWindow(const char *title, int width, int height);
 
     /**
      * @brief Destroys the SDLWindow object, ensuring the SDL_Window is properly destroyed.
@@ -59,7 +61,7 @@ public:
      * @param width The width of the window in pixels.
      * @param height The height of the window in pixels.
      */
-    void Create(const char* title, int width, int height);
+    void Create(const char *title, int width, int height);
 
     /**
      * @brief Destroys the SDL_Window managed by this object.
@@ -73,13 +75,13 @@ public:
      * @brief Retrieves the underlying SDL_Window pointer.
      * @return SDL_Window* A pointer to the managed SDL_Window.
      */
-    SDL_Window* GetSDLWindow() const;
+    SDL_Window *GetSDLWindow() const;
 
     /**
      * @brief Retrieves the underlying SDL_Render pointer.
      * @return SDL_Render* A pointer to the managed SDL_Render.
      */
-    SDL_Renderer* GetRenderer() const;
+    SDL_Renderer *GetRenderer() const;
 
     /**
      * @brief Delays execution for a specified duration.
@@ -87,9 +89,7 @@ public:
      * Introduces a pause in processing, useful for controlling frame rates.
      * @param ms Delay duration in milliseconds.
      */
-    void Delay(unsigned int ms) {
-        SDL_Delay(ms);
-    }
+    void Delay(unsigned int ms) { SDL_Delay(ms); }
 
     /**
      * @brief Creates an SDL_Renderer associated with the window.
@@ -100,12 +100,11 @@ public:
     void CreateRenderer();
 
     /**
-    * @brief Clears the rendering target.
-    *
-    * Prepares the screen for new rendering operations by clearing existing content.
-    */
+     * @brief Clears the rendering target.
+     *
+     * Prepares the screen for new rendering operations by clearing existing content.
+     */
     void ClearScreen();
-
 
     /**
      * @brief Presents the rendered content on the screen.
@@ -115,4 +114,4 @@ public:
     void PresentScreen();
 };
 
-#endif //DEFUNBOBENGINE_WINDOW_HPP
+#endif // DEFUNBOBENGINE_WINDOW_HPP

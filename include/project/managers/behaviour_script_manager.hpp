@@ -14,7 +14,7 @@
 
 class BehaviourScriptManager
 {
-public:
+  public:
     BehaviourScriptManager();
     ~BehaviourScriptManager();
 

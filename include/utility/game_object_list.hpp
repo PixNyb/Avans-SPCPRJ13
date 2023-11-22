@@ -4,8 +4,9 @@
  * @version 0.1
  * @date 2023-11-08
  *
- * This file contains the GameObjectList class definition. The GameObjectList class represents a list of GameObjects in a parent-child hierarchy.
- * It is used to keep track of the parent-child relationships between GameObjects in the game world.
+ * This file contains the GameObjectList class definition. The GameObjectList class represents a
+ * list of GameObjects in a parent-child hierarchy. It is used to keep track of the parent-child
+ * relationships between GameObjects in the game world.
  */
 
 #ifndef DEFUNBOBENGINE_GAME_OBJECT_LIST_HPP
@@ -13,19 +14,20 @@
 
 #include "game_object.hpp"
 #include <memory>
-#include <utility>
 #include <string>
+#include <utility>
 
 class GameObject;
 
 /**
  * @brief The GameObjectNode class represents a node in a GameObjectList.
  */
-class GameObjectNode {
+class GameObjectNode
+{
   public:
     std::shared_ptr<GameObjectNode> parent; //< The parent node
-    std::shared_ptr<GameObject> cur; //< The current game object
-    std::shared_ptr<GameObjectNode> child; //< The child node
+    std::shared_ptr<GameObject> cur;        //< The current game object
+    std::shared_ptr<GameObjectNode> child;  //< The child node
 
     /**
      * @brief Checks if the node has a parent
@@ -42,7 +44,8 @@ class GameObjectNode {
  * Forwards iteration starts at the root node and ends at the origin node.
  * Backwards iteration starts at the origin node and ends at the root node.
  */
-class GameObjectListIterator {
+class GameObjectListIterator
+{
   private:
     std::shared_ptr<GameObjectNode> currentNode;
 
@@ -51,18 +54,21 @@ class GameObjectListIterator {
     using value_type = std::shared_ptr<GameObjectNode>;
     using difference_type = std::ptrdiff_t;
     using pointer = std::shared_ptr<GameObjectNode>;
-    using reference = std::shared_ptr<GameObjectNode>&;  // Corrected type
+    using reference = std::shared_ptr<GameObjectNode> &; // Corrected type
 
     // Constructor
-    explicit GameObjectListIterator(std::shared_ptr<GameObjectNode> node) : currentNode(std::move(node)) {}
+    explicit GameObjectListIterator(std::shared_ptr<GameObjectNode> node)
+        : currentNode(std::move(node))
+    {
+    }
 
-    GameObjectListIterator& operator++();
+    GameObjectListIterator &operator++();
     const GameObjectListIterator operator++(int);
-    GameObjectListIterator& operator--();
+    GameObjectListIterator &operator--();
     const GameObjectListIterator operator--(int);
-    bool operator==(const GameObjectListIterator& other) const;
-    bool operator!=(const GameObjectListIterator& other) const;
-    std::shared_ptr<GameObjectNode>& operator*();
+    bool operator==(const GameObjectListIterator &other) const;
+    bool operator!=(const GameObjectListIterator &other) const;
+    std::shared_ptr<GameObjectNode> &operator*();
 };
 
 /**
@@ -71,7 +77,7 @@ class GameObjectListIterator {
 class GameObjectList
 {
   private:
-    std::shared_ptr<GameObjectNode> root; ///< The root node of the list
+    std::shared_ptr<GameObjectNode> root;   ///< The root node of the list
     std::shared_ptr<GameObjectNode> origin; ///< The origin node of the list
 
   public:
@@ -79,7 +85,7 @@ class GameObjectList
      * @brief Builds the list from a game object
      * @param gameObject The game object to build the list from
      */
-    explicit GameObjectList(const std::weak_ptr<GameObject>& gameObject);
+    explicit GameObjectList(const std::weak_ptr<GameObject> &gameObject);
 
     /**
      * @brief Returns the root node of the list
@@ -98,14 +104,14 @@ class GameObjectList
      * @param name Name of the node
      * @return The node if found, otherwise an empty pointer
      */
-    std::shared_ptr<GameObjectNode> FindNode(const std::string& name);
+    std::shared_ptr<GameObjectNode> FindNode(const std::string &name);
 
     /**
      * @brief Finds a node by reference
      * @param ref Reference of the node
      * @return The node if found, otherwise an empty pointer
      */
-    std::shared_ptr<GameObjectNode> FindNode(const GameObject* red);
+    std::shared_ptr<GameObjectNode> FindNode(const GameObject *red);
 
     /**
      * Iterator starting at the root
