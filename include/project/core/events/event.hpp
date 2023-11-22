@@ -23,8 +23,9 @@
  * Event serves as a base class for all types of events. It contains a member that
  * specifies the type of event, allowing event handlers to process it accordingly.
  */
-class Event {
-public:
+class Event
+{
+  public:
     EventType type; ///< The type of the event.
 
     /**
@@ -39,4 +40,4 @@ public:
     virtual ~Event() {}
 };
 
-#endif //DEFUNBOBENGINE_EVENT_HPP
+#endif // DEFUNBOBENGINE_EVENT_HPP

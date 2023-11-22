@@ -26,7 +26,12 @@
  *
  * Represents the possible alignments for text, such as left, center, and right.
  */
-enum class Alignment { left, center, right };
+enum class Alignment
+{
+    left,
+    center,
+    right
+};
 
 /**
  * @class Text
@@ -38,15 +43,16 @@ enum class Alignment { left, center, right };
  * Text is a UIObject that manages the display of text, including its content, appearance,
  * and position within the user interface.
  */
-class Text : public UIObject {
-private:
-    std::string text;      ///< The text string.
-    int fontSize;          ///< The font size of the text.
+class Text : public UIObject
+{
+  private:
+    std::string text; ///< The text string.
+    int fontSize;     ///< The font size of the text.
     // TODO: Implement alignment
     Alignment alignment; ///< The alignment of the text.
-    Color textColor;       ///< The color of the text.
+    Color textColor;     ///< The color of the text.
 
-public:
+  public:
     /**
      * @brief Default constructor for Text.
      *

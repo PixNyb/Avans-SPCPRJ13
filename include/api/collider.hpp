@@ -5,9 +5,10 @@
  * @date 2023-11-12
  *
  * @brief Defines the Collider class as a base for all collider components in a game engine.
- * Collider is an abstract class that serves as a base for specialized collider types like BoxCollider and CircleCollider.
- * It is a crucial part of the physics and collision detection system within the game engine,
- * providing a framework for handling collisions between game objects.
+ * Collider is an abstract class that serves as a base for specialized collider types like
+ * BoxCollider and CircleCollider. It is a crucial part of the physics and collision detection
+ * system within the game engine, providing a framework for handling collisions between game
+ * objects.
  *
  * @copyright Copyright (c) 2023
  */
@@ -24,6 +25,8 @@
  * The Collider class is an abstract base class for all collider components used in the game engine.
  * It provides a foundation for defining collision properties and behaviors for game objects.
  */
-class Collider : public Component {};
+class Collider : public Component
+{
+};
 
 #endif // COLLIDER2D_H_

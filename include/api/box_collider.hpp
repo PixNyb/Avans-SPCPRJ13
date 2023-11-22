@@ -24,8 +24,9 @@
  * BoxCollider is a component used for collision detection and physics simulation.
  * It defines a rectangular area that can interact with other colliders in the game world.
  */
-class BoxCollider : public Collider {
-public:
+class BoxCollider : public Collider
+{
+  public:
     /**
      * @brief The collider's width
      * @return The current width
@@ -50,7 +51,7 @@ public:
      */
     void Height(double newHeight) { height = newHeight; }
 
-private:
+  private:
     double width;
     double height;
 };
