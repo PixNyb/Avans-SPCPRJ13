@@ -23,10 +23,10 @@ void ContactListener::BeginContact(b2Contact* contact) {
     std::string tag2 = "empty";
 
     for (auto &pair: gameObjects) {
-        if (pair.second->GetPosition().x == bodyA->GetPosition().x && pair.second->GetPosition().y == bodyA->GetPosition().y) {
+        if (pair.second == bodyA) {
             tag = pair.first->GetTag();
         }
-        else if (pair.second->GetPosition().x == bodyB->GetPosition().x && pair.second->GetPosition().y == bodyB->GetPosition().y)
+        else if (pair.second == bodyB)
             tag2 = pair.first->GetTag();
     }
     std::cout << tag << " is touching " << tag2 << std::endl;
