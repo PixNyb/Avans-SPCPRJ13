@@ -40,7 +40,8 @@ class GameObject : public std::enable_shared_from_this<GameObject>
     bool active;                        ///< The active flag of the GameObject.
     std::string tag;                    ///< The tag/type of the GameObject.
     int layer;                          ///< The layer of the GameObject.
-    std::weak_ptr<PhysicsManager> physicsManager; ///< A reference to the physicsmanager for behaviorscripts
+    std::weak_ptr<PhysicsManager>
+        physicsManager; ///< A reference to the physicsmanager for behaviorscripts
 
   public:
     /**

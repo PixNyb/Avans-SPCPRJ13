@@ -12,8 +12,8 @@
 
 #include "game_object.hpp"
 #include "component.hpp"
-#include "physics_manager.hpp"
 #include "game_object_list.hpp"
+#include "physics_manager.hpp"
 #include "transform.hpp"
 #include <memory>
 
@@ -40,7 +40,7 @@ GameObject::GameObject(const GameObject &other)
 
     // TODO: Update the clone functionality to make a deep copy.
     std::vector<std::shared_ptr<Component>> comps;
-    for (const auto& comp : other.components)
+    for (const auto &comp : other.components)
         comps.push_back(std::make_shared<Component>(*comp));
     components = comps;
 
@@ -101,8 +101,12 @@ bool GameObject::IsActiveInWorld() const { return active; }
 
 bool GameObject::IsActiveSelf() const { return active; }
 
-void GameObject::SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer) { this->physicsManager = std::move(physicsPointer); }
+void GameObject::SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer)
+{
+    this->physicsManager = std::move(physicsPointer);
+}
 
-std::unique_ptr<GameObjectList> GameObject::GetObjectList(){
+std::unique_ptr<GameObjectList> GameObject::GetObjectList()
+{
     return std::make_unique<GameObjectList>(this->shared_from_this());
 }

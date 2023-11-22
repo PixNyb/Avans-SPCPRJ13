@@ -12,15 +12,15 @@
 #ifndef DEFUNBOBENGINE_PHYSICS_MANAGER_HPP
 #define DEFUNBOBENGINE_PHYSICS_MANAGER_HPP
 
-#include "vector"
 #include "memory"
 #include "physics_facade.hpp"
 #include "vector"
 
 class GameObject;
 
-class PhysicsManager {
-private:
+class PhysicsManager
+{
+  private:
     PhysicsFacade physicsFacade;
 
   public:
