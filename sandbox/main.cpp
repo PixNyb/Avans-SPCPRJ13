@@ -12,6 +12,7 @@
 #include "audio_manager.hpp"
 #include <iostream>
 
+// Change this to whatever wav you like to test
 const std::string test = R"(C:\Users\melvi\Downloads\file_example_WAV_1MG.wav)";
 
 int main(int argc, char *argv[])
