@@ -149,7 +149,6 @@ void PhysicsFacade::AddForce(const std::shared_ptr<GameObject> &gameObject, floa
 {
     float newVX = vx * 100;
     float newVY = vy * 100;
-    auto iterator = bodies.find(gameObject);
     for (auto &pair : bodies)
     {
         if (pair.first->GetTransform().position.x == gameObject->GetTransform().position.x &&
