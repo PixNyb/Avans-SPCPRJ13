@@ -14,8 +14,9 @@
 
 #include "vector"
 #include "memory"
-#include "game_object.hpp"
 #include "physics_facade.hpp"
+
+class GameObject;
 
 class PhysicsManager {
 private:

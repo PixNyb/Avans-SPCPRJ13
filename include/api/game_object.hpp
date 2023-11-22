@@ -14,12 +14,12 @@
 
 #include "component.hpp"
 #include "transform.hpp"
-#include "physics_manager.hpp"
 #include <memory>
 #include <string>
 #include <vector>
 
 class GameObjectList;
+class PhysicsManager;
 
 /**
  * @class GameObject

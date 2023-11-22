@@ -11,3 +11,7 @@ void ColliderBehaviorTest::OnTriggerEnter2D(const Collider &collider) {
 void ColliderBehaviorTest::OnTriggerExit2D(const Collider &collider) {
 
 }
+
+void ColliderBehaviorTest::OnTriggerStay2D(const Collider &collider) {
+
+}

@@ -12,6 +12,7 @@
 
 #include "game_object.hpp"
 #include "component.hpp"
+#include "physics_manager.hpp"
 #include "game_object_list.hpp"
 #include "transform.hpp"
 #include <memory>
@@ -100,10 +101,7 @@ bool GameObject::IsActiveInWorld() const { return active; }
 
 bool GameObject::IsActiveSelf() const { return active; }
 
-
-void SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer) {
-        this->physicsManager = std::move(physicsPointer);
-}
+void GameObject::SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer) { this->physicsManager = std::move(physicsPointer); }
 
 std::unique_ptr<GameObjectList> GameObject::GetObjectList(){
     return std::make_unique<GameObjectList>(this->shared_from_this());
