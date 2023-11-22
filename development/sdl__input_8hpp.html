@@ -92,16 +92,36 @@ $(document).ready(function(){initNavTree('sdl__input_8hpp.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 
-<p>This file contains the <a class="el" href="classInput.html" title="Handles keyboard and mouse input for the engine.">Input</a> class definition.  
+<p>This file contains the Input class definition.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;SDL.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="point_8hpp_source.html">point.hpp</a>&quot;</code><br />
+<code>#include &lt;SDL.h&gt;</code><br />
+<code>#include &lt;SDL_scancode.h&gt;</code><br />
+<code>#include &lt;SDL_stdinc.h&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for sdl_input.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="sdl__input_8hpp__incl.png" border="0" usemap="#ainclude_2facades_2sdl2_2sdl__input_8hpp" alt=""/></div>
 <map name="ainclude_2facades_2sdl2_2sdl__input_8hpp" id="ainclude_2facades_2sdl2_2sdl__input_8hpp">
-<area shape="rect" title="This file contains the Input class definition." alt="" coords="5,5,160,47"/>
-<area shape="rect" title=" " alt="" coords="53,95,112,121"/>
+<area shape="rect" title="This file contains the Input class definition." alt="" coords="181,5,336,47"/>
+<area shape="rect" href="point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="5,95,88,121"/>
+<area shape="rect" title=" " alt="" coords="112,95,171,121"/>
+<area shape="rect" title=" " alt="" coords="195,95,322,121"/>
+<area shape="rect" title=" " alt="" coords="346,95,451,121"/>
+<area shape="rect" title=" " alt="" coords="475,95,599,121"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="sdl__input_8hpp__dep__incl.png" border="0" usemap="#ainclude_2facades_2sdl2_2sdl__input_8hppdep" alt=""/></div>
+<map name="ainclude_2facades_2sdl2_2sdl__input_8hppdep" id="ainclude_2facades_2sdl2_2sdl__input_8hppdep">
+<area shape="rect" title="This file contains the Input class definition." alt="" coords="166,5,321,47"/>
+<area shape="rect" href="sdl__input__facade_8hpp.html" title="This file contains the SDLInputFacade class definition." alt="" coords="134,95,353,136"/>
+<area shape="rect" href="sdl__input__facade_8cpp.html" title="This file contains the SDLInputFacade class implementation." alt="" coords="5,184,188,225"/>
+<area shape="rect" href="sdl__input_8cpp.html" title="This file contains the SDLInput class implementation." alt="" coords="377,95,528,136"/>
+<area shape="rect" href="engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="213,191,410,218"/>
 </map>
 </div>
 </div>
@@ -109,16 +129,18 @@ Include dependency graph for sdl_input.hpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInput.html">Input</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles keyboard and mouse input for the engine.  <a href="classInput.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDLInput.html">SDLInput</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles keyboard and mouse input for the engine.  <a href="classSDLInput.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file contains the <a class="el" href="classInput.html" title="Handles keyboard and mouse input for the engine.">Input</a> class definition. </p>
-<dl class="section author"><dt>Author</dt><dd>Robin Pijnappels (<a href="#" onclick="location.href='mai'+'lto:'+'rm.'+'pi'+'jna'+'pp'+'els'+'@s'+'tud'+'en'+'t.a'+'va'+'ns.'+'nl'; return false;">rm.pi<span style="display: none;">.nosp@m.</span>jnap<span style="display: none;">.nosp@m.</span>pels@<span style="display: none;">.nosp@m.</span>stud<span style="display: none;">.nosp@m.</span>ent.a<span style="display: none;">.nosp@m.</span>vans<span style="display: none;">.nosp@m.</span>.nl</a>) </dd></dl>
+<div class="textblock"><p>This file contains the Input class definition. </p>
+<dl class="section author"><dt>Author</dt><dd>Robin Pijnappels (<a href="#" onclick="location.href='mai'+'lto:'+'rm.'+'pi'+'jna'+'pp'+'els'+'@s'+'tud'+'en'+'t.a'+'va'+'ns.'+'nl'; return false;">rm.pi<span style="display: none;">.nosp@m.</span>jnap<span style="display: none;">.nosp@m.</span>pels@<span style="display: none;">.nosp@m.</span>stud<span style="display: none;">.nosp@m.</span>ent.a<span style="display: none;">.nosp@m.</span>vans<span style="display: none;">.nosp@m.</span>.nl</a>) </dd>
+<dd>
+Roël Couwenberg (<a href="#" onclick="location.href='mai'+'lto:'+'con'+'ta'+'ct@'+'ro'+'elc'+'.m'+'e'; return false;">conta<span style="display: none;">.nosp@m.</span>ct@r<span style="display: none;">.nosp@m.</span>oelc.<span style="display: none;">.nosp@m.</span>me</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2023-11-08</dd></dl>
-<p>The <a class="el" href="classInput.html" title="Handles keyboard and mouse input for the engine.">Input</a> class is responsible for gathering and processing user input from various devices like the keyboard and mouse. It provides methods to check the current state of different input devices and to handle input events within the game loop.</p>
+<p>The Input class is responsible for gathering and processing user input from various devices like the keyboard and mouse. It provides methods to check the current state of different input devices and to handle input events within the game loop.</p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

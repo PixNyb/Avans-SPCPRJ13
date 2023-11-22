@@ -177,8 +177,27 @@ Physics Simulatie Gebruiken</h1>
 <div class="line">void PhysicsManager::Step() {</div>
 <div class="line">    physicsFacade.Step();</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>De CreateWorld functie roep je als eerste aan. Vervolgens kun je de simulatie starten met de Step() functie. Per aanroep van deze functie zet de wereld 1 stap en beweegt hij de objecten die hij bevat. </p>
-</div></div><!-- contents -->
+</div><!-- fragment --><p>De CreateWorld functie roep je als eerste aan. Vervolgens kun je de simulatie starten met de Step() functie. Per aanroep van deze functie zet de wereld 1 stap en beweegt hij de objecten die hij bevat.</p>
+<h1><a class="anchor" id="autotoc_md25"></a>
+Input Facades</h1>
+<p>De input facade maakt het mogelijk om naar key en mouse inputs te luisteren, maar ook om acties te maken, binden aan specifieke inputs (een soort alias) en deze te gebruiken in de game.</p>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> inputFacade = <a class="code" href="classEngine.html#aab953f155f37bc03fe78de7cb4dbf721">Engine::GetInstance</a>().<a class="code" href="classEngine.html#ab11c947aee16bee63bc9c1105f72dd43">Get</a>&lt;<a class="code" href="classIInputFacade.html">IInputFacade</a>&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// We voegen een &#39;jump&#39; action toe die we kunnen binden aan een input</span></div>
+<div class="line">inputFacade-&gt;<a class="code" href="classIInputFacade.html#a902b38964dca1cb6d34e55dab215481f">RegisterAction</a>(<span class="stringliteral">&quot;jump&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// We binden de spacebar aan de &#39;jump&#39; action</span></div>
+<div class="line">inputFacade-&gt;BindKey(KeyCode::SPACE, <span class="stringliteral">&quot;jump&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// We kunnen nu checken of de &#39;jump&#39; action is geactiveerd</span></div>
+<div class="line"><span class="keywordflow">if</span> (inputFacade-&gt;GetAction(<span class="stringliteral">&quot;jump&quot;</span>)) {</div>
+<div class="line">    <span class="comment">// Jump!</span></div>
+<div class="line">}</div>
+<div class="ttc" id="aclassEngine_html_aab953f155f37bc03fe78de7cb4dbf721"><div class="ttname"><a href="classEngine.html#aab953f155f37bc03fe78de7cb4dbf721">Engine::GetInstance</a></div><div class="ttdeci">static Engine * GetInstance()</div><div class="ttdoc">Gets the instance of the engine.</div><div class="ttdef"><b>Definition:</b> engine.cpp:110</div></div>
+<div class="ttc" id="aclassEngine_html_ab11c947aee16bee63bc9c1105f72dd43"><div class="ttname"><a href="classEngine.html#ab11c947aee16bee63bc9c1105f72dd43">Engine::Get</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; Get()</div><div class="ttdoc">Gets a public available instance (like SceneManager)</div><div class="ttdef"><b>Definition:</b> engine.hpp:60</div></div>
+<div class="ttc" id="aclassIInputFacade_html"><div class="ttname"><a href="classIInputFacade.html">IInputFacade</a></div><div class="ttdoc">The IInputFacade interface defines the methods that a concrete input facade must implement.</div><div class="ttdef"><b>Definition:</b> i_input_facade.hpp:282</div></div>
+<div class="ttc" id="aclassIInputFacade_html_a902b38964dca1cb6d34e55dab215481f"><div class="ttname"><a href="classIInputFacade.html#a902b38964dca1cb6d34e55dab215481f">IInputFacade::RegisterAction</a></div><div class="ttdeci">virtual void RegisterAction(const std::string &amp;action)=0</div><div class="ttdoc">Register an action with the input system.</div></div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

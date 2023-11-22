@@ -1,0 +1,6 @@
+<map id="include/facades/i_input_facade.hpp" name="include/facades/i_input_facade.hpp">
+<area shape="rect" id="node1" title="This file contains the IInputFacade interface definition." alt="" coords="117,5,289,47"/>
+<area shape="rect" id="node2" href="$sdl__input__facade_8hpp.html" title="This file contains the SDLInputFacade class definition." alt="" coords="94,95,313,136"/>
+<area shape="rect" id="node3" href="$sdl__input__facade_8cpp.html" title="This file contains the SDLInputFacade class implementation." alt="" coords="5,184,188,225"/>
+<area shape="rect" id="node4" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="213,191,410,218"/>
+</map>

@@ -5,11 +5,11 @@ var dir_53a771c9ad71090a27bee26439f940f2 =
     [ "graphics_facade.hpp", "graphics__facade_8hpp.html", [
       [ "GraphicsFacade", "classGraphicsFacade.html", "classGraphicsFacade" ]
     ] ],
+    [ "i_input_facade.hpp", "i__input__facade_8hpp.html", "i__input__facade_8hpp" ],
     [ "io_facade.hpp", "io__facade_8hpp.html", [
       [ "IOFacade", "classIOFacade.html", "classIOFacade" ]
     ] ],
     [ "physics_facade.hpp", "physics__facade_8hpp.html", [
       [ "PhysicsFacade", "classPhysicsFacade.html", "classPhysicsFacade" ]
-    ] ],
-    [ "sdl2_input_handler.hpp", "sdl2__input__handler_8hpp_source.html", null ]
+    ] ]
 ];

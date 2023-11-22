@@ -39,12 +39,13 @@ var hierarchy =
       [ "Rectangle", "classRectangle.html", null ],
       [ "Triangle", "classTriangle.html", null ]
     ] ],
+    [ "IInputFacade", "classIInputFacade.html", [
+      [ "SDLInputFacade", "classSDLInputFacade.html", null ]
+    ] ],
     [ "IKeyListener", "classIKeyListener.html", null ],
     [ "IMouseListener", "classIMouseListener.html", null ],
-    [ "Input", "classInput.html", null ],
     [ "IOFacade", "classIOFacade.html", [
-      [ "GraphicsFacade", "classGraphicsFacade.html", null ],
-      [ "SDL2InputHandler", "classSDL2InputHandler.html", null ]
+      [ "GraphicsFacade", "classGraphicsFacade.html", null ]
     ] ],
     [ "ISceneFactory", "classISceneFactory.html", [
       [ "LevelFactory", "classLevelFactory.html", null ]
@@ -64,6 +65,7 @@ var hierarchy =
     [ "SDLCircle", "classSDLCircle.html", null ],
     [ "SDLColorUtility", "classSDLColorUtility.html", null ],
     [ "SDLInit", "classSDLInit.html", null ],
+    [ "SDLInput", "classSDLInput.html", null ],
     [ "SDLRect", "classSDLRect.html", null ],
     [ "SDLRender", "classSDLRender.html", null ],
     [ "SDLSurface", "classSDLSurface.html", null ],
@@ -71,6 +73,9 @@ var hierarchy =
     [ "SDLTriangle", "classSDLTriangle.html", null ],
     [ "SDLWindow", "classSDLWindow.html", null ],
     [ "ShapeColor", "classShapeColor.html", null ],
+    [ "testing::Test", null, [
+      [ "SDLInputFacadeTest", "classSDLInputFacadeTest.html", null ]
+    ] ],
     [ "Thread", "classThread.html", null ],
     [ "Time", "classTime.html", null ],
     [ "Timer", "classTimer.html", null ],

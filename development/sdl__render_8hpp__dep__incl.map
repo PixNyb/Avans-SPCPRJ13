@@ -1,13 +1,12 @@
 <map id="include/facades/sdl2/sdl_render.hpp" name="include/facades/sdl2/sdl_render.hpp">
-<area shape="rect" id="node1" title="This file contains the SDLRender class definition." alt="" coords="325,5,480,47"/>
+<area shape="rect" id="node1" title="This file contains the SDLRender class definition." alt="" coords="267,5,421,47"/>
 <area shape="rect" id="node2" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="138,273,321,315"/>
-<area shape="rect" id="node6" href="$sdl__window_8hpp.html" title="This file contains the SDLWindow class definition for managing an SDL_Window." alt="" coords="325,95,480,136"/>
-<area shape="rect" id="node11" href="$sdl__render_8cpp.html" title="This file contains the SDLRender class implementation." alt="" coords="505,95,655,136"/>
+<area shape="rect" id="node6" href="$sdl__window_8hpp.html" title="This file contains the SDLWindow class definition for managing an SDL_Window." alt="" coords="267,95,421,136"/>
+<area shape="rect" id="node10" href="$sdl__render_8cpp.html" title="This file contains the SDLRender class implementation." alt="" coords="446,95,597,136"/>
 <area shape="rect" id="node3" href="$render__manager_8hpp_source.html" title=" " alt="" coords="5,363,192,404"/>
 <area shape="rect" id="node4" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="65,452,263,479"/>
 <area shape="rect" id="node5" href="$graphics__facade_8cpp.html" title="This file contains the GraphicsFacade class implementation." alt="" coords="267,363,421,404"/>
-<area shape="rect" id="node7" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="333,184,473,225"/>
-<area shape="rect" id="node10" href="$sdl__window_8cpp.html" title="Implementation of the Window class that wraps SDL2 window functionalities." alt="" coords="497,184,647,225"/>
-<area shape="rect" id="node8" href="$sdl2__input__handler_8hpp_source.html" title=" " alt="" coords="345,273,500,315"/>
-<area shape="rect" id="node9" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="525,273,702,315"/>
+<area shape="rect" id="node7" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="270,184,410,225"/>
+<area shape="rect" id="node9" href="$sdl__window_8cpp.html" title="Implementation of the Window class that wraps SDL2 window functionalities." alt="" coords="434,184,585,225"/>
+<area shape="rect" id="node8" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="345,273,522,315"/>
 </map>
