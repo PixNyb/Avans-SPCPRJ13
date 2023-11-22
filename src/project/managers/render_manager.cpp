@@ -96,10 +96,24 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint, const
     //  really matter for now
 
     // Draw sprites
-    auto sprite = gameObject->GetComponent<Sprite>();
-    if (sprite) {
+    auto spriteComponent = gameObject->GetComponent<Sprite>();
+    if (spriteComponent) {
+        // Calculate the sprite's position and size relative to the camera
+        auto relCamPos = gameObject->GetTransform().position - cameraPoint;
+        double scale = gameObject->GetTransform().scale;
+        Size spriteSize = GetSpriteSize(spriteComponent->GetSprite()); // Implement this method
 
+        // Create a Texture object for the sprite
+        Texture spriteTexture(spriteComponent->GetSprite());
+
+        // Create a Rectangle object representing the position and size of the sprite
+        Rectangle spriteRect(Vector2D(relCamPos.x, relCamPos.y), spriteSize.width * scale, spriteSize.height * scale);
+
+        // Draw the sprite
+        graphicsFacade->DrawSprite(spriteTexture, spriteRect);
     }
+
+
 
     auto text = dynamic_pointer_cast<Text>(gameObject);
     if(text) {

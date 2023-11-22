@@ -306,24 +306,38 @@ void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle rectangle) {
 }
 
 void GraphicsFacade::RenderSDLTexture(SDL_Texture* sdlTexture, Rectangle rectangle) {
-    if (!sdlTexture) return;
+    if (!sdlTexture) {
+        std::cerr << "SDL_Texture is null" << std::endl;
+        return;
+    }
 
-    auto renderer = SdlWindow->GetRenderer();
-    if(!renderer) {
+    SDL_Renderer* renderer = SdlWindow->GetRenderer();
+    if (!renderer) {
         std::cerr << "Renderer is null" << std::endl;
         return;
     }
 
+    // Extract position and size from the Rectangle object
     const Vector2D& pos = rectangle.GetPosition();
+    int width = rectangle.GetWidth();
+    int height = rectangle.GetHeight();
 
-    SDLRect rect(static_cast<int>(pos.x), static_cast<int>(pos.y), rectangle.GetWidth(),
-                 rectangle.GetHeight(), static_cast<int>(rectangle.GetRotation()));
+    // Define the SDL_Rect for rendering
+    SDL_Rect sdlRect;
+    sdlRect.x = static_cast<int>(pos.x);
+    sdlRect.y = static_cast<int>(pos.y);
+    sdlRect.w = width;
+    sdlRect.h = height;
 
-    SDL_QueryTexture(sdlTexture, NULL, NULL, &rect.w, &rect.h);
+    // Optionally adjust the width and height based on the actual texture size
+     SDL_QueryTexture(sdlTexture, NULL, NULL, &sdlRect.w, &sdlRect.h);
 
     // Render the texture to the screen
-    SDL_RenderCopy(renderer, sdlTexture, NULL, &rectangle.);
+    if (SDL_RenderCopy(renderer, sdlTexture, NULL, &sdlRect) != 0) {
+        std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
+    }
 }
+
 
 SDL_Texture* GraphicsFacade::GetCachedSDLTexture(const Texture& texture) {
     auto it = textureCache.find(texture.getFilePath());

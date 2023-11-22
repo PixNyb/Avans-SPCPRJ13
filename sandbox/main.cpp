@@ -91,10 +91,12 @@ int main(int argc, char *argv[])
     auto scene = std::make_shared<Scene>();
 
     // Prepare all components
+    const Color& standardRed = Color::red();
+
     auto component = std::make_shared<CircleCollider>();
     component->Radius(30);
     auto boxComponent = std::make_shared<BoxCollider>();
-    boxComponent->Width(30);
+    boxComponent->Width(50);
     boxComponent->Height(30);
 
     // Circle
@@ -108,6 +110,7 @@ int main(int argc, char *argv[])
     obj2->SetName("box");
     obj2->AddComponent(boxComponent);
     obj2->SetTransform(Transform(Point(0,0), 0, 1));
+
 
     // Scaling behaviour scripts
     auto behaviourScript = std::make_shared<TestBehaviourScript>(obj);

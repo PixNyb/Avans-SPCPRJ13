@@ -177,7 +177,7 @@ public:
      * This method creates a texture from an image file, which can then be used for rendering.
      * @param texture The texture to be created.
      */
-    void DrawSprite(const Texture& texture, Rectangle rectangle) override;
+    void DrawSprite(const Texture& texture, Rectangle& rectangle) override;
 
     /**
      * @brief Creates an SDL_Texture from an image file.

@@ -196,8 +196,7 @@ public:
      *
      * @param texture A Texture object containing the properties of the texture.
      */
-    virtual void DrawSprite(const Texture& texture, Rectangle rectangle) = 0;
-
+    virtual void DrawSprite(const Texture& texture, Rectangle& rectangle) = 0;
 
     /**
      * @brief Renders an SDL_Texture on the rendering target.
