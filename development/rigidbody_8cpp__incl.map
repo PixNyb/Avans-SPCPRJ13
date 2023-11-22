@@ -1,7 +1,7 @@
 <map id="src/api/rigidbody.cpp" name="src/api/rigidbody.cpp">
-<area shape="rect" id="node1" title="This file contains the RigidBody class implementation." alt="" coords="104,5,259,32"/>
-<area shape="rect" id="node2" href="$rigidbody_8hpp_source.html" title=" " alt="" coords="127,80,236,107"/>
+<area shape="rect" id="node1" title="This file contains the RigidBody class implementation." alt="" coords="116,5,271,32"/>
+<area shape="rect" id="node2" href="$rigidbody_8hpp_source.html" title=" " alt="" coords="139,80,248,107"/>
 <area shape="rect" id="node3" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="5,155,128,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="152,155,211,181"/>
-<area shape="rect" id="node5" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="235,155,317,181"/>
+<area shape="rect" id="node4" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="152,155,235,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="259,155,317,181"/>
 </map>

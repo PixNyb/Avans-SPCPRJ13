@@ -96,23 +96,22 @@ $(document).ready(function(){initNavTree('sdl__init_8hpp_source.html',''); initR
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classSDLInit.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSDLInit.html">SDLInit</a> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classSDLInit.html#a0d3ad0fc2d4ab4ecf6774f93fb27de4f">SDLInit</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classSDLInit.html#a1bbbdf87b2dc3949d42a276ccbc6e886">   44</a></span>&#160;    <a class="code" href="classSDLInit.html#a1bbbdf87b2dc3949d42a276ccbc6e886">~SDLInit</a>() {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        SDL_Quit();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Delete copy constructor and assignment operator to prevent copying</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classSDLInit.html#a0d3ad0fc2d4ab4ecf6774f93fb27de4f">SDLInit</a>(<span class="keyword">const</span> <a class="code" href="classSDLInit.html">SDLInit</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classSDLInit.html">SDLInit</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classSDLInit.html">SDLInit</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_SDL_INIT_HPP</span></div>
-<div class="ttc" id="aclassSDLInit_html"><div class="ttname"><a href="classSDLInit.html">SDLInit</a></div><div class="ttdoc">Class for initializing and cleaning up SDL.</div><div class="ttdef"><b>Definition:</b> sdl_init.hpp:28</div></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classSDLInit.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSDLInit.html">SDLInit</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classSDLInit.html#a0d3ad0fc2d4ab4ecf6774f93fb27de4f">SDLInit</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classSDLInit.html#a1bbbdf87b2dc3949d42a276ccbc6e886">   45</a></span>&#160;    <a class="code" href="classSDLInit.html#a1bbbdf87b2dc3949d42a276ccbc6e886">~SDLInit</a>() { SDL_Quit(); }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Delete copy constructor and assignment operator to prevent copying</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classSDLInit.html#a0d3ad0fc2d4ab4ecf6774f93fb27de4f">SDLInit</a>(<span class="keyword">const</span> <a class="code" href="classSDLInit.html">SDLInit</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classSDLInit.html">SDLInit</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classSDLInit.html">SDLInit</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_SDL_INIT_HPP</span></div>
+<div class="ttc" id="aclassSDLInit_html"><div class="ttname"><a href="classSDLInit.html">SDLInit</a></div><div class="ttdoc">Class for initializing and cleaning up SDL.</div><div class="ttdef"><b>Definition:</b> sdl_init.hpp:29</div></div>
 <div class="ttc" id="aclassSDLInit_html_a0d3ad0fc2d4ab4ecf6774f93fb27de4f"><div class="ttname"><a href="classSDLInit.html#a0d3ad0fc2d4ab4ecf6774f93fb27de4f">SDLInit::SDLInit</a></div><div class="ttdeci">SDLInit()</div><div class="ttdoc">Constructs the SDLInit object and initializes SDL.</div><div class="ttdef"><b>Definition:</b> sdl_init.cpp:15</div></div>
-<div class="ttc" id="aclassSDLInit_html_a1bbbdf87b2dc3949d42a276ccbc6e886"><div class="ttname"><a href="classSDLInit.html#a1bbbdf87b2dc3949d42a276ccbc6e886">SDLInit::~SDLInit</a></div><div class="ttdeci">~SDLInit()</div><div class="ttdoc">Destroys the SDLInit object and cleans up SDL.</div><div class="ttdef"><b>Definition:</b> sdl_init.hpp:44</div></div>
+<div class="ttc" id="aclassSDLInit_html_a1bbbdf87b2dc3949d42a276ccbc6e886"><div class="ttname"><a href="classSDLInit.html#a1bbbdf87b2dc3949d42a276ccbc6e886">SDLInit::~SDLInit</a></div><div class="ttdeci">~SDLInit()</div><div class="ttdoc">Destroys the SDLInit object and cleans up SDL.</div><div class="ttdef"><b>Definition:</b> sdl_init.hpp:45</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -3,7 +3,7 @@ var classGameObjectListIterator =
     [ "difference_type", "classGameObjectListIterator.html#afee07a22901814516bfe18b608a06349", null ],
     [ "iterator_category", "classGameObjectListIterator.html#a4b6b99ca7d7e85dde99b5602b6d11654", null ],
     [ "pointer", "classGameObjectListIterator.html#ac5bfdd31bd18b1a9ff95288e48ad77fb", null ],
-    [ "reference", "classGameObjectListIterator.html#a72dc2a8b1d168042cd2cb6297ada7e59", null ],
+    [ "reference", "classGameObjectListIterator.html#a63c567a2627780aabe16a5e3090c1a2d", null ],
     [ "value_type", "classGameObjectListIterator.html#a446c8975fb74949ab2af90c0cde015a3", null ],
     [ "GameObjectListIterator", "classGameObjectListIterator.html#ade351442bd34c08bb8b91908c3499f47", null ],
     [ "operator!=", "classGameObjectListIterator.html#af5bb6c38574660385d67f3f432b58733", null ],

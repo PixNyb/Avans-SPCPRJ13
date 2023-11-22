@@ -95,19 +95,20 @@ $(document).ready(function(){initNavTree('sdl__surface_8hpp_source.html',''); in
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classSDLSurface.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSDLSurface.html">SDLSurface</a> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    SDL_Surface* surface;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classSDLSurface.html#a46e97a8063d67b296a58d93a8ac10243">   38</a></span>&#160;    <a class="code" href="classSDLSurface.html#a46e97a8063d67b296a58d93a8ac10243">SDLSurface</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filePath);</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classSDLSurface.html#ad220d0db8e92aa664bf07c4d374b2d07">   42</a></span>&#160;    <a class="code" href="classSDLSurface.html#ad220d0db8e92aa664bf07c4d374b2d07">~SDLSurface</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classSDLSurface.html#a6a60509888b3f009f18d6878ec8c01bf">   48</a></span>&#160;    SDL_Surface* <a class="code" href="classSDLSurface.html#a6a60509888b3f009f18d6878ec8c01bf">getSDLSurface</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_SDL_SURFACE_HPP</span></div>
-<div class="ttc" id="aclassSDLSurface_html"><div class="ttname"><a href="classSDLSurface.html">SDLSurface</a></div><div class="ttdoc">Manages an SDL_Surface loaded from a file.</div><div class="ttdef"><b>Definition:</b> sdl_surface.hpp:29</div></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classSDLSurface.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSDLSurface.html">SDLSurface</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    SDL_Surface *surface;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classSDLSurface.html#a46e97a8063d67b296a58d93a8ac10243">   39</a></span>&#160;    <a class="code" href="classSDLSurface.html#a46e97a8063d67b296a58d93a8ac10243">SDLSurface</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filePath);</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classSDLSurface.html#ad220d0db8e92aa664bf07c4d374b2d07">   43</a></span>&#160;    <a class="code" href="classSDLSurface.html#ad220d0db8e92aa664bf07c4d374b2d07">~SDLSurface</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classSDLSurface.html#a6a60509888b3f009f18d6878ec8c01bf">   49</a></span>&#160;    SDL_Surface *<a class="code" href="classSDLSurface.html#a6a60509888b3f009f18d6878ec8c01bf">getSDLSurface</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_SDL_SURFACE_HPP</span></div>
+<div class="ttc" id="aclassSDLSurface_html"><div class="ttname"><a href="classSDLSurface.html">SDLSurface</a></div><div class="ttdoc">Manages an SDL_Surface loaded from a file.</div><div class="ttdef"><b>Definition:</b> sdl_surface.hpp:30</div></div>
 <div class="ttc" id="aclassSDLSurface_html_a46e97a8063d67b296a58d93a8ac10243"><div class="ttname"><a href="classSDLSurface.html#a46e97a8063d67b296a58d93a8ac10243">SDLSurface::SDLSurface</a></div><div class="ttdeci">SDLSurface(const char *filePath)</div><div class="ttdoc">Constructs an SDLSurface by loading from the specified file path.</div></div>
 <div class="ttc" id="aclassSDLSurface_html_a6a60509888b3f009f18d6878ec8c01bf"><div class="ttname"><a href="classSDLSurface.html#a6a60509888b3f009f18d6878ec8c01bf">SDLSurface::getSDLSurface</a></div><div class="ttdeci">SDL_Surface * getSDLSurface() const</div><div class="ttdoc">Retrieves the underlying SDL_Surface pointer.</div></div>
 <div class="ttc" id="aclassSDLSurface_html_ad220d0db8e92aa664bf07c4d374b2d07"><div class="ttname"><a href="classSDLSurface.html#ad220d0db8e92aa664bf07c4d374b2d07">SDLSurface::~SDLSurface</a></div><div class="ttdeci">~SDLSurface()</div><div class="ttdoc">Destroys the SDLSurface, freeing the managed SDL_Surface resource.</div></div>

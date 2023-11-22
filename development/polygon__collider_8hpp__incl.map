@@ -1,7 +1,7 @@
 <map id="include/api/polygon_collider.hpp" name="include/api/polygon_collider.hpp">
-<area shape="rect" id="node1" title="This file contains the PolygonCollider class definition." alt="" coords="69,5,219,47"/>
-<area shape="rect" id="node2" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="5,95,88,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="113,95,175,121"/>
-<area shape="rect" id="node4" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="199,95,297,121"/>
-<area shape="rect" id="node5" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="187,169,309,196"/>
+<area shape="rect" id="node1" title="This file contains the PolygonCollider class definition." alt="" coords="107,5,256,47"/>
+<area shape="rect" id="node2" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="18,95,115,121"/>
+<area shape="rect" id="node4" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="140,95,223,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="247,95,310,121"/>
+<area shape="rect" id="node3" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="5,169,128,196"/>
 </map>

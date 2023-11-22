@@ -1,5 +1,5 @@
 <map id="include/api/behaviour_script.hpp" name="include/api/behaviour_script.hpp">
-<area shape="rect" id="node1" title="Defines the BehaviourScript class as part of a game engine framework. BehaviourScript is a base class..." alt="" coords="5,5,168,47"/>
-<area shape="rect" id="node2" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="25,169,148,196"/>
-<area shape="rect" id="node3" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="82,95,179,121"/>
+<area shape="rect" id="node1" title="Defines the BehaviourScript class as part of a game engine framework. BehaviourScript is a base class..." alt="" coords="15,5,178,47"/>
+<area shape="rect" id="node2" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="5,95,103,121"/>
+<area shape="rect" id="node3" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="35,169,158,196"/>
 </map>

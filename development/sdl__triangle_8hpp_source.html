@@ -96,24 +96,28 @@ $(document).ready(function(){initNavTree('sdl__triangle_8hpp_source.html',''); i
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;SDL2/SDL2_gfxPrimitives.h&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classSDLTriangle.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSDLTriangle.html">SDLTriangle</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    Sint16 vx[3];</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Sint16 vy[3];</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classSDLTriangle.html#a3832fc0eb5c1bd3954026f511587d527">   47</a></span>&#160;    <a class="code" href="classSDLTriangle.html#a3832fc0eb5c1bd3954026f511587d527">SDLTriangle</a>(Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2, Sint16 x3, Sint16 y3) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        vx[0] = x1; vy[0] = y1;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        vx[1] = x2; vy[1] = y2;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        vx[2] = x3; vy[2] = y3;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSDLTriangle.html#ae8cac4c6cc1a7f4928bcb40d26fac4a2">Draw</a>(SDL_Renderer* renderer) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_SDL_TRIANGLE_HPP</span></div>
-<div class="ttc" id="aclassSDLTriangle_html"><div class="ttname"><a href="classSDLTriangle.html">SDLTriangle</a></div><div class="ttdoc">Encapsulates the properties of a triangle and provides a drawing method.</div><div class="ttdef"><b>Definition:</b> sdl_triangle.hpp:33</div></div>
-<div class="ttc" id="aclassSDLTriangle_html_a3832fc0eb5c1bd3954026f511587d527"><div class="ttname"><a href="classSDLTriangle.html#a3832fc0eb5c1bd3954026f511587d527">SDLTriangle::SDLTriangle</a></div><div class="ttdeci">SDLTriangle(Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2, Sint16 x3, Sint16 y3)</div><div class="ttdoc">Constructs a triangle defined by three points.</div><div class="ttdef"><b>Definition:</b> sdl_triangle.hpp:47</div></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classSDLTriangle.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSDLTriangle.html">SDLTriangle</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Sint16 vx[3];</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Sint16 vy[3];</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classSDLTriangle.html#a3832fc0eb5c1bd3954026f511587d527">   48</a></span>&#160;    <a class="code" href="classSDLTriangle.html#a3832fc0eb5c1bd3954026f511587d527">SDLTriangle</a>(Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2, Sint16 x3, Sint16 y3)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        vx[0] = x1;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        vy[0] = y1;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        vx[1] = x2;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        vy[1] = y2;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        vx[2] = x3;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        vy[2] = y3;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSDLTriangle.html#ae8cac4c6cc1a7f4928bcb40d26fac4a2">Draw</a>(SDL_Renderer *renderer) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_SDL_TRIANGLE_HPP</span></div>
+<div class="ttc" id="aclassSDLTriangle_html"><div class="ttname"><a href="classSDLTriangle.html">SDLTriangle</a></div><div class="ttdoc">Encapsulates the properties of a triangle and provides a drawing method.</div><div class="ttdef"><b>Definition:</b> sdl_triangle.hpp:34</div></div>
+<div class="ttc" id="aclassSDLTriangle_html_a3832fc0eb5c1bd3954026f511587d527"><div class="ttname"><a href="classSDLTriangle.html#a3832fc0eb5c1bd3954026f511587d527">SDLTriangle::SDLTriangle</a></div><div class="ttdeci">SDLTriangle(Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2, Sint16 x3, Sint16 y3)</div><div class="ttdoc">Constructs a triangle defined by three points.</div><div class="ttdef"><b>Definition:</b> sdl_triangle.hpp:48</div></div>
 <div class="ttc" id="aclassSDLTriangle_html_ae8cac4c6cc1a7f4928bcb40d26fac4a2"><div class="ttname"><a href="classSDLTriangle.html#ae8cac4c6cc1a7f4928bcb40d26fac4a2">SDLTriangle::Draw</a></div><div class="ttdeci">void Draw(SDL_Renderer *renderer) const</div><div class="ttdoc">Renders the triangle on the provided SDL_Renderer.</div><div class="ttdef"><b>Definition:</b> sdl_triangle.cpp:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

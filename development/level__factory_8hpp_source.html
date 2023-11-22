@@ -97,30 +97,32 @@ $(document).ready(function(){initNavTree('level__factory_8hpp_source.html',''); 
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="prefab__manager_8hpp.html">prefab_manager.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classLevelFactory.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLevelFactory.html">LevelFactory</a> : <span class="keyword">public</span> <a class="code" href="classISceneFactory.html">ISceneFactory</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::shared_ptr&lt;PrefabManager&gt; prefabManager;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::vector&lt;std::shared_ptr&lt;GameObject&gt;&gt; AddObjects(<a class="code" href="classScene.html">Scene</a> &amp;scene, <span class="keyword">const</span> nlohmann::json&amp; objectsJson);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    [[nodiscard]] <a class="code" href="structTransform.html">Transform</a> ConvertTransform(<span class="keyword">const</span> nlohmann::json&amp; transformJson) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classLevelFactory.html#a977859a72107f9b9f778ca8488e66aa9">LevelFactory</a>(std::shared_ptr&lt;PrefabManager&gt; &amp;<a class="code" href="classPrefabManager.html">PrefabManager</a>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    [[nodiscard]] std::shared_ptr&lt;Scene&gt; <a class="code" href="classLevelFactory.html#a7fb92cacb3dbe706cbf8f30a107bb3e5">CreateScene</a>(nlohmann::json sceneJson) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_LEVEL_FACTORY_HPP</span></div>
-<div class="ttc" id="aclassISceneFactory_html"><div class="ttname"><a href="classISceneFactory.html">ISceneFactory</a></div><div class="ttdef"><b>Definition:</b> iscene_factory.hpp:18</div></div>
-<div class="ttc" id="aclassLevelFactory_html"><div class="ttname"><a href="classLevelFactory.html">LevelFactory</a></div><div class="ttdef"><b>Definition:</b> level_factory.hpp:19</div></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classLevelFactory.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLevelFactory.html">LevelFactory</a> : <span class="keyword">public</span> <a class="code" href="classISceneFactory.html">ISceneFactory</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::shared_ptr&lt;PrefabManager&gt; prefabManager;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::vector&lt;std::shared_ptr&lt;GameObject&gt;&gt; AddObjects(<a class="code" href="classScene.html">Scene</a> &amp;scene,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                        <span class="keyword">const</span> nlohmann::json &amp;objectsJson);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    [[nodiscard]] <a class="code" href="structTransform.html">Transform</a> ConvertTransform(<span class="keyword">const</span> nlohmann::json &amp;transformJson) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classLevelFactory.html#a977859a72107f9b9f778ca8488e66aa9">LevelFactory</a>(std::shared_ptr&lt;PrefabManager&gt; &amp;<a class="code" href="classPrefabManager.html">PrefabManager</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    [[nodiscard]] std::shared_ptr&lt;Scene&gt; <a class="code" href="classLevelFactory.html#a7fb92cacb3dbe706cbf8f30a107bb3e5">CreateScene</a>(nlohmann::json sceneJson) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_LEVEL_FACTORY_HPP</span></div>
+<div class="ttc" id="aclassISceneFactory_html"><div class="ttname"><a href="classISceneFactory.html">ISceneFactory</a></div><div class="ttdef"><b>Definition:</b> iscene_factory.hpp:19</div></div>
+<div class="ttc" id="aclassLevelFactory_html"><div class="ttname"><a href="classLevelFactory.html">LevelFactory</a></div><div class="ttdef"><b>Definition:</b> level_factory.hpp:20</div></div>
 <div class="ttc" id="aclassLevelFactory_html_a7fb92cacb3dbe706cbf8f30a107bb3e5"><div class="ttname"><a href="classLevelFactory.html#a7fb92cacb3dbe706cbf8f30a107bb3e5">LevelFactory::CreateScene</a></div><div class="ttdeci">std::shared_ptr&lt; Scene &gt; CreateScene(nlohmann::json sceneJson) override</div><div class="ttdoc">Creates a scene based on a JSON format.</div><div class="ttdef"><b>Definition:</b> level_factory.cpp:18</div></div>
 <div class="ttc" id="aclassLevelFactory_html_a977859a72107f9b9f778ca8488e66aa9"><div class="ttname"><a href="classLevelFactory.html#a977859a72107f9b9f778ca8488e66aa9">LevelFactory::LevelFactory</a></div><div class="ttdeci">LevelFactory(std::shared_ptr&lt; PrefabManager &gt; &amp;PrefabManager)</div><div class="ttdoc">Constructor for the level factory.</div><div class="ttdef"><b>Definition:</b> level_factory.cpp:15</div></div>
-<div class="ttc" id="aclassPrefabManager_html"><div class="ttname"><a href="classPrefabManager.html">PrefabManager</a></div><div class="ttdef"><b>Definition:</b> prefab_manager.hpp:18</div></div>
+<div class="ttc" id="aclassPrefabManager_html"><div class="ttname"><a href="classPrefabManager.html">PrefabManager</a></div><div class="ttdef"><b>Definition:</b> prefab_manager.hpp:19</div></div>
 <div class="ttc" id="aclassScene_html"><div class="ttname"><a href="classScene.html">Scene</a></div><div class="ttdoc">Represents a scene in the game engine.</div><div class="ttdef"><b>Definition:</b> scene.hpp:33</div></div>
 <div class="ttc" id="aiscene__factory_8hpp_html"><div class="ttname"><a href="iscene__factory_8hpp.html">iscene_factory.hpp</a></div><div class="ttdoc">Abstract factory for creating scenes.</div></div>
 <div class="ttc" id="aprefab__manager_8hpp_html"><div class="ttname"><a href="prefab__manager_8hpp.html">prefab_manager.hpp</a></div><div class="ttdoc">Manages prefabs.</div></div>
-<div class="ttc" id="astructTransform_html"><div class="ttname"><a href="structTransform.html">Transform</a></div><div class="ttdoc">Represents a 2D transformation including position, rotation, and scale.</div><div class="ttdef"><b>Definition:</b> transform.hpp:27</div></div>
+<div class="ttc" id="astructTransform_html"><div class="ttname"><a href="structTransform.html">Transform</a></div><div class="ttdoc">Represents a 2D transformation including position, rotation, and scale.</div><div class="ttdef"><b>Definition:</b> transform.hpp:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
