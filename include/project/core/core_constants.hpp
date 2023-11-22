@@ -39,6 +39,26 @@ namespace Debug
 const bool EnableDebug = true;
 const bool DrawColliders = true;
 } // namespace Debug
+
+namespace Audio
+{
+
+/**
+ * The maximum amount of instances that can be played at the same time.
+ */
+const int AUDIO_MAX_INSTANCE_COUNT = 12;
+
+/**
+ * The time in milliseconds between each cleanup.
+ * Primarily used to clean up sounds that are no longer playing.
+ */
+const int AUDIO_CLEANUP_POLLING_TIME = 500;
+
+/**
+ * The time in milliseconds to check for clean-up of stopped sounds.
+ */
+const int AUDIO_CLEANUP_TIMEOUT = 500;
+} // namespace Audio
 } // namespace CoreConstants
 
 #endif // DEFUNBOBENGINE_CORECONSTANTS_HPP

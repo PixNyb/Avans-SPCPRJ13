@@ -8,10 +8,10 @@ option(BUILD_CICD "Build for CICD" OFF)
 option(BUILD_TESTS "Build the tests" OFF)
 
 # If the option is set to true or we're running a debug build, build the tests
-if(BUILD_TESTS OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
+if (BUILD_TESTS OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
     enable_testing()
     add_subdirectory(tests)
-endif()
+endif ()
 
 file(COPY ${PROJECT_SOURCE_DIR}/resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
@@ -31,10 +31,10 @@ file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 # Add header directories
 file(GLOB_RECURSE HEADER_LIST ${PROJECT_SOURCE_DIR}/include/*.hpp)
 
-foreach(_headerFile ${HEADER_LIST})
+foreach (_headerFile ${HEADER_LIST})
     get_filename_component(_dir ${_headerFile} PATH)
     list(APPEND HEADER_DIRS ${_dir})
-endforeach()
+endforeach ()
 
 list(REMOVE_DUPLICATES HEADER_DIRS)
 
@@ -42,23 +42,23 @@ list(REMOVE_DUPLICATES HEADER_DIRS)
 add_library(DeFunBobEngine ${SOURCES})
 
 # If the option is set to true or we're running a debug build, generate coverage
-if(GENERATE_COVERAGE OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
-    if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+if (GENERATE_COVERAGE OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
+    if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
         include(ProcessorCount)
         ProcessorCount(N)
 
-        if(NOT N EQUAL 0)
+        if (NOT N EQUAL 0)
             set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
             target_link_libraries(DeFunBobEngine PRIVATE gcov)
-        endif()
-    endif()
-endif()
+        endif ()
+    endif ()
+endif ()
 
 # Include headers
-foreach(_headerDir ${HEADER_DIRS})
+foreach (_headerDir ${HEADER_DIRS})
     target_include_directories(DeFunBobEngine PUBLIC ${_headerDir})
-endforeach()
+endforeach ()
 
 # Copy the cmake folder to the build directory
 file(COPY ${PROJECT_SOURCE_DIR}/cmake DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
@@ -69,20 +69,20 @@ install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include/${PROJECT_N
 
 # Add uninstall target
 configure_file(
-    "${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake"
-    IMMEDIATE @ONLY
+        "${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake"
+        IMMEDIATE @ONLY
 )
 
 add_custom_target(uninstall
-    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake
+        COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake
 )
 
 # Add SDL2
 find_package(SDL2 CONFIG REQUIRED)
 target_link_libraries(DeFunBobEngine
-    PRIVATE
-    $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
-    $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+        PRIVATE
+        $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+        $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
 )
 
 # Add SDL2_gfx
@@ -116,6 +116,10 @@ target_link_libraries(DeFunBobEngine PRIVATE fmt::fmt)
 # Add box2d
 find_package(box2d CONFIG REQUIRED)
 target_link_libraries(DeFunBobEngine PRIVATE box2d::box2d)
+
+# Add SFML
+find_package(SFML COMPONENTS system audio CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE sfml-system sfml-audio)
 
 # Add sandbox
 add_subdirectory(sandbox)

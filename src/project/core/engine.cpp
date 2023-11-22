@@ -16,6 +16,7 @@
  */
 
 #include "engine.hpp"
+#include "audio_manager.hpp"
 #include "behaviour_script_manager.hpp"
 #include "graphics_facade.hpp"
 #include "render_manager.hpp"
@@ -33,6 +34,8 @@ Engine::Engine()
     container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>());
     container.registerInstance<RenderManager>(std::make_shared<RenderManager>(),
                                               InstanceScope::Engine);
+
+    container.registerInstance<AudioManager>(std::make_shared<AudioManager>());
     container.registerInstance<BehaviourScriptManager>(std::make_shared<BehaviourScriptManager>(),
                                                        InstanceScope::Engine);
 }
