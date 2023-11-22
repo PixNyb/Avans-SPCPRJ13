@@ -207,6 +207,13 @@ public:
      * @param sdlTexture The SDL_Texture to cache.
      */
     void CacheSDLTexture(const Texture& texture, SDL_Texture* sdlTexture) override;
+
+    /**
+     * @brief Gets the size of a sprite.
+     * @param filePath The file path of the sprite.
+     * @return The size of the sprite.
+     */
+    Size GetSpriteSize(const std::string& filePath) override;
 };
 
 

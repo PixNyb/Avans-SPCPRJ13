@@ -8,12 +8,15 @@
  * The Texture class is responsible for managing SDL_Texture resources,
  * providing an interface for loading and retrieving an SDL_Texture from a file path.
  * It ensures that the loaded texture is properly released when the object is destroyed.
+ *
+ * @copyright Copyright (c) 2023
  */
 
 #ifndef DEFUNBOBENGINE_TEXTURE_HPP
 #define DEFUNBOBENGINE_TEXTURE_HPP
 
 #include <string>
+#include "size.hpp"
 
 /**
  * @class Texture
@@ -41,8 +44,15 @@ public:
      */
     const std::string& getFilePath() const;
 
+    /**
+     * @brief Retrieves the size of the texture.
+     * @return Size The size of the texture.
+     */
+    [[nodiscard]] Size getSize() const { return size; }
+
 private:
     std::string filePath; ///< The path to the image file to load as an SDL_Texture.
+    Size size; ///< The size of the texture.
 };
 
 #endif //DEFUNBOBENGINE_TEXTURE_HPP

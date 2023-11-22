@@ -230,6 +230,13 @@ public:
      * @param sdlTexture The SDL_Texture to cache.
      */
     virtual void CacheSDLTexture(const Texture& texture, SDL_Texture* sdlTexture) = 0;
+
+    /**
+     * @brief Gets the size of a sprite.
+     * @param filePath The path to the sprite file.
+     * @return The size of the sprite.
+     */
+    virtual Size GetSpriteSize(const std::string& filePath) = 0;
 };
 
 #endif //DEFUNBOBENGINE_IO_FACADE_HPP

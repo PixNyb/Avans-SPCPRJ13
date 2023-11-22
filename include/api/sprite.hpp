@@ -43,7 +43,12 @@ class Sprite : public BehaviourScript
      * @brief Constructs a new Sprite object with default settings.
      */
     Sprite();
-    // Getters, Setters, and other public member functions ...
+
+    /**
+     * @brief Constructs a new Sprite object with the specified sprite image.
+     * @param sprite The sprite image file path or identifier.
+     */
+    [[nodiscard]] const std::string& GetSprite() const { return sprite; }
 };
 
 #endif // AVANS_SPCPRJ13_SPRITE_H

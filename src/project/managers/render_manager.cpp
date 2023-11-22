@@ -101,7 +101,7 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint, const
         // Calculate the sprite's position and size relative to the camera
         auto relCamPos = gameObject->GetTransform().position - cameraPoint;
         double scale = gameObject->GetTransform().scale;
-        Size spriteSize = GetSpriteSize(spriteComponent->GetSprite()); // Implement this method
+        Size spriteSize = gfx.GetSpriteSize(spriteComponent->GetSprite()); // Implement this method
 
         // Create a Texture object for the sprite
         Texture spriteTexture(spriteComponent->GetSprite());
@@ -110,7 +110,7 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint, const
         Rectangle spriteRect(Vector2D(relCamPos.x, relCamPos.y), spriteSize.width * scale, spriteSize.height * scale);
 
         // Draw the sprite
-        graphicsFacade->DrawSprite(spriteTexture, spriteRect);
+        gfx.DrawSprite(spriteTexture, spriteRect);
     }
 
 

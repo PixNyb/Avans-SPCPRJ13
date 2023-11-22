@@ -292,7 +292,7 @@ void GraphicsFacade::DrawText(const Text& text) {
         TTF_CloseFont(sdlFont);
 }
 
-void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle rectangle) {
+void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle& rectangle) {
     // Check if the texture has already been created and cached
     SDL_Texture* sdlTexture = GetCachedSDLTexture(texture);
 
@@ -373,6 +373,19 @@ SDL_Texture* GraphicsFacade::CreateSDLTextureFromTexture(const Texture& texture)
 void GraphicsFacade::CacheSDLTexture(const Texture& texture, SDL_Texture* sdlTexture) {
     textureCache[texture.getFilePath()] = sdlTexture;
 }
+
+Size GraphicsFacade::GetSpriteSize(const std::string& filePath) {
+    SDL_Surface* surface = IMG_Load(filePath.c_str());
+    if (!surface) {
+        std::cerr << "Unable to load image: " << filePath << std::endl;
+        return Size{0, 0}; // Return an empty size if the image fails to load
+    }
+
+    Size size = {surface->w, surface->h};
+    SDL_FreeSurface(surface);
+    return size;
+}
+
 
 
 
