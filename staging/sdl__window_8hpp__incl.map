@@ -1,4 +1,6 @@
 <map id="include/facades/sdl2/sdl_window.hpp" name="include/facades/sdl2/sdl_window.hpp">
-<area shape="rect" id="node1" title="This file contains the SDLWindow class definition for managing an SDL_Window." alt="" coords="5,5,160,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="53,95,112,121"/>
+<area shape="rect" id="node1" title="This file contains the SDLWindow class definition for managing an SDL_Window." alt="" coords="83,5,237,47"/>
+<area shape="rect" id="node2" href="$sdl__render_8hpp.html" title="This file contains the SDLRender class definition." alt="" coords="5,95,123,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="83,169,141,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="197,95,277,121"/>
 </map>

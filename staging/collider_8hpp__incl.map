@@ -1,4 +1,4 @@
 <map id="include/api/collider.hpp" name="include/api/collider.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,177,32"/>
+<area shape="rect" id="node1" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="5,5,177,32"/>
 <area shape="rect" id="node2" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="30,80,153,107"/>
 </map>

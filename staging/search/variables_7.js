@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['tag_490',['tag',['../classGameObject.html#a756474b81169b2341a05fcb431de6fe4',1,'GameObject']]],
-  ['transform_491',['transform',['../classGameObject.html#ad2de7705e8d1d7b5d0014448dd13f99a',1,'GameObject']]],
-  ['type_492',['type',['../classEvent.html#ac721e4f34b3b9a1ae302165412221724',1,'Event']]]
+  ['parent_879',['parent',['../classGameObject.html#aae2ba1fd3e39a32f1de627c2c39b4ae2',1,'GameObject']]],
+  ['position_880',['position',['../structTransform.html#ad0426334399b7c5b9c0e4dead6764e66',1,'Transform']]]
 ];

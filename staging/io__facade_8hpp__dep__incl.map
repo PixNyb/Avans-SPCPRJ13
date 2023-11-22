@@ -1,6 +1,8 @@
 <map id="include/facades/io_facade.hpp" name="include/facades/io_facade.hpp">
-<area shape="rect" id="node1" title="This file contains the IOFacade interface definition." alt="" coords="203,5,343,47"/>
-<area shape="rect" id="node2" href="$sdl2__input__handler_8hpp_source.html" title=" " alt="" coords="5,95,160,136"/>
-<area shape="rect" id="node3" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="185,95,362,136"/>
-<area shape="rect" id="node4" href="$io__facade_8cpp.html" title="This file contains the IOFacade interface definition." alt="" coords="386,102,577,129"/>
+<area shape="rect" id="node1" title="This file contains the IOFacade interface definition." alt="" coords="261,5,401,47"/>
+<area shape="rect" id="node2" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="138,95,321,136"/>
+<area shape="rect" id="node6" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="345,95,522,136"/>
+<area shape="rect" id="node3" href="$render__manager_8hpp_source.html" title=" " alt="" coords="5,184,192,225"/>
+<area shape="rect" id="node4" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="65,273,263,300"/>
+<area shape="rect" id="node5" href="$graphics__facade_8cpp.html" title="This file contains the GraphicsFacade class implementation." alt="" coords="267,184,421,225"/>
 </map>

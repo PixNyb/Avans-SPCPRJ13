@@ -1,4 +1,4 @@
 <map id="AudioSource" name="AudioSource">
-<area shape="rect" id="node1" title="Component which can play audio." alt="" coords="5,80,108,107"/>
+<area shape="rect" id="node1" title="Component for handling audio playback." alt="" coords="5,80,108,107"/>
 <area shape="rect" id="node2" href="$classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="8,5,105,32"/>
 </map>

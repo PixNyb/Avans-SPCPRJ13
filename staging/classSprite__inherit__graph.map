@@ -1,5 +1,5 @@
 <map id="Sprite" name="Sprite">
-<area shape="rect" id="node1" title=" " alt="" coords="38,155,98,181"/>
-<area shape="rect" id="node2" href="$classBehaviourScript.html" title=" " alt="" coords="5,80,131,107"/>
+<area shape="rect" id="node1" title="Represents a graphical sprite in the game engine." alt="" coords="38,155,98,181"/>
+<area shape="rect" id="node2" href="$classBehaviourScript.html" title="Base class for scriptable behavior in game objects." alt="" coords="5,80,131,107"/>
 <area shape="rect" id="node3" href="$classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="19,5,117,32"/>
 </map>

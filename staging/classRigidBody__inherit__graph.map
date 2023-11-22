@@ -1,4 +1,4 @@
 <map id="RigidBody" name="RigidBody">
-<area shape="rect" id="node1" title="A component representing a rigid body." alt="" coords="10,80,98,107"/>
+<area shape="rect" id="node1" title="Represents a physics body in the game engine." alt="" coords="10,80,98,107"/>
 <area shape="rect" id="node2" href="$classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="5,5,103,32"/>
 </map>
