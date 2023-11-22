@@ -14,11 +14,12 @@
 
 #include <nlohmann/json.hpp>
 
-class JSONReader {
-public:
-  /**
-   * @brief Constructs a new JSONReader.
-   */
+class JSONReader
+{
+  public:
+    /**
+     * @brief Constructs a new JSONReader.
+     */
     JSONReader() = default;
 
     /**
@@ -27,7 +28,6 @@ public:
      * @return A JSON object.
      */
     nlohmann::json ConvertFileToJson(const std::string &filePath);
-
 };
 
-#endif //DEFUNBOBENGINE_JSON_READER_HPP
+#endif // DEFUNBOBENGINE_JSON_READER_HPP

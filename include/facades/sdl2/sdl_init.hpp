@@ -25,8 +25,9 @@
  * The copy constructor and assignment operator are deleted to prevent
  * copying of this singleton-like class.
  */
-class SDLInit {
-public:
+class SDLInit
+{
+  public:
     /**
      * @brief Constructs the SDLInit object and initializes SDL.
      *
@@ -41,13 +42,11 @@ public:
      * The destructor ensures that SDL is properly cleaned up when
      * the SDLInit object is destroyed.
      */
-    ~SDLInit() {
-        SDL_Quit();
-    }
+    ~SDLInit() { SDL_Quit(); }
 
     // Delete copy constructor and assignment operator to prevent copying
-    SDLInit(const SDLInit&) = delete;
-    SDLInit& operator=(const SDLInit&) = delete;
+    SDLInit(const SDLInit &) = delete;
+    SDLInit &operator=(const SDLInit &) = delete;
 };
 
 #endif // DEFUNBOBENGINE_SDL_INIT_HPP

@@ -15,7 +15,8 @@
 #include <map>
 #include <string>
 
-class PrefabManager {
+class PrefabManager
+{
   private:
     /**
      * @brief A map consisting of prefabs and the id's which they are identified by.
@@ -35,7 +36,7 @@ class PrefabManager {
      * @param id The unique key that can later be used to retrieve the prefab.
      * @param prefab The prefab that is to be registered.
      */
-    void RegisterPrefab(const std::string &id, const GameObject& prefab);
+    void RegisterPrefab(const std::string &id, const GameObject &prefab);
 
     /**
      * @brief Gets a prefab based on a id.

@@ -13,8 +13,8 @@
 #define DEFUNBOBENGINE_SRC_PROJECT_MANAGERS_RENDERMANAGER_H
 
 #include "game_object.hpp"
-#include "point.hpp"
 #include "graphics_facade.hpp"
+#include "point.hpp"
 
 class RenderManager
 {
@@ -26,8 +26,9 @@ class RenderManager
      * absolute coordinates)
      * @param gameObject Game object to render
      */
-    void Render(IOFacade &gfx, const Point &cameraPoint, const std::weak_ptr<GameObject>
-        &gameObject);
+    void Render(IOFacade &gfx, const Point &cameraPoint,
+                const std::weak_ptr<GameObject> &gameObject);
+
   public:
     /**
      * @brief This is a constructor for the RenderManager
