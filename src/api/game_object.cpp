@@ -59,3 +59,5 @@ void GameObject::SetActive(bool active) { this->active = active; }
 bool GameObject::IsActiveInWorld() const { return active; }
 
 bool GameObject::IsActiveSelf() const { return active; }
+
+

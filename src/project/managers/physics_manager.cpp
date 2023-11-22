@@ -13,6 +13,9 @@
 #include <utility>
 
 void PhysicsManager::CreateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects) {
+    for (auto &gameObject : gameObjects) {
+
+    }
     physicsFacade.PopulateWorld(std::move(gameObjects));
 }
 

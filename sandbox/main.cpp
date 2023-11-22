@@ -19,6 +19,8 @@
 
 int main(int argc, char *argv[])
 {
+    PhysicsManager physicsManager;
+    std::weak_ptr<PhysicsManager> physicsPointer = std::make_shared<PhysicsManager>(physicsManager);
     std::vector<std::shared_ptr<GameObject>> objects;
 
     // create box
@@ -33,6 +35,7 @@ int main(int argc, char *argv[])
     obj->AddComponent(collider);
     obj->SetTransform(trs);
     obj->SetTag("box");
+    obj->SetPhysicsManager(physicsPointer);
 
     // create circle
     auto obj1 = std::make_shared<GameObject>();
@@ -45,6 +48,7 @@ int main(int argc, char *argv[])
     obj1->AddComponent(collider1);
     obj1->SetTransform(trs1);
     obj1->SetTag("circle");
+    obj1->SetPhysicsManager(physicsPointer);
 
     // create floor
     auto obj3 = std::make_shared<GameObject>();
@@ -58,6 +62,7 @@ int main(int argc, char *argv[])
     obj3->AddComponent(collider3);
     obj3->SetTransform(trs3);
     obj3->SetTag("floor");
+    obj3->SetPhysicsManager(physicsPointer);
 
     // create floor
     auto obj2 = std::make_shared<GameObject>();
@@ -71,12 +76,12 @@ int main(int argc, char *argv[])
     obj2->AddComponent(collider2);
     obj2->SetTransform(trs2);
     obj2->SetTag("floor");
+    obj2->SetPhysicsManager(physicsPointer);
 
     objects.push_back(obj);
     objects.push_back(obj1);
     objects.push_back(obj2);
 //    objects.push_back(obj3);
-    PhysicsManager physicsManager;
     physicsManager.CreateWorld(objects);
     physicsManager.AddForce(obj1, 20, 0);
     physicsManager.SetDebug(true);

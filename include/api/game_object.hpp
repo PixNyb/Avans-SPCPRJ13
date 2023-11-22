@@ -14,6 +14,7 @@
 
 #include "component.hpp"
 #include "transform.hpp"
+#include "physics_manager.hpp"
 #include <memory>
 #include <string>
 #include <vector>
@@ -37,6 +38,7 @@ class GameObject
     bool active;                        ///< The active flag of the GameObject.
     std::string tag;                    ///< The tag/type of the GameObject.
     int layer;                          ///< The layer of the GameObject.
+    std::weak_ptr<PhysicsManager> physicsManager; ///< A reference to the physicsmanager for behaviorscripts
 
   public:
     /**
@@ -191,6 +193,10 @@ class GameObject
         }
 
         return typeComponents;
+    }
+
+    void SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer) {
+        this->physicsManager = std::move(physicsPointer);
     }
 };
 
