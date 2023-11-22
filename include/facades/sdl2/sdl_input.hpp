@@ -43,13 +43,6 @@ class SDLInput
     SDLInput();
 
     /**
-     * @brief Destroy the Input object.
-     *
-     * Cleans up any resources or states used by the input handling system.
-     */
-    ~SDLInput();
-
-    /**
      * @brief Update the input state.
      *
      * Polls for new events from SDL and updates the state of input devices accordingly.

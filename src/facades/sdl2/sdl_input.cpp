@@ -23,14 +23,6 @@ SDLInput::SDLInput()
     mousePosition = {0, 0};
 }
 
-SDLInput::~SDLInput()
-{
-    keyState.clear();
-    frameKeyState.clear();
-    mouseButtonState.clear();
-    frameMouseButtonState.clear();
-}
-
 void SDLInput::Update()
 {
     frameKeyState.clear();
@@ -71,8 +63,8 @@ bool SDLInput::IsKeyPressed(SDL_Scancode key) const
 
     if (it != keyState.end())
         return it->second;
-    else
-        return false;
+
+    return false;
 }
 
 bool SDLInput::IsKeyDown(SDL_Scancode key) const
@@ -81,8 +73,8 @@ bool SDLInput::IsKeyDown(SDL_Scancode key) const
 
     if (it != frameKeyState.end())
         return it->second;
-    else
-        return false;
+
+    return false;
 }
 
 bool SDLInput::IsKeyUp(SDL_Scancode key) const
@@ -91,8 +83,8 @@ bool SDLInput::IsKeyUp(SDL_Scancode key) const
 
     if (it != frameKeyState.end())
         return !it->second;
-    else
-        return false;
+
+    return false;
 }
 
 bool SDLInput::IsAnyKeyPressed() const
@@ -128,8 +120,8 @@ bool SDLInput::IsMouseButtonPressed(Uint8 button) const
 
     if (it != mouseButtonState.end())
         return it->second;
-    else
-        return false;
+
+    return false;
 }
 
 bool SDLInput::IsAnyMouseButtonPressed() const
@@ -147,8 +139,8 @@ bool SDLInput::IsMouseButtonDown(Uint8 button) const
 
     if (it != frameMouseButtonState.end())
         return it->second;
-    else
-        return false;
+
+    return false;
 }
 
 bool SDLInput::IsMouseButtonUp(Uint8 button) const

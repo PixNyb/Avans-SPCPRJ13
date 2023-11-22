@@ -1,3 +1,14 @@
+/**
+ * @file sdl_input_facade.hpp
+ * @author Roël Couwenberg (contact@roelc.me)
+ * @brief This file contains the SDLInputFacade class definition.
+ * @version 0.1
+ * @date 2023-11-22
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #ifndef INPUT_FACADE_HPP_
 #define INPUT_FACADE_HPP_
 
@@ -186,28 +197,28 @@ class SDLInputFacade : public IInputFacade
     bool AnyActionDown() const override;
 
     /**
-     * @brief Checks if any action has just stopped being performed.
+     * @brief Returns true during the frame the user starts performing any action.
      *
      * @return True if any action has just stopped, false otherwise.
      */
     bool AnyActionUp() const override;
 
     /**
-     * @brief Returns whether the given action is being performed.
+     * @brief Returns true while the user holds down the given action.
      *
      * @return True if any action is being performed, false otherwise.
      */
     bool GetAction(const std::string &action) const override;
 
     /**
-     * @brief Checks if the given action has just started being performed.
+     * @brief Returns true during the frame the user starts performing the given action.
      *
-     * @return The action that has just started, or an empty string if no action has just started.
+     * @return True if the action has just started, false otherwise.
      */
     bool GetActionDown(const std::string &action) const override;
 
     /**
-     * @brief Checks if the given action has just stopped being performed.
+     * @brief Returns true during the frame the user stops performing the given action.
      *
      * @return True if the action has just stopped, false otherwise.
      */
