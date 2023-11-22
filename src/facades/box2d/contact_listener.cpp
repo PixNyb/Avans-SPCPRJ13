@@ -10,6 +10,9 @@
  */
 
 #include "contact_listener.hpp"
+#include "behaviour_script.hpp"
+#include "box_collider.hpp"
+#include "circle_collider.hpp"
 #include <iostream>
 #include <utility>
 
@@ -33,12 +36,29 @@ void ContactListener::BeginContact(b2Contact *contact)
             gameObjectA = pair.first;
         }
         else if (pair.second == bodyB)
+        {
             tag2 = pair.first->GetTag();
-        gameObjectA = pair.first;
+            gameObjectB = pair.first;
+        }
     }
     std::cout << tag1 << " is touching " << tag2 << std::endl;
 
     // activate the OnTriggerEnter2D() from behavior script on both sides
+
+    for (auto &script : gameObjectA->GetComponents<BehaviourScript>())
+    {
+        if (gameObjectA->GetComponent<BoxCollider>())
+            script->OnTriggerEnter2D(*gameObjectA->GetComponent<BoxCollider>());
+        else
+            script->OnTriggerEnter2D(*gameObjectA->GetComponent<CircleCollider>());
+    }
+    for (auto &script : gameObjectB->GetComponents<BehaviourScript>())
+    {
+        if (gameObjectB->GetComponent<BoxCollider>())
+            script->OnTriggerEnter2D(*gameObjectB->GetComponent<BoxCollider>());
+        else
+            script->OnTriggerEnter2D(*gameObjectB->GetComponent<CircleCollider>());
+    }
 }
 
 void ContactListener::EndContact(b2Contact *contact)
@@ -58,12 +78,28 @@ void ContactListener::EndContact(b2Contact *contact)
             gameObjectA = pair.first;
         }
         else if (pair.second == bodyB)
+        {
             tag2 = pair.first->GetTag();
-        gameObjectB = pair.first;
+            gameObjectB = pair.first;
+        }
     }
     std::cout << tag1 << " stopped touching " << tag2 << std::endl;
 
     // activate the OnTriggerExit2D() from behavior script on both sides
+    for (auto &script : gameObjectA->GetComponents<BehaviourScript>())
+    {
+        if (gameObjectA->GetComponent<BoxCollider>())
+            script->OnTriggerExit2D(*gameObjectA->GetComponent<BoxCollider>());
+        else
+            script->OnTriggerExit2D(*gameObjectA->GetComponent<CircleCollider>());
+    }
+    for (auto &script : gameObjectB->GetComponents<BehaviourScript>())
+    {
+        if (gameObjectB->GetComponent<BoxCollider>())
+            script->OnTriggerExit2D(*gameObjectB->GetComponent<BoxCollider>());
+        else
+            script->OnTriggerExit2D(*gameObjectB->GetComponent<CircleCollider>());
+    }
 }
 
 ContactListener::ContactListener(std::map<std::shared_ptr<GameObject>, b2Body *> gameObjects)

@@ -6,11 +6,19 @@
 #define DEFUNBOBENGINE_COLLIDER_BEHAVIOR_TEST_HPP
 
 #include "behaviour_script.hpp"
+#include "physics_manager.hpp"
+#include <memory>
 
 class ColliderBehaviorTest : public BehaviourScript
 {
   private:
+    std::weak_ptr<PhysicsManager> physicsManager;
+    std::weak_ptr<GameObject> parent;
+
   public:
+    ColliderBehaviorTest(std::weak_ptr<PhysicsManager> physicsManagerPointer,
+                         std::weak_ptr<GameObject> parent);
+
     /**
      * @brief Sent when another object enters a trigger collider
      *        attached to this object (2D physics only).

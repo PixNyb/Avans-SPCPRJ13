@@ -150,10 +150,11 @@ void PhysicsFacade::AddForce(const std::shared_ptr<GameObject> &gameObject, floa
     float newVX = vx * 100;
     float newVY = vy * 100;
     auto iterator = bodies.find(gameObject);
-    if (iterator != bodies.end())
+    for (auto &pair : bodies)
     {
-        bodies.at(gameObject)
-            ->ApplyForce(b2Vec2(newVX, newVY), bodies.at(gameObject)->GetWorldCenter(), true);
+        if (pair.first->GetTransform().position.x == gameObject->GetTransform().position.x &&
+            pair.first->GetTransform().position.y == gameObject->GetTransform().position.y)
+            pair.second->ApplyForce(b2Vec2(newVX, newVY), pair.second->GetWorldCenter(), false);
     }
 }
 
