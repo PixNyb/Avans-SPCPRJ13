@@ -19,6 +19,8 @@
 #include <string>
 #include <vector>
 
+class GameObjectList;
+
 /**
  * @class GameObject
  * @brief The GameObject class represents an object in the game world.
@@ -27,7 +29,7 @@
  * GameObjects can be added to the game world and can have their components
  * updated and rendered.
  */
-class GameObject
+class GameObject : public std::enable_shared_from_this<GameObject>
 {
   protected:
     std::string name; ///< The name of the GameObject.
@@ -59,6 +61,32 @@ class GameObject
      * @param transform The transform of the GameObject.
      */
     GameObject(const std::string &name, const Transform &transform);
+
+    /**
+     * @brief Copy constructor that creates a deep copy of the provided GameObject.
+     * @param other The GameObject that is to be copied.
+     */
+    GameObject(const GameObject& other);
+
+    /**
+     * @brief Copy assignment operator that creates a deep copy of the provided GameObject.
+     * @param other The GameObject that is to be copied.
+     * @return The new copy of the GameObject.
+     */
+    GameObject &operator=(const GameObject &other);
+
+    /**
+     * @brief Move constructor which could be used to move a GameObject, this functionality is currently disabled.
+     * @param other The GameObject that is to be moved.
+     */
+    GameObject(GameObject &&other) noexcept = delete;
+
+    /**
+     * @brief Move assignment operator which could be used to move a GameObject, this functionality is currently disabled.
+     * @param other The GameObject that is to be moved.
+     * @return The new GameObject that it was moved to.
+     */
+    GameObject& operator=(GameObject &&other) noexcept = delete;
 
     /**
      * @brief Destructor for GameObject.
@@ -195,9 +223,13 @@ class GameObject
         return typeComponents;
     }
 
-    void SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer) {
-        this->physicsManager = std::move(physicsPointer);
-    }
+    void SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer);
+
+    /**
+     * @brief Gets an object list starting with the root node and ending with the origin node.
+     * @return The object list
+     */
+    std::unique_ptr<GameObjectList> GetObjectList();
 };
 
 #endif // AVANS_SPCPRJ13_GAMEOBJECT_H

@@ -15,6 +15,7 @@
 #include "circle_collider.hpp"
 #include "core/engine.hpp"
 #include "game_object.hpp"
+#include "game_object_list.hpp"
 #include "graphics_facade.hpp"
 #include "managers/scene_manager.hpp"
 #include "text.hpp"
@@ -30,38 +31,44 @@ void RenderManager::Render()
     auto sceneManager = engine->Get<SceneManager>();
     auto graphicsFacade = engine->Get<IOFacade>();
 
-    if(!sceneManager->HasScene()) return;
+    if (!sceneManager->HasScene())
+        return;
 
     // During the process, we might want to take temp partial ownership
     auto scene = sceneManager->GetScene().lock();
-    if(!scene) return;
+    if (!scene)
+        return;
 
-    // Prepare camera
-    auto camera = scene->GetCamera();
-
-    // Prepare layers
     auto layers = std::map<int, std::vector<std::weak_ptr<GameObject>>>();
 
-    for(auto& gameObject : scene->GetAllByType<GameObject>()){
-        auto gameObjectPtr = gameObject.lock();
-        if(!gameObjectPtr || !gameObjectPtr->IsActive()) continue;
+    for (auto &gameObjectPtr : scene->GetAllByType<GameObject>())
+    {
+        auto objectList = gameObjectPtr.lock()->GetObjectList();
 
-        int layer = gameObjectPtr->GetLayer();
-        if(layers.contains(layer)){
-            // Ensure the layer for the game object exists
-            layers.insert(std::make_pair(layer, std::vector<std::weak_ptr<GameObject>>()));
+        for (const auto &gameObjectNode : *objectList)
+        {
+            auto currentGameObject = gameObjectNode->cur;
+
+            // Skip inactive game objects and their ancestors
+            if (!currentGameObject || !currentGameObject->IsActive())
+            {
+                break;
+            }
+
+            int layer = currentGameObject->GetLayer();
+            layers[layer].emplace_back(currentGameObject);
         }
-
-        // TODO: Check game objects with geometry for render occlusion
-
-        // Push game object onto layer
-        layers[layer].push_back(gameObject);
     }
 
     // Make sure we have a render point regardless of whether we have a camera (menu might not
     // always have a camera)
     Point renderPoint = Point(0, 0);
-    if(camera){
+
+    // Prepare camera
+    auto camera = scene->GetCamera();
+    if (camera)
+    {
+        // Apply camera transform
         auto transform = camera->GetTransform();
         renderPoint.x = transform.position.x;
         renderPoint.y = transform.position.y;
@@ -70,21 +77,25 @@ void RenderManager::Render()
     }
 
     // Go through layers in-order (lowest to highest)
-    for (const auto& layer : layers) {
+    for (const auto &layer : layers)
+    {
         int layerIndex = layer.first;
-        auto& gameObjects = layer.second;
+        auto &gameObjects = layer.second;
 
-        for(auto& gameObject : gameObjects){
+        for (auto &gameObject : gameObjects)
+        {
             auto gameObjectPtr = gameObject.lock();
-            if(!gameObjectPtr || !gameObjectPtr->IsActive()) continue;
+            if (!gameObjectPtr || !gameObjectPtr->IsActive())
+                continue;
             // Delegate to private render method
             Render(*graphicsFacade, renderPoint, gameObjectPtr);
         }
     }
 }
 
-void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint, const
-                           std::weak_ptr<GameObject>& gameObjectPointer) {
+void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
+                           const std::weak_ptr<GameObject> &gameObjectPointer)
+{
 
     auto gameObject = gameObjectPointer.lock();
 
@@ -97,37 +108,42 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint, const
 
     // Draw sprites
     auto sprite = gameObject->GetComponent<Sprite>();
-    if (sprite) {
-
+    if (sprite)
+    {
     }
 
     auto text = dynamic_pointer_cast<Text>(gameObject);
-    if(text) {
+    if (text)
+    {
         gfx.DrawText(*text);
     }
 
     // Draw collider shapes
-    if (CoreConstants::Debug::EnableDebug && CoreConstants::Debug::DrawColliders) {
+    if (CoreConstants::Debug::EnableDebug && CoreConstants::Debug::DrawColliders)
+    {
         auto circleColliderShape = gameObject->GetComponent<CircleCollider>();
-        if (circleColliderShape) {
+        if (circleColliderShape)
+        {
             // Draw collider
             double radius = circleColliderShape->Radius();
 
             // Draw the collider shape with the correct position
             auto shape = Circle(Vector2D(relCamPos.x, relCamPos.y), radius * scale);
-            shape.SetFillColor(Color::red());
+            shape.SetFillColor(Color::Red());
             gfx.DrawShape(shape);
         }
 
         auto boxColliderShape = gameObject->GetComponent<BoxCollider>();
-        if (boxColliderShape) {
+        if (boxColliderShape)
+        {
             // Draw collider
             double width = boxColliderShape->Width();
             double height = boxColliderShape->Height();
 
             // Draw the collider shape with the correct position
-            auto shape = Rectangle(Vector2D(relCamPos.x, relCamPos.y), width * scale, height *scale);
-            shape.SetFillColor(Color::blue());
+            auto shape =
+                Rectangle(Vector2D(relCamPos.x, relCamPos.y), width * scale, height * scale);
+            shape.SetFillColor(Color::Blue());
             gfx.DrawShape(shape);
         }
     }
