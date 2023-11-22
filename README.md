@@ -1,4 +1,4 @@
-# SPCPRJ13 Repository
+# SPCPRJ13 DeFunBobEngine
 
 Welkom in de repository van SPCPRJ13. Dit is de repository waarin de code van de `DeFunBobEngine` game engine staat. Deze game engine is gemaakt voor het vak `SPCPRJ13` van de opleiding HBO-ICT van Avans Hogeschool 's-Hertogenbosch.
 
@@ -27,7 +27,7 @@ Voor het bijhouden van de voortgang van het project wordt er gebruik gemaakt van
 - Clone de repository
 
 ```bash
-git clone git@github.com:PixNyb/Avans-SPCPRJ13.git
+git clone git@github.com:PixNyb/Avans-SPCPRJ13-ENGINE.git
 ```
 
 - Gebruik CMake om de code te compileren
@@ -57,6 +57,10 @@ Alle POC's worden met behulp van CMake gecompileerd. De POC's kunnen individueel
 - [SDL Input](poc/sdl-input/README.md)
 - [SDL Physics](poc/sdl-input-physics/README.md)
 - [SDL Render](poc/sdl-render/README.md)
+
+## Gebruik
+
+De documentatie over het gebruik van de game engine is te vinden in [USAGE.md](USAGE.md).
 
 ## Development Guidelines
 

@@ -9,6 +9,7 @@
   - [Commentaar](#commentaar)
   - [CMake-bestanden](#cmake-bestanden)
   - [Bouwproces](#bouwproces)
+  - [Testen](#testen)
   - [Git en Versiebeheer](#git-en-versiebeheer)
   - [Code Reviews](#code-reviews)
   - [Documentatie](#documentatie)
@@ -18,11 +19,13 @@
 Gebruik de Clang Formatter om code te formatteren volgens de `C++ Coding Style Guide` van `LLVM`. Hier zijn enkele basisregels:
 
 - Gebruik 4 spaties voor inspringing (geen tabbladen).
-- Gebruik CamelCase voor functie- en variabelennamen.
-- Gebruik snake_case voor bestandsnamen.
+- Gebruik `PascalCase` voor functie- en variabelennamen.
+- Gebruik `snake_case` voor bestandsnamen.
 - Plaats accolades op een nieuwe regel voor functies en klassen.
 - Voeg spaties toe rond operatoren (bijv. x = 5, niet x=5).
 - Beperk regellengte tot 80-100 tekens.
+- Gebruik `#ifndef`-header guards om headerbestanden te beschermen tegen dubbele inclusie.
+- Gebruik `#include <...>` voor systeem- en externe bibliotheekheaders en `#include "..."` voor lokale headers.
 
 Voor meer informatie, zie [LLVM Coding Standards](https://llvm.org/docs/CodingStandards.html).
 
@@ -42,28 +45,28 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 - Gebruik `//` voor enkele regel commentaar en `/* */` voor meerdere regels.
 - Houd de [Doxygen commentaarstijl](https://www.doxygen.nl/manual/docblocks.html) aan voor documentatie.
 
-```console
-// Dit is een voorbeeld van een enkele regel commentaar.
+  ```console
+  // Dit is een voorbeeld van een enkele regel commentaar.
 
-/**
- * Dit is een voorbeeld van een meerdere regels commentaar.
- * Dit is de tweede regel.
- * Door gebruik te maken van 2 sterretjes op de eerste regel, wordt door doxygen de commentaar als documentatie gezien.
- */
-```
+  /**
+  * Dit is een voorbeeld van een meerdere regels commentaar.
+  * Dit is de tweede regel.
+  * Door gebruik te maken van 2 sterretjes op de eerste regel, wordt door doxygen de commentaar als documentatie gezien.
+  */
+  ```
 
 - Denk eraan om bij bestanden die door doxygen worden gegenereerd, bovenaan het bestand een `@file`-tag toe te voegen.
 
-```console
-/// @file
+  ```console
+  /// @file
 
-// Of
+  // Of
 
-/**
- * @file
- * @brief This file contains the implementation of the Foo class.
- */
-```
+  /**
+  * @file
+  * @brief This file contains the implementation of the Foo class.
+  */
+  ```
 
 ## CMake-bestanden
 
@@ -79,6 +82,18 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 - Zorg ervoor dat uw project zonder problemen kan worden gebouwd met behulp van het cmake- en make-commando.
 - Voeg testdoelen toe om [unit tests](https://cmake.org/cmake/help/book/mastering-cmake/chapter/Testing%20With%20CMake%20and%20CTest.html) uit te voeren in `tests/`.
 - Maak gebruik van Continuous Integration (CI) om automatische builds en tests te garanderen.
+
+## Testen
+
+- Schrijf unit tests waar mogelijk om de functionaliteit van de code te testen.
+  - Om unit test te schrijven, maak je gebruik van het [CTest](https://cmake.org/cmake/help/latest/manual/ctest.1.html) framework van [CMake](https://cmake.org/).
+  - We gebruiken ook Google Test (gtest) als het testframework voor het schrijven van de tests.
+  - Dit doe je door een testbestand aan te maken in `tests/`.
+  - Een testbestand bevat een `main` functie die de tests uitvoert.
+  - Een testbestand is succesvol als het programma eindigt met een exit code van `0`.
+- Voer unit tests uit met behulp van het `ctest` commando.
+
+_Voor het toevoegen van nieuwe tests hoeft er naast het aanmaken van de runnable geen extra configuratie te gebeuren. CMake zal automatisch de test detecteren en uitvoeren. Mochten er nieuwe requirements zijn voor het uitvoeren van de test, dan kunnen deze toegevoegd worden aan de `tests/CMakeLists.txt` file._
 
 ## Git en Versiebeheer
 
