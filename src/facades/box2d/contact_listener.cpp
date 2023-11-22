@@ -30,11 +30,23 @@ void ContactListener::BeginContact(b2Contact* contact) {
             tag2 = pair.first->GetTag();
     }
     std::cout << tag << " is touching " << tag2 << std::endl;
-
+    //TODO: add the call to the gameobject to act on this collision
 }
 
 void ContactListener::EndContact(b2Contact* contact) {
-    std::cout << "end contact" << std::endl;
+    auto bodyA = contact->GetFixtureA()->GetBody();
+    auto bodyB = contact->GetFixtureB()->GetBody();
+    std::string tag = "empty";
+    std::string tag2 = "empty";
+
+    for (auto &pair: gameObjects) {
+        if (pair.second == bodyA) {
+            tag = pair.first->GetTag();
+        }
+        else if (pair.second == bodyB)
+            tag2 = pair.first->GetTag();
+    }
+    std::cout << tag << " stopped touching " << tag2 << std::endl;
 }
 
 ContactListener::ContactListener(std::map<std::shared_ptr<GameObject>, b2Body *> gameObjects) {
