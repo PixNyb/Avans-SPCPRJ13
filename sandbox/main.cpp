@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
     objects.push_back(obj1);
     objects.push_back(obj2);
     physicsManager->CreateWorld(objects);
-    //    physicsManager->AddForce(obj1, 400, 0);
+//    physicsManager->AddForce(obj1, 20, 0);
     physicsManager->SetDebug(true);
     while (true)
     {

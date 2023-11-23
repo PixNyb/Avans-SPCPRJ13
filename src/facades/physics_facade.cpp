@@ -153,7 +153,19 @@ void PhysicsFacade::AddForce(const std::shared_ptr<GameObject> &gameObject, floa
     {
         if (pair.first->GetTransform().position.x == gameObject->GetTransform().position.x &&
             pair.first->GetTransform().position.y == gameObject->GetTransform().position.y)
-            pair.second->ApplyForce(b2Vec2(newVX, newVY), pair.second->GetWorldCenter(), false);
+            pair.second->ApplyForce(b2Vec2(newVX, newVY), pair.second->GetWorldCenter(), true);
+    }
+}
+
+void PhysicsFacade::AddLinearImpulse(const std::shared_ptr<GameObject> &gameObject, float vx, float vy)
+{
+    float newVX = vx;
+    float newVY = vy;
+    for (auto &pair : bodies)
+    {
+        if (pair.first->GetTransform().position.x == gameObject->GetTransform().position.x &&
+            pair.first->GetTransform().position.y == gameObject->GetTransform().position.y)
+            pair.second->ApplyLinearImpulse(b2Vec2(newVX, newVY), pair.second->GetWorldCenter(), true);
     }
 }
 

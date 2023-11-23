@@ -54,6 +54,14 @@ class PhysicsManager
     void AddForce(const std::shared_ptr<GameObject> &gameObject, float vx, float vy);
 
     /**
+    * Adds a linear impulse to a gameobject (will allways create a force on the center of the body)
+    * @param gameObject is the object the force will be added to
+    * @param vx horizontal velocity
+    * @param vy vertical velocity
+    */
+    void AddLinearImpulse(const std::shared_ptr<GameObject> &gameObject, float vx, float vy);
+
+    /**
      * Adds a rotation to a gameobject (will also apply the rotation on the center an is clockwise
      * when amount is positive)
      * @param gameObject is the object the rotation will be added to
