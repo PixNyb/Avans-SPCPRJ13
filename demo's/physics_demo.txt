@@ -1,3 +1,11 @@
+#include "box_collider.hpp"
+#include "circle_collider.hpp"
+#include "collider_behavior_test.hpp"
+#include "game_object.hpp"
+#include "rigidbody.hpp"
+#include <utility>
+#include <vector>
+
 void PhysicsDemo()
 {
     std::shared_ptr<PhysicsManager> physicsManager = std::make_shared<PhysicsManager>();

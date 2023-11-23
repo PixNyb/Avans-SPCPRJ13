@@ -9,15 +9,8 @@
  *
  */
 
-#include "box_collider.hpp"
-#include "circle_collider.hpp"
-#include "collider_behavior_test.hpp"
-#include "game_object.hpp"
 #include "physics_manager.hpp"
-#include "rigidbody.hpp"
 #include <iostream>
-#include <utility>
-#include <vector>
 
 int main(int argc, char *argv[])
 {
