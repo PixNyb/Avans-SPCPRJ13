@@ -155,7 +155,6 @@ void PhysicsFacade::SetFixture(b2Body *body, b2Shape *shape,
 {
     b2FixtureDef fixtureDef{};
     fixtureDef.shape = shape;
-
     if (rigidBody->GetBodyType() != BodyType::staticBody)
         fixtureDef.density = (float)rigidBody->GetMass() / (float)area;
     else

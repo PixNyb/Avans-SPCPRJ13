@@ -21,6 +21,8 @@ const double PixelToMeter = 1 / MeterToPixel;
 
 void ContactListener::BeginContact(b2Contact *contact)
 {
+    // to make an object bounce you can set the contact restitution
+    // contact->SetRestitution(0.8);
     auto bodyA = contact->GetFixtureA()->GetBody();
     auto bodyB = contact->GetFixtureB()->GetBody();
     std::string tag1 = "empty";
