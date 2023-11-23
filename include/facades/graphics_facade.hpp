@@ -32,9 +32,11 @@
  * This class is responsible for initializing and managing the graphics window, handling
  * graphics-related events, and providing a high-level interface for graphics operations.
  */
-class GraphicsFacade : public IOFacade {
-private:
-    std::unique_ptr<SDLWindow> SdlWindow; /**< Unique pointer to SDLWindow for managing the graphics window. */
+class GraphicsFacade : public IOFacade
+{
+  private:
+    std::unique_ptr<SDLWindow>
+        SdlWindow; /**< Unique pointer to SDLWindow for managing the graphics window. */
     std::unique_ptr<SDLInit> SdlInit; /**< Unique pointer to SDLInit for SDL initialization. */
 
     /**
@@ -50,8 +52,8 @@ private:
      * @param color The color to be set.
      */
     void SetColor(Color color);
-public:
 
+  public:
     /**
      * @brief Constructs a new GraphicsFacade object.
      *
@@ -81,11 +83,11 @@ public:
     void Init() override;
 
     /**
-    * @brief Polls and processes graphics-related events.
-    *
-    * @param events A vector of Event objects to be filled with polled events.
-    */
-    void PollEvents(std::vector<Event>& events) override;
+     * @brief Polls and processes graphics-related events.
+     *
+     * @param events A vector of Event objects to be filled with polled events.
+     */
+    void PollEvents(std::vector<Event> &events) override;
 
     /**
      * @brief Creates the graphics window.
@@ -95,8 +97,7 @@ public:
      * @param width Window width.
      * @param height Window height.
      */
-    void CreateWindow(const std::string& title, int width, int height) override;
-
+    void CreateWindow(const std::string &title, int width, int height) override;
 
     /**
      * @brief Clears the rendering target.
@@ -113,10 +114,10 @@ public:
     void CreateRenderer() override;
 
     /**
-    * @brief Presents the rendered content on the screen.
-    *
-    * Updates the window with rendered graphics, finalizing the current frame.
-    */
+     * @brief Presents the rendered content on the screen.
+     *
+     * Updates the window with rendered graphics, finalizing the current frame.
+     */
     void PresentScreen() override;
 
     /**
@@ -138,7 +139,8 @@ public:
     /**
      * @brief Draws a rectangle on the screen.
      *
-     * @param rectangle A Rectangle object containing properties like position, dimensions, and color.
+     * @param rectangle A Rectangle object containing properties like position, dimensions, and
+     * color.
      * @param renderer A pointer to an SDL_Renderer to draw the rectangle.
      */
     void DrawShape(Rectangle rectangle) override;
@@ -152,13 +154,11 @@ public:
      */
     void DrawShape(Triangle triangle) override;
 
-
     void DrawLine(Line line) override;
 
     void DrawLines(std::vector<Line> lines) override;
 
-    void DrawText(const Text& text) override;
+    void DrawText(const Text &text) override;
 };
 
-
-#endif //DEFUNBOBENGINE_GRAPHICS_FACADE_HPP
+#endif // DEFUNBOBENGINE_GRAPHICS_FACADE_HPP

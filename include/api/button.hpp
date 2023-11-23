@@ -10,7 +10,8 @@
  * This class is essential for creating interactive UI elements in games.
  *
  * @note Additional listeners and event handling mechanisms are planned for future versions.
- * @deprecated The onClick handler is deprecated and will be replaced by more flexible event listeners.
+ * @deprecated The onClick handler is deprecated and will be replaced by more flexible event
+ * listeners.
  *
  * @copyright Copyright (c) 2023
  */
@@ -30,8 +31,9 @@
  * They support registration of custom click handlers for executing specific actions
  * when the button is clicked.
  */
-class Button : public UIObject {
-public:
+class Button : public UIObject
+{
+  public:
     // TODO: Add listener for button clicks and attach to input manager somehow
     Button();
     Button(const std::string &name, const std::string &tag, int layer, float width, float height);
@@ -48,7 +50,7 @@ public:
      */
     void OnClick(std::function<void()> callback) { onClick = std::move(callback); }
 
-private:
+  private:
     /**
      * @brief When false, the button will not react to clicks.
      */

@@ -16,8 +16,8 @@
 #ifndef AVANS_SPCPRJ13_SCENE_H
 #define AVANS_SPCPRJ13_SCENE_H
 
-#include "game_object.hpp"
 #include "camera.hpp"
+#include "game_object.hpp"
 #include <memory>
 #include <utility>
 #include <vector>
@@ -47,7 +47,8 @@ class Scene
      * @brief Updates all game objects in the scene.
      * @param deltaTime The time passed since the last frame.
      */
-    virtual void Update(double deltaTime){
+    virtual void Update(double deltaTime)
+    {
         // TODO: Call an update on game object?
     }
 
@@ -86,8 +87,7 @@ class Scene
      * @tparam T Type of the game object
      * @return A vector containing all game objects of the specified type
      */
-    template <typename T>
-    std::vector<std::weak_ptr<T>> inline GetAllByType()
+    template <typename T> std::vector<std::weak_ptr<T>> inline GetAllByType()
     {
         std::vector<std::weak_ptr<T>> result;
         for (auto &go : contents)
@@ -150,17 +150,13 @@ class Scene
      * @brief Sets the camera of the scene
      * @param camera
      */
-    void SetCamera(std::shared_ptr<Camera> camera){
-        _camera = std::move(camera);
-    }
+    void SetCamera(std::shared_ptr<Camera> camera) { _camera = std::move(camera); }
 
     /**
      * @brief Gets the camera of the scene
      * @return camera
      */
-    std::shared_ptr<Camera> GetCamera(){
-        return _camera;
-    }
+    std::shared_ptr<Camera> GetCamera() { return _camera; }
 };
 
 #endif // AVANS_SPCPRJ13_SCENE_H
