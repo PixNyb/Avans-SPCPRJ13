@@ -11,6 +11,7 @@
 
 #include "audio_source.hpp"
 #include <iostream>
+#include <thread>
 
 // Change this to whatever wav you like to test
 // Download a sample file:
@@ -30,7 +31,7 @@ int main(int argc, char *argv[])
     while (ticks < 10)
     {
         ticks++;
-        _sleep(1000);
+        std::this_thread::sleep_for(std::chrono::seconds(1));
         audioSource.SetPitch(pitch += 0.01f);
         if (ticks == 4)
             audioSource.Pause();

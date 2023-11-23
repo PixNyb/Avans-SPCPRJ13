@@ -29,6 +29,18 @@ jobs:
           wget https://github.com/Kitware/CMake/releases/download/v3.27.0/cmake-3.27.0-Linux-x86_64.sh
           sudo sh cmake-3.27.0-Linux-x86_64.sh --skip-license --prefix=/usr/local
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libudev-dev \
+            libx11-dev \
+            libxrandr-dev \
+            libxcursor-dev \
+            opengl-mesa-dev
+          sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/*
+
       - name: Install vcpkg
         run: |
           if [ ! -d "./vcpkg" ] ; then
@@ -38,7 +50,7 @@ jobs:
           fi
           ./vcpkg/bootstrap-vcpkg.sh
 
-      - name: Install dependencies
+      - name: Install vcpkg dependencies
         run: ./vcpkg/vcpkg install --triplet x64-linux --feature-flags=manifests
 
       - name: Build
