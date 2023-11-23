@@ -1,7 +1,7 @@
 /**
  * @file audio_facade.hpp
  * @author "Melvin van Bree"
- * @brief TODO
+ * @brief A facade for the audio library.
  * @version 0.1
  * @date 22/11/2023
  *
@@ -19,7 +19,7 @@
 class AudioFacade
 {
   public:
-    static std::shared_ptr<ISound> CreateAudioInstance(const std::string &filePath);
+    static std::unique_ptr<ISound> CreateAudioInstance(const std::string &filePath);
 };
 
 #endif // DEFUNBOBENGINE_SRC_FACADES_AUDIO_FACADE_HPP

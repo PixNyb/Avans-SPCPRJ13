@@ -10,9 +10,18 @@
  */
 
 #include "sfml_sound.hpp"
+#include "core_constants.hpp"
+
+int SFMLSound::instanceCount = 0;
 
 SFMLSound::SFMLSound(const std::string &filePath)
 {
+    // The destructor will decrease it even if an error is thrown.
+    instanceCount++;
+
+    if (instanceCount + 1 >= CoreConstants::Audio::AUDIO_MAX_INSTANCE_COUNT)
+        throw std::runtime_error("Maximum amount of sound instances reached.");
+
     buffer.loadFromFile(filePath);
 
     if (!buffer.loadFromFile(filePath))
@@ -24,7 +33,7 @@ SFMLSound::SFMLSound(const std::string &filePath)
     sound.setBuffer(buffer);
 }
 
-SFMLSound::~SFMLSound() = default;
+SFMLSound::~SFMLSound() { instanceCount--; }
 
 // Volume
 void SFMLSound::SetVolume(float volume) { sound.setVolume(volume); }
@@ -33,6 +42,10 @@ float SFMLSound::GetVolume() const { return sound.getVolume(); }
 // Pitch
 void SFMLSound::SetPitch(float pitch) { sound.setPitch(pitch); }
 float SFMLSound::GetPitch() const { return sound.getPitch(); }
+
+// Loop
+void SFMLSound::SetLoop(bool loop) { sound.setLoop(loop); }
+bool SFMLSound::GetLoop() const { return sound.getLoop(); }
 
 void SFMLSound::Play() { sound.play(); }
 void SFMLSound::Stop() { sound.stop(); }
@@ -50,4 +63,6 @@ SoundPlayState SFMLSound::GetState() const
     case sf::SoundSource::Status::Stopped:
         return SoundPlayState::Stopped;
     }
+
+    return SoundPlayState::Stopped;
 }

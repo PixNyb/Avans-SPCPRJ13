@@ -11,7 +11,7 @@
 
 #include "audio_facade.hpp"
 
-std::shared_ptr<ISound> AudioFacade::CreateAudioInstance(const std::string &filePath)
+std::unique_ptr<ISound> AudioFacade::CreateAudioInstance(const std::string &filePath)
 {
-    return std::make_shared<SFMLSound>(filePath);
+    return std::make_unique<SFMLSound>(filePath);
 }

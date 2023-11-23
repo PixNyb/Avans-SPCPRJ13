@@ -9,46 +9,37 @@
  *
  */
 
-#include "audio_manager.hpp"
+#include "audio_source.hpp"
 #include <iostream>
 
 // Change this to whatever wav you like to test
+// Download a sample file:
+// https://file-examples.com/wp-content/storage/2017/11/file_example_WAV_1MG.wav
 const std::string test = R"(C:\Users\melvi\Downloads\file_example_WAV_1MG.wav)";
 
 int main(int argc, char *argv[])
 {
     std::cout << "Sandbox" << std::endl;
 
-    auto audioManager = AudioManager();
+    AudioSource audioSource = AudioSource(test);
+    audioSource.Play();
 
-    //    audioManager.PlayOneShot(test);
+    int ticks = 0;
+    float pitch = 1.0f;
 
-    // Make sure it goes out of scope
+    while (ticks < 10)
     {
-        auto instance = audioManager.CreateSound(test);
-        auto audio = instance.lock();
-        audio->Play();
+        ticks++;
+        _sleep(1000);
+        audioSource.SetPitch(pitch += 0.01f);
+        if (ticks == 4)
+            audioSource.Pause();
 
-        float pitch = 1.0f;
+        if (ticks == 6)
+            audioSource.Play();
 
-        while (audio->GetState() != SoundPlayState::Stopped)
-        {
-            audioManager.Update();
-            _sleep(100);
-            pitch += 0.01f;
-            audio->SetPitch(pitch);
-        }
+        std::cout << "Sec: " << ticks << std::endl;
     }
-
-    int tick = 0;
-    while (tick < 10)
-    {
-        audioManager.Update();
-        _sleep(100);
-        tick++;
-    }
-
-    std::cout << "Done" << std::endl;
 
     return 1;
 }

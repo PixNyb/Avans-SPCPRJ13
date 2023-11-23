@@ -19,8 +19,10 @@
 class SFMLSound : public ISound
 {
   private:
-    sf::Sound sound;        ///< sound
-    sf::SoundBuffer buffer; ///< sound buffer
+    sf::Sound sound;          ///< sound
+    sf::SoundBuffer buffer;   ///< sound buffer
+    static int instanceCount; ///< counts of the instances, used to check if we exceed the max
+                              ///< amount of instances.
 
   public:
     /**
@@ -62,7 +64,7 @@ class SFMLSound : public ISound
      * was already stopped. It also resets the playing position (unlike pause()).
      */
     void Stop() override;
-    
+
     /**
      * @brief Pauses the sound.
      *
@@ -70,7 +72,26 @@ class SFMLSound : public ISound
      * stopped) it has no effect.
      */
     void Pause() override;
+
+    /**
+     * @brief Resumes the sound.
+     *
+     * @details This function resumes the sound if it was paused, otherwise (sound already playing
+     * or stopped) it has no effect.
+     */
     void Resume() override;
+
+    /**
+     * @brief Set the loop of the sound.
+     * @param loop
+     */
+    void SetLoop(bool loop) override;
+
+    /**
+     * @brief Get the loop of the sound.
+     * @return bool
+     */
+    [[nodiscard]] bool GetLoop() const override;
 };
 
 #endif // DEFUNBOBENGINE_INCLUDE_FACADES_SFML_SFML_SOUND_HPP

@@ -30,6 +30,18 @@ class ISound
     [[nodiscard]] virtual float GetVolume() const = 0;
 
     /**
+     * @brief Set the loop of the sound.
+     * @param loop
+     */
+    virtual void SetLoop(bool loop) = 0;
+
+    /**
+     * @brief Gets if the sound is looping.
+     * @return bool
+     */
+    [[nodiscard]] virtual bool GetLoop() const = 0;
+
+    /**
      * @brief Set the pitch of the sound.
      * @param pitch The pitch of the sound.
      */

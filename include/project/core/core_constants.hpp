@@ -45,19 +45,9 @@ namespace Audio
 
 /**
  * The maximum amount of instances that can be played at the same time.
+ * Current limit is set to the max amount of SFML instances
  */
-const int AUDIO_MAX_INSTANCE_COUNT = 12;
-
-/**
- * The time in milliseconds between each cleanup.
- * Primarily used to clean up sounds that are no longer playing.
- */
-const int AUDIO_CLEANUP_POLLING_TIME = 500;
-
-/**
- * The time in milliseconds to check for clean-up of stopped sounds.
- */
-const int AUDIO_CLEANUP_TIMEOUT = 500;
+const int AUDIO_MAX_INSTANCE_COUNT = 255;
 } // namespace Audio
 } // namespace CoreConstants
 
