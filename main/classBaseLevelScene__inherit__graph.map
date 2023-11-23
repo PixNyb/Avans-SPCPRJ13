@@ -1,5 +1,0 @@
-<map id="BaseLevelScene" name="BaseLevelScene">
-<area shape="rect" id="node1" title="Provides specializations for level scenes." alt="" coords="5,155,133,181"/>
-<area shape="rect" id="node2" href="$classBaseScene.html" title=" " alt="" coords="23,80,116,107"/>
-<area shape="rect" id="node3" href="$classScene.html" title="Class representing a scene which can be rendered by the Camera." alt="" coords="39,5,100,32"/>
-</map>

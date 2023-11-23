@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['magenta_404',['magenta',['../classColor.html#a080c4ee6bdc05ecac3068c4ce0264279',1,'Color']]]
+  ['jsonreader_748',['JSONReader',['../classJSONReader.html#a380266e8a5d6ac2480863a5f57afb0d6',1,'JSONReader']]]
 ];

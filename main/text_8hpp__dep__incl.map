@@ -1,7 +1,13 @@
 <map id="include/api/text.hpp" name="include/api/text.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="99,5,249,32"/>
-<area shape="rect" id="node2" href="$core__constants_8hpp_source.html" title=" " alt="" coords="98,80,250,121"/>
-<area shape="rect" id="node3" href="$base__menu__scene_8hpp.html" title="TODO." alt="" coords="5,169,172,225"/>
-<area shape="rect" id="node5" href="$text_8cpp.html" title=" " alt="" coords="211,184,334,211"/>
-<area shape="rect" id="node4" href="$base__menu__scene_8cpp.html" title="TODO." alt="" coords="9,273,168,329"/>
+<area shape="rect" id="node1" title="Defines the Text class for handling text rendering in UI elements within the game engine...." alt="" coords="523,5,674,32"/>
+<area shape="rect" id="node2" href="$core__constants_8hpp_source.html" title=" " alt="" coords="467,80,619,121"/>
+<area shape="rect" id="node11" href="$text_8cpp.html" title="This file contains the Text class implementation." alt="" coords="643,177,765,203"/>
+<area shape="rect" id="node3" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="233,169,373,211"/>
+<area shape="rect" id="node7" href="$graphics__facade_8cpp.html" title="This file contains the GraphicsFacade class implementation." alt="" coords="277,348,432,389"/>
+<area shape="rect" id="node9" href="$engine_8hpp.html" title="Engine is the core of the engine. It is responsible for managing the game loop and managing the DICon..." alt="" coords="467,169,618,211"/>
+<area shape="rect" id="node4" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="7,259,190,300"/>
+<area shape="rect" id="node8" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="214,259,391,300"/>
+<area shape="rect" id="node5" href="$render__manager_8hpp_source.html" title=" " alt="" coords="5,348,192,389"/>
+<area shape="rect" id="node6" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="131,437,328,464"/>
+<area shape="rect" id="node10" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="517,259,742,300"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="src/api/transform.cpp" name="src/api/transform.cpp">
 <area shape="rect" id="node1" title="This file contains the Transform struct implementation." alt="" coords="5,5,165,32"/>
 <area shape="rect" id="node2" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="28,80,143,107"/>
-<area shape="rect" id="node3" href="$point_8hpp.html" title=" " alt="" coords="44,155,127,181"/>
+<area shape="rect" id="node3" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="44,155,127,181"/>
 </map>

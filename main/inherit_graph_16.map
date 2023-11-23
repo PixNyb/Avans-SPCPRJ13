@@ -1,3 +1,4 @@
-<map id="Grafische Klasse Hi&amp;euml;rarchie" name="Grafische Klasse Hi&amp;euml;rarchie">
-<area shape="rect" id="node1" href="$classSDLCircle.html" title="Represents a circle that can be rendered using SDL2_gfx." alt="" coords="5,5,89,32"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classIOFacade.html" title="Interface for input/output handling in the game engine." alt="" coords="5,5,87,32"/>
+<area shape="rect" id="node2" href="$classGraphicsFacade.html" title="Manages graphics operations and interfaces with SDL for window management." alt="" coords="135,5,259,32"/>
 </map>

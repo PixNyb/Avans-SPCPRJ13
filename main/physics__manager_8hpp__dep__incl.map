@@ -1,0 +1,5 @@
+<map id="include/project/managers/physics_manager.hpp" name="include/project/managers/physics_manager.hpp">
+<area shape="rect" id="node1" title="This file contains the PhysicsManager class definition." alt="" coords="90,5,277,47"/>
+<area shape="rect" id="node2" href="$physics__manager_8cpp.html" title="This file contains the PhysicsManager class implementation." alt="" coords="5,95,172,136"/>
+<area shape="rect" id="node3" href="$physics__test_8cpp.html" title="This file tests the general working of the PhysicsManager/PhysicsFacade." alt="" coords="196,102,363,129"/>
+</map>

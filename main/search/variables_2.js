@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['layer_484',['layer',['../classGameObject.html#a77b865c8396028f6250dcff11aa76421',1,'GameObject']]]
+  ['debug_872',['DEBUG',['../classPhysicsFacade.html#a8378c7d6baefc3a04fb195a28e6b14c0',1,'PhysicsFacade']]],
+  ['default_5finstance_5fscope_873',['DEFAULT_INSTANCE_SCOPE',['../di__container_8hpp.html#ad63b94811145ec5073fe96214ac11bbd',1,'di_container.hpp']]]
 ];
