@@ -1,7 +1,7 @@
 /**
  * @file physics_test.cpp
  * @author Daan Groot (d.groot3@student.avans.nl)
- * @brief This file scripts the general working of the PhysicsManager/PhysicsFacade
+ * @brief This file tests the general working of the PhysicsManager/PhysicsFacade
  * @version 0.1
  * @date 2023-11-19
  *
