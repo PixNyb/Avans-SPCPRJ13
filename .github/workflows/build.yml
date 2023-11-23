@@ -37,8 +37,7 @@ jobs:
             libx11-dev \
             libxrandr-dev \
             libxcursor-dev \
-            libgl1-mesa-dev \
-            lcov
+            libgl1-mesa-dev
           sudo apt-get clean
           sudo rm -rf /var/lib/apt/lists/*
 
