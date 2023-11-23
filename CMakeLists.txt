@@ -13,21 +13,10 @@ if(BUILD_TESTS OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
     add_subdirectory(tests)
 endif()
 
+file(COPY ${PROJECT_SOURCE_DIR}/resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 # Generate coverage
 option(GENERATE_COVERAGE "Generate coverage" OFF)
-
-# If the option is set to true or we're running a debug build, generate coverage
-if(GENERATE_COVERAGE OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
-    if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-        include(ProcessorCount)
-        ProcessorCount(N)
-
-        if(NOT N EQUAL 0)
-            set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
-            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
-        endif()
-    endif()
-endif()
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 20)
@@ -52,10 +41,41 @@ list(REMOVE_DUPLICATES HEADER_DIRS)
 # Add executable
 add_library(DeFunBobEngine ${SOURCES})
 
+# If the option is set to true or we're running a debug build, generate coverage
+if(GENERATE_COVERAGE OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
+    if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+        include(ProcessorCount)
+        ProcessorCount(N)
+
+        if(NOT N EQUAL 0)
+            set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
+            target_link_libraries(DeFunBobEngine PRIVATE gcov)
+        endif()
+    endif()
+endif()
+
 # Include headers
 foreach(_headerDir ${HEADER_DIRS})
-    target_include_directories(DeFunBobEngine PRIVATE ${_headerDir})
+    target_include_directories(DeFunBobEngine PUBLIC ${_headerDir})
 endforeach()
+
+# Copy the cmake folder to the build directory
+file(COPY ${PROJECT_SOURCE_DIR}/cmake DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+# Install library and header files
+install(TARGETS DeFunBobEngine DESTINATION lib)
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include/${PROJECT_NAME})
+
+# Add uninstall target
+configure_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake"
+    IMMEDIATE @ONLY
+)
+
+add_custom_target(uninstall
+    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake
+)
 
 # Add SDL2
 find_package(SDL2 CONFIG REQUIRED)
@@ -84,3 +104,18 @@ target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2
 # Add SDL2_net
 find_package(SDL2_net CONFIG REQUIRED)
 target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_net::SDL2_net>,SDL2_net::SDL2_net,SDL2_net::SDL2_net-static>)
+
+# Add nlohmann_json
+find_package(nlohmann_json CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE nlohmann_json::nlohmann_json)
+
+# Add fmt
+find_package(fmt CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE fmt::fmt)
+
+# Add box2d
+find_package(box2d CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE box2d::box2d)
+
+# Add sandbox
+add_subdirectory(sandbox)

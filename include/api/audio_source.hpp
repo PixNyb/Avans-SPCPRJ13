@@ -1,18 +1,54 @@
-/// @file
+/**
+ * @file audio_source.hpp
+ * @author Robin Pijnappels
+ * @version 0.1
+ * @date 2023-11-12
+ *
+ * @brief The AudioSource class provides audio playback functionality for game objects.
+ * This class is part of a game engine, enabling the integration and control of audio elements.
+ *
+ * AudioSource allows game objects to have audio capabilities, like playing sound effects
+ * or music. It supports various operations such as play, pause, and stop, and offers
+ * controls for audio properties like volume and pitch.
+ *
+ * @copyright Copyright (c) 2023
+ */
 
 #ifndef AVANS_SPCPRJ13_AUDIOSOURCE_H
 #define AVANS_SPCPRJ13_AUDIOSOURCE_H
 
-#include <string>
 #include "component.hpp"
+#include <string>
 
 /**
- * @brief Component which can play audio.
+ * @class AudioSource
+ * @brief Component for handling audio playback.
+ *
+ * AudioSource is a component that can be attached to game objects to enable audio playback.
+ * It can play, pause, and stop audio clips, as well as control properties like volume and pitch.
  */
-class AudioSource : public Component {
-public:
+class AudioSource : public Component
+{
+  public:
+    /**
+     * @brief Construct a new Audio Source object
+     */
     AudioSource();
+
+    /**
+     * @brief Construct a new Audio Source object
+     *
+     * @param audioClipPath Path to a locally stored audio file.
+     */
     AudioSource(const std::string &audioClipPath);
+
+    /**
+     * @brief Copy constructor for Component.
+     *
+     * Initializes a new Component with the values of an existing one.
+     * @param other The Component to copy values from.
+     */
+    AudioSource(const AudioSource &other);
 
     /**
      * @brief Call this method to start playing audio.
@@ -36,7 +72,7 @@ public:
      */
     void Stop();
 
-private:
+  private:
     /**
      * @brief Path to a locally stored audio file.
      */

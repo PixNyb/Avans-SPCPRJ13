@@ -1,4 +1,17 @@
-/// @file
+/**
+ * @file text.hpp
+ * @author Robin Pijnappels
+ * @version 0.1
+ * @date 2023-11-12
+ *
+ * @brief Defines the Text class for handling text rendering in UI elements within the game engine.
+ * The Text class extends UIObject to represent text elements in the user interface.
+ * It provides properties such as text content, font size, alignment, and color, essential for
+ * displaying and styling text in various UI scenarios. The class plays a crucial role in creating
+ * interactive and informative user interfaces.
+ *
+ * @copyright Copyright (c) 2023
+ */
 
 #ifndef AVANS_SPCPRJ13_TEXT_H
 #define AVANS_SPCPRJ13_TEXT_H
@@ -8,21 +21,38 @@
 #include <string>
 
 /**
+ * @enum Alignment
  * @brief Enumeration for different text alignments.
+ *
+ * Represents the possible alignments for text, such as left, center, and right.
  */
-enum class Alignment { left, center, right };
+enum class Alignment
+{
+    left,
+    center,
+    right
+};
 
 /**
- * @brief Class representing a piece of text which can be rendered.
+ * @class Text
+ * @brief Represents a piece of text in the user interface.
+ * @warning If you don't set width and height properly, text is not going to be shown.
+ * @note Height is boxed, width is wrapped. So if the text exceeds the width, it will be wrapped.
+ * If it exceeds the height, it will be boxed, so overflow will be invisible.
+ *
+ * Text is a UIObject that manages the display of text, including its content, appearance,
+ * and position within the user interface.
  */
-class Text : public UIObject {
-private:
-    std::string text;      ///< The text string.
-    int fontSize;          ///< The font size of the text.
+class Text : public UIObject
+{
+  private:
+    std::string text; ///< The text string.
+    int fontSize;     ///< The font size of the text.
+    // TODO: Implement alignment
     Alignment alignment; ///< The alignment of the text.
-    Color textColor;       ///< The color of the text.
+    Color textColor;     ///< The color of the text.
 
-public:
+  public:
     /**
      * @brief Default constructor for Text.
      *

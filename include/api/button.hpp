@@ -1,4 +1,20 @@
-/// @file
+/**
+ * @file button.hpp
+ * @author Robin Pijnappels
+ * @version 0.1
+ * @date 2023-11-12
+ *
+ * @brief Defines the Button class as a part of the user interface in a game engine.
+ * Button is a UIObject subclass that represents clickable interface elements. It provides
+ * functionalities for handling click events and executing registered click handlers.
+ * This class is essential for creating interactive UI elements in games.
+ *
+ * @note Additional listeners and event handling mechanisms are planned for future versions.
+ * @deprecated The onClick handler is deprecated and will be replaced by more flexible event
+ * listeners.
+ *
+ * @copyright Copyright (c) 2023
+ */
 
 #ifndef AVANS_SPCPRJ13_BUTTON_H
 #define AVANS_SPCPRJ13_BUTTON_H
@@ -8,11 +24,17 @@
 #include <utility>
 
 /**
- * @brief Instances of this class are clickable user interface items.
+ * @class Button
+ * @brief Represents a clickable user interface element.
+ *
+ * Instances of Button are interactive UI elements that can react to click events.
+ * They support registration of custom click handlers for executing specific actions
+ * when the button is clicked.
  */
- // TODO: Add listener for button clicks and attach to input manager somehow
-class Button : public UIObject {
-public:
+class Button : public UIObject
+{
+  public:
+    // TODO: Add listener for button clicks and attach to input manager somehow
     Button();
     Button(const std::string &name, const std::string &tag, int layer, float width, float height);
     /**
@@ -28,7 +50,7 @@ public:
      */
     void OnClick(std::function<void()> callback) { onClick = std::move(callback); }
 
-private:
+  private:
     /**
      * @brief When false, the button will not react to clicks.
      */

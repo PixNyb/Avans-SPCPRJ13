@@ -25,30 +25,41 @@
  * with its position in the form of a Vector2D inherited from the Geometry class. It
  * implements the draw method to provide the logic for rendering the circle.
  */
-class Circle : public Geometry {
-private:
-    float radius; ///< The radius of the circle.
+class Circle : public Geometry
+{
+  private:
+    float radius;      ///< The radius of the circle.
+    Vector2D position; ///< The position of the circle's center.
 
-public:
+  public:
     /**
      * @brief Constructs a new Circle object.
      *
      * @param pos The position of the circle's center.
      * @param r The radius of the circle.
      */
-    Circle(const Vector2D& pos, float r)
-            : Geometry(pos), radius(r) {}
+    Circle(const Vector2D &pos, float r) : position(pos), radius(r) {}
 
-    /**
-     * @brief Draws the circle using the rendering system.
-     *
-     * Implementations should use the position and radius to draw the circle
-     * to the screen. The actual rendering implementation would depend on the
-     * graphics library being used.
-     */
-    void draw() const override {
-        // Rendering logic goes here
+    [[nodiscard]] Vector2D GetPosition() const { return position; }
+
+    float GetRadius() const { return radius; }
+
+    int GetArea() override { return 3.14 * radius * radius; }
+
+    bool IsWithinArea(const Vector2D &start, const Vector2D &end) override
+    {
+        auto rad = GetRadius();
+
+        if (start.x <= position.x + rad && start.y <= position.y + rad)
+        {
+            if (end.x >= position.x - rad && end.y >= position.y - rad)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 };
 
-#endif //DEFUNBOBENGINE_CIRCLE_HPP
+#endif // DEFUNBOBENGINE_CIRCLE_HPP

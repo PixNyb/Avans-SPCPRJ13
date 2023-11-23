@@ -18,6 +18,8 @@
 #include <string>
 #include <vector>
 
+class GameObjectList;
+
 /**
  * @class GameObject
  * @brief The GameObject class represents an object in the game world.
@@ -26,7 +28,7 @@
  * GameObjects can be added to the game world and can have their components
  * updated and rendered.
  */
-class GameObject
+class GameObject : public std::enable_shared_from_this<GameObject>
 {
   protected:
     std::string name; ///< The name of the GameObject.
@@ -35,7 +37,7 @@ class GameObject
     Transform transform;                ///< The transform of the GameObject.
     std::shared_ptr<GameObject> parent; ///< The parent of the GameObject.
     bool active;                        ///< The active flag of the GameObject.
-    int tag;                            ///< The tag/type of the GameObject.
+    std::string tag;                    ///< The tag/type of the GameObject.
     int layer;                          ///< The layer of the GameObject.
 
   public:
@@ -59,6 +61,34 @@ class GameObject
     GameObject(const std::string &name, const Transform &transform);
 
     /**
+     * @brief Copy constructor that creates a deep copy of the provided GameObject.
+     * @param other The GameObject that is to be copied.
+     */
+    GameObject(const GameObject &other);
+
+    /**
+     * @brief Copy assignment operator that creates a deep copy of the provided GameObject.
+     * @param other The GameObject that is to be copied.
+     * @return The new copy of the GameObject.
+     */
+    GameObject &operator=(const GameObject &other);
+
+    /**
+     * @brief Move constructor which could be used to move a GameObject, this functionality is
+     * currently disabled.
+     * @param other The GameObject that is to be moved.
+     */
+    GameObject(GameObject &&other) noexcept = delete;
+
+    /**
+     * @brief Move assignment operator which could be used to move a GameObject, this functionality
+     * is currently disabled.
+     * @param other The GameObject that is to be moved.
+     * @return The new GameObject that it was moved to.
+     */
+    GameObject &operator=(GameObject &&other) noexcept = delete;
+
+    /**
      * @brief Destructor for GameObject.
      */
     virtual ~GameObject() = default;
@@ -79,13 +109,13 @@ class GameObject
      * @brief Get the tag of the GameObject.
      * @return The tag of the GameObject.
      */
-    int GetTag() const;
+    std::string GetTag() const;
 
     /**
      * @brief Set the tag of the GameObject.
      * @param tag The new tag of the GameObject.
      */
-    void SetTag(int tag);
+    void SetTag(std::string tag);
 
     /**
      * @brief Get the layer of the GameObject.
@@ -152,6 +182,52 @@ class GameObject
      * @param component The component to add to the GameObject.
      */
     void AddComponent(std::shared_ptr<Component> component);
+
+    /**
+     * @brief Get the first component of the specified type. Must be
+     *        a valid subclass of Component.
+     *
+     * @tparam T The type of component to get.
+     * @return Pointer to Component instance.
+     */
+    template <class T> std::shared_ptr<T> GetComponent() const
+    {
+        for (std::shared_ptr<Component> component : components)
+        {
+            auto componentPtr = std::dynamic_pointer_cast<T>(component);
+            if (componentPtr)
+                return componentPtr;
+        }
+
+        return std::shared_ptr<T>{};
+    }
+
+    /**
+     * @brief Get all the components of the specified type. Must be
+     *        a valid subclass of Component.
+     *
+     * @tparam T The type of component to get.
+     * @return Vector with pointers to Component instances.
+     */
+    template <class T> std::vector<std::shared_ptr<T>> GetComponents() const
+    {
+        std::vector<std::shared_ptr<T>> typeComponents;
+
+        for (std::shared_ptr<Component> component : components)
+        {
+            auto componentPtr = std::dynamic_pointer_cast<T>(component);
+            if (componentPtr)
+                typeComponents.push_back(componentPtr);
+        }
+
+        return typeComponents;
+    }
+
+    /**
+     * @brief Gets an object list starting with the root node and ending with the origin node.
+     * @return The object list
+     */
+    std::unique_ptr<GameObjectList> GetObjectList();
 };
 
 #endif // AVANS_SPCPRJ13_GAMEOBJECT_H

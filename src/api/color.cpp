@@ -1,3 +1,14 @@
+/**
+ * @file color.cpp
+ * @author Robin Pijnappels
+ * @brief This file contains the Color class implementation.
+ * @version 0.1
+ * @date 2023-11-08
+ *
+ * Copyright Copyright (c) 2023
+ *
+ */
+
 #include "color.hpp"
 
 Color Color::_white{1.0, 1.0, 1.0, 1.0};
@@ -13,3 +24,7 @@ Color::Color(double red, double green, double blue, double alpha)
     : r{red}, g{green}, b{blue}, a{alpha}
 {
 }
+double Color::GetRed() const { return r; }
+double Color::GetGreen() const { return g; }
+double Color::GetBlue() const { return b; }
+double Color::GetAlpha() const { return a; }
