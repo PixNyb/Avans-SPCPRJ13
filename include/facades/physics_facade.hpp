@@ -70,9 +70,9 @@ class PhysicsFacade
     void AddForce(const std::shared_ptr<GameObject> &gameObject, float vx, float vy);
 
     /**
-    * @brief Add a linear impulse to an object
-    * can be used for jumping or boosts in speed
-    */
+     * @brief Add a linear impulse to an object
+     * can be used for jumping or boosts in speed
+     */
     void AddLinearImpulse(const std::shared_ptr<GameObject> &gameObject, float vx, float vy);
 
     /**

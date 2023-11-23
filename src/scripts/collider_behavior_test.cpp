@@ -9,7 +9,7 @@
 void ColliderBehaviorTest::OnTriggerEnter2D(const Collider &collider)
 {
     std::cout << "behavior executed" << std::endl;
-    physicsManager.lock()->AddForce(parent.lock(), 20, 40);
+    physicsManager.lock()->AddLinearImpulse(parent.lock(), 0, 20);
 }
 
 void ColliderBehaviorTest::OnTriggerExit2D(const Collider &collider) {}

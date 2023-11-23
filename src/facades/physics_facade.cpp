@@ -38,8 +38,24 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject)
         bodyDef.type = b2_kinematicBody;
     bodyDef.allowSleep = true;
     auto transform = (*gameObject).GetTransform();
-    bodyDef.position.Set(static_cast<float>(transform.position.x) * PixelToMeter,
-                         static_cast<float>(transform.position.y) * PixelToMeter);
+    if ((*gameObject).GetComponent<BoxCollider>())
+        bodyDef.position.Set(
+            static_cast<float>(transform.position.x +
+                               (*gameObject).GetComponent<BoxCollider>()->Width() / 2) *
+                PixelToMeter,
+            static_cast<float>(transform.position.y -
+                               (*gameObject).GetComponent<BoxCollider>()->Height() / 2) *
+                PixelToMeter);
+    else
+    {
+        bodyDef.position.Set(
+            static_cast<float>(transform.position.x +
+                               (*gameObject).GetComponent<CircleCollider>()->Radius()) *
+                PixelToMeter,
+            static_cast<float>(transform.position.y -
+                               (*gameObject).GetComponent<CircleCollider>()->Radius()) *
+                PixelToMeter);
+    }
     bodyDef.angle = static_cast<float>(transform.rotation);
     auto body = world->CreateBody(&bodyDef);
     bodies.insert(std::pair<std::shared_ptr<GameObject>, b2Body *>(gameObject, body));
@@ -107,10 +123,22 @@ void PhysicsFacade::Step()
         auto oldTransform = gameObject->GetTransform();
         // TODO: body position is the center of the body (transform is the top left of the SDL
         // shape)
-        oldTransform.position.x +=
-            (body->GetPosition().x * MeterToPixel) - gameObject->GetTransform().position.x;
-        oldTransform.position.y +=
-            (body->GetPosition().y * MeterToPixel) - gameObject->GetTransform().position.y;
+        if (gameObject->GetComponent<BoxCollider>())
+        {
+            oldTransform.position.x += (body->GetPosition().x * MeterToPixel) -
+                                       (gameObject->GetComponent<BoxCollider>()->Width() / 2) -
+                                       gameObject->GetTransform().position.x;
+            oldTransform.position.y += (body->GetPosition().y * MeterToPixel) +
+                                       (gameObject->GetComponent<BoxCollider>()->Height() / 2) -
+                                       gameObject->GetTransform().position.y;
+        }
+        else
+        {
+            oldTransform.position.x +=
+                (body->GetPosition().x * MeterToPixel) - gameObject->GetTransform().position.x;
+            oldTransform.position.y +=
+                (body->GetPosition().y * MeterToPixel) - gameObject->GetTransform().position.y;
+        }
         oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);
         gameObject->SetTransform(oldTransform);
     }
@@ -153,11 +181,15 @@ void PhysicsFacade::AddForce(const std::shared_ptr<GameObject> &gameObject, floa
     {
         if (pair.first->GetTransform().position.x == gameObject->GetTransform().position.x &&
             pair.first->GetTransform().position.y == gameObject->GetTransform().position.y)
+        {
+            pair.second->SetLinearVelocity(b2Vec2(0, 0));
             pair.second->ApplyForce(b2Vec2(newVX, newVY), pair.second->GetWorldCenter(), true);
+        }
     }
 }
 
-void PhysicsFacade::AddLinearImpulse(const std::shared_ptr<GameObject> &gameObject, float vx, float vy)
+void PhysicsFacade::AddLinearImpulse(const std::shared_ptr<GameObject> &gameObject, float vx,
+                                     float vy)
 {
     float newVX = vx;
     float newVY = vy;
@@ -165,7 +197,11 @@ void PhysicsFacade::AddLinearImpulse(const std::shared_ptr<GameObject> &gameObje
     {
         if (pair.first->GetTransform().position.x == gameObject->GetTransform().position.x &&
             pair.first->GetTransform().position.y == gameObject->GetTransform().position.y)
-            pair.second->ApplyLinearImpulse(b2Vec2(newVX, newVY), pair.second->GetWorldCenter(), true);
+        {
+            pair.second->SetLinearVelocity(b2Vec2(0, 0));
+            pair.second->ApplyLinearImpulse(b2Vec2(newVX, newVY), pair.second->GetWorldCenter(),
+                                            true);
+        }
     }
 }
 

@@ -20,7 +20,7 @@
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
 const double MeterToPixel = 5;
-const double PixelToMeter = 1/MeterToPixel;
+const double PixelToMeter = 1 / MeterToPixel;
 
 SDL_Window *window;
 SDL_Renderer *renderer;
@@ -60,7 +60,7 @@ void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body 
     for (const auto &boxCollider : gameObject->GetComponents<BoxCollider>())
     {
         sdlX = static_cast<int>(position.x);
-        sdlY = SCREEN_HEIGHT - static_cast<int>(position.y + boxCollider->Height());
+        sdlY = SCREEN_HEIGHT - static_cast<int>(position.y);
         SDL_Rect boxRect;
         boxRect.x = sdlX;
         boxRect.y = sdlY;
@@ -72,8 +72,8 @@ void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body 
 
     for (const auto &circleCollider : gameObject->GetComponents<CircleCollider>())
     {
-        sdlX = static_cast<int>(position.x + circleCollider->Radius());
-        sdlY = SCREEN_HEIGHT - static_cast<int>(position.y + circleCollider->Radius());
+        sdlX = static_cast<int>(position.x);
+        sdlY = SCREEN_HEIGHT - static_cast<int>(position.y);
         filledCircleRGBA(renderer, sdlX, sdlY, circleCollider->Radius(), 0, 255, 0, 255);
     }
 }
