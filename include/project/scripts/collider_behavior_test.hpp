@@ -12,10 +12,16 @@
 class ColliderBehaviorTest : public BehaviourScript
 {
   private:
-    std::weak_ptr<PhysicsManager> physicsManager;
-    std::weak_ptr<GameObject> parent;
+    std::weak_ptr<PhysicsManager>
+        physicsManager;               ///< the physicsmanager that is used to perform actions
+    std::weak_ptr<GameObject> parent; ///< the parent of this behaviourscript
 
   public:
+    /**
+     * Constucts a colliderbehaviortest
+     * @param physicsManagerPointer
+     * @param parent
+     */
     ColliderBehaviorTest(std::weak_ptr<PhysicsManager> physicsManagerPointer,
                          std::weak_ptr<GameObject> parent);
 

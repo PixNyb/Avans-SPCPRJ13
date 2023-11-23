@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     auto collider1 = std::make_shared<CircleCollider>();
     collider1->Radius(25);
     auto script = std::make_shared<ColliderBehaviorTest>(physicsManager, obj1);
-    //    obj1->AddComponent(script);
+    obj1->AddComponent(script);
     obj1->AddComponent(body1);
     obj1->AddComponent(collider1);
     obj1->SetTransform(trs1);

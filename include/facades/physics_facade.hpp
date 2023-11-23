@@ -44,8 +44,14 @@ class PhysicsFacade
      */
     bool DEBUG;
 
+    /**
+     * Constructs a physicsfacade
+     */
     PhysicsFacade();
 
+    /**
+     * Destructs a physicsfacade
+     */
     ~PhysicsFacade();
 
     /**
