@@ -1,0 +1,4 @@
+<map id="include/api/level_scene.hpp" name="include/api/level_scene.hpp">
+<area shape="rect" id="node1" title="Defines the LevelScene class for creating a level." alt="" coords="5,5,208,32"/>
+<area shape="rect" id="node2" href="$level__factory_8cpp.html" title="Implementation of the level factory." alt="" coords="8,80,205,121"/>
+</map>
