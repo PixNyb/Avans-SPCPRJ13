@@ -9,7 +9,6 @@
  *
  */
 
-#include "physics_manager.hpp"
 #include <iostream>
 
 int main(int argc, char *argv[])

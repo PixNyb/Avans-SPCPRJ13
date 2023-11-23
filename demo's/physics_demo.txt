@@ -5,6 +5,7 @@
 #include "rigidbody.hpp"
 #include <utility>
 #include <vector>
+#include "physics_manager.hpp"
 
 void PhysicsDemo()
 {
