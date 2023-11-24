@@ -15,7 +15,7 @@ void LoadLevelBehaviour::OnStart()
     this->hasStarted = true;
 }
 
-void LoadLevelBehaviour::OnUpdate()
+void LoadLevelBehaviour::OnTriggerEnter2D(const Collider &collider)
 {
     this->levelManager->LoadLevel(levelId);
 }

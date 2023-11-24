@@ -43,7 +43,7 @@ class LoadLevelBehaviour : public BehaviourScript {
     /**
      * @brief Triggers the loading of the new level.
      */
-    void OnUpdate() override;
+    void OnTriggerEnter2D(const Collider &collider) override;
 
 };
 
