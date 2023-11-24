@@ -16,8 +16,9 @@
 #include "debug_renderer.hpp"
 #include "polygon_collider.hpp"
 #include "rigidbody.hpp"
+#include "time.hpp"
 
-const float TimeStep = 1.0f / 480.0f;
+const float TimeStep = 1.0f / 480.0f * static_cast<float>(Time::GetDeltaTime() * Time::TimeScale());
 const int VelocityIterations = 12;
 const int PositionIterations = 4;
 const double MeterToPixel = 5;
