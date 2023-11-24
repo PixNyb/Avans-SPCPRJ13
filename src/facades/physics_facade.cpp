@@ -16,7 +16,9 @@
 #include "polygon_collider.hpp"
 #include "time.hpp"
 
-const float TimeStep = 1.0f / 480.0f * static_cast<float>(Time::GetDeltaTime() * Time::TimeScale());
+// const float TimeStep = 1.0f / 480.0f * static_cast<float>(Time::GetDeltaTime() *
+// Time::TimeScale());
+const float TimeStep = 1.0f / 240.0f;
 const int VelocityIterations = 12;
 const int PositionIterations = 4;
 const double MeterToPixel = 5;
@@ -120,24 +122,23 @@ void PhysicsFacade::Step()
     {
         auto gameObject = object_pair->first;
         auto body = object_pair->second;
+        auto bodyPos = body->GetPosition();
         auto oldTransform = gameObject->GetTransform();
         // TODO: body position is the center of the body (transform is the top left of the SDL
-        // shape)
         if (gameObject->GetComponent<BoxCollider>())
         {
-            oldTransform.position.x += (body->GetPosition().x * MeterToPixel) -
+            // TODO: INVERT Y AXIS
+            oldTransform.position.x += (bodyPos.x * MeterToPixel) -
                                        (gameObject->GetComponent<BoxCollider>()->Width() / 2) -
                                        gameObject->GetTransform().position.x;
-            oldTransform.position.y += (body->GetPosition().y * MeterToPixel) +
-                                       (gameObject->GetComponent<BoxCollider>()->Height() / 2) -
-                                       gameObject->GetTransform().position.y;
+            oldTransform.position.y += (bodyPos.y * MeterToPixel) +
+                                       (gameObject->GetComponent<BoxCollider>()->Height() / 2);
         }
         else
         {
             oldTransform.position.x +=
-                (body->GetPosition().x * MeterToPixel) - gameObject->GetTransform().position.x;
-            oldTransform.position.y +=
-                (body->GetPosition().y * MeterToPixel) - gameObject->GetTransform().position.y;
+                (bodyPos.x * MeterToPixel) - gameObject->GetTransform().position.x;
+            oldTransform.position.y += bodyPos.y * MeterToPixel;
         }
         oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);
         gameObject->SetTransform(oldTransform);
