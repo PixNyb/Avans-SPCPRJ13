@@ -13,9 +13,7 @@
 #include "box_collider.hpp"
 #include "circle_collider.hpp"
 #include "contact_listener.hpp"
-#include "debug_renderer.hpp"
 #include "polygon_collider.hpp"
-#include "rigidbody.hpp"
 #include "time.hpp"
 
 const float TimeStep = 1.0f / 480.0f * static_cast<float>(Time::GetDeltaTime() * Time::TimeScale());
@@ -72,7 +70,8 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
     // create a b2body for every gameobject
     for (auto &gameObject : gameObjects)
     {
-        MakeBody(gameObject);
+        if (gameObject->GetComponent<RigidBody>())
+            MakeBody(gameObject);
     }
 
     // add fixtures for every body
