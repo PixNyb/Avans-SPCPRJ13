@@ -18,6 +18,7 @@
 #include "engine.hpp"
 #include "behaviour_script_manager.hpp"
 #include "graphics_facade.hpp"
+#include "physics_manager.hpp"
 #include "render_manager.hpp"
 #include "scene_manager.hpp"
 #include "sdl_input_facade.hpp"
@@ -35,6 +36,8 @@ Engine::Engine()
                                               InstanceScope::Engine);
     container.registerInstance<BehaviourScriptManager>(std::make_shared<BehaviourScriptManager>(),
                                                        InstanceScope::Engine);
+    container.registerInstance<PhysicsManager>(std::make_shared<PhysicsManager>(),
+                                               InstanceScope::Engine);
 }
 
 void Engine::Start()
