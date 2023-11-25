@@ -91,7 +91,8 @@ jobs:
         with:
           repo_token: ${{ secrets.GH_TOKEN }}
           tag: ${{ github.ref }}
-          body: ${{ env.RELEASE_BODY }}
+          body: |
+            ${{ env.RELEASE_BODY }}
           prerelease: true
           file_glob: true
           file: release/*
