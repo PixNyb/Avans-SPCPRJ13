@@ -67,6 +67,28 @@ TEST(GameObjectTest, TestParents)
     ASSERT_EQ(root->GetParent(), nullptr);
 }
 
+TEST(GameObjectTest, TestParents_NewParentsDeleteChildrenOfOriginalParent)
+{
+    std::shared_ptr<GameObject> root = std::make_shared<GameObject>("Root");
+    std::shared_ptr<GameObject> rootB = std::make_shared<GameObject>("RootB");
+
+    std::shared_ptr<GameObject> child = std::make_shared<GameObject>("ChildA");
+
+    child->SetParent(root);
+
+    auto rootChildrenA = root->GetChildren();
+    bool rootHasChildA =
+        std::find(rootChildrenA.begin(), rootChildrenA.end(), child) != rootChildrenA.end();
+    ASSERT_EQ(rootHasChildA, true);
+
+    child->SetParent(rootB);
+
+    auto rootChildrenB = root->GetChildren();
+    bool rootHasChildB =
+        std::find(rootChildrenB.begin(), rootChildrenB.end(), child) != rootChildrenB.end();
+    ASSERT_EQ(rootHasChildB, false);
+}
+
 TEST(GameObjectTest,
      TestGameObjectUtil_ProcessActiveObjectsRecursively_InactiveChildCannotFindGrandChild)
 {

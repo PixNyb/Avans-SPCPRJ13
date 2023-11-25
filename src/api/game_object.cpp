@@ -106,12 +106,9 @@ void GameObject::SetParent(std::shared_ptr<GameObject> newParent)
         return;
 
     // Remove from old parent
-    if (parent)
+    if (parent != nullptr)
     {
-        auto it = std::find_if(parent->children.begin(), parent->children.end(),
-                               [newParent](const std::shared_ptr<GameObject> &element)
-                               { return element.get() == newParent.get(); });
-
+        auto it = std::find(parent->children.begin(), parent->children.end(), shared_from_this());
         if (it != parent->children.end())
             parent->children.erase(it);
     }
