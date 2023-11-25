@@ -1,4 +1,6 @@
+#include "core_constants.hpp"
 #include "game_object.hpp"
+#include "game_object_utility.hpp"
 #include "gtest/gtest.h"
 
 TEST(GameObjectTest, TestName)
@@ -50,6 +52,66 @@ TEST(GameObjectTest, TestParent)
     std::shared_ptr<GameObject> child = std::make_shared<GameObject>("TestObject");
     child->SetParent(parent);
     ASSERT_EQ(child->GetParent(), parent);
+}
+
+TEST(GameObjectTest, TestParents)
+{
+    std::shared_ptr<GameObject> root = std::make_shared<GameObject>("Root");
+    std::shared_ptr<GameObject> child = std::make_shared<GameObject>("Child");
+    std::shared_ptr<GameObject> grandChild = std::make_shared<GameObject>("GrandChild");
+
+    child->SetParent(root);
+    grandChild->SetParent(child);
+
+    ASSERT_EQ(grandChild->GetParent(), child);
+    ASSERT_EQ(child->GetParent(), root);
+    ASSERT_EQ(root->GetParent(), nullptr);
+}
+
+TEST(GameObjectTest,
+     TestGameObjectUtil_ProcessActiveObjectsRecursively_InactiveChildCannotFindGrandChild)
+{
+    std::shared_ptr<GameObject> root = std::make_shared<GameObject>("Root");
+    std::shared_ptr<GameObject> child = std::make_shared<GameObject>("Child");
+    std::shared_ptr<GameObject> grandChild = std::make_shared<GameObject>("GrandChild");
+
+    child->SetParent(root);
+    grandChild->SetParent(child);
+
+    child->SetActive(false);
+
+    bool foundGrandChild = false;
+    GameObjectUtility::ProcessActiveObjectsRecursively(
+        root,
+        [&foundGrandChild](const std::shared_ptr<GameObject> &gameObject)
+        {
+            if (gameObject->GetName() == "GrandChild")
+                foundGrandChild = true;
+        });
+
+    ASSERT_EQ(foundGrandChild, false);
+}
+
+TEST(GameObjectTest,
+     TestGameObjectUtil_ProcessActiveObjectsRecursively_ActiveChildCanFindGrandChild)
+{
+    std::shared_ptr<GameObject> root = std::make_shared<GameObject>("Root");
+    std::shared_ptr<GameObject> child = std::make_shared<GameObject>("Child");
+    std::shared_ptr<GameObject> grandChild = std::make_shared<GameObject>("GrandChild");
+
+    child->SetParent(root);
+    grandChild->SetParent(child);
+
+    bool foundGrandChild = false;
+    GameObjectUtility::ProcessActiveObjectsRecursively(
+        root,
+        [&foundGrandChild](const std::shared_ptr<GameObject> &gameObject)
+        {
+            if (gameObject->GetName() == "GrandChild")
+                foundGrandChild = true;
+        });
+
+    ASSERT_EQ(foundGrandChild, true);
 }
 
 TEST(GameObjectTest, TestAddComponent)
