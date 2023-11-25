@@ -75,54 +75,23 @@ jobs:
           echo "\`\`\`" >> changelog.txt
           echo "### Build system" >> changelog.txt
           echo >> changelog.txt
-          echo "RELEASE_BODY=$(cat changelog.txt)" >> $GITHUB_ENV
+          echo "RELEASE_BODY=\"$(cat changelog.txt)\"" >> $GITHUB_ENV
 
-      - name: Upload SDK archive
+      - name: Move and rename files
+        run: |
+          mv sdk.zip release/libDeFunBobEngine-sdk.zip
+          mv sdk.zip.sha256 release/libDeFunBobEngine-sdk.zip.sha256
+          mv sdk.tar.gz release/libDeFunBobEngine-sdk.tar.gz
+          mv sdk.tar.gz.sha256 release/libDeFunBobEngine-sdk.tar.gz.sha256
+          mv build/libDeFunBobEngine.a release/libDeFunBobEngine.a
+          mv build/libDeFunBobEngine.sha256 release/libDeFunBobEngine.sha256
+
+      - name: Create release
         uses: svenstaro/upload-release-action@v2
         with:
+          repo_token: ${{ secrets.GH_TOKEN }}
+          tag: ${{ github.ref }}
           body: ${{ env.RELEASE_BODY }}
           prerelease: true
-          repo_token: ${{ secrets.GH_TOKEN }}
-          file: sdk.zip
-          asset_name: libDeFunBobEngine-sdk.zip
-          tag: ${{ github.ref }}
-
-      - name: Upload SDK tarball
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GH_TOKEN }}
-          file: sdk.tar.gz
-          asset_name: libDeFunBobEngine-sdk.tar.gz
-          tag: ${{ github.ref }}
-
-      - name: Upload compiled library
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GH_TOKEN }}
-          file: build/libDeFunBobEngine.a
-          asset_name: libDeFunBobEngine.a
-          tag: ${{ github.ref }}
-
-      - name: Upload SDK archive checksum
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GH_TOKEN }}
-          file: sdk.zip.sha256
-          asset_name: libDeFunBobEngine-sdk.zip.sha256
-          tag: ${{ github.ref }}
-
-      - name: Upload SDK tarball checksum
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GH_TOKEN }}
-          file: sdk.tar.gz.sha256
-          asset_name: libDeFunBobEngine-sdk.tar.gz.sha256
-          tag: ${{ github.ref }}
-
-      - name: Upload library checksum
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GH_TOKEN }}
-          file: build/libDeFunBobEngine.sha256
-          asset_name: libDeFunBobEngine.sha256
-          tag: ${{ github.ref }}
+          file_glob: true
+          file: release/*
