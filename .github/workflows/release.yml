@@ -39,10 +39,10 @@ jobs:
         run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build && cmake --build build
 
       - name: Create SDK archives
-        run: | 
+        run: |
           zip -r sdk.zip include
           tar -czf sdk.tar.gz include
-          
+
       - name: Generate checksum for sdk.zip
         run: sha256sum sdk.zip > sdk.zip.sha256
 
@@ -51,15 +51,42 @@ jobs:
 
       - name: Generate checksum for DeFunBobEngine
         run: cd build && sha256sum libDeFunBobEngine.a > libDeFunBobEngine.sha256 && cd ..
-  
+
+      - name: Generate release body
+        id: release_body
+        run: |
+          echo "# libDeFunBobEngine" > changelog.txt
+          echo "## Changelog" > changelog.txt
+          git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'- %s ([%h](https://github.com/${{ github.repository }}/commit/%H))' >> changelog.txt
+          echo >> changelog.txt
+          echo "## Dependencies" >> changelog.txt
+          echo "\`\`\`" >> changelog.txt
+          vcpkg list --triplet x64-linux --feature-flags=manifests >> changelog.txt
+          echo "\`\`\`" >> changelog.txt
+          echo >> changelog.txt
+          echo "## Build" >> changelog.txt
+          echo "### CMake" >> changelog.txt
+          echo "\`\`\`" >> changelog.txt
+          cmake --version >> changelog.txt
+          echo "\`\`\`" >> changelog.txt
+          echo "### Compiler" >> changelog.txt
+          echo "\`\`\`" >> changelog.txt
+          g++ --version >> changelog.txt
+          echo "\`\`\`" >> changelog.txt
+          echo "### Build system" >> changelog.txt
+          echo >> changelog.txt
+          echo "RELEASE_BODY=$(cat changelog.txt)" >> $GITHUB_ENV
+
       - name: Upload SDK archive
         uses: svenstaro/upload-release-action@v2
         with:
+          body: ${{ env.RELEASE_BODY }}
+          prerelease: true
           repo_token: ${{ secrets.GH_TOKEN }}
           file: sdk.zip
           asset_name: libDeFunBobEngine-sdk.zip
           tag: ${{ github.ref }}
-          
+
       - name: Upload SDK tarball
         uses: svenstaro/upload-release-action@v2
         with:
@@ -67,7 +94,7 @@ jobs:
           file: sdk.tar.gz
           asset_name: libDeFunBobEngine-sdk.tar.gz
           tag: ${{ github.ref }}
-            
+
       - name: Upload compiled library
         uses: svenstaro/upload-release-action@v2
         with:
@@ -91,7 +118,7 @@ jobs:
           file: sdk.tar.gz.sha256
           asset_name: libDeFunBobEngine-sdk.tar.gz.sha256
           tag: ${{ github.ref }}
-      
+
       - name: Upload library checksum
         uses: svenstaro/upload-release-action@v2
         with:
