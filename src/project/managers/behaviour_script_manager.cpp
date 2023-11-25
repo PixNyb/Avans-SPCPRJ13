@@ -37,7 +37,7 @@ void BehaviourScriptManager::Update()
             continue;
 
         // Execute script recursively
-        GameObjectUtility::ProcessActiveObjectsRecursively(
+        GameObjectUtility::TraverseActiveGameObjects(
             gameObject,
             [](const std::shared_ptr<GameObject> &gameObject) { ExecuteScript(*gameObject); });
     }

@@ -81,7 +81,7 @@ TEST(GameObjectTest,
     child->SetActive(false);
 
     bool foundGrandChild = false;
-    GameObjectUtility::ProcessActiveObjectsRecursively(
+    GameObjectUtility::TraverseActiveGameObjects(
         root,
         [&foundGrandChild](const std::shared_ptr<GameObject> &gameObject)
         {
@@ -103,7 +103,7 @@ TEST(GameObjectTest,
     grandChild->SetParent(child);
 
     bool foundGrandChild = false;
-    GameObjectUtility::ProcessActiveObjectsRecursively(
+    GameObjectUtility::TraverseActiveGameObjects(
         root,
         [&foundGrandChild](const std::shared_ptr<GameObject> &gameObject)
         {

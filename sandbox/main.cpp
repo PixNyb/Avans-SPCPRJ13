@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
     std::cout << "Before setting anything to inactive" << std::endl;
 
-    GameObjectUtility::ProcessActiveObjectsRecursively(
+    GameObjectUtility::TraverseActiveGameObjects(
         root, [](const std::shared_ptr<GameObject> &gameObject)
         { std::cout << gameObject->GetName() << std::endl; });
 
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 
     std::cout << "After setting child to inactive" << std::endl;
 
-    GameObjectUtility::ProcessActiveObjectsRecursively(
+    GameObjectUtility::TraverseActiveGameObjects(
         root, [](const std::shared_ptr<GameObject> &gameObject)
         { std::cout << gameObject->GetName() << std::endl; });
 
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
     root->SetActive(false);
 
-    GameObjectUtility::ProcessActiveObjectsRecursively(
+    GameObjectUtility::TraverseActiveGameObjects(
         root, [](const std::shared_ptr<GameObject> &gameObject)
         { std::cout << gameObject->GetName() << std::endl; });
 

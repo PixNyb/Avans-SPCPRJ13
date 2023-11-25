@@ -31,11 +31,12 @@ class GameObjectUtility
      * @param maxDepth The maximum depth to process
      * @param currentDepth The current depth of the recursion
      */
-    static void ProcessObjectsRecursively(
-        const std::shared_ptr<GameObject> &gameObject,
-        const std::function<void(std::shared_ptr<GameObject>)> &callback,
-        const std::function<bool(const std::shared_ptr<GameObject> &)> &predicate,
-        int maxDepth = CoreConstants::Engine::MAX_NESTED_CHILDREN, int currentDepth = 0)
+    static void
+    TraverseGameObjects(const std::shared_ptr<GameObject> &gameObject,
+                        const std::function<void(std::shared_ptr<GameObject>)> &callback,
+                        const std::function<bool(const std::shared_ptr<GameObject> &)> &predicate,
+                        int maxDepth = CoreConstants::Engine::MAX_NESTED_CHILDREN,
+                        int currentDepth = 0)
     {
         if (currentDepth >= maxDepth)
         {
@@ -64,8 +65,7 @@ class GameObjectUtility
                 continue;
             }
 
-            ProcessObjectsRecursively(gameObjectNode, callback, predicate, maxDepth,
-                                      currentDepth + 1);
+            TraverseGameObjects(gameObjectNode, callback, predicate, maxDepth, currentDepth + 1);
         }
     }
 
@@ -79,15 +79,16 @@ class GameObjectUtility
      * @param maxDepth The maximum depth to process
      * @param currentDepth The current depth of the recursion
      */
-    static void ProcessActiveObjectsRecursively(
-        const std::shared_ptr<GameObject> &gameObject,
-        const std::function<void(std::shared_ptr<GameObject>)> &callback,
-        int maxDepth = CoreConstants::Engine::MAX_NESTED_CHILDREN, int currentDepth = 0)
+    static void
+    TraverseActiveGameObjects(const std::shared_ptr<GameObject> &gameObject,
+                              const std::function<void(std::shared_ptr<GameObject>)> &callback,
+                              int maxDepth = CoreConstants::Engine::MAX_NESTED_CHILDREN,
+                              int currentDepth = 0)
     {
         auto isActivePredicate = [](const std::shared_ptr<GameObject> &obj)
         { return obj && obj->IsActive(); };
 
-        ProcessObjectsRecursively(gameObject, callback, isActivePredicate, maxDepth, currentDepth);
+        TraverseGameObjects(gameObject, callback, isActivePredicate, maxDepth, currentDepth);
     }
 };
 

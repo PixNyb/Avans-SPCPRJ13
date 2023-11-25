@@ -44,7 +44,7 @@ void RenderManager::Render()
     for (auto &gameObjectPtr : scene->GetAllByType<GameObject>())
     {
         auto gameObject = gameObjectPtr.lock();
-        GameObjectUtility::ProcessActiveObjectsRecursively(
+        GameObjectUtility::TraverseActiveGameObjects(
             gameObject,
             [&layers](const std::shared_ptr<GameObject> &gameObject)
             {
