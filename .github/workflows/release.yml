@@ -55,27 +55,27 @@ jobs:
       - name: Generate release body
         id: release_body
         run: |
-          echo "# libDeFunBobEngine" > changelog.txt
-          echo "## Changelog" > changelog.txt
-          git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'- %s ([%h](https://github.com/${{ github.repository }}/commit/%H))' >> changelog.txt
-          echo >> changelog.txt
-          echo "## Dependencies" >> changelog.txt
-          echo "\`\`\`" >> changelog.txt
-          vcpkg list --triplet x64-linux --feature-flags=manifests >> changelog.txt
-          echo "\`\`\`" >> changelog.txt
-          echo >> changelog.txt
-          echo "## Build" >> changelog.txt
-          echo "### CMake" >> changelog.txt
-          echo "\`\`\`" >> changelog.txt
-          cmake --version >> changelog.txt
-          echo "\`\`\`" >> changelog.txt
-          echo "### Compiler" >> changelog.txt
-          echo "\`\`\`" >> changelog.txt
-          g++ --version >> changelog.txt
-          echo "\`\`\`" >> changelog.txt
-          echo "### Build system" >> changelog.txt
-          echo >> changelog.txt
-          echo "RELEASE_BODY=\"$(cat changelog.txt)\"" >> $GITHUB_ENV
+          release="# libDeFunBobEngine\n\n## Changelog\n\n"
+          release="$release$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'- %s ([%h](https://github.com/${{ github.repository }}/commit/%H))' --reverse)\n\n"
+          release="$release## Dependencies\n\n"
+          release="$release### vcpkg\n\n"
+          release="$release\`\`\`\n"
+          release="$release$(./vcpkg/vcpkg list --triplet x64-linux --feature-flags=manifests)\n"
+          release="$release\`\`\`\n\n"
+          release="$release## Build\n\n"
+          release="$release### CMake\n\n"
+          release="$release\`\`\`\n"
+          release="$release$(cmake --version)\n"
+          release="$release\`\`\`\n\n"
+          release="$release### Compiler\n\n"
+          release="$release\`\`\`\n"
+          release="$release$(g++ --version)\n"
+          release="$release\`\`\`\n\n"
+          release="$release### Build system\n\n"
+          release="$release\`\`\`\n"
+          release="$release$(uname -a)\n"
+          release="$release\`\`\`\n\n"
+          echo "RELEASE_BODY=$release" >> $GITHUB_ENV
 
       - name: Move and rename files
         run: |
