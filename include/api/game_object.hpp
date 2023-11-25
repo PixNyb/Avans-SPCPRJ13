@@ -39,8 +39,11 @@ class GameObject : public std::enable_shared_from_this<GameObject>
     bool active;                        ///< The active flag of the GameObject.
     std::string tag;                    ///< The tag/type of the GameObject.
     int layer;                          ///< The layer of the GameObject.
-
+    std::vector<std::shared_ptr<GameObject>> children; ///< The children of the GameObject.
   public:
+    // GameObjectUtility needs to be able to access the protected members
+    friend class GameObjectUtility;
+
     /**
      * @brief Default constructor for GameObject.
      */
@@ -151,7 +154,13 @@ class GameObject : public std::enable_shared_from_this<GameObject>
      * @brief Set the parent of the GameObject.
      * @param parent The new parent of the GameObject.
      */
-    void SetParent(std::shared_ptr<GameObject> parent) { this->parent = parent; }
+    void SetParent(std::shared_ptr<GameObject> newParent);
+
+    /**
+     * @brief Get the children of the GameObject.
+     * @return The children of the GameObject.
+     */
+    std::vector<std::shared_ptr<GameObject>> GetChildren() const { return children; }
 
     /**
      * @brief Check if the GameObject is active.
@@ -222,12 +231,6 @@ class GameObject : public std::enable_shared_from_this<GameObject>
 
         return typeComponents;
     }
-
-    /**
-     * @brief Gets an object list starting with the root node and ending with the origin node.
-     * @return The object list
-     */
-    std::unique_ptr<GameObjectList> GetObjectList();
 };
 
 #endif // AVANS_SPCPRJ13_GAMEOBJECT_H

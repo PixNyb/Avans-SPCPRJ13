@@ -12,7 +12,6 @@
 
 #include "game_object.hpp"
 #include "component.hpp"
-#include "game_object_list.hpp"
 #include "transform.hpp"
 #include <memory>
 
@@ -39,7 +38,7 @@ GameObject::GameObject(const GameObject &other)
 
     // TODO: Update the clone functionality to make a deep copy.
     std::vector<std::shared_ptr<Component>> comps;
-    for (const auto& comp : other.components)
+    for (const auto &comp : other.components)
         comps.push_back(std::make_shared<Component>(*comp));
     components = comps;
 
@@ -100,6 +99,23 @@ bool GameObject::IsActiveInWorld() const { return active; }
 
 bool GameObject::IsActiveSelf() const { return active; }
 
-std::unique_ptr<GameObjectList> GameObject::GetObjectList(){
-    return std::make_unique<GameObjectList>(this->shared_from_this());
+void GameObject::SetParent(std::shared_ptr<GameObject> newParent)
+{
+    if (parent == newParent)
+        return;
+
+    // Remove from old parent
+    if (parent != nullptr)
+    {
+        auto it = std::find(parent->children.begin(), parent->children.end(), shared_from_this());
+        if (it != parent->children.end())
+            parent->children.erase(it);
+    }
+
+    // Set new parent
+    parent = std::move(newParent);
+
+    // Add self to new parent
+    if (parent != nullptr)
+        parent->children.push_back(shared_from_this());
 }

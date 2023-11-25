@@ -12,6 +12,8 @@
 #ifndef DEFUNBOBENGINE_SRC_PROJECT_MANAGERS_BEHAVIOUR_SCRIPT_MANAGER_HPP
 #define DEFUNBOBENGINE_SRC_PROJECT_MANAGERS_BEHAVIOUR_SCRIPT_MANAGER_HPP
 
+#include "game_object.hpp"
+
 class BehaviourScriptManager
 {
   public:
@@ -23,6 +25,8 @@ class BehaviourScriptManager
      * yet.
      */
     void Update();
+
+    static void ExecuteScript(GameObject &gameObject);
 };
 
 #endif // DEFUNBOBENGINE_SRC_PROJECT_MANAGERS_BEHAVIOUR_SCRIPT_MANAGER_HPP
