@@ -55,7 +55,7 @@ jobs:
       - name: Generate release body
         id: release_body
         run: |
-          release="# libDeFunBobEngine\n\n## Changelog\n\n"
+          release="# libDeFunBobEngine\n\n## Changelog\n"
           release="$release$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'- %s ([%h](https://github.com/${{ github.repository }}/commit/%H))' --reverse)\n\n"
           release="$release## Dependencies\n\n"
           release="$release### vcpkg\n\n"
@@ -75,7 +75,7 @@ jobs:
           release="$release\`\`\`\n"
           release="$release$(uname -a)\n"
           release="$release\`\`\`\n\n"
-          echo "RELEASE_BODY=$release" >> $GITHUB_ENV
+          echo "RELEASE_BODY=$release" >> $GITHUB_OUTPUT
 
       - name: Move and rename files
         run: |
@@ -92,7 +92,7 @@ jobs:
           repo_token: ${{ secrets.GH_TOKEN }}
           tag: ${{ github.ref }}
           body: |
-            ${{ env.RELEASE_BODY }}
+            ${{ steps.release_body.outputs.RELEASE_BODY }}
           prerelease: true
           file_glob: true
           file: release/*
