@@ -22,6 +22,9 @@ class GameObjectUtility
   public:
     /**
      * @brief Processes game objects recursively based on a predicate.
+     *
+     * @note This includes the original game object and its children.
+     *
      * @param gameObject The game object to start the recursion from
      * @param callback The callback to execute on each eligible game object
      * @param predicate The predicate to determine whether a game object should be processed
@@ -68,6 +71,9 @@ class GameObjectUtility
 
     /**
      * @brief Processes all active game objects recursively.
+     *
+     * @note This includes the original game object and its children.
+     *
      * @param gameObject The game object to start the recursion from
      * @param callback The callback to execute on each active game object
      * @param maxDepth The maximum depth to process
