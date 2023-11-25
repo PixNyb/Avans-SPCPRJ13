@@ -113,9 +113,8 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
 
 void PhysicsFacade::Step()
 {
-    double delta = std::clamp(Time::GetDeltaTime(), 0.0001, 1.0);
+    double delta = std::clamp(Time::GetDeltaTime(), 0.0001, 2.0);
     double time = delta * Time::TimeScale() * 100 * (TimeStep);
-    std::cout << time << std::endl;
     // run physics world
     world->Step(static_cast<float>(time), VelocityIterations, PositionIterations);
 
