@@ -45,6 +45,7 @@ void Engine::Start()
     int frameCount = 0;
     double lastFPSUpdateTime = Time::GetTotalTime();
     auto graphicsFacade = Get<IOFacade>();
+    Time::TimeScale(2);
 
     if (!graphicsFacade)
     {
