@@ -17,6 +17,9 @@
 #include <functional>
 #include <iostream>
 
+/**
+ * @brief The GameObjectUtility class provides utility functions for game objects.
+ */
 class GameObjectUtility
 {
   public:

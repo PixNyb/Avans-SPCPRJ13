@@ -1,4 +1,3 @@
-#include "core_constants.hpp"
 #include "game_object.hpp"
 #include "game_object_utility.hpp"
 #include "gtest/gtest.h"
