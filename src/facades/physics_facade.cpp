@@ -15,9 +15,9 @@
 #include "contact_listener.hpp"
 #include "polygon_collider.hpp"
 #include "time.hpp"
+#include <algorithm>
 
 const float TimeStep = 1.0f / 60.0f;
-// const float TimeStep = 1.0f / 60.0f;
 const int VelocityIterations = 12;
 const int PositionIterations = 4;
 const double MeterToPixel = 5;
@@ -113,9 +113,11 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
 
 void PhysicsFacade::Step()
 {
+    double delta = std::clamp(Time::GetDeltaTime(), 0.0001, 1.0);
+    double time = delta * Time::TimeScale() * 100 * (TimeStep);
+    std::cout << time << std::endl;
     // run physics world
-    world->Step(TimeStep * static_cast<float>(Time::TimeScale()), VelocityIterations,
-                PositionIterations);
+    world->Step(static_cast<float>(time), VelocityIterations, PositionIterations);
 
     // update all gameobjects
     for (auto object_pair = bodies.begin(); object_pair != bodies.end(); ++object_pair)
