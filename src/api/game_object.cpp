@@ -13,6 +13,7 @@
 #include "game_object.hpp"
 #include "component.hpp"
 #include "transform.hpp"
+#include <algorithm>
 #include <memory>
 
 GameObject::GameObject() : name(""), active(true), tag(""), layer(0), transform()
@@ -105,9 +106,12 @@ void GameObject::SetParent(std::shared_ptr<GameObject> newParent)
         return;
 
     // Remove from old parent
-    if (parent != nullptr)
+    if (parent)
     {
-        auto it = std::find(parent->children.begin(), parent->children.end(), shared_from_this());
+        auto it = std::find_if(parent->children.begin(), parent->children.end(),
+                               [newParent](const std::shared_ptr<GameObject> &element)
+                               { return element.get() == newParent.get(); });
+
         if (it != parent->children.end())
             parent->children.erase(it);
     }
