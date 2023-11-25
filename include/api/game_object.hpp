@@ -24,6 +24,8 @@ class GameObjectList;
  * @class GameObject
  * @brief The GameObject class represents an object in the game world.
  *
+ * @warning Should be instantiated as a shared_ptr.
+ *
  * It contains a name, a list of components, an active flag, a tag, and a layer.
  * GameObjects can be added to the game world and can have their components
  * updated and rendered.
@@ -41,9 +43,6 @@ class GameObject : public std::enable_shared_from_this<GameObject>
     int layer;                          ///< The layer of the GameObject.
     std::vector<std::shared_ptr<GameObject>> children; ///< The children of the GameObject.
   public:
-    // GameObjectUtility needs to be able to access the protected members
-    friend class GameObjectUtility;
-
     /**
      * @brief Default constructor for GameObject.
      */

@@ -47,9 +47,9 @@ TEST(GameObjectTest, TestActive)
 TEST(GameObjectTest, TestParent)
 {
     std::shared_ptr<GameObject> parent = std::make_shared<GameObject>("ParentObject");
-    GameObject obj("TestObject");
-    obj.SetParent(parent);
-    ASSERT_EQ(obj.GetParent(), parent);
+    std::shared_ptr<GameObject> child = std::make_shared<GameObject>("TestObject");
+    child->SetParent(parent);
+    ASSERT_EQ(child->GetParent(), parent);
 }
 
 TEST(GameObjectTest, TestAddComponent)
