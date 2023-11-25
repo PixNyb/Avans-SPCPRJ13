@@ -1,0 +1,5 @@
+<map id="include/api/circle_collider.hpp" name="include/api/circle_collider.hpp">
+<area shape="rect" id="node1" title="Defines the CircleCollider class for representing circular collision areas. CircleCollider is a subcl..." alt="" coords="5,5,137,47"/>
+<area shape="rect" id="node2" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="23,95,120,121"/>
+<area shape="rect" id="node3" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="10,169,133,196"/>
+</map>
