@@ -1,7 +1,7 @@
 /**
  * @file behaviour_script_manager.hpp
  * @author "Melvin van Bree"
- * @brief TODO
+ * @brief A file containing the BehaviourScriptManager class.
  * @version 0.1
  * @date 15/11/2023
  *
@@ -14,6 +14,9 @@
 
 #include "game_object.hpp"
 
+/**
+ * @brief Manager for all behaviour scripts.
+ */
 class BehaviourScriptManager
 {
   public:
