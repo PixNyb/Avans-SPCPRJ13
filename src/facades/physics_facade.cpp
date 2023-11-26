@@ -127,10 +127,8 @@ void PhysicsFacade::Step()
         if (gameObject->GetComponent<RigidBody>()->GetBodyType() == BodyType::dynamicBody)
         {
             auto oldTransform = gameObject->GetTransform();
-            // TODO: body position is the center of the body (transform is the top left of the SDL
             if (gameObject->GetComponent<BoxCollider>())
             {
-                // TODO: INVERT Y AXIS
                 oldTransform.position.x = bodyPos.x * MeterToPixel -
                                           (gameObject->GetComponent<BoxCollider>()->Width() / 2);
                 oldTransform.position.y = -bodyPos.y * MeterToPixel -
