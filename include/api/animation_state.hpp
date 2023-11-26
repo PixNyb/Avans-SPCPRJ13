@@ -33,6 +33,11 @@ private:
     */
   std::map<std::string, AnimationState> states;
 
+    int currentFrame;
+    int totalFrames;
+    float frameTime; // Time each frame is displayed
+    float elapsedTime;
+
 public:
   /**
    * @brief Constructs a new AnimationState object.
@@ -40,6 +45,7 @@ public:
    * Initializes a new instance of the AnimationState class.
    */
   AnimationState();
+  AnimationState(int totalFrames, float frameTime);
 
   /**
    * @brief Updates the animation state of the given game object.
@@ -51,6 +57,12 @@ public:
    */
   void Update(GameObject &gameObject);
   // Getters, Setters, and other public member functions ...
+
+
+  void Update(float deltaTime);
+
+
+  int GetCurrentFrame() const;
 };
 
 #endif // AVANS_SPCPRJ13_ANIMATIONSTATE_H

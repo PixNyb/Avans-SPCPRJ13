@@ -49,6 +49,14 @@ class Sprite : public BehaviourScript
      * @param sprite The sprite image file path or identifier.
      */
     [[nodiscard]] const std::string& GetSprite() const { return sprite; }
+
+    /**
+     * @brief Sets the sprite image for this Sprite object.
+     * @param spriteImage The sprite image file path or identifier.
+     */
+    void SetSprite(const std::string& spriteImage) {
+        sprite = spriteImage;
+    }
 };
 
 #endif // AVANS_SPCPRJ13_SPRITE_H

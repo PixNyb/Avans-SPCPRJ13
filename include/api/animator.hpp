@@ -54,12 +54,17 @@ class Animator : public BehaviourScript
     void Stop();
     void Play(bool looping);
 
+    void AddState(const std::string& name, const AnimationState& state);
+    void SetState(const std::string& name);
+    void Update(float deltaTime) override;
+    int GetCurrentFrame() const;
+
   private:
     /**
      * @brief The current state of the Animator.
      *
      */
-    AnimationState currentState;
+    AnimationState* currentState;
 
     /**
      * @brief A map of possible states for the Animator.

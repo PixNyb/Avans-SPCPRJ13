@@ -18,9 +18,14 @@
 #include "scene.hpp"
 #include "scene_manager.hpp"
 #include "time.hpp"
+#include "sprite.hpp"
 #include <cfloat>
 #include <iostream>
 #include <utility>
+
+
+#include <filesystem>
+namespace fs = std::filesystem;
 
 class FPSBehaviourScript: public BehaviourScript {
     private:
@@ -84,7 +89,7 @@ int main(int argc, char *argv[])
 
     // Graphics
     auto graphicsFacade = engine->Get<IOFacade>();
-    graphicsFacade->CreateWindow("Sandbox", 500, 500);
+    graphicsFacade->CreateWindow("Sandbox", 600, 400);
     graphicsFacade->CreateRenderer();
 
     // Scene
@@ -111,6 +116,12 @@ int main(int argc, char *argv[])
     obj2->AddComponent(boxComponent);
     obj2->SetTransform(Transform(Point(0,0), 0, 1));
 
+    // Sprite
+    Point centerPosition(600 / 2, 400 / 2);
+    auto background = scene->CreateGameObject().lock();
+    background->SetName("background");
+    background->AddComponent(backgroundSprite);
+    background->SetTransform(Transform(Point(0,0), 0, 1));
 
     // Scaling behaviour scripts
     auto behaviourScript = std::make_shared<TestBehaviourScript>(obj);
