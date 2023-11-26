@@ -15,7 +15,6 @@
 #include "game_object.hpp"
 #include <SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
-#include <box2d/box2d.h>
 
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
@@ -50,7 +49,7 @@ void DebugRenderer::CloseSDL()
     SDL_Quit();
 }
 
-void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body *body)
+void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject)
 {
     b2Vec2 position(static_cast<float>(gameObject->GetTransform().position.x),
                     static_cast<float>(gameObject->GetTransform().position.y));
@@ -85,7 +84,7 @@ void DebugRenderer::Render(std::map<std::shared_ptr<GameObject>, b2Body *> &bodi
 
     for (auto const &item : bodies)
     {
-        RenderShapes(item.first, item.second);
+        RenderShapes(item.first);
     }
 
     SDL_RenderPresent(renderer);
