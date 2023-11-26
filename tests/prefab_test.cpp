@@ -76,11 +76,48 @@ TEST_F(PrefabTest, HasPrefab)
 {
     std::string key = "Key";
     GameObject obj("Prefab");
-    manager.RegisterPrefab(key, obj);
+    manager.InsertPrefab(std::pair<std::string, GameObject>(key, obj));
 
+    // Check that a registered prefab is present.
     ASSERT_TRUE(manager.HasPrefab(key));
 
+    // Check that a non-existing prefab is not present.
     ASSERT_FALSE(manager.HasPrefab("Non Existing Key"));
+}
+
+TEST_F(PrefabTest, RemovePrefab)
+{
+    std::string key1 = "Key1";
+    std::string key2 = "Key2";
+    manager.InsertPrefab(std::pair<std::string, GameObject>(key1, GameObject()));
+    manager.InsertPrefab(std::pair<std::string, GameObject>(key2, GameObject()));
+
+    manager.RemovePrefab(key1);
+    auto prefabs = manager.GetPrefabs();
+
+    // Check if the number of prefabs has updated. 2 => 1
+    ASSERT_EQ(prefabs.size(), 1);
+
+    // Check that the prefab registered to the key was removed.
+    ASSERT_TRUE(prefabs.find(key1) == prefabs.end());
+
+    manager.RemovePrefab("Non Existing Key");
+    // Check that removing a non-existent key does nothing.
+    ASSERT_EQ(manager.GetPrefabs().size(), 1);
+}
+
+TEST_F(PrefabTest, ClearPrefabs)
+{
+    manager.InsertPrefab(std::pair<std::string, GameObject>("Key1", GameObject()));
+    manager.InsertPrefab(std::pair<std::string, GameObject>("Key2", GameObject()));
+
+    // Check that there are prefabs registered.
+    ASSERT_EQ(manager.GetPrefabs().size(), 2);
+
+    manager.ClearPrefabs();
+
+    // Check that the prefabs were cleared.
+    ASSERT_EQ(manager.GetPrefabs().size(), 0);
 }
 
 int main(int argc, char **argv)
