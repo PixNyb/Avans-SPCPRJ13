@@ -50,6 +50,11 @@ class ContactListener : public b2ContactListener
      * @param contact is the object that contains the 2 bodies that have exited their contact
      */
     void EndContact(b2Contact *contact) override;
+
+    /**
+     * Finds the gameobject with a b2body
+     */
+     std::shared_ptr<GameObject> FindGameObject(b2Body* body);
 };
 
 #endif // DEFUNBOBENGINE_CONTACTLISTENER_HPP

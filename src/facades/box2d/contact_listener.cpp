@@ -22,31 +22,17 @@ const double PixelToMeter = 1 / MeterToPixel;
 void ContactListener::BeginContact(b2Contact *contact)
 {
     // to make an object bounce you can set the contact restitution
-    contact->SetRestitution(0.01);
+    contact->SetRestitution(0.005);
     auto bodyA = contact->GetFixtureA()->GetBody();
     auto bodyB = contact->GetFixtureB()->GetBody();
-    std::string tag1 = "empty";
-    std::string tag2 = "empty";
-    std::shared_ptr<GameObject> gameObjectA;
-    std::shared_ptr<GameObject> gameObjectB;
+    std::shared_ptr<GameObject> gameObjectA = FindGameObject(bodyA);
+    std::shared_ptr<GameObject> gameObjectB = FindGameObject(bodyB);
+    std::string tag1 = gameObjectA->GetName();
+    std::string tag2 = gameObjectB->GetName();
 
-    for (auto &pair : gameObjects)
-    {
-        if (pair.second == bodyA)
-        {
-            tag1 = pair.first->GetTag();
-            gameObjectA = pair.first;
-        }
-        else if (pair.second == bodyB)
-        {
-            tag2 = pair.first->GetTag();
-            gameObjectB = pair.first;
-        }
-    }
     std::cout << tag1 << " is touching " << tag2 << std::endl;
 
     // activate the OnTriggerEnter2D() from behavior script on both sides
-
     for (auto &script : gameObjectA->GetComponents<BehaviourScript>())
     {
         if (gameObjectA->GetComponent<BoxCollider>())
@@ -67,24 +53,11 @@ void ContactListener::EndContact(b2Contact *contact)
 {
     auto bodyA = contact->GetFixtureA()->GetBody();
     auto bodyB = contact->GetFixtureB()->GetBody();
-    std::string tag1 = "empty";
-    std::string tag2 = "empty";
-    std::shared_ptr<GameObject> gameObjectA;
-    std::shared_ptr<GameObject> gameObjectB;
+    std::shared_ptr<GameObject> gameObjectA = FindGameObject(bodyA);
+    std::shared_ptr<GameObject> gameObjectB = FindGameObject(bodyB);
+    std::string tag1 = gameObjectA->GetName();
+    std::string tag2 = gameObjectB->GetName();
 
-    for (auto &pair : gameObjects)
-    {
-        if (pair.second == bodyA)
-        {
-            tag1 = pair.first->GetTag();
-            gameObjectA = pair.first;
-        }
-        else if (pair.second == bodyB)
-        {
-            tag2 = pair.first->GetTag();
-            gameObjectB = pair.first;
-        }
-    }
     std::cout << tag1 << " stopped touching " << tag2 << std::endl;
 
     // activate the OnTriggerExit2D() from behavior script on both sides
@@ -107,4 +80,9 @@ void ContactListener::EndContact(b2Contact *contact)
 ContactListener::ContactListener(std::map<std::shared_ptr<GameObject>, b2Body *> gameObjects)
 {
     this->gameObjects = std::move(gameObjects);
+}
+
+std::shared_ptr<GameObject> ContactListener::FindGameObject(b2Body *body) {
+    auto it = std::find_if(gameObjects.begin(), gameObjects.end(), [body](const auto &pair) { return pair.second == body; });
+    return (it != gameObjects.end()) ? it->first : nullptr;
 }
