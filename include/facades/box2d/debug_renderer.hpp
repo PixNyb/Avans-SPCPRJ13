@@ -26,8 +26,14 @@ class DebugRenderer
      */
     bool running;
 
+    /**
+     * Constructs a debugrenderer
+     */
     DebugRenderer();
 
+    /**
+     * Destructs a debugrenderer
+     */
     ~DebugRenderer();
 
     /**

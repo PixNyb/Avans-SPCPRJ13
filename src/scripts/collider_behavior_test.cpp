@@ -1,6 +1,13 @@
-//
-// Created by Eigenaar on 22-11-2023.
-//
+/**
+ * @file collider_behavior_test.cpp
+ * @author Daan Groot (d.groot3@student.avans.nl)
+ * @brief This file contains the PhysicsFacade class implementation.
+ * @version 0.1
+ * @date 2023-11-22
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
 
 #include "collider_behavior_test.hpp"
 
