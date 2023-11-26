@@ -1,12 +1,12 @@
 /**
-* @file level_scene.hpp
-* @author Maxuuuu
-* @brief Defines the LevelScene class for creating a level.
-* @version 0.1
-* @date 20/11/2023
-*
-* @copyright Copyright (c) 2023
-*/
+ * @file level_scene.hpp
+ * @author Maxuuuu
+ * @brief Defines the LevelScene class for creating a level.
+ * @version 0.1
+ * @date 20/11/2023
+ *
+ * @copyright Copyright (c) 2023
+ */
 
 #ifndef DEFUNBOBENGINE_LEVEL_SCENE_HPP
 #define DEFUNBOBENGINE_LEVEL_SCENE_HPP

@@ -1,13 +1,13 @@
 /**
-* @file iscene_factory.hpp
-* @author Maxuuuu
-* @brief Abstract factory for creating scenes.
-* @version 0.1
-* @date 11/11/2023
-*
-* @copyright Copyright (c) 2023
-*
-*/
+ * @file iscene_factory.hpp
+ * @author Maxuuuu
+ * @brief Abstract factory for creating scenes.
+ * @version 0.1
+ * @date 11/11/2023
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
 
 #ifndef DEFUNBOBENGINE_ISCENE_FACTORY_HPP
 #define DEFUNBOBENGINE_ISCENE_FACTORY_HPP
@@ -15,7 +15,8 @@
 #include "scene.hpp"
 #include <nlohmann/json.hpp>
 
-class ISceneFactory {
+class ISceneFactory
+{
   public:
     /**
      * @brief Construct a new AbstractSceneFactory.
@@ -33,7 +34,6 @@ class ISceneFactory {
      * @return The scene constructed based on the JSON.
      */
     virtual std::shared_ptr<Scene> CreateScene(nlohmann::json sceneJson) = 0;
-
 };
 
 #endif // DEFUNBOBENGINE_ISCENE_FACTORY_HPP

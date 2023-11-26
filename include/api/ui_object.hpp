@@ -5,13 +5,13 @@
  * @date 2023-11-12
  *
  * @brief Defines the UIObject class for representing user interface elements in the game engine.
- * UIObject extends the GameObject class to create interactive and visual components for the user interface.
- * It includes basic properties like width and height, essential for layout and rendering of UI elements.
- * This class forms the base for more complex UI components such as buttons, sliders, and text fields.
+ * UIObject extends the GameObject class to create interactive and visual components for the user
+ * interface. It includes basic properties like width and height, essential for layout and rendering
+ * of UI elements. This class forms the base for more complex UI components such as buttons,
+ * sliders, and text fields.
  *
  * @copyright Copyright (c) 2023
  */
-
 
 #ifndef AVANS_SPCPRJ13_UIOBJECT_H
 #define AVANS_SPCPRJ13_UIOBJECT_H
@@ -24,19 +24,21 @@
  * @brief Represents a user interface object in the game engine.
  *
  * UIObject is a specialized GameObject that serves as a base for UI elements.
- * It includes properties for size and position, along with functionalities specific to UI components.
+ * It includes properties for size and position, along with functionalities specific to UI
+ * components.
  */
-class UIObject : public GameObject {
-private:
+class UIObject : public GameObject
+{
+  private:
     float width;  ///< The width of the UI object.
     float height; ///< The height of the UI object.
-public:
+  public:
     /**
      * @brief Default constructor for UIObject.
      *
      * Initializes a new UIObject with default size.
      */
-  UIObject();
+    UIObject();
 
     /**
      * @brief Constructor for UIObject with specific attributes.
@@ -48,7 +50,7 @@ public:
      * @param width The width of the UI object.
      * @param height The height of the UI object.
      */
-  UIObject(const std::string &name, const std::string &tag, int layer, float width, float height);
+    UIObject(const std::string &name, const std::string &tag, int layer, float width, float height);
 
     /**
      * @brief Sets the width of the UI object.

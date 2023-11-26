@@ -11,7 +11,7 @@ TODO: Verder uitwerken als straks alles op zijn plek staat (woensdag)
 ## Level format
 Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief.
 De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de PrefabManager.
-Hier worden vervolgens name, tag, active, layer, transform en children nog bij gedefinieert. 
+Hier worden vervolgens name, tag, active, layer, transform en children nog bij gedefinieert.
 In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk GameObject.
 ```json
 {
@@ -86,7 +86,7 @@ In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk Ga
 ```
 
 ## Physics Simulatie Gebruiken
-De physics manager is voor de engine het aanspreekpunt om een wereld te starten, aan te passen en te beinvloeden. 
+De physics manager is voor de engine het aanspreekpunt om een wereld te starten, aan te passen en te beinvloeden.
 De physics manager heeft functies die elk hun doel omschrijven. Hiermee kun je bodies aanmaken, verwijderen, uit- en aanzetten en beinvloeden met krachten.
 
 ```
@@ -101,5 +101,24 @@ void PhysicsManager::Step() {
 }
 ```
 
-De CreateWorld functie roep je als eerste aan. Vervolgens kun je de simulatie starten met de Step() functie. 
+De CreateWorld functie roep je als eerste aan. Vervolgens kun je de simulatie starten met de Step() functie.
 Per aanroep van deze functie zet de wereld 1 stap en beweegt hij de objecten die hij bevat.
+
+## Input Facades
+
+De input facade maakt het mogelijk om naar key en mouse inputs te luisteren, maar ook om acties te maken, binden aan specifieke inputs (een soort alias) en deze te gebruiken in de game.
+
+```cpp
+auto inputFacade = Engine::GetInstance().Get<IInputFacade>();
+
+// We voegen een 'jump' action toe die we kunnen binden aan een input
+inputFacade->RegisterAction("jump");
+
+// We binden de spacebar aan de 'jump' action
+inputFacade->BindKey(KeyCode::SPACE, "jump");
+
+// We kunnen nu checken of de 'jump' action is geactiveerd
+if (inputFacade->GetAction("jump")) {
+    // Jump!
+}
+```

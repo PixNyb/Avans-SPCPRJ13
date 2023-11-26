@@ -26,26 +26,27 @@
  * and destruction. It provides a method to access the underlying SDL_Surface pointer
  * for use with SDL operations.
  */
-class SDLSurface {
-private:
-    SDL_Surface* surface;
+class SDLSurface
+{
+  private:
+    SDL_Surface *surface;
 
-public:
+  public:
     /**
      * @brief Constructs an SDLSurface by loading from the specified file path.
      * @param filePath The path to the image file to load as an SDL_Surface.
      */
-    SDLSurface(const char* filePath);
+    SDLSurface(const char *filePath);
     /**
-    * @brief Destroys the SDLSurface, freeing the managed SDL_Surface resource.
-    */
+     * @brief Destroys the SDLSurface, freeing the managed SDL_Surface resource.
+     */
     ~SDLSurface();
 
     /**
-    * @brief Retrieves the underlying SDL_Surface pointer.
-    * @return SDL_Surface* A pointer to the managed SDL_Surface.
-    */
-    SDL_Surface* getSDLSurface() const;
+     * @brief Retrieves the underlying SDL_Surface pointer.
+     * @return SDL_Surface* A pointer to the managed SDL_Surface.
+     */
+    SDL_Surface *getSDLSurface() const;
 };
 
-#endif //DEFUNBOBENGINE_SDL_SURFACE_HPP
+#endif // DEFUNBOBENGINE_SDL_SURFACE_HPP

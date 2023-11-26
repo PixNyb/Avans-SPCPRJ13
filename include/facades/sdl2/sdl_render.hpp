@@ -26,15 +26,16 @@
  * by SDL_Renderer and to expose a simpler interface for clearing and presenting
  * operations. It is intended to be used as part of the rendering loop of a game engine.
  */
-class SDLRender {
-    SDL_Renderer* Renderer;
+class SDLRender
+{
+    SDL_Renderer *Renderer;
 
-public:
+  public:
     /**
-    * @brief Constructs a Render object with the specified SDL_Renderer.
-    * @param Renderer A pointer to an SDL_Renderer responsible for rendering operations.
-    */
-    SDLRender(SDL_Renderer* Renderer);
+     * @brief Constructs a Render object with the specified SDL_Renderer.
+     * @param Renderer A pointer to an SDL_Renderer responsible for rendering operations.
+     */
+    SDLRender(SDL_Renderer *Renderer);
 
     /**
      * @brief Clears the rendering target with the current drawing color.
@@ -52,8 +53,7 @@ public:
      */
     void Present();
 
-    SDL_Renderer* GetRenderer() const;
-
+    SDL_Renderer *GetRenderer() const;
 };
 
-#endif //DEFUNBOBENGINE_RENDER_HPP
+#endif // DEFUNBOBENGINE_RENDER_HPP
