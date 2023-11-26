@@ -17,7 +17,7 @@
 
 class PrefabManager
 {
-  private:
+  protected:
     /**
      * @brief A map consisting of prefabs and the id's which they are identified by.
      * @key A unique id which can be used to identify a prefab.
