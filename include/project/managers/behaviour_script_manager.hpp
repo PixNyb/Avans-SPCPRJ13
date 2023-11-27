@@ -15,6 +15,7 @@
 #include "game_object.hpp"
 
 /**
+ * @class BehaviourScriptManager
  * @brief Manager for all behaviour scripts.
  */
 class BehaviourScriptManager

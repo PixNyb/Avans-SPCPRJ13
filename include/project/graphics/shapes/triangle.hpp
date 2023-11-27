@@ -19,6 +19,11 @@
 #include "geometry.hpp"
 #include "vector2d.hpp"
 
+/**
+ * @class Triangle
+ *
+ * @brief Represents a triangle shape.
+ */
 class Triangle : public Geometry
 {
   private:
