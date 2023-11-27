@@ -1,7 +1,7 @@
 /**
  * @file RenderManager.h
  * @author "Melvin van Bree"
- * @brief TODO
+ * @brief A file containing the RenderManager class.
  * @version 0.1
  * @date 14/11/2023
  *
@@ -16,6 +16,11 @@
 #include "graphics_facade.hpp"
 #include "point.hpp"
 
+/**
+ * @class RenderManager
+ *
+ * @brief This class is responsible for rendering all active game objects in the scene if possible
+ */
 class RenderManager
 {
   private:

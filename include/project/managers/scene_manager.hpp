@@ -14,6 +14,11 @@
 
 #include "scene.hpp"
 
+/**
+ * @class SceneManager
+ *
+ * @brief Manages scenes and their updates.
+ */
 class SceneManager
 {
   private:

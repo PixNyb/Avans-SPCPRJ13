@@ -18,6 +18,13 @@
 #include "color.hpp"
 #include "game_object.hpp"
 
+/**
+ * @class Camera
+ * @brief Represents a camera view in the game.
+ *
+ * Camera is a component that defines the view of the game world. It is responsible for defining
+ * the area to be rendered, including the background color and aspect ratio.
+ */
 class Camera : public GameObject
 {
   private:
