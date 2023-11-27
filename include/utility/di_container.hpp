@@ -16,6 +16,8 @@
 #include <unordered_map>
 
 /**
+ * @enum InstanceScope
+ *
  * @brief The scope of the instance
  */
 enum class InstanceScope
@@ -36,7 +38,9 @@ enum class InstanceScope
 const InstanceScope DEFAULT_INSTANCE_SCOPE = InstanceScope::Public;
 
 /**
- * @brief The dependency injection container
+ * @class DIContainer
+ *
+ * @brief The dependency injection container is used to store public or private instances.
  * @details This container is used to store private or public instances for the game dev like
  * SceneManager etc.
  * @note Refer to InstanceScope for more information about the scope of the instance.

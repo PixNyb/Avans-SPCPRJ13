@@ -15,6 +15,8 @@
 #include <SDL_timer.h>
 
 /**
+ * @brief A utility class for performance related functions
+ *
  * @brief Encapsulates SDL_GetPerformanceCounter and SDL_GetPerformanceFrequency
  */
 class PerformanceUtility

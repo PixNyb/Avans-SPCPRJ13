@@ -18,6 +18,12 @@
 #include <iostream>
 #include <memory>
 
+/**
+ * @class Engine
+ *
+ * @brief The Engine class is the core of the engine. It is responsible for managing the game
+ * loop and delegating calls.
+ */
 class Engine
 {
   private:

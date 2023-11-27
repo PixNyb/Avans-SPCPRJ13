@@ -19,7 +19,7 @@
 #include <SDL.h>
 
 /**
- * @class Render
+ * @class SDLRender
  * @brief Wrapper class for SDL_Renderer to provide rendering utilities.
  *
  * This class is designed to abstract the lower-level rendering details provided
