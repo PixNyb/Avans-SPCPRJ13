@@ -226,6 +226,10 @@ class GameObject : public std::enable_shared_from_this<GameObject>
         return typeComponents;
     }
 
+    /**
+     * Sets the reference to the PhysicsManager for running behaviourscripts
+     * @param physicsPointer the weak_ptr to the engines PhysicsManager
+     */
     void SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer);
 
     /**
