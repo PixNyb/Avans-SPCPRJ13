@@ -1,4 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classIInputFacade.html" title="The IInputFacade interface defines the methods that a concrete input facade must implement." alt="" coords="5,5,109,32"/>
-<area shape="rect" id="node2" href="$classSDLInputFacade.html" title=" " alt="" coords="157,5,283,32"/>
+<area shape="rect" id="node1" href="$classIKeyListener.html" title="Interface for objects that respond to keyboard events." alt="" coords="5,5,108,32"/>
 </map>

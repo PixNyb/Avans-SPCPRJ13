@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['bug_20list_897',['Bug List',['../bug.html',1,'']]]
+  ['deprecated_20list_892',['Deprecated List',['../deprecated.html',1,'']]],
+  ['development_20guidelines_893',['Development Guidelines',['../md_DEVELOPMENT_GUIDELINES.html',1,'']]]
 ];

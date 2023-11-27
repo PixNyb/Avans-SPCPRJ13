@@ -41,7 +41,13 @@ var NAVTREE =
       [ "Inhoudsopgave", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md1", null ],
       [ "Code Formatting", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md2", null ],
       [ "Bestandsstructuur", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md3", null ],
-      [ "Commentaar", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md4", null ]
+      [ "Commentaar", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md4", null ],
+      [ "CMake-bestanden", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md5", null ],
+      [ "Bouwproces", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md6", null ],
+      [ "Testen", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md7", null ],
+      [ "Git en Versiebeheer", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md8", null ],
+      [ "Code Reviews", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md9", null ],
+      [ "Documentatie", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md10", null ]
     ] ],
     [ "Hoe de Engine te gebruiken?", "md_USAGE.html", [
       [ "Window aanmaken", "md_USAGE.html#autotoc_md22", null ],
@@ -49,8 +55,6 @@ var NAVTREE =
       [ "Physics Simulatie Gebruiken", "md_USAGE.html#autotoc_md24", null ],
       [ "Input Facades", "md_USAGE.html#autotoc_md25", null ]
     ] ],
-    [ "Bug List", "bug.html", null ],
-    [ "Todo List", "todo.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -83,10 +87,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "animation__state_8cpp.html",
-"classISceneFactory.html#a0b3d0a5395e25a4e425874d1b5b189fc",
-"classUIObject.html#afff7638f9e3706d8027c57f695450fd9",
-"i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a63225f19fccb18e7c709f1fa11bc738e",
-"sdl__timer_8cpp.html"
+"classISceneFactory.html#a23a73770beff48ce1b18ea6551352764",
+"classVector2D.html",
+"i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a63a707029860972efa1c44ac6016e098",
+"sdl__texture_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
