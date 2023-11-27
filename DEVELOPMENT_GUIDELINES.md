@@ -63,7 +63,7 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 ```
 /**
 * @class <class_name>
-* @brief <brief description following the format: This class (represents|contains|defines) ...>
+* @brief <brief description following the format: This (class|struct|enum|union|interface) (represents|contains|defines) ...>
 *
 * <detailed description>
 */
