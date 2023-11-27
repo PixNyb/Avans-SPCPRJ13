@@ -96,7 +96,10 @@ Inhoudsopgave</h1>
 <li><a href="#inhoudsopgave">Inhoudsopgave</a></li>
 <li><a href="#code-formatting">Code Formatting</a></li>
 <li><a href="#bestandsstructuur">Bestandsstructuur</a></li>
-<li><a href="#commentaar">Commentaar</a></li>
+<li><a href="#commentaar">Commentaar</a><ul>
+<li><a href="#doxygen">Doxygen</a></li>
+</ul>
+</li>
 <li><a href="#cmake-bestanden">CMake-bestanden</a></li>
 <li><a href="#bouwproces">Bouwproces</a></li>
 <li><a href="#testen">Testen</a></li>
@@ -135,48 +138,50 @@ Commentaar</h1>
 <li>Voeg commentaar toe om complexe of onduidelijke delen van de code uit te leggen.</li>
 <li>Voeg een licentieheader bovenaan elk bronbestand toe om auteursrecht en licentie-informatie te vermelden.</li>
 <li>Gebruik <code>//</code> voor enkele regel commentaar en <code>/* */</code> voor meerdere regels.</li>
-<li>Houd de <a href="https://www.doxygen.nl/manual/docblocks.html">Doxygen commentaarstijl</a> aan voor documentatie:<ul>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Doxygen</h2>
+<p>Houd de <a href="https://www.doxygen.nl/manual/docblocks.html">Doxygen commentaarstijl</a> aan voor documentatie zoals hieronder beschreven:</p>
+<ul>
 <li>File-level commentaar bovenaan elk bestand: <div class="fragment"><div class="line">/**</div>
-<div class="line">* @file &lt;file_name&gt;</div>
-<div class="line">* @author &lt;author (email)?&gt;</div>
-<div class="line">* @brief &lt;brief description following the format: This file contains the (declaration|definition) of the &lt;class_name&gt; (class|struct|enum|union|interface)&gt;</div>
-<div class="line">* @version &lt;version&gt;</div>
-<div class="line">* @date &lt;date&gt;</div>
-<div class="line">*</div>
-<div class="line">* &lt;detailed description if needed, this does NOT include class-level descriptions&gt;</div>
-<div class="line">*</div>
-<div class="line">* @copyright Copyright (c) 2023</div>
-<div class="line">*/</div>
+<div class="line"> * @file &lt;file_name&gt;</div>
+<div class="line"> * @author &lt;author (email)?&gt;</div>
+<div class="line"> * @brief &lt;brief description following the format: This file contains the (declaration|definition) of the &lt;class_name&gt; (class|struct|enum|union|interface)&gt;</div>
+<div class="line"> * @version &lt;version&gt;</div>
+<div class="line"> * @date &lt;date&gt;</div>
+<div class="line"> *</div>
+<div class="line"> * &lt;detailed description if needed, this does NOT include class-level descriptions&gt;</div>
+<div class="line"> *</div>
+<div class="line"> * @copyright Copyright (c) 2023</div>
+<div class="line"> */</div>
 </div><!-- fragment --><ul>
 <li>De <code>@author</code> tag kan meerdere keren voorkomen.</li>
 </ul>
 </li>
-<li>Class-level commentaar bovenaan elke klasse. <div class="fragment"><div class="line">/**</div>
-<div class="line">* @class &lt;class_name&gt;</div>
-<div class="line">* @brief &lt;brief description following the format: This (class|struct|enum|union|interface) (represents|contains|defines) ...&gt;</div>
-<div class="line">*</div>
-<div class="line">* &lt;detailed description&gt;</div>
-<div class="line">*/</div>
+<li>Class-level commentaar bovenaan elke klasse: <div class="fragment"><div class="line">/**</div>
+<div class="line"> * @class &lt;class_name&gt;</div>
+<div class="line"> * @brief &lt;brief description following the format: This (class|struct|enum|union|interface) (represents|contains|defines) ...&gt;</div>
+<div class="line"> *</div>
+<div class="line"> * &lt;detailed description&gt;</div>
+<div class="line"> */</div>
 </div><!-- fragment --><ul>
 <li>Met behulp van de <code>@note</code>, <code>@warning</code>, <code>@bug</code>, <code>@todo</code> en <code>@see</code> tags kan er extra informatie toegevoegd worden.</li>
 </ul>
 </li>
-<li>Function-level commentaar boven elke functie. <div class="fragment"><div class="line">/**</div>
-<div class="line">* @brief &lt;brief description following the format: This function (does|returns|calculates|...) ...&gt;</div>
-<div class="line">*</div>
-<div class="line">* &lt;detailed description&gt;</div>
-<div class="line">* @param &lt;parameter_name&gt; &lt;parameter_description&gt;</div>
-<div class="line">* @return &lt;return_description&gt;</div>
-<div class="line">*/</div>
+<li>Function-level commentaar boven elke functie: <div class="fragment"><div class="line">/**</div>
+<div class="line"> * @brief &lt;brief description following the format: This function (does|returns|calculates|...) ...&gt;</div>
+<div class="line"> *</div>
+<div class="line"> * &lt;detailed description&gt;</div>
+<div class="line"> * @param &lt;parameter_name&gt; &lt;parameter_description&gt;</div>
+<div class="line"> * @return &lt;return_description&gt;</div>
+<div class="line"> */</div>
 </div><!-- fragment --><ul>
 <li>Met behulp van de <code>@note</code>, <code>@warning</code>, <code>@bug</code>, <code>@todo</code> en <code>@see</code> tags kan er extra informatie toegevoegd worden.</li>
 <li>Met behulp van de <code>@param</code> en <code>@tparam</code> tags kan er informatie toegevoegd worden over de parameters van de functie.</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 CMake-bestanden</h1>
 <ul>
 <li>Organiseer CMake-bestanden duidelijk in de projectmap.</li>
@@ -184,7 +189,7 @@ CMake-bestanden</h1>
 <li>Gebruik afzonderlijke <code>CMakeLists.txt</code>-bestanden in submappen om doelen en afhankelijkheden te definiëren.</li>
 <li>Maak gebruik van CMake-variabelen om configuratieopties te beheren (bijv. compilerflags, versie-informatie).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 Bouwproces</h1>
 <ul>
 <li>Gebruik CMake om het buildproces te automatiseren. Definieer targets en afhankelijkheden in <code>CMakeLists.txt</code>-bestanden.</li>
@@ -193,7 +198,7 @@ Bouwproces</h1>
 <li>Voeg testdoelen toe om <a href="https://cmake.org/cmake/help/book/mastering-cmake/chapter/Testing%20With%20CMake%20and%20CTest.html">unit tests</a> uit te voeren in <code>tests/</code>.</li>
 <li>Maak gebruik van Continuous Integration (CI) om automatische builds en tests te garanderen.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Testen</h1>
 <ul>
 <li>Schrijf unit tests waar mogelijk om de functionaliteit van de code te testen.<ul>
@@ -207,7 +212,7 @@ Testen</h1>
 <li>Voer unit tests uit met behulp van het <code>ctest</code> commando.</li>
 </ul>
 <p><em>Voor het toevoegen van nieuwe tests hoeft er naast het aanmaken van de runnable geen extra configuratie te gebeuren. CMake zal automatisch de test detecteren en uitvoeren. Mochten er nieuwe requirements zijn voor het uitvoeren van de test, dan kunnen deze toegevoegd worden aan de <code>tests/CMakeLists.txt</code> file.</em></p>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Git en Versiebeheer</h1>
 <ul>
 <li>Gebruik Git voor versiebeheer en houd een <b>consistente</b> en <b>betekenisvolle</b> commitgeschiedenis bij.</li>
@@ -224,13 +229,13 @@ Git en Versiebeheer</h1>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Code Reviews</h1>
 <ul>
 <li>Voer regelmatig code reviews uit om codekwaliteit en naleving van de richtlijnen te waarborgen.</li>
 <li>Moedig feedback aan en wees bereid om wijzigingen aan te brengen op basis van suggesties.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Documentatie</h1>
 <ul>
 <li>Voeg doelmatige documentatie toe aan de code en gebruik <code>doxygen</code> om documentatie te genereren.</li>
