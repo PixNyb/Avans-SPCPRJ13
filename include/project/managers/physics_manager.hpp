@@ -62,12 +62,12 @@ class PhysicsManager
     void AddLinearImpulse(const std::shared_ptr<GameObject> &gameObject, float vx, float vy);
 
     /**
-     * Adds a rotation to a gameobject (will also apply the rotation on the center an is clockwise
+     * Adds a rotation to a gameobject (will also apply the rotation on the center and is clockwise
      * when amount is positive)
      * @param gameObject is the object the rotation will be added to
      * @param amount the speed at which the object should spin
      */
-    void AddRotation(const std::shared_ptr<GameObject> &gameObject, float amount);
+    void AddRotationalForce(const std::shared_ptr<GameObject> &gameObject, float amount);
 
     /**
      * Simulates the world for 1 step
@@ -100,7 +100,7 @@ class PhysicsManager
     /**
      * Updates the position of the given GameObject
      */
-    void UpdateTransform(const std::shared_ptr<GameObject> &gameObject, double xPos, double yPos);
+    void UpdatePosition(const std::shared_ptr<GameObject> &gameObject, double xPos, double yPos);
 };
 
 #endif // DEFUNBOBENGINE_PHYSICS_MANAGER_HPP

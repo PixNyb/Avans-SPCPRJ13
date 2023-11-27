@@ -40,7 +40,7 @@ void PhysicsManager::AddLinearImpulse(const std::shared_ptr<GameObject> &gameObj
     physicsFacade.AddLinearImpulse(gameObject, vx, vy);
 }
 
-void PhysicsManager::AddRotation(const std::shared_ptr<GameObject> &gameObject, float amount)
+void PhysicsManager::AddRotationalForce(const std::shared_ptr<GameObject> &gameObject, float amount)
 {
     physicsFacade.AddRotation(gameObject, amount);
 }
@@ -60,8 +60,8 @@ void PhysicsManager::UpdateRotation(const std::shared_ptr<GameObject> &gameObjec
     physicsFacade.UpdateRotation(gameObject, rotation);
 }
 
-void PhysicsManager::UpdateTransform(const std::shared_ptr<GameObject> &gameObject, double xPos,
-                                     double yPos)
+void PhysicsManager::UpdatePosition(const std::shared_ptr<GameObject> &gameObject, double xPos,
+                                    double yPos)
 {
     physicsFacade.UpdatePosition(gameObject, xPos, yPos);
 }
