@@ -92,11 +92,16 @@ $(document).ready(function(){initNavTree('classSDLRender.html',''); initResizabl
 <div class="title">SDLRender Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Wrapper class for SDL_Renderer to provide rendering utilities.  
+ <a href="classSDLRender.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="sdl__render_8hpp_source.html">sdl_render.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0b7ee3ec62fc11e406b4409be8be6e35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDLRender.html#a0b7ee3ec62fc11e406b4409be8be6e35">SDLRender</a> (SDL_Renderer *Renderer)</td></tr>
-<tr class="memdesc:a0b7ee3ec62fc11e406b4409be8be6e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classRender.html" title="Wrapper class for SDL_Renderer to provide rendering utilities.">Render</a> object with the specified SDL_Renderer.  <a href="classSDLRender.html#a0b7ee3ec62fc11e406b4409be8be6e35">More...</a><br /></td></tr>
+<tr class="memdesc:a0b7ee3ec62fc11e406b4409be8be6e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Render object with the specified SDL_Renderer.  <a href="classSDLRender.html#a0b7ee3ec62fc11e406b4409be8be6e35">More...</a><br /></td></tr>
 <tr class="separator:a0b7ee3ec62fc11e406b4409be8be6e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82a4d75eeb0c4eb99e7d53d7be907e08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDLRender.html#a82a4d75eeb0c4eb99e7d53d7be907e08">Clear</a> ()</td></tr>
 <tr class="memdesc:a82a4d75eeb0c4eb99e7d53d7be907e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the rendering target with the current drawing color.  <a href="classSDLRender.html#a82a4d75eeb0c4eb99e7d53d7be907e08">More...</a><br /></td></tr>
@@ -108,7 +113,10 @@ Public Member Functions</h2></td></tr>
 SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><b>GetRenderer</b> () const</td></tr>
 <tr class="separator:acce3d38dd10e9e88440f748f7aae7da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Wrapper class for SDL_Renderer to provide rendering utilities. </p>
+<p>This class is designed to abstract the lower-level rendering details provided by SDL_Renderer and to expose a simpler interface for clearing and presenting operations. It is intended to be used as part of the rendering loop of a game engine. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0b7ee3ec62fc11e406b4409be8be6e35"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0b7ee3ec62fc11e406b4409be8be6e35">&#9670;&nbsp;</a></span>SDLRender()</h2>
 
@@ -125,7 +133,7 @@ SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><b>GetRenderer
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="classRender.html" title="Wrapper class for SDL_Renderer to provide rendering utilities.">Render</a> object with the specified SDL_Renderer. </p>
+<p>Constructs a Render object with the specified SDL_Renderer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Renderer</td><td>A pointer to an SDL_Renderer responsible for rendering operations. </td></tr>

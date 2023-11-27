@@ -86,13 +86,13 @@ $(document).ready(function(){initNavTree('md_USAGE.html',''); initResizable(); }
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Hoe de <a class="el" href="classEngine.html">Engine</a> te gebruiken? </div>  </div>
+<div class="title">Hoe de <a class="el" href="classEngine.html" title="The Engine class is the core of the engine. It is responsible for managing the game loop and delegati...">Engine</a> te gebruiken? </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>In dit bestand staat uitgebreide documentatie over het gebruik van de DeFunBobEngine game engine.</p>
 <h1><a class="anchor" id="autotoc_md23"></a>
 Window aanmaken</h1>
-<p>Voor het aanmaken van een window moeten we eerst zorgen dat de <a class="el" href="classEngine.html">Engine</a> klasse is geintialiseerd, vanuit daar kunnen we de <a class="el" href="classGraphicsFacade.html" title="Manages graphics operations and interfaces with SDL for window management.">GraphicsFacade</a> aanroepen om een <a class="el" href="classWindow.html" title="Manages a game window through an abstract facade interface.">Window</a> aan te maken. Daarna moet je ook een <a class="el" href="classRender.html" title="Wrapper class for SDL_Renderer to provide rendering utilities.">Render</a> aanmaken waaraan content toegevoegd kan worden.</p>
+<p>Voor het aanmaken van een window moeten we eerst zorgen dat de <a class="el" href="classEngine.html" title="The Engine class is the core of the engine. It is responsible for managing the game loop and delegati...">Engine</a> klasse is geintialiseerd, vanuit daar kunnen we de <a class="el" href="classGraphicsFacade.html" title="Manages graphics operations and interfaces with SDL for window management.">GraphicsFacade</a> aanroepen om een <a class="el" href="classWindow.html" title="Manages a game window through an abstract facade interface.">Window</a> aan te maken. Daarna moet je ook een Render aanmaken waaraan content toegevoegd kan worden.</p>
 <p>TODO: Verder uitwerken als straks alles op zijn plek staat (woensdag)</p>
 <h1><a class="anchor" id="autotoc_md24"></a>
 Level format</h1>
@@ -194,7 +194,7 @@ Input Facades</h1>
 <div class="line">    <span class="comment">// Jump!</span></div>
 <div class="line">}</div>
 <div class="ttc" id="aclassEngine_html_aab953f155f37bc03fe78de7cb4dbf721"><div class="ttname"><a href="classEngine.html#aab953f155f37bc03fe78de7cb4dbf721">Engine::GetInstance</a></div><div class="ttdeci">static Engine * GetInstance()</div><div class="ttdoc">Gets the instance of the engine.</div><div class="ttdef"><b>Definition:</b> engine.cpp:110</div></div>
-<div class="ttc" id="aclassEngine_html_ab11c947aee16bee63bc9c1105f72dd43"><div class="ttname"><a href="classEngine.html#ab11c947aee16bee63bc9c1105f72dd43">Engine::Get</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; Get()</div><div class="ttdoc">Gets a public available instance (like SceneManager)</div><div class="ttdef"><b>Definition:</b> engine.hpp:62</div></div>
+<div class="ttc" id="aclassEngine_html_ab11c947aee16bee63bc9c1105f72dd43"><div class="ttname"><a href="classEngine.html#ab11c947aee16bee63bc9c1105f72dd43">Engine::Get</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; Get()</div><div class="ttdoc">Gets a public available instance (like SceneManager)</div><div class="ttdef"><b>Definition:</b> engine.hpp:68</div></div>
 <div class="ttc" id="aclassIInputFacade_html"><div class="ttname"><a href="classIInputFacade.html">IInputFacade</a></div><div class="ttdoc">The IInputFacade interface defines the methods that a concrete input facade must implement.</div><div class="ttdef"><b>Definition:</b> i_input_facade.hpp:282</div></div>
 <div class="ttc" id="aclassIInputFacade_html_a902b38964dca1cb6d34e55dab215481f"><div class="ttname"><a href="classIInputFacade.html#a902b38964dca1cb6d34e55dab215481f">IInputFacade::RegisterAction</a></div><div class="ttdeci">virtual void RegisterAction(const std::string &amp;action)=0</div><div class="ttdoc">Register an action with the input system.</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->

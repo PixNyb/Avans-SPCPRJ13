@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['radius_277',['Radius',['../classCircleCollider.html#a1b715e2190e215f282c007f98d0a6b6a',1,'CircleCollider::Radius(double newRadius)'],['../classCircleCollider.html#a22729fde6bfaae5fd546ca76fb52dfd1',1,'CircleCollider::Radius() const']]],
+  ['radius_277',['Radius',['../classCircleCollider.html#a22729fde6bfaae5fd546ca76fb52dfd1',1,'CircleCollider::Radius() const'],['../classCircleCollider.html#a1b715e2190e215f282c007f98d0a6b6a',1,'CircleCollider::Radius(double newRadius)']]],
   ['rectangle_278',['Rectangle',['../classRectangle.html',1,'Rectangle'],['../classRectangle.html#a9f7026bcacefa5e265586baccee5f4cd',1,'Rectangle::Rectangle()']]],
   ['rectangle_2ehpp_279',['rectangle.hpp',['../rectangle_8hpp.html',1,'']]],
   ['red_280',['Red',['../classColor.html#aa2b9275a891e30c5b7fc9a3e37c47809',1,'Color']]],
@@ -11,7 +11,7 @@ var searchData=
   ['removegameobjectbyname_285',['RemoveGameObjectByName',['../classScene.html#a16374b5b4e2da07599ba381c2b232995',1,'Scene']]],
   ['removegameobjectbytag_286',['RemoveGameObjectByTag',['../classScene.html#a06f43e6650b3ce0939d3987fdf724316',1,'Scene']]],
   ['removeprefab_287',['RemovePrefab',['../classPrefabManager.html#a0a1207189f9f776f1bdbd688ab11e0a6',1,'PrefabManager']]],
-  ['render_288',['Render',['../classDebugRenderer.html#a6ecef2365db359173537e2f6915e688a',1,'DebugRenderer::Render()'],['../classRenderManager.html#a1e0788708fda748a7ff5e2730ed478f1',1,'RenderManager::Render()'],['../classRender.html',1,'Render']]],
+  ['render_288',['Render',['../classRenderManager.html#a1e0788708fda748a7ff5e2730ed478f1',1,'RenderManager::Render()'],['../classDebugRenderer.html#a6ecef2365db359173537e2f6915e688a',1,'DebugRenderer::Render()']]],
   ['rendermanager_289',['RenderManager',['../classRenderManager.html',1,'RenderManager'],['../classRenderManager.html#aa52d38e61976b5b9438a9eabd2031cfa',1,'RenderManager::RenderManager()']]],
   ['renderscene_290',['RenderScene',['../classLevelScene.html#a81d9668e0753827a631dc0431fb11f7c',1,'LevelScene::RenderScene()'],['../classScene.html#af0e6f0b1a917a4b7662fe7867614811a',1,'Scene::RenderScene()'],['../classSceneManager.html#a03e3156da326c5fc02ae809b2c59034a',1,'SceneManager::RenderScene()']]],
   ['rendershapes_291',['RenderShapes',['../classDebugRenderer.html#aba09621c1690f31f881b25c460923905',1,'DebugRenderer']]],

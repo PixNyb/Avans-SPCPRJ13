@@ -38,7 +38,6 @@ var annotated_dup =
     [ "PolygonCollider", "classPolygonCollider.html", "classPolygonCollider" ],
     [ "PrefabManager", "classPrefabManager.html", "classPrefabManager" ],
     [ "Rectangle", "classRectangle.html", "classRectangle" ],
-    [ "Render", "classRender.html", null ],
     [ "RenderManager", "classRenderManager.html", "classRenderManager" ],
     [ "RigidBody", "classRigidBody.html", "classRigidBody" ],
     [ "Scene", "classScene.html", "classScene" ],

@@ -4,5 +4,5 @@
 <area shape="rect" id="node3" href="$structLine.html" title=" " alt="" coords="159,56,208,83"/>
 <area shape="rect" id="node4" href="$classPolygon.html" title="Represents a polygon and extends the Geometry class." alt="" coords="146,107,221,133"/>
 <area shape="rect" id="node5" href="$classRectangle.html" title="Represents a rectangle and extends the Geometry class." alt="" coords="140,157,227,184"/>
-<area shape="rect" id="node6" href="$classTriangle.html" title=" " alt="" coords="147,208,220,235"/>
+<area shape="rect" id="node6" href="$classTriangle.html" title="Represents a triangle shape." alt="" coords="147,208,220,235"/>
 </map>

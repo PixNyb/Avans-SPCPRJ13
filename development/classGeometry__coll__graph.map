@@ -1,4 +1,4 @@
 <map id="Geometry" name="Geometry">
 <area shape="rect" id="node1" title="Abstract base class for geometric shapes." alt="" coords="10,95,97,121"/>
-<area shape="rect" id="node2" href="$classShapeColor.html" title=" " alt="" coords="5,5,101,32"/>
+<area shape="rect" id="node2" href="$classShapeColor.html" title="ShapeColor is a class that represents a color in the game engine." alt="" coords="5,5,101,32"/>
 </map>

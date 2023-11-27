@@ -1,6 +1,6 @@
 <map id="GameObject" name="GameObject">
 <area shape="rect" id="node1" title="The GameObject class represents an object in the game world." alt="" coords="55,95,158,121"/>
-<area shape="rect" id="node3" href="$classCamera.html" title=" " alt="" coords="21,169,94,196"/>
+<area shape="rect" id="node3" href="$classCamera.html" title="Represents a camera view in the game." alt="" coords="21,169,94,196"/>
 <area shape="rect" id="node4" href="$classUIObject.html" title="Represents a user interface object in the game engine." alt="" coords="118,169,197,196"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,5,208,47"/>
 <area shape="rect" id="node5" href="$classButton.html" title="Represents a clickable user interface element." alt="" coords="83,244,149,271"/>

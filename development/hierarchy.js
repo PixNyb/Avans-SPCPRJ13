@@ -54,7 +54,6 @@ var hierarchy =
     [ "PhysicsManager", "classPhysicsManager.html", null ],
     [ "Point", "structPoint.html", null ],
     [ "PrefabManager", "classPrefabManager.html", null ],
-    [ "Render", "classRender.html", null ],
     [ "RenderManager", "classRenderManager.html", null ],
     [ "Scene", "classScene.html", [
       [ "LevelScene", "classLevelScene.html", null ]

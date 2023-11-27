@@ -1,4 +1,4 @@
 <map id="IInputFacade" name="IInputFacade">
 <area shape="rect" id="node1" title="The IInputFacade interface defines the methods that a concrete input facade must implement." alt="" coords="16,5,120,32"/>
-<area shape="rect" id="node2" href="$classSDLInputFacade.html" title=" " alt="" coords="5,80,131,107"/>
+<area shape="rect" id="node2" href="$classSDLInputFacade.html" title="The SDLInputFacade class is responsible for handling input from the user." alt="" coords="5,80,131,107"/>
 </map>
