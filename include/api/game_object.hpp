@@ -238,12 +238,6 @@ class GameObject : public std::enable_shared_from_this<GameObject>
      * @param physicsPointer the weak_ptr to the engines PhysicsManager
      */
     void SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer);
-
-    /**
-     * @brief Gets an object list starting with the root node and ending with the origin node.
-     * @return The object list
-     */
-    std::unique_ptr<GameObjectList> GetObjectList();
 };
 
 #endif // AVANS_SPCPRJ13_GAMEOBJECT_H
