@@ -80,12 +80,16 @@ jobs:
 
       - name: Move and rename files
         run: |
-          mv sdk.zip release/libDeFunBobEngine-sdk.zip
-          mv sdk.zip.sha256 release/libDeFunBobEngine-sdk.zip.sha256
-          mv sdk.tar.gz release/libDeFunBobEngine-sdk.tar.gz
-          mv sdk.tar.gz.sha256 release/libDeFunBobEngine-sdk.tar.gz.sha256
-          mv build/libDeFunBobEngine.a release/libDeFunBobEngine.a
-          mv build/libDeFunBobEngine.sha256 release/libDeFunBobEngine.sha256
+          release_dir="release-${{ github.sha }}"
+          if [ ! -d "$release_dir" ] ; then
+            mkdir "$release_dir"
+          fi
+          mv sdk.zip $release_dir/libDeFunBobEngine-sdk.zip
+          mv sdk.zip.sha256 $release_dir/libDeFunBobEngine-sdk.zip.sha256
+          mv sdk.tar.gz $release_dir/libDeFunBobEngine-sdk.tar.gz
+          mv sdk.tar.gz.sha256 $release_dir/libDeFunBobEngine-sdk.tar.gz.sha256
+          mv build/libDeFunBobEngine.a $release_dir/libDeFunBobEngine.a
+          mv build/libDeFunBobEngine.sha256 $release_dir/libDeFunBobEngine.sha256
 
       - name: Create release
         uses: svenstaro/upload-release-action@v2
@@ -96,4 +100,4 @@ jobs:
             ${{ steps.release_body.outputs.RELEASE_BODY }}
           prerelease: true
           file_glob: true
-          file: release/*
+          file: release-${{ github.sha }}/*
