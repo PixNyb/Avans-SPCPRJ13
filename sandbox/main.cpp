@@ -19,6 +19,8 @@
 #include "scene_manager.hpp"
 #include "time.hpp"
 #include "sprite.hpp"
+#include "animation_state.hpp"
+#include "animator.hpp"
 #include <cfloat>
 #include <iostream>
 #include <utility>
@@ -95,40 +97,43 @@ int main(int argc, char *argv[])
     // Scene
     auto scene = std::make_shared<Scene>();
 
-    // Prepare all components
-    const Color& standardRed = Color::red();
+    // Create animation states
+    AnimationState idleState(10, 0.1f);  // Example: 10 frames, each shown for 0.1 seconds
+    AnimationState runningState(10, 0.05f);
 
-    auto component = std::make_shared<CircleCollider>();
-    component->Radius(30);
-    auto boxComponent = std::make_shared<BoxCollider>();
-    boxComponent->Width(50);
-    boxComponent->Height(30);
+    // Set up the animator and add states
+    auto animator = std::make_shared<Animator>();
+    animator->AddState("idle", idleState);
+    animator->AddState("running", runningState);
 
-    // Circle
-    auto obj = scene->CreateGameObject().lock();
-    obj->SetName("circle");
-    obj->AddComponent(component);
-    obj->SetTransform(Transform(Point(0,0), 0, 1));
+    // Attach the animator to a game object
+//    auto player = scene->CreateGameObject().lock();
+//    player->SetName("Player");
+//    player->AddComponent(animator);
+//    animator->SetState("idle");
 
-    // Box
-    auto obj2 = scene->CreateGameObject().lock();
-    obj2->SetName("box");
-    obj2->AddComponent(boxComponent);
-    obj2->SetTransform(Transform(Point(0,0), 0, 1));
+    auto boxCollider = std::make_shared<BoxCollider>();
+    boxCollider->Height(40);
+    boxCollider->Width(40);
 
-    // Sprite
-    Point centerPosition(600 / 2, 400 / 2);
-    auto background = scene->CreateGameObject().lock();
-    background->SetName("background");
-    background->AddComponent(backgroundSprite);
-    background->SetTransform(Transform(Point(0,0), 0, 1));
+    auto boxComponent = std::make_shared<GameObject>();
+    boxComponent->SetName("Box");
+    boxComponent->AddComponent(boxCollider);
+    boxComponent->SetTransform(Transform(Point(0,0),0, 1));
 
-    // Scaling behaviour scripts
-    auto behaviourScript = std::make_shared<TestBehaviourScript>(obj);
-    obj->AddComponent(behaviourScript);
+    // Create the sprite GameObject and set its parent
+    auto sprite = std::make_shared<GameObject>();
+    sprite->SetName("Sprite");
+    sprite->SetParent(boxComponent);
 
-    auto behaviourScriptB = std::make_shared<TestBehaviourScript>(obj2);
-    obj2->AddComponent(behaviourScriptB);
+    // Add components to the sprite (e.g., Sprite component)
+    auto spriteComponent = std::make_shared<Sprite>();
+    spriteComponent->SetSprite("/Users/robinpijnappels/Documents/Projects/04 - Avans Projects/01 - Minor C++/Project/Avans-SPCPRJ13/sandbox/menu_final.png");
+    sprite->AddComponent(spriteComponent);
+
+    scene->AddGameObject(boxComponent);
+    scene->AddGameObject(sprite);
+
 
     // Camera
     auto camera = std::make_shared<Camera>();

@@ -57,6 +57,13 @@ struct Transform
      * @return Transform The difference of the two transforms.
      */
     Transform operator -(const Transform &other) const;
+
+    /**
+     * @brief Combines this transform with another transform.
+     * @param other The other transform to combine with this one.
+     * @return Transform The combined transform.
+     */
+    Transform CombineWith(const Transform &other) const;
 };
 
 #endif // AVANS_SPCPRJ13_TRANSFORM_H

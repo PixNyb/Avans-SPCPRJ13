@@ -37,6 +37,7 @@ class Sprite : public BehaviourScript
     bool flipY;         ///< Flag to flip the sprite vertically.
     int sortingLayer;   ///< The sorting layer for rendering order.
     int orderInLayer;   ///< The specific order within the sorting layer.
+    int frameWidth, frameHeight; ///< For the spritesheet
 
   public:
     /**
@@ -57,6 +58,9 @@ class Sprite : public BehaviourScript
     void SetSprite(const std::string& spriteImage) {
         sprite = spriteImage;
     }
+
+    [[nodiscard]] int GetFrameWidth() const { return frameWidth; }
+    [[nodiscard]] int GetFrameHeight() const { return frameHeight; }
 };
 
 #endif // AVANS_SPCPRJ13_SPRITE_H

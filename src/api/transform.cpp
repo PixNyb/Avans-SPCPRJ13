@@ -23,3 +23,16 @@ Transform Transform::operator+(const Transform &other) const {
 Transform Transform::operator-(const Transform &other) const {
         return {position - other.position, rotation - other.rotation, scale / other.scale};
 }
+
+Transform Transform::CombineWith(const Transform &other) const {
+    // Combine positions
+    Point combinedPosition = this->position + other.position;
+
+    // Combine rotations
+    double combinedRotation = this->rotation + other.rotation;
+
+    // Combine scales
+    double combinedScale = this->scale * other.scale;
+
+    return Transform(combinedPosition, combinedRotation, combinedScale);
+}

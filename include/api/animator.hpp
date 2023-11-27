@@ -56,7 +56,7 @@ class Animator : public BehaviourScript
 
     void AddState(const std::string& name, const AnimationState& state);
     void SetState(const std::string& name);
-    void Update(float deltaTime) override;
+    void Update(float deltaTime);
     int GetCurrentFrame() const;
 
   private:
