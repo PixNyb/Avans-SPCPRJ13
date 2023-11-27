@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['camera_39',['Camera',['../classCamera.html',1,'']]],
-  ['camera_2ecpp_40',['camera.cpp',['../camera_8cpp.html',1,'']]],
-  ['camera_2ehpp_41',['camera.hpp',['../camera_8hpp.html',1,'']]],
+  ['camera_38',['Camera',['../classCamera.html',1,'']]],
+  ['camera_2ecpp_39',['camera.cpp',['../camera_8cpp.html',1,'']]],
+  ['camera_2ehpp_40',['camera.hpp',['../camera_8hpp.html',1,'']]],
+  ['children_41',['children',['../classGameObject.html#ace620644f3b086757e2f304f12c2413d',1,'GameObject']]],
   ['circle_42',['Circle',['../classCircle.html',1,'Circle'],['../classCircle.html#ab8d56b80e421550e708481e1270c5a7f',1,'Circle::Circle()']]],
   ['circle_2ehpp_43',['circle.hpp',['../circle_8hpp.html',1,'']]],
   ['circle_5fcollider_2ecpp_44',['circle_collider.cpp',['../circle__collider_8cpp.html',1,'']]],
@@ -12,7 +13,7 @@ var searchData=
   ['clear_48',['Clear',['../classSDLRender.html#a82a4d75eeb0c4eb99e7d53d7be907e08',1,'SDLRender::Clear()'],['../classScene.html#a47102b9881f81865736e9d38bb7b2f15',1,'Scene::Clear()']]],
   ['clearprefabs_49',['ClearPrefabs',['../classPrefabManager.html#a3e2c6aaf757c6946e3ee5be82829e7d7',1,'PrefabManager']]],
   ['clearscene_50',['ClearScene',['../classSceneManager.html#acbef9629bd26a6ad04d3159229d50879',1,'SceneManager']]],
-  ['clearscreen_51',['ClearScreen',['../classSDLWindow.html#a1f8e5e54d12207fe6c3fb29f1cae1fde',1,'SDLWindow::ClearScreen()'],['../classGraphicsFacade.html#aed080afad9d41970874241a3751fbbef',1,'GraphicsFacade::ClearScreen()'],['../classIOFacade.html#a1f19605a9051a926f970b2654ec06423',1,'IOFacade::ClearScreen()']]],
+  ['clearscreen_51',['ClearScreen',['../classGraphicsFacade.html#aed080afad9d41970874241a3751fbbef',1,'GraphicsFacade::ClearScreen()'],['../classSDLWindow.html#a1f8e5e54d12207fe6c3fb29f1cae1fde',1,'SDLWindow::ClearScreen()'],['../classIOFacade.html#a1f19605a9051a926f970b2654ec06423',1,'IOFacade::ClearScreen()']]],
   ['click_52',['Click',['../classButton.html#a67258126e72dd44e60fcc5ae3e2a94e0',1,'Button']]],
   ['closesdl_53',['CloseSDL',['../classDebugRenderer.html#aed91cb040aef962ee7b7a0c86f60d405',1,'DebugRenderer']]],
   ['collider_54',['Collider',['../classCollider.html',1,'']]],

@@ -178,9 +178,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:aa6788e19c6016d6de2e8374af223ab0b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#aa6788e19c6016d6de2e8374af223ab0b">GetParent</a> () const</td></tr>
 <tr class="memdesc:aa6788e19c6016d6de2e8374af223ab0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parent of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>.  <a href="classGameObject.html#aa6788e19c6016d6de2e8374af223ab0b">More...</a><br /></td></tr>
 <tr class="separator:aa6788e19c6016d6de2e8374af223ab0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf750e94d6052b1c96897cd91517638e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#aaf750e94d6052b1c96897cd91517638e">SetParent</a> (std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; <a class="el" href="classGameObject.html#aae2ba1fd3e39a32f1de627c2c39b4ae2">parent</a>)</td></tr>
-<tr class="memdesc:aaf750e94d6052b1c96897cd91517638e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parent of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>.  <a href="classGameObject.html#aaf750e94d6052b1c96897cd91517638e">More...</a><br /></td></tr>
-<tr class="separator:aaf750e94d6052b1c96897cd91517638e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a81173374609fb49d242b3fba50b436"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a5a81173374609fb49d242b3fba50b436">SetParent</a> (std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; newParent)</td></tr>
+<tr class="memdesc:a5a81173374609fb49d242b3fba50b436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parent of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>.  <a href="classGameObject.html#a5a81173374609fb49d242b3fba50b436">More...</a><br /></td></tr>
+<tr class="separator:a5a81173374609fb49d242b3fba50b436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe4966398be20b205811d7c1560f6de9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#abe4966398be20b205811d7c1560f6de9">GetChildren</a> () const</td></tr>
+<tr class="memdesc:abe4966398be20b205811d7c1560f6de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the children of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>.  <a href="classGameObject.html#abe4966398be20b205811d7c1560f6de9">More...</a><br /></td></tr>
+<tr class="separator:abe4966398be20b205811d7c1560f6de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ba5344daef13d4146bcf5fe82689f5e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a9ba5344daef13d4146bcf5fe82689f5e">IsActive</a> () const</td></tr>
 <tr class="memdesc:a9ba5344daef13d4146bcf5fe82689f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> is active.  <a href="classGameObject.html#a9ba5344daef13d4146bcf5fe82689f5e">More...</a><br /></td></tr>
 <tr class="separator:a9ba5344daef13d4146bcf5fe82689f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,9 +207,6 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:a4096808c06891eb8160065ee34997878"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGameObject.html#a4096808c06891eb8160065ee34997878">GetComponents</a> () const</td></tr>
 <tr class="memdesc:a4096808c06891eb8160065ee34997878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the components of the specified type. Must be a valid subclass of <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a>.  <a href="classGameObject.html#a4096808c06891eb8160065ee34997878">More...</a><br /></td></tr>
 <tr class="separator:a4096808c06891eb8160065ee34997878"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35cefcc5d483c1c89a4958ead55f8e6c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classGameObjectList.html">GameObjectList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a35cefcc5d483c1c89a4958ead55f8e6c">GetObjectList</a> ()</td></tr>
-<tr class="memdesc:a35cefcc5d483c1c89a4958ead55f8e6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object list starting with the root node and ending with the origin node.  <a href="classGameObject.html#a35cefcc5d483c1c89a4958ead55f8e6c">More...</a><br /></td></tr>
-<tr class="separator:a35cefcc5d483c1c89a4958ead55f8e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -238,9 +238,14 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a77b865c8396028f6250dcff11aa76421">layer</a></td></tr>
 <tr class="memdesc:a77b865c8396028f6250dcff11aa76421"><td class="mdescLeft">&#160;</td><td class="mdescRight">The layer of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. <br /></td></tr>
 <tr class="separator:a77b865c8396028f6250dcff11aa76421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace620644f3b086757e2f304f12c2413d"><td class="memItemLeft" align="right" valign="top"><a id="ace620644f3b086757e2f304f12c2413d"></a>
+std::vector&lt; std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#ace620644f3b086757e2f304f12c2413d">children</a></td></tr>
+<tr class="memdesc:ace620644f3b086757e2f304f12c2413d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The children of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. <br /></td></tr>
+<tr class="separator:ace620644f3b086757e2f304f12c2413d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> class represents an object in the game world. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Should be instantiated as a shared_ptr.</dd></dl>
 <p>It contains a name, a list of components, an active flag, a tag, and a layer. GameObjects can be added to the game world and can have their components updated and rendered. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1e50d4cace9d1d2c12bfd4f73f43d089"></a>
@@ -401,6 +406,34 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 </div>
 </div>
+<a id="abe4966398be20b205811d7c1560f6de9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe4966398be20b205811d7c1560f6de9">&#9670;&nbsp;</a></span>GetChildren()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::shared_ptr&lt;<a class="el" href="classGameObject.html">GameObject</a>&gt; &gt; GameObject::GetChildren </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the children of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The children of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </dd></dl>
+
+</div>
+</div>
 <a id="af6a7aed852be6b6106890b957ed5f3d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af6a7aed852be6b6106890b957ed5f3d7">&#9670;&nbsp;</a></span>GetComponent()</h2>
 
@@ -510,26 +543,6 @@ template&lt;class T &gt; </div>
 
 <p>Get the name of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The name of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </dd></dl>
-
-</div>
-</div>
-<a id="a35cefcc5d483c1c89a4958ead55f8e6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35cefcc5d483c1c89a4958ead55f8e6c">&#9670;&nbsp;</a></span>GetObjectList()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classGameObjectList.html">GameObjectList</a> &gt; GameObject::GetObjectList </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets an object list starting with the root node and ending with the origin node. </p>
-<dl class="section return"><dt>Returns</dt><dd>The object list </dd></dl>
 
 </div>
 </div>
@@ -801,28 +814,20 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="aaf750e94d6052b1c96897cd91517638e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf750e94d6052b1c96897cd91517638e">&#9670;&nbsp;</a></span>SetParent()</h2>
+<a id="a5a81173374609fb49d242b3fba50b436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a81173374609fb49d242b3fba50b436">&#9670;&nbsp;</a></span>SetParent()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void GameObject::SetParent </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td>
-          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td class="paramname"><em>newParent</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Set the parent of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </p>

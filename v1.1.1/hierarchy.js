@@ -30,9 +30,7 @@ var hierarchy =
     ] ],
     [ "Engine", "classEngine.html", null ],
     [ "Event", "classEvent.html", null ],
-    [ "GameObjectList", "classGameObjectList.html", null ],
-    [ "GameObjectListIterator", "classGameObjectListIterator.html", null ],
-    [ "GameObjectNode", "classGameObjectNode.html", null ],
+    [ "GameObjectUtility", "classGameObjectUtility.html", null ],
     [ "Geometry", "classGeometry.html", [
       [ "Circle", "classCircle.html", null ],
       [ "Line", "structLine.html", null ],
