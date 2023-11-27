@@ -15,7 +15,7 @@
 #include "circle_collider.hpp"
 #include "core/engine.hpp"
 #include "game_object.hpp"
-#include "game_object_list.hpp"
+#include "game_object_utility.hpp"
 #include "graphics_facade.hpp"
 #include "managers/scene_manager.hpp"
 #include "text.hpp"
@@ -43,21 +43,14 @@ void RenderManager::Render()
 
     for (auto &gameObjectPtr : scene->GetAllByType<GameObject>())
     {
-        auto objectList = gameObjectPtr.lock()->GetObjectList();
-
-        for (const auto &gameObjectNode : *objectList)
-        {
-            auto currentGameObject = gameObjectNode->cur;
-
-            // Skip inactive game objects and their ancestors
-            if (!currentGameObject || !currentGameObject->IsActive())
+        auto gameObject = gameObjectPtr.lock();
+        GameObjectUtility::TraverseActiveGameObjects(
+            gameObject,
+            [&layers](const std::shared_ptr<GameObject> &gameObject)
             {
-                break;
-            }
-
-            int layer = currentGameObject->GetLayer();
-            layers[layer].emplace_back(currentGameObject);
-        }
+                int layer = gameObject->GetLayer();
+                layers[layer].emplace_back(gameObject);
+            });
     }
 
     // Make sure we have a render point regardless of whether we have a camera (menu might not
