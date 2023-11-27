@@ -1,9 +1,10 @@
-name: DeFunBobEngine Release Build
+name: CMake Release Build
 
 on:
   push:
     tags:
-      - "v*"
+      - v*
+      - v*-rc* # prereleases
 
 jobs:
   build:
@@ -36,7 +37,7 @@ jobs:
         run: ./vcpkg/vcpkg install --triplet x64-linux --feature-flags=manifests
 
       - name: Build
-        run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build && cmake --build build
+        run: cmake -DBUILD_TESTS=OFF -DBUILD_CICD=OFF -DCMAKE_TOOLCHAIN_FILE=/opt/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=MinSizeRel -S . -B build && cmake --build build
 
       - name: Create SDK archives
         run: |
@@ -57,24 +58,24 @@ jobs:
         run: |
           release="# libDeFunBobEngine\n\n## Changelog\n"
           release="$release$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'- %s ([%h](https://github.com/${{ github.repository }}/commit/%H))' --reverse)\n\n"
-          release="$release## Dependencies\n\n"
-          release="$release### vcpkg\n\n"
-          release="$release\`\`\`\n"
-          release="$release$(./vcpkg/vcpkg list --triplet x64-linux --feature-flags=manifests)\n"
-          release="$release\`\`\`\n\n"
-          release="$release## Build\n\n"
-          release="$release### CMake\n\n"
-          release="$release\`\`\`\n"
-          release="$release$(cmake --version)\n"
-          release="$release\`\`\`\n\n"
-          release="$release### Compiler\n\n"
-          release="$release\`\`\`\n"
-          release="$release$(g++ --version)\n"
-          release="$release\`\`\`\n\n"
-          release="$release### Build system\n\n"
-          release="$release\`\`\`\n"
-          release="$release$(uname -a)\n"
-          release="$release\`\`\`\n\n"
+          # release="$release## Dependencies\n\n"
+          # release="$release### vcpkg\n\n"
+          # release="$release\`\`\`\n"
+          # release="$release$(vcpkg list --triplet x64-linux --feature-flags=manifests)\n"
+          # release="$release\`\`\`\n\n"
+          # release="$release## Build\n\n"
+          # release="$release### CMake\n\n"
+          # release="$release\`\`\`\n"
+          # release="$release$(cmake --version)\n"
+          # release="$release\`\`\`\n\n"
+          # release="$release### Compiler\n\n"
+          # release="$release\`\`\`\n"
+          # release="$release$(g++ --version)\n"
+          # release="$release\`\`\`\n\n"
+          # release="$release### Build system\n\n"
+          # release="$release\`\`\`\n"
+          # release="$release$(uname -a)\n"
+          # release="$release\`\`\`\n\n"
           echo "RELEASE_BODY=$release" >> $GITHUB_OUTPUT
 
       - name: Move and rename files
