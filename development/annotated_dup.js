@@ -10,6 +10,7 @@ var annotated_dup =
     [ "Camera", "classCamera.html", "classCamera" ],
     [ "Circle", "classCircle.html", "classCircle" ],
     [ "CircleCollider", "classCircleCollider.html", "classCircleCollider" ],
+    [ "class_name", "classclass__name.html", null ],
     [ "Collider", "classCollider.html", null ],
     [ "Color", "classColor.html", "classColor" ],
     [ "Component", "classComponent.html", "classComponent" ],
