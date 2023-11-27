@@ -30,3 +30,8 @@ void AnimationState::Update(float deltaTime)
 }
 
 int AnimationState::GetCurrentFrameIndex() const { return currentFrameIndex; }
+
+float AnimationState::GetTotalDuration() const
+{
+    return (endFrameIndex - startFrameIndex + 1) * frameDuration;
+}

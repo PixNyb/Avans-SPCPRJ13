@@ -45,6 +45,51 @@ class FPSBehaviourScript : public BehaviourScript
     }
 };
 
+class AnimationControllerScript : public BehaviourScript
+{
+  private:
+    std::shared_ptr<Animator> animator;
+    std::string currentState;
+    float timer;
+
+  public:
+    explicit AnimationControllerScript(std::shared_ptr<Animator> animator)
+        : animator(std::move(animator)), currentState("walking"), timer(0.0f)
+    {
+    }
+
+    void OnStart() override
+    {
+        // Set initial state to walking
+        animator->SetState("walking");
+    }
+
+    void OnUpdate() override
+    {
+        if (currentState == "walking")
+        {
+            // If currently walking, switch to jumping after a certain time
+            timer += Time::GetDeltaTime();
+            if (timer >= 2.0f)
+            { // Every 2 seconds, switch to jumping
+                animator->SetState("jump");
+                currentState = "jump";
+                timer = 0.0f; // Reset the timer
+            }
+        }
+        else if (currentState == "jump")
+        {
+            timer += Time::GetDeltaTime();
+            if (timer >= 2.0f)
+            { // Every 2 seconds, switch to jumping
+                animator->SetState("walking");
+                currentState = "walking";
+                timer = 0.0f; // Reset the timer
+            }
+        }
+    }
+};
+
 class TestBehaviourScript : public BehaviourScript
 {
   private:
@@ -138,6 +183,10 @@ int main(int argc, char *argv[])
 
     scene->AddGameObject(boxComponent);
     scene->AddGameObject(sprite);
+
+    // Create the animation controller and attach it to the GameObject
+    auto animationController = std::make_shared<AnimationControllerScript>(animator);
+    sprite->AddComponent(animationController);
 
     // Camera
     auto camera = std::make_shared<Camera>();

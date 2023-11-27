@@ -69,6 +69,8 @@ class AnimationState
     void Update(float deltaTime);
 
     int GetCurrentFrameIndex() const;
+
+    float GetTotalDuration() const;
 };
 
 #endif // AVANS_SPCPRJ13_ANIMATIONSTATE_H
