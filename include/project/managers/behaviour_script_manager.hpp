@@ -1,7 +1,7 @@
 /**
  * @file behaviour_script_manager.hpp
  * @author "Melvin van Bree"
- * @brief TODO
+ * @brief A file containing the BehaviourScriptManager class.
  * @version 0.1
  * @date 15/11/2023
  *
@@ -12,6 +12,11 @@
 #ifndef DEFUNBOBENGINE_SRC_PROJECT_MANAGERS_BEHAVIOUR_SCRIPT_MANAGER_HPP
 #define DEFUNBOBENGINE_SRC_PROJECT_MANAGERS_BEHAVIOUR_SCRIPT_MANAGER_HPP
 
+#include "game_object.hpp"
+
+/**
+ * @brief Manager for all behaviour scripts.
+ */
 class BehaviourScriptManager
 {
   public:
@@ -23,6 +28,8 @@ class BehaviourScriptManager
      * yet.
      */
     void Update();
+
+    static void ExecuteScript(GameObject &gameObject);
 };
 
 #endif // DEFUNBOBENGINE_SRC_PROJECT_MANAGERS_BEHAVIOUR_SCRIPT_MANAGER_HPP

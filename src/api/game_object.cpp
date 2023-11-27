@@ -15,6 +15,7 @@
 #include "game_object_list.hpp"
 #include "physics_manager.hpp"
 #include "transform.hpp"
+#include <algorithm>
 #include <memory>
 
 GameObject::GameObject() : name(""), active(true), tag(""), layer(0), transform()
@@ -109,4 +110,25 @@ void GameObject::SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer)
 std::unique_ptr<GameObjectList> GameObject::GetObjectList()
 {
     return std::make_unique<GameObjectList>(this->shared_from_this());
+}
+
+void GameObject::SetParent(std::shared_ptr<GameObject> newParent)
+{
+    if (parent == newParent)
+        return;
+
+    // Remove from old parent
+    if (parent != nullptr)
+    {
+        auto it = std::find(parent->children.begin(), parent->children.end(), shared_from_this());
+        if (it != parent->children.end())
+            parent->children.erase(it);
+    }
+
+    // Set new parent
+    parent = std::move(newParent);
+
+    // Add self to new parent
+    if (parent != nullptr)
+        parent->children.push_back(shared_from_this());
 }

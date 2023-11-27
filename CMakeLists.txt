@@ -9,6 +9,7 @@ option(BUILD_TESTS "Build the tests" OFF)
 
 # If the option is set to true or we're running a debug build, build the tests
 if(BUILD_TESTS OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
+    message(STATUS "Building tests")
     enable_testing()
     add_subdirectory(tests)
 endif()
@@ -48,6 +49,7 @@ if(GENERATE_COVERAGE OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
         ProcessorCount(N)
 
         if(NOT N EQUAL 0)
+            message(STATUS "Building with coverage")
             set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
             target_link_libraries(DeFunBobEngine PRIVATE gcov)
