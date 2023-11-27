@@ -33,7 +33,9 @@ const Color DEFAULT_RENDER_COLOR = Color::White();
 namespace Engine
 {
 const int DEFAULT_FPS = 60;
-}
+const int MAX_NESTED_CHILDREN = 5; ///< The maximum amount of nested children a game object can
+                                   ///< have. This is to prevent infinite recursion.
+} // namespace Engine
 namespace Debug
 {
 const bool EnableDebug = true;
