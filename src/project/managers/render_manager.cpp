@@ -142,8 +142,8 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
         }
 
         // Create a Rectangle object representing the position and size of the sprite
-        Rectangle spriteRect(Vector2D(relCamPos.x, relCamPos.y), parentSize.width,
-                             parentSize.height);
+        Rectangle spriteRect(Vector2D(relCamPos.x, relCamPos.y), parentSize.height,
+                             parentSize.width);
 
         if (animatorComponent)
         {

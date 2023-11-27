@@ -107,15 +107,17 @@ int main(int argc, char *argv[])
     animator->AddState("walking", walkingState);
     animator->AddState("jump", jumpState);
 
+    auto color = Color::white();
+
     auto boxCollider = std::make_shared<BoxCollider>();
-    boxCollider->Height(250);
+    boxCollider->Height(300);
     boxCollider->Width(250);
 
     auto boxComponent = std::make_shared<GameObject>();
     boxComponent->SetName("Box");
     boxComponent->AddComponent(boxCollider);
     // TODO: fix points on screen to take up whole screen
-    boxComponent->SetTransform(Transform(Point(-100, -150), 0, 1));
+    boxComponent->SetTransform(Transform(Point(-100, -200), 0, 1));
 
     // Create the sprite GameObject and set its parent
     auto sprite = std::make_shared<GameObject>();

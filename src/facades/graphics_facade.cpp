@@ -370,8 +370,8 @@ void GraphicsFacade::RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectang
     SDL_Rect sdlRect;
     sdlRect.x = static_cast<int>(pos.x);
     sdlRect.y = static_cast<int>(pos.y);
-    sdlRect.w = width;  // Use the width from the rectangle parameter
-    sdlRect.h = height; // Use the height from the rectangle parameter
+    sdlRect.w = width;
+    sdlRect.h = height;
 
     // Render the texture to the screen
     if (SDL_RenderCopy(renderer, sdlTexture, NULL, &sdlRect) != 0)
