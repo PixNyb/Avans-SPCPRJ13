@@ -15,6 +15,11 @@
 #include "SDL2/SDL.h"
 #include "color.hpp"
 
+/**
+ * @class SDLColorUtility
+ *
+ * @brief A utility class for color related functions
+ */
 class SDLColorUtility
 {
   public:
