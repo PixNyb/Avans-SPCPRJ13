@@ -108,6 +108,11 @@ class PhysicsFacade
      * @brief Simulate all bodies in the b2World in a window
      */
     void ShowDebug();
+
+    /**
+     * Gets the body by the given GameObject
+     */
+    b2Body *GetBodyByObject(const std::shared_ptr<GameObject> &gameObject);
 };
 
 #endif // AVANS_SPCPRJ13_PHYSICS_FACADE_HPP

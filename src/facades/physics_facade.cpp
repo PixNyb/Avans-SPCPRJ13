@@ -30,6 +30,7 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject)
 {
     b2BodyDef bodyDef;
     auto rigidbody = (*gameObject).GetComponent<RigidBody>();
+    // set the body type
     if (rigidbody->GetBodyType() == BodyType::staticBody)
         bodyDef.type = b2_staticBody;
     if (rigidbody->GetBodyType() == BodyType::dynamicBody)
@@ -38,6 +39,7 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject)
         bodyDef.type = b2_kinematicBody;
     bodyDef.allowSleep = true;
     auto transform = (*gameObject).GetTransform();
+    // check for boxcollider or circlecollider and set its body position
     if ((*gameObject).GetComponent<BoxCollider>())
         bodyDef.position.Set(
             static_cast<float>(transform.position.x +
@@ -56,6 +58,7 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject)
                 -(transform.position.y + (*gameObject).GetComponent<CircleCollider>()->Radius())) *
                 PixelToMeter);
     }
+    // add the angle and insert the gameobject-body pair into the bodies list
     bodyDef.angle = static_cast<float>(transform.rotation);
     auto body = world->CreateBody(&bodyDef);
     bodies.insert(std::pair<std::shared_ptr<GameObject>, b2Body *>(gameObject, body));
@@ -117,7 +120,6 @@ void PhysicsFacade::Step()
     double time = delta * Time::TimeScale() * 100 * (TimeStep);
     // run physics world
     world->Step(static_cast<float>(time), VelocityIterations, PositionIterations);
-
     // update all gameobjects
     for (auto object_pair = bodies.begin(); object_pair != bodies.end(); ++object_pair)
     {
@@ -166,25 +168,33 @@ void PhysicsFacade::SetFixture(b2Body *body, b2Shape *shape,
 
 void PhysicsFacade::ShowDebug() { debugRenderer.Render(bodies); }
 
+b2Body *PhysicsFacade::GetBodyByObject(const std::shared_ptr<GameObject> &gameObject)
+{
+    for (auto &pair : bodies)
+    {
+        if (pair.first->GetTransform().position.x == gameObject->GetTransform().position.x &&
+            pair.first->GetTransform().position.y == gameObject->GetTransform().position.y)
+            return pair.second;
+    }
+}
+
 void PhysicsFacade::DestroyBody(const std::shared_ptr<GameObject> &gameObject)
 {
     auto iterator = bodies.find(gameObject);
-    if (iterator != bodies.end())
-        world->DestroyBody(bodies.at(gameObject));
+    if (b2Body *body = GetBodyByObject(gameObject))
+    {
+        world->DestroyBody(body);
+    }
 }
 
 void PhysicsFacade::AddForce(const std::shared_ptr<GameObject> &gameObject, float vx, float vy)
 {
     float newVX = vx * 100;
     float newVY = vy * 100;
-    for (auto &pair : bodies)
+    if (b2Body *body = GetBodyByObject(gameObject))
     {
-        if (pair.first->GetTransform().position.x == gameObject->GetTransform().position.x &&
-            pair.first->GetTransform().position.y == gameObject->GetTransform().position.y)
-        {
-            pair.second->SetLinearVelocity(b2Vec2(0, 0));
-            pair.second->ApplyForce(b2Vec2(newVX, newVY), pair.second->GetWorldCenter(), true);
-        }
+        body->SetLinearVelocity(b2Vec2(0, 0));
+        body->ApplyForce(b2Vec2(newVX, newVY), body->GetWorldCenter(), true);
     }
 }
 
@@ -193,42 +203,34 @@ void PhysicsFacade::AddLinearImpulse(const std::shared_ptr<GameObject> &gameObje
 {
     float newVX = vx;
     float newVY = vy;
-    for (auto &pair : bodies)
+    if (b2Body *body = GetBodyByObject(gameObject))
     {
-        if (pair.first->GetTransform().position.x == gameObject->GetTransform().position.x &&
-            pair.first->GetTransform().position.y == gameObject->GetTransform().position.y)
-        {
-            pair.second->SetLinearVelocity(b2Vec2(0, 0));
-            pair.second->ApplyLinearImpulse(b2Vec2(newVX, newVY), pair.second->GetWorldCenter(),
-                                            true);
-        }
+        body->SetLinearVelocity(b2Vec2(0, 0));
+        body->ApplyLinearImpulse(b2Vec2(newVX, newVY), body->GetWorldCenter(), true);
     }
 }
 
 void PhysicsFacade::AddRotation(const std::shared_ptr<GameObject> &gameObject, float amount)
 {
-    auto iterator = bodies.find(gameObject);
-    if (iterator != bodies.end())
+    if (b2Body *body = GetBodyByObject(gameObject))
     {
-        bodies.at(gameObject)->ApplyAngularImpulse(amount, false);
+        body->ApplyAngularImpulse(amount, false);
     }
 }
 
 void PhysicsFacade::Sleep(const std::shared_ptr<GameObject> &gameObject)
 {
-    auto iterator = bodies.find(gameObject);
-    if (iterator != bodies.end())
+    if (b2Body *body = GetBodyByObject(gameObject))
     {
-        bodies.at(gameObject)->SetAwake(false);
+        body->SetAwake(false);
     }
 }
 
 void PhysicsFacade::Wake(const std::shared_ptr<GameObject> &gameObject)
 {
-    auto iterator = bodies.find(gameObject);
-    if (iterator != bodies.end())
+    if (b2Body *body = GetBodyByObject(gameObject))
     {
-        bodies.at(gameObject)->SetAwake(true);
+        body->SetAwake(true);
     }
 }
 
