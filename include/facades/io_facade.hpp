@@ -23,13 +23,13 @@
 #define DEFUNBOBENGINE_IO_FACADE_HPP
 
 #include "circle.hpp"
+#include "core_constants.hpp"
 #include "event.hpp"
 #include "line.hpp"
 #include "rectangle.hpp"
 #include "sdl_window.hpp"
-#include "triangle.hpp"
-#include "core_constants.hpp"
 #include "texture.hpp"
+#include "triangle.hpp"
 #include <SDL.h>
 #include <vector>
 
@@ -42,8 +42,9 @@
  * to initialize the input system and to poll for input events, returning them
  * in a consistent format.
  */
-class IOFacade {
-public:
+class IOFacade
+{
+  public:
     /**
      * @brief Virtual destructor for IOFacade.
      */
@@ -76,28 +77,28 @@ public:
      * @param sdlEvent The SDL_Event to be mapped.
      * @return A unique pointer to a custom Event object.
      */
-    virtual std::unique_ptr<Event> MapSdlEventToCustomEvent(const SDL_Event& sdlEvent) = 0;
+    virtual std::unique_ptr<Event> MapSdlEventToCustomEvent(const SDL_Event &sdlEvent) = 0;
 
     /**
-    * @brief Creates a window with the specified properties.
-    *
-    * This method must be implemented by the concrete subclass to handle the creation
-            * of a window. It should specify the window's title, width, and height, and delegate
-    * the actual creation process to a window management system, such as SDL2, abstracted
-            * by the sdl_window.hpp class. The method should manage the lifecycle of the window
-            * and ensure it integrates properly with the input/output handling system of the engine.
-    *
-    * @param title The title to be displayed on the window's title bar.
-    * @param width The width of the window in pixels.
-    * @param height The height of the window in pixels.
-    */
-    virtual void CreateWindow(const std::string& title, int width, int height) = 0;
+     * @brief Creates a window with the specified properties.
+     *
+     * This method must be implemented by the concrete subclass to handle the creation
+     * of a window. It should specify the window's title, width, and height, and delegate
+     * the actual creation process to a window management system, such as SDL2, abstracted
+     * by the sdl_window.hpp class. The method should manage the lifecycle of the window
+     * and ensure it integrates properly with the input/output handling system of the engine.
+     *
+     * @param title The title to be displayed on the window's title bar.
+     * @param width The width of the window in pixels.
+     * @param height The height of the window in pixels.
+     */
+    virtual void CreateWindow(const std::string &title, int width, int height) = 0;
 
     /**
      * @brief delay execution for a specified number of milliseconds.
      * @param ms The number of milliseconds to delay execution.
      */
-    virtual void Delay(unsigned int ms)  = 0;
+    virtual void Delay(unsigned int ms) = 0;
 
     /**
      * @brief Clears the rendering target.
@@ -156,9 +157,11 @@ public:
      *
      * This function should be implemented by the derived classes to handle the rendering
      * of a Rectangle object on the screen using the provided SDL_Renderer. It should consider
-     * the rectangle's properties such as position, dimensions, and color during the rendering process.
+     * the rectangle's properties such as position, dimensions, and color during the rendering
+     * process.
      *
-     * @param rectangle A Rectangle object containing properties like position, dimensions, and color.
+     * @param rectangle A Rectangle object containing properties like position, dimensions, and
+     * color.
      * @param renderer A pointer to an SDL_Renderer to draw the rectangle.
      */
     virtual void DrawShape(Rectangle rectangle) = 0;
@@ -175,7 +178,6 @@ public:
      */
     virtual void DrawShape(Triangle triangle) = 0;
 
-
     /**
      * @brief Draws a Text object on the rendering target.
      *
@@ -185,7 +187,7 @@ public:
      *
      * @param text A Text object containing the content and other properties of the text.
      */
-    virtual void DrawText(const Text& text) = 0;
+    virtual void DrawText(const Text &text) = 0;
 
     /**
      * @brief Draws a Texture object on the rendering target.
@@ -196,7 +198,7 @@ public:
      *
      * @param texture A Texture object containing the properties of the texture.
      */
-    virtual void DrawSprite(const Texture& texture, Rectangle& rectangle) = 0;
+    virtual void DrawSprite(const Texture &texture, Rectangle &rectangle) = 0;
 
     /**
      * @brief Renders an SDL_Texture on the rendering target.
@@ -208,35 +210,46 @@ public:
      * @param sdlTexture An SDL_Texture object containing the properties of the texture.
      * @param rectangle The rectangle to render the texture in.
      */
-    virtual void RenderSDLTexture(SDL_Texture* sdlTexture, Rectangle rectangle) = 0;
+    virtual void RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle) = 0;
 
     /**
      * @brief Gets the cached SDL_Texture for a Texture object.
      * @param texture The Texture object to retrieve the cached SDL_Texture for.
      * @return The cached Texture.
      */
-    virtual SDL_Texture* GetCachedSDLTexture(const Texture& texture) = 0;
+    virtual SDL_Texture *GetCachedSDLTexture(const Texture &texture) = 0;
 
     /**
      * @brief Creates an SDL_Texture from a Texture object.
      * @param texture The Texture object to create the SDL_Texture from.
      * @return The created SDL_Texture.
      */
-    virtual SDL_Texture* CreateSDLTextureFromTexture(const Texture& texture) = 0;
+    virtual SDL_Texture *CreateSDLTextureFromTexture(const Texture &texture) = 0;
 
     /**
      * @brief Caches an SDL_Texture for a Texture object.
      * @param texture The Texture object to cache the SDL_Texture for.
      * @param sdlTexture The SDL_Texture to cache.
      */
-    virtual void CacheSDLTexture(const Texture& texture, SDL_Texture* sdlTexture) = 0;
+    virtual void CacheSDLTexture(const Texture &texture, SDL_Texture *sdlTexture) = 0;
 
     /**
      * @brief Gets the size of a sprite.
      * @param filePath The path to the sprite file.
      * @return The size of the sprite.
      */
-    virtual Size GetSpriteSize(const std::string& filePath) = 0;
+    virtual Size GetSpriteSize(const std::string &filePath) = 0;
+
+    /**
+     * @brief Draws a sprite sheet frame on the rendering target.
+     * @param texture The texture to draw.
+     * @param dstRect The destination rectangle to draw the texture in.
+     * @param frameIndex The index of the frame to draw.
+     * @param totalColumns The total number of columns in the sprite sheet.
+     * @param totalRows The total number of rows in the sprite sheet.
+     */
+    virtual void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect,
+                                      int frameIndex, int totalColumns, int totalRows) = 0;
 };
 
-#endif //DEFUNBOBENGINE_IO_FACADE_HPP
+#endif // DEFUNBOBENGINE_IO_FACADE_HPP

@@ -10,10 +10,7 @@
 
 #include "animator.hpp"
 
-Animator::Animator()
-{
-    // Constructor implementation
-}
+Animator::Animator() : currentState(nullptr) {}
 
 Animator::Animator(const Animator &other)
 {
@@ -35,28 +32,35 @@ void Animator::Play(bool looping)
     // Implementation
 }
 
-
-void Animator::AddState(const std::string& name, const AnimationState& state) {
-    possibleStates[name] = state;
+void Animator::AddState(const std::string &name, const AnimationState &state)
+{
+    states[name] = state;
 }
 
-void Animator::SetState(const std::string& name) {
-    auto it = possibleStates.find(name);
-    if (it != possibleStates.end()) {
+void Animator::SetState(const std::string &name)
+{
+    auto it = states.find(name);
+    if (it != states.end())
+    {
         currentState = &it->second;
     }
 }
 
-void Animator::Update(float deltaTime) {
-    if (currentState) {
+void Animator::Update(float deltaTime)
+{
+    if (currentState)
+    {
         currentState->Update(deltaTime);
     }
-    // Additional logic...
 }
 
-int Animator::GetCurrentFrame() const {
-    if (currentState) {
-        return currentState->GetCurrentFrame();
+int Animator::GetCurrentFrameIndex() const
+{
+    {
+        if (currentState)
+        {
+            return currentState->GetCurrentFrameIndex();
+        }
+        return 0;
     }
-    return 0;
 }

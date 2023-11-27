@@ -9,6 +9,8 @@
  *
  */
 
+#include "animation_state.hpp"
+#include "animator.hpp"
 #include "behaviour_script.hpp"
 #include "box_collider.hpp"
 #include "camera.hpp"
@@ -17,25 +19,24 @@
 #include "graphics_facade.hpp"
 #include "scene.hpp"
 #include "scene_manager.hpp"
-#include "time.hpp"
 #include "sprite.hpp"
-#include "animation_state.hpp"
-#include "animator.hpp"
+#include "time.hpp"
 #include <cfloat>
 #include <iostream>
 #include <utility>
 
-
 #include <filesystem>
 namespace fs = std::filesystem;
 
-class FPSBehaviourScript: public BehaviourScript {
-    private:
+class FPSBehaviourScript : public BehaviourScript
+{
+  private:
     std::shared_ptr<Text> gameObject;
-    public:
-    explicit FPSBehaviourScript(std::shared_ptr<Text> gameObject): BehaviourScript(),
-                                                                             gameObject
-                                                                            (std::move(gameObject)) {
+
+  public:
+    explicit FPSBehaviourScript(std::shared_ptr<Text> gameObject)
+        : BehaviourScript(), gameObject(std::move(gameObject))
+    {
     }
 
     void OnUpdate() override
@@ -44,15 +45,16 @@ class FPSBehaviourScript: public BehaviourScript {
     }
 };
 
-class TestBehaviourScript : public BehaviourScript {
+class TestBehaviourScript : public BehaviourScript
+{
   private:
     std::shared_ptr<GameObject> gameObject;
     float ticks = 0;
-  public:
 
-    explicit TestBehaviourScript(std::shared_ptr<GameObject> gameObject): BehaviourScript(),
-                                                                           gameObject
-                                                                          (std::move(gameObject)) {
+  public:
+    explicit TestBehaviourScript(std::shared_ptr<GameObject> gameObject)
+        : BehaviourScript(), gameObject(std::move(gameObject))
+    {
     }
 
     void OnUpdate() override
@@ -98,42 +100,42 @@ int main(int argc, char *argv[])
     auto scene = std::make_shared<Scene>();
 
     // Create animation states
-    AnimationState idleState(10, 0.1f);  // Example: 10 frames, each shown for 0.1 seconds
-    AnimationState runningState(10, 0.05f);
-
+    AnimationState walkingState(0, 5, 0.1f);
+    AnimationState jumpState(8, 10, 0.15f);
     // Set up the animator and add states
     auto animator = std::make_shared<Animator>();
-    animator->AddState("idle", idleState);
-    animator->AddState("running", runningState);
-
-    // Attach the animator to a game object
-//    auto player = scene->CreateGameObject().lock();
-//    player->SetName("Player");
-//    player->AddComponent(animator);
-//    animator->SetState("idle");
+    animator->AddState("walking", walkingState);
+    animator->AddState("jump", jumpState);
 
     auto boxCollider = std::make_shared<BoxCollider>();
-    boxCollider->Height(40);
-    boxCollider->Width(40);
+    boxCollider->Height(250);
+    boxCollider->Width(250);
 
     auto boxComponent = std::make_shared<GameObject>();
     boxComponent->SetName("Box");
     boxComponent->AddComponent(boxCollider);
-    boxComponent->SetTransform(Transform(Point(0,0),0, 1));
+    // TODO: fix points on screen to take up whole screen
+    boxComponent->SetTransform(Transform(Point(-100, -150), 0, 1));
 
     // Create the sprite GameObject and set its parent
     auto sprite = std::make_shared<GameObject>();
     sprite->SetName("Sprite");
     sprite->SetParent(boxComponent);
 
+    // Attach the animator to the sprite
+    sprite->AddComponent(animator);
+    animator->SetState("walking");
+    animator->SetState("jump");
+
     // Add components to the sprite (e.g., Sprite component)
     auto spriteComponent = std::make_shared<Sprite>();
-    spriteComponent->SetSprite("/Users/robinpijnappels/Documents/Projects/04 - Avans Projects/01 - Minor C++/Project/Avans-SPCPRJ13/sandbox/menu_final.png");
+    spriteComponent->SetSprite(
+        "/Users/robinpijnappels/Documents/Projects/04 - Avans Projects/01 - Minor "
+        "C++/Project/Avans-SPCPRJ13/poc/sdl-render/assets/lego_spritesheet.png");
     sprite->AddComponent(spriteComponent);
 
     scene->AddGameObject(boxComponent);
     scene->AddGameObject(sprite);
-
 
     // Camera
     auto camera = std::make_shared<Camera>();

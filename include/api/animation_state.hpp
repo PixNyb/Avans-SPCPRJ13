@@ -24,45 +24,51 @@
  * It maintains a map of states and provides functionalities to update
  * the animation based on the current state.
  */
-class AnimationState {
-private:
+class AnimationState
+{
+  private:
+    AnimationState(int totalFrames, float frameTime);
     /**
-    * @brief Map to hold various animation states.
-    *
-    * This map associates state names with their corresponding AnimationState objects.
-    */
-  std::map<std::string, AnimationState> states;
+     * @brief Map to hold various animation states.
+     *
+     * This map associates state names with their corresponding AnimationState objects.
+     */
+    std::map<std::string, AnimationState> states;
 
-    int currentFrame;
-    int totalFrames;
-    float frameTime; // Time each frame is displayed
+    int startFrameIndex;
+    int endFrameIndex;
+    float frameDuration;
+    int currentFrameIndex;
     float elapsedTime;
 
-public:
-  /**
-   * @brief Constructs a new AnimationState object.
-   *
-   * Initializes a new instance of the AnimationState class.
-   */
-  AnimationState();
-  AnimationState(int totalFrames, float frameTime);
+  public:
+    /**
+     * @brief Constructs a new AnimationState object.
+     *
+     * Initializes a new instance of the AnimationState class.
+     */
+    AnimationState();
 
-  /**
-   * @brief Updates the animation state of the given game object.
-   *
-   * This function updates the state of an animation based on the current state
-   * and the properties of the provided game object.
-   *
-   * @param gameObject The game object whose animation state is to be updated.
-   */
-  void Update(GameObject &gameObject);
-  // Getters, Setters, and other public member functions ...
+    AnimationState(int startFrameIndex, int endFrameIndex, float frameDuration)
+        : startFrameIndex(startFrameIndex), endFrameIndex(endFrameIndex),
+          frameDuration(frameDuration), currentFrameIndex(startFrameIndex), elapsedTime(0)
+    {
+    }
 
+    /**
+     * @brief Updates the animation state of the given game object.
+     *
+     * This function updates the state of an animation based on the current state
+     * and the properties of the provided game object.
+     *
+     * @param gameObject The game object whose animation state is to be updated.
+     */
+    void Update(GameObject &gameObject);
+    // Getters, Setters, and other public member functions ...
 
-  void Update(float deltaTime);
+    void Update(float deltaTime);
 
-
-  int GetCurrentFrame() const;
+    int GetCurrentFrameIndex() const;
 };
 
 #endif // AVANS_SPCPRJ13_ANIMATIONSTATE_H

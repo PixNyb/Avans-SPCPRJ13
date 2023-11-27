@@ -23,8 +23,8 @@
 #include "sdl_init.hpp"
 #include "sdl_render.hpp"
 #include <SDL.h>
-#include <memory>
 #include <map>
+#include <memory>
 
 /**
  * @class GraphicsFacade
@@ -33,12 +33,15 @@
  * This class is responsible for initializing and managing the graphics window, handling
  * graphics-related events, and providing a high-level interface for graphics operations.
  */
-class GraphicsFacade : public IOFacade {
-private:
-    std::unique_ptr<SDLWindow> SdlWindow; /**< Unique pointer to SDLWindow for managing the graphics window. */
+class GraphicsFacade : public IOFacade
+{
+  private:
+    std::unique_ptr<SDLWindow>
+        SdlWindow; /**< Unique pointer to SDLWindow for managing the graphics window. */
     std::unique_ptr<SDLInit> SdlInit; /**< Unique pointer to SDLInit for SDL initialization. */
 
-    std::map<std::string, SDL_Texture*> textureCache; /**< Map of texture file paths to SDL_Texture pointers. */
+    std::map<std::string, SDL_Texture *>
+        textureCache; /**< Map of texture file paths to SDL_Texture pointers. */
 
     /**
      * @brief resets the color to the default color specified in the Constants.
@@ -53,8 +56,8 @@ private:
      * @param color The color to be set.
      */
     void SetColor(Color color);
-public:
 
+  public:
     /**
      * @brief Constructs a new GraphicsFacade object.
      *
@@ -84,8 +87,8 @@ public:
     void Init() override;
 
     /**
-    * @brief Polls and processes graphics-related events.
-    */
+     * @brief Polls and processes graphics-related events.
+     */
     std::vector<std::unique_ptr<Event>> PollEvents() override;
 
     /**
@@ -97,7 +100,7 @@ public:
      * @param sdlEvent The SDL_Event to be mapped.
      * @return A unique pointer to the mapped Event.
      */
-    std::unique_ptr<Event> MapSdlEventToCustomEvent(const SDL_Event& sdlEvent) override;
+    std::unique_ptr<Event> MapSdlEventToCustomEvent(const SDL_Event &sdlEvent) override;
 
     /**
      * @brief Creates the graphics window.
@@ -107,8 +110,7 @@ public:
      * @param width Window width.
      * @param height Window height.
      */
-    void CreateWindow(const std::string& title, int width, int height) override;
-
+    void CreateWindow(const std::string &title, int width, int height) override;
 
     /**
      * @brief Clears the rendering target.
@@ -125,10 +127,10 @@ public:
     void CreateRenderer() override;
 
     /**
-    * @brief Presents the rendered content on the screen.
-    *
-    * Updates the window with rendered graphics, finalizing the current frame.
-    */
+     * @brief Presents the rendered content on the screen.
+     *
+     * Updates the window with rendered graphics, finalizing the current frame.
+     */
     void PresentScreen() override;
 
     /**
@@ -150,7 +152,8 @@ public:
     /**
      * @brief Draws a rectangle on the screen.
      *
-     * @param rectangle A Rectangle object containing properties like position, dimensions, and color.
+     * @param rectangle A Rectangle object containing properties like position, dimensions, and
+     * color.
      * @param renderer A pointer to an SDL_Renderer to draw the rectangle.
      */
     void DrawShape(Rectangle rectangle) override;
@@ -164,12 +167,11 @@ public:
      */
     void DrawShape(Triangle triangle) override;
 
-
     void DrawLine(Line line) override;
 
     void DrawLines(std::vector<Line> lines) override;
 
-    void DrawText(const Text& text) override;
+    void DrawText(const Text &text) override;
 
     /**
      * @brief Creates a texture from an image file.
@@ -177,7 +179,7 @@ public:
      * This method creates a texture from an image file, which can then be used for rendering.
      * @param texture The texture to be created.
      */
-    void DrawSprite(const Texture& texture, Rectangle& rectangle) override;
+    void DrawSprite(const Texture &texture, Rectangle &rectangle) override;
 
     /**
      * @brief Creates an SDL_Texture from an image file.
@@ -186,35 +188,45 @@ public:
      * @param sdlTexture The SDL_Texture to be created.
      * @param rectangle The rectangle to render the texture in.
      */
-    void RenderSDLTexture(SDL_Texture* sdlTexture, Rectangle rectangle) override;
+    void RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle) override;
 
     /**
      * @brief Gets the cached texture if it exists.
      * @param texture The texture to get the cached SDL_Texture for.
      */
-    SDL_Texture* GetCachedSDLTexture(const Texture& texture) override;
+    SDL_Texture *GetCachedSDLTexture(const Texture &texture) override;
 
     /**
      * @brief Creates an SDL_Texture from a Texture object.
      * @param texture The Texture object to create the SDL_Texture from.
      * @return The created SDL_Texture.
      */
-    SDL_Texture* CreateSDLTextureFromTexture(const Texture& texture) override;
+    SDL_Texture *CreateSDLTextureFromTexture(const Texture &texture) override;
 
     /**
      * @brief Caches an SDL_Texture for a Texture object.
      * @param texture The Texture object to cache the SDL_Texture for.
      * @param sdlTexture The SDL_Texture to cache.
      */
-    void CacheSDLTexture(const Texture& texture, SDL_Texture* sdlTexture) override;
+    void CacheSDLTexture(const Texture &texture, SDL_Texture *sdlTexture) override;
 
     /**
      * @brief Gets the size of a sprite.
      * @param filePath The file path of the sprite.
      * @return The size of the sprite.
      */
-    Size GetSpriteSize(const std::string& filePath) override;
+    Size GetSpriteSize(const std::string &filePath) override;
+
+    /**
+     * @brief Draws the sprite sheet frame.
+     * @param texture The texture to draw the frame from.
+     * @param dstRect The rectangle to draw the frame in.
+     * @param frameIndex The index of the frame to draw.
+     * @param totalColumns The total number of columns in the sprite sheet.
+     * @param totalRows The total number of rows in the sprite sheet.
+     */
+    void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect, int frameIndex,
+                              int totalColumns, int totalRows) override;
 };
 
-
-#endif //DEFUNBOBENGINE_GRAPHICS_FACADE_HPP
+#endif // DEFUNBOBENGINE_GRAPHICS_FACADE_HPP

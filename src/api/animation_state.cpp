@@ -15,17 +15,18 @@ AnimationState::AnimationState() {}
 
 void AnimationState::Update(GameObject &gameObject) {}
 
-AnimationState::AnimationState(int totalFrames, float frameTime)
-        : totalFrames(totalFrames), frameTime(frameTime), currentFrame(0), elapsedTime(0.0f) {}
-
-void AnimationState::Update(float deltaTime) {
+void AnimationState::Update(float deltaTime)
+{
     elapsedTime += deltaTime;
-    if (elapsedTime >= frameTime) {
-        currentFrame = (currentFrame + 1) % totalFrames;
-        elapsedTime -= frameTime;
+    if (elapsedTime >= frameDuration)
+    {
+        elapsedTime = 0;
+        currentFrameIndex++;
+        if (currentFrameIndex > endFrameIndex)
+        {
+            currentFrameIndex = startFrameIndex;
+        }
     }
 }
 
-int AnimationState::GetCurrentFrame() const {
-    return currentFrame;
-}
+int AnimationState::GetCurrentFrameIndex() const { return currentFrameIndex; }

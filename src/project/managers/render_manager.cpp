@@ -10,6 +10,7 @@
  */
 
 #include "render_manager.hpp"
+#include "animator.hpp"
 #include "box_collider.hpp"
 #include "circle.hpp"
 #include "circle_collider.hpp"
@@ -30,11 +31,13 @@ void RenderManager::Render()
     auto sceneManager = engine->Get<SceneManager>();
     auto graphicsFacade = engine->Get<IOFacade>();
 
-    if(!sceneManager->HasScene()) return;
+    if (!sceneManager->HasScene())
+        return;
 
     // During the process, we might want to take temp partial ownership
     auto scene = sceneManager->GetScene().lock();
-    if(!scene) return;
+    if (!scene)
+        return;
 
     // Prepare camera
     auto camera = scene->GetCamera();
@@ -42,12 +45,15 @@ void RenderManager::Render()
     // Prepare layers
     auto layers = std::map<int, std::vector<std::weak_ptr<GameObject>>>();
 
-    for(auto& gameObject : scene->GetAllByType<GameObject>()){
+    for (auto &gameObject : scene->GetAllByType<GameObject>())
+    {
         auto gameObjectPtr = gameObject.lock();
-        if(!gameObjectPtr || !gameObjectPtr->IsActive()) continue;
+        if (!gameObjectPtr || !gameObjectPtr->IsActive())
+            continue;
 
         int layer = gameObjectPtr->GetLayer();
-        if(layers.contains(layer)){
+        if (layers.contains(layer))
+        {
             // Ensure the layer for the game object exists
             layers.insert(std::make_pair(layer, std::vector<std::weak_ptr<GameObject>>()));
         }
@@ -61,7 +67,8 @@ void RenderManager::Render()
     // Make sure we have a render point regardless of whether we have a camera (menu might not
     // always have a camera)
     Point renderPoint = Point(0, 0);
-    if(camera){
+    if (camera)
+    {
         auto transform = camera->GetTransform();
         renderPoint.x = transform.position.x;
         renderPoint.y = transform.position.y;
@@ -70,30 +77,36 @@ void RenderManager::Render()
     }
 
     // Go through layers in-order (lowest to highest)
-    for (const auto& layer : layers) {
+    for (const auto &layer : layers)
+    {
         int layerIndex = layer.first;
-        auto& gameObjects = layer.second;
+        auto &gameObjects = layer.second;
 
-        for(auto& gameObject : gameObjects){
+        for (auto &gameObject : gameObjects)
+        {
             auto gameObjectPtr = gameObject.lock();
-            if(!gameObjectPtr || !gameObjectPtr->IsActive()) continue;
+            if (!gameObjectPtr || !gameObjectPtr->IsActive())
+                continue;
             // Delegate to private render method
             Render(*graphicsFacade, renderPoint, gameObjectPtr);
         }
     }
 }
 
-void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint, const
-                           std::weak_ptr<GameObject>& gameObjectPointer) {
+void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
+                           const std::weak_ptr<GameObject> &gameObjectPointer)
+{
 
     auto gameObject = gameObjectPointer.lock();
-    if (!gameObject) {
+    if (!gameObject)
+    {
         return; // GameObject is no longer valid
     }
 
     // Determine final position and scale based on parent (if any)
     Transform finalTransform = gameObject->GetTransform();
-    if (auto parent = gameObject->GetParent()) {
+    if (auto parent = gameObject->GetParent())
+    {
         finalTransform = finalTransform.CombineWith(parent->GetTransform());
     }
 
@@ -106,39 +119,64 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint, const
 
     // Draw sprites
     auto spriteComponent = gameObject->GetComponent<Sprite>();
-    if (spriteComponent) {
+    if (spriteComponent)
+    {
+        auto animatorComponent = gameObject->GetComponent<Animator>();
+
         Size spriteSize = gfx.GetSpriteSize(spriteComponent->GetSprite());
 
         // Adjust sprite size to match parent's dimensions (if parent has a collider)
         Size parentSize;
-        if (auto boxCollider = gameObject->GetParent()->GetComponent<BoxCollider>()) {
+        if (auto boxCollider = gameObject->GetParent()->GetComponent<BoxCollider>())
+        {
             parentSize = Size(boxCollider->Width(), boxCollider->Height());
-        } else if (auto circleCollider = gameObject->GetParent()->GetComponent<CircleCollider>()) {
+        }
+        else if (auto circleCollider = gameObject->GetParent()->GetComponent<CircleCollider>())
+        {
             double radius = circleCollider->Radius();
             parentSize = Size(radius * 2, radius * 2);
-        } else {
+        }
+        else
+        {
             parentSize = spriteSize; // Use sprite's own size if no parent collider
         }
 
-        // Create a Texture object for the sprite
-        Texture spriteTexture(spriteComponent->GetSprite());
-
         // Create a Rectangle object representing the position and size of the sprite
-        Rectangle spriteRect(Vector2D(relCamPos.x, relCamPos.y), parentSize.width, parentSize.height);
+        Rectangle spriteRect(Vector2D(relCamPos.x, relCamPos.y), parentSize.width,
+                             parentSize.height);
 
-        // Draw the sprite
-        gfx.DrawSprite(spriteTexture, spriteRect);
+        if (animatorComponent)
+        {
+            // Handling sprite sheets with Animator
+            int currentFrameIndex = animatorComponent->GetCurrentFrameIndex();
+            // TODO: get columns and rows from animator
+            int totalColumns = 8;
+            int totalRows = 3;
+            gfx.DrawSpriteSheetFrame(spriteComponent->GetSprite(), spriteRect, currentFrameIndex,
+                                     totalColumns, totalRows);
+        }
+        else
+        {
+            // Create a Texture object for the sprite
+            Texture spriteTexture(spriteComponent->GetSprite());
+
+            // Draw the sprite
+            gfx.DrawSprite(spriteTexture, spriteRect);
+        }
     }
 
     auto text = dynamic_pointer_cast<Text>(gameObject);
-    if(text) {
+    if (text)
+    {
         gfx.DrawText(*text);
     }
 
     // Draw collider shapes
-    if (CoreConstants::Debug::EnableDebug && CoreConstants::Debug::DrawColliders) {
+    if (CoreConstants::Debug::EnableDebug && CoreConstants::Debug::DrawColliders)
+    {
         auto circleColliderShape = gameObject->GetComponent<CircleCollider>();
-        if (circleColliderShape) {
+        if (circleColliderShape)
+        {
             // Draw collider
             double radius = circleColliderShape->Radius();
 
@@ -149,13 +187,15 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint, const
         }
 
         auto boxColliderShape = gameObject->GetComponent<BoxCollider>();
-        if (boxColliderShape) {
+        if (boxColliderShape)
+        {
             // Draw collider
             double width = boxColliderShape->Width();
             double height = boxColliderShape->Height();
 
             // Draw the collider shape with the correct position
-            auto shape = Rectangle(Vector2D(relCamPos.x, relCamPos.y), width * scale, height *scale);
+            auto shape =
+                Rectangle(Vector2D(relCamPos.x, relCamPos.y), width * scale, height * scale);
             shape.SetFillColor(Color::blue());
             gfx.DrawShape(shape);
         }
