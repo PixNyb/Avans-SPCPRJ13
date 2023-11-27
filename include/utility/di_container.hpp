@@ -40,7 +40,7 @@ const InstanceScope DEFAULT_INSTANCE_SCOPE = InstanceScope::Public;
 /**
  * @class DIContainer
  *
- * @brief The dependency injection container
+ * @brief The dependency injection container is used to store public or private instances.
  * @details This container is used to store private or public instances for the game dev like
  * SceneManager etc.
  * @note Refer to InstanceScope for more information about the scope of the instance.
