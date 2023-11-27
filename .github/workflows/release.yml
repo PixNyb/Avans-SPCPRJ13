@@ -1,9 +1,10 @@
-name: DeFunBobEngine Release Build
+name: CMake Release Build
 
 on:
   push:
     tags:
-      - "v*"
+      - v*
+      - v*-rc* # prereleases
 
 jobs:
   build:
@@ -36,7 +37,7 @@ jobs:
         run: ./vcpkg/vcpkg install --triplet x64-linux --feature-flags=manifests
 
       - name: Build
-        run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build && cmake --build build
+        run: cmake -DBUILD_TESTS=OFF -DBUILD_CICD=OFF -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=MinSizeRel -S . -B build && cmake --build build
 
       - name: Create SDK archives
         run: |
@@ -55,36 +56,41 @@ jobs:
       - name: Generate release body
         id: release_body
         run: |
-          release="# libDeFunBobEngine\n\n## Changelog\n"
-          release="$release$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'- %s ([%h](https://github.com/${{ github.repository }}/commit/%H))' --reverse)\n\n"
-          release="$release## Dependencies\n\n"
-          release="$release### vcpkg\n\n"
-          release="$release\`\`\`\n"
-          release="$release$(./vcpkg/vcpkg list --triplet x64-linux --feature-flags=manifests)\n"
-          release="$release\`\`\`\n\n"
-          release="$release## Build\n\n"
-          release="$release### CMake\n\n"
-          release="$release\`\`\`\n"
-          release="$release$(cmake --version)\n"
-          release="$release\`\`\`\n\n"
-          release="$release### Compiler\n\n"
-          release="$release\`\`\`\n"
-          release="$release$(g++ --version)\n"
-          release="$release\`\`\`\n\n"
-          release="$release### Build system\n\n"
-          release="$release\`\`\`\n"
-          release="$release$(uname -a)\n"
-          release="$release\`\`\`\n\n"
+          # Collect all information
+          version=$(git describe --tags --abbrev=0)
+          changelog=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'- %s ([%h](https://github.com/${{ github.repository }}/commit/%H))' --reverse)
+          vcpkg=$(vcpkg list --triplet x64-linux --feature-flags=manifests)
+          cmake=$(cmake --version)
+          compiler=$(g++ --version)
+          system=$(uname -a)
+          release=$(cat .github/release.md)
+
+          # Find and replace all values in the release.md with the actual values
+          release="${release//'%version%'/$version}"
+          release="${release//'%changelog%'/$changelog}"
+          release="${release//'%vcpkg%'/$vcpkg}"
+          release="${release//'%cmake%'/$cmake}"
+          release="${release//'%compiler%'/$compiler}"
+          release="${release//'%system%'/$system}"
+
+          # Escape all %, \n and \r characters
+          release="${release//'%'/'%25'}"
+          release="${release//$'\n'/'%0A'}"
+          release="${release//$'\r'/'%0D'}"
           echo "RELEASE_BODY=$release" >> $GITHUB_OUTPUT
 
       - name: Move and rename files
         run: |
-          mv sdk.zip release/libDeFunBobEngine-sdk.zip
-          mv sdk.zip.sha256 release/libDeFunBobEngine-sdk.zip.sha256
-          mv sdk.tar.gz release/libDeFunBobEngine-sdk.tar.gz
-          mv sdk.tar.gz.sha256 release/libDeFunBobEngine-sdk.tar.gz.sha256
-          mv build/libDeFunBobEngine.a release/libDeFunBobEngine.a
-          mv build/libDeFunBobEngine.sha256 release/libDeFunBobEngine.sha256
+          release_dir="release-${{ github.sha }}"
+          if [ ! -d "$release_dir" ] ; then
+            mkdir "$release_dir"
+          fi
+          mv sdk.zip $release_dir/libDeFunBobEngine-sdk.zip
+          mv sdk.zip.sha256 $release_dir/libDeFunBobEngine-sdk.zip.sha256
+          mv sdk.tar.gz $release_dir/libDeFunBobEngine-sdk.tar.gz
+          mv sdk.tar.gz.sha256 $release_dir/libDeFunBobEngine-sdk.tar.gz.sha256
+          mv build/libDeFunBobEngine.a $release_dir/libDeFunBobEngine.a
+          mv build/libDeFunBobEngine.sha256 $release_dir/libDeFunBobEngine.sha256
 
       - name: Create release
         uses: svenstaro/upload-release-action@v2
@@ -95,4 +101,4 @@ jobs:
             ${{ steps.release_body.outputs.RELEASE_BODY }}
           prerelease: true
           file_glob: true
-          file: release/*
+          file: release-${{ github.sha }}/*
