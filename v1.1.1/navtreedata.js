@@ -41,13 +41,7 @@ var NAVTREE =
       [ "Inhoudsopgave", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md1", null ],
       [ "Code Formatting", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md2", null ],
       [ "Bestandsstructuur", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md3", null ],
-      [ "Commentaar", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md4", null ],
-      [ "CMake-bestanden", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md5", null ],
-      [ "Bouwproces", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md6", null ],
-      [ "Testen", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md7", null ],
-      [ "Git en Versiebeheer", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md8", null ],
-      [ "Code Reviews", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md9", null ],
-      [ "Documentatie", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md10", null ]
+      [ "Commentaar", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md4", null ]
     ] ],
     [ "Hoe de Engine te gebruiken?", "md_USAGE.html", [
       [ "Window aanmaken", "md_USAGE.html#autotoc_md22", null ],
@@ -55,6 +49,8 @@ var NAVTREE =
       [ "Physics Simulatie Gebruiken", "md_USAGE.html#autotoc_md24", null ],
       [ "Input Facades", "md_USAGE.html#autotoc_md25", null ]
     ] ],
+    [ "Bug List", "bug.html", null ],
+    [ "Todo List", "todo.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -87,10 +83,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "animation__state_8cpp.html",
-"classIKeyListener.html#aa59c51d6c3b9372d038f97c00c4f45ee",
-"classThread.html#a9cadc0353934a7cca79666608c3aa76e",
-"i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a4fc963e213bba362778f5c175eb4d5ff",
-"scene__manager_8hpp.html"
+"classIKeyListener.html#a3f9fc9fb7be9d621bc7f496a0ec81968",
+"classThread.html#a5994590ea53d7b36ca9fc2bffedb8941",
+"i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a4bf945eaee26faf878a5084f745ef0c6",
+"sdl__circle_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
