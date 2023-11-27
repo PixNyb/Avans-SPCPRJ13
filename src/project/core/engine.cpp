@@ -22,7 +22,6 @@
 #include "scene_manager.hpp"
 #include "sdl_input_facade.hpp"
 #include "time.hpp"
-#include <thread>
 
 Engine *Engine::instancePtr = nullptr;
 
@@ -33,7 +32,6 @@ Engine::Engine()
     container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>());
     container.registerInstance<RenderManager>(std::make_shared<RenderManager>(),
                                               InstanceScope::Engine);
-    
     container.registerInstance<BehaviourScriptManager>(std::make_shared<BehaviourScriptManager>(),
                                                        InstanceScope::Engine);
 }

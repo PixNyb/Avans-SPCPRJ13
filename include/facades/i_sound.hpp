@@ -13,6 +13,12 @@
 #define DEFUNBOBENGINE_INCLUDE_FACADES_I_SOUND_HPP
 
 #include "i_sound_playstate.hpp"
+
+/**
+ * @brief A sound wrapper interface
+ * @details This interface is used to wrap a sound. This can be a sound from a file.
+ * This interface is used to make it possible to switch between different sound libraries.
+ */
 class ISound
 {
   public:

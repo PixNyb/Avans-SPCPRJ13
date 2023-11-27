@@ -16,9 +16,18 @@
 #include "sfml_sound.hpp"
 #include <memory>
 
+/**
+ * @brief A facade for the audio library.
+ * Creates an instance of the audio instance.
+ */
 class AudioFacade
 {
   public:
+    /**
+     * @brief Creates an instance of the audio instance.
+     * @param filePath The path to the audio file.
+     * @return A unique pointer to the audio instance.
+     */
     static std::unique_ptr<ISound> CreateAudioInstance(const std::string &filePath);
 };
 

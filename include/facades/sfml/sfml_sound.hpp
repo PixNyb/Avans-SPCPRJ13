@@ -1,7 +1,7 @@
 /**
  * @file sfml_sound.hpp
  * @author "Melvin van Bree"
- * @brief TODO
+ * @brief A file containing the SFMLSound class.
  * @version 0.1
  * @date 22/11/2023
  *
