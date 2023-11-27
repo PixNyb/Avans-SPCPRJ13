@@ -18,7 +18,6 @@
 #include <string>
 #include <vector>
 
-class GameObjectList;
 class PhysicsManager;
 
 /**
