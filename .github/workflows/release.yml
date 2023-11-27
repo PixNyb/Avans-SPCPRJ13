@@ -59,7 +59,7 @@ jobs:
           # Collect all information
           version=$(git describe --tags --abbrev=0)
           changelog=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'- %s ([%h](https://github.com/${{ github.repository }}/commit/%H))' --reverse)
-          vcpkg=$(vcpkg list --triplet x64-linux --feature-flags=manifests)
+          vcpkg_dependencies=$(vcpkg list --triplet x64-linux --feature-flags=manifests)
           cmake=$(cmake --version)
           cmake_generator=$(cmake --system-information | awk -F\" '/CMAKE_GENERATOR/ {print $2}')
           cmake_build_type=$(cmake -LH build/ | awk -F"=" '/CMAKE_BUILD_TYPE/ {print $2}')
@@ -74,7 +74,7 @@ jobs:
           # Find and replace all values in the release.md with the actual values
           release="${release//'%version%'/$version}"
           release="${release//'%changelog%'/$changelog}"
-          release="${release//'%vcpkg%'/$vcpkg}"
+          release="${release//'%vcpkg_dependencies%'/$vcpkg_dependencies}"
           release="${release//'%cmake%'/$cmake}"
           release="${release//'%cmake_generator%'/$cmake_generator}"
           release="${release//'%cmake_build_type%'/$cmake_build_type}"
@@ -108,6 +108,6 @@ jobs:
           tag: ${{ github.ref }}
           body: |
             ${{ steps.release_body.outputs.RELEASE_BODY }}
-          prerelease: true
+          prerelease: false
           file_glob: true
           file: release-${{ github.sha }}/*
