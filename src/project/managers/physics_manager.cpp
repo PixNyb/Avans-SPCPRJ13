@@ -54,3 +54,14 @@ void PhysicsManager::Wake(const std::shared_ptr<GameObject> &gameObject)
 {
     physicsFacade.Wake(gameObject);
 }
+
+void PhysicsManager::UpdateRotation(const std::shared_ptr<GameObject> &gameObject, double rotation)
+{
+    physicsFacade.UpdateRotation(gameObject, rotation);
+}
+
+void PhysicsManager::UpdateTransform(const std::shared_ptr<GameObject> &gameObject, double xPos,
+                                     double yPos)
+{
+    physicsFacade.UpdatePosition(gameObject, xPos, yPos);
+}

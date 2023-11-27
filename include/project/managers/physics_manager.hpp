@@ -91,6 +91,16 @@ class PhysicsManager
      * @param debug
      */
     void SetDebug(bool debug) { physicsFacade.DEBUG = debug; }
+
+    /**
+     * Updates the rotation of the given GameObject
+     */
+    void UpdateRotation(const std::shared_ptr<GameObject> &gameObject, double rotation);
+
+    /**
+     * Updates the position of the given GameObject
+     */
+    void UpdateTransform(const std::shared_ptr<GameObject> &gameObject, double xPos, double yPos);
 };
 
 #endif // DEFUNBOBENGINE_PHYSICS_MANAGER_HPP
