@@ -18,6 +18,11 @@
 
 class GameObject;
 
+/**
+ * @class PhysicsManager
+ * @brief This class is the link between the PhysicsFacade and the engine. The PhysicsManager
+ * contains the same functions as described in the PhysicsFacade.
+ */
 class PhysicsManager
 {
   private:
