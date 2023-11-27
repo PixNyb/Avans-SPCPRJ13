@@ -19,6 +19,11 @@
 #include <map>
 #include <memory>
 
+/**
+ * @class ContactListener
+ * @brief This class handles the contacts that occur in the b2World. When a contact comes through
+ * here the behaviour scripts of both bodies are called.
+ */
 class ContactListener : public b2ContactListener
 {
   private:
