@@ -233,5 +233,22 @@ void PhysicsFacade::Wake(const std::shared_ptr<GameObject> &gameObject)
         body->SetAwake(true);
     }
 }
+void PhysicsFacade::UpdatePosition(const std::shared_ptr<GameObject> &gameObject, double xPos,
+                                   double yPos)
+{
+    if (b2Body *body = GetBodyByObject(gameObject))
+    {
+        body->SetTransform(b2Vec2(static_cast<float>(xPos), static_cast<float>(yPos)),
+                           body->GetTransform().q.GetAngle());
+    }
+}
+void PhysicsFacade::UpdateRotation(const std::shared_ptr<GameObject> &gameObject, double rotation)
+{
+    if (b2Body *body = GetBodyByObject(gameObject))
+    {
+        body->SetTransform(b2Vec2(body->GetTransform().p.x, body->GetTransform().p.y),
+                           static_cast<float>(rotation));
+    }
+}
 
 PhysicsFacade::~PhysicsFacade() = default;

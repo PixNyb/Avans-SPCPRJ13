@@ -113,6 +113,10 @@ class PhysicsFacade
      * Gets the body by the given GameObject
      */
     b2Body *GetBodyByObject(const std::shared_ptr<GameObject> &gameObject);
+
+    void UpdatePosition(const std::shared_ptr<GameObject> &gameObject, double xPos, double yPos);
+
+    void UpdateRotation(const std::shared_ptr<GameObject> &gameObject, double rotation);
 };
 
 #endif // AVANS_SPCPRJ13_PHYSICS_FACADE_HPP
