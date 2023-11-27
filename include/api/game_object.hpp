@@ -25,6 +25,8 @@ class PhysicsManager;
  * @class GameObject
  * @brief The GameObject class represents an object in the game world.
  *
+ * @warning Should be instantiated as a shared_ptr.
+ *
  * It contains a name, a list of components, an active flag, a tag, and a layer.
  * GameObjects can be added to the game world and can have their components
  * updated and rendered.
@@ -42,7 +44,7 @@ class GameObject : public std::enable_shared_from_this<GameObject>
     int layer;                          ///< The layer of the GameObject.
     std::weak_ptr<PhysicsManager>
         physicsManager; ///< A reference to the physicsmanager for behaviorscripts
-
+    std::vector<std::shared_ptr<GameObject>> children; ///< The children of the GameObject.
   public:
     /**
      * @brief Default constructor for GameObject.
@@ -154,7 +156,13 @@ class GameObject : public std::enable_shared_from_this<GameObject>
      * @brief Set the parent of the GameObject.
      * @param parent The new parent of the GameObject.
      */
-    void SetParent(std::shared_ptr<GameObject> parent) { this->parent = parent; }
+    void SetParent(std::shared_ptr<GameObject> newParent);
+
+    /**
+     * @brief Get the children of the GameObject.
+     * @return The children of the GameObject.
+     */
+    std::vector<std::shared_ptr<GameObject>> GetChildren() const { return children; }
 
     /**
      * @brief Check if the GameObject is active.
