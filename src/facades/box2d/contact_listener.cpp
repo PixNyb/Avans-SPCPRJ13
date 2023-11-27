@@ -27,10 +27,6 @@ void ContactListener::BeginContact(b2Contact *contact)
     auto bodyB = contact->GetFixtureB()->GetBody();
     std::shared_ptr<GameObject> gameObjectA = FindGameObject(bodyA);
     std::shared_ptr<GameObject> gameObjectB = FindGameObject(bodyB);
-    std::string tag1 = gameObjectA->GetName();
-    std::string tag2 = gameObjectB->GetName();
-
-    std::cout << tag1 << " is touching " << tag2 << std::endl;
 
     // activate the OnTriggerEnter2D() from behavior script on both sides
     for (auto &script : gameObjectA->GetComponents<BehaviourScript>())
@@ -55,10 +51,6 @@ void ContactListener::EndContact(b2Contact *contact)
     auto bodyB = contact->GetFixtureB()->GetBody();
     std::shared_ptr<GameObject> gameObjectA = FindGameObject(bodyA);
     std::shared_ptr<GameObject> gameObjectB = FindGameObject(bodyB);
-    std::string tag1 = gameObjectA->GetName();
-    std::string tag2 = gameObjectB->GetName();
-
-    std::cout << tag1 << " stopped touching " << tag2 << std::endl;
 
     // activate the OnTriggerExit2D() from behavior script on both sides
     for (auto &script : gameObjectA->GetComponents<BehaviourScript>())
@@ -82,7 +74,9 @@ ContactListener::ContactListener(std::map<std::shared_ptr<GameObject>, b2Body *>
     this->gameObjects = std::move(gameObjects);
 }
 
-std::shared_ptr<GameObject> ContactListener::FindGameObject(b2Body *body) {
-    auto it = std::find_if(gameObjects.begin(), gameObjects.end(), [body](const auto &pair) { return pair.second == body; });
+std::shared_ptr<GameObject> ContactListener::FindGameObject(b2Body *body)
+{
+    auto it = std::find_if(gameObjects.begin(), gameObjects.end(),
+                           [body](const auto &pair) { return pair.second == body; });
     return (it != gameObjects.end()) ? it->first : nullptr;
 }

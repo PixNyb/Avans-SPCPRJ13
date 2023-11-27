@@ -176,6 +176,7 @@ b2Body *PhysicsFacade::GetBodyByObject(const std::shared_ptr<GameObject> &gameOb
             pair.first->GetTransform().position.y == gameObject->GetTransform().position.y)
             return pair.second;
     }
+    return nullptr;
 }
 
 void PhysicsFacade::DestroyBody(const std::shared_ptr<GameObject> &gameObject)

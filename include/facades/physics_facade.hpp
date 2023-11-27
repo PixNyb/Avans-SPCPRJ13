@@ -5,6 +5,14 @@
  * @version 0.1
  * @date 2023-11-08
  *
+ * The PhysicsFacade is responsible for all physics related logic. It gives the engine the tools to
+ * simulate bodies in the game in a realistic manner. This class supports the following
+ * functionalities:
+ *  Creating a physics world
+ *  Simulating the created physics world
+ *  Adding and removing bodies to and from the physics world
+ *  Updating the various properties of bodies in the physics world
+ *
  * @copyright Copyright (c) 2023
  *
  */

@@ -13,12 +13,11 @@
 #ifndef DEFUNBOBENGINE_CONTACTLISTENER_HPP
 #define DEFUNBOBENGINE_CONTACTLISTENER_HPP
 
-#include "box2d/b2_contact.h"
-#include "box2d/b2_world_callbacks.h"
 #include "game_object.hpp"
+#include <box2d/b2_contact.h>
+#include <box2d/b2_world_callbacks.h>
 #include <map>
 #include <memory>
-#include <vector>
 
 class ContactListener : public b2ContactListener
 {
@@ -54,7 +53,7 @@ class ContactListener : public b2ContactListener
     /**
      * Finds the gameobject with a b2body
      */
-     std::shared_ptr<GameObject> FindGameObject(b2Body* body);
+    std::shared_ptr<GameObject> FindGameObject(b2Body *body);
 };
 
 #endif // DEFUNBOBENGINE_CONTACTLISTENER_HPP

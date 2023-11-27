@@ -12,9 +12,9 @@
 #ifndef DEFUNBOBENGINE_PHYSICS_MANAGER_HPP
 #define DEFUNBOBENGINE_PHYSICS_MANAGER_HPP
 
-#include "memory"
 #include "physics_facade.hpp"
-#include "vector"
+#include <memory>
+#include <vector>
 
 class GameObject;
 
