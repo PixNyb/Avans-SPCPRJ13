@@ -1,5 +1,3 @@
-# DeFunBobEngine %version%
-
 ## Changelog
 
 %changelog%
@@ -9,7 +7,17 @@
 ### vcpkg
 
 ```
-%vcpkg%
+%vcpkg_dependencies%
+```
+
+### System
+
+```
+libudev-dev
+libx11-dev
+libxrandr-dev
+libxcursor-dev
+libgl1-mesa-dev
 ```
 
 ## Build info
