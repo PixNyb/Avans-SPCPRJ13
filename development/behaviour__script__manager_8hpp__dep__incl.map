@@ -1,5 +1,5 @@
 <map id="include/project/managers/behaviour_script_manager.hpp" name="include/project/managers/behaviour_script_manager.hpp">
-<area shape="rect" id="node1" title="TODO." alt="" coords="108,5,335,47"/>
+<area shape="rect" id="node1" title="A file containing the BehaviourScriptManager class." alt="" coords="108,5,335,47"/>
 <area shape="rect" id="node2" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="5,102,203,129"/>
 <area shape="rect" id="node3" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="227,95,453,136"/>
 </map>
