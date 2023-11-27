@@ -61,6 +61,12 @@ jobs:
           changelog=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'- %s ([%h](https://github.com/${{ github.repository }}/commit/%H))' --reverse)
           vcpkg=$(vcpkg list --triplet x64-linux --feature-flags=manifests)
           cmake=$(cmake --version)
+          cmake_generator=$(cmake --system-information | awk -F\" '/CMAKE_GENERATOR/ {print $2}')
+          cmake_build_type=$(cmake -LH build/ | awk -F"=" '/CMAKE_BUILD_TYPE/ {print $2}')
+          cmake_toolset=$(cmake -LH build/ | awk -F"=" '/CMAKE_GENERATOR_TOOLSET/ {print $2}')
+          if [ -z "$cmake_toolset" ] ; then
+            cmake_toolset="default"
+          fi
           compiler=$(g++ --version)
           system=$(uname -a)
           release=$(cat .github/release.md)
@@ -70,6 +76,9 @@ jobs:
           release="${release//'%changelog%'/$changelog}"
           release="${release//'%vcpkg%'/$vcpkg}"
           release="${release//'%cmake%'/$cmake}"
+          release="${release//'%cmake_generator%'/$cmake_generator}"
+          release="${release//'%cmake_build_type%'/$cmake_build_type}"
+          release="${release//'%cmake_toolset%'/$cmake_toolset}"
           release="${release//'%compiler%'/$compiler}"
           release="${release//'%system%'/$system}"
 
