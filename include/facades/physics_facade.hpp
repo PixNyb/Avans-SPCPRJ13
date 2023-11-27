@@ -37,7 +37,7 @@ class PhysicsFacade
     std::unique_ptr<b2World> world; ////< The world in which the bodies can move.
 
     /**
-     * Creates a shape on a body through a fixture
+     * @brief Creates a shape on a body through a fixture
      * @param body the body that the fixture is placed on
      * @param shape the shape you want to add to the body
      * @param rigidBody the rigidbody of the gameobject/body this fixture will belong to
@@ -48,17 +48,17 @@ class PhysicsFacade
 
   public:
     /**
-     * Determines whether the debug mode should be active
+     * @brief Determines whether the debug mode should be active
      */
     bool DEBUG;
 
     /**
-     * Constructs a physicsfacade
+     * @brief Constructs a physicsfacade
      */
     PhysicsFacade();
 
     /**
-     * Destructs a physicsfacade
+     * @brief Destructs a physicsfacade
      */
     ~PhysicsFacade();
 
@@ -101,13 +101,13 @@ class PhysicsFacade
     void Step();
 
     /**
-     * Sets the given gameobject to sleep
+     * @brief Sets the given gameobject to sleep
      * @param gameObject the gameobject that is set asleep
      */
     void Sleep(const std::shared_ptr<GameObject> &gameObject);
 
     /**
-     * Sets the given gameobject to wake up
+     * @brief Sets the given gameobject to wake up
      * @param gameObject the gameobject that is set awake
      */
     void Wake(const std::shared_ptr<GameObject> &gameObject);
@@ -118,12 +118,24 @@ class PhysicsFacade
     void ShowDebug();
 
     /**
-     * Gets the body by the given GameObject
+     * @brief Gets the body by the given GameObject
      */
     b2Body *GetBodyByObject(const std::shared_ptr<GameObject> &gameObject);
 
+    /**
+     * @brief Updates the position of a body inside the b2World. WARNING setting a body to a certain
+     * position where other bodies are located behavior can be unexpected
+     * @param gameObject the gameobject that changed its position
+     * @param xPos x-axis position
+     * @param yPos y-axis position
+     */
     void UpdatePosition(const std::shared_ptr<GameObject> &gameObject, double xPos, double yPos);
 
+    /**
+     * @brief Sets the rotation of a body inside the b2World
+     * @param gameObject the gameobject that changed its rotation
+     * @param rotation the amount of rotation to be applied
+     */
     void UpdateRotation(const std::shared_ptr<GameObject> &gameObject, double rotation);
 };
 
