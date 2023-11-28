@@ -15,11 +15,11 @@
 #include "game_object.hpp"
 #include <SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
-#include <box2d/box2d.h>
 
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
-const double PixelScale = 0.5;
+const double MeterToPixel = 5;
+const double PixelToMeter = 1 / MeterToPixel;
 
 SDL_Window *window;
 SDL_Renderer *renderer;
@@ -49,18 +49,17 @@ void DebugRenderer::CloseSDL()
     SDL_Quit();
 }
 
-void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body *body)
+void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject)
 {
-    b2Vec2 position(static_cast<float>(body->GetPosition().x),
-                    static_cast<float>(body->GetPosition().y));
-
+    b2Vec2 position(static_cast<float>(gameObject->GetTransform().position.x),
+                    static_cast<float>(gameObject->GetTransform().position.y));
     int sdlX;
     int sdlY;
 
     for (const auto &boxCollider : gameObject->GetComponents<BoxCollider>())
     {
         sdlX = static_cast<int>(position.x);
-        sdlY = SCREEN_HEIGHT - static_cast<int>(position.y + boxCollider->Height());
+        sdlY = SCREEN_HEIGHT - static_cast<int>(position.y);
         SDL_Rect boxRect;
         boxRect.x = sdlX;
         boxRect.y = sdlY;
@@ -72,8 +71,8 @@ void DebugRenderer::RenderShapes(std::shared_ptr<GameObject> gameObject, b2Body 
 
     for (const auto &circleCollider : gameObject->GetComponents<CircleCollider>())
     {
-        sdlX = static_cast<int>(position.x + circleCollider->Radius() * 2);
-        sdlY = SCREEN_HEIGHT - static_cast<int>(position.y + circleCollider->Radius());
+        sdlX = static_cast<int>(position.x);
+        sdlY = SCREEN_HEIGHT - static_cast<int>(position.y);
         filledCircleRGBA(renderer, sdlX, sdlY, circleCollider->Radius(), 0, 255, 0, 255);
     }
 }
@@ -85,7 +84,7 @@ void DebugRenderer::Render(std::map<std::shared_ptr<GameObject>, b2Body *> &bodi
 
     for (auto const &item : bodies)
     {
-        RenderShapes(item.first, item.second);
+        RenderShapes(item.first);
     }
 
     SDL_RenderPresent(renderer);

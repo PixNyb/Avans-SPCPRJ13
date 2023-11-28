@@ -35,6 +35,10 @@ class Time
     static double timeScale;     ///< The time scale of the game
 
   public:
+    /**
+     * @brief Starts a new frame
+     * @details This function should be called at the start of every frame
+     */
     static void StartFrame();
 
     /**
