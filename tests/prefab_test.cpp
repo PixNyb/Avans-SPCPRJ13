@@ -8,7 +8,7 @@ class PrefabManagerStub : public PrefabManager {
         return this->prefabs;
     }
 
-    void InsertPrefab(std::pair<std::string, GameObject> value)
+    void InsertPrefab(const std::pair<std::string, GameObject>& value)
     {
         this->prefabs.insert(value);
     }
