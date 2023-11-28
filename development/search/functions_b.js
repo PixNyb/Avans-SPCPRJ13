@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['magenta_739',['Magenta',['../classColor.html#acf86fbf11116a0d956b52b8e8762b285',1,'Color']]],
-  ['makebody_740',['MakeBody',['../classPhysicsFacade.html#a947492ef0668e4d01de02986d7a13b31',1,'PhysicsFacade']]]
+  ['magenta_767',['Magenta',['../classColor.html#acf86fbf11116a0d956b52b8e8762b285',1,'Color']]],
+  ['makebody_768',['MakeBody',['../classPhysicsFacade.html#a947492ef0668e4d01de02986d7a13b31',1,'PhysicsFacade']]]
 ];

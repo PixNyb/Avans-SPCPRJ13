@@ -24,6 +24,7 @@ var classGameObject =
     [ "SetLayer", "classGameObject.html#a9d77f9c92686dacd0bccb5cb9f2aeac8", null ],
     [ "SetName", "classGameObject.html#aeb05cfeea5008cffef2012ed763a7db8", null ],
     [ "SetParent", "classGameObject.html#a5a81173374609fb49d242b3fba50b436", null ],
+    [ "SetPhysicsManager", "classGameObject.html#a76ad5e654b86341fe54827b326e9666d", null ],
     [ "SetTag", "classGameObject.html#a2121c39612440691843dd8bf7d64d452", null ],
     [ "SetTransform", "classGameObject.html#a0aa1842e6bcd14add28cb71347d6ca5d", null ],
     [ "active", "classGameObject.html#afa3bf48882a927f94a6d922045a435e0", null ],
@@ -32,6 +33,7 @@ var classGameObject =
     [ "layer", "classGameObject.html#a77b865c8396028f6250dcff11aa76421", null ],
     [ "name", "classGameObject.html#af542b33c8de269343e22c5629e6b66c0", null ],
     [ "parent", "classGameObject.html#aae2ba1fd3e39a32f1de627c2c39b4ae2", null ],
+    [ "physicsManager", "classGameObject.html#a3ffdc01e5ce90678c2008a01fbdf3b20", null ],
     [ "tag", "classGameObject.html#a66891b8bfd67373dde0155ae7808bbb4", null ],
     [ "transform", "classGameObject.html#ad2de7705e8d1d7b5d0014448dd13f99a", null ]
 ];

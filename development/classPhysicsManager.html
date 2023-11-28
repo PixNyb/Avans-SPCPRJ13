@@ -92,6 +92,11 @@ $(document).ready(function(){initNavTree('classPhysicsManager.html',''); initRes
 <div class="title">PhysicsManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class is the link between the <a class="el" href="classPhysicsFacade.html" title="The PhysicsFacade is responsible for all physics related logic. It gives the engine the tools to simu...">PhysicsFacade</a> and the engine. The <a class="el" href="classPhysicsManager.html" title="This class is the link between the PhysicsFacade and the engine. The PhysicsManager contains the same...">PhysicsManager</a> contains the same functions as described in the <a class="el" href="classPhysicsFacade.html" title="The PhysicsFacade is responsible for all physics related logic. It gives the engine the tools to simu...">PhysicsFacade</a>.  
+ <a href="classPhysicsManager.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="physics__manager_8hpp_source.html">physics_manager.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -103,8 +108,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af83e47b4ab0a5c4cb9a5efeba37c140b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88141ec6c6659ceb1064fed10dfe5247"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsManager.html#a88141ec6c6659ceb1064fed10dfe5247">AddForce</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject, float vx, float vy)</td></tr>
 <tr class="separator:a88141ec6c6659ceb1064fed10dfe5247"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43d0d8fcf59ea08e77a955e13fdc7201"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsManager.html#a43d0d8fcf59ea08e77a955e13fdc7201">AddRotation</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject, float amount)</td></tr>
-<tr class="separator:a43d0d8fcf59ea08e77a955e13fdc7201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29237517567cead618d1bcad777aaeae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsManager.html#a29237517567cead618d1bcad777aaeae">AddLinearImpulse</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject, float vx, float vy)</td></tr>
+<tr class="separator:a29237517567cead618d1bcad777aaeae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8964341467bd13fe775ee2036a0ab373"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsManager.html#a8964341467bd13fe775ee2036a0ab373">AddRotationalForce</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject, float amount)</td></tr>
+<tr class="separator:a8964341467bd13fe775ee2036a0ab373"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdc804abce59b430aff972e6035e8b41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsManager.html#acdc804abce59b430aff972e6035e8b41">Step</a> ()</td></tr>
 <tr class="separator:acdc804abce59b430aff972e6035e8b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18628203aba0b2358126d431d2ab52dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsManager.html#a18628203aba0b2358126d431d2ab52dd">Sleep</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject)</td></tr>
@@ -113,8 +120,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8b524e357b7449555268a74c3059f0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a239788fa1c137c6e6ba1bb90f9e3c6c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsManager.html#a239788fa1c137c6e6ba1bb90f9e3c6c7">SetDebug</a> (bool debug)</td></tr>
 <tr class="separator:a239788fa1c137c6e6ba1bb90f9e3c6c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e51c3c6c42160803d1d92ac0d4f0db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsManager.html#a92e51c3c6c42160803d1d92ac0d4f0db">UpdateRotation</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject, double rotation)</td></tr>
+<tr class="separator:a92e51c3c6c42160803d1d92ac0d4f0db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac23633292472fe9019e95b0fff499e7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsManager.html#ac23633292472fe9019e95b0fff499e7c">UpdatePosition</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject, double xPos, double yPos)</td></tr>
+<tr class="separator:ac23633292472fe9019e95b0fff499e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class is the link between the <a class="el" href="classPhysicsFacade.html" title="The PhysicsFacade is responsible for all physics related logic. It gives the engine the tools to simu...">PhysicsFacade</a> and the engine. The <a class="el" href="classPhysicsManager.html" title="This class is the link between the PhysicsFacade and the engine. The PhysicsManager contains the same...">PhysicsManager</a> contains the same functions as described in the <a class="el" href="classPhysicsFacade.html" title="The PhysicsFacade is responsible for all physics related logic. It gives the engine the tools to simu...">PhysicsFacade</a>. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a88141ec6c6659ceb1064fed10dfe5247"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a88141ec6c6659ceb1064fed10dfe5247">&#9670;&nbsp;</a></span>AddForce()</h2>
 
@@ -157,14 +170,56 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a43d0d8fcf59ea08e77a955e13fdc7201"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43d0d8fcf59ea08e77a955e13fdc7201">&#9670;&nbsp;</a></span>AddRotation()</h2>
+<a id="a29237517567cead618d1bcad777aaeae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29237517567cead618d1bcad777aaeae">&#9670;&nbsp;</a></span>AddLinearImpulse()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PhysicsManager::AddRotation </td>
+          <td class="memname">void PhysicsManager::AddLinearImpulse </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>gameObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>vx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>vy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a linear impulse to a gameobject (will allways create a force on the center of the body) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gameObject</td><td>is the object the force will be added to </td></tr>
+    <tr><td class="paramname">vx</td><td>horizontal velocity </td></tr>
+    <tr><td class="paramname">vy</td><td>vertical velocity </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8964341467bd13fe775ee2036a0ab373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8964341467bd13fe775ee2036a0ab373">&#9670;&nbsp;</a></span>AddRotationalForce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhysicsManager::AddRotationalForce </td>
           <td>(</td>
           <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>gameObject</em>, </td>
@@ -182,7 +237,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adds a rotation to a gameobject (will also apply the rotation on the center an is clockwise when amount is positive) </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Adds a rotation to a gameobject (will also apply the rotation on the center and is clockwise when amount is positive) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gameObject</td><td>is the object the rotation will be added to </td></tr>
     <tr><td class="paramname">amount</td><td>the speed at which the object should spin </td></tr>
@@ -335,6 +390,70 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Simulates the world for 1 step </p>
+
+</div>
+</div>
+<a id="ac23633292472fe9019e95b0fff499e7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac23633292472fe9019e95b0fff499e7c">&#9670;&nbsp;</a></span>UpdatePosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhysicsManager::UpdatePosition </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>gameObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>xPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>yPos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Updates the position of the given <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> </p>
+
+</div>
+</div>
+<a id="a92e51c3c6c42160803d1d92ac0d4f0db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92e51c3c6c42160803d1d92ac0d4f0db">&#9670;&nbsp;</a></span>UpdateRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhysicsManager::UpdateRotation </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>gameObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rotation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Updates the rotation of the given <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> </p>
 
 </div>
 </div>

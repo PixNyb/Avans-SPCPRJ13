@@ -105,25 +105,26 @@ $(document).ready(function(){initNavTree('time_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> timeScale;     </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> StartFrame();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    [[nodiscard]] <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classTime.html#af28c366e8a548e86a7cf428460bbee80">GetElapsedTimeSinceFrameStart</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    [[nodiscard]] <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classTime.html#a5cecf47408221c22b81942d77cdd9e7f">GetTotalTime</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    [[nodiscard]] <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classTime.html#a1583b57ec8d94794e74fb71068c5caf4">GetDeltaTime</a>();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classTime.html#a07ad3186e0359655b3b4c5f63c0345a9">TimeScale</a>();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classTime.html#a07ad3186e0359655b3b4c5f63c0345a9">TimeScale</a>(<span class="keywordtype">double</span> newTimeScale);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_TIME_HPP</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classTime.html#a77ffd09874d2a4d1a1f0b03535188213">StartFrame</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    [[nodiscard]] <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classTime.html#af28c366e8a548e86a7cf428460bbee80">GetElapsedTimeSinceFrameStart</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    [[nodiscard]] <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classTime.html#a5cecf47408221c22b81942d77cdd9e7f">GetTotalTime</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    [[nodiscard]] <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classTime.html#a1583b57ec8d94794e74fb71068c5caf4">GetDeltaTime</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classTime.html#a07ad3186e0359655b3b4c5f63c0345a9">TimeScale</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classTime.html#a07ad3186e0359655b3b4c5f63c0345a9">TimeScale</a>(<span class="keywordtype">double</span> newTimeScale);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_TIME_HPP</span></div>
 <div class="ttc" id="aclassTime_html"><div class="ttname"><a href="classTime.html">Time</a></div><div class="ttdoc">Represents game time, providing static methods to access and manipulate it.</div><div class="ttdef"><b>Definition:</b> time.hpp:29</div></div>
-<div class="ttc" id="aclassTime_html_a07ad3186e0359655b3b4c5f63c0345a9"><div class="ttname"><a href="classTime.html#a07ad3186e0359655b3b4c5f63c0345a9">Time::TimeScale</a></div><div class="ttdeci">static double TimeScale()</div><div class="ttdoc">The scale at which time passes.</div><div class="ttdef"><b>Definition:</b> time.cpp:42</div></div>
-<div class="ttc" id="aclassTime_html_a1583b57ec8d94794e74fb71068c5caf4"><div class="ttname"><a href="classTime.html#a1583b57ec8d94794e74fb71068c5caf4">Time::GetDeltaTime</a></div><div class="ttdeci">static double GetDeltaTime()</div><div class="ttdoc">Gets the time between the previous frame and the current frame.</div><div class="ttdef"><b>Definition:</b> time.cpp:31</div></div>
+<div class="ttc" id="aclassTime_html_a07ad3186e0359655b3b4c5f63c0345a9"><div class="ttname"><a href="classTime.html#a07ad3186e0359655b3b4c5f63c0345a9">Time::TimeScale</a></div><div class="ttdeci">static double TimeScale()</div><div class="ttdoc">The scale at which time passes.</div><div class="ttdef"><b>Definition:</b> time.cpp:44</div></div>
+<div class="ttc" id="aclassTime_html_a1583b57ec8d94794e74fb71068c5caf4"><div class="ttname"><a href="classTime.html#a1583b57ec8d94794e74fb71068c5caf4">Time::GetDeltaTime</a></div><div class="ttdeci">static double GetDeltaTime()</div><div class="ttdoc">Gets the time between the previous frame and the current frame.</div><div class="ttdef"><b>Definition:</b> time.cpp:33</div></div>
 <div class="ttc" id="aclassTime_html_a5cecf47408221c22b81942d77cdd9e7f"><div class="ttname"><a href="classTime.html#a5cecf47408221c22b81942d77cdd9e7f">Time::GetTotalTime</a></div><div class="ttdeci">static double GetTotalTime()</div><div class="ttdoc">Gets the total time since the start of the timer.</div><div class="ttdef"><b>Definition:</b> time.cpp:21</div></div>
-<div class="ttc" id="aclassTime_html_af28c366e8a548e86a7cf428460bbee80"><div class="ttname"><a href="classTime.html#af28c366e8a548e86a7cf428460bbee80">Time::GetElapsedTimeSinceFrameStart</a></div><div class="ttdeci">static double GetElapsedTimeSinceFrameStart()</div><div class="ttdoc">Gets the current elapsed time since the start of the frame.</div><div class="ttdef"><b>Definition:</b> time.cpp:26</div></div>
+<div class="ttc" id="aclassTime_html_a77ffd09874d2a4d1a1f0b03535188213"><div class="ttname"><a href="classTime.html#a77ffd09874d2a4d1a1f0b03535188213">Time::StartFrame</a></div><div class="ttdeci">static void StartFrame()</div><div class="ttdoc">Starts a new frame.</div><div class="ttdef"><b>Definition:</b> time.cpp:35</div></div>
+<div class="ttc" id="aclassTime_html_af28c366e8a548e86a7cf428460bbee80"><div class="ttname"><a href="classTime.html#af28c366e8a548e86a7cf428460bbee80">Time::GetElapsedTimeSinceFrameStart</a></div><div class="ttdeci">static double GetElapsedTimeSinceFrameStart()</div><div class="ttdoc">Gets the current elapsed time since the start of the frame.</div><div class="ttdef"><b>Definition:</b> time.cpp:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

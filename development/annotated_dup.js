@@ -13,6 +13,7 @@ var annotated_dup =
     [ "Collider", "classCollider.html", null ],
     [ "Color", "classColor.html", "classColor" ],
     [ "Component", "classComponent.html", "classComponent" ],
+    [ "ContactListener", "classContactListener.html", "classContactListener" ],
     [ "DebugRenderer", "classDebugRenderer.html", "classDebugRenderer" ],
     [ "DIContainer", "classDIContainer.html", "classDIContainer" ],
     [ "Engine", "classEngine.html", "classEngine" ],

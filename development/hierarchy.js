@@ -1,6 +1,9 @@
 var hierarchy =
 [
     [ "AnimationState", "classAnimationState.html", null ],
+    [ "b2ContactListener", null, [
+      [ "ContactListener", "classContactListener.html", null ]
+    ] ],
     [ "BehaviourScriptManager", "classBehaviourScriptManager.html", null ],
     [ "Color", "classColor.html", null ],
     [ "Component", "classComponent.html", [

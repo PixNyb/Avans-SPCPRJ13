@@ -96,7 +96,8 @@ Window aanmaken</h1>
 <p>TODO: Verder uitwerken als straks alles op zijn plek staat (woensdag)</p>
 <h1><a class="anchor" id="autotoc_md24"></a>
 Level format</h1>
-<p>Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief. De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de <a class="el" href="classPrefabManager.html">PrefabManager</a>. Hier worden vervolgens name, tag, active, layer, transform en children nog bij gedefinieert. In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </p><div class="fragment"><div class="line">{</div>
+<p>Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief. De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de <a class="el" href="classPrefabManager.html">PrefabManager</a>. Hier worden vervolgens name, tag, active, layer, transform en children nog bij gedefinieert. In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>.</p>
+<div class="fragment"><div class="line">{</div>
 <div class="line">  &quot;objects&quot;: [</div>
 <div class="line">    {</div>
 <div class="line">      &quot;prefab&quot;: &quot;Character&quot;,</div>
@@ -193,10 +194,18 @@ Input Facades</h1>
 <div class="line"><span class="keywordflow">if</span> (inputFacade-&gt;GetAction(<span class="stringliteral">&quot;jump&quot;</span>)) {</div>
 <div class="line">    <span class="comment">// Jump!</span></div>
 <div class="line">}</div>
-<div class="ttc" id="aclassEngine_html_aab953f155f37bc03fe78de7cb4dbf721"><div class="ttname"><a href="classEngine.html#aab953f155f37bc03fe78de7cb4dbf721">Engine::GetInstance</a></div><div class="ttdeci">static Engine * GetInstance()</div><div class="ttdoc">Gets the instance of the engine.</div><div class="ttdef"><b>Definition:</b> engine.cpp:110</div></div>
+<div class="ttc" id="aclassEngine_html_aab953f155f37bc03fe78de7cb4dbf721"><div class="ttname"><a href="classEngine.html#aab953f155f37bc03fe78de7cb4dbf721">Engine::GetInstance</a></div><div class="ttdeci">static Engine * GetInstance()</div><div class="ttdoc">Gets the instance of the engine.</div><div class="ttdef"><b>Definition:</b> engine.cpp:113</div></div>
 <div class="ttc" id="aclassEngine_html_ab11c947aee16bee63bc9c1105f72dd43"><div class="ttname"><a href="classEngine.html#ab11c947aee16bee63bc9c1105f72dd43">Engine::Get</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; Get()</div><div class="ttdoc">Gets a public available instance (like SceneManager)</div><div class="ttdef"><b>Definition:</b> engine.hpp:68</div></div>
 <div class="ttc" id="aclassIInputFacade_html"><div class="ttname"><a href="classIInputFacade.html">IInputFacade</a></div><div class="ttdoc">The IInputFacade interface defines the methods that a concrete input facade must implement.</div><div class="ttdef"><b>Definition:</b> i_input_facade.hpp:282</div></div>
 <div class="ttc" id="aclassIInputFacade_html_a902b38964dca1cb6d34e55dab215481f"><div class="ttname"><a href="classIInputFacade.html#a902b38964dca1cb6d34e55dab215481f">IInputFacade::RegisterAction</a></div><div class="ttdeci">virtual void RegisterAction(const std::string &amp;action)=0</div><div class="ttdoc">Register an action with the input system.</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md27"></a>
+Contact listeners &amp; Behaviour Scripts</h1>
+<p>De contactlistener in de physicsfacade zorgt ervoor dat alle contacts worden afgevangen en sturen een signaal naar de behaviorscripts dat er een contactmoment is begonnen, eindigt of bezig is. Het enige waar de maker van de behaviorscripts rekening mee moet houden is het schrijven van de juiste calls naar de physics manager of andere managers. Hieronder staan de methodes van de behaviorscripts die aangeroepen worden in de contactlistener</p>
+<div class="fragment"><div class="line">void ColliderBehaviorTest::OnTriggerEnter2D(const Collider &amp;collider) {}</div>
+<div class="line"> </div>
+<div class="line">void ColliderBehaviorTest::OnTriggerExit2D(const Collider &amp;collider) {}</div>
+<div class="line"> </div>
+<div class="line">void ColliderBehaviorTest::OnTriggerStay2D(const Collider &amp;collider) {}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

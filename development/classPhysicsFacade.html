@@ -93,9 +93,22 @@ $(document).ready(function(){initNavTree('classPhysicsFacade.html',''); initResi
 <div class="title">PhysicsFacade Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="classPhysicsFacade.html" title="The PhysicsFacade is responsible for all physics related logic. It gives the engine the tools to simu...">PhysicsFacade</a> is responsible for all physics related logic. It gives the engine the tools to simulate bodies in the game in a realistic manner.  
+ <a href="classPhysicsFacade.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="physics__facade_8hpp_source.html">physics_facade.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a560e69df94f6f55dfb1b560510e6b1e1"><td class="memItemLeft" align="right" valign="top"><a id="a560e69df94f6f55dfb1b560510e6b1e1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#a560e69df94f6f55dfb1b560510e6b1e1">PhysicsFacade</a> ()</td></tr>
+<tr class="memdesc:a560e69df94f6f55dfb1b560510e6b1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a physicsfacade. <br /></td></tr>
+<tr class="separator:a560e69df94f6f55dfb1b560510e6b1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77a8bc8eb762008b176ad8ecb7a8debf"><td class="memItemLeft" align="right" valign="top"><a id="a77a8bc8eb762008b176ad8ecb7a8debf"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#a77a8bc8eb762008b176ad8ecb7a8debf">~PhysicsFacade</a> ()</td></tr>
+<tr class="memdesc:a77a8bc8eb762008b176ad8ecb7a8debf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs a physicsfacade. <br /></td></tr>
+<tr class="separator:a77a8bc8eb762008b176ad8ecb7a8debf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a947492ef0668e4d01de02986d7a13b31"><td class="memItemLeft" align="right" valign="top"><a id="a947492ef0668e4d01de02986d7a13b31"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#a947492ef0668e4d01de02986d7a13b31">MakeBody</a> (std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; gameObject)</td></tr>
 <tr class="memdesc:a947492ef0668e4d01de02986d7a13b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a body from a gameobject. <br /></td></tr>
@@ -112,6 +125,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#ab9d465cfe08ee77bd1cbc348173d98b4">AddForce</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject, float vx, float vy)</td></tr>
 <tr class="memdesc:ab9d465cfe08ee77bd1cbc348173d98b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a force to an object can be used for jumping or boosts in speed. <br /></td></tr>
 <tr class="separator:ab9d465cfe08ee77bd1cbc348173d98b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0320619c0f972d115693ecaa4e553f0"><td class="memItemLeft" align="right" valign="top"><a id="ac0320619c0f972d115693ecaa4e553f0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#ac0320619c0f972d115693ecaa4e553f0">AddLinearImpulse</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject, float vx, float vy)</td></tr>
+<tr class="memdesc:ac0320619c0f972d115693ecaa4e553f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a linear impulse to an object can be used for jumping or boosts in speed. <br /></td></tr>
+<tr class="separator:ac0320619c0f972d115693ecaa4e553f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ca19da6bfe088a4862f08c3e1ba3c3"><td class="memItemLeft" align="right" valign="top"><a id="a83ca19da6bfe088a4862f08c3e1ba3c3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#a83ca19da6bfe088a4862f08c3e1ba3c3">AddRotation</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject, float amount)</td></tr>
 <tr class="memdesc:a83ca19da6bfe088a4862f08c3e1ba3c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a force to an object can be used for jumping or boosts in speed. <br /></td></tr>
@@ -121,20 +138,37 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a1a7b85a075e5ad1caa2fad8e43c9a142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the step function on the b2World. <br /></td></tr>
 <tr class="separator:a1a7b85a075e5ad1caa2fad8e43c9a142"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a722dac0efc564efb5c7d972b9d6d98d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#a722dac0efc564efb5c7d972b9d6d98d9">Sleep</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject)</td></tr>
+<tr class="memdesc:a722dac0efc564efb5c7d972b9d6d98d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the given gameobject to sleep.  <a href="classPhysicsFacade.html#a722dac0efc564efb5c7d972b9d6d98d9">More...</a><br /></td></tr>
 <tr class="separator:a722dac0efc564efb5c7d972b9d6d98d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf3ed6a9de65cc7346182cb6abd18ff4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#abf3ed6a9de65cc7346182cb6abd18ff4">Wake</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject)</td></tr>
+<tr class="memdesc:abf3ed6a9de65cc7346182cb6abd18ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the given gameobject to wake up.  <a href="classPhysicsFacade.html#abf3ed6a9de65cc7346182cb6abd18ff4">More...</a><br /></td></tr>
 <tr class="separator:abf3ed6a9de65cc7346182cb6abd18ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9bca83d7c28bf066790bdcfda189c54"><td class="memItemLeft" align="right" valign="top"><a id="af9bca83d7c28bf066790bdcfda189c54"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#af9bca83d7c28bf066790bdcfda189c54">ShowDebug</a> ()</td></tr>
 <tr class="memdesc:af9bca83d7c28bf066790bdcfda189c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate all bodies in the b2World in a window. <br /></td></tr>
 <tr class="separator:af9bca83d7c28bf066790bdcfda189c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a074951df937e15be2bd37a262f8c3c5f"><td class="memItemLeft" align="right" valign="top"><a id="a074951df937e15be2bd37a262f8c3c5f"></a>
+b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#a074951df937e15be2bd37a262f8c3c5f">GetBodyByObject</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject)</td></tr>
+<tr class="memdesc:a074951df937e15be2bd37a262f8c3c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the body by the given <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. <br /></td></tr>
+<tr class="separator:a074951df937e15be2bd37a262f8c3c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9502fa90e63fea5718059766c08daef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#ac9502fa90e63fea5718059766c08daef">UpdatePosition</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject, double xPos, double yPos)</td></tr>
+<tr class="memdesc:ac9502fa90e63fea5718059766c08daef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the position of a body inside the b2World. WARNING setting a body to a certain position where other bodies are located behavior can be unexpected.  <a href="classPhysicsFacade.html#ac9502fa90e63fea5718059766c08daef">More...</a><br /></td></tr>
+<tr class="separator:ac9502fa90e63fea5718059766c08daef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8fd3a6509dd4ac7105a54418aa64669"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#ac8fd3a6509dd4ac7105a54418aa64669">UpdateRotation</a> (const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;gameObject, double rotation)</td></tr>
+<tr class="memdesc:ac8fd3a6509dd4ac7105a54418aa64669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the rotation of a body inside the b2World.  <a href="classPhysicsFacade.html#ac8fd3a6509dd4ac7105a54418aa64669">More...</a><br /></td></tr>
+<tr class="separator:ac8fd3a6509dd4ac7105a54418aa64669"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a8378c7d6baefc3a04fb195a28e6b14c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#a8378c7d6baefc3a04fb195a28e6b14c0">DEBUG</a></td></tr>
+<tr class="memitem:a8378c7d6baefc3a04fb195a28e6b14c0"><td class="memItemLeft" align="right" valign="top"><a id="a8378c7d6baefc3a04fb195a28e6b14c0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhysicsFacade.html#a8378c7d6baefc3a04fb195a28e6b14c0">DEBUG</a></td></tr>
+<tr class="memdesc:a8378c7d6baefc3a04fb195a28e6b14c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the debug mode should be active. <br /></td></tr>
 <tr class="separator:a8378c7d6baefc3a04fb195a28e6b14c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classPhysicsFacade.html" title="The PhysicsFacade is responsible for all physics related logic. It gives the engine the tools to simu...">PhysicsFacade</a> is responsible for all physics related logic. It gives the engine the tools to simulate bodies in the game in a realistic manner. </p>
+<p>This class supports the following functionalities: Creating a physics world Simulating the created physics world Adding and removing bodies to and from the physics world Updating the various properties of bodies in the physics world </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a722dac0efc564efb5c7d972b9d6d98d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a722dac0efc564efb5c7d972b9d6d98d9">&#9670;&nbsp;</a></span>Sleep()</h2>
 
@@ -150,9 +184,92 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the given gameobject to sleep </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Sets the given gameobject to sleep. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gameObject</td><td>the gameobject that is set asleep </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac9502fa90e63fea5718059766c08daef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9502fa90e63fea5718059766c08daef">&#9670;&nbsp;</a></span>UpdatePosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhysicsFacade::UpdatePosition </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>gameObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>xPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>yPos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the position of a body inside the b2World. WARNING setting a body to a certain position where other bodies are located behavior can be unexpected. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gameObject</td><td>the gameobject that changed its position </td></tr>
+    <tr><td class="paramname">xPos</td><td>x-axis position </td></tr>
+    <tr><td class="paramname">yPos</td><td>y-axis position </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac8fd3a6509dd4ac7105a54418aa64669"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8fd3a6509dd4ac7105a54418aa64669">&#9670;&nbsp;</a></span>UpdateRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PhysicsFacade::UpdateRotation </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>gameObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rotation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the rotation of a body inside the b2World. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gameObject</td><td>the gameobject that changed its rotation </td></tr>
+    <tr><td class="paramname">rotation</td><td>the amount of rotation to be applied </td></tr>
   </table>
   </dd>
 </dl>
@@ -174,28 +291,14 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the given gameobject to wake up </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Sets the given gameobject to wake up. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gameObject</td><td>the gameobject that is set awake </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a8378c7d6baefc3a04fb195a28e6b14c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8378c7d6baefc3a04fb195a28e6b14c0">&#9670;&nbsp;</a></span>DEBUG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool PhysicsFacade::DEBUG</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Determines whether the debug mode should be active </p>
 
 </div>
 </div>

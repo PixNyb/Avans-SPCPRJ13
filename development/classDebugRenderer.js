@@ -5,7 +5,7 @@ var classDebugRenderer =
     [ "CloseSDL", "classDebugRenderer.html#aed91cb040aef962ee7b7a0c86f60d405", null ],
     [ "InitSDL", "classDebugRenderer.html#abd133e74838b98098f16d9cdd2f6d997", null ],
     [ "Render", "classDebugRenderer.html#a6ecef2365db359173537e2f6915e688a", null ],
-    [ "RenderShapes", "classDebugRenderer.html#aba09621c1690f31f881b25c460923905", null ],
+    [ "RenderShapes", "classDebugRenderer.html#aa363c728f8159c6bd06e0fdb3be74aa1", null ],
     [ "Start", "classDebugRenderer.html#ae82ccc925e1f18c036adaf37faf48e8c", null ],
     [ "running", "classDebugRenderer.html#a50811e35f242253605629ed3d61c0037", null ]
 ];

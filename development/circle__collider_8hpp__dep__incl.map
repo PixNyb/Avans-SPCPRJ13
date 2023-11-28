@@ -1,5 +1,6 @@
 <map id="include/api/circle_collider.hpp" name="include/api/circle_collider.hpp">
-<area shape="rect" id="node1" title="Defines the CircleCollider class for representing circular collision areas. CircleCollider is a subcl..." alt="" coords="131,5,263,47"/>
-<area shape="rect" id="node2" href="$debug__renderer_8cpp.html" title="This file contains the debugrendere class implementation." alt="" coords="5,95,189,136"/>
-<area shape="rect" id="node3" href="$physics__test_8cpp.html" title="This file tests the general working of the PhysicsManager/PhysicsFacade." alt="" coords="214,102,381,129"/>
+<area shape="rect" id="node1" title="Defines the CircleCollider class for representing circular collision areas. CircleCollider is a subcl..." alt="" coords="247,5,379,47"/>
+<area shape="rect" id="node2" href="$contact__listener_8cpp.html" title="This file contains the implementation of the class ContactListener." alt="" coords="5,95,197,136"/>
+<area shape="rect" id="node3" href="$debug__renderer_8cpp.html" title="This file contains the debugrendere class implementation." alt="" coords="221,95,405,136"/>
+<area shape="rect" id="node4" href="$physics__test_8cpp.html" title="This file tests the general working of the PhysicsManager/PhysicsFacade." alt="" coords="430,102,597,129"/>
 </map>
