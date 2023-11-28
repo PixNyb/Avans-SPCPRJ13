@@ -20,6 +20,10 @@
 #include <unordered_map>
 #include <vector>
 
+/**
+ * @class SDLInputFacade
+ * @brief The SDLInputFacade class is responsible for handling input from the user.
+ */
 class SDLInputFacade : public IInputFacade
 {
   public:

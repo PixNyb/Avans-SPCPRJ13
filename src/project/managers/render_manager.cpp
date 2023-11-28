@@ -135,7 +135,7 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
 
             // Draw the collider shape with the correct position
             auto shape =
-                Rectangle(Vector2D(relCamPos.x, relCamPos.y), width * scale, height * scale);
+                Rectangle(Vector2D(relCamPos.x, relCamPos.y), height * scale, width * scale);
             shape.SetFillColor(Color::Blue());
             gfx.DrawShape(shape);
         }

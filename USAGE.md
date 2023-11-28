@@ -3,8 +3,10 @@
 In dit bestand staat uitgebreide documentatie over het gebruik van de DeFunBobEngine game engine.
 
 ## Window aanmaken
+
 Voor het aanmaken van een window moeten we eerst zorgen dat de Engine klasse is geintialiseerd,
-vanuit daar kunnen we de GraphicsFacade aanroepen om een Window aan te maken. Daarna moet je ook een Render aanmaken waaraan content toegevoegd kan worden.
+vanuit daar kunnen we de GraphicsFacade aanroepen om een Window aan te maken. Daarna moet je ook een Render aanmaken
+waaraan content toegevoegd kan worden.
 
 TODO: Verder uitwerken als straks alles op zijn plek staat (woensdag)
 
@@ -25,10 +27,12 @@ Hieraan wordt een id meegegeven om de prefab te specificeren. Er wordt hier een 
 
 
 ## Level format
+
 Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief.
 De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de PrefabManager.
 Hier worden vervolgens name, tag, active, layer, transform en children nog bij gedefinieert.
 In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk GameObject.
+
 ```json
 {
   "objects": [
@@ -102,8 +106,10 @@ In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk Ga
 ```
 
 ## Physics Simulatie Gebruiken
+
 De physics manager is voor de engine het aanspreekpunt om een wereld te starten, aan te passen en te beinvloeden.
-De physics manager heeft functies die elk hun doel omschrijven. Hiermee kun je bodies aanmaken, verwijderen, uit- en aanzetten en beinvloeden met krachten.
+De physics manager heeft functies die elk hun doel omschrijven. Hiermee kun je bodies aanmaken, verwijderen, uit- en
+aanzetten en beinvloeden met krachten.
 
 ```
 // Creates the world and populates it with the given gameobjects
@@ -122,7 +128,8 @@ Per aanroep van deze functie zet de wereld 1 stap en beweegt hij de objecten die
 
 ## Input Facades
 
-De input facade maakt het mogelijk om naar key en mouse inputs te luisteren, maar ook om acties te maken, binden aan specifieke inputs (een soort alias) en deze te gebruiken in de game.
+De input facade maakt het mogelijk om naar key en mouse inputs te luisteren, maar ook om acties te maken, binden aan
+specifieke inputs (een soort alias) en deze te gebruiken in de game.
 
 ```cpp
 auto inputFacade = Engine::GetInstance().Get<IInputFacade>();
@@ -137,4 +144,21 @@ inputFacade->BindKey(KeyCode::SPACE, "jump");
 if (inputFacade->GetAction("jump")) {
     // Jump!
 }
+```
+
+## Contact listeners & Behaviour Scripts
+
+De contactlistener in de physicsfacade zorgt ervoor dat alle contacts worden afgevangen en sturen een signaal naar de
+behaviorscripts
+dat er een contactmoment is begonnen, eindigt of bezig is. Het enige waar de maker van de behaviorscripts rekening mee
+moet houden is
+het schrijven van de juiste calls naar de physics manager of andere managers. Hieronder staan de methodes van de
+behaviorscripts die aangeroepen worden in de contactlistener
+
+```
+void ColliderBehaviorTest::OnTriggerEnter2D(const Collider &collider) {}
+
+void ColliderBehaviorTest::OnTriggerExit2D(const Collider &collider) {}
+
+void ColliderBehaviorTest::OnTriggerStay2D(const Collider &collider) {}
 ```
