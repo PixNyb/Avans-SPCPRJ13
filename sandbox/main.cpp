@@ -66,26 +66,44 @@ class AnimationControllerScript : public BehaviourScript
 
     void OnUpdate() override
     {
-        if (currentState == "walking")
+        // Update the timer with the delta time
+        timer += Time::GetDeltaTime();
+
+        // Here you can implement your game logic to decide which animation state should be active
+        // For example, this could be based on user input, character velocity, or other game state
+        // variables
+
+        // Let's say we want to switch states every 2 seconds for demonstration purposes
+        if (currentState == "walking" && timer >= 2.0f)
         {
-            // If currently walking, switch to jumping after a certain time
-            timer += Time::GetDeltaTime();
-            if (timer >= 2.0f)
-            { // Every 2 seconds, switch to jumping
-                animator->SetState("jump");
-                currentState = "jump";
-                timer = 0.0f; // Reset the timer
-            }
+            animator->SetState("jump");
+            currentState = "jump";
         }
-        else if (currentState == "jump")
+        else if (currentState == "jump" && timer >= 2.0f)
         {
-            timer += Time::GetDeltaTime();
-            if (timer >= 2.0f)
-            { // Every 2 seconds, switch to jumping
-                animator->SetState("walking");
-                currentState = "walking";
-                timer = 0.0f; // Reset the timer
-            }
+            animator->SetState("running");
+            currentState = "running";
+        }
+        else if (currentState == "running" && timer >= 2.0f)
+        {
+            animator->SetState("falling");
+            currentState = "falling";
+        }
+        else if (currentState == "falling" && timer >= 2.0f)
+        {
+            animator->SetState("laying");
+            currentState = "laying";
+        }
+        else if (currentState == "laying" && timer >= 2.0f)
+        {
+            animator->SetState("walking");
+            currentState = "walking";
+        }
+
+        // Reset the timer if it's time to switch states
+        if (timer >= 2.0f)
+        {
+            timer = 0.0f;
         }
     }
 };
@@ -145,12 +163,19 @@ int main(int argc, char *argv[])
     auto scene = std::make_shared<Scene>();
 
     // Create animation states
-    AnimationState walkingState(0, 5, 0.1f);
-    AnimationState jumpState(8, 10, 0.15f);
+    AnimationState walkingState(0, 5, 0.1f); // Walking frames with a delay of 0.1s between frames
+    AnimationState jumpState(6, 8, 0.15f);   // Jumping frames with a delay of 0.15s between frames
+    AnimationState runState(9, 13, 0.08f);   // Running frames with a delay of 0.08s between frames
+    AnimationState fallState(14, 16, 0.12f); // Falling frames with a delay of 0.12s between frames
+    AnimationState layState(17, 19, 0.2f);   // Laying frames with a delay of 0.2s between frames
+
     // Set up the animator and add states
     auto animator = std::make_shared<Animator>();
     animator->AddState("walking", walkingState);
     animator->AddState("jump", jumpState);
+    animator->AddState("running", runState);
+    animator->AddState("falling", fallState);
+    animator->AddState("laying", layState);
 
     auto color = Color::white();
 
