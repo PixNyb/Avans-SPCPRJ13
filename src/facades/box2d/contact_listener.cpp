@@ -21,7 +21,7 @@ const double PixelToMeter = 1 / MeterToPixel;
 void ContactListener::BeginContact(b2Contact *contact)
 {
     // to make an object bounce you can set the contact restitution
-    contact->SetRestitution(0.005);
+    //    contact->SetRestitution(0.005);
     auto bodyA = contact->GetFixtureA()->GetBody();
     auto bodyB = contact->GetFixtureB()->GetBody();
     std::shared_ptr<GameObject> gameObjectA = FindGameObject(bodyA);
