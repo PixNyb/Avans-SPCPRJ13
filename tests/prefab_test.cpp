@@ -67,8 +67,14 @@ TEST_F(PrefabTest, GetPrefab)
     GameObject obj1("prefab");
 
     manager.InsertPrefab(std::pair<std::string, GameObject>(key1, obj1));
-    manager.GetPrefab(key1); // TODO: Check why it cannot be used as a value.
+    auto prefab = manager.GetPrefab(key1);
+    // Check that the name of the returned prefab is the same.
+    ASSERT_EQ(prefab->GetName(), obj1.GetName());
 
+    // Check that it is not the exact same object.
+    ASSERT_NE(std::addressof(*prefab), std::addressof(obj1));
+
+    // Check that an error is thrown when an invalid key is given.
     ASSERT_THROW(manager.GetPrefab(key2), std::runtime_error);
 }
 
