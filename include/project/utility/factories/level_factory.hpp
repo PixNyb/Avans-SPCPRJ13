@@ -18,7 +18,7 @@
 
 class LevelFactory : public ISceneFactory
 {
-  private:
+  protected:
     /**
      * @brief The PrefabManager which is used to retrieve the registered prefabs.
      */

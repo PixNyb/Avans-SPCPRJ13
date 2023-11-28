@@ -23,3 +23,6 @@ Transform Transform::operator+(const Transform &other) const {
 Transform Transform::operator-(const Transform &other) const {
         return {position - other.position, rotation - other.rotation, scale / other.scale};
 }
+bool Transform::operator==(const Transform &other) const {
+    return (rotation == other.rotation && scale == other.scale && position == other.position);
+}

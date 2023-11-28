@@ -18,6 +18,7 @@ class PrefabTest : public ::testing::Test
 {
   public:
     PrefabTest() = default;
+
     PrefabManagerStub manager;
 
     void SetUp() override

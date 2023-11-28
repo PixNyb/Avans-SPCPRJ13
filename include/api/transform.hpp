@@ -58,6 +58,13 @@ struct Transform
      * @return Transform The difference of the two transforms.
      */
     Transform operator-(const Transform &other) const;
+
+    /**
+     * @brief Compares two transforms to see if they are identical.
+     * @param other The transform which it is to be compared to.
+     * @return Whether the two transforms are identical.
+     */
+    bool operator==(const Transform &other) const;
 };
 
 #endif // AVANS_SPCPRJ13_TRANSFORM_H
