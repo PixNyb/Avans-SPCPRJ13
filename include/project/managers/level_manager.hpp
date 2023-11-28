@@ -18,6 +18,13 @@
 #include "level_factory.hpp"
 #include "json_reader.hpp"
 
+/**
+ * @class LevelManager
+ * @brief Manages the levels of the game.
+ *
+ * This class is responsible for keeping track of all of the levels.
+ * In addition, it can load a pre-defined level.
+ */
 class LevelManager {
   private:
     /**

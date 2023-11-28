@@ -16,6 +16,15 @@
 #include "prefab_manager.hpp"
 #include <memory>
 
+/**
+ * @class LevelFactory
+ * @brief Creates levels based on a provided JSON object.
+ *
+ * This class is responsible for creating Levels based on a JSON object.
+ * It has a PrefabManager which is used to create new GameObjects based on the provided JSON.
+ * It will only create GameObjects for registered prefabs.
+ * If the JSON is not formatted properly and error will be thrown.
+ */
 class LevelFactory : public ISceneFactory
 {
   protected:

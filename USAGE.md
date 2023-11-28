@@ -8,6 +8,22 @@ vanuit daar kunnen we de GraphicsFacade aanroepen om een Window aan te maken. Da
 
 TODO: Verder uitwerken als straks alles op zijn plek staat (woensdag)
 
+## Prefabs gebruiken
+De PrefabManager kan gebruikt worden om prefabs te registeren en op te halen.
+
+```cpp
+void RegisterPrefab(const std::string &id, const GameObject &prefab);
+```
+Door middel van de functie RegisterPrefab kan er een nieuw GameObject als prefab geregistreert worden.
+Hierbij dient er ook een uniek id meegegeven te worden zodat dit later bij het laden van een level opgevraagd kan worden.
+
+```cpp
+std::shared_ptr<GameObject> GetPrefab(std::string id);
+```
+Om vervolgens een prefab weer op te halen kan er gebruik gemaakt worden van de GetPrefab functie.
+Hieraan wordt een id meegegeven om de prefab te specificeren. Er wordt hier een nieuwe copy van het GameObject teruggegeven.
+
+
 ## Level format
 Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief.
 De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de PrefabManager.

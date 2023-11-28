@@ -14,6 +14,12 @@
 
 #include <nlohmann/json.hpp>
 
+/**
+ * @class JSONReader
+ * @brief Converts JSON files to a readable JSON object.
+ *
+ * This class is capable of converting JSON files to readable JSON objects.
+ */
 class JSONReader
 {
   public:
