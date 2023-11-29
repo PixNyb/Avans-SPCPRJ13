@@ -18,8 +18,8 @@
 #include <algorithm>
 
 const float TimeStep = 1.0f / 60.0f;
-const int VelocityIterations = 6;
-const int PositionIterations = 2;
+const int VelocityIterations = 12;
+const int PositionIterations = 4;
 const double MeterToPixel = 5;
 const double PixelToMeter = 1 / MeterToPixel;
 DebugRenderer debugRenderer;
