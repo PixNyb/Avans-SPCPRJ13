@@ -98,8 +98,8 @@ jobs:
             echo "BUILD_INFO=$(echo ${{ github.event.ref }} | sed 's/refs\/heads\///g')" >> $GITHUB_ENV
           fi
 
-      - name: Install lcov
-        run: sudo apt-get install lcov
+      - name: Install lcov and valgrind
+        run: sudo apt-get install lcov valgrind
 
       - name: Download build result
         uses: actions/download-artifact@v2
@@ -112,7 +112,7 @@ jobs:
       - name: Run tests
         run: |
           cd build
-          ctest --output-on-failure
+          valgrind --leak-check=full --error-exitcode=1 ctest --output-on-failure > valgrind.txt 2>&1
 
       - name: Generate coverage report
         run: |
@@ -120,7 +120,12 @@ jobs:
             if gcov --version; then
                 lcov --capture --directory . --output-file coverage.info
                 lcov --remove coverage.info '/usr/*' '**/vcpkg_installed/**' --output-file coverage.info
-                lcov --list coverage.info
+                if [ -f coverage.info ]; then
+                    lcov --list coverage.info
+                else
+                    echo "Coverage report not found"
+                    echo "Coverage report not found." > coverage.info
+                fi
             else
                 echo "Program not built with coverage flags, skipping coverage generation"
                 echo "Program not built with coverage flags." > coverage.info
@@ -139,3 +144,10 @@ jobs:
           name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Coverage.info
           path: |
             ./build/coverage.info
+
+      - name: Upload valgrind result
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Valgrind.txt
+          path: |
+            ./build/valgrind.txt
