@@ -35,6 +35,10 @@ GraphicsFacade::~GraphicsFacade() {}
 
 void GraphicsFacade::Init() {}
 
+void GraphicsFacade::PollEvents(std::vector<Event>& events) {
+    // implement features
+}
+
 void GraphicsFacade::CreateWindow(const std::string &title, int width, int height)
 {
     const char *c_title = title.c_str();
