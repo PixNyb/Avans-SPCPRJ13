@@ -106,6 +106,14 @@ class PhysicsManager
      * Updates the position of the given GameObject
      */
     void UpdatePosition(const std::shared_ptr<GameObject> &gameObject, double xPos, double yPos);
+
+    /**
+     * Updates the velocity of the GameObject
+     * @param gameObject the object
+     * @param vX velocity on the x-axis
+     * @param vY velocity on the y-axis
+     */
+    void UpdateVelocity(const std::shared_ptr<GameObject> &gameObject, double vX, double vY);
 };
 
 #endif // DEFUNBOBENGINE_PHYSICS_MANAGER_HPP

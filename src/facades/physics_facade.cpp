@@ -18,8 +18,8 @@
 #include <algorithm>
 
 const float TimeStep = 1.0f / 60.0f;
-const int VelocityIterations = 12;
-const int PositionIterations = 4;
+const int VelocityIterations = 6;
+const int PositionIterations = 2;
 const double MeterToPixel = 5;
 const double PixelToMeter = 1 / MeterToPixel;
 DebugRenderer debugRenderer;
@@ -126,7 +126,8 @@ void PhysicsFacade::Step()
         auto gameObject = object_pair->first;
         auto body = object_pair->second;
         auto bodyPos = body->GetPosition();
-        if (gameObject->GetComponent<RigidBody>()->GetBodyType() == BodyType::dynamicBody)
+        if (gameObject->GetComponent<RigidBody>()->GetBodyType() == BodyType::dynamicBody ||
+            gameObject->GetComponent<RigidBody>()->GetBodyType() == BodyType::kinematicBody)
         {
             auto oldTransform = gameObject->GetTransform();
             if (gameObject->GetComponent<BoxCollider>())
@@ -204,52 +205,46 @@ void PhysicsFacade::AddLinearImpulse(const std::shared_ptr<GameObject> &gameObje
 {
     float newVX = vx;
     float newVY = vy;
-    if (b2Body *body = GetBodyByObject(gameObject))
-    {
-        body->SetLinearVelocity(b2Vec2(0, 0));
-        body->ApplyLinearImpulse(b2Vec2(newVX, newVY), body->GetWorldCenter(), true);
-    }
+    b2Body *body = GetBodyByObject(gameObject);
+    body->SetLinearVelocity(b2Vec2(0, 0));
+    body->ApplyLinearImpulse(b2Vec2(newVX, newVY), body->GetWorldCenter(), true);
 }
 
 void PhysicsFacade::AddRotation(const std::shared_ptr<GameObject> &gameObject, float amount)
 {
-    if (b2Body *body = GetBodyByObject(gameObject))
-    {
-        body->ApplyAngularImpulse(amount, false);
-    }
+    b2Body *body = GetBodyByObject(gameObject);
+    body->ApplyAngularImpulse(amount, false);
 }
 
 void PhysicsFacade::Sleep(const std::shared_ptr<GameObject> &gameObject)
 {
-    if (b2Body *body = GetBodyByObject(gameObject))
-    {
-        body->SetAwake(false);
-    }
+    b2Body *body = GetBodyByObject(gameObject);
+    body->SetAwake(false);
 }
 
 void PhysicsFacade::Wake(const std::shared_ptr<GameObject> &gameObject)
 {
-    if (b2Body *body = GetBodyByObject(gameObject))
-    {
-        body->SetAwake(true);
-    }
+    b2Body *body = GetBodyByObject(gameObject);
+    body->SetAwake(true);
 }
 void PhysicsFacade::UpdatePosition(const std::shared_ptr<GameObject> &gameObject, double xPos,
                                    double yPos)
 {
-    if (b2Body *body = GetBodyByObject(gameObject))
-    {
-        body->SetTransform(b2Vec2(static_cast<float>(xPos), static_cast<float>(yPos)),
-                           body->GetTransform().q.GetAngle());
-    }
+    b2Body *body = GetBodyByObject(gameObject);
+    body->SetTransform(b2Vec2(static_cast<float>(xPos), static_cast<float>(yPos)),
+                       body->GetTransform().q.GetAngle());
 }
 void PhysicsFacade::UpdateRotation(const std::shared_ptr<GameObject> &gameObject, double rotation)
 {
-    if (b2Body *body = GetBodyByObject(gameObject))
-    {
-        body->SetTransform(b2Vec2(body->GetTransform().p.x, body->GetTransform().p.y),
-                           static_cast<float>(rotation));
-    }
+    b2Body *body = GetBodyByObject(gameObject);
+    body->SetTransform(b2Vec2(body->GetTransform().p.x, body->GetTransform().p.y),
+                       static_cast<float>(rotation));
+}
+void PhysicsFacade::UpdateVelocity(const std::shared_ptr<GameObject> &gameObject, double vX,
+                                   double vY)
+{
+    b2Body *body = GetBodyByObject(gameObject);
+    body->SetLinearVelocity(b2Vec2(static_cast<float>(vX), static_cast<float>(vY)));
 }
 
 PhysicsFacade::~PhysicsFacade() = default;
