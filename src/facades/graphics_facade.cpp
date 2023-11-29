@@ -35,34 +35,6 @@ GraphicsFacade::~GraphicsFacade() {}
 
 void GraphicsFacade::Init() {}
 
-std::vector<std::unique_ptr<Event>> GraphicsFacade::PollEvents()
-{
-    std::vector<std::unique_ptr<Event>> events;
-    SDL_Event sdlEvent;
-
-    while (SDL_PollEvent(&sdlEvent))
-    {
-        auto customEvent = MapSdlEventToCustomEvent(sdlEvent);
-        if (customEvent->type != EventType::None)
-        {
-            events.push_back(std::move(customEvent));
-        }
-    }
-
-    return events;
-}
-
-std::unique_ptr<Event> GraphicsFacade::MapSdlEventToCustomEvent(const SDL_Event &sdlEvent)
-{
-    switch (sdlEvent.type)
-    {
-    case SDL_QUIT:
-        return std::make_unique<Event>(EventType::WindowClose);
-    default:
-        return std::make_unique<Event>(EventType::None);
-    }
-}
-
 void GraphicsFacade::CreateWindow(const std::string &title, int width, int height)
 {
     const char *c_title = title.c_str();
