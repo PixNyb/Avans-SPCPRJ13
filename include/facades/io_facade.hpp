@@ -65,19 +65,7 @@ class IOFacade
      * as a vector of SDL_Event objects.
      * @return A vector containing all polled SDL_Event objects.
      */
-    virtual std::vector<std::unique_ptr<Event>> PollEvents() = 0;
-
-    /**
-     * @brief Maps an SDL_Event to a custom Event.
-     *
-     * This method should be implemented by the concrete subclass to map an SDL_Event
-     * to a custom Event object. It should take the SDL_Event as input and return a
-     * unique pointer to a custom Event object.
-     *
-     * @param sdlEvent The SDL_Event to be mapped.
-     * @return A unique pointer to a custom Event object.
-     */
-    virtual std::unique_ptr<Event> MapSdlEventToCustomEvent(const SDL_Event &sdlEvent) = 0;
+    virtual void PollEvents(std::vector<Event> &events) = 0;
 
     /**
      * @brief Creates a window with the specified properties.

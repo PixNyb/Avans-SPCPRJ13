@@ -16,24 +16,31 @@
 #include "text.hpp"
 #include <string>
 
-namespace CoreConstants {
-    namespace Text {
-        const int DEFAULT_SIZE = 12;
-        // TODO: Implement better way to handle this
-        const std::string DEFAULT_FONT_PATH = "../resources/fonts/OpenSans-Normal.ttf";
-        const Color DEFAULT_COLOR = Color::red();
-        const Alignment DEFAULT_ALIGNMENT = Alignment::left;
-    }
-    namespace Renderer{
-        const Color DEFAULT_RENDER_COLOR = Color::white();
-    }
-    namespace Engine {
-        const int DEFAULT_FPS = 60;
-    }
-    namespace Debug {
-        const bool EnableDebug = true;
-        const bool DrawColliders = true;
-    }
+namespace CoreConstants
+{
+namespace Text
+{
+const int DEFAULT_SIZE = 12;
+// TODO: Implement better way to handle this
+const std::string DEFAULT_FONT_PATH = "../resources/fonts/OpenSans-Normal.ttf";
+const Color DEFAULT_COLOR = Color::Red();
+const Alignment DEFAULT_ALIGNMENT = Alignment::left;
+} // namespace Text
+namespace Renderer
+{
+const Color DEFAULT_RENDER_COLOR = Color::White();
 }
+namespace Engine
+{
+const int DEFAULT_FPS = 60;
+const int MAX_NESTED_CHILDREN = 5; ///< The maximum amount of nested children a game object can
+                                   ///< have. This is to prevent infinite recursion.
+} // namespace Engine
+namespace Debug
+{
+const bool EnableDebug = true;
+const bool DrawColliders = true;
+} // namespace Debug
+} // namespace CoreConstants
 
 #endif // DEFUNBOBENGINE_CORECONSTANTS_HPP

@@ -25,12 +25,13 @@
  * It provides a method to convert its properties into an SDL_Rect,
  * which is commonly used in SDL for rendering and other operations involving rectangular areas.
  */
-class SDLRect {
-public:
-    int x; ///< The x coordinate of the rectangle
-    int y; ///< The y coordinate of the rectangle
-    int width; ///< The width of the rectangle
-    int height; ///< The height of the rectangle
+class SDLRect
+{
+  public:
+    int x;        ///< The x coordinate of the rectangle
+    int y;        ///< The y coordinate of the rectangle
+    int width;    ///< The width of the rectangle
+    int height;   ///< The height of the rectangle
     int rotation; ///< The degrees of rotation of the rectangle
 
     /**
@@ -41,15 +42,15 @@ public:
      * @param height The height of the rectangle.
      */
     SDLRect(int x, int y, int width, int height, int rotation = 0)
-            : x(x), y(y), width(width), height(height), rotation(rotation) {}
+        : x(x), y(y), width(width), height(height), rotation(rotation)
+    {
+    }
 
     /**
-    * @brief Converts this SDLRect to an SDL_Rect structure.
-    * @return SDL_Rect An SDL_Rect structure with the same position and size as this SDLRect.
-    */
-    SDL_Rect toSDLRect() const {
-        return {x, y, width, height};
-    }
+     * @brief Converts this SDLRect to an SDL_Rect structure.
+     * @return SDL_Rect An SDL_Rect structure with the same position and size as this SDLRect.
+     */
+    SDL_Rect toSDLRect() const { return {x, y, width, height}; }
 
     /**
      * @brief Draws the rectangle using SDL rendering functions.
@@ -60,7 +61,7 @@ public:
      *
      * @param renderer A pointer to an SDL_Renderer to draw the rectangle.
      */
-    void Draw(SDL_Renderer* renderer) const;
+    void Draw(SDL_Renderer *renderer) const;
 };
 
-#endif //DEFUNBOBENGINE_SDL_RECT_HPP
+#endif // DEFUNBOBENGINE_SDL_RECT_HPP

@@ -16,6 +16,7 @@
 #include "circle_collider.hpp"
 #include "core/engine.hpp"
 #include "game_object.hpp"
+#include "game_object_utility.hpp"
 #include "graphics_facade.hpp"
 #include "managers/scene_manager.hpp"
 #include "text.hpp"
@@ -39,36 +40,29 @@ void RenderManager::Render()
     if (!scene)
         return;
 
-    // Prepare camera
-    auto camera = scene->GetCamera();
-
-    // Prepare layers
     auto layers = std::map<int, std::vector<std::weak_ptr<GameObject>>>();
 
-    for (auto &gameObject : scene->GetAllByType<GameObject>())
+    for (auto &gameObjectPtr : scene->GetAllByType<GameObject>())
     {
-        auto gameObjectPtr = gameObject.lock();
-        if (!gameObjectPtr || !gameObjectPtr->IsActive())
-            continue;
-
-        int layer = gameObjectPtr->GetLayer();
-        if (layers.contains(layer))
-        {
-            // Ensure the layer for the game object exists
-            layers.insert(std::make_pair(layer, std::vector<std::weak_ptr<GameObject>>()));
-        }
-
-        // TODO: Check game objects with geometry for render occlusion
-
-        // Push game object onto layer
-        layers[layer].push_back(gameObject);
+        auto gameObject = gameObjectPtr.lock();
+        GameObjectUtility::TraverseActiveGameObjects(
+            gameObject,
+            [&layers](const std::shared_ptr<GameObject> &gameObject)
+            {
+                int layer = gameObject->GetLayer();
+                layers[layer].emplace_back(gameObject);
+            });
     }
 
     // Make sure we have a render point regardless of whether we have a camera (menu might not
     // always have a camera)
     Point renderPoint = Point(0, 0);
+
+    // Prepare camera
+    auto camera = scene->GetCamera();
     if (camera)
     {
+        // Apply camera transform
         auto transform = camera->GetTransform();
         renderPoint.x = transform.position.x;
         renderPoint.y = transform.position.y;
@@ -182,7 +176,7 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
 
             // Draw the collider shape with the correct position
             auto shape = Circle(Vector2D(relCamPos.x, relCamPos.y), radius * scale);
-            shape.SetFillColor(Color::red());
+            shape.SetFillColor(Color::Red());
             gfx.DrawShape(shape);
         }
 
@@ -195,8 +189,8 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
 
             // Draw the collider shape with the correct position
             auto shape =
-                Rectangle(Vector2D(relCamPos.x, relCamPos.y), width * scale, height * scale);
-            shape.SetFillColor(Color::blue());
+                Rectangle(Vector2D(relCamPos.x, relCamPos.y), height * scale, width * scale);
+            shape.SetFillColor(Color::Blue());
             gfx.DrawShape(shape);
         }
     }

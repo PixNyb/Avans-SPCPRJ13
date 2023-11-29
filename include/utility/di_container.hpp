@@ -12,13 +12,16 @@
 #ifndef AVANS_SPCPRJ13_DI_CONTAINER_HPP
 #define AVANS_SPCPRJ13_DI_CONTAINER_HPP
 
-#include <unordered_map>
 #include <memory>
+#include <unordered_map>
 
 /**
+ * @enum InstanceScope
+ *
  * @brief The scope of the instance
  */
-enum class InstanceScope {
+enum class InstanceScope
+{
     /**
      * @brief The instance is public. Stuff like SceneManager should be public.
      */
@@ -32,25 +35,31 @@ enum class InstanceScope {
 /**
  * @brief The default instance scope
  */
-const InstanceScope DEFAULT_INSTANCE_SCOPE  = InstanceScope::Public;
+const InstanceScope DEFAULT_INSTANCE_SCOPE = InstanceScope::Public;
 
 /**
- * @brief The dependency injection container
- * @details This container is used to store private or public instances for the game dev like SceneManager etc.
+ * @class DIContainer
+ *
+ * @brief The dependency injection container is used to store public or private instances.
+ * @details This container is used to store private or public instances for the game dev like
+ * SceneManager etc.
  * @note Refer to InstanceScope for more information about the scope of the instance.
  */
-class DIContainer {
+class DIContainer
+{
   private:
-    std::unordered_map<InstanceScope, std::unordered_map<std::size_t, std::shared_ptr<void>>> instances;
+    std::unordered_map<InstanceScope, std::unordered_map<std::size_t, std::shared_ptr<void>>>
+        instances;
 
   public:
-
     /**
      * @brief Registers an instance
-     * @tparam T The type of the instance, this is what the instance is bound to. So you should use abstract base types here if there are any.
+     * @tparam T The type of the instance, this is what the instance is bound to. So you should use
+     * abstract base types here if there are any.
      * @param instance The instance to register
      * @param scope The scope of the instance. Refer to InstanceScope for more information.
-     * @warning You can bind any type to any instance, but you should only bind abstract base types to instances.
+     * @warning You can bind any type to any instance, but you should only bind abstract base types
+     * to instances.
      */
     template <typename T>
     void registerInstance(std::shared_ptr<T> instance, InstanceScope scope = DEFAULT_INSTANCE_SCOPE)
@@ -64,13 +73,13 @@ class DIContainer {
      * @param scope The scope of the instance. Refer to InstanceScope for more information.
      * @return std::shared_ptr<T> Nullptr if the instance is not found, otherwise the instance
      */
-    template <typename T>
-    std::shared_ptr<T> resolve(InstanceScope scope = DEFAULT_INSTANCE_SCOPE)
+    template <typename T> std::shared_ptr<T> resolve(InstanceScope scope = DEFAULT_INSTANCE_SCOPE)
     {
-        auto& scopeInstances = instances[scope];
+        auto &scopeInstances = instances[scope];
 
         auto it = scopeInstances.find(typeid(T).hash_code());
-        if (it != scopeInstances.end()) {
+        if (it != scopeInstances.end())
+        {
             return std::static_pointer_cast<T>(it->second);
         }
         return nullptr;

@@ -5,10 +5,11 @@
  * @version 0.1
  * @date 2023-11-10
  *
- * This file contains the implementation of the Engine class, which is central to the game engine's operation.
- * The Engine class manages the game loop, rendering process, and scene management. It also provides
- * utilities for frame timing and FPS calculation. The Engine ensures the cohesive operation of different
- * engine components, including IO and graphics, and manages the game's running state.
+ * This file contains the implementation of the Engine class, which is central to the game engine's
+ * operation. The Engine class manages the game loop, rendering process, and scene management. It
+ * also provides utilities for frame timing and FPS calculation. The Engine ensures the cohesive
+ * operation of different engine components, including IO and graphics, and manages the game's
+ * running state.
  *
  * Copyright Copyright (c) 2023
  *
@@ -17,19 +18,25 @@
 #include "engine.hpp"
 #include "behaviour_script_manager.hpp"
 #include "graphics_facade.hpp"
+#include "physics_manager.hpp"
 #include "render_manager.hpp"
 #include "scene_manager.hpp"
+#include "sdl_input_facade.hpp"
 #include "time.hpp"
 #include <thread>
 
-Engine* Engine::instancePtr = nullptr;
+Engine *Engine::instancePtr = nullptr;
 
-Engine::Engine() {
+Engine::Engine()
+{
     container.registerInstance<SceneManager>(std::make_shared<SceneManager>());
-    // TODO: Figure out the scope?
+    container.registerInstance<IInputFacade>(std::make_shared<SDLInputFacade>());
     container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>());
-    container.registerInstance<RenderManager>(std::make_shared<RenderManager>(),InstanceScope::Engine);
-    container.registerInstance<BehaviourScriptManager>(std::make_shared<BehaviourScriptManager>(),InstanceScope::Engine);
+    container.registerInstance<PhysicsManager>(std::make_shared<PhysicsManager>());
+    container.registerInstance<RenderManager>(std::make_shared<RenderManager>(),
+                                              InstanceScope::Engine);
+    container.registerInstance<BehaviourScriptManager>(std::make_shared<BehaviourScriptManager>(),
+                                                       InstanceScope::Engine);
 }
 
 void Engine::Start()
@@ -39,29 +46,26 @@ void Engine::Start()
     double lastFPSUpdateTime = Time::GetTotalTime();
     auto graphicsFacade = Get<IOFacade>();
 
-    if (!graphicsFacade) {
+    if (!graphicsFacade)
+    {
         std::cerr << "GraphicsFacade instance is null" << std::endl;
         return;
     }
 
     graphicsFacade->Init();
 
-    while (isRunning) {
+    while (isRunning)
+    {
         double deltaTime = Time::GetDeltaTime();
 
         // Start of the frame
         Time::StartFrame();
 
         // Game logic goes here
-
+        Get<PhysicsManager>()->Step();
 
         // TODO: Remove (Input manager required)
-        // Polling events
-        auto events = graphicsFacade->PollEvents();
-        for (const auto& event : events) {
-//            HandleEvent(*event);
-        }
-
+        Get<IInputFacade>()->Update();
         Get<SceneManager>()->Update(deltaTime);
         Get<BehaviourScriptManager>()->Update();
 
@@ -75,7 +79,8 @@ void Engine::Start()
 
         // Calculate FPS
         frameCount++;
-        if (Time::GetTotalTime() - lastFPSUpdateTime >= 1.0f) {
+        if (Time::GetTotalTime() - lastFPSUpdateTime >= 1.0f)
+        {
             currentFPS = frameCount;
             frameCount = 0;
             lastFPSUpdateTime = Time::GetTotalTime();
@@ -91,29 +96,25 @@ void Engine::Start()
     }
 }
 
-void Engine::Stop() {
-    isRunning = false;
-}
+void Engine::Stop() { isRunning = false; }
 
-void Engine::Shutdown() {
+void Engine::Shutdown()
+{
     Stop();
 
-    if(auto sceneManager = Get<SceneManager>(); sceneManager != nullptr)
+    if (auto sceneManager = Get<SceneManager>(); sceneManager != nullptr)
         sceneManager->ClearScene();
 }
 
-int Engine::GetFPS() const {
-    return currentFPS;
-}
+int Engine::GetFPS() const { return currentFPS; }
 
-void Engine::SetFPSLimit(float fps) {
-    FPS_LIMIT = fps;
-}
+void Engine::SetFPSLimit(float fps) { FPS_LIMIT = fps; }
 
-Engine *Engine::GetInstance() {
-    if (!instancePtr) {
+Engine *Engine::GetInstance()
+{
+    if (!instancePtr)
+    {
         instancePtr = new Engine();
     }
     return instancePtr;
 }
-

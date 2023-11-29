@@ -1,7 +1,8 @@
 /**
  * @file engine.hpp
  * @author "Melvin van Bree"
- * @brief Engine is the core of the engine. It is responsible for managing the game loop and managing the DIContainer.
+ * @brief Engine is the core of the engine. It is responsible for managing the game loop and
+ * managing the DIContainer.
  * @version 0.1
  * @date 10/11/2023
  *
@@ -17,6 +18,12 @@
 #include <iostream>
 #include <memory>
 
+/**
+ * @class Engine
+ *
+ * @brief The Engine class is the core of the engine. It is responsible for managing the game
+ * loop and delegating calls.
+ */
 class Engine
 {
   private:
@@ -33,7 +40,8 @@ class Engine
     static Engine *instancePtr;
 
     /**
-     * @brief The container is used to store public or private instances for the game dev like SceneManager etc.
+     * @brief The container is used to store public or private instances for the game dev like
+     * SceneManager etc.
      */
     DIContainer container;
 
@@ -57,9 +65,7 @@ class Engine
      * @tparam T The type of the instance
      * @return std::shared_ptr<T>
      */
-    template <typename T> std::shared_ptr<T> Get() {
-        return container.resolve<T>();
-    }
+    template <typename T> std::shared_ptr<T> Get() { return container.resolve<T>(); }
 
     /**
      * @brief Gets a locally scoped instance for the engine (like facades)

@@ -12,23 +12,23 @@
 #ifndef DEFUNBOBENGINE_INCLUDE_PROJECT_GRAPHICS_SHAPES_LINE_HPP
 #define DEFUNBOBENGINE_INCLUDE_PROJECT_GRAPHICS_SHAPES_LINE_HPP
 
-#include "point.hpp"
 #include "color.hpp"
 #include "geometry.hpp"
+#include "point.hpp"
 #include "vector2d.hpp"
 
-struct Line : public Geometry {
+struct Line : public Geometry
+{
   public:
     Vector2D start;
     Vector2D end;
 
-    int GetArea() override {
-        return 0;
-    }
+    int GetArea() override { return 0; }
 
-    bool IsWithinArea(const Vector2D& s, const Vector2D& e) override {
+    bool IsWithinArea(const Vector2D &s, const Vector2D &e) override
+    {
         return (s.x > e.x && (start.x > s.x || end.x < e.x)) ||
-            (s.x <= e.x && (start.x < s.x || end.x > e.x));
+               (s.x <= e.x && (start.x < s.x || end.x > e.x));
     }
 };
 

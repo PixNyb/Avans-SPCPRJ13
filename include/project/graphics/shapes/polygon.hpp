@@ -29,30 +29,34 @@
  * render the shape to the screen. The draw method needs to be implemented to provide
  * rendering logic specific to the graphics library being used.
  */
-class Polygon : public Geometry {
-private:
+class Polygon : public Geometry
+{
+  private:
     std::vector<Vector2D> vertices; ///< The vertices of the polygon.
 
-public:
+  public:
     /**
      * @brief Constructs a new Polygon object.
      *
      * @param pos The position of the polygon's reference point.
      * @param verts A list of vertices that define the polygon.
      */
-    Polygon(const std::vector<Vector2D>& verts) : vertices(verts) {}
+    Polygon(const std::vector<Vector2D> &verts) : vertices(verts) {}
 
-    int GetArea() override {
+    int GetArea() override
+    {
         int n = vertices.size();
 
-        if (n < 3) {
+        if (n < 3)
+        {
             // A polygon with less than 3 vertices is not valid, and its area is zero.
             return 0;
         }
 
         int area = 0;
 
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; ++i)
+        {
             int j = (i + 1) % n;
             area += (vertices[i].x * vertices[j].y - vertices[j].x * vertices[i].y);
         }
@@ -64,10 +68,11 @@ public:
         return std::abs(area) / 2;
     }
 
-    bool IsWithinArea(const Vector2D& start, const Vector2D& end) override {
+    bool IsWithinArea(const Vector2D &start, const Vector2D &end) override
+    {
         // TODO: Implement
         return true;
     }
 };
 
-#endif //DEFUNBOBENGINE_POLYGON_HPP
+#endif // DEFUNBOBENGINE_POLYGON_HPP

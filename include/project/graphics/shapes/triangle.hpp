@@ -19,11 +19,17 @@
 #include "geometry.hpp"
 #include "vector2d.hpp"
 
-class Triangle : public Geometry {
-private:
+/**
+ * @class Triangle
+ *
+ * @brief Represents a triangle shape.
+ */
+class Triangle : public Geometry
+{
+  private:
     Vector2D vertex1, vertex2, vertex3;
 
-public:
+  public:
     /**
      * @brief Constructs a new Triangle object.
      *
@@ -31,25 +37,31 @@ public:
      * @param v2 The second vertex of the triangle.
      * @param v3 The third vertex of the triangle.
      */
-    Triangle(const Vector2D& v1, const Vector2D& v2, const Vector2D& v3)
-            : vertex1(v1), vertex2(v2), vertex3(v3) {}
+    Triangle(const Vector2D &v1, const Vector2D &v2, const Vector2D &v3)
+        : vertex1(v1), vertex2(v2), vertex3(v3)
+    {
+    }
 
     // Accessor methods for the vertices
     Vector2D GetVertex1() const { return vertex1; }
     Vector2D GetVertex2() const { return vertex2; }
     Vector2D GetVertex3() const { return vertex3; }
 
-    int GetArea() override {
+    int GetArea() override
+    {
         // Calculate the area of the triangle using the shoelace formula.
-        return abs((vertex1.x * (vertex2.y - vertex3.y) +
-                    vertex2.x * (vertex3.y - vertex1.y) +
-                    vertex3.x * (vertex1.y - vertex2.y)) / 2);
+        return abs((vertex1.x * (vertex2.y - vertex3.y) + vertex2.x * (vertex3.y - vertex1.y) +
+                    vertex3.x * (vertex1.y - vertex2.y)) /
+                   2);
     }
 
-    bool IsWithinArea(const Vector2D& start, const Vector2D& end) override {
+    bool IsWithinArea(const Vector2D &start, const Vector2D &end) override
+    {
         auto vertices = {vertex1, vertex2, vertex3};
-        for (auto& vertex : vertices) {
-            if (vertex.x < start.x || vertex.x > end.x || vertex.y < start.y || vertex.y > end.y) {
+        for (auto &vertex : vertices)
+        {
+            if (vertex.x < start.x || vertex.x > end.x || vertex.y < start.y || vertex.y > end.y)
+            {
                 return false;
             }
         }
@@ -57,4 +69,4 @@ public:
     }
 };
 
-#endif //DEFUNBOBENGINE_TRIANGLE_HPP
+#endif // DEFUNBOBENGINE_TRIANGLE_HPP

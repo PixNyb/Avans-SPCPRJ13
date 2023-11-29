@@ -30,3 +30,15 @@ target_link_libraries(Sandbox PRIVATE $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2_ttf>,S
 # Add SDL2_net
 find_package(SDL2_net CONFIG REQUIRED)
 target_link_libraries(Sandbox PRIVATE $<IF:$<TARGET_EXISTS:SDL2_net::SDL2_net>,SDL2_net::SDL2_net,SDL2_net::SDL2_net-static>)
+
+# Add nlohmann_json
+find_package(nlohmann_json CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE nlohmann_json::nlohmann_json)
+
+# Add fmt
+find_package(fmt CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE fmt::fmt)
+
+# Add box2d
+find_package(box2d CONFIG REQUIRED)
+target_link_libraries(Sandbox PRIVATE box2d::box2d)

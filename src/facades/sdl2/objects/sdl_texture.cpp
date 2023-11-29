@@ -13,21 +13,24 @@
 #include <SDL_image.h>
 #include <iostream>
 
-SDLTexture::SDLTexture(SDL_Renderer* renderer, const std::string& filePath) {
-    SDL_Surface* surface = IMG_Load(filePath.c_str());
-    if (!surface) {
+SDLTexture::SDLTexture(SDL_Renderer *renderer, const std::string &filePath)
+{
+    SDL_Surface *surface = IMG_Load(filePath.c_str());
+    if (!surface)
+    {
         std::cerr << "Failed to load image: " << IMG_GetError() << std::endl;
         texture = nullptr;
-    } else {
+    }
+    else
+    {
         texture = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
 
-        if (!texture) {
+        if (!texture)
+        {
             std::cerr << "Failed to create texture: " << SDL_GetError() << std::endl;
         }
     }
 }
 
-SDL_Texture* SDLTexture::getSDLTexture() const {
-    return texture;
-}
+SDL_Texture *SDLTexture::GetSDLTexture() const { return texture; }

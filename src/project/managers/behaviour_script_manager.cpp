@@ -10,10 +10,11 @@
  */
 
 #include "behaviour_script_manager.hpp"
-#include "core/engine.hpp"
-#include "managers/scene_manager.hpp"
-#include "game_object.hpp"
 #include "behaviour_script.hpp"
+#include "core/engine.hpp"
+#include "game_object.hpp"
+#include "game_object_utility.hpp"
+#include "managers/scene_manager.hpp"
 
 BehaviourScriptManager::BehaviourScriptManager() = default;
 BehaviourScriptManager::~BehaviourScriptManager() = default;
@@ -22,24 +23,36 @@ void BehaviourScriptManager::Update()
 {
     auto engine = Engine::GetInstance();
     auto sceneManager = engine->Get<SceneManager>();
-    if(!sceneManager->HasScene()) return;
+    if (!sceneManager->HasScene())
+        return;
     auto scene = sceneManager->GetScene().lock();
-    if(!scene) return;
+    if (!scene)
+        return;
 
-    auto gameObjects = scene->GetAllByType<GameObject>();
-    for(auto& gameObject : gameObjects){
-        auto gameObjectPtr = gameObject.lock();
-        if(!gameObjectPtr) continue;
-        auto scripts = gameObjectPtr->GetComponents<BehaviourScript>();
+    auto sceneGameObjects = scene->GetAllByType<GameObject>();
+    for (auto &sceneGameObject : sceneGameObjects)
+    {
+        auto gameObject = sceneGameObject.lock();
+        if (gameObject == nullptr)
+            continue;
 
-        for(auto& script : scripts){
-            if(!script || !script->IsActive()) continue;
-
-            if(!script->HasStarted())
-                script->OnStart();
-
-            script->OnUpdate();
-        }
+        // Execute script recursively
+        GameObjectUtility::TraverseActiveGameObjects(
+            gameObject,
+            [](const std::shared_ptr<GameObject> &gameObject) { ExecuteScript(*gameObject); });
     }
+}
+void BehaviourScriptManager::ExecuteScript(GameObject &gameObject)
+{
+    auto scripts = gameObject.GetComponents<BehaviourScript>();
+    for (auto &script : scripts)
+    {
+        if (!script || !script->IsActive())
+            continue;
 
+        if (!script->HasStarted())
+            script->OnStart();
+
+        script->OnUpdate();
+    }
 }

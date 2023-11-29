@@ -16,8 +16,8 @@
 #define AVANS_SPCPRJ13_RIGIDBODY_H
 
 #include "component.hpp"
-#include <string>
 #include "point.hpp"
+#include <string>
 
 /**
  * @enum BodyType
@@ -25,7 +25,8 @@
  *
  * Defines the type of physics behavior a RigidBody will exhibit: static, kinematic, or dynamic.
  */
-enum class BodyType {
+enum class BodyType
+{
     staticBody,    /**< A body that does not move under simulation. */
     kinematicBody, /**< A body that moves under simulation but is not affected by forces. */
     dynamicBody    /**< A fully simulated body affected by forces and collisions. */
@@ -38,20 +39,47 @@ enum class BodyType {
  * A component that adds physical properties to a game object, such as mass and the ability
  * to react to forces. It plays a key role in the game's physics system.
  */
-class RigidBody : public Component {
-public:
+class RigidBody : public Component
+{
+  public:
     /**
      * @brief Apply force to the rigid body.
      *
      * Adds a force to the rigid body, influencing its motion according to physics simulations.
      * @param forceDirection A Point representing the direction and magnitude of the force.
      */
-    void AddForce(const Point& forceDirection);
+    void AddForce(const Point &forceDirection);
 
-private:
-    double mass;        /**< The mass of the rigid body. */
+    /**
+     * Constructs a RigidBody
+     * @param mass is the mass the body has in kg's
+     * @param gravityScale is the amount of times the gravity should be applied on this body
+     * @param bodyType is the type of body defined in the BodyType enum
+     */
+    RigidBody(double mass, double gravityScale, BodyType bodyType);
+
+    /**
+     * Gets the mass of this body in kg's
+     * @return double
+     */
+    double GetMass() const;
+
+    /**
+     * Gets the gravityscale of this body
+     * @return double
+     */
+    double GetGravityScale() const;
+
+    /**
+     * Gets the body type of this body
+     * @return variant of enum BodyType
+     */
+    BodyType GetBodyType();
+
+  private:
+    double mass;         /**< The mass of the rigid body. */
     double gravityScale; /**< The scale at which gravity affects the rigid body. */
-    BodyType bodyType;  /**< The type of the rigid body, determining its physics behavior. */
+    BodyType bodyType;   /**< The type of the rigid body, determining its physics behavior. */
 };
 
 #endif // AVANS_SPCPRJ13_RIGIDBODY_H

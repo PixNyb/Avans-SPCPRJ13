@@ -14,13 +14,20 @@
 
 #include "color.hpp"
 
+/**
+ * @class ShapeColor
+ *
+ * @brief ShapeColor is a class that represents a color in the game engine.
+ * @note This construct is used in a bridge pattern with the Geometry class.
+ */
 class ShapeColor
 {
   private:
     Color color;
+
   public:
     explicit ShapeColor(Color color);
-    void SetColor(const Color& c);
+    void SetColor(const Color &c);
     [[nodiscard]] Color GetColor() const;
 };
 

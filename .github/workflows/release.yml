@@ -1,9 +1,10 @@
-name: DeFunBobEngine Release Build
+name: CMake Release Build
 
 on:
   push:
     tags:
-      - "v*"
+      - v*
+      - v*-rc* # prereleases
 
 jobs:
   build:
@@ -36,13 +37,13 @@ jobs:
         run: ./vcpkg/vcpkg install --triplet x64-linux --feature-flags=manifests
 
       - name: Build
-        run: cmake -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build && cmake --build build
+        run: cmake -DBUILD_TESTS=OFF -DBUILD_CICD=OFF -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=MinSizeRel -S . -B build && cmake --build build
 
       - name: Create SDK archives
-        run: | 
+        run: |
           zip -r sdk.zip include
           tar -czf sdk.tar.gz include
-          
+
       - name: Generate checksum for sdk.zip
         run: sha256sum sdk.zip > sdk.zip.sha256
 
@@ -51,51 +52,62 @@ jobs:
 
       - name: Generate checksum for DeFunBobEngine
         run: cd build && sha256sum libDeFunBobEngine.a > libDeFunBobEngine.sha256 && cd ..
-  
-      - name: Upload SDK archive
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GH_TOKEN }}
-          file: sdk.zip
-          asset_name: libDeFunBobEngine-sdk.zip
-          tag: ${{ github.ref }}
-          
-      - name: Upload SDK tarball
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GH_TOKEN }}
-          file: sdk.tar.gz
-          asset_name: libDeFunBobEngine-sdk.tar.gz
-          tag: ${{ github.ref }}
-            
-      - name: Upload compiled library
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GH_TOKEN }}
-          file: build/libDeFunBobEngine.a
-          asset_name: libDeFunBobEngine.a
-          tag: ${{ github.ref }}
 
-      - name: Upload SDK archive checksum
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GH_TOKEN }}
-          file: sdk.zip.sha256
-          asset_name: libDeFunBobEngine-sdk.zip.sha256
-          tag: ${{ github.ref }}
+      - name: Generate release body
+        id: release_body
+        run: |
+          # Collect all information
+          version=$(git describe --tags --abbrev=0)
+          changelog=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'- %s ([%h](https://github.com/${{ github.repository }}/commit/%H))' --reverse)
+          vcpkg_dependencies=$(vcpkg list --triplet x64-linux --feature-flags=manifests)
+          cmake=$(cmake --version)
+          cmake_generator=$(cmake --system-information | awk -F\" '/CMAKE_GENERATOR/ {print $2}')
+          cmake_build_type=$(cmake -LH build/ | awk -F"=" '/CMAKE_BUILD_TYPE/ {print $2}')
+          cmake_toolset=$(cmake -LH build/ | awk -F"=" '/CMAKE_GENERATOR_TOOLSET/ {print $2}')
+          if [ -z "$cmake_toolset" ] ; then
+            cmake_toolset="default"
+          fi
+          compiler=$(g++ --version)
+          system=$(uname -a)
+          release=$(cat .github/release.md)
 
-      - name: Upload SDK tarball checksum
+          # Find and replace all values in the release.md with the actual values
+          release="${release//'%version%'/$version}"
+          release="${release//'%changelog%'/$changelog}"
+          release="${release//'%vcpkg_dependencies%'/$vcpkg_dependencies}"
+          release="${release//'%cmake%'/$cmake}"
+          release="${release//'%cmake_generator%'/$cmake_generator}"
+          release="${release//'%cmake_build_type%'/$cmake_build_type}"
+          release="${release//'%cmake_toolset%'/$cmake_toolset}"
+          release="${release//'%compiler%'/$compiler}"
+          release="${release//'%system%'/$system}"
+
+          # Escape all %, \n and \r characters
+          release="${release//'%'/'%25'}"
+          release="${release//$'\n'/'%0A'}"
+          release="${release//$'\r'/'%0D'}"
+          echo "RELEASE_BODY=$release" >> $GITHUB_OUTPUT
+
+      - name: Move and rename files
+        run: |
+          release_dir="release-${{ github.sha }}"
+          if [ ! -d "$release_dir" ] ; then
+            mkdir "$release_dir"
+          fi
+          mv sdk.zip $release_dir/libDeFunBobEngine-sdk.zip
+          mv sdk.zip.sha256 $release_dir/libDeFunBobEngine-sdk.zip.sha256
+          mv sdk.tar.gz $release_dir/libDeFunBobEngine-sdk.tar.gz
+          mv sdk.tar.gz.sha256 $release_dir/libDeFunBobEngine-sdk.tar.gz.sha256
+          mv build/libDeFunBobEngine.a $release_dir/libDeFunBobEngine.a
+          mv build/libDeFunBobEngine.sha256 $release_dir/libDeFunBobEngine.sha256
+
+      - name: Create release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GH_TOKEN }}
-          file: sdk.tar.gz.sha256
-          asset_name: libDeFunBobEngine-sdk.tar.gz.sha256
           tag: ${{ github.ref }}
-      
-      - name: Upload library checksum
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GH_TOKEN }}
-          file: build/libDeFunBobEngine.sha256
-          asset_name: libDeFunBobEngine.sha256
-          tag: ${{ github.ref }}
+          body: |
+            ${{ steps.release_body.outputs.RELEASE_BODY }}
+          prerelease: false
+          file_glob: true
+          file: release-${{ github.sha }}/*

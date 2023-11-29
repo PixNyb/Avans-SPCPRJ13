@@ -6,8 +6,9 @@
  *
  * @brief Defines the CircleCollider class for representing circular collision areas.
  * CircleCollider is a subclass of Collider, specialized for handling collisions in circular areas.
- * It provides functionalities to get and set the radius of the collider, crucial for circular collision detection.
- * This class is essential in physics simulations and collision detection in a game engine.
+ * It provides functionalities to get and set the radius of the collider, crucial for circular
+ * collision detection. This class is essential in physics simulations and collision detection in a
+ * game engine.
  *
  * @copyright Copyright (c) 2023
  */
@@ -24,8 +25,9 @@
  * CircleCollider is a component used for collision detection and physics simulation.
  * It defines a circular area that can interact with other colliders in the game world.
  */
-class CircleCollider : public Collider {
-public:
+class CircleCollider : public Collider
+{
+  public:
     /**
      * @brief Get the collider's radius
      * @return The radius
@@ -38,7 +40,7 @@ public:
      */
     void Radius(double newRadius) { radius = newRadius; }
 
-private:
+  private:
     double radius;
 };
 
