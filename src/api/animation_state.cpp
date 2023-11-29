@@ -13,8 +13,6 @@
 
 AnimationState::AnimationState() {}
 
-void AnimationState::Update(GameObject &gameObject) {}
-
 void AnimationState::Update(float deltaTime)
 {
     elapsedTime += deltaTime;

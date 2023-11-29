@@ -27,7 +27,6 @@
 class AnimationState
 {
   private:
-    AnimationState(int totalFrames, float frameTime);
     /**
      * @brief Map to hold various animation states.
      *
@@ -56,21 +55,32 @@ class AnimationState
     }
 
     /**
-     * @brief Updates the animation state of the given game object.
+     * @brief Updates the animation state.
      *
      * This function updates the state of an animation based on the current state
-     * and the properties of the provided game object.
+     * and the elapsed time.
      *
-     * @param gameObject The game object whose animation state is to be updated.
+     * @param deltaTime The time elapsed since the last frame.
      */
-    void Update(GameObject &gameObject);
-    // Getters, Setters, and other public member functions ...
-
     void Update(float deltaTime);
 
-    int GetCurrentFrameIndex() const;
+    /**
+     * @brief Gets the current frame index.
+     *
+     * This function returns the current frame index of the animation.
+     *
+     * @return int The current frame index.
+     */
+    [[nodiscard]] int GetCurrentFrameIndex() const;
 
-    float GetTotalDuration() const;
+    /**
+     * @brief Gets the total duration of the animation.
+     *
+     * This function returns the total duration of the animation.
+     *
+     * @return float The total duration of the animation.
+     */
+    [[nodiscard]] float GetTotalDuration() const;
 };
 
 #endif // AVANS_SPCPRJ13_ANIMATIONSTATE_H

@@ -59,7 +59,16 @@ class Sprite : public BehaviourScript
         sprite = spriteImage;
     }
 
+    /**
+     * @brief Returns the frame width of the sprite
+     * @return int frameWidth
+     */
     [[nodiscard]] int GetFrameWidth() const { return frameWidth; }
+
+    /**
+    * @brief Returns the frame height of the sprite
+    * @return int frameHeight
+    */
     [[nodiscard]] int GetFrameHeight() const { return frameHeight; }
 };
 

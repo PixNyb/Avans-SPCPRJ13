@@ -9,6 +9,7 @@
  */
 
 #include "animator.hpp"
+#include "time.hpp"
 
 Animator::Animator() : currentState(nullptr) {}
 
@@ -32,35 +33,32 @@ void Animator::Play(bool looping)
     // Implementation
 }
 
-void Animator::AddState(const std::string &name, const AnimationState &state)
+[[gnu::used]] void Animator::AddState(const std::string &name, const AnimationState &state)
 {
     states[name] = state;
 }
 
-void Animator::SetState(const std::string &name)
-{
+[[gnu::used]] void Animator::SetState(const std::string &name) {
     auto it = states.find(name);
-    if (it != states.end())
-    {
-        currentState = &it->second;
+    if (it != states.end()) {
+        currentState = std::make_unique<AnimationState>(it->second);
     }
 }
 
-void Animator::Update(float deltaTime)
+
+void Animator::OnUpdate()
 {
     if (currentState)
     {
-        currentState->Update(deltaTime);
+        currentState->Update(Time::GetDeltaTime());
     }
 }
 
 int Animator::GetCurrentFrameIndex() const
 {
+    if (currentState)
     {
-        if (currentState)
-        {
-            return currentState->GetCurrentFrameIndex();
-        }
-        return 0;
+        return currentState->GetCurrentFrameIndex();
     }
+    return 0;
 }

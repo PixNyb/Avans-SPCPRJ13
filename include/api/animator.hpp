@@ -54,9 +54,36 @@ class Animator : public BehaviourScript
     void Stop();
     void Play(bool looping);
 
-    void AddState(const std::string &name, const AnimationState &state);
-    void SetState(const std::string &name);
-    void Update(float deltaTime);
+    /**
+     * @brief Add a new state to the Animator.
+     *
+     * This method adds a new state to the Animator. The state is identified by a name, which is
+     * used to set the state later on.
+     *
+     * @param name The name of the state.
+     * @param state The state to add.
+     */
+    [[gnu::used]] void AddState(const std::string &name, const AnimationState &state);
+
+    /**
+     * @brief Set the state of the Animator.
+     *
+     * This method sets the state of the Animator to the state identified by the given name.
+     *
+     * @param name The name of the state to set.
+     */
+    [[gnu::used]] void SetState(const std::string &name);
+
+    /**
+     * @brief Update the Animator.
+     * @param deltaTime
+     */
+    virtual void OnUpdate() override;
+
+    /**
+     * @brief Get the current frame index.
+     * @return int The current frame index.
+     */
     int GetCurrentFrameIndex() const;
 
   private:
@@ -64,7 +91,7 @@ class Animator : public BehaviourScript
      * @brief The current state of the Animator.
      *
      */
-    AnimationState *currentState;
+    std::unique_ptr<AnimationState> currentState;
 
     /**
      * @brief A map of possible states for the Animator.

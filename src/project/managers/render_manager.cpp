@@ -101,7 +101,7 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
     Transform finalTransform = gameObject->GetTransform();
     if (auto parent = gameObject->GetParent())
     {
-        finalTransform = finalTransform.CombineWith(parent->GetTransform());
+        finalTransform = finalTransform.operator+(parent->GetTransform());
     }
 
     // Calculate relative camera position
