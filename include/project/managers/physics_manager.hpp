@@ -12,11 +12,17 @@
 #ifndef DEFUNBOBENGINE_PHYSICS_MANAGER_HPP
 #define DEFUNBOBENGINE_PHYSICS_MANAGER_HPP
 
-#include "game_object.hpp"
-#include "memory"
 #include "physics_facade.hpp"
-#include "vector"
+#include <memory>
+#include <vector>
 
+class GameObject;
+
+/**
+ * @class PhysicsManager
+ * @brief This class is the link between the PhysicsFacade and the engine. The PhysicsManager
+ * contains the same functions as described in the PhysicsFacade.
+ */
 class PhysicsManager
 {
   private:
@@ -53,12 +59,20 @@ class PhysicsManager
     void AddForce(const std::shared_ptr<GameObject> &gameObject, float vx, float vy);
 
     /**
-     * Adds a rotation to a gameobject (will also apply the rotation on the center an is clockwise
+     * Adds a linear impulse to a gameobject (will allways create a force on the center of the body)
+     * @param gameObject is the object the force will be added to
+     * @param vx horizontal velocity
+     * @param vy vertical velocity
+     */
+    void AddLinearImpulse(const std::shared_ptr<GameObject> &gameObject, float vx, float vy);
+
+    /**
+     * Adds a rotation to a gameobject (will also apply the rotation on the center and is clockwise
      * when amount is positive)
      * @param gameObject is the object the rotation will be added to
      * @param amount the speed at which the object should spin
      */
-    void AddRotation(const std::shared_ptr<GameObject> &gameObject, float amount);
+    void AddRotationalForce(const std::shared_ptr<GameObject> &gameObject, float amount);
 
     /**
      * Simulates the world for 1 step
@@ -82,6 +96,16 @@ class PhysicsManager
      * @param debug
      */
     void SetDebug(bool debug) { physicsFacade.DEBUG = debug; }
+
+    /**
+     * Updates the rotation of the given GameObject
+     */
+    void UpdateRotation(const std::shared_ptr<GameObject> &gameObject, double rotation);
+
+    /**
+     * Updates the position of the given GameObject
+     */
+    void UpdatePosition(const std::shared_ptr<GameObject> &gameObject, double xPos, double yPos);
 };
 
 #endif // DEFUNBOBENGINE_PHYSICS_MANAGER_HPP

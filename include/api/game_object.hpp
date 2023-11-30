@@ -18,7 +18,7 @@
 #include <string>
 #include <vector>
 
-class GameObjectList;
+class PhysicsManager;
 
 /**
  * @class GameObject
@@ -41,6 +41,8 @@ class GameObject : public std::enable_shared_from_this<GameObject>
     bool active;                        ///< The active flag of the GameObject.
     std::string tag;                    ///< The tag/type of the GameObject.
     int layer;                          ///< The layer of the GameObject.
+    std::weak_ptr<PhysicsManager>
+        physicsManager; ///< A reference to the physicsmanager for behaviorscripts
     std::vector<std::shared_ptr<GameObject>> children; ///< The children of the GameObject.
   public:
     /**
@@ -230,6 +232,12 @@ class GameObject : public std::enable_shared_from_this<GameObject>
 
         return typeComponents;
     }
+
+    /**
+     * @brief Sets the reference to the PhysicsManager for running behaviourscripts
+     * @param physicsPointer the weak_ptr to the engines PhysicsManager
+     */
+    void SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer);
 };
 
 #endif // AVANS_SPCPRJ13_GAMEOBJECT_H

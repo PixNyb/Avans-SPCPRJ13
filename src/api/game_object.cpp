@@ -12,6 +12,7 @@
 
 #include "game_object.hpp"
 #include "component.hpp"
+#include "physics_manager.hpp"
 #include "transform.hpp"
 #include <algorithm>
 #include <memory>
@@ -99,6 +100,11 @@ void GameObject::SetActive(bool active) { this->active = active; }
 bool GameObject::IsActiveInWorld() const { return active; }
 
 bool GameObject::IsActiveSelf() const { return active; }
+
+void GameObject::SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer)
+{
+    this->physicsManager = std::move(physicsPointer);
+}
 
 void GameObject::SetParent(std::shared_ptr<GameObject> newParent)
 {
