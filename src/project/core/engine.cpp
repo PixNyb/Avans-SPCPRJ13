@@ -5,70 +5,90 @@
  * @version 0.1
  * @date 2023-11-10
  *
- * This file contains the implementation of the Engine class, which is central to the game engine's operation.
- * The Engine class manages the game loop, rendering process, and scene management. It also provides
- * utilities for frame timing and FPS calculation. The Engine ensures the cohesive operation of different
- * engine components, including IO and graphics, and manages the game's running state.
+ * This file contains the implementation of the Engine class, which is central to the game engine's
+ * operation. The Engine class manages the game loop, rendering process, and scene management. It
+ * also provides utilities for frame timing and FPS calculation. The Engine ensures the cohesive
+ * operation of different engine components, including IO and graphics, and manages the game's
+ * running state.
  *
  * Copyright Copyright (c) 2023
  *
  */
 
 #include "engine.hpp"
-#include "scene_manager.hpp"
-#include "io_facade.hpp"
+#include "behaviour_script_manager.hpp"
 #include "graphics_facade.hpp"
-#include "time_utility.hpp"
+#include "physics_manager.hpp"
+#include "render_manager.hpp"
+#include "scene_manager.hpp"
+#include "sdl_input_facade.hpp"
+#include "time.hpp"
 #include <thread>
 
-Engine* Engine::instancePtr = nullptr;
+Engine *Engine::instancePtr = nullptr;
 
-Engine::Engine() {
+Engine::Engine()
+{
     container.registerInstance<SceneManager>(std::make_shared<SceneManager>());
-    container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>(), InstanceScope::Engine);
+    container.registerInstance<IInputFacade>(std::make_shared<SDLInputFacade>());
+    container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>());
+    container.registerInstance<PhysicsManager>(std::make_shared<PhysicsManager>());
+    container.registerInstance<RenderManager>(std::make_shared<RenderManager>(),
+                                              InstanceScope::Engine);
+    container.registerInstance<BehaviourScriptManager>(std::make_shared<BehaviourScriptManager>(),
+                                                       InstanceScope::Engine);
 }
 
 void Engine::Start()
 {
     isRunning = true;
     int frameCount = 0;
-    TimeUtility time;
-    float lastFPSUpdateTime = time.GetTotalTime();
-    auto graphicsFacade = GetLocal<IOFacade>();
+    double lastFPSUpdateTime = Time::GetTotalTime();
+    auto graphicsFacade = Get<IOFacade>();
 
-    if (!graphicsFacade) {
+    if (!graphicsFacade)
+    {
         std::cerr << "GraphicsFacade instance is null" << std::endl;
         return;
     }
+
     graphicsFacade->Init();
 
-    while (isRunning) {
-        float deltaTime = time.GetDeltaTime();
+    while (isRunning)
+    {
+        double deltaTime = Time::GetDeltaTime();
 
         // Start of the frame
-        time.StartFrame();
+        Time::StartFrame();
 
         // Game logic goes here
-        // ...
+        Get<PhysicsManager>()->Step();
+
+        // TODO: Remove (Input manager required)
+        Get<IInputFacade>()->Update();
         Get<SceneManager>()->Update(deltaTime);
+        Get<BehaviourScriptManager>()->Update();
 
         // Render stuff goes here
         graphicsFacade->ClearScreen();
+        Get<RenderManager>()->Render();
+
         graphicsFacade->PresentScreen();
 
         // End of the frame
 
         // Calculate FPS
         frameCount++;
-        if (time.GetTotalTime() - lastFPSUpdateTime >= 1.0f) {
+        if (Time::GetTotalTime() - lastFPSUpdateTime >= 1.0f)
+        {
             currentFPS = frameCount;
             frameCount = 0;
-            lastFPSUpdateTime = time.GetTotalTime();
+            lastFPSUpdateTime = Time::GetTotalTime();
         }
 
         // Frame limiting
-        float elapsedMs = time.GetElapsedTimeSinceFrameStart();
-        float targetMs = 1000.0f / FPS_LIMIT;
+        double elapsedMs = Time::GetElapsedTimeSinceFrameStart();
+        double targetMs = 1000.0f / FPS_LIMIT;
         if (targetMs > elapsedMs)
         {
             graphicsFacade->Delay(static_cast<unsigned int>(targetMs - elapsedMs));
@@ -76,38 +96,25 @@ void Engine::Start()
     }
 }
 
-void Engine::Stop() {
-    isRunning = false;
-}
+void Engine::Stop() { isRunning = false; }
 
-void Engine::Shutdown() {
+void Engine::Shutdown()
+{
     Stop();
 
-    if(auto sceneManager = Get<SceneManager>(); sceneManager != nullptr)
+    if (auto sceneManager = Get<SceneManager>(); sceneManager != nullptr)
         sceneManager->ClearScene();
 }
 
-int Engine::GetFPS() const {
-    return currentFPS;
-}
+int Engine::GetFPS() const { return currentFPS; }
 
-void Engine::SetFPSLimit(float fps) {
-    FPS_LIMIT = fps;
-}
+void Engine::SetFPSLimit(float fps) { FPS_LIMIT = fps; }
 
-Engine *Engine::GetInstance() {
-    if (!instancePtr) {
+Engine *Engine::GetInstance()
+{
+    if (!instancePtr)
+    {
         instancePtr = new Engine();
     }
     return instancePtr;
 }
-
-template <typename T> std::shared_ptr<T> Engine::GetLocal()
-{
-    return container.resolve<T>(InstanceScope::Engine);
-}
-
-template <typename T> std::shared_ptr<T> Engine::Get() {
-    return container.resolve<T>();
-}
-

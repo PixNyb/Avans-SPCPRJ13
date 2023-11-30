@@ -18,15 +18,19 @@
 #include <string>
 #include <vector>
 
+class PhysicsManager;
+
 /**
  * @class GameObject
  * @brief The GameObject class represents an object in the game world.
+ *
+ * @warning Should be instantiated as a shared_ptr.
  *
  * It contains a name, a list of components, an active flag, a tag, and a layer.
  * GameObjects can be added to the game world and can have their components
  * updated and rendered.
  */
-class GameObject
+class GameObject : public std::enable_shared_from_this<GameObject>
 {
   protected:
     std::string name; ///< The name of the GameObject.
@@ -37,7 +41,9 @@ class GameObject
     bool active;                        ///< The active flag of the GameObject.
     std::string tag;                    ///< The tag/type of the GameObject.
     int layer;                          ///< The layer of the GameObject.
-
+    std::weak_ptr<PhysicsManager>
+        physicsManager; ///< A reference to the physicsmanager for behaviorscripts
+    std::vector<std::shared_ptr<GameObject>> children; ///< The children of the GameObject.
   public:
     /**
      * @brief Default constructor for GameObject.
@@ -57,6 +63,34 @@ class GameObject
      * @param transform The transform of the GameObject.
      */
     GameObject(const std::string &name, const Transform &transform);
+
+    /**
+     * @brief Copy constructor that creates a deep copy of the provided GameObject.
+     * @param other The GameObject that is to be copied.
+     */
+    GameObject(const GameObject &other);
+
+    /**
+     * @brief Copy assignment operator that creates a deep copy of the provided GameObject.
+     * @param other The GameObject that is to be copied.
+     * @return The new copy of the GameObject.
+     */
+    GameObject &operator=(const GameObject &other);
+
+    /**
+     * @brief Move constructor which could be used to move a GameObject, this functionality is
+     * currently disabled.
+     * @param other The GameObject that is to be moved.
+     */
+    GameObject(GameObject &&other) noexcept = delete;
+
+    /**
+     * @brief Move assignment operator which could be used to move a GameObject, this functionality
+     * is currently disabled.
+     * @param other The GameObject that is to be moved.
+     * @return The new GameObject that it was moved to.
+     */
+    GameObject &operator=(GameObject &&other) noexcept = delete;
 
     /**
      * @brief Destructor for GameObject.
@@ -121,7 +155,13 @@ class GameObject
      * @brief Set the parent of the GameObject.
      * @param parent The new parent of the GameObject.
      */
-    void SetParent(std::shared_ptr<GameObject> parent) { this->parent = parent; }
+    void SetParent(std::shared_ptr<GameObject> newParent);
+
+    /**
+     * @brief Get the children of the GameObject.
+     * @return The children of the GameObject.
+     */
+    std::vector<std::shared_ptr<GameObject>> GetChildren() const { return children; }
 
     /**
      * @brief Check if the GameObject is active.
@@ -152,6 +192,52 @@ class GameObject
      * @param component The component to add to the GameObject.
      */
     void AddComponent(std::shared_ptr<Component> component);
+
+    /**
+     * @brief Get the first component of the specified type. Must be
+     *        a valid subclass of Component.
+     *
+     * @tparam T The type of component to get.
+     * @return Pointer to Component instance.
+     */
+    template <class T> std::shared_ptr<T> GetComponent() const
+    {
+        for (std::shared_ptr<Component> component : components)
+        {
+            auto componentPtr = std::dynamic_pointer_cast<T>(component);
+            if (componentPtr)
+                return componentPtr;
+        }
+
+        return std::shared_ptr<T>{};
+    }
+
+    /**
+     * @brief Get all the components of the specified type. Must be
+     *        a valid subclass of Component.
+     *
+     * @tparam T The type of component to get.
+     * @return Vector with pointers to Component instances.
+     */
+    template <class T> std::vector<std::shared_ptr<T>> GetComponents() const
+    {
+        std::vector<std::shared_ptr<T>> typeComponents;
+
+        for (std::shared_ptr<Component> component : components)
+        {
+            auto componentPtr = std::dynamic_pointer_cast<T>(component);
+            if (componentPtr)
+                typeComponents.push_back(componentPtr);
+        }
+
+        return typeComponents;
+    }
+
+    /**
+     * @brief Sets the reference to the PhysicsManager for running behaviourscripts
+     * @param physicsPointer the weak_ptr to the engines PhysicsManager
+     */
+    void SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer);
 };
 
 #endif // AVANS_SPCPRJ13_GAMEOBJECT_H

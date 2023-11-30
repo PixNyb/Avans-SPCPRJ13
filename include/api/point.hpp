@@ -22,7 +22,8 @@
  * This struct is used to represent both a point in 2D space and a 2D vector.
  * It includes two double members, x and y, to denote the coordinates or vector components.
  */
-struct Point {
+struct Point
+{
     double x; /**< The x-coordinate or x-component of the point/vector. */
     double y; /**< The y-coordinate or y-component of the point/vector. */
 
@@ -33,6 +34,27 @@ struct Point {
      * @param y The y-coordinate or y-component of the point/vector.
      */
     Point(double x, double y) : x(x), y(y) {}
+
+    /**
+     * @brief Adds two points/vectors together.
+     * @param other The other point/vector to add to this one.
+     * @return Point The sum of the two points/vectors.
+     */
+    Point operator+(const Point &other) const { return {x + other.x, y + other.y}; }
+
+    /**
+     * @brief Subtracts two points/vectors from each other.
+     * @param other The other point/vector to subtract from this one.
+     * @return Point The difference of the two points/vectors.
+     */
+    Point operator-(const Point &other) const { return {x - other.x, y - other.y}; }
+
+    /**
+     * @brief Compares two points/vectors for equality.
+     * @param other The other point/vector to compare to this one.
+     * @return true If the two points/vectors are equal.
+     */
+    bool operator==(const Point &other) const { return x == other.x && y == other.y; }
 };
 
 #endif // DEFUNBOBENGINE_POINT_H

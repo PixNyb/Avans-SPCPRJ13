@@ -29,6 +29,18 @@ jobs:
           wget https://github.com/Kitware/CMake/releases/download/v3.27.0/cmake-3.27.0-Linux-x86_64.sh
           sudo sh cmake-3.27.0-Linux-x86_64.sh --skip-license --prefix=/usr/local
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libudev-dev \
+            libx11-dev \
+            libxrandr-dev \
+            libxcursor-dev \
+            libgl1-mesa-dev
+          sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/*
+
       - name: Install vcpkg
         run: |
           if [ ! -d "./vcpkg" ] ; then
@@ -86,8 +98,8 @@ jobs:
             echo "BUILD_INFO=$(echo ${{ github.event.ref }} | sed 's/refs\/heads\///g')" >> $GITHUB_ENV
           fi
 
-      - name: Install lcov
-        run: sudo apt-get install lcov
+      - name: Install lcov, valgrind and xvfb
+        run: sudo apt-get install -y lcov valgrind xvfb
 
       - name: Download build result
         uses: actions/download-artifact@v2
@@ -100,19 +112,29 @@ jobs:
       - name: Run tests
         run: |
           cd build
-          ctest --output-on-failure
+          xvfb-run --auto-servernum --server-args='-screen 0 1920x1080x24' valgrind --leak-check=full --log-file=valgrind.txt --error-exitcode=1 ctest --output-on-failure
 
       - name: Generate coverage report
         run: |
-            cd build
-            if gcov --version | grep -q "coverage"; then
-                lcov --capture --directory . --output-file coverage.info
-                lcov --remove coverage.info '/usr/*' --output-file coverage.info
-                lcov --list coverage.info
+          cd build
+          lcov --capture --directory . --output-file coverage.info
+          if [ -f coverage.info ]; then
+            lcov --remove coverage.info '/usr/*' '**/vcpkg_installed/**' --output-file coverage.info || true;
+            val=$?
+            if [ $val -ne 0 ]; then
+              echo "lcov failed with exit code $val"
+              echo "lcov failed with exit code $val" >> coverage.info
+              exit $val
             else
-                echo "Program not built with coverage flags, skipping coverage generation"
-                echo "Program not built with coverage flags." > coverage.info
+              lcov --list coverage.info || true;
+              val=$?
+              if [ $val -ne 0 ]; then
+                echo "lcov --list failed with exit code $val, was the coverage.info file generated?"
+                echo "lcov --list failed with exit code $val" >> coverage.info
+                exit $val
+              fi
             fi
+          fi
 
       - name: Upload test result
         uses: actions/upload-artifact@v2
@@ -127,3 +149,10 @@ jobs:
           name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Coverage.info
           path: |
             ./build/coverage.info
+
+      - name: Upload valgrind result
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.BUILD_INFO }}-${{ github.sha }}-Valgrind.txt
+          path: |
+            ./build/valgrind.txt

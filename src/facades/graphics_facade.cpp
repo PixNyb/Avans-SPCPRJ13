@@ -10,9 +10,12 @@
  */
 
 #include "graphics_facade.hpp"
+#include "core_constants.hpp"
 #include "sdl_circle.hpp"
+#include "sdl_colors.hpp"
 #include "sdl_rect.hpp"
 #include "sdl_triangle.hpp"
+#include <SDL_ttf.h>
 #include <iostream>
 
 GraphicsFacade::GraphicsFacade() {
@@ -23,7 +26,9 @@ GraphicsFacade::GraphicsFacade() {
     }
 }
 
-GraphicsFacade::~GraphicsFacade() {}
+GraphicsFacade::~GraphicsFacade() {
+
+}
 
 void GraphicsFacade::Init() {}
 
@@ -63,24 +68,49 @@ void GraphicsFacade::Delay(unsigned int ms) {
     }
 }
 
-void GraphicsFacade::DrawShape(Circle circle, SDL_Renderer* renderer) {
+void GraphicsFacade::DrawShape(Circle circle) {
+    auto renderer = SdlWindow->GetRenderer();
+    if(!renderer) {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
+    }
+
     const Vector2D& pos = circle.GetPosition();
     int x = static_cast<int>(pos.x);
     int y = static_cast<int>(pos.y);
     int rad = static_cast<int>(circle.GetRadius());
 
+    SetColor(circle.SetFillColor());
     SDLCircle sdlCircle(x, y, rad);
     sdlCircle.Draw(renderer);
+    ResetColor();
 }
 
-void GraphicsFacade::DrawShape(Rectangle rectangle, SDL_Renderer* renderer){
+void GraphicsFacade::DrawShape(Rectangle rectangle){
+    auto renderer = SdlWindow->GetRenderer();
+    if(!renderer) {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
+    }
+
     const Vector2D& pos = rectangle.GetPosition();
 
-    SDLRect rect(static_cast<int>(pos.x), static_cast<int>(pos.y), rectangle.GetWidth(), rectangle.GetHeight());
+    SDLRect rect(static_cast<int>(pos.x), static_cast<int>(pos.y), rectangle.GetWidth(),
+                 rectangle.GetHeight(), static_cast<int>(rectangle.GetRotation()));
+
+    SetColor(rectangle.SetFillColor());
+
     rect.Draw(renderer);
+    ResetColor();
 }
 
-void GraphicsFacade::DrawShape(Triangle triangle, SDL_Renderer *renderer) {
+void GraphicsFacade::DrawShape(Triangle triangle) {
+    auto renderer = SdlWindow->GetRenderer();
+    if(!renderer) {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
+    }
+
     // Retrieve the vertices of the Triangle
     const Vector2D& v1 = triangle.GetVertex1();
     const Vector2D& v2 = triangle.GetVertex2();
@@ -94,9 +124,150 @@ void GraphicsFacade::DrawShape(Triangle triangle, SDL_Renderer *renderer) {
     auto x3 = static_cast<Sint16>(v3.x);
     auto y3 = static_cast<Sint16>(v3.y);
 
+    // Apply rotation
+    auto rotation = triangle.GetRotation();
+    x1 = static_cast<Sint16>(x1 * cos(rotation) - y1 * sin(rotation));
+    y1 = static_cast<Sint16>(x1 * sin(rotation) + y1 * cos(rotation));
+    x2 = static_cast<Sint16>(x2 * cos(rotation) - y2 * sin(rotation));
+    y2 = static_cast<Sint16>(x2 * sin(rotation) + y2 * cos(rotation));
+    x3 = static_cast<Sint16>(x3 * cos(rotation) - y3 * sin(rotation));
+    y3 = static_cast<Sint16>(x3 * sin(rotation) + y3 * cos(rotation));
+
     // Create an SDLTriangle with the converted vertices
     SDLTriangle sdlTriangle(x1, y1, x2, y2, x3, y3);
 
     // Use SDLTriangle's Draw method to render the triangle
+    auto color = triangle.SetFillColor();
+    SetColor(color);
     sdlTriangle.Draw(renderer);
+    ResetColor();
+}
+
+void GraphicsFacade::DrawLine(Line line)
+{
+    auto renderer = SdlWindow->GetRenderer();
+    if(!renderer) {
+            std::cerr << "Renderer is null" << std::endl;
+            return;
+    }
+
+    // Apply rotation
+    auto rotation = line.GetRotation();
+    auto x1 = static_cast<Sint16>(line.start.x * cos(rotation) - line.start.y * sin(rotation));
+    auto y1 = static_cast<Sint16>(line.start.x * sin(rotation) + line.start.y * cos(rotation));
+    auto x2 = static_cast<Sint16>(line.end.x * cos(rotation) - line.end.y * sin(rotation));
+    auto y2 = static_cast<Sint16>(line.end.x * sin(rotation) + line.end.y * cos(rotation));
+    line.start.x = x1;
+    line.start.y = y1;
+    line.end.x = x2;
+    line.end.y = y2;
+
+    auto color = line.SetFillColor();
+    SetColor(color);
+    SDL_RenderDrawLine(renderer, line.start.x, line.start.y, line.end.x, line.end.y);
+    ResetColor();
+}
+
+void GraphicsFacade::DrawLines(std::vector<Line> lines) {
+    auto renderer = SdlWindow->GetRenderer();
+    if(!renderer) {
+            std::cerr << "Renderer is null" << std::endl;
+            return;
+    }
+
+    auto sdlLines = std::vector<SDL_Point>();
+    for(auto& line : lines) {
+        // Apply rotation
+        auto rotation = line.GetRotation();
+        auto x1 = static_cast<Sint16>(line.start.x * cos(rotation) - line.start.y * sin(rotation));
+        auto y1 = static_cast<Sint16>(line.start.x * sin(rotation) + line.start.y * cos(rotation));
+        auto x2 = static_cast<Sint16>(line.end.x * cos(rotation) - line.end.y * sin(rotation));
+        auto y2 = static_cast<Sint16>(line.end.x * sin(rotation) + line.end.y * cos(rotation));
+        sdlLines.push_back({x1, y1});
+        sdlLines.push_back({x2, y2});
+    }
+
+    auto color = lines[0].SetFillColor();
+    SetColor(color);
+    SDL_RenderDrawLines(renderer, sdlLines.data(), lines.size());
+    ResetColor();
+}
+
+void GraphicsFacade::ResetColor() {
+    auto renderer = SdlWindow->GetRenderer();
+    if(!renderer) {
+            std::cerr << "Renderer is null" << std::endl;
+            return;
+    }
+
+    // Reset the color for filling
+    auto defaultColor = CoreConstants::Renderer::DEFAULT_RENDER_COLOR;
+    auto colors = SDLColorUtility::GetSDLColor(defaultColor);
+    SDL_SetRenderDrawColor(renderer, colors.r, colors.g, colors.b, colors.a);
+}
+
+void GraphicsFacade::SetColor(Color color) {
+    auto renderer = SdlWindow->GetRenderer();
+    if(!renderer) {
+            std::cerr << "Renderer is null" << std::endl;
+            return;
+    }
+
+    auto colors = SDLColorUtility::GetSDLColor(color);
+    SDL_SetRenderDrawColor(renderer, colors.r, colors.g, colors.b, colors.a);
+}
+
+// TODO: Implement font manager?
+void GraphicsFacade::DrawText(const Text& text) {
+        auto renderer = SdlWindow->GetRenderer();
+        if(!renderer) {
+                std::cerr << "Renderer is null" << std::endl;
+                return;
+        }
+
+        // Load the font
+        auto fontPath = CoreConstants::Text::DEFAULT_FONT_PATH;
+
+        auto sdlFont = TTF_OpenFont(fontPath.c_str(), text.GetFontSize());
+        if (!sdlFont) {
+                std::cerr << "Failed to load font: " << TTF_GetError() << std::endl;
+                return;
+        }
+
+        // Create the text surface
+        auto sdlColor = SDLColorUtility::GetSDLColor(text.GetTextColor());
+
+        // Note: For some odd reason wrap length works in pixels instead of characters
+        auto textSurface = TTF_RenderUTF8_Blended_Wrapped(sdlFont, text.GetText().c_str(),
+                                                          sdlColor, text.GetWidth());
+        if (!textSurface) {
+                std::cerr << "Failed to create text surface: " << TTF_GetError() << std::endl;
+                return;
+        }
+
+        // Limit height to text height if it's larger than the height
+        if(textSurface->h > text.GetHeight()) {
+            textSurface->h = text.GetHeight();
+        }
+
+        // Create the text texture
+        auto textTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
+        if (!textTexture) {
+                std::cerr << "Failed to create text texture: " << SDL_GetError() << std::endl;
+                return;
+        }
+
+        // Create the text rectangle
+        auto position = text.GetTransform().position;
+        auto textRect = SDL_Rect{static_cast<int>(position.x), static_cast<int>(position.y), textSurface->w, textSurface->h};
+
+        // Render the text
+        SDL_RenderCopyEx(renderer, textTexture, nullptr, &textRect, text.GetTransform().rotation, nullptr, SDL_FLIP_NONE);
+
+        // Free the text surface and texture
+        SDL_FreeSurface(textSurface);
+        SDL_DestroyTexture(textTexture);
+
+        // Close the font
+        TTF_CloseFont(sdlFont);
 }

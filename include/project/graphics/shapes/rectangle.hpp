@@ -26,12 +26,15 @@
  * The draw method is used to render the rectangle to the screen using the rendering logic
  * specific to the graphics library being used.
  */
-class Rectangle : public Geometry {
-private:
-    int height; ///< The height of the rectangle.
-    int width; ///< The width of the rectangle.
+class Rectangle : public Geometry
+{
+  private:
+    int height;        ///< The height of the rectangle.
+    int width;         ///< The width of the rectangle.
+    Vector2D position; ///< The position of the rectangle's reference point (typically the top left
+                       ///< corner).
 
-public:
+  public:
     /**
      * @brief Constructs a new Rectangle object.
      *
@@ -39,18 +42,21 @@ public:
      * @param h The height of the rectangle.
      * @param w The width of the rectangle.
      */
-    Rectangle(const Vector2D& pos, int h, int w)
-            : Geometry(pos), height(h), width(w) {}
+    Rectangle(const Vector2D &pos, int h, int w) : position(pos), height(h), width(w) {}
 
+    [[nodiscard]] Vector2D GetPosition() const { return position; }
 
-    int GetHeight() const {
-        return height;
+    int GetHeight() const { return height; }
+
+    int GetWidth() const { return width; }
+
+    int GetArea() override { return height * width; }
+
+    bool IsWithinArea(const Vector2D &start, const Vector2D &end) override
+    {
+        return (position.x >= start.x && position.y >= start.y) &&
+               (position.x + width <= end.x && position.y + height <= end.y);
     }
-
-    int GetWidth() const {
-        return width;
-    }
-
 };
 
-#endif //DEFUNBOBENGINE_RECTANGLE_HPP
+#endif // DEFUNBOBENGINE_RECTANGLE_HPP

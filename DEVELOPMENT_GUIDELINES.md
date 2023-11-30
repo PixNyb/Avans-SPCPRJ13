@@ -7,6 +7,7 @@
   - [Code Formatting](#code-formatting)
   - [Bestandsstructuur](#bestandsstructuur)
   - [Commentaar](#commentaar)
+    - [Doxygen](#doxygen)
   - [CMake-bestanden](#cmake-bestanden)
   - [Bouwproces](#bouwproces)
   - [Testen](#testen)
@@ -43,30 +44,48 @@ Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code
 - Voeg commentaar toe om complexe of onduidelijke delen van de code uit te leggen.
 - Voeg een licentieheader bovenaan elk bronbestand toe om auteursrecht en licentie-informatie te vermelden.
 - Gebruik `//` voor enkele regel commentaar en `/* */` voor meerdere regels.
-- Houd de [Doxygen commentaarstijl](https://www.doxygen.nl/manual/docblocks.html) aan voor documentatie.
 
-  ```console
-  // Dit is een voorbeeld van een enkele regel commentaar.
+### Doxygen
 
-  /**
-  * Dit is een voorbeeld van een meerdere regels commentaar.
-  * Dit is de tweede regel.
-  * Door gebruik te maken van 2 sterretjes op de eerste regel, wordt door doxygen de commentaar als documentatie gezien.
-  */
+Houd de [Doxygen commentaarstijl](https://www.doxygen.nl/manual/docblocks.html) aan voor documentatie zoals hieronder beschreven:
+
+- File-level commentaar bovenaan elk bestand:
   ```
-
-- Denk eraan om bij bestanden die door doxygen worden gegenereerd, bovenaan het bestand een `@file`-tag toe te voegen.
-
-  ```console
-  /// @file
-
-  // Of
-
   /**
-  * @file
-  * @brief This file contains the implementation of the Foo class.
-  */
+   * @file <file_name>
+   * @author <author (email)?>
+   * @brief <brief description following the format: This file contains the (declaration|definition) of the <class_name> (class|struct|enum|union|interface)>
+   * @version <version>
+   * @date <date>
+   *
+   * <detailed description if needed, this does NOT include class-level descriptions>
+   *
+   * @copyright Copyright (c) 2023
+   */
   ```
+  - De `@author` tag kan meerdere keren voorkomen.
+- Class-level commentaar bovenaan elke klasse:
+  ```
+  /**
+   * @class <class_name>
+   * @brief <brief description following the format: This (class|struct|enum|union|interface) (represents|contains|defines) ...>
+   *
+   * <detailed description>
+   */
+  ```
+  - Met behulp van de `@note`, `@warning`, `@bug`, `@todo` en `@see` tags kan er extra informatie toegevoegd worden.
+- Function-level commentaar boven elke functie:
+  ```
+  /**
+   * @brief <brief description following the format: This function (does|returns|calculates|...) ...>
+   *
+   * <detailed description>
+   * @param <parameter_name> <parameter_description>
+   * @return <return_description>
+   */
+  ```
+  - Met behulp van de `@note`, `@warning`, `@bug`, `@todo` en `@see` tags kan er extra informatie toegevoegd worden.
+  - Met behulp van de `@param` en `@tparam` tags kan er informatie toegevoegd worden over de parameters van de functie.
 
 ## CMake-bestanden
 
@@ -117,4 +136,4 @@ _Voor het toevoegen van nieuwe tests hoeft er naast het aanmaken van de runnable
 ## Documentatie
 
 - Voeg doelmatige documentatie toe aan de code en gebruik `doxygen` om documentatie te genereren.
-- Documenteer **functies**, **klassen** en **complexe algoritmen**.
+- Documenteer **bestanden**, **functies**, **klassen** en **complexe algoritmen**.

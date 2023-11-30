@@ -9,9 +9,12 @@ option(BUILD_TESTS "Build the tests" OFF)
 
 # If the option is set to true or we're running a debug build, build the tests
 if(BUILD_TESTS OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
+    message(STATUS "Building tests")
     enable_testing()
     add_subdirectory(tests)
 endif()
+
+file(COPY ${PROJECT_SOURCE_DIR}/resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 # Generate coverage
 option(GENERATE_COVERAGE "Generate coverage" OFF)
@@ -46,6 +49,7 @@ if(GENERATE_COVERAGE OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
         ProcessorCount(N)
 
         if(NOT N EQUAL 0)
+            message(STATUS "Building with coverage")
             set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g --coverage -fprofile-arcs -ftest-coverage")
             target_link_libraries(DeFunBobEngine PRIVATE gcov)
@@ -102,6 +106,18 @@ target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2
 # Add SDL2_net
 find_package(SDL2_net CONFIG REQUIRED)
 target_link_libraries(DeFunBobEngine PRIVATE $<IF:$<TARGET_EXISTS:SDL2_net::SDL2_net>,SDL2_net::SDL2_net,SDL2_net::SDL2_net-static>)
+
+# Add nlohmann_json
+find_package(nlohmann_json CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE nlohmann_json::nlohmann_json)
+
+# Add fmt
+find_package(fmt CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE fmt::fmt)
+
+# Add box2d
+find_package(box2d CONFIG REQUIRED)
+target_link_libraries(DeFunBobEngine PRIVATE box2d::box2d)
 
 # Add sandbox
 add_subdirectory(sandbox)
