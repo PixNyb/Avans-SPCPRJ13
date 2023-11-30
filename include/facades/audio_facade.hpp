@@ -13,8 +13,8 @@
 #define DEFUNBOBENGINE_SRC_FACADES_AUDIO_FACADE_HPP
 
 #include "i_sound.hpp"
-#include "sfml_sound.hpp"
 #include <memory>
+#include <string>
 
 /**
  * @brief A facade for the audio library.

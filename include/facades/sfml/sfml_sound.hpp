@@ -16,6 +16,10 @@
 #include "i_sound_playstate.hpp"
 #include <SFML/Audio.hpp>
 
+/**
+ * @class SFMLSound
+ * @brief An implementation of the ISound interface for SFML.
+ */
 class SFMLSound : public ISound
 {
   private:

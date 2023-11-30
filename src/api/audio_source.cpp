@@ -10,7 +10,8 @@
  */
 
 #include "audio_source.hpp"
-
+#include "audio_facade.hpp"
+#include <algorithm>
 #include <utility>
 
 AudioSource::AudioSource(std::string audioClipPath, bool playOnAwake, bool loop, double volume)

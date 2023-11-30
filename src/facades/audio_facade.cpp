@@ -10,6 +10,7 @@
  */
 
 #include "audio_facade.hpp"
+#include "sfml_sound.hpp"
 
 std::unique_ptr<ISound> AudioFacade::CreateAudioInstance(const std::string &filePath)
 {

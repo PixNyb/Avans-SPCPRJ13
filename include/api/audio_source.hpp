@@ -17,8 +17,10 @@
 #ifndef AVANS_SPCPRJ13_AUDIOSOURCE_H
 #define AVANS_SPCPRJ13_AUDIOSOURCE_H
 
-#include "audio_facade.hpp"
 #include "component.hpp"
+#include "i_sound.hpp"
+#include <iostream>
+#include <memory>
 #include <string>
 
 /**
