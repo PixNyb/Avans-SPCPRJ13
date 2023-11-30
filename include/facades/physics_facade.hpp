@@ -147,6 +147,8 @@ class PhysicsFacade
      * @param vY velocity on the y-axis
      */
     void UpdateVelocity(const std::shared_ptr<GameObject> &gameObject, double vX, double vY);
+
+    void DeleteBodies();
 };
 
 #endif // AVANS_SPCPRJ13_PHYSICS_FACADE_HPP
