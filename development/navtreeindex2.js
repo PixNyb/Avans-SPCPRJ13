@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classTimer.html#ad2c1eb5143ae3cc17ec55265b5e9982d":[5,0,60,1],
 "classTriangle.html":[5,0,62],
 "classTriangle.html#a0728bb1f1a2701e4fc3b458c2b96db89":[5,0,62,3],
 "classTriangle.html#a0a203d99f5ad7b2764a790a1698c2d9f":[5,0,62,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a4fc963e213bba362778f5c175eb4d5ff":[6,0,0,1,3,1,116],
 "i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a50d6bc86f0c4a7bfa3d573e8d537f836":[6,0,0,1,3,1,176],
 "i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a50f5d45148f092b46e8890b661d49292":[6,0,0,1,3,1,207],
-"i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a5167dbd2c4fc6fd1d808ac9a820c8677":[6,0,0,1,3,1,195],
-"i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a5206560a306a2e085a437fd258eb57ce":[6,0,0,1,3,1,24]
+"i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a5167dbd2c4fc6fd1d808ac9a820c8677":[6,0,0,1,3,1,195]
 };

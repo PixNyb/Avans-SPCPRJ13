@@ -99,7 +99,8 @@ var NAVTREEINDEX1 =
 "classSDLInput.html#a033fb297176eb9213a2b692d0150bcca":[5,0,46,2],
 "classSDLInput.html#a15be55f63a2abcbf9b67454fd261fb5c":[5,0,46,3],
 "classSDLInput.html#a1947e5e6d3969a918a4874b30474b09c":[5,0,46,1],
-"classSDLInput.html#a452c85201d60493e81cc796f770051b6":[5,0,46,14],
+"classSDLInput.html#a452c85201d60493e81cc796f770051b6":[5,0,46,15],
+"classSDLInput.html#a47f4cf429754dc1a74e83b236eff28ef":[5,0,46,14],
 "classSDLInput.html#a63d311ceafb2b5edfd64d6c977e1690b":[5,0,46,11],
 "classSDLInput.html#a63ec65860e8a1700707223937ef9366d":[5,0,46,10],
 "classSDLInput.html#a8e1bf7eb3e0411a2c5def513133590be":[5,0,46,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "classTimer.html#a4e607b129b392c11adddd9641a320436":[5,0,60,3],
 "classTimer.html#a5f16e8da27d2a5a5242dead46de05d97":[5,0,60,0],
 "classTimer.html#a6379e797f968aaee6ac3bb12dc6b81c5":[5,0,60,4],
-"classTimer.html#a9b8c57bf9675da635a82d68d9b4d05e5":[5,0,60,2],
-"classTimer.html#ad2c1eb5143ae3cc17ec55265b5e9982d":[5,0,60,1]
+"classTimer.html#a9b8c57bf9675da635a82d68d9b4d05e5":[5,0,60,2]
 };

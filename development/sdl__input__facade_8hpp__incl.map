@@ -1,13 +1,13 @@
 <map id="include/facades/sdl2/facades/sdl_input_facade.hpp" name="include/facades/sdl2/facades/sdl_input_facade.hpp">
-<area shape="rect" id="node1" title="This file contains the SDLInputFacade class definition." alt="" coords="185,5,404,47"/>
-<area shape="rect" id="node2" href="$i__input__facade_8hpp.html" title="This file contains the IInputFacade interface definition." alt="" coords="61,95,206,121"/>
-<area shape="rect" id="node3" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="183,169,265,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,169,64,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="95,169,158,196"/>
-<area shape="rect" id="node6" href="$sdl__input_8hpp.html" title="This file contains the Input class definition." alt="" coords="332,95,441,121"/>
-<area shape="rect" id="node10" title=" " alt="" coords="653,169,777,196"/>
-<area shape="rect" id="node11" title=" " alt="" coords="516,95,593,121"/>
-<area shape="rect" id="node7" title=" " alt="" coords="289,169,348,196"/>
-<area shape="rect" id="node8" title=" " alt="" coords="373,169,499,196"/>
-<area shape="rect" id="node9" title=" " alt="" coords="523,169,629,196"/>
+<area shape="rect" id="node1" title="This file contains the SDLInputFacade class definition." alt="" coords="228,5,447,47"/>
+<area shape="rect" id="node2" href="$i__input__facade_8hpp.html" title="This file contains the IInputFacade interface definition." alt="" coords="154,95,299,121"/>
+<area shape="rect" id="node3" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="5,169,88,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="112,169,171,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="195,169,258,196"/>
+<area shape="rect" id="node6" href="$sdl__input_8hpp.html" title="This file contains the Input class definition." alt="" coords="375,95,484,121"/>
+<area shape="rect" id="node10" title=" " alt="" coords="646,169,770,196"/>
+<area shape="rect" id="node11" title=" " alt="" coords="559,95,636,121"/>
+<area shape="rect" id="node7" title=" " alt="" coords="283,169,341,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="366,169,493,196"/>
+<area shape="rect" id="node9" title=" " alt="" coords="517,169,622,196"/>
 </map>

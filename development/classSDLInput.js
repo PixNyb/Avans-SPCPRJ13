@@ -14,5 +14,6 @@ var classSDLInput =
     [ "IsMouseButtonDown", "classSDLInput.html#a63d311ceafb2b5edfd64d6c977e1690b", null ],
     [ "IsMouseButtonPressed", "classSDLInput.html#abf99f457c965eaab316a0b83026bbd14", null ],
     [ "IsMouseButtonUp", "classSDLInput.html#a987dc56c3e00e59a23383d02ce701c85", null ],
+    [ "ShouldQuit", "classSDLInput.html#a47f4cf429754dc1a74e83b236eff28ef", null ],
     [ "Update", "classSDLInput.html#a452c85201d60493e81cc796f770051b6", null ]
 ];

@@ -1,8 +1,7 @@
 <map id="include/facades/sdl2/sdl_input.hpp" name="include/facades/sdl2/sdl_input.hpp">
-<area shape="rect" id="node1" title="This file contains the Input class definition." alt="" coords="181,5,336,47"/>
-<area shape="rect" id="node2" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="5,95,88,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="112,95,171,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="195,95,322,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="346,95,451,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="475,95,599,121"/>
+<area shape="rect" id="node1" title="This file contains the Input class definition." alt="" coords="144,5,299,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,64,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="89,95,215,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="239,95,345,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="369,95,493,121"/>
 </map>
