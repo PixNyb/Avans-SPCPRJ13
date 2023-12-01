@@ -86,6 +86,19 @@ Houd de [Doxygen commentaarstijl](https://www.doxygen.nl/manual/docblocks.html) 
   ```
   - Met behulp van de `@note`, `@warning`, `@bug`, `@todo` en `@see` tags kan er extra informatie toegevoegd worden.
   - Met behulp van de `@param` en `@tparam` tags kan er informatie toegevoegd worden over de parameters van de functie.
+- Property-level commentaar naast elke variabele:
+  ```
+  <variable_type> <variable_name>; ///< <description>
+  ```
+  - Wanneer er meer documentatie nodig is, kan er gebruikt worden van een multiline comment:
+  ```
+  /**
+  * @brief <brief description following the format: This variable (represents|contains|defines) ...>
+  *
+  * <detailed description>
+  */
+  <variable_type> <variable_name>; ///< <description>
+  ```
 
 ## CMake-bestanden
 
