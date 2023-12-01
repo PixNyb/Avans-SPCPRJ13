@@ -242,13 +242,13 @@ class GameObject : public std::enable_shared_from_this<GameObject>
     void SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer);
 
     /**
-     * Gets the hasPhysics flag
+     * @brief Gets the hasPhysics flag
      * @return bool
      */
     bool HasPhysics() { return hasPhysics; }
 
     /**
-     * Sets the hasPhysics flag
+     * @brief Sets the hasPhysics flag
      * @return bool
      */
     void HasPhysics(bool physics) { this->hasPhysics = physics; }
