@@ -13,7 +13,6 @@
 #include "point.hpp"
 #include "sdl_input.hpp"
 #include <algorithm>
-#include <iostream>
 #include <memory>
 #include <stdexcept>
 
@@ -236,6 +235,9 @@ bool SDLInputFacade::AnyActionUp() const
 
 bool SDLInputFacade::GetAction(const std::string &action) const
 {
+    if (action == "quit")
+        return input->ShouldQuit();
+
     if (keyActionMap.find(action) == keyActionMap.end() &&
         mouseActionMap.find(action) == mouseActionMap.end())
         throw std::runtime_error("Action not registered");

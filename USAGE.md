@@ -110,6 +110,25 @@ void PhysicsManager::Step() {
 De CreateWorld functie roep je als eerste aan. Vervolgens kun je de simulatie starten met de Step() functie.
 Per aanroep van deze functie zet de wereld 1 stap en beweegt hij de objecten die hij bevat.
 
+De objecten binnen Box2d kunnen van 3 types zijn:
+
+- Static
+
+Static bodies zijn objecten die vaststaan in de wereld en hebben dus geen velocity en reageren niet op zwaartekracht.
+Static bodies kunnen wel handmatg verplaatst worden naar een andere locatie in de wereld met de UpdateTransform functie
+van de PhysicsManager.
+
+- Kinematic
+
+Kinematic bodies kunnen in tegenstelling tot static bodies wel bewegen. Ze reageren niet op zwaartekracht en kunnen niet
+bewogen door krachten van botsingen. De enige manier om een kinematic body te bewegen is door zijn velocity te setten
+met de functie UpdateVelocity.
+
+- Dynamic
+
+Dynamic bodies zijn volledig gesimuleerd en zullen zich gedragen zoals een object in de echte wereld dat doet. Deze kun
+je bewegen door meerdere functies te gebruiken: UpdateVelocity(), AddLinearForce() en AddForce().
+
 ## Input Facades
 
 De input facade maakt het mogelijk om naar key en mouse inputs te luisteren, maar ook om acties te maken, binden aan

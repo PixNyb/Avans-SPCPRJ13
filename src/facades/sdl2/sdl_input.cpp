@@ -10,7 +10,6 @@
  */
 
 #include "sdl_input.hpp"
-#include "point.hpp"
 
 SDLInput::SDLInput()
 {
@@ -52,6 +51,9 @@ void SDLInput::Update()
         case SDL_MOUSEMOTION:
             mousePosition.x = event.motion.x;
             mousePosition.y = event.motion.y;
+            break;
+        case SDL_QUIT:
+            shouldQuit = true;
             break;
         }
     }
@@ -163,3 +165,5 @@ bool SDLInput::IsAnyMouseButtonDown() const
 }
 
 SDL_Point SDLInput::GetMousePosition() const { return mousePosition; }
+
+bool SDLInput::ShouldQuit() const { return shouldQuit; }
