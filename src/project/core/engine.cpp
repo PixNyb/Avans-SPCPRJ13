@@ -23,7 +23,7 @@
 #include "scene_manager.hpp"
 #include "sdl_input_facade.hpp"
 #include "time.hpp"
-#include <thread>
+#include <iostream>
 
 Engine *Engine::instancePtr = nullptr;
 
@@ -61,20 +61,22 @@ void Engine::Start()
         // Start of the frame
         Time::StartFrame();
 
-        // Game logic goes here
         Get<PhysicsManager>()->Step();
 
-        // TODO: Remove (Input manager required)
         Get<IInputFacade>()->Update();
+
         Get<SceneManager>()->Update(deltaTime);
+
         Get<BehaviourScriptManager>()->Update();
 
-        // Render stuff goes here
         graphicsFacade->ClearScreen();
         Get<RenderManager>()->Render();
 
         graphicsFacade->PresentScreen();
 
+        // Keep this at the end of the frame so the user can execute actions before the engine stops
+        if (Get<IInputFacade>()->GetAction("quit"))
+            Stop();
         // End of the frame
 
         // Calculate FPS
