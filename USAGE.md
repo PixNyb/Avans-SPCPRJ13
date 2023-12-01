@@ -33,11 +33,11 @@ auto boxComponent = std::make_shared<GameObject>();
 boxComponent->SetName("Box");
 boxComponent->AddComponent(boxCollider);
 boxComponent->SetTransform(Transform(Point(0, 0), 0, 1));
-    
+
 auto sprite = std::make_shared<GameObject>();
 sprite->SetName("Sprite");
 sprite->SetParent(boxComponent);
-    
+
 auto spriteComponent = std::make_shared<Sprite>();
 spriteComponent->SetSprite("lego_spritesheet.png");
 sprite->AddComponent(spriteComponent);
@@ -150,7 +150,7 @@ De physics manager is voor de engine het aanspreekpunt om een wereld te starten,
 De physics manager heeft functies die elk hun doel omschrijven. Hiermee kun je bodies aanmaken, verwijderen, uit- en
 aanzetten en beinvloeden met krachten.
 
-```
+```cpp
 // Creates the world and populates it with the given gameobjects
 void PhysicsManager::CreateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects) {
     physicsFacade.PopulateWorld(std::move(gameObjects));
@@ -194,7 +194,7 @@ moet houden is
 het schrijven van de juiste calls naar de physics manager of andere managers. Hieronder staan de methodes van de
 behaviorscripts die aangeroepen worden in de contactlistener
 
-```
+```cpp
 void ColliderBehaviorTest::OnTriggerEnter2D(const Collider &collider) {}
 
 void ColliderBehaviorTest::OnTriggerExit2D(const Collider &collider) {}
