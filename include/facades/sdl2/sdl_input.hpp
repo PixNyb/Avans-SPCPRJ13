@@ -18,7 +18,6 @@
 #ifndef DEFUNBOBENGINE_INPUT_HPP
 #define DEFUNBOBENGINE_INPUT_HPP
 
-#include "point.hpp"
 #include <SDL.h>
 #include <SDL_scancode.h>
 #include <SDL_stdinc.h>
@@ -133,6 +132,12 @@ class SDLInput
      */
     SDL_Point GetMousePosition() const;
 
+    /**
+     * @brief Check if the application should quit.
+     * @return true if the application should quit, false otherwise.
+     */
+    bool ShouldQuit() const;
+
   private:
     std::unordered_map<SDL_Scancode, bool>
         frameKeyState; ///< The current state of the keys that have changed this frame.
@@ -142,6 +147,7 @@ class SDLInput
     std::unordered_map<SDL_Scancode, bool> keyState;  ///< The current state of all keys.
     std::unordered_map<Uint8, bool> mouseButtonState; ///< The current state of all mouse buttons.
     SDL_Point mousePosition;                          ///< The current position of the mouse cursor.
+    bool shouldQuit = false;                          ///< Whether the application should quit.
 };
 
 #endif // DEFUNBOBENGINE_INPUT_HPP
