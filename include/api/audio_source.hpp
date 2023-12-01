@@ -33,7 +33,7 @@
 class AudioSource : public Component
 {
   private:
-    std::shared_ptr<ISound> sound;
+    std::shared_ptr<ISound> sound; ///< The audio instance.
 
   public:
     /**
@@ -76,6 +76,8 @@ class AudioSource : public Component
 
     /**
      * @brief Set the active status of the Component, also stops the audio.
+     *
+     * @param isActivate The new active status of the Component.
      */
     void SetActive(bool isActivate) override;
 
