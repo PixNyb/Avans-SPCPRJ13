@@ -36,12 +36,11 @@
 class GraphicsFacade : public IOFacade
 {
   private:
-    std::unique_ptr<SDLWindow>
-        SdlWindow; /**< Unique pointer to SDLWindow for managing the graphics window. */
-    std::unique_ptr<SDLInit> SdlInit; /**< Unique pointer to SDLInit for SDL initialization. */
+    std::unique_ptr<SDLWindow> SdlWindow; ///< Unique pointer to SDLWindow for window management.
+    std::unique_ptr<SDLInit> SdlInit;     ///< Unique pointer to SDLInit for SDL initialization.
 
     std::map<std::string, SDL_Texture *>
-        textureCache; /**< Map of texture file paths to SDL_Texture pointers. */
+        textureCache; ///< Map of cached SDL_Textures for Texture objects.
 
     /**
      * @brief resets the color to the default color specified in the Constants.

@@ -13,6 +13,7 @@
 #include "behaviour_script.hpp"
 #include "box_collider.hpp"
 #include "circle_collider.hpp"
+#include <algorithm>
 #include <utility>
 
 const double MeterToPixel = 50;

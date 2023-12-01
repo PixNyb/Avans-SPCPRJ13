@@ -14,6 +14,7 @@
 #include "animation_state.hpp"
 #include "behaviour_script.hpp"
 #include <map>
+#include <memory>
 #include <vector>
 
 /**

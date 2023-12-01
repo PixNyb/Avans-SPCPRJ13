@@ -33,12 +33,6 @@ class Event
      * @param type The type of the event.
      */
     Event(EventType type) : type(type) {}
-
-    /**
-     * @brief Virtual destructor for polymorphic deletion.
-     */
-    virtual ~Event() {}
-
 };
 
 #endif // DEFUNBOBENGINE_EVENT_HPP
