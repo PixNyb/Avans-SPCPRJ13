@@ -116,11 +116,12 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
 
 void PhysicsFacade::Step()
 {
-    DeleteBodies();
     double delta = std::clamp(Time::GetDeltaTime(), 0.0001, 2.0);
     double time = delta * Time::TimeScale() * 100 * (TimeStep);
     // run physics world
     world->Step(static_cast<float>(time), VelocityIterations, PositionIterations);
+    DeleteBodies();
+
     // update all gameobjects
     for (auto object_pair = bodies.begin(); object_pair != bodies.end(); ++object_pair)
     {
@@ -252,7 +253,7 @@ void PhysicsFacade::DeleteBodies()
     std::vector<std::shared_ptr<GameObject>> delBodies;
     for (auto i = bodies.begin(); i != bodies.end(); i++)
     {
-        if (i->first->Deleted())
+        if (!i->first->HasPhysics())
             delBodies.push_back(i->first);
     }
     for (auto &object : delBodies)

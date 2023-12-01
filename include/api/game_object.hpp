@@ -44,7 +44,7 @@ class GameObject : public std::enable_shared_from_this<GameObject>
     std::weak_ptr<PhysicsManager>
         physicsManager; ///< A reference to the physicsmanager for behaviorscripts
     std::vector<std::shared_ptr<GameObject>> children; ///< The children of the GameObject.
-    bool deleted = false;
+    bool hasPhysics = true; ///< Indicates if the gameobject has a body in the physics simulation
 
   public:
     /**
@@ -242,16 +242,16 @@ class GameObject : public std::enable_shared_from_this<GameObject>
     void SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer);
 
     /**
-     * Gets the deleted flag
+     * Gets the hasPhysics flag
      * @return bool
      */
-    bool Deleted() { return deleted; }
+    bool HasPhysics() { return hasPhysics; }
 
     /**
-     * Sets the deleted flag
+     * Sets the hasPhysics flag
      * @return bool
      */
-    void Deleted(bool del) { this->deleted = del; }
+    void HasPhysics(bool physics) { this->hasPhysics = physics; }
 };
 
 #endif // AVANS_SPCPRJ13_GAMEOBJECT_H
