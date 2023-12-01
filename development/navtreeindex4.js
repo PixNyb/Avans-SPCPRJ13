@@ -1,5 +1,11 @@
 var NAVTREEINDEX4 =
 {
+"scene_8cpp.html":[6,0,1,0,13],
+"scene_8hpp.html":[6,0,0,0,19],
+"scene_8hpp_source.html":[6,0,0,0,19],
+"scene__manager_8cpp.html":[6,0,1,2,2,3],
+"scene__manager_8hpp.html":[6,0,0,2,2,4],
+"scene__manager_8hpp_source.html":[6,0,0,2,2,4],
 "sdl__circle_8cpp.html":[6,0,1,1,1,1,0],
 "sdl__circle_8hpp.html":[6,0,0,1,1,1,0],
 "sdl__circle_8hpp_source.html":[6,0,0,1,1,1,0],

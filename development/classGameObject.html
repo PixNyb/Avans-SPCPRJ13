@@ -210,6 +210,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:a76ad5e654b86341fe54827b326e9666d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a76ad5e654b86341fe54827b326e9666d">SetPhysicsManager</a> (std::weak_ptr&lt; <a class="el" href="classPhysicsManager.html">PhysicsManager</a> &gt; physicsPointer)</td></tr>
 <tr class="memdesc:a76ad5e654b86341fe54827b326e9666d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the reference to the <a class="el" href="classPhysicsManager.html" title="This class is the link between the PhysicsFacade and the engine. The PhysicsManager contains the same...">PhysicsManager</a> for running behaviourscripts.  <a href="classGameObject.html#a76ad5e654b86341fe54827b326e9666d">More...</a><br /></td></tr>
 <tr class="separator:a76ad5e654b86341fe54827b326e9666d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ed6f7d8c2d8017ef4ab1bf39fea25d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a0ed6f7d8c2d8017ef4ab1bf39fea25d5">HasPhysics</a> ()</td></tr>
+<tr class="memdesc:a0ed6f7d8c2d8017ef4ab1bf39fea25d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hasPhysics flag.  <a href="classGameObject.html#a0ed6f7d8c2d8017ef4ab1bf39fea25d5">More...</a><br /></td></tr>
+<tr class="separator:a0ed6f7d8c2d8017ef4ab1bf39fea25d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a297c159b672182a27c282160bd277872"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a297c159b672182a27c282160bd277872">HasPhysics</a> (bool physics)</td></tr>
+<tr class="memdesc:a297c159b672182a27c282160bd277872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the hasPhysics flag.  <a href="classGameObject.html#a297c159b672182a27c282160bd277872">More...</a><br /></td></tr>
+<tr class="separator:a297c159b672182a27c282160bd277872"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -249,6 +255,10 @@ std::weak_ptr&lt; <a class="el" href="classPhysicsManager.html">PhysicsManager</
 std::vector&lt; std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#ace620644f3b086757e2f304f12c2413d">children</a></td></tr>
 <tr class="memdesc:ace620644f3b086757e2f304f12c2413d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The children of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. <br /></td></tr>
 <tr class="separator:ace620644f3b086757e2f304f12c2413d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af76a54a3735cce685aab3b020b424408"><td class="memItemLeft" align="right" valign="top"><a id="af76a54a3735cce685aab3b020b424408"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#af76a54a3735cce685aab3b020b424408">hasPhysics</a> = true</td></tr>
+<tr class="memdesc:af76a54a3735cce685aab3b020b424408"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the gameobject has a body in the physics simulation. <br /></td></tr>
+<tr class="separator:af76a54a3735cce685aab3b020b424408"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> class represents an object in the game world. </p>
@@ -618,6 +628,63 @@ template&lt;class T &gt; </div>
 
 <p>Get the transform of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The transform of the <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a0ed6f7d8c2d8017ef4ab1bf39fea25d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ed6f7d8c2d8017ef4ab1bf39fea25d5">&#9670;&nbsp;</a></span>HasPhysics() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameObject::HasPhysics </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the hasPhysics flag. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a id="a297c159b672182a27c282160bd277872"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a297c159b672182a27c282160bd277872">&#9670;&nbsp;</a></span>HasPhysics() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameObject::HasPhysics </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>physics</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the hasPhysics flag. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
 </div>
 </div>

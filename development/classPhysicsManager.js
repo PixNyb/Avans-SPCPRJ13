@@ -13,5 +13,6 @@ var classPhysicsManager =
     [ "Step", "classPhysicsManager.html#acdc804abce59b430aff972e6035e8b41", null ],
     [ "UpdatePosition", "classPhysicsManager.html#ac23633292472fe9019e95b0fff499e7c", null ],
     [ "UpdateRotation", "classPhysicsManager.html#a92e51c3c6c42160803d1d92ac0d4f0db", null ],
+    [ "UpdateVelocity", "classPhysicsManager.html#a6175b2646b7fb1d669acd8d52f819c67", null ],
     [ "Wake", "classPhysicsManager.html#a8b524e357b7449555268a74c3059f0bf", null ]
 ];
