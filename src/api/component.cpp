@@ -18,3 +18,8 @@ bool Component::IsActive() const { return active; }
 void Component::SetActive(bool active) { this->active = active; }
 void Component::Update() {}
 void Component::Condition() {}
+
+std::shared_ptr<Component> Component::Clone(std::weak_ptr<GameObject> parent)
+{
+    return std::shared_ptr<Component>(this);
+}

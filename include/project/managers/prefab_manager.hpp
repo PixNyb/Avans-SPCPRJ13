@@ -43,7 +43,7 @@ class PrefabManager
      * @param id Defines which prefab is meant to be returned.
      * @return Returns the prefab that matches the provided id.
      */
-    GameObject GetPrefab(std::string id);
+    std::shared_ptr<GameObject> GetPrefab(std::string id);
 
     /**
      * @brief Check if there is a prefab registered with a specified id.

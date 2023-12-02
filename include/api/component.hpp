@@ -12,6 +12,8 @@
 #ifndef AVANS_SPCPRJ13_COMPONENT_H
 #define AVANS_SPCPRJ13_COMPONENT_H
 
+#include "iprototype_component.hpp"
+
 /**
  * @class Component
  * @brief The Component class is a base class for all components that can be
@@ -20,10 +22,11 @@
  * It contains an active flag and methods for getting/setting the active status,
  * updating the component, and checking a condition.
  */
-class Component
+class Component : public IPrototypeComponent
 {
   protected:
     bool active; ///< The active flag of the Component.
+    std::weak_ptr<GameObject> a;
 
   public:
     /**
@@ -78,6 +81,13 @@ class Component
      * condition checking behavior.
      */
     virtual void Condition();
+
+    /**
+     * @brief Make a clone of the component.
+     * @param parent The parent GameObject.
+     * @return The cloned component.
+     */
+    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
 };
 
 #endif // AVANS_SPCPRJ13_COMPONENT_H

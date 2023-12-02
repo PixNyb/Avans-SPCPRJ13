@@ -34,15 +34,17 @@ GameObject::GameObject(const std::string &name, const Transform &transform)
     // Constructor with name and transform initialization
 }
 
-GameObject::GameObject(const GameObject &other)
+GameObject::GameObject(const GameObject &other) : enable_shared_from_this(other)
 {
     name = other.name;
 
-    // TODO: Update the clone functionality to make a deep copy.
-    std::vector<std::shared_ptr<Component>> comps;
+    components = std::vector<std::shared_ptr<Component>>();
     for (const auto &comp : other.components)
-        comps.push_back(std::make_shared<Component>(*comp));
-    components = comps;
+    {
+        auto b = shared_from_this();
+        auto a = *comp->Clone(shared_from_this());
+        components.push_back(std::make_shared<Component>(a));
+    }
 
     transform = other.transform;
     active = other.active;
@@ -58,11 +60,11 @@ GameObject &GameObject::operator=(const GameObject &other)
     components = std::vector<std::shared_ptr<Component>>();
     // The parent will remain undefined because it has to be redefined in the level format.
     parent = nullptr;
-
     name = other.name;
 
-    // TODO: Add copy for components.
-    components = other.components;
+    components = std::vector<std::shared_ptr<Component>>();
+    for (const auto &comp : other.components)
+        components.push_back(std::make_shared<Component>(*comp->Clone(shared_from_this())));
 
     transform = other.transform;
     active = other.active;

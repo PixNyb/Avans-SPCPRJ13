@@ -32,3 +32,8 @@ void AudioSource::Play(bool looping) {}
 void AudioSource::Stop() {}
 void AudioSource::SetPitch(float pitch) {}
 void AudioSource::Pause() {}
+
+std::shared_ptr<Component> AudioSource::Clone(std::weak_ptr<GameObject> parent)
+{
+    return std::make_shared<AudioSource>(*this);
+}

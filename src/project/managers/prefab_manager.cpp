@@ -21,14 +21,14 @@ void PrefabManager::RegisterPrefab(const std::string &id, const GameObject& pref
     prefabs.insert(std::pair(id, prefab));
 }
 
-GameObject PrefabManager::GetPrefab(std::string id)
+std::shared_ptr<GameObject> PrefabManager::GetPrefab(std::string id)
 {
     auto it = prefabs.find(id);
 
     if (it == prefabs.end())
         throw std::runtime_error(fmt::format("No prefab was found matching the id: {}", id));
 
-    return GameObject(it->second);
+    return std::make_shared<GameObject>(it->second);
 }
 
 bool PrefabManager::HasPrefab(const std::string& id) const

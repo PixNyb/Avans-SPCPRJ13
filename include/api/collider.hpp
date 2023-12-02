@@ -27,6 +27,13 @@
  */
 class Collider : public Component
 {
+  public:
+    /**
+     * @brief Make a clone of the component.
+     * @param parent The parent GameObject.
+     * @return The cloned component.
+     */
+    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override = 0;
 };
 
 #endif // COLLIDER2D_H_

@@ -18,6 +18,7 @@
 #include <string>
 #include <vector>
 
+class Component;
 class PhysicsManager;
 
 /**
