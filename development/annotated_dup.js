@@ -2,6 +2,7 @@ var annotated_dup =
 [
     [ "AnimationState", "classAnimationState.html", "classAnimationState" ],
     [ "Animator", "classAnimator.html", "classAnimator" ],
+    [ "AudioFacade", "classAudioFacade.html", null ],
     [ "AudioSource", "classAudioSource.html", "classAudioSource" ],
     [ "BehaviourScript", "classBehaviourScript.html", "classBehaviourScript" ],
     [ "BehaviourScriptManager", "classBehaviourScriptManager.html", "classBehaviourScriptManager" ],
@@ -27,6 +28,7 @@ var annotated_dup =
     [ "IMouseListener", "classIMouseListener.html", "classIMouseListener" ],
     [ "IOFacade", "classIOFacade.html", "classIOFacade" ],
     [ "ISceneFactory", "classISceneFactory.html", "classISceneFactory" ],
+    [ "ISound", "classISound.html", "classISound" ],
     [ "JSONReader", "classJSONReader.html", "classJSONReader" ],
     [ "LevelFactory", "classLevelFactory.html", "classLevelFactory" ],
     [ "LevelScene", "classLevelScene.html", "classLevelScene" ],
@@ -55,6 +57,7 @@ var annotated_dup =
     [ "SDLTexture", "classSDLTexture.html", "classSDLTexture" ],
     [ "SDLTriangle", "classSDLTriangle.html", "classSDLTriangle" ],
     [ "SDLWindow", "classSDLWindow.html", "classSDLWindow" ],
+    [ "SFMLSound", "classSFMLSound.html", "classSFMLSound" ],
     [ "ShapeColor", "classShapeColor.html", "classShapeColor" ],
     [ "Sprite", "classSprite.html", "classSprite" ],
     [ "Text", "classText.html", "classText" ],

@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "AnimationState", "classAnimationState.html", null ],
+    [ "AudioFacade", "classAudioFacade.html", null ],
     [ "b2ContactListener", null, [
       [ "ContactListener", "classContactListener.html", null ]
     ] ],
@@ -50,6 +51,9 @@ var hierarchy =
     ] ],
     [ "ISceneFactory", "classISceneFactory.html", [
       [ "LevelFactory", "classLevelFactory.html", null ]
+    ] ],
+    [ "ISound", "classISound.html", [
+      [ "SFMLSound", "classSFMLSound.html", null ]
     ] ],
     [ "JSONReader", "classJSONReader.html", null ],
     [ "PerformanceUtility", "classPerformanceUtility.html", null ],

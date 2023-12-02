@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>DeFunBobEngine: src/project/utility -&gt; include Relation</title>
+<title>DeFunBobEngine: AudioFacade Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('dir_bb303e4a51f0be521058dbc1b91753db.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classAudioFacade.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -84,13 +84,74 @@ $(document).ready(function(){initNavTree('dir_bb303e4a51f0be521058dbc1b91753db.h
 </iframe>
 </div>
 
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="classAudioFacade-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">AudioFacade Class Reference</div>  </div>
+</div><!--header-->
 <div class="contents">
-<h3>utility &rarr; include Relation</h3><table class="dirtab"><tr class="dirtab"><th class="dirtab">File in src/project/utility</th><th class="dirtab">Includes file in include</th></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="json__reader_8cpp.html">json_reader.cpp</a></td><td class="dirtab"><a class="el" href="dir_181c00e2b942bc2bd301cc4650f9e5c8.html">project</a>&#160;/&#160;<a class="el" href="dir_9e964ee46380f47341b7dfe063e7e0fa.html">utility</a>&#160;/&#160;<a class="el" href="json__reader_8hpp.html">json_reader.hpp</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_6d8c8e492ed415b9cb9f46046a30d27c.html">factories</a>&#160;/&#160;<a class="el" href="level__factory_8cpp.html">level_factory.cpp</a></td><td class="dirtab"><a class="el" href="dir_181c00e2b942bc2bd301cc4650f9e5c8.html">project</a>&#160;/&#160;<a class="el" href="dir_9e964ee46380f47341b7dfe063e7e0fa.html">utility</a>&#160;/&#160;<a class="el" href="dir_17d751b5951134bf3eeeb947e67cb10d.html">factories</a>&#160;/&#160;<a class="el" href="level__factory_8hpp.html">level_factory.hpp</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_6d8c8e492ed415b9cb9f46046a30d27c.html">factories</a>&#160;/&#160;<a class="el" href="level__factory_8cpp.html">level_factory.cpp</a></td><td class="dirtab"><a class="el" href="dir_2d52abcd54c181b91d630da402923092.html">api</a>&#160;/&#160;<a class="el" href="level__scene_8hpp.html">level_scene.hpp</a></td></tr></table></div><!-- contents -->
+
+<p>A facade for the audio library. Creates an instance of the audio instance.  
+ <a href="classAudioFacade.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="audio__facade_8hpp_source.html">audio_facade.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a0a83481625bb3f3ba92f0a73c3324465"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classISound.html">ISound</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudioFacade.html#a0a83481625bb3f3ba92f0a73c3324465">CreateAudioInstance</a> (const std::string &amp;filePath)</td></tr>
+<tr class="memdesc:a0a83481625bb3f3ba92f0a73c3324465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the audio instance.  <a href="classAudioFacade.html#a0a83481625bb3f3ba92f0a73c3324465">More...</a><br /></td></tr>
+<tr class="separator:a0a83481625bb3f3ba92f0a73c3324465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A facade for the audio library. Creates an instance of the audio instance. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0a83481625bb3f3ba92f0a73c3324465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a83481625bb3f3ba92f0a73c3324465">&#9670;&nbsp;</a></span>CreateAudioInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classISound.html">ISound</a> &gt; AudioFacade::CreateAudioInstance </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an instance of the audio instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>The path to the audio file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A unique pointer to the audio instance. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>include/facades/<a class="el" href="audio__facade_8hpp_source.html">audio_facade.hpp</a></li>
+<li>src/facades/<a class="el" href="audio__facade_8cpp.html">audio_facade.cpp</a></li>
+</ul>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_00f0a3b1654669903f8939607e046ce9.html">project</a></li><li class="navelem"><a class="el" href="dir_bb303e4a51f0be521058dbc1b91753db.html">utility</a></li>
+    <li class="navelem"><a class="el" href="classAudioFacade.html">AudioFacade</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

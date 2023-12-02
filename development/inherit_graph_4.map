@@ -1,4 +1,12 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,145,32"/>
-<area shape="rect" id="node2" href="$classContactListener.html" title="This class handles the contacts that occur in the b2World. When a contact comes through here the beha..." alt="" coords="193,5,317,32"/>
+<area shape="rect" id="node1" href="$classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="5,81,103,108"/>
+<area shape="rect" id="node2" href="$classAudioSource.html" title="Component for handling audio playback." alt="" coords="162,5,265,32"/>
+<area shape="rect" id="node3" href="$classBehaviourScript.html" title="Base class for scriptable behavior in game objects." alt="" coords="151,56,276,83"/>
+<area shape="rect" id="node6" href="$classCollider.html" title="Base class for collider components." alt="" coords="177,107,249,133"/>
+<area shape="rect" id="node10" href="$classRigidBody.html" title="Represents a physics body in the game engine." alt="" coords="169,157,257,184"/>
+<area shape="rect" id="node4" href="$classAnimator.html" title="The Animator class is a BehaviourScript that can be added to a GameObject to animate it according to ..." alt="" coords="345,5,427,32"/>
+<area shape="rect" id="node5" href="$classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="356,56,416,83"/>
+<area shape="rect" id="node7" href="$classBoxCollider.html" title="Represents a rectangular collision area." alt="" coords="337,107,435,133"/>
+<area shape="rect" id="node8" href="$classCircleCollider.html" title="Represents a circular collision area." alt="" coords="331,157,441,184"/>
+<area shape="rect" id="node9" href="$classPolygonCollider.html" title=" " alt="" coords="324,208,448,235"/>
 </map>
