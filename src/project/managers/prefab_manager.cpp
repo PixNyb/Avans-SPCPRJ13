@@ -13,10 +13,9 @@
 #include <fmt/core.h>
 #include <stdexcept>
 
-PrefabManager::PrefabManager() : prefabs()
-{}
+PrefabManager::PrefabManager() : prefabs() {}
 
-void PrefabManager::RegisterPrefab(const std::string &id, const std::shared_ptr<GameObject>& prefab)
+void PrefabManager::RegisterPrefab(const std::string &id, const std::shared_ptr<GameObject> &prefab)
 {
     prefabs.insert(std::pair(id, prefab));
 }
@@ -31,14 +30,14 @@ std::shared_ptr<GameObject> PrefabManager::GetPrefab(std::string id)
     return it->second->Clone();
 }
 
-bool PrefabManager::HasPrefab(const std::string& id) const
+bool PrefabManager::HasPrefab(const std::string &id) const
 {
     auto it = prefabs.find(id);
 
     return it != prefabs.end();
 }
 
-void PrefabManager::RemovePrefab(const std::string& id)
+void PrefabManager::RemovePrefab(const std::string &id)
 {
     auto it = prefabs.find(id);
 
@@ -48,7 +47,4 @@ void PrefabManager::RemovePrefab(const std::string& id)
     prefabs.erase(it);
 }
 
-void PrefabManager::ClearPrefabs()
-{
-    prefabs.clear();
-}
+void PrefabManager::ClearPrefabs() { prefabs.clear(); }
