@@ -20,10 +20,10 @@ class PrefabManager
   private:
     /**
      * @brief A map consisting of prefabs and the id's which they are identified by.
-     * @key A unique id which can be used to identify a prefab.
-     * @value A registered prefab.
      */
-    std::map<std::string, std::shared_ptr<GameObject>> prefabs;
+    std::map<std::string, std::shared_ptr<GameObject>>
+        prefabs; ///< The key is a unique id which can be used to identify a prefab,
+                 ///< the value is the prefab.
 
   public:
     /**
@@ -36,7 +36,7 @@ class PrefabManager
      * @param id The unique key that can later be used to retrieve the prefab.
      * @param prefab The prefab that is to be registered.
      */
-    void RegisterPrefab(const std::string &id, const std::shared_ptr<GameObject>& prefab);
+    void RegisterPrefab(const std::string &id, const std::shared_ptr<GameObject> &prefab);
 
     /**
      * @brief Gets a prefab based on a id.

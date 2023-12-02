@@ -12,7 +12,6 @@
 #ifndef AVANS_SPCPRJ13_GAMEOBJECT_H
 #define AVANS_SPCPRJ13_GAMEOBJECT_H
 
-#include "component.hpp"
 #include "iprototype.hpp"
 #include "transform.hpp"
 #include <memory>
