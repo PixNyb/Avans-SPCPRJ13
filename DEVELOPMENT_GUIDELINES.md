@@ -1,17 +1,19 @@
-# Development Guidelines <!-- omit in toc -->
+# Development Guidelines
 
-## Inhoudsopgave <!-- omit in toc -->
+## Inhoudsopgave
 
-- [1. Code Formatting](#1-code-formatting)
-- [2. Bestandsstructuur](#2-bestandsstructuur)
-- [3. Commentaar](#3-commentaar)
-  - [3.1. Doxygen](#31-doxygen)
-- [4. CMake-bestanden](#4-cmake-bestanden)
-- [5. Bouwproces](#5-bouwproces)
-- [6. Testen](#6-testen)
-- [7. Git en Versiebeheer](#7-git-en-versiebeheer)
-- [8. Code Reviews](#8-code-reviews)
-- [9. Documentatie](#9-documentatie)
+- [Development Guidelines](#development-guidelines)
+  - [Inhoudsopgave](#inhoudsopgave)
+  - [1. Code Formatting](#1-code-formatting)
+  - [2. Bestandsstructuur](#2-bestandsstructuur)
+  - [3. Commentaar](#3-commentaar)
+    - [3.1. Doxygen](#31-doxygen)
+  - [4. CMake-bestanden](#4-cmake-bestanden)
+  - [5. Bouwproces](#5-bouwproces)
+  - [6. Testen](#6-testen)
+  - [7. Git en Versiebeheer](#7-git-en-versiebeheer)
+  - [8. Code Reviews](#8-code-reviews)
+  - [9. Documentatie](#9-documentatie)
 
 ## 1. Code Formatting
 

@@ -1,18 +1,20 @@
-# SPCPRJ13 DeFunBobEngine <!-- omit in toc -->
+# SPCPRJ13 DeFunBobEngine
 
 Welkom in de repository van SPCPRJ13. Dit is de repository waarin de code van de `DeFunBobEngine` game engine staat. Deze game engine is gemaakt voor het vak `SPCPRJ13` van de opleiding HBO-ICT van Avans Hogeschool 's-Hertogenbosch.
 
-## Inhoudsopgave <!-- omit in toc -->
+## Inhoudsopgave
 
-- [1. Projectdetails](#1-projectdetails)
-- [2. ClickUp Board](#2-clickup-board)
-- [3. Aan de slag](#3-aan-de-slag)
-  - [3.1. Vereisten](#31-vereisten)
-  - [3.2. Installatie](#32-installatie)
-  - [3.3. Doxygen](#33-doxygen)
-- [4. Proof Of Concepts](#4-proof-of-concepts)
-- [5. Gebruik](#5-gebruik)
-- [6. Development Guidelines](#6-development-guidelines)
+- [SPCPRJ13 DeFunBobEngine](#spcprj13-defunbobengine)
+  - [Inhoudsopgave](#inhoudsopgave)
+  - [1. Projectdetails](#1-projectdetails)
+  - [2. ClickUp Board](#2-clickup-board)
+  - [3. Aan de slag](#3-aan-de-slag)
+    - [3.1. Vereisten](#31-vereisten)
+    - [3.2. Installatie](#32-installatie)
+    - [3.3. Doxygen](#33-doxygen)
+  - [4. Proof Of Concepts](#4-proof-of-concepts)
+  - [5. Gebruik](#5-gebruik)
+  - [6. Development Guidelines](#6-development-guidelines)
 
 ## 1. Projectdetails
 

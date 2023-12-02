@@ -1,14 +1,16 @@
-# Hoe de Engine te gebruiken? <!-- omit in toc -->
+# Hoe de Engine te gebruiken?
 
 In dit bestand staat uitgebreide documentatie over het gebruik van de DeFunBobEngine game engine.
 
-## Inhoudsopgave <!-- omit in toc -->
+## Inhoudsopgave
 
-- [1. Window aanmaken](#1-window-aanmaken)
-- [2. Level format](#2-level-format)
-- [3. Physics Simulatie Gebruiken](#3-physics-simulatie-gebruiken)
-- [4. Input Facades](#4-input-facades)
-- [5. Contact listeners \& Behaviour Scripts](#5-contact-listeners--behaviour-scripts)
+- [Hoe de Engine te gebruiken?](#hoe-de-engine-te-gebruiken)
+  - [Inhoudsopgave](#inhoudsopgave)
+  - [1. Window aanmaken](#1-window-aanmaken)
+  - [2. Level format](#2-level-format)
+  - [3. Physics Simulatie Gebruiken](#3-physics-simulatie-gebruiken)
+  - [4. Input Facades](#4-input-facades)
+  - [5. Contact listeners \& Behaviour Scripts](#5-contact-listeners--behaviour-scripts)
 
 ## 1. Window aanmaken
 
