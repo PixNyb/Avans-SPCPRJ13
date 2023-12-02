@@ -87,7 +87,7 @@ class Component : public IPrototypeComponent
      * @param parent The parent GameObject.
      * @return The cloned component.
      */
-    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
+    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override = 0;
 };
 
 #endif // AVANS_SPCPRJ13_COMPONENT_H

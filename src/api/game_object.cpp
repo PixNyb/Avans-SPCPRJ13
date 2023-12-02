@@ -34,44 +34,23 @@ GameObject::GameObject(const std::string &name, const Transform &transform)
     // Constructor with name and transform initialization
 }
 
-GameObject::GameObject(const GameObject &other) : enable_shared_from_this(other)
+std::shared_ptr<GameObject> GameObject::Clone()
 {
-    name = other.name;
+    auto ptr = std::make_shared<GameObject>();
 
-    components = std::vector<std::shared_ptr<Component>>();
-    for (const auto &comp : other.components)
-    {
-        auto b = shared_from_this();
-        auto a = *comp->Clone(shared_from_this());
-        components.push_back(std::make_shared<Component>(a));
-    }
-
-    transform = other.transform;
-    active = other.active;
-    tag = other.tag;
-    layer = other.layer;
-}
-
-GameObject &GameObject::operator=(const GameObject &other)
-{
-    if (this == &other)
-        return *this;
-
-    components = std::vector<std::shared_ptr<Component>>();
     // The parent will remain undefined because it has to be redefined in the level format.
-    parent = nullptr;
-    name = other.name;
+    ptr->parent = nullptr;
+    ptr->name = name;
 
-    components = std::vector<std::shared_ptr<Component>>();
-    for (const auto &comp : other.components)
-        components.push_back(std::make_shared<Component>(*comp->Clone(shared_from_this())));
+    for (const auto &comp : components)
+        ptr->components.push_back(comp->Clone(ptr));
 
-    transform = other.transform;
-    active = other.active;
-    tag = other.tag;
-    layer = other.layer;
+    ptr->transform = transform;
+    ptr->active = active;
+    ptr->tag = tag;
+    ptr->layer = layer;
 
-    return *this;
+    return ptr;
 }
 
 void GameObject::AddComponent(std::shared_ptr<Component> component)

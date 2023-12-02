@@ -16,7 +16,7 @@
 PrefabManager::PrefabManager() : prefabs()
 {}
 
-void PrefabManager::RegisterPrefab(const std::string &id, const GameObject& prefab)
+void PrefabManager::RegisterPrefab(const std::string &id, const std::shared_ptr<GameObject>& prefab)
 {
     prefabs.insert(std::pair(id, prefab));
 }
@@ -28,7 +28,7 @@ std::shared_ptr<GameObject> PrefabManager::GetPrefab(std::string id)
     if (it == prefabs.end())
         throw std::runtime_error(fmt::format("No prefab was found matching the id: {}", id));
 
-    return std::make_shared<GameObject>(it->second);
+    return it->second->Clone();
 }
 
 bool PrefabManager::HasPrefab(const std::string& id) const
