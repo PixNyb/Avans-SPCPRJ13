@@ -1,0 +1,12 @@
+<map id="src/api/audio_source.cpp" name="src/api/audio_source.cpp">
+<area shape="rect" id="node1" title="This file contains the AudioSource class implementation." alt="" coords="341,5,523,32"/>
+<area shape="rect" id="node2" href="$audio__source_8hpp.html" title="The AudioSource class provides audio playback functionality for game objects. This class is part of a..." alt="" coords="135,80,271,107"/>
+<area shape="rect" id="node8" href="$audio__facade_8hpp.html" title="A facade for the audio library." alt="" coords="295,80,433,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="457,80,543,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="567,80,627,107"/>
+<area shape="rect" id="node3" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="5,155,128,181"/>
+<area shape="rect" id="node4" href="$i__sound_8hpp.html" title="A sound wrapper." alt="" coords="153,155,253,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="276,155,353,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="377,155,436,181"/>
+<area shape="rect" id="node5" href="$i__sound__playstate_8hpp.html" title="The playstate of a sound." alt="" coords="119,229,287,256"/>
+</map>

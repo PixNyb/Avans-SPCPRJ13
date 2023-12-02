@@ -1,0 +1,5 @@
+<map id="Polygon" name="Polygon">
+<area shape="rect" id="node1" title="Represents a polygon and extends the Geometry class." alt="" coords="16,171,91,197"/>
+<area shape="rect" id="node2" href="$classGeometry.html" title="Abstract base class for geometric shapes." alt="" coords="10,95,97,121"/>
+<area shape="rect" id="node3" href="$classShapeColor.html" title="ShapeColor is a class that represents a color in the game engine." alt="" coords="5,5,101,32"/>
+</map>
