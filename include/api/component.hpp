@@ -26,7 +26,6 @@ class Component : public IPrototypeComponent
 {
   protected:
     bool active; ///< The active flag of the Component.
-    std::weak_ptr<GameObject> a;
 
   public:
     /**
