@@ -25,8 +25,8 @@
 var NAVTREE =
 [
   [ "DeFunBobEngine", "index.html", [
-    [ "SPCPRJ13 DeFunBobEngine <!-- omit in toc -->", "index.html", [
-      [ "Inhoudsopgave <!-- omit in toc -->", "index.html#autotoc_md13", null ],
+    [ "SPCPRJ13 DeFunBobEngine", "index.html", [
+      [ "Inhoudsopgave", "index.html#autotoc_md13", null ],
       [ "1. Projectdetails", "index.html#autotoc_md14", null ],
       [ "2. ClickUp Board", "index.html#autotoc_md15", null ],
       [ "3. Aan de slag", "index.html#autotoc_md16", [
@@ -38,8 +38,8 @@ var NAVTREE =
       [ "5. Gebruik", "index.html#autotoc_md21", null ],
       [ "6. Development Guidelines", "index.html#autotoc_md22", null ]
     ] ],
-    [ "Development Guidelines <!-- omit in toc -->", "md_DEVELOPMENT_GUIDELINES.html", [
-      [ "Inhoudsopgave <!-- omit in toc -->", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md1", null ],
+    [ "Development Guidelines", "md_DEVELOPMENT_GUIDELINES.html", [
+      [ "Inhoudsopgave", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md1", null ],
       [ "1. Code Formatting", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md2", null ],
       [ "2. Bestandsstructuur", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md3", null ],
       [ "3. Commentaar", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md4", [
@@ -52,8 +52,8 @@ var NAVTREE =
       [ "8. Code Reviews", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md10", null ],
       [ "9. Documentatie", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md11", null ]
     ] ],
-    [ "Hoe de Engine te gebruiken? <!-- omit in toc -->", "md_USAGE.html", [
-      [ "Inhoudsopgave <!-- omit in toc -->", "md_USAGE.html#autotoc_md24", null ],
+    [ "Hoe de Engine te gebruiken?", "md_USAGE.html", [
+      [ "Inhoudsopgave", "md_USAGE.html#autotoc_md24", null ],
       [ "1. Window aanmaken", "md_USAGE.html#autotoc_md25", null ],
       [ "2. Level format", "md_USAGE.html#autotoc_md26", null ],
       [ "3. Physics Simulatie Gebruiken", "md_USAGE.html#autotoc_md27", null ],

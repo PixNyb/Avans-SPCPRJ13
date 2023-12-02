@@ -8,5 +8,5 @@ var searchData=
   ['hasstarted_198',['hasStarted',['../classBehaviourScript.html#a002531989677215070e69f03bb659c80',1,'BehaviourScript']]],
   ['height_199',['Height',['../classBoxCollider.html#a077b4b3adeffcfee377d8aa9e719df76',1,'BoxCollider::Height() const'],['../classBoxCollider.html#ad5f51854f358154b6c2b8286d8583b77',1,'BoxCollider::Height(double newHeight)']]],
   ['height_200',['height',['../classSDLRect.html#a1785d555fe682b025e1cbc4f0b16acb3',1,'SDLRect']]],
-  ['hoe_20de_20engine_20te_20gebruiken_3f_20_3c_21_2d_2d_20omit_20in_20toc_20_2d_2d_3e_201',['Hoe de Engine te gebruiken? &lt;!-- omit in toc --&gt;',['../md_USAGE.html',1,'']]]
+  ['hoe_20de_20engine_20te_20gebruiken_3f_201',['Hoe de Engine te gebruiken?',['../md_USAGE.html',1,'']]]
 ];

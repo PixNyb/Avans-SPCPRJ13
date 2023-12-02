@@ -13,7 +13,7 @@ var searchData=
   ['destroy_94',['Destroy',['../classSDLWindow.html#ac8f370d73ebfe50529fbbba56c100b4b',1,'SDLWindow']]],
   ['destroy_95',['destroy',['../classWindow.html#aa89262ad2538473c8d7e4d8dd641849d',1,'Window']]],
   ['destroybody_96',['DestroyBody',['../classPhysicsFacade.html#a0927dc4108916d399b1f2d2137b58850',1,'PhysicsFacade']]],
-  ['development_20guidelines_20_3c_21_2d_2d_20omit_20in_20toc_20_2d_2d_3e_97',['Development Guidelines &lt;!-- omit in toc --&gt;',['../md_DEVELOPMENT_GUIDELINES.html',1,'']]],
+  ['development_20guidelines_97',['Development Guidelines',['../md_DEVELOPMENT_GUIDELINES.html',1,'']]],
   ['di_5fcontainer_2ecpp_98',['di_container.cpp',['../di__container_8cpp.html',1,'']]],
   ['di_5fcontainer_2ehpp_99',['di_container.hpp',['../di__container_8hpp.html',1,'']]],
   ['dicontainer_100',['DIContainer',['../classDIContainer.html',1,'']]],
