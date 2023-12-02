@@ -19,7 +19,6 @@
 
 #include "component.hpp"
 #include "i_sound.hpp"
-#include <iostream>
 #include <memory>
 #include <string>
 
