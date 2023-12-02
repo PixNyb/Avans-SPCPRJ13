@@ -61,7 +61,7 @@ class Component
      * Sets the active status of the Component to the given value.
      * @param active The new active status of the Component.
      */
-    void SetActive(bool active);
+    virtual void SetActive(bool active);
 
     /**
      * @brief Update the Component.

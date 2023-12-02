@@ -41,6 +41,16 @@ namespace Debug
 const bool EnableDebug = true;
 const bool DrawColliders = true;
 } // namespace Debug
+
+namespace Audio
+{
+
+/**
+ * The maximum amount of instances that can be played at the same time.
+ * Current limit is set to the max amount of SFML instances
+ */
+const int AUDIO_MAX_INSTANCE_COUNT = 255;
+} // namespace Audio
 } // namespace CoreConstants
 
 #endif // DEFUNBOBENGINE_CORECONSTANTS_HPP
