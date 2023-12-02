@@ -139,6 +139,19 @@ class PhysicsFacade
      * @param rotation the amount of rotation to be applied
      */
     void UpdateRotation(const std::shared_ptr<GameObject> &gameObject, double rotation);
+
+    /**
+     * @brief Updates the velocity of the GameObject
+     * @param gameObject the object
+     * @param vX velocity on the x-axis
+     * @param vY velocity on the y-axis
+     */
+    void UpdateVelocity(const std::shared_ptr<GameObject> &gameObject, double vX, double vY);
+
+    /**
+     * @brief Deletes the bodies that have the hasPhysics flag set to false
+     */
+    void DeleteBodies();
 };
 
 #endif // AVANS_SPCPRJ13_PHYSICS_FACADE_HPP

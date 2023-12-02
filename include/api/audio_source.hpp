@@ -18,6 +18,8 @@
 #define AVANS_SPCPRJ13_AUDIOSOURCE_H
 
 #include "component.hpp"
+#include "i_sound.hpp"
+#include <memory>
 #include <string>
 
 /**
@@ -29,18 +31,17 @@
  */
 class AudioSource : public Component
 {
-  public:
-    /**
-     * @brief Construct a new Audio Source object
-     */
-    AudioSource();
+  private:
+    std::shared_ptr<ISound> sound; ///< The audio instance.
 
+  public:
     /**
      * @brief Construct a new Audio Source object
      *
      * @param audioClipPath Path to a locally stored audio file.
      */
-    AudioSource(const std::string &audioClipPath);
+    explicit AudioSource(std::string audioClipPath, bool playOnAwake = false, bool loop = false,
+                         double volume = 1.0);
 
     /**
      * @brief Copy constructor for Component.
@@ -61,7 +62,7 @@ class AudioSource : public Component
      * @brief Call this method to start playing audio.
      * @param looping Automatically start over when done.
      */
-    void Play(bool looping);
+    void Play(bool looping = false);
 
     /**
      * @brief Call this method to set the volume of the audio.
@@ -79,6 +80,13 @@ class AudioSource : public Component
      */
     void Stop();
 
+    /**
+     * @brief Set the active status of the Component, also stops the audio.
+     *
+     * @param isActivate The new active status of the Component.
+     */
+    void SetActive(bool isActivate) override;
+
   private:
     /**
      * @brief Path to a locally stored audio file.
@@ -86,19 +94,14 @@ class AudioSource : public Component
     std::string audioClip;
 
     /**
-     * @brief When true, the component will start playing automatically.
+     * @brief Whether to play the audio clip on creation
      */
     bool playOnAwake;
 
     /**
-     * @brief When true, the audio will play indefinitely.
+     * @brief The audio instance.
      */
-    bool loop;
-
-    /**
-     * @brief Audio volume, between 0.0 and 1.0.
-     */
-    double volume;
+    std::shared_ptr<ISound> audioInstance;
 };
 
 #endif // AVANS_SPCPRJ13_AUDIOSOURCE_H

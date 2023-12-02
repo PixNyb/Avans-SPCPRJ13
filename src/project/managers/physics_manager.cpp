@@ -65,3 +65,9 @@ void PhysicsManager::UpdatePosition(const std::shared_ptr<GameObject> &gameObjec
 {
     physicsFacade.UpdatePosition(gameObject, xPos, yPos);
 }
+
+void PhysicsManager::UpdateVelocity(const std::shared_ptr<GameObject> &gameObject, double vX,
+                                    double vY)
+{
+    physicsFacade.UpdateVelocity(gameObject, vX, vY);
+}

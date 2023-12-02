@@ -33,25 +33,25 @@ class PhysicsManager
     ~PhysicsManager() = default;
 
     /**
-     * Creates the world the gameobjects will be simulated in
+     * @brief Creates the world the gameobjects will be simulated in
      * @param gameObjects are the gameobjects that contain a rigicbody or colliders
      */
     void CreateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects);
 
     /**
-     * Removes the gameobject from the simulated world
+     * @brief Removes the gameobject from the simulated world
      * @param gameObject is the object to be removed
      */
     void RemoveBody(const std::shared_ptr<GameObject> &gameObject);
 
     /**
-     * Creates a body in the world simulation
+     * @brief Creates a body in the world simulation
      * @param gameObject the object for which a body will be created
      */
     void CreateBody(std::shared_ptr<GameObject> gameObject);
 
     /**
-     * Adds a force to a gameobject (will allways create a force on the center of the body)
+     * @brief Adds a force to a gameobject (will allways create a force on the center of the body)
      * @param gameObject is the object the force will be added to
      * @param vx horizontal velocity
      * @param vy vertical velocity
@@ -59,7 +59,8 @@ class PhysicsManager
     void AddForce(const std::shared_ptr<GameObject> &gameObject, float vx, float vy);
 
     /**
-     * Adds a linear impulse to a gameobject (will allways create a force on the center of the body)
+     * @brief Adds a linear impulse to a gameobject (will allways create a force on the center of
+     * the body)
      * @param gameObject is the object the force will be added to
      * @param vx horizontal velocity
      * @param vy vertical velocity
@@ -67,45 +68,53 @@ class PhysicsManager
     void AddLinearImpulse(const std::shared_ptr<GameObject> &gameObject, float vx, float vy);
 
     /**
-     * Adds a rotation to a gameobject (will also apply the rotation on the center and is clockwise
-     * when amount is positive)
+     * @brief Adds a rotation to a gameobject (will also apply the rotation on the center and is
+     * clockwise when amount is positive)
      * @param gameObject is the object the rotation will be added to
      * @param amount the speed at which the object should spin
      */
     void AddRotationalForce(const std::shared_ptr<GameObject> &gameObject, float amount);
 
     /**
-     * Simulates the world for 1 step
+     * @brief Simulates the world for 1 step
      */
     void Step();
 
     /**
-     * Sets the given gameobject to sleep
+     * @brief Sets the given gameobject to sleep
      * @param gameObject the gameobject that is set asleep
      */
     void Sleep(const std::shared_ptr<GameObject> &gameObject);
 
     /**
-     * Sets the given gameobject to wake up
+     * @brief Sets the given gameobject to wake up
      * @param gameObject the gameobject that is set awake
      */
     void Wake(const std::shared_ptr<GameObject> &gameObject);
 
     /**
-     * Sets the debug mode
+     * @brief Sets the debug mode
      * @param debug
      */
     void SetDebug(bool debug) { physicsFacade.DEBUG = debug; }
 
     /**
-     * Updates the rotation of the given GameObject
+     * @brief Updates the rotation of the given GameObject
      */
     void UpdateRotation(const std::shared_ptr<GameObject> &gameObject, double rotation);
 
     /**
-     * Updates the position of the given GameObject
+     * @brief Updates the position of the given GameObject
      */
     void UpdatePosition(const std::shared_ptr<GameObject> &gameObject, double xPos, double yPos);
+
+    /**
+     * @brief Updates the velocity of the GameObject
+     * @param gameObject the object
+     * @param vX velocity on the x-axis
+     * @param vY velocity on the y-axis
+     */
+    void UpdateVelocity(const std::shared_ptr<GameObject> &gameObject, double vX, double vY);
 };
 
 #endif // DEFUNBOBENGINE_PHYSICS_MANAGER_HPP
