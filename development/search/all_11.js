@@ -76,7 +76,7 @@ var searchData=
   ['shutdown_397',['Shutdown',['../classEngine.html#a3dbd2c0a65e642baa7eaa97caa6e4e64',1,'Engine']]],
   ['sleep_398',['Sleep',['../classPhysicsManager.html#a18628203aba0b2358126d431d2ab52dd',1,'PhysicsManager::Sleep()'],['../classPhysicsFacade.html#a722dac0efc564efb5c7d972b9d6d98d9',1,'PhysicsFacade::Sleep()']]],
   ['soundplaystate_399',['SoundPlayState',['../i__sound__playstate_8hpp.html#a3b24a2667328b2a2bd2e76e441e7c10d',1,'i_sound_playstate.hpp']]],
-  ['spcprj13_20defunbobengine_400',['SPCPRJ13 DeFunBobEngine',['../index.html',1,'']]],
+  ['spcprj13_20defunbobengine_20_3c_21_2d_2d_20omit_20in_20toc_20_2d_2d_3e_400',['SPCPRJ13 DeFunBobEngine &lt;!-- omit in toc --&gt;',['../index.html',1,'']]],
   ['sprite_401',['Sprite',['../classSprite.html#a12cba3ac1868418add3c4d95ce87e615',1,'Sprite::Sprite()'],['../classSprite.html',1,'Sprite']]],
   ['sprite_2ecpp_402',['sprite.cpp',['../sprite_8cpp.html',1,'']]],
   ['sprite_2ehpp_403',['sprite.hpp',['../sprite_8hpp.html',1,'']]],

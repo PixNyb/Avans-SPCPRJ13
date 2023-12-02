@@ -25,38 +25,40 @@
 var NAVTREE =
 [
   [ "DeFunBobEngine", "index.html", [
-    [ "SPCPRJ13 DeFunBobEngine", "index.html", [
-      [ "Projectdetails", "index.html#autotoc_md13", null ],
-      [ "ClickUp Board", "index.html#autotoc_md14", null ],
-      [ "Aan de slag", "index.html#autotoc_md15", [
-        [ "Vereisten", "index.html#autotoc_md16", null ],
-        [ "Installatie", "index.html#autotoc_md17", null ],
-        [ "Doxygen", "index.html#autotoc_md18", null ]
+    [ "SPCPRJ13 DeFunBobEngine <!-- omit in toc -->", "index.html", [
+      [ "Inhoudsopgave <!-- omit in toc -->", "index.html#autotoc_md13", null ],
+      [ "1. Projectdetails", "index.html#autotoc_md14", null ],
+      [ "2. ClickUp Board", "index.html#autotoc_md15", null ],
+      [ "3. Aan de slag", "index.html#autotoc_md16", [
+        [ "3.1. Vereisten", "index.html#autotoc_md17", null ],
+        [ "3.2. Installatie", "index.html#autotoc_md18", null ],
+        [ "3.3. Doxygen", "index.html#autotoc_md19", null ]
       ] ],
-      [ "Proof Of Concepts", "index.html#autotoc_md19", null ],
-      [ "Gebruik", "index.html#autotoc_md20", null ],
-      [ "Development Guidelines", "index.html#autotoc_md21", null ]
+      [ "4. Proof Of Concepts", "index.html#autotoc_md20", null ],
+      [ "5. Gebruik", "index.html#autotoc_md21", null ],
+      [ "6. Development Guidelines", "index.html#autotoc_md22", null ]
     ] ],
-    [ "Development Guidelines", "md_DEVELOPMENT_GUIDELINES.html", [
-      [ "Inhoudsopgave", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md1", null ],
-      [ "Code Formatting", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md2", null ],
-      [ "Bestandsstructuur", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md3", null ],
-      [ "Commentaar", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md4", [
-        [ "Doxygen", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md5", null ]
+    [ "Development Guidelines <!-- omit in toc -->", "md_DEVELOPMENT_GUIDELINES.html", [
+      [ "Inhoudsopgave <!-- omit in toc -->", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md1", null ],
+      [ "1. Code Formatting", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md2", null ],
+      [ "2. Bestandsstructuur", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md3", null ],
+      [ "3. Commentaar", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md4", [
+        [ "3.1. Doxygen", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md5", null ]
       ] ],
-      [ "CMake-bestanden", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md6", null ],
-      [ "Bouwproces", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md7", null ],
-      [ "Testen", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md8", null ],
-      [ "Git en Versiebeheer", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md9", null ],
-      [ "Code Reviews", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md10", null ],
-      [ "Documentatie", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md11", null ]
+      [ "4. CMake-bestanden", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md6", null ],
+      [ "5. Bouwproces", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md7", null ],
+      [ "6. Testen", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md8", null ],
+      [ "7. Git en Versiebeheer", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md9", null ],
+      [ "8. Code Reviews", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md10", null ],
+      [ "9. Documentatie", "md_DEVELOPMENT_GUIDELINES.html#autotoc_md11", null ]
     ] ],
-    [ "Hoe de Engine te gebruiken?", "md_USAGE.html", [
-      [ "Window aanmaken", "md_USAGE.html#autotoc_md23", null ],
-      [ "Level format", "md_USAGE.html#autotoc_md24", null ],
-      [ "Physics Simulatie Gebruiken", "md_USAGE.html#autotoc_md25", null ],
-      [ "Input Facades", "md_USAGE.html#autotoc_md26", null ],
-      [ "Contact listeners & Behaviour Scripts", "md_USAGE.html#autotoc_md27", null ]
+    [ "Hoe de Engine te gebruiken? <!-- omit in toc -->", "md_USAGE.html", [
+      [ "Inhoudsopgave <!-- omit in toc -->", "md_USAGE.html#autotoc_md24", null ],
+      [ "1. Window aanmaken", "md_USAGE.html#autotoc_md25", null ],
+      [ "2. Level format", "md_USAGE.html#autotoc_md26", null ],
+      [ "3. Physics Simulatie Gebruiken", "md_USAGE.html#autotoc_md27", null ],
+      [ "4. Input Facades", "md_USAGE.html#autotoc_md28", null ],
+      [ "5. Contact listeners & Behaviour Scripts", "md_USAGE.html#autotoc_md29", null ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -93,7 +95,7 @@ var NAVTREEINDEX =
 "classIOFacade.html#a3519db40cebbc1385f3f4cea0d17048d",
 "classSceneManager.html#a2bb376a85d29e85f47753e26c7539229",
 "i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a306f7828d92aa6be1142ffa44220f07c",
-"md_DEVELOPMENT_GUIDELINES.html#autotoc_md7"
+"md_DEVELOPMENT_GUIDELINES.html#autotoc_md6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
