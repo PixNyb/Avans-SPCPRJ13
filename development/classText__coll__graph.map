@@ -1,8 +1,9 @@
 <map id="Text" name="Text">
-<area shape="rect" id="node1" title="Represents a piece of text in the user interface." alt="" coords="103,351,153,377"/>
-<area shape="rect" id="node2" href="$classUIObject.html" title="Represents a user interface object in the game engine." alt="" coords="89,275,167,301"/>
-<area shape="rect" id="node3" href="$classGameObject.html" title="The GameObject class represents an object in the game world." alt="" coords="77,199,179,225"/>
+<area shape="rect" id="node1" title="Represents a piece of text in the user interface." alt="" coords="307,351,357,377"/>
+<area shape="rect" id="node2" href="$classUIObject.html" title="Represents a user interface object in the game engine." alt="" coords="293,275,371,301"/>
+<area shape="rect" id="node3" href="$classGameObject.html" title="The GameObject class represents an object in the game world." alt="" coords="281,199,383,225"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,95,208,136"/>
-<area shape="rect" id="node5" href="$structTransform.html" title="Represents a 2D transformation including position, rotation, and scale." alt="" coords="233,102,319,129"/>
-<area shape="rect" id="node6" href="$structPoint.html" title="Represents a 2D point or vector." alt="" coords="249,5,303,32"/>
+<area shape="rect" id="node5" href="$classIPrototype.html" title=" " alt="" coords="232,102,432,129"/>
+<area shape="rect" id="node6" href="$structTransform.html" title="Represents a 2D transformation including position, rotation, and scale." alt="" coords="455,102,542,129"/>
+<area shape="rect" id="node7" href="$structPoint.html" title="Represents a 2D point or vector." alt="" coords="471,5,526,32"/>
 </map>

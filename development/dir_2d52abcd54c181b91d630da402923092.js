@@ -25,7 +25,7 @@ var dir_2d52abcd54c181b91d630da402923092 =
       [ "CircleCollider", "classCircleCollider.html", "classCircleCollider" ]
     ] ],
     [ "collider.hpp", "collider_8hpp.html", [
-      [ "Collider", "classCollider.html", null ]
+      [ "Collider", "classCollider.html", "classCollider" ]
     ] ],
     [ "color.hpp", "color_8hpp.html", [
       [ "Color", "classColor.html", "classColor" ]
@@ -42,6 +42,12 @@ var dir_2d52abcd54c181b91d630da402923092 =
     ] ],
     [ "imouse_listener.hpp", "imouse__listener_8hpp.html", [
       [ "IMouseListener", "classIMouseListener.html", "classIMouseListener" ]
+    ] ],
+    [ "iprototype.hpp", "iprototype_8hpp.html", [
+      [ "IPrototype", "classIPrototype.html", "classIPrototype" ]
+    ] ],
+    [ "iprototype_component.hpp", "iprototype__component_8hpp.html", [
+      [ "IPrototypeComponent", "classIPrototypeComponent.html", "classIPrototypeComponent" ]
     ] ],
     [ "level_scene.hpp", "level__scene_8hpp.html", [
       [ "LevelScene", "classLevelScene.html", "classLevelScene" ]

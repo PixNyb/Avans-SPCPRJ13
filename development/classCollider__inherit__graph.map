@@ -1,7 +1,8 @@
 <map id="Collider" name="Collider">
-<area shape="rect" id="node1" title="Base class for collider components." alt="" coords="146,80,218,107"/>
-<area shape="rect" id="node3" href="$classBoxCollider.html" title="Represents a rectangular collision area." alt="" coords="5,155,103,181"/>
-<area shape="rect" id="node4" href="$classCircleCollider.html" title="Represents a circular collision area." alt="" coords="127,155,237,181"/>
-<area shape="rect" id="node5" href="$classPolygonCollider.html" title=" " alt="" coords="261,155,385,181"/>
-<area shape="rect" id="node2" href="$classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="133,5,231,32"/>
+<area shape="rect" id="node1" title="Base class for collider components." alt="" coords="146,155,218,181"/>
+<area shape="rect" id="node4" href="$classBoxCollider.html" title="Represents a rectangular collision area." alt="" coords="5,229,103,256"/>
+<area shape="rect" id="node5" href="$classCircleCollider.html" title="Represents a circular collision area." alt="" coords="127,229,237,256"/>
+<area shape="rect" id="node6" href="$classPolygonCollider.html" title=" " alt="" coords="261,229,385,256"/>
+<area shape="rect" id="node2" href="$classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="133,80,231,107"/>
+<area shape="rect" id="node3" href="$classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="100,5,264,32"/>
 </map>

@@ -97,9 +97,10 @@ Inheritance diagram for PolygonCollider:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPolygonCollider__inherit__graph.png" border="0" usemap="#aPolygonCollider_inherit__map" alt="Inheritance graph"/></div>
 <map name="aPolygonCollider_inherit__map" id="aPolygonCollider_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,155,129,181"/>
-<area shape="rect" href="classCollider.html" title="Base class for collider components." alt="" coords="31,80,103,107"/>
-<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="19,5,116,32"/>
+<area shape="rect" title=" " alt="" coords="25,229,149,256"/>
+<area shape="rect" href="classCollider.html" title="Base class for collider components." alt="" coords="51,155,123,181"/>
+<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="39,80,136,107"/>
+<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="5,5,169,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -107,9 +108,10 @@ Collaboration diagram for PolygonCollider:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPolygonCollider__coll__graph.png" border="0" usemap="#aPolygonCollider_coll__map" alt="Collaboration graph"/></div>
 <map name="aPolygonCollider_coll__map" id="aPolygonCollider_coll__map">
-<area shape="rect" title=" " alt="" coords="5,155,129,181"/>
-<area shape="rect" href="classCollider.html" title="Base class for collider components." alt="" coords="31,80,103,107"/>
-<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="19,5,116,32"/>
+<area shape="rect" title=" " alt="" coords="25,229,149,256"/>
+<area shape="rect" href="classCollider.html" title="Base class for collider components." alt="" coords="51,155,123,181"/>
+<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="39,80,136,107"/>
+<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="5,5,169,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -117,6 +119,12 @@ Collaboration diagram for PolygonCollider:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afa14f978d2e2a25b329dac2e0ee1d3c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPolygonCollider.html#afa14f978d2e2a25b329dac2e0ee1d3c8">PolygonCollider</a> ()=default</td></tr>
 <tr class="separator:afa14f978d2e2a25b329dac2e0ee1d3c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d51f2290c4c3075ed642a8b322f41ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPolygonCollider.html#a4d51f2290c4c3075ed642a8b322f41ad">PolygonCollider</a> (const <a class="el" href="classPolygonCollider.html">PolygonCollider</a> &amp;other)</td></tr>
+<tr class="memdesc:a4d51f2290c4c3075ed642a8b322f41ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for <a class="el" href="classPolygonCollider.html">PolygonCollider</a>.  <a href="classPolygonCollider.html#a4d51f2290c4c3075ed642a8b322f41ad">More...</a><br /></td></tr>
+<tr class="separator:a4d51f2290c4c3075ed642a8b322f41ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad16c9fcff418b6b2fb1dddbeebeec045"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classComponent.html">Component</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPolygonCollider.html#ad16c9fcff418b6b2fb1dddbeebeec045">Clone</a> (std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; parent) override</td></tr>
+<tr class="memdesc:ad16c9fcff418b6b2fb1dddbeebeec045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a clone of the component.  <a href="classPolygonCollider.html#ad16c9fcff418b6b2fb1dddbeebeec045">More...</a><br /></td></tr>
+<tr class="separator:ad16c9fcff418b6b2fb1dddbeebeec045"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac171bda7a91159c88c68d332d052723"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPolygonCollider.html#aac171bda7a91159c88c68d332d052723">Vertices</a> (const std::vector&lt; <a class="el" href="structPoint.html">Point</a> &gt; &amp;vertices)</td></tr>
 <tr class="separator:aac171bda7a91159c88c68d332d052723"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb23a795bfc2d68ea79a46011491f762"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structPoint.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPolygonCollider.html#acb23a795bfc2d68ea79a46011491f762">Vertices</a> () const</td></tr>
@@ -154,7 +162,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afa14f978d2e2a25b329dac2e0ee1d3c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa14f978d2e2a25b329dac2e0ee1d3c8">&#9670;&nbsp;</a></span>PolygonCollider()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afa14f978d2e2a25b329dac2e0ee1d3c8">&#9670;&nbsp;</a></span>PolygonCollider() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,7 +187,70 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="a4d51f2290c4c3075ed642a8b322f41ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d51f2290c4c3075ed642a8b322f41ad">&#9670;&nbsp;</a></span>PolygonCollider() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PolygonCollider::PolygonCollider </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPolygonCollider.html">PolygonCollider</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy constructor for <a class="el" href="classPolygonCollider.html">PolygonCollider</a>. </p>
+<p>Initializes a new <a class="el" href="classPolygonCollider.html">PolygonCollider</a> with the values of an existing one. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="classPolygonCollider.html">PolygonCollider</a> to copy values from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad16c9fcff418b6b2fb1dddbeebeec045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad16c9fcff418b6b2fb1dddbeebeec045">&#9670;&nbsp;</a></span>Clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classComponent.html">Component</a> &gt; PolygonCollider::Clone </td>
+          <td>(</td>
+          <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Make a clone of the component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The cloned component. </dd></dl>
+
+<p>Implements <a class="el" href="classCollider.html#a047d35d518d0fa8d784a341bb55cbf0c">Collider</a>.</p>
+
+</div>
+</div>
 <a id="acb23a795bfc2d68ea79a46011491f762"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acb23a795bfc2d68ea79a46011491f762">&#9670;&nbsp;</a></span>Vertices() <span class="overload">[1/2]</span></h2>
 

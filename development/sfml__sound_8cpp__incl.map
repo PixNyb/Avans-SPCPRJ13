@@ -7,12 +7,12 @@
 <area shape="rect" id="node5" title=" " alt="" coords="207,169,334,196"/>
 <area shape="rect" id="node7" href="$color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="287,244,369,271"/>
 <area shape="rect" id="node8" href="$text_8hpp.html" title="Defines the Text class for handling text rendering in UI elements within the game engine...." alt="" coords="410,169,486,196"/>
-<area shape="rect" id="node15" title=" " alt="" coords="629,393,688,420"/>
+<area shape="rect" id="node15" title=" " alt="" coords="600,393,659,420"/>
 <area shape="rect" id="node9" href="$ui__object_8hpp.html" title="Defines the UIObject class for representing user interface elements in the game engine...." alt="" coords="393,244,503,271"/>
-<area shape="rect" id="node10" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="350,319,485,345"/>
-<area shape="rect" id="node13" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="291,468,373,495"/>
-<area shape="rect" id="node11" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="344,393,467,420"/>
-<area shape="rect" id="node12" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="491,393,605,420"/>
-<area shape="rect" id="node14" title=" " alt="" coords="155,393,232,420"/>
-<area shape="rect" id="node16" title=" " alt="" coords="257,393,319,420"/>
+<area shape="rect" id="node10" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="361,319,495,345"/>
+<area shape="rect" id="node14" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="151,468,233,495"/>
+<area shape="rect" id="node11" href="$iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="459,393,576,420"/>
+<area shape="rect" id="node12" title=" " alt="" coords="431,468,508,495"/>
+<area shape="rect" id="node13" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="181,393,296,420"/>
+<area shape="rect" id="node16" title=" " alt="" coords="321,393,383,420"/>
 </map>

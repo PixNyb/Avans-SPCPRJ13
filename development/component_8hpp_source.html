@@ -93,36 +93,43 @@ $(document).ready(function(){initNavTree('component_8hpp_source.html',''); initR
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef AVANS_SPCPRJ13_COMPONENT_H</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define AVANS_SPCPRJ13_COMPONENT_H</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classComponent.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classComponent.html">Component</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classComponent.html#a2ebc869395d66425690dfeae99d1b791">   26</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classComponent.html#a2ebc869395d66425690dfeae99d1b791">active</a>; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classComponent.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">   41</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">~Component</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classComponent.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component</a>(<span class="keyword">const</span> <a class="code" href="classComponent.html">Component</a> &amp;other);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code" href="classComponent.html#a281ca7be499022dffc55f924399ae5ed">IsActive</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classComponent.html#aa1d536baf09af2dbc56aae342e4e5c60">SetActive</a>(<span class="keywordtype">bool</span> <a class="code" href="classComponent.html#a2ebc869395d66425690dfeae99d1b791">active</a>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classComponent.html#a53ec66587fb3229c44cadac8a555001d">Update</a>();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classComponent.html#aa6f7549ef990afc861ca7547dba9da56">Condition</a>();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_COMPONENT_H</span></div>
-<div class="ttc" id="aclassComponent_html"><div class="ttname"><a href="classComponent.html">Component</a></div><div class="ttdoc">The Component class is a base class for all components that can be added to a GameObject.</div><div class="ttdef"><b>Definition:</b> component.hpp:24</div></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="iprototype__component_8hpp.html">iprototype_component.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classComponent.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classComponent.html">Component</a> : <span class="keyword">public</span> <a class="code" href="classIPrototypeComponent.html">IPrototypeComponent</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classComponent.html#a2ebc869395d66425690dfeae99d1b791">   28</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classComponent.html#a2ebc869395d66425690dfeae99d1b791">active</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classComponent.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">   43</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">~Component</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classComponent.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component</a>(<span class="keyword">const</span> <a class="code" href="classComponent.html">Component</a> &amp;other);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code" href="classComponent.html#a281ca7be499022dffc55f924399ae5ed">IsActive</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classComponent.html#aa1d536baf09af2dbc56aae342e4e5c60">SetActive</a>(<span class="keywordtype">bool</span> <a class="code" href="classComponent.html#a2ebc869395d66425690dfeae99d1b791">active</a>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classComponent.html#a53ec66587fb3229c44cadac8a555001d">Update</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classComponent.html#aa6f7549ef990afc861ca7547dba9da56">Condition</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classComponent.html#ac77bc25fb7e0523a6dfb7a95698d054a">   89</a></span>&#160;    std::shared_ptr&lt;Component&gt; <a class="code" href="classComponent.html#ac77bc25fb7e0523a6dfb7a95698d054a">Clone</a>(std::weak_ptr&lt;GameObject&gt; parent) <span class="keyword">override</span> = 0;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_COMPONENT_H</span></div>
+<div class="ttc" id="aclassComponent_html"><div class="ttname"><a href="classComponent.html">Component</a></div><div class="ttdoc">The Component class is a base class for all components that can be added to a GameObject.</div><div class="ttdef"><b>Definition:</b> component.hpp:26</div></div>
 <div class="ttc" id="aclassComponent_html_a281ca7be499022dffc55f924399ae5ed"><div class="ttname"><a href="classComponent.html#a281ca7be499022dffc55f924399ae5ed">Component::IsActive</a></div><div class="ttdeci">bool IsActive() const</div><div class="ttdoc">Check if the Component is active.</div><div class="ttdef"><b>Definition:</b> component.cpp:17</div></div>
-<div class="ttc" id="aclassComponent_html_a2ebc869395d66425690dfeae99d1b791"><div class="ttname"><a href="classComponent.html#a2ebc869395d66425690dfeae99d1b791">Component::active</a></div><div class="ttdeci">bool active</div><div class="ttdoc">The active flag of the Component.</div><div class="ttdef"><b>Definition:</b> component.hpp:26</div></div>
+<div class="ttc" id="aclassComponent_html_a2ebc869395d66425690dfeae99d1b791"><div class="ttname"><a href="classComponent.html#a2ebc869395d66425690dfeae99d1b791">Component::active</a></div><div class="ttdeci">bool active</div><div class="ttdoc">The active flag of the Component.</div><div class="ttdef"><b>Definition:</b> component.hpp:28</div></div>
 <div class="ttc" id="aclassComponent_html_a53ec66587fb3229c44cadac8a555001d"><div class="ttname"><a href="classComponent.html#a53ec66587fb3229c44cadac8a555001d">Component::Update</a></div><div class="ttdeci">virtual void Update()</div><div class="ttdoc">Update the Component.</div><div class="ttdef"><b>Definition:</b> component.cpp:19</div></div>
 <div class="ttc" id="aclassComponent_html_a8775db6d1a2c1afc2e77cd3c8f39da6f"><div class="ttname"><a href="classComponent.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component::Component</a></div><div class="ttdeci">Component()</div><div class="ttdoc">Default constructor for Component.</div><div class="ttdef"><b>Definition:</b> component.cpp:14</div></div>
 <div class="ttc" id="aclassComponent_html_aa1d536baf09af2dbc56aae342e4e5c60"><div class="ttname"><a href="classComponent.html#aa1d536baf09af2dbc56aae342e4e5c60">Component::SetActive</a></div><div class="ttdeci">virtual void SetActive(bool active)</div><div class="ttdoc">Set the active status of the Component.</div><div class="ttdef"><b>Definition:</b> component.cpp:18</div></div>
 <div class="ttc" id="aclassComponent_html_aa6f7549ef990afc861ca7547dba9da56"><div class="ttname"><a href="classComponent.html#aa6f7549ef990afc861ca7547dba9da56">Component::Condition</a></div><div class="ttdeci">virtual void Condition()</div><div class="ttdoc">Check a condition.</div><div class="ttdef"><b>Definition:</b> component.cpp:20</div></div>
+<div class="ttc" id="aclassComponent_html_ac77bc25fb7e0523a6dfb7a95698d054a"><div class="ttname"><a href="classComponent.html#ac77bc25fb7e0523a6dfb7a95698d054a">Component::Clone</a></div><div class="ttdeci">std::shared_ptr&lt; Component &gt; Clone(std::weak_ptr&lt; GameObject &gt; parent) override=0</div><div class="ttdoc">Make a clone of the component.</div></div>
 <div class="ttc" id="aclassComponent_html_ad82d7393e339c1b19cc17a0d55b5674d"><div class="ttname"><a href="classComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">Component::~Component</a></div><div class="ttdeci">virtual ~Component()=default</div><div class="ttdoc">Pure virtual destructor for Component.</div></div>
+<div class="ttc" id="aclassIPrototypeComponent_html"><div class="ttname"><a href="classIPrototypeComponent.html">IPrototypeComponent</a></div><div class="ttdoc">The IPrototypeComponent interface defines that a class needs to be cloneable.</div><div class="ttdef"><b>Definition:</b> iprototype_component.hpp:26</div></div>
+<div class="ttc" id="aiprototype__component_8hpp_html"><div class="ttname"><a href="iprototype__component_8hpp.html">iprototype_component.hpp</a></div><div class="ttdoc">This file contains the IPrototypeComponent interface definition.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

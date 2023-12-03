@@ -1,5 +1,13 @@
 <map id="include/api/box_collider.hpp" name="include/api/box_collider.hpp">
-<area shape="rect" id="node1" title="Defines the BoxCollider class for representing rectangular collision areas. BoxCollider is a subclass..." alt="" coords="5,5,208,32"/>
-<area shape="rect" id="node2" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="58,80,155,107"/>
-<area shape="rect" id="node3" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="45,155,168,181"/>
+<area shape="rect" id="node1" title="Defines the BoxCollider class for representing rectangular collision areas. BoxCollider is a subclass..." alt="" coords="271,5,473,32"/>
+<area shape="rect" id="node2" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="323,80,421,107"/>
+<area shape="rect" id="node3" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="311,155,433,181"/>
+<area shape="rect" id="node4" href="$iprototype__component_8hpp.html" title="This file contains the IPrototypeComponent interface definition." alt="" coords="273,229,471,256"/>
+<area shape="rect" id="node5" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="199,304,334,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="385,453,463,480"/>
+<area shape="rect" id="node6" href="$iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="365,379,483,405"/>
+<area shape="rect" id="node8" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="5,379,120,405"/>
+<area shape="rect" id="node10" title=" " alt="" coords="195,379,253,405"/>
+<area shape="rect" id="node11" title=" " alt="" coords="278,379,341,405"/>
+<area shape="rect" id="node9" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="21,453,104,480"/>
 </map>

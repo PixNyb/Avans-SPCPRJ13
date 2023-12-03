@@ -2,8 +2,9 @@
 <area shape="rect" id="node1" title="Defines the BehaviourScript class as part of a game engine framework. BehaviourScript is a base class..." alt="" coords="421,5,583,47"/>
 <area shape="rect" id="node2" href="$animator_8hpp.html" title="This file contains the Animator class definition." alt="" coords="5,102,188,129"/>
 <area shape="rect" id="node4" href="$sprite_8hpp.html" title="Defines the Sprite class for handling sprite rendering in the game engine. The Sprite class extends t..." alt="" coords="213,102,375,129"/>
-<area shape="rect" id="node5" href="$behaviour__script_8cpp.html" title="This file contains the BehaviourScript class implementation." alt="" coords="400,102,604,129"/>
-<area shape="rect" id="node6" href="$contact__listener_8cpp.html" title="This file contains the implementation of the class ContactListener." alt="" coords="629,95,821,136"/>
-<area shape="rect" id="node7" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="845,95,1071,136"/>
+<area shape="rect" id="node6" href="$behaviour__script_8cpp.html" title="This file contains the BehaviourScript class implementation." alt="" coords="400,102,604,129"/>
+<area shape="rect" id="node7" href="$contact__listener_8cpp.html" title="This file contains the implementation of the class ContactListener." alt="" coords="629,95,821,136"/>
+<area shape="rect" id="node8" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="845,95,1071,136"/>
 <area shape="rect" id="node3" href="$animator_8cpp.html" title="This file contains the Animator class implementation." alt="" coords="19,184,174,211"/>
+<area shape="rect" id="node5" href="$sprite_8cpp.html" title="This file contains the Sprite class implementation." alt="" coords="227,184,361,211"/>
 </map>

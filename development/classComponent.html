@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('classComponent.html',''); initResizabl
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classComponent-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Component Class Reference</div>  </div>
+<div class="title">Component Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -103,16 +103,26 @@ Inheritance diagram for Component:</div>
 <div class="dyncontent">
 <div class="center"><img src="classComponent__inherit__graph.png" border="0" usemap="#aComponent_inherit__map" alt="Inheritance graph"/></div>
 <map name="aComponent_inherit__map" id="aComponent_inherit__map">
-<area shape="rect" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="208,5,305,32"/>
-<area shape="rect" href="classAudioSource.html" title="Component for handling audio playback." alt="" coords="5,80,108,107"/>
-<area shape="rect" href="classBehaviourScript.html" title="Base class for scriptable behavior in game objects." alt="" coords="133,80,258,107"/>
-<area shape="rect" href="classCollider.html" title="Base class for collider components." alt="" coords="282,80,354,107"/>
-<area shape="rect" href="classRigidBody.html" title="Represents a physics body in the game engine." alt="" coords="378,80,466,107"/>
-<area shape="rect" href="classAnimator.html" title="The Animator class is a BehaviourScript that can be added to a GameObject to animate it according to ..." alt="" coords="58,155,141,181"/>
-<area shape="rect" href="classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="165,155,225,181"/>
-<area shape="rect" href="classBoxCollider.html" title="Represents a rectangular collision area." alt="" coords="249,155,347,181"/>
-<area shape="rect" href="classCircleCollider.html" title="Represents a circular collision area." alt="" coords="371,155,481,181"/>
-<area shape="rect" href="classPolygonCollider.html" title=" " alt="" coords="505,155,629,181"/>
+<area shape="rect" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="208,80,305,107"/>
+<area shape="rect" href="classAudioSource.html" title="Component for handling audio playback." alt="" coords="5,155,108,181"/>
+<area shape="rect" href="classBehaviourScript.html" title="Base class for scriptable behavior in game objects." alt="" coords="133,155,258,181"/>
+<area shape="rect" href="classCollider.html" title="Base class for collider components." alt="" coords="282,155,354,181"/>
+<area shape="rect" href="classRigidBody.html" title="Represents a physics body in the game engine." alt="" coords="378,155,466,181"/>
+<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="175,5,339,32"/>
+<area shape="rect" href="classAnimator.html" title="The Animator class is a BehaviourScript that can be added to a GameObject to animate it according to ..." alt="" coords="58,229,141,256"/>
+<area shape="rect" href="classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="165,229,225,256"/>
+<area shape="rect" href="classBoxCollider.html" title="Represents a rectangular collision area." alt="" coords="249,229,347,256"/>
+<area shape="rect" href="classCircleCollider.html" title="Represents a circular collision area." alt="" coords="371,229,481,256"/>
+<area shape="rect" href="classPolygonCollider.html" title=" " alt="" coords="505,229,629,256"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for Component:</div>
+<div class="dyncontent">
+<div class="center"><img src="classComponent__coll__graph.png" border="0" usemap="#aComponent_coll__map" alt="Collaboration graph"/></div>
+<map name="aComponent_coll__map" id="aComponent_coll__map">
+<area shape="rect" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="39,80,136,107"/>
+<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="5,5,169,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -139,6 +149,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa6f7549ef990afc861ca7547dba9da56"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#aa6f7549ef990afc861ca7547dba9da56">Condition</a> ()</td></tr>
 <tr class="memdesc:aa6f7549ef990afc861ca7547dba9da56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check a condition.  <a href="classComponent.html#aa6f7549ef990afc861ca7547dba9da56">More...</a><br /></td></tr>
 <tr class="separator:aa6f7549ef990afc861ca7547dba9da56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac77bc25fb7e0523a6dfb7a95698d054a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classComponent.html">Component</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ac77bc25fb7e0523a6dfb7a95698d054a">Clone</a> (std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; parent) override=0</td></tr>
+<tr class="memdesc:ac77bc25fb7e0523a6dfb7a95698d054a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a clone of the component.  <a href="classComponent.html#ac77bc25fb7e0523a6dfb7a95698d054a">More...</a><br /></td></tr>
+<tr class="separator:ac77bc25fb7e0523a6dfb7a95698d054a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -226,6 +239,45 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac77bc25fb7e0523a6dfb7a95698d054a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac77bc25fb7e0523a6dfb7a95698d054a">&#9670;&nbsp;</a></span>Clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classComponent.html">Component</a>&gt; Component::Clone </td>
+          <td>(</td>
+          <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Make a clone of the component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The cloned component. </dd></dl>
+
+<p>Implements <a class="el" href="classIPrototypeComponent.html#a69d2d7405c0b66b038589b46fd0092e6">IPrototypeComponent</a>.</p>
+
+<p>Implemented in <a class="el" href="classCollider.html#a047d35d518d0fa8d784a341bb55cbf0c">Collider</a>, <a class="el" href="classBehaviourScript.html#a27f0dd65f4687a7b4abdf6ab934ed7f1">BehaviourScript</a>, <a class="el" href="classSprite.html#a0d65be7f74f4fc989f45a7e4dc7e28d0">Sprite</a>, <a class="el" href="classRigidBody.html#a13159669816000cba90f70e184e13348">RigidBody</a>, <a class="el" href="classPolygonCollider.html#ad16c9fcff418b6b2fb1dddbeebeec045">PolygonCollider</a>, <a class="el" href="classCircleCollider.html#a15033c04f805ba86ac8e7acc85d5870f">CircleCollider</a>, <a class="el" href="classBoxCollider.html#a7c1069a79a8c797c8fba3cbfda6c6257">BoxCollider</a>, <a class="el" href="classAudioSource.html#ac7f1aabb82de6ee95e11ce1f47e38399">AudioSource</a>, and <a class="el" href="classAnimator.html#a2eb24e2da3fdb1408f99bd4d8907f3dd">Animator</a>.</p>
+
+</div>
+</div>
 <a id="aa6f7549ef990afc861ca7547dba9da56"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa6f7549ef990afc861ca7547dba9da56">&#9670;&nbsp;</a></span>Condition()</h2>
 

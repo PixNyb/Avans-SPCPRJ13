@@ -109,33 +109,36 @@ $(document).ready(function(){initNavTree('audio__source_8hpp_source.html',''); i
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classAudioSource.html#ac9ea7f42b9136177d62355e56f58aa20">AudioSource</a>(<span class="keyword">const</span> <a class="code" href="classAudioSource.html">AudioSource</a> &amp;other);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAudioSource.html#a25294a3010f121461562a6bf4739c645">Play</a>(<span class="keywordtype">bool</span> looping = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAudioSource.html#a1fc6a1e9b9c6f1ea3acd0d16705a44b0">SetPitch</a>(<span class="keywordtype">float</span> pitch);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAudioSource.html#a70732968279954b9e56cb3d51d508b50">Pause</a>();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAudioSource.html#afcfa9a28255f0aac30aa218d4e293123">Stop</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAudioSource.html#a06e5738937164cb2be5bb6d4fa04ec79">SetActive</a>(<span class="keywordtype">bool</span> isActivate) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::shared_ptr&lt;Component&gt; <a class="code" href="classAudioSource.html#ac7f1aabb82de6ee95e11ce1f47e38399">Clone</a>(std::weak_ptr&lt;GameObject&gt; parent) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAudioSource.html#a25294a3010f121461562a6bf4739c645">Play</a>(<span class="keywordtype">bool</span> looping = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAudioSource.html#a1fc6a1e9b9c6f1ea3acd0d16705a44b0">SetPitch</a>(<span class="keywordtype">float</span> pitch);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAudioSource.html#a70732968279954b9e56cb3d51d508b50">Pause</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAudioSource.html#afcfa9a28255f0aac30aa218d4e293123">Stop</a>();</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::string audioClip;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">bool</span> playOnAwake;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::shared_ptr&lt;ISound&gt; audioInstance;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_AUDIOSOURCE_H</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAudioSource.html#a06e5738937164cb2be5bb6d4fa04ec79">SetActive</a>(<span class="keywordtype">bool</span> isActivate) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::string audioClip;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">bool</span> playOnAwake;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    std::shared_ptr&lt;ISound&gt; audioInstance;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_AUDIOSOURCE_H</span></div>
 <div class="ttc" id="aclassAudioSource_html"><div class="ttname"><a href="classAudioSource.html">AudioSource</a></div><div class="ttdoc">Component for handling audio playback.</div><div class="ttdef"><b>Definition:</b> audio_source.hpp:33</div></div>
 <div class="ttc" id="aclassAudioSource_html_a06e5738937164cb2be5bb6d4fa04ec79"><div class="ttname"><a href="classAudioSource.html#a06e5738937164cb2be5bb6d4fa04ec79">AudioSource::SetActive</a></div><div class="ttdeci">void SetActive(bool isActivate) override</div><div class="ttdoc">Set the active status of the Component, also stops the audio.</div><div class="ttdef"><b>Definition:</b> audio_source.cpp:47</div></div>
 <div class="ttc" id="aclassAudioSource_html_a1fc6a1e9b9c6f1ea3acd0d16705a44b0"><div class="ttname"><a href="classAudioSource.html#a1fc6a1e9b9c6f1ea3acd0d16705a44b0">AudioSource::SetPitch</a></div><div class="ttdeci">void SetPitch(float pitch)</div><div class="ttdoc">Call this method to set the volume of the audio.</div><div class="ttdef"><b>Definition:</b> audio_source.cpp:44</div></div>
 <div class="ttc" id="aclassAudioSource_html_a25294a3010f121461562a6bf4739c645"><div class="ttname"><a href="classAudioSource.html#a25294a3010f121461562a6bf4739c645">AudioSource::Play</a></div><div class="ttdeci">void Play(bool looping=false)</div><div class="ttdoc">Call this method to start playing audio.</div><div class="ttdef"><b>Definition:</b> audio_source.cpp:38</div></div>
 <div class="ttc" id="aclassAudioSource_html_a70732968279954b9e56cb3d51d508b50"><div class="ttname"><a href="classAudioSource.html#a70732968279954b9e56cb3d51d508b50">AudioSource::Pause</a></div><div class="ttdeci">void Pause()</div><div class="ttdoc">Call this method to pause playing audio.</div><div class="ttdef"><b>Definition:</b> audio_source.cpp:45</div></div>
+<div class="ttc" id="aclassAudioSource_html_ac7f1aabb82de6ee95e11ce1f47e38399"><div class="ttname"><a href="classAudioSource.html#ac7f1aabb82de6ee95e11ce1f47e38399">AudioSource::Clone</a></div><div class="ttdeci">std::shared_ptr&lt; Component &gt; Clone(std::weak_ptr&lt; GameObject &gt; parent) override</div><div class="ttdoc">Make a clone of the component.</div><div class="ttdef"><b>Definition:</b> audio_source.cpp:64</div></div>
 <div class="ttc" id="aclassAudioSource_html_ac9ea7f42b9136177d62355e56f58aa20"><div class="ttname"><a href="classAudioSource.html#ac9ea7f42b9136177d62355e56f58aa20">AudioSource::AudioSource</a></div><div class="ttdeci">AudioSource(std::string audioClipPath, bool playOnAwake=false, bool loop=false, double volume=1.0)</div><div class="ttdoc">Construct a new Audio Source object.</div><div class="ttdef"><b>Definition:</b> audio_source.cpp:17</div></div>
 <div class="ttc" id="aclassAudioSource_html_afcfa9a28255f0aac30aa218d4e293123"><div class="ttname"><a href="classAudioSource.html#afcfa9a28255f0aac30aa218d4e293123">AudioSource::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Call this method to stop playing audio.</div><div class="ttdef"><b>Definition:</b> audio_source.cpp:43</div></div>
-<div class="ttc" id="aclassComponent_html"><div class="ttname"><a href="classComponent.html">Component</a></div><div class="ttdoc">The Component class is a base class for all components that can be added to a GameObject.</div><div class="ttdef"><b>Definition:</b> component.hpp:24</div></div>
+<div class="ttc" id="aclassComponent_html"><div class="ttname"><a href="classComponent.html">Component</a></div><div class="ttdoc">The Component class is a base class for all components that can be added to a GameObject.</div><div class="ttdef"><b>Definition:</b> component.hpp:26</div></div>
 <div class="ttc" id="acomponent_8hpp_html"><div class="ttname"><a href="component_8hpp.html">component.hpp</a></div><div class="ttdoc">This file contains the Component class definition.</div></div>
 <div class="ttc" id="ai__sound_8hpp_html"><div class="ttname"><a href="i__sound_8hpp.html">i_sound.hpp</a></div><div class="ttdoc">A sound wrapper.</div></div>
 </div><!-- fragment --></div><!-- contents -->

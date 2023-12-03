@@ -1,8 +1,14 @@
 <map id="include/api/audio_source.hpp" name="include/api/audio_source.hpp">
-<area shape="rect" id="node1" title="The AudioSource class provides audio playback functionality for game objects. This class is part of a..." alt="" coords="153,5,364,32"/>
-<area shape="rect" id="node2" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="5,80,128,107"/>
-<area shape="rect" id="node3" href="$i__sound_8hpp.html" title="A sound wrapper." alt="" coords="153,80,253,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="276,80,353,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="377,80,436,107"/>
-<area shape="rect" id="node4" href="$i__sound__playstate_8hpp.html" title="The playstate of a sound." alt="" coords="119,155,287,181"/>
+<area shape="rect" id="node1" title="The AudioSource class provides audio playback functionality for game objects. This class is part of a..." alt="" coords="237,5,448,32"/>
+<area shape="rect" id="node2" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="213,80,336,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="43,379,120,405"/>
+<area shape="rect" id="node9" title=" " alt="" coords="512,304,571,331"/>
+<area shape="rect" id="node11" href="$i__sound_8hpp.html" title="A sound wrapper." alt="" coords="446,80,546,107"/>
+<area shape="rect" id="node3" href="$iprototype__component_8hpp.html" title="This file contains the IPrototypeComponent interface definition." alt="" coords="157,155,355,181"/>
+<area shape="rect" id="node4" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="205,229,339,256"/>
+<area shape="rect" id="node5" href="$iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="144,304,261,331"/>
+<area shape="rect" id="node7" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="285,304,400,331"/>
+<area shape="rect" id="node10" title=" " alt="" coords="425,304,487,331"/>
+<area shape="rect" id="node8" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="301,379,384,405"/>
+<area shape="rect" id="node12" href="$i__sound__playstate_8hpp.html" title="The playstate of a sound." alt="" coords="429,155,597,181"/>
 </map>

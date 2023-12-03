@@ -102,8 +102,9 @@ Inheritance diagram for RigidBody:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRigidBody__inherit__graph.png" border="0" usemap="#aRigidBody_inherit__map" alt="Inheritance graph"/></div>
 <map name="aRigidBody_inherit__map" id="aRigidBody_inherit__map">
-<area shape="rect" title="Represents a physics body in the game engine." alt="" coords="10,80,98,107"/>
-<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="5,5,103,32"/>
+<area shape="rect" title="Represents a physics body in the game engine." alt="" coords="43,155,131,181"/>
+<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="39,80,136,107"/>
+<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="5,5,169,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -111,18 +112,25 @@ Collaboration diagram for RigidBody:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRigidBody__coll__graph.png" border="0" usemap="#aRigidBody_coll__map" alt="Collaboration graph"/></div>
 <map name="aRigidBody_coll__map" id="aRigidBody_coll__map">
-<area shape="rect" title="Represents a physics body in the game engine." alt="" coords="10,80,98,107"/>
-<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="5,5,103,32"/>
+<area shape="rect" title="Represents a physics body in the game engine." alt="" coords="43,155,131,181"/>
+<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="39,80,136,107"/>
+<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="5,5,169,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a13159669816000cba90f70e184e13348"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classComponent.html">Component</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRigidBody.html#a13159669816000cba90f70e184e13348">Clone</a> (std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; parent) override</td></tr>
+<tr class="memdesc:a13159669816000cba90f70e184e13348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a clone of the component.  <a href="classRigidBody.html#a13159669816000cba90f70e184e13348">More...</a><br /></td></tr>
+<tr class="separator:a13159669816000cba90f70e184e13348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f1d64a8196a16405227b98fc40e3c3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRigidBody.html#a0f1d64a8196a16405227b98fc40e3c3d">AddForce</a> (const <a class="el" href="structPoint.html">Point</a> &amp;forceDirection)</td></tr>
 <tr class="memdesc:a0f1d64a8196a16405227b98fc40e3c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply force to the rigid body.  <a href="classRigidBody.html#a0f1d64a8196a16405227b98fc40e3c3d">More...</a><br /></td></tr>
 <tr class="separator:a0f1d64a8196a16405227b98fc40e3c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ebd194f2bee4f2d10168a51022f92a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRigidBody.html#a3ebd194f2bee4f2d10168a51022f92a6">RigidBody</a> (double mass, double gravityScale, BodyType bodyType)</td></tr>
 <tr class="separator:a3ebd194f2bee4f2d10168a51022f92a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b59cc64518f4c01549227f7766766c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRigidBody.html#a2b59cc64518f4c01549227f7766766c4">RigidBody</a> (const <a class="el" href="classRigidBody.html">RigidBody</a> &amp;other)</td></tr>
+<tr class="memdesc:a2b59cc64518f4c01549227f7766766c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a>.  <a href="classRigidBody.html#a2b59cc64518f4c01549227f7766766c4">More...</a><br /></td></tr>
+<tr class="separator:a2b59cc64518f4c01549227f7766766c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb114a7312ebbf9a5fa9c82f3c6a0e20"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRigidBody.html#adb114a7312ebbf9a5fa9c82f3c6a0e20">GetMass</a> () const</td></tr>
 <tr class="separator:adb114a7312ebbf9a5fa9c82f3c6a0e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fa9300a7407281711a562dfa97ac690"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRigidBody.html#a7fa9300a7407281711a562dfa97ac690">GetGravityScale</a> () const</td></tr>
@@ -165,7 +173,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>A component that adds physical properties to a game object, such as mass and the ability to react to forces. It plays a key role in the game's physics system. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3ebd194f2bee4f2d10168a51022f92a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ebd194f2bee4f2d10168a51022f92a6">&#9670;&nbsp;</a></span>RigidBody()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ebd194f2bee4f2d10168a51022f92a6">&#9670;&nbsp;</a></span>RigidBody() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,6 +214,32 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="a2b59cc64518f4c01549227f7766766c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b59cc64518f4c01549227f7766766c4">&#9670;&nbsp;</a></span>RigidBody() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RigidBody::RigidBody </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classRigidBody.html">RigidBody</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy constructor for <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a>. </p>
+<p>Initializes a new <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a> with the values of an existing one. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a> to copy values from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0f1d64a8196a16405227b98fc40e3c3d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f1d64a8196a16405227b98fc40e3c3d">&#9670;&nbsp;</a></span>AddForce()</h2>
@@ -230,6 +264,43 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a13159669816000cba90f70e184e13348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13159669816000cba90f70e184e13348">&#9670;&nbsp;</a></span>Clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classComponent.html">Component</a> &gt; RigidBody::Clone </td>
+          <td>(</td>
+          <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Make a clone of the component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The cloned component. </dd></dl>
+
+<p>Implements <a class="el" href="classComponent.html#ac77bc25fb7e0523a6dfb7a95698d054a">Component</a>.</p>
 
 </div>
 </div>

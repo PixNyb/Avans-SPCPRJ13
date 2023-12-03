@@ -102,18 +102,23 @@ $(document).ready(function(){initNavTree('polygon__collider_8hpp_source.html',''
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classPolygonCollider.html#afa14f978d2e2a25b329dac2e0ee1d3c8">   25</a></span>&#160;    <a class="code" href="classPolygonCollider.html#afa14f978d2e2a25b329dac2e0ee1d3c8">PolygonCollider</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPolygonCollider.html#acb23a795bfc2d68ea79a46011491f762">Vertices</a>(<span class="keyword">const</span> std::vector&lt;Point&gt; &amp;vertices);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classPolygonCollider.html#acb23a795bfc2d68ea79a46011491f762">   37</a></span>&#160;    std::vector&lt;Point&gt; <a class="code" href="classPolygonCollider.html#acb23a795bfc2d68ea79a46011491f762">Vertices</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> vertices; }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::vector&lt;Point&gt; vertices;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_POLYGON_COLLIDER_HPP</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classPolygonCollider.html#afa14f978d2e2a25b329dac2e0ee1d3c8">PolygonCollider</a>(<span class="keyword">const</span> <a class="code" href="classPolygonCollider.html">PolygonCollider</a> &amp;other);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::shared_ptr&lt;Component&gt; <a class="code" href="classPolygonCollider.html#ad16c9fcff418b6b2fb1dddbeebeec045">Clone</a>(std::weak_ptr&lt;GameObject&gt; parent) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPolygonCollider.html#acb23a795bfc2d68ea79a46011491f762">Vertices</a>(<span class="keyword">const</span> std::vector&lt;Point&gt; &amp;vertices);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classPolygonCollider.html#acb23a795bfc2d68ea79a46011491f762">   52</a></span>&#160;    std::vector&lt;Point&gt; <a class="code" href="classPolygonCollider.html#acb23a795bfc2d68ea79a46011491f762">Vertices</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> vertices; }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::vector&lt;Point&gt; vertices;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_POLYGON_COLLIDER_HPP</span></div>
 <div class="ttc" id="aclassCollider_html"><div class="ttname"><a href="classCollider.html">Collider</a></div><div class="ttdoc">Base class for collider components.</div><div class="ttdef"><b>Definition:</b> collider.hpp:29</div></div>
 <div class="ttc" id="aclassPolygonCollider_html"><div class="ttname"><a href="classPolygonCollider.html">PolygonCollider</a></div><div class="ttdef"><b>Definition:</b> polygon_collider.hpp:20</div></div>
-<div class="ttc" id="aclassPolygonCollider_html_acb23a795bfc2d68ea79a46011491f762"><div class="ttname"><a href="classPolygonCollider.html#acb23a795bfc2d68ea79a46011491f762">PolygonCollider::Vertices</a></div><div class="ttdeci">std::vector&lt; Point &gt; Vertices() const</div><div class="ttdef"><b>Definition:</b> polygon_collider.hpp:37</div></div>
+<div class="ttc" id="aclassPolygonCollider_html_acb23a795bfc2d68ea79a46011491f762"><div class="ttname"><a href="classPolygonCollider.html#acb23a795bfc2d68ea79a46011491f762">PolygonCollider::Vertices</a></div><div class="ttdeci">std::vector&lt; Point &gt; Vertices() const</div><div class="ttdef"><b>Definition:</b> polygon_collider.hpp:52</div></div>
+<div class="ttc" id="aclassPolygonCollider_html_ad16c9fcff418b6b2fb1dddbeebeec045"><div class="ttname"><a href="classPolygonCollider.html#ad16c9fcff418b6b2fb1dddbeebeec045">PolygonCollider::Clone</a></div><div class="ttdeci">std::shared_ptr&lt; Component &gt; Clone(std::weak_ptr&lt; GameObject &gt; parent) override</div><div class="ttdoc">Make a clone of the component.</div><div class="ttdef"><b>Definition:</b> polygon_collider.cpp:11</div></div>
 <div class="ttc" id="aclassPolygonCollider_html_afa14f978d2e2a25b329dac2e0ee1d3c8"><div class="ttname"><a href="classPolygonCollider.html#afa14f978d2e2a25b329dac2e0ee1d3c8">PolygonCollider::PolygonCollider</a></div><div class="ttdeci">PolygonCollider()=default</div></div>
 <div class="ttc" id="acollider_8hpp_html"><div class="ttname"><a href="collider_8hpp.html">collider.hpp</a></div><div class="ttdoc">Defines the Collider class as a base for all collider components in a game engine....</div></div>
 <div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div><div class="ttdoc">Defines the Point struct for representing 2D points and vectors in the DefunBobEngine....</div></div>

@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('classBehaviourScript.html',''); initRe
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classBehaviourScript-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">BehaviourScript Class Reference</div>  </div>
+<div class="title">BehaviourScript Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -103,10 +103,11 @@ Inheritance diagram for BehaviourScript:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBehaviourScript__inherit__graph.png" border="0" usemap="#aBehaviourScript_inherit__map" alt="Inheritance graph"/></div>
 <map name="aBehaviourScript_inherit__map" id="aBehaviourScript_inherit__map">
-<area shape="rect" title="Base class for scriptable behavior in game objects." alt="" coords="32,80,157,107"/>
-<area shape="rect" href="classAnimator.html" title="The Animator class is a BehaviourScript that can be added to a GameObject to animate it according to ..." alt="" coords="5,155,88,181"/>
-<area shape="rect" href="classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="113,155,173,181"/>
-<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="46,5,143,32"/>
+<area shape="rect" title="Base class for scriptable behavior in game objects." alt="" coords="32,155,157,181"/>
+<area shape="rect" href="classAnimator.html" title="The Animator class is a BehaviourScript that can be added to a GameObject to animate it according to ..." alt="" coords="5,229,88,256"/>
+<area shape="rect" href="classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="113,229,173,256"/>
+<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="46,80,143,107"/>
+<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="13,5,177,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -114,13 +115,17 @@ Collaboration diagram for BehaviourScript:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBehaviourScript__coll__graph.png" border="0" usemap="#aBehaviourScript_coll__map" alt="Collaboration graph"/></div>
 <map name="aBehaviourScript_coll__map" id="aBehaviourScript_coll__map">
-<area shape="rect" title="Base class for scriptable behavior in game objects." alt="" coords="5,80,131,107"/>
-<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="19,5,117,32"/>
+<area shape="rect" title="Base class for scriptable behavior in game objects." alt="" coords="25,155,150,181"/>
+<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="39,80,136,107"/>
+<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="5,5,169,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a27f0dd65f4687a7b4abdf6ab934ed7f1"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classComponent.html">Component</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBehaviourScript.html#a27f0dd65f4687a7b4abdf6ab934ed7f1">Clone</a> (std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; parent) override=0</td></tr>
+<tr class="memdesc:a27f0dd65f4687a7b4abdf6ab934ed7f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a clone of the component.  <a href="classBehaviourScript.html#a27f0dd65f4687a7b4abdf6ab934ed7f1">More...</a><br /></td></tr>
+<tr class="separator:a27f0dd65f4687a7b4abdf6ab934ed7f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80bffa3fec52a1131a1fbdc11417540b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBehaviourScript.html#a80bffa3fec52a1131a1fbdc11417540b">OnStart</a> ()</td></tr>
 <tr class="memdesc:a80bffa3fec52a1131a1fbdc11417540b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes everything required for the behaviour script.  <a href="classBehaviourScript.html#a80bffa3fec52a1131a1fbdc11417540b">More...</a><br /></td></tr>
 <tr class="separator:a80bffa3fec52a1131a1fbdc11417540b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,6 +186,45 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="textblock"><p>Base class for scriptable behavior in game objects. </p>
 <p><a class="el" href="classBehaviourScript.html" title="Base class for scriptable behavior in game objects.">BehaviourScript</a> serves as a base class for defining custom behaviors that can be attached to game objects. It provides a framework for scripting events such as start, update, and collision triggers. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a27f0dd65f4687a7b4abdf6ab934ed7f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27f0dd65f4687a7b4abdf6ab934ed7f1">&#9670;&nbsp;</a></span>Clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classComponent.html">Component</a>&gt; BehaviourScript::Clone </td>
+          <td>(</td>
+          <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Make a clone of the component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The cloned component. </dd></dl>
+
+<p>Implements <a class="el" href="classComponent.html#ac77bc25fb7e0523a6dfb7a95698d054a">Component</a>.</p>
+
+<p>Implemented in <a class="el" href="classSprite.html#a0d65be7f74f4fc989f45a7e4dc7e28d0">Sprite</a>, and <a class="el" href="classAnimator.html#a2eb24e2da3fdb1408f99bd4d8907f3dd">Animator</a>.</p>
+
+</div>
+</div>
 <a id="ae6088943b88666fa2e776fb5c4c26503"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae6088943b88666fa2e776fb5c4c26503">&#9670;&nbsp;</a></span>HasStarted()</h2>
 

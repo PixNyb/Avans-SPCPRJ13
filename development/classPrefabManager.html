@@ -99,12 +99,12 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrefabManager.html#a172a21833b61f5883d2db26e3441b37d">PrefabManager</a> ()</td></tr>
 <tr class="memdesc:a172a21833b61f5883d2db26e3441b37d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classPrefabManager.html">PrefabManager</a>. <br /></td></tr>
 <tr class="separator:a172a21833b61f5883d2db26e3441b37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32d8e67acbd03bc299a666f36b984660"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrefabManager.html#a32d8e67acbd03bc299a666f36b984660">RegisterPrefab</a> (const std::string &amp;id, const <a class="el" href="classGameObject.html">GameObject</a> &amp;prefab)</td></tr>
-<tr class="memdesc:a32d8e67acbd03bc299a666f36b984660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a prefab.  <a href="classPrefabManager.html#a32d8e67acbd03bc299a666f36b984660">More...</a><br /></td></tr>
-<tr class="separator:a32d8e67acbd03bc299a666f36b984660"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae22aff1c5ed93e8ec7e00ba175ab121c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGameObject.html">GameObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrefabManager.html#ae22aff1c5ed93e8ec7e00ba175ab121c">GetPrefab</a> (std::string id)</td></tr>
-<tr class="memdesc:ae22aff1c5ed93e8ec7e00ba175ab121c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a prefab based on a id.  <a href="classPrefabManager.html#ae22aff1c5ed93e8ec7e00ba175ab121c">More...</a><br /></td></tr>
-<tr class="separator:ae22aff1c5ed93e8ec7e00ba175ab121c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af53a020856e08257a5129c92cfc222e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrefabManager.html#af53a020856e08257a5129c92cfc222e8">RegisterPrefab</a> (const std::string &amp;id, const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;prefab)</td></tr>
+<tr class="memdesc:af53a020856e08257a5129c92cfc222e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a prefab.  <a href="classPrefabManager.html#af53a020856e08257a5129c92cfc222e8">More...</a><br /></td></tr>
+<tr class="separator:af53a020856e08257a5129c92cfc222e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e54d93097eb1bfeaa454215a3282ada"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrefabManager.html#a0e54d93097eb1bfeaa454215a3282ada">GetPrefab</a> (std::string id)</td></tr>
+<tr class="memdesc:a0e54d93097eb1bfeaa454215a3282ada"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a prefab based on a id.  <a href="classPrefabManager.html#a0e54d93097eb1bfeaa454215a3282ada">More...</a><br /></td></tr>
+<tr class="separator:a0e54d93097eb1bfeaa454215a3282ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb79da066ba6a059cde5a3616604ec02"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrefabManager.html#abb79da066ba6a059cde5a3616604ec02">HasPrefab</a> (const std::string &amp;id) const</td></tr>
 <tr class="memdesc:abb79da066ba6a059cde5a3616604ec02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there is a prefab registered with a specified id.  <a href="classPrefabManager.html#abb79da066ba6a059cde5a3616604ec02">More...</a><br /></td></tr>
 <tr class="separator:abb79da066ba6a059cde5a3616604ec02"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,14 +117,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a3e2c6aaf757c6946e3ee5be82829e7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae22aff1c5ed93e8ec7e00ba175ab121c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae22aff1c5ed93e8ec7e00ba175ab121c">&#9670;&nbsp;</a></span>GetPrefab()</h2>
+<a id="a0e54d93097eb1bfeaa454215a3282ada"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e54d93097eb1bfeaa454215a3282ada">&#9670;&nbsp;</a></span>GetPrefab()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classGameObject.html">GameObject</a> PrefabManager::GetPrefab </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; PrefabManager::GetPrefab </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
@@ -171,8 +171,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a id="a32d8e67acbd03bc299a666f36b984660"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32d8e67acbd03bc299a666f36b984660">&#9670;&nbsp;</a></span>RegisterPrefab()</h2>
+<a id="af53a020856e08257a5129c92cfc222e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af53a020856e08257a5129c92cfc222e8">&#9670;&nbsp;</a></span>RegisterPrefab()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -186,7 +186,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classGameObject.html">GameObject</a> &amp;&#160;</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>prefab</em>&#160;</td>
         </tr>
         <tr>

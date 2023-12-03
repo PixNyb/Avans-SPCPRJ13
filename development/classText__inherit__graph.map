@@ -1,6 +1,7 @@
 <map id="Text" name="Text">
-<area shape="rect" id="node1" title="Represents a piece of text in the user interface." alt="" coords="82,244,131,271"/>
-<area shape="rect" id="node2" href="$classUIObject.html" title="Represents a user interface object in the game engine." alt="" coords="67,169,146,196"/>
-<area shape="rect" id="node3" href="$classGameObject.html" title="The GameObject class represents an object in the game world." alt="" coords="55,95,158,121"/>
+<area shape="rect" id="node1" title="Represents a piece of text in the user interface." alt="" coords="194,244,243,271"/>
+<area shape="rect" id="node2" href="$classUIObject.html" title="Represents a user interface object in the game engine." alt="" coords="179,169,258,196"/>
+<area shape="rect" id="node3" href="$classGameObject.html" title="The GameObject class represents an object in the game world." alt="" coords="167,95,270,121"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,5,208,47"/>
+<area shape="rect" id="node5" href="$classIPrototype.html" title=" " alt="" coords="232,13,432,39"/>
 </map>

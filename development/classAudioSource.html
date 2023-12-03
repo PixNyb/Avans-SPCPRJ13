@@ -102,8 +102,9 @@ Inheritance diagram for AudioSource:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAudioSource__inherit__graph.png" border="0" usemap="#aAudioSource_inherit__map" alt="Inheritance graph"/></div>
 <map name="aAudioSource_inherit__map" id="aAudioSource_inherit__map">
-<area shape="rect" title="Component for handling audio playback." alt="" coords="5,80,108,107"/>
-<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="8,5,105,32"/>
+<area shape="rect" title="Component for handling audio playback." alt="" coords="36,155,139,181"/>
+<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="39,80,136,107"/>
+<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="5,5,169,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -111,8 +112,9 @@ Collaboration diagram for AudioSource:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAudioSource__coll__graph.png" border="0" usemap="#aAudioSource_coll__map" alt="Collaboration graph"/></div>
 <map name="aAudioSource_coll__map" id="aAudioSource_coll__map">
-<area shape="rect" title="Component for handling audio playback." alt="" coords="5,80,108,107"/>
-<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="8,5,105,32"/>
+<area shape="rect" title="Component for handling audio playback." alt="" coords="36,155,139,181"/>
+<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="39,80,136,107"/>
+<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="5,5,169,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -124,6 +126,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa29a71741e359c2aa63eec02f58ee6af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudioSource.html#aa29a71741e359c2aa63eec02f58ee6af">AudioSource</a> (const <a class="el" href="classAudioSource.html">AudioSource</a> &amp;other)</td></tr>
 <tr class="memdesc:aa29a71741e359c2aa63eec02f58ee6af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a>.  <a href="classAudioSource.html#aa29a71741e359c2aa63eec02f58ee6af">More...</a><br /></td></tr>
 <tr class="separator:aa29a71741e359c2aa63eec02f58ee6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7f1aabb82de6ee95e11ce1f47e38399"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classComponent.html">Component</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudioSource.html#ac7f1aabb82de6ee95e11ce1f47e38399">Clone</a> (std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; parent) override</td></tr>
+<tr class="memdesc:ac7f1aabb82de6ee95e11ce1f47e38399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a clone of the component.  <a href="classAudioSource.html#ac7f1aabb82de6ee95e11ce1f47e38399">More...</a><br /></td></tr>
+<tr class="separator:ac7f1aabb82de6ee95e11ce1f47e38399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25294a3010f121461562a6bf4739c645"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAudioSource.html#a25294a3010f121461562a6bf4739c645">Play</a> (bool looping=false)</td></tr>
 <tr class="memdesc:a25294a3010f121461562a6bf4739c645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this method to start playing audio.  <a href="classAudioSource.html#a25294a3010f121461562a6bf4739c645">More...</a><br /></td></tr>
 <tr class="separator:a25294a3010f121461562a6bf4739c645"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -256,6 +261,43 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac7f1aabb82de6ee95e11ce1f47e38399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7f1aabb82de6ee95e11ce1f47e38399">&#9670;&nbsp;</a></span>Clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classComponent.html">Component</a> &gt; AudioSource::Clone </td>
+          <td>(</td>
+          <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Make a clone of the component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The cloned component. </dd></dl>
+
+<p>Implements <a class="el" href="classComponent.html#ac77bc25fb7e0523a6dfb7a95698d054a">Component</a>.</p>
+
+</div>
+</div>
 <a id="a25294a3010f121461562a6bf4739c645"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a25294a3010f121461562a6bf4739c645">&#9670;&nbsp;</a></span>Play()</h2>
 

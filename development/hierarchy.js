@@ -7,19 +7,6 @@ var hierarchy =
     ] ],
     [ "BehaviourScriptManager", "classBehaviourScriptManager.html", null ],
     [ "Color", "classColor.html", null ],
-    [ "Component", "classComponent.html", [
-      [ "AudioSource", "classAudioSource.html", null ],
-      [ "BehaviourScript", "classBehaviourScript.html", [
-        [ "Animator", "classAnimator.html", null ],
-        [ "Sprite", "classSprite.html", null ]
-      ] ],
-      [ "Collider", "classCollider.html", [
-        [ "BoxCollider", "classBoxCollider.html", null ],
-        [ "CircleCollider", "classCircleCollider.html", null ],
-        [ "PolygonCollider", "classPolygonCollider.html", null ]
-      ] ],
-      [ "RigidBody", "classRigidBody.html", null ]
-    ] ],
     [ "DebugRenderer", "classDebugRenderer.html", null ],
     [ "DIContainer", "classDIContainer.html", null ],
     [ "std::enable_shared_from_this", null, [
@@ -48,6 +35,25 @@ var hierarchy =
     [ "IMouseListener", "classIMouseListener.html", null ],
     [ "IOFacade", "classIOFacade.html", [
       [ "GraphicsFacade", "classGraphicsFacade.html", null ]
+    ] ],
+    [ "IPrototype< T >", "classIPrototype.html", null ],
+    [ "IPrototype< GameObject >", "classIPrototype.html", [
+      [ "GameObject", "classGameObject.html", null ]
+    ] ],
+    [ "IPrototypeComponent", "classIPrototypeComponent.html", [
+      [ "Component", "classComponent.html", [
+        [ "AudioSource", "classAudioSource.html", null ],
+        [ "BehaviourScript", "classBehaviourScript.html", [
+          [ "Animator", "classAnimator.html", null ],
+          [ "Sprite", "classSprite.html", null ]
+        ] ],
+        [ "Collider", "classCollider.html", [
+          [ "BoxCollider", "classBoxCollider.html", null ],
+          [ "CircleCollider", "classCircleCollider.html", null ],
+          [ "PolygonCollider", "classPolygonCollider.html", null ]
+        ] ],
+        [ "RigidBody", "classRigidBody.html", null ]
+      ] ]
     ] ],
     [ "ISceneFactory", "classISceneFactory.html", [
       [ "LevelFactory", "classLevelFactory.html", null ]

@@ -1,11 +1,11 @@
 <map id="include/project/managers/prefab_manager.hpp" name="include/project/managers/prefab_manager.hpp">
-<area shape="rect" id="node1" title="Manages prefabs." alt="" coords="397,5,584,47"/>
-<area shape="rect" id="node2" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="299,95,434,121"/>
-<area shape="rect" id="node7" title=" " alt="" coords="480,169,539,196"/>
-<area shape="rect" id="node9" title=" " alt="" coords="528,95,579,121"/>
-<area shape="rect" id="node3" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="5,169,128,196"/>
-<area shape="rect" id="node4" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="152,169,267,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="291,169,368,196"/>
-<area shape="rect" id="node8" title=" " alt="" coords="393,169,455,196"/>
-<area shape="rect" id="node5" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="168,244,251,271"/>
+<area shape="rect" id="node1" title="Manages prefabs." alt="" coords="336,5,523,47"/>
+<area shape="rect" id="node2" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="234,95,369,121"/>
+<area shape="rect" id="node7" title=" " alt="" coords="424,169,483,196"/>
+<area shape="rect" id="node9" title=" " alt="" coords="467,95,517,121"/>
+<area shape="rect" id="node3" href="$iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="5,169,123,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="69,244,147,271"/>
+<area shape="rect" id="node5" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="197,169,312,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="337,169,399,196"/>
+<area shape="rect" id="node6" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="213,244,296,271"/>
 </map>

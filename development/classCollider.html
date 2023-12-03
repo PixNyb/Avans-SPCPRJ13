@@ -86,9 +86,10 @@ $(document).ready(function(){initNavTree('classCollider.html',''); initResizable
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classCollider-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Collider Class Reference</div>  </div>
+<div class="title">Collider Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -101,11 +102,12 @@ Inheritance diagram for Collider:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCollider__inherit__graph.png" border="0" usemap="#aCollider_inherit__map" alt="Inheritance graph"/></div>
 <map name="aCollider_inherit__map" id="aCollider_inherit__map">
-<area shape="rect" title="Base class for collider components." alt="" coords="146,80,218,107"/>
-<area shape="rect" href="classBoxCollider.html" title="Represents a rectangular collision area." alt="" coords="5,155,103,181"/>
-<area shape="rect" href="classCircleCollider.html" title="Represents a circular collision area." alt="" coords="127,155,237,181"/>
-<area shape="rect" href="classPolygonCollider.html" title=" " alt="" coords="261,155,385,181"/>
-<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="133,5,231,32"/>
+<area shape="rect" title="Base class for collider components." alt="" coords="146,155,218,181"/>
+<area shape="rect" href="classBoxCollider.html" title="Represents a rectangular collision area." alt="" coords="5,229,103,256"/>
+<area shape="rect" href="classCircleCollider.html" title="Represents a circular collision area." alt="" coords="127,229,237,256"/>
+<area shape="rect" href="classPolygonCollider.html" title=" " alt="" coords="261,229,385,256"/>
+<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="133,80,231,107"/>
+<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="100,5,264,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -113,13 +115,17 @@ Collaboration diagram for Collider:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCollider__coll__graph.png" border="0" usemap="#aCollider_coll__map" alt="Collaboration graph"/></div>
 <map name="aCollider_coll__map" id="aCollider_coll__map">
-<area shape="rect" title="Base class for collider components." alt="" coords="18,80,90,107"/>
-<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="5,5,103,32"/>
+<area shape="rect" title="Base class for collider components." alt="" coords="51,155,123,181"/>
+<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="39,80,136,107"/>
+<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="5,5,169,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a047d35d518d0fa8d784a341bb55cbf0c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classComponent.html">Component</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCollider.html#a047d35d518d0fa8d784a341bb55cbf0c">Clone</a> (std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; parent) override=0</td></tr>
+<tr class="memdesc:a047d35d518d0fa8d784a341bb55cbf0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a clone of the component.  <a href="classCollider.html#a047d35d518d0fa8d784a341bb55cbf0c">More...</a><br /></td></tr>
+<tr class="separator:a047d35d518d0fa8d784a341bb55cbf0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classComponent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classComponent')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classComponent.html">Component</a></td></tr>
 <tr class="memitem:a8775db6d1a2c1afc2e77cd3c8f39da6f inherit pub_methods_classComponent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component</a> ()</td></tr>
 <tr class="memdesc:a8775db6d1a2c1afc2e77cd3c8f39da6f inherit pub_methods_classComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject.">Component</a>.  <a href="classComponent.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">More...</a><br /></td></tr>
@@ -142,6 +148,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aa6f7549ef990afc861ca7547dba9da56 inherit pub_methods_classComponent"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#aa6f7549ef990afc861ca7547dba9da56">Condition</a> ()</td></tr>
 <tr class="memdesc:aa6f7549ef990afc861ca7547dba9da56 inherit pub_methods_classComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check a condition.  <a href="classComponent.html#aa6f7549ef990afc861ca7547dba9da56">More...</a><br /></td></tr>
 <tr class="separator:aa6f7549ef990afc861ca7547dba9da56 inherit pub_methods_classComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classComponent"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classComponent')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classComponent.html">Component</a></td></tr>
 <tr class="memitem:a2ebc869395d66425690dfeae99d1b791 inherit pro_attribs_classComponent"><td class="memItemLeft" align="right" valign="top"><a id="a2ebc869395d66425690dfeae99d1b791"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a2ebc869395d66425690dfeae99d1b791">active</a></td></tr>
@@ -151,7 +160,47 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for collider components. </p>
 <p>The <a class="el" href="classCollider.html" title="Base class for collider components.">Collider</a> class is an abstract base class for all collider components used in the game engine. It provides a foundation for defining collision properties and behaviors for game objects. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a047d35d518d0fa8d784a341bb55cbf0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a047d35d518d0fa8d784a341bb55cbf0c">&#9670;&nbsp;</a></span>Clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classComponent.html">Component</a>&gt; Collider::Clone </td>
+          <td>(</td>
+          <td class="paramtype">std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Make a clone of the component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The cloned component. </dd></dl>
+
+<p>Implements <a class="el" href="classComponent.html#ac77bc25fb7e0523a6dfb7a95698d054a">Component</a>.</p>
+
+<p>Implemented in <a class="el" href="classPolygonCollider.html#ad16c9fcff418b6b2fb1dddbeebeec045">PolygonCollider</a>, <a class="el" href="classCircleCollider.html#a15033c04f805ba86ac8e7acc85d5870f">CircleCollider</a>, and <a class="el" href="classBoxCollider.html#a7c1069a79a8c797c8fba3cbfda6c6257">BoxCollider</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/api/<a class="el" href="collider_8hpp_source.html">collider.hpp</a></li>
 </ul>
 </div><!-- contents -->
