@@ -2,7 +2,17 @@
 
 In dit bestand staat uitgebreide documentatie over het gebruik van de DeFunBobEngine game engine.
 
-## Window aanmaken
+## Inhoudsopgave
+
+- [Hoe de Engine te gebruiken?](#hoe-de-engine-te-gebruiken)
+  - [Inhoudsopgave](#inhoudsopgave)
+  - [1. Window aanmaken](#1-window-aanmaken)
+  - [2. Level format](#2-level-format)
+  - [3. Physics Simulatie Gebruiken](#3-physics-simulatie-gebruiken)
+  - [4. Input Facades](#4-input-facades)
+  - [5. Contact listeners \& Behaviour Scripts](#5-contact-listeners--behaviour-scripts)
+
+## 1. Window aanmaken
 
 Voor het aanmaken van een window moeten we eerst zorgen dat de Engine klasse is geintialiseerd,
 vanuit daar kunnen we de GraphicsFacade aanroepen om een Window aan te maken. Daarna moet je ook een Render aanmaken
@@ -10,7 +20,7 @@ waaraan content toegevoegd kan worden.
 
 TODO: Verder uitwerken als straks alles op zijn plek staat (woensdag)
 
-## Prefabs gebruiken
+## 2. Prefabs gebruiken
 De PrefabManager kan gebruikt worden om prefabs te registeren en op te halen.
 
 ```cpp
@@ -25,8 +35,7 @@ std::shared_ptr<GameObject> GetPrefab(std::string id);
 Om vervolgens een prefab weer op te halen kan er gebruik gemaakt worden van de GetPrefab functie.
 Hieraan wordt een id meegegeven om de prefab te specificeren. Er wordt hier een nieuwe copy van het GameObject teruggegeven.
 
-
-## Level format
+## 3. Level format
 
 Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief.
 De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de PrefabManager.
@@ -105,7 +114,7 @@ In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk Ga
 }
 ```
 
-## Physics Simulatie Gebruiken
+## 4. Physics Simulatie Gebruiken
 
 De physics manager is voor de engine het aanspreekpunt om een wereld te starten, aan te passen en te beinvloeden.
 De physics manager heeft functies die elk hun doel omschrijven. Hiermee kun je bodies aanmaken, verwijderen, uit- en
@@ -126,7 +135,26 @@ void PhysicsManager::Step() {
 De CreateWorld functie roep je als eerste aan. Vervolgens kun je de simulatie starten met de Step() functie.
 Per aanroep van deze functie zet de wereld 1 stap en beweegt hij de objecten die hij bevat.
 
-## Input Facades
+De objecten binnen Box2d kunnen van 3 types zijn:
+
+- Static
+
+Static bodies zijn objecten die vaststaan in de wereld en hebben dus geen velocity en reageren niet op zwaartekracht.
+Static bodies kunnen wel handmatg verplaatst worden naar een andere locatie in de wereld met de UpdateTransform functie
+van de PhysicsManager.
+
+- Kinematic
+
+Kinematic bodies kunnen in tegenstelling tot static bodies wel bewegen. Ze reageren niet op zwaartekracht en kunnen niet
+bewogen door krachten van botsingen. De enige manier om een kinematic body te bewegen is door zijn velocity te setten
+met de functie UpdateVelocity.
+
+- Dynamic
+
+Dynamic bodies zijn volledig gesimuleerd en zullen zich gedragen zoals een object in de echte wereld dat doet. Deze kun
+je bewegen door meerdere functies te gebruiken: UpdateVelocity(), AddLinearForce() en AddForce().
+
+## 5. Input Facades
 
 De input facade maakt het mogelijk om naar key en mouse inputs te luisteren, maar ook om acties te maken, binden aan
 specifieke inputs (een soort alias) en deze te gebruiken in de game.
@@ -146,7 +174,7 @@ if (inputFacade->GetAction("jump")) {
 }
 ```
 
-## Contact listeners & Behaviour Scripts
+## 6. Contact listeners & Behaviour Scripts
 
 De contactlistener in de physicsfacade zorgt ervoor dat alle contacts worden afgevangen en sturen een signaal naar de
 behaviorscripts

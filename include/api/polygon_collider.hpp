@@ -25,6 +25,21 @@ class PolygonCollider : public Collider
     PolygonCollider() = default;
 
     /**
+     * @brief Copy constructor for PolygonCollider.
+     *
+     * Initializes a new PolygonCollider with the values of an existing one.
+     * @param other The PolygonCollider to copy values from.
+     */
+    PolygonCollider(const PolygonCollider &other);
+
+    /**
+     * @brief Make a clone of the component.
+     * @param parent The parent GameObject.
+     * @return The cloned component.
+     */
+    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
+
+    /**
      *Sets the vertices on this PolygonCollider
      * @param vertices are Points that make the outline of the PolygonCollider
      */

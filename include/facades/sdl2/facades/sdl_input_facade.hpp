@@ -210,6 +210,8 @@ class SDLInputFacade : public IInputFacade
     /**
      * @brief Returns true while the user holds down the given action.
      *
+     * @note The 'quit' action is always true when the user is quitting the game, regardless of
+     * whether it is registered or not.
      * @return True if any action is being performed, false otherwise.
      */
     bool GetAction(const std::string &action) const override;

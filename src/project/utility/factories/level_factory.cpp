@@ -58,8 +58,8 @@ Transform LevelFactory::ConvertTransform(const nlohmann::json &transformJson) co
 {
     // Get Position from JSON.
     auto positionJson = transformJson.at("position");
-    auto position = Point(positionJson.at("x").template get<int>(),
-                          positionJson.at("y").template get<int>());
+    auto position = Point(positionJson.at("x").template get<double>(),
+                          positionJson.at("y").template get<double>());
 
     // Get rotation and scale from JSON.
     auto rotation = transformJson.at("rotation").template get<double>();

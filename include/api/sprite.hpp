@@ -43,6 +43,22 @@ class Sprite : public BehaviourScript
      * @brief Constructs a new Sprite object with default settings.
      */
     Sprite();
+
+    /**
+     * @brief Copy constructor for Sprite.
+     *
+     * Initializes a new Sprite with the values of an existing one.
+     * @param other The Sprite to copy values from.
+     */
+    Sprite(const Sprite &other);
+
+    /**
+     * @brief Make a clone of the component.
+     * @param parent The parent GameObject.
+     * @return The cloned component.
+     */
+    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
+
     // Getters, Setters, and other public member functions ...
 };
 

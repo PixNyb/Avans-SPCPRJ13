@@ -43,6 +43,13 @@ class RigidBody : public Component
 {
   public:
     /**
+     * @brief Make a clone of the component.
+     * @param parent The parent GameObject.
+     * @return The cloned component.
+     */
+    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
+
+    /**
      * @brief Apply force to the rigid body.
      *
      * Adds a force to the rigid body, influencing its motion according to physics simulations.
@@ -57,6 +64,14 @@ class RigidBody : public Component
      * @param bodyType is the type of body defined in the BodyType enum
      */
     RigidBody(double mass, double gravityScale, BodyType bodyType);
+
+    /**
+     * @brief Copy constructor for Component.
+     *
+     * Initializes a new Component with the values of an existing one.
+     * @param other The Component to copy values from.
+     */
+    RigidBody(const RigidBody &other);
 
     /**
      * Gets the mass of this body in kg's

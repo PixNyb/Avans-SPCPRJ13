@@ -40,6 +40,13 @@ class Animator : public BehaviourScript
     Animator(const Animator &other);
 
     /**
+     * @brief Make a clone of the component.
+     * @param parent The parent GameObject.
+     * @return The cloned component.
+     */
+    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
+
+    /**
      * @brief Update the Animator.
      *
      * This method is called every frame by the GameObject it is attached to. It checks whether or

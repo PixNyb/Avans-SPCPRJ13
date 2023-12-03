@@ -34,42 +34,23 @@ GameObject::GameObject(const std::string &name, const Transform &transform)
     // Constructor with name and transform initialization
 }
 
-GameObject::GameObject(const GameObject &other)
+std::shared_ptr<GameObject> GameObject::Clone()
 {
-    name = other.name;
+    auto ptr = std::make_shared<GameObject>();
 
-    // TODO: Update the clone functionality to make a deep copy.
-    std::vector<std::shared_ptr<Component>> comps;
-    for (const auto &comp : other.components)
-        comps.push_back(std::make_shared<Component>(*comp));
-    components = comps;
-
-    transform = other.transform;
-    active = other.active;
-    tag = other.tag;
-    layer = other.layer;
-}
-
-GameObject &GameObject::operator=(const GameObject &other)
-{
-    if (this == &other)
-        return *this;
-
-    components = std::vector<std::shared_ptr<Component>>();
     // The parent will remain undefined because it has to be redefined in the level format.
-    parent = nullptr;
+    ptr->parent = nullptr;
+    ptr->name = name;
 
-    name = other.name;
+    for (const auto &comp : components)
+        ptr->components.push_back(comp->Clone(ptr));
 
-    // TODO: Add copy for components.
-    components = other.components;
+    ptr->transform = transform;
+    ptr->active = active;
+    ptr->tag = tag;
+    ptr->layer = layer;
 
-    transform = other.transform;
-    active = other.active;
-    tag = other.tag;
-    layer = other.layer;
-
-    return *this;
+    return ptr;
 }
 
 void GameObject::AddComponent(std::shared_ptr<Component> component)

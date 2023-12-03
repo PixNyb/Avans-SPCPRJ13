@@ -28,6 +28,26 @@ class BoxCollider : public Collider
 {
   public:
     /**
+     * @brief Constructs a new BoxCollider.
+     */
+    BoxCollider();
+
+    /**
+     * @brief Make a clone of the component.
+     * @param parent The parent GameObject.
+     * @return The cloned component.
+     */
+    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
+
+    /**
+     * @brief Copy constructor for BoxCollider.
+     *
+     * Initializes a new BoxCollider with the values of an existing one.
+     * @param other The BoxCollider to copy values from.
+     */
+    BoxCollider(const BoxCollider &other);
+
+    /**
      * @brief The collider's width
      * @return The current width
      */
