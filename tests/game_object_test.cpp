@@ -135,15 +135,6 @@ TEST(GameObjectTest,
     ASSERT_EQ(foundGrandChild, true);
 }
 
-TEST(GameObjectTest, TestAddComponent)
-{
-    std::shared_ptr<Component> component = std::make_shared<Component>();
-    GameObject obj("TestObject");
-    obj.AddComponent(component);
-    // Here you should test if the component was added correctly
-    // This depends on how you implemented the AddComponent method
-}
-
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);

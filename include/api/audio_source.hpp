@@ -52,6 +52,13 @@ class AudioSource : public Component
     AudioSource(const AudioSource &other);
 
     /**
+     * @brief Make a clone of the component.
+     * @param parent The parent GameObject.
+     * @return The cloned component.
+     */
+    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
+
+    /**
      * @brief Call this method to start playing audio.
      * @param looping Automatically start over when done.
      */

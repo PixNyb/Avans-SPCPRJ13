@@ -29,6 +29,26 @@ class CircleCollider : public Collider
 {
   public:
     /**
+     * @brief Constructs a new CircleCollider.
+     */
+    CircleCollider();
+
+    /**
+     * @brief Copy constructor for CircleCollider.
+     *
+     * Initializes a new CircleCollider with the values of an existing one.
+     * @param other The CircleCollider to copy values from.
+     */
+    CircleCollider(const CircleCollider &other);
+
+   /**
+    * @brief Make a clone of the component.
+    * @param parent The parent GameObject.
+    * @return The cloned component.
+    */
+    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
+
+    /**
      * @brief Get the collider's radius
      * @return The radius
      */

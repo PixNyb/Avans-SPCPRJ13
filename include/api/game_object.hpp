@@ -12,12 +12,13 @@
 #ifndef AVANS_SPCPRJ13_GAMEOBJECT_H
 #define AVANS_SPCPRJ13_GAMEOBJECT_H
 
-#include "component.hpp"
+#include "iprototype.hpp"
 #include "transform.hpp"
 #include <memory>
 #include <string>
 #include <vector>
 
+class Component;
 class PhysicsManager;
 
 /**
@@ -30,7 +31,7 @@ class PhysicsManager;
  * GameObjects can be added to the game world and can have their components
  * updated and rendered.
  */
-class GameObject : public std::enable_shared_from_this<GameObject>
+class GameObject : public std::enable_shared_from_this<GameObject>, public IPrototype<GameObject>
 {
   protected:
     std::string name; ///< The name of the GameObject.
@@ -70,14 +71,20 @@ class GameObject : public std::enable_shared_from_this<GameObject>
      * @brief Copy constructor that creates a deep copy of the provided GameObject.
      * @param other The GameObject that is to be copied.
      */
-    GameObject(const GameObject &other);
+    GameObject(const GameObject &other) = delete;
 
     /**
      * @brief Copy assignment operator that creates a deep copy of the provided GameObject.
      * @param other The GameObject that is to be copied.
      * @return The new copy of the GameObject.
      */
-    GameObject &operator=(const GameObject &other);
+    GameObject &operator=(const GameObject &other) = delete;
+
+    /**
+     * @brief Returns a clone of the GameObject.
+     * @return The cloned GameObject in a shared pointer.
+     */
+    std::shared_ptr<GameObject> Clone() override;
 
     /**
      * @brief Move constructor which could be used to move a GameObject, this functionality is

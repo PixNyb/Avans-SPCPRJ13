@@ -16,8 +16,11 @@ Animator::Animator()
 }
 
 Animator::Animator(const Animator &other)
-{
+ : BehaviourScript(other) {
     // Copy constructor implementation
+    this->hasStarted = other.hasStarted;
+    this->currentState = other.currentState;
+    this->possibleStates = other.possibleStates;
 }
 
 void Animator::Update()
@@ -33,4 +36,9 @@ void Animator::Stop()
 void Animator::Play(bool looping)
 {
     // Implementation
+}
+
+std::shared_ptr<Component> Animator::Clone(std::weak_ptr<GameObject> parent)
+{
+    return std::make_shared<Animator>(*this);
 }

@@ -60,3 +60,8 @@ void AudioSource::SetActive(bool isActivate)
     if (!previousActive && playOnAwake)
         Play(sound->GetLoop());
 }
+
+std::shared_ptr<Component> AudioSource::Clone(std::weak_ptr<GameObject> parent)
+{
+    return std::make_shared<AudioSource>(*this);
+}

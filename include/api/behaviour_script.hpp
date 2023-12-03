@@ -33,6 +33,13 @@ class BehaviourScript : public Component
     bool hasStarted = false; ///< Flag indicating whether the behaviour script has started.
   public:
     /**
+     * @brief Make a clone of the component.
+     * @param parent The parent GameObject.
+     * @return The cloned component.
+     */
+    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override = 0;
+
+    /**
      * @brief Initializes everything required for the behaviour script.
      * @note This is required because not everything might be known while constructing a component
      * @warning DO set the hasStarted variable to true in this function or call the parent function

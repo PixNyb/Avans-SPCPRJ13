@@ -29,3 +29,14 @@ RigidBody::RigidBody(double mass, double gravityScale, BodyType bodyType) {
     this->bodyType = bodyType;
 }
 
+RigidBody::RigidBody(const RigidBody &other) : Component(other) {
+    mass = other.mass;
+    gravityScale = other.gravityScale;
+    bodyType = other.bodyType;
+}
+
+std::shared_ptr<Component> RigidBody::Clone(std::weak_ptr<GameObject> parent)
+{
+    return std::make_shared<RigidBody>(*this);
+}
+
