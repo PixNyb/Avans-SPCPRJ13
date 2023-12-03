@@ -4,18 +4,18 @@
 
 - [Development Guidelines](#development-guidelines)
   - [Inhoudsopgave](#inhoudsopgave)
-  - [Code Formatting](#code-formatting)
-  - [Bestandsstructuur](#bestandsstructuur)
-  - [Commentaar](#commentaar)
-    - [Doxygen](#doxygen)
-  - [CMake-bestanden](#cmake-bestanden)
-  - [Bouwproces](#bouwproces)
-  - [Testen](#testen)
-  - [Git en Versiebeheer](#git-en-versiebeheer)
-  - [Code Reviews](#code-reviews)
-  - [Documentatie](#documentatie)
+  - [1. Code Formatting](#1-code-formatting)
+  - [2. Bestandsstructuur](#2-bestandsstructuur)
+  - [3. Commentaar](#3-commentaar)
+    - [3.1. Doxygen](#31-doxygen)
+  - [4. CMake-bestanden](#4-cmake-bestanden)
+  - [5. Bouwproces](#5-bouwproces)
+  - [6. Testen](#6-testen)
+  - [7. Git en Versiebeheer](#7-git-en-versiebeheer)
+  - [8. Code Reviews](#8-code-reviews)
+  - [9. Documentatie](#9-documentatie)
 
-## Code Formatting
+## 1. Code Formatting
 
 Gebruik de Clang Formatter om code te formatteren volgens de `C++ Coding Style Guide` van `LLVM`. Hier zijn enkele basisregels:
 
@@ -32,20 +32,20 @@ Voor meer informatie, zie [LLVM Coding Standards](https://llvm.org/docs/CodingSt
 
 Daarnaast kan er ook gebruik worden gemaakt van extensies voor de IDE om de code te formatteren. Voor Visual Studio Code is er bijvoorbeeld de [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) extensie.
 
-## Bestandsstructuur
+## 2. Bestandsstructuur
 
 - Organiseer bronbestanden in duidelijke mappen met beschrijvende namen (bijv. `src/`, `include/`, `tests/`).
 - Houd headerbestanden (`.hpp`) en implementatiebestanden (`.cpp`) apart.
 - Plaats `CMakeLists.txt`-bestanden in de relevante mappen om de bronnen en doelen te definiëren.
 - Voor meer informatie, zie [Modern CMake](https://cliutils.gitlab.io/modern-cmake/chapters/basics/structure.html).
 
-## Commentaar
+## 3. Commentaar
 
 - Voeg commentaar toe om complexe of onduidelijke delen van de code uit te leggen.
 - Voeg een licentieheader bovenaan elk bronbestand toe om auteursrecht en licentie-informatie te vermelden.
 - Gebruik `//` voor enkele regel commentaar en `/* */` voor meerdere regels.
 
-### Doxygen
+### 3.1. Doxygen
 
 Houd de [Doxygen commentaarstijl](https://www.doxygen.nl/manual/docblocks.html) aan voor documentatie zoals hieronder beschreven:
 
@@ -100,14 +100,14 @@ Houd de [Doxygen commentaarstijl](https://www.doxygen.nl/manual/docblocks.html) 
   <variable_type> <variable_name>; ///< <description>
   ```
 
-## CMake-bestanden
+## 4. CMake-bestanden
 
 - Organiseer CMake-bestanden duidelijk in de projectmap.
 - Gebruik een hoofd-`CMakeLists.txt`-bestand in de hoofdmap om het project te configureren en submappen toe te voegen.
 - Gebruik afzonderlijke `CMakeLists.txt`-bestanden in submappen om doelen en afhankelijkheden te definiëren.
 - Maak gebruik van CMake-variabelen om configuratieopties te beheren (bijv. compilerflags, versie-informatie).
 
-## Bouwproces
+## 5. Bouwproces
 
 - Gebruik CMake om het buildproces te automatiseren. Definieer targets en afhankelijkheden in `CMakeLists.txt`-bestanden.
 - Gebruik vcpkg met het [vcpkg.json](vcpkg.json) manifest om afhankelijkheden te beheren.
@@ -115,7 +115,7 @@ Houd de [Doxygen commentaarstijl](https://www.doxygen.nl/manual/docblocks.html) 
 - Voeg testdoelen toe om [unit tests](https://cmake.org/cmake/help/book/mastering-cmake/chapter/Testing%20With%20CMake%20and%20CTest.html) uit te voeren in `tests/`.
 - Maak gebruik van Continuous Integration (CI) om automatische builds en tests te garanderen.
 
-## Testen
+## 6. Testen
 
 - Schrijf unit tests waar mogelijk om de functionaliteit van de code te testen.
   - Om unit test te schrijven, maak je gebruik van het [CTest](https://cmake.org/cmake/help/latest/manual/ctest.1.html) framework van [CMake](https://cmake.org/).
@@ -127,7 +127,7 @@ Houd de [Doxygen commentaarstijl](https://www.doxygen.nl/manual/docblocks.html) 
 
 _Voor het toevoegen van nieuwe tests hoeft er naast het aanmaken van de runnable geen extra configuratie te gebeuren. CMake zal automatisch de test detecteren en uitvoeren. Mochten er nieuwe requirements zijn voor het uitvoeren van de test, dan kunnen deze toegevoegd worden aan de `tests/CMakeLists.txt` file._
 
-## Git en Versiebeheer
+## 7. Git en Versiebeheer
 
 - Gebruik Git voor versiebeheer en houd een **consistente** en **betekenisvolle** commitgeschiedenis bij.
 - Gebruik branches voor nieuwe functies en bugfixes en voeg deze samen via pull requests.
@@ -141,12 +141,12 @@ _Voor het toevoegen van nieuwe tests hoeft er naast het aanmaken van de runnable
   - `docs/<naam>` voor documentatie.
   - `test/<naam>` voor tests.
 
-## Code Reviews
+## 8. Code Reviews
 
 - Voer regelmatig code reviews uit om codekwaliteit en naleving van de richtlijnen te waarborgen.
 - Moedig feedback aan en wees bereid om wijzigingen aan te brengen op basis van suggesties.
 
-## Documentatie
+## 9. Documentatie
 
 - Voeg doelmatige documentatie toe aan de code en gebruik `doxygen` om documentatie te genereren.
 - Documenteer **bestanden**, **functies**, **klassen** en **complexe algoritmen**.
