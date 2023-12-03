@@ -50,7 +50,7 @@ jobs:
           fi
           ./vcpkg/bootstrap-vcpkg.sh
 
-      - name: Install dependencies
+      - name: Install vcpkg dependencies
         run: ./vcpkg/vcpkg install --triplet x64-linux --feature-flags=manifests
 
       - name: Build
