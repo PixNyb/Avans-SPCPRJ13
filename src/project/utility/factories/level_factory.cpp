@@ -32,24 +32,23 @@ std::vector<std::shared_ptr<GameObject>> LevelFactory::AddObjects(Scene &scene, 
         auto gameObject =
             prefabManager->GetPrefab(jsonObject.at("prefab").template get<std::string>());
 
-        gameObject.SetName(jsonObject.at("name").template get<std::string>());
+        gameObject->SetName(jsonObject.at("name").template get<std::string>());
 
-        gameObject.SetTag(jsonObject.at("tag").template get<std::string>());
+        gameObject->SetTag(jsonObject.at("tag").template get<std::string>());
 
-        gameObject.SetActive(jsonObject.at("active").template get<bool>());
+        gameObject->SetActive(jsonObject.at("active").template get<bool>());
 
-        gameObject.SetLayer(jsonObject.at("layer").template get<int>());
+        gameObject->SetLayer(jsonObject.at("layer").template get<int>());
 
-        gameObject.SetTransform(ConvertTransform(jsonObject.at("transform")));
+        gameObject->SetTransform(ConvertTransform(jsonObject.at("transform")));
 
-        auto ptr = std::make_shared<GameObject>(gameObject);
         // Recursive function call.
         auto children = LevelFactory::AddObjects(scene, jsonObject.at("children"));
         for (const auto &child : children)
-            child->SetParent(ptr);
+            child->SetParent(gameObject);
 
-        scene.AddGameObject(ptr);
-        objects.push_back(ptr);
+        scene.AddGameObject(gameObject);
+        objects.push_back(gameObject);
     }
 
     return objects;
@@ -59,8 +58,8 @@ Transform LevelFactory::ConvertTransform(const nlohmann::json &transformJson) co
 {
     // Get Position from JSON.
     auto positionJson = transformJson.at("position");
-    auto position = Point(positionJson.at("x").template get<int>(),
-                          positionJson.at("y").template get<int>());
+    auto position = Point(positionJson.at("x").template get<double>(),
+                          positionJson.at("y").template get<double>());
 
     // Get rotation and scale from JSON.
     auto rotation = transformJson.at("rotation").template get<double>();

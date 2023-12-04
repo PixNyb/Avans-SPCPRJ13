@@ -14,8 +14,11 @@
 Animator::Animator() : currentState(nullptr) {}
 
 Animator::Animator(const Animator &other)
-{
+ : BehaviourScript(other) {
     // Copy constructor implementation
+    this->hasStarted = other.hasStarted;
+    this->currentState = other.currentState;
+    this->possibleStates = other.possibleStates;
 }
 
 void Animator::Update()
@@ -61,4 +64,9 @@ int Animator::GetCurrentFrameIndex() const
         return currentState->GetCurrentFrameIndex();
     }
     return 0;
+
+std::shared_ptr<Component> Animator::Clone(std::weak_ptr<GameObject> parent)
+{
+    return std::make_shared<Animator>(*this);
+
 }

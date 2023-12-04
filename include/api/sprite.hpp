@@ -70,6 +70,23 @@ class Sprite : public BehaviourScript
     * @return int frameHeight
     */
     [[nodiscard]] int GetFrameHeight() const { return frameHeight; }
+
+     * @brief Copy constructor for Sprite.
+     *
+     * Initializes a new Sprite with the values of an existing one.
+     * @param other The Sprite to copy values from.
+     */
+    Sprite(const Sprite &other);
+
+    /**
+     * @brief Make a clone of the component.
+     * @param parent The parent GameObject.
+     * @return The cloned component.
+     */
+    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
+
+    // Getters, Setters, and other public member functions ...
+
 };
 
 #endif // AVANS_SPCPRJ13_SPRITE_H
