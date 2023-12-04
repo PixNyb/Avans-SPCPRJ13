@@ -115,6 +115,13 @@ class PhysicsManager
      * @param vY velocity on the y-axis
      */
     void UpdateVelocity(const std::shared_ptr<GameObject> &gameObject, double vX, double vY);
+
+    /**
+     * @brief Create a new b2world
+     *
+     *
+     */
+    void CreateNewWorld(std::vector<std::shared_ptr<GameObject>> gameObjects);
 };
 
 #endif // DEFUNBOBENGINE_PHYSICS_MANAGER_HPP

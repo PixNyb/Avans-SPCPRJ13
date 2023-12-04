@@ -152,6 +152,11 @@ class PhysicsFacade
      * @brief Deletes the bodies that have the hasPhysics flag set to false
      */
     void DeleteBodies();
+
+    /**
+     * @brief Clears the b2world
+     */
+    void CreateNewWorld(std::vector<std::shared_ptr<GameObject>> gameObjects);
 };
 
 #endif // AVANS_SPCPRJ13_PHYSICS_FACADE_HPP
