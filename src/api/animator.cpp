@@ -13,12 +13,15 @@
 
 Animator::Animator() : currentState(nullptr) {}
 
-Animator::Animator(const Animator &other)
- : BehaviourScript(other) {
+Animator::Animator(const Animator &other) : BehaviourScript(other)
+{
     // Copy constructor implementation
     this->hasStarted = other.hasStarted;
-    this->currentState = other.currentState;
-    this->possibleStates = other.possibleStates;
+    if (other.currentState)
+    {
+        this->currentState = std::make_unique<AnimationState>(*other.currentState);
+    }
+    this->states = other.states;
 }
 
 void Animator::Update()
@@ -41,13 +44,14 @@ void Animator::Play(bool looping)
     states[name] = state;
 }
 
-[[gnu::used]] void Animator::SetState(const std::string &name) {
+[[gnu::used]] void Animator::SetState(const std::string &name)
+{
     auto it = states.find(name);
-    if (it != states.end()) {
+    if (it != states.end())
+    {
         currentState = std::make_unique<AnimationState>(it->second);
     }
 }
-
 
 void Animator::OnUpdate()
 {
@@ -64,9 +68,9 @@ int Animator::GetCurrentFrameIndex() const
         return currentState->GetCurrentFrameIndex();
     }
     return 0;
+}
 
 std::shared_ptr<Component> Animator::Clone(std::weak_ptr<GameObject> parent)
 {
     return std::make_shared<Animator>(*this);
-
 }
