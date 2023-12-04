@@ -1,14 +1,13 @@
 #include "prefab_manager.hpp"
 #include <gtest/gtest.h>
 
-class PrefabManagerStub : public PrefabManager {
+class PrefabManagerStub : public PrefabManager
+{
   public:
     // The PrefabManagerStub allows for full access to the stored prefabs.
-    std::map<std::string, GameObject> GetPrefabs() {
-        return this->prefabs;
-    }
+    std::map<std::string, std::shared_ptr<GameObject>> GetPrefabs() { return this->prefabs; }
 
-    void InsertPrefab(const std::pair<std::string, GameObject>& value)
+    void InsertPrefab(const std::pair<std::string, std::shared_ptr<GameObject>> &value)
     {
         this->prefabs.insert(value);
     }
@@ -32,20 +31,21 @@ TEST_F(PrefabTest, RegisterPrefab)
 {
     std::string key1 = "Key1";
     std::string key2 = "Key2";
-    // Not testing with multiple properties, then it would become a test for the clone functionality.
-    GameObject obj1("Prefab1");
+    // Not testing with multiple properties, then it would become a test for the clone
+    // functionality.
+    auto obj1 = std::make_shared<GameObject>("Prefab1");
     manager.RegisterPrefab(key1, obj1);
 
-    std::map<std::string, GameObject> prefabs = manager.GetPrefabs();
+    std::map<std::string, std::shared_ptr<GameObject>> prefabs = manager.GetPrefabs();
     auto it1 = prefabs.find(key1);
 
     // Check if key was registered
     ASSERT_NE(it1, prefabs.end());
 
     // Check if the prefab name is the same.
-    ASSERT_EQ(it1->second.GetName(), obj1.GetName());
+    ASSERT_EQ(it1->second->GetName(), obj1->GetName());
 
-    GameObject obj2("Prefab2");
+    auto obj2 = std::make_shared<GameObject>("Prefab2");
     manager.RegisterPrefab(key2, obj2);
 
     prefabs = manager.GetPrefabs(); // Update the prefabs.
@@ -55,7 +55,7 @@ TEST_F(PrefabTest, RegisterPrefab)
     ASSERT_NE(it2, prefabs.end());
 
     // Check if the prefab name is the same.
-    ASSERT_EQ(it2->second.GetName(), obj2.GetName());
+    ASSERT_EQ(it2->second->GetName(), obj2->GetName());
 
     // Check if the number of prefabs has increased.
     ASSERT_EQ(prefabs.size(), 2);
@@ -65,15 +65,15 @@ TEST_F(PrefabTest, GetPrefab)
 {
     std::string key1 = "Key1";
     std::string key2 = "Key2";
-    GameObject obj1("prefab");
+    auto obj1 = std::make_shared<GameObject>("prefab");
 
-    manager.InsertPrefab(std::pair<std::string, GameObject>(key1, obj1));
+    manager.InsertPrefab(std::pair<std::string, std::shared_ptr<GameObject>>(key1, obj1));
     auto prefab = manager.GetPrefab(key1);
     // Check that the name of the returned prefab is the same.
-    ASSERT_EQ(prefab->GetName(), obj1.GetName());
+    ASSERT_EQ(prefab->GetName(), obj1->GetName());
 
     // Check that it is not the exact same object.
-    ASSERT_NE(std::addressof(*prefab), std::addressof(obj1));
+    ASSERT_NE(prefab, obj1);
 
     // Check that an error is thrown when an invalid key is given.
     ASSERT_THROW(manager.GetPrefab(key2), std::runtime_error);
@@ -82,8 +82,8 @@ TEST_F(PrefabTest, GetPrefab)
 TEST_F(PrefabTest, HasPrefab)
 {
     std::string key = "Key";
-    GameObject obj("Prefab");
-    manager.InsertPrefab(std::pair<std::string, GameObject>(key, obj));
+    auto obj = std::make_shared<GameObject>("Prefab");
+    manager.InsertPrefab(std::pair<std::string, std::shared_ptr<GameObject>>(key, obj));
 
     // Check that a registered prefab is present.
     ASSERT_TRUE(manager.HasPrefab(key));
@@ -96,8 +96,10 @@ TEST_F(PrefabTest, RemovePrefab)
 {
     std::string key1 = "Key1";
     std::string key2 = "Key2";
-    manager.InsertPrefab(std::pair<std::string, GameObject>(key1, GameObject()));
-    manager.InsertPrefab(std::pair<std::string, GameObject>(key2, GameObject()));
+    manager.InsertPrefab(
+        std::pair<std::string, std::shared_ptr<GameObject>>(key1, std::make_shared<GameObject>()));
+    manager.InsertPrefab(
+        std::pair<std::string, std::shared_ptr<GameObject>>(key2, std::make_shared<GameObject>()));
 
     manager.RemovePrefab(key1);
     auto prefabs = manager.GetPrefabs();
@@ -115,8 +117,10 @@ TEST_F(PrefabTest, RemovePrefab)
 
 TEST_F(PrefabTest, ClearPrefabs)
 {
-    manager.InsertPrefab(std::pair<std::string, GameObject>("Key1", GameObject()));
-    manager.InsertPrefab(std::pair<std::string, GameObject>("Key2", GameObject()));
+    manager.InsertPrefab(std::pair<std::string, std::shared_ptr<GameObject>>(
+        "Key1", std::make_shared<GameObject>()));
+    manager.InsertPrefab(std::pair<std::string, std::shared_ptr<GameObject>>(
+        "Key2", std::make_shared<GameObject>()));
 
     // Check that there are prefabs registered.
     ASSERT_EQ(manager.GetPrefabs().size(), 2);
