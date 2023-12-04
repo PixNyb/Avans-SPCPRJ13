@@ -49,6 +49,13 @@ class LevelFactory : public ISceneFactory
      */
     [[nodiscard]] Transform ConvertTransform(const nlohmann::json &transformJson) const;
 
+    /**
+     * @brief Converts JSON to a Camera.
+     * @param cameraJson The JSON from which the Camera specifications are to be retrieved.
+     * @return The new Camera created based on the provided JSON.
+     */
+    std::shared_ptr<Camera> ConvertCamera(const nlohmann::json &transformJson) const;
+
   public:
     /**
      * @brief Constructor for the level factory.
