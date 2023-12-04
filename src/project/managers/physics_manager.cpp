@@ -71,8 +71,3 @@ void PhysicsManager::UpdateVelocity(const std::shared_ptr<GameObject> &gameObjec
 {
     physicsFacade.UpdateVelocity(gameObject, vX, vY);
 }
-
-void PhysicsManager::CreateNewWorld(std::vector<std::shared_ptr<GameObject>> gameObjects)
-{
-    physicsFacade.CreateNewWorld(std::move(gameObjects));
-}

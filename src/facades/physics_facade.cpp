@@ -69,7 +69,7 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
 {
     if (world != nullptr && newObjects.empty())
     {
-        CreateNewWorld(gameObjects);
+        newObjects = std::move(gameObjects);
         return;
     }
 
@@ -282,11 +282,6 @@ void PhysicsFacade::DeleteBodies()
     {
         bodies.erase(object);
     }
-}
-
-void PhysicsFacade::CreateNewWorld(std::vector<std::shared_ptr<GameObject>> gameObjects)
-{
-    newObjects = std::move(gameObjects);
 }
 
 PhysicsFacade::~PhysicsFacade() = default;
