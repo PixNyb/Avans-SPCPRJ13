@@ -67,7 +67,7 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject)
 
 void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects)
 {
-    if (world != nullptr)
+    if (world != nullptr && newObjects.empty())
     {
         CreateNewWorld(gameObjects);
         return;
