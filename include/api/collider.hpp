@@ -28,6 +28,9 @@
 class Collider : public Component
 {
   public:
+    Collider();
+    ~Collider() override = default;
+
     /**
      * @brief Make a clone of the component.
      * @param parent The parent GameObject.

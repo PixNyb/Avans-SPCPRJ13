@@ -51,3 +51,7 @@ docs/
 
 # vcpkg
 vcpkg_installed
+
+#CLANG
+compile_commands.json
+.clang-tidy
