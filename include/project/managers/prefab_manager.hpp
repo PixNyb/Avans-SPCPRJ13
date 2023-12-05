@@ -15,9 +15,17 @@
 #include <map>
 #include <string>
 
+/**
+ * @class PrefabManager
+ * @brief Manages the prefabs that are used for the levels.
+ *
+ * This class is responsible for managing the prefabs which are to be used for loading the levels.
+ * It uses an id system to keep track of the registered prefabs.
+ * Using an id, a copy of a prefab can be retrieved.
+ */
 class PrefabManager
 {
-  private:
+  protected:
     /**
      * @brief A map consisting of prefabs and the id's which they are identified by.
      */

@@ -18,6 +18,7 @@
 #include "engine.hpp"
 #include "behaviour_script_manager.hpp"
 #include "graphics_facade.hpp"
+#include "level_manager.hpp"
 #include "physics_manager.hpp"
 #include "render_manager.hpp"
 #include "scene_manager.hpp"
@@ -27,16 +28,30 @@
 
 Engine *Engine::instancePtr = nullptr;
 
-Engine::Engine()
-{
-    container.registerInstance<SceneManager>(std::make_shared<SceneManager>());
-    container.registerInstance<IInputFacade>(std::make_shared<SDLInputFacade>());
-    container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>());
-    container.registerInstance<PhysicsManager>(std::make_shared<PhysicsManager>());
+Engine::Engine() {
+    auto jsonReader = std::make_shared<JSONReader>();
+    container.registerInstance<JSONReader>(jsonReader, InstanceScope::Engine);
+
+    // Managers
+    auto sceneManager = std::make_shared<SceneManager>();
+    container.registerInstance<SceneManager>(sceneManager, InstanceScope::Public);
+
+    auto prefabManager = std::make_shared<PrefabManager>();
+    container.registerInstance<PrefabManager>(prefabManager, InstanceScope::Public);
+
+    container.registerInstance<LevelManager>(std::make_shared<LevelManager>(sceneManager, prefabManager, jsonReader), InstanceScope::Public);
+
     container.registerInstance<RenderManager>(std::make_shared<RenderManager>(),
                                               InstanceScope::Engine);
+
     container.registerInstance<BehaviourScriptManager>(std::make_shared<BehaviourScriptManager>(),
                                                        InstanceScope::Engine);
+
+    container.registerInstance<PhysicsManager>(std::make_shared<PhysicsManager>());
+
+    // Facades
+    container.registerInstance<IInputFacade>(std::make_shared<SDLInputFacade>());
+    container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>());
 }
 
 void Engine::Start()

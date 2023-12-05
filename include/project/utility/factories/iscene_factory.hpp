@@ -15,6 +15,13 @@
 #include "scene.hpp"
 #include <nlohmann/json.hpp>
 
+/**
+ * @class ISceneFactory
+ * @brief An interface for a scene factory.
+ *
+ * This interface defines a base for a scene factory.
+ * It has a CreateScene function which can be used to create a scene based on a JSON object.
+ */
 class ISceneFactory
 {
   public:

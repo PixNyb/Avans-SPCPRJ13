@@ -5,12 +5,12 @@ In dit bestand staat uitgebreide documentatie over het gebruik van de DeFunBobEn
 ## Inhoudsopgave
 
 - [Hoe de Engine te gebruiken?](#hoe-de-engine-te-gebruiken)
-  - [Inhoudsopgave](#inhoudsopgave)
-  - [1. Window aanmaken](#1-window-aanmaken)
-  - [2. Level format](#2-level-format)
-  - [3. Physics Simulatie Gebruiken](#3-physics-simulatie-gebruiken)
-  - [4. Input Facades](#4-input-facades)
-  - [5. Contact listeners \& Behaviour Scripts](#5-contact-listeners--behaviour-scripts)
+    - [Inhoudsopgave](#inhoudsopgave)
+    - [1. Window aanmaken](#1-window-aanmaken)
+    - [2. Level format](#2-level-format)
+    - [3. Physics Simulatie Gebruiken](#3-physics-simulatie-gebruiken)
+    - [4. Input Facades](#4-input-facades)
+    - [5. Contact listeners \& Behaviour Scripts](#5-contact-listeners--behaviour-scripts)
 
 ## 1. Window aanmaken
 
@@ -75,15 +75,41 @@ animator->AddState("running", runState);
 auto animationController = std::make_shared<AnimationControllerScript>(animator);
 sprite->AddComponent(animationController);
 
-## 2. Level format
+## 2. Prefabs gebruiken
+
+De PrefabManager kan gebruikt worden om prefabs te registeren en op te halen.
+
+```cpp
+void RegisterPrefab(const std::string &id, const GameObject &prefab);
+```
+
+Door middel van de functie RegisterPrefab kan er een nieuw GameObject als prefab geregistreert worden.
+Hierbij dient er ook een uniek id meegegeven te worden zodat dit later bij het laden van een level opgevraagd kan
+worden.
+
+```cpp
+std::shared_ptr<GameObject> GetPrefab(std::string id);
+```
+
+Om vervolgens een prefab weer op te halen kan er gebruik gemaakt worden van de GetPrefab functie.
+Hieraan wordt een id meegegeven om de prefab te specificeren. Er wordt hier een nieuwe copy van het GameObject
+teruggegeven.
+
+## 3. Level format
 
 Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief.
+Eerst wordt camera gedefinieerd, hierbij wordt een width en height meegegeven.
+Vervolgens worden alle GameObjecten geplaatst in de objects array.
 De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de PrefabManager.
 Hier worden vervolgens name, tag, active, layer, transform en children nog bij gedefinieert.
 In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk GameObject.
 
 ```json
 {
+  "camera": {
+    "width": 500,
+    "height": 500
+  },
   "objects": [
     {
       "prefab": "Character",
@@ -154,7 +180,7 @@ In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk Ga
 }
 ```
 
-## 3. Physics Simulatie Gebruiken
+## 4. Physics Simulatie Gebruiken
 
 De physics manager is voor de engine het aanspreekpunt om een wereld te starten, aan te passen en te beinvloeden.
 De physics manager heeft functies die elk hun doel omschrijven. Hiermee kun je bodies aanmaken, verwijderen, uit- en
@@ -194,7 +220,7 @@ met de functie UpdateVelocity.
 Dynamic bodies zijn volledig gesimuleerd en zullen zich gedragen zoals een object in de echte wereld dat doet. Deze kun
 je bewegen door meerdere functies te gebruiken: UpdateVelocity(), AddLinearForce() en AddForce().
 
-## 4. Input Facades
+## 5. Input Facades
 
 De input facade maakt het mogelijk om naar key en mouse inputs te luisteren, maar ook om acties te maken, binden aan
 specifieke inputs (een soort alias) en deze te gebruiken in de game.
@@ -214,7 +240,7 @@ if (inputFacade->GetAction("jump")) {
 }
 ```
 
-## 5. Contact listeners & Behaviour Scripts
+## 6. Contact listeners & Behaviour Scripts
 
 De contactlistener in de physicsfacade zorgt ervoor dat alle contacts worden afgevangen en sturen een signaal naar de
 behaviorscripts

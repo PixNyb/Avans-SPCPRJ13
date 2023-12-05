@@ -8,6 +8,9 @@
  * @copyright Copyright (c) 2023
  */
 
+#ifndef DEFUNBOBENGINE_INCLUDE_FACADES_I_INPUT_FACADE_HPP
+#define DEFUNBOBENGINE_INCLUDE_FACADES_I_INPUT_FACADE_HPP
+
 #include "point.hpp"
 #include <string>
 #include <vector>
@@ -495,3 +498,5 @@ class IInputFacade
      */
     virtual bool GetActionUp(const std::string &action) const = 0;
 };
+
+#endif // DEFUNBOBENGINE_INCLUDE_FACADES_I_INPUT_FACADE_HPP

@@ -1,31 +1,39 @@
 /**
-* @file level_factory.cpp
-* @author Maxuuuu
-* @brief Implementation of the level factory.
-* @version 0.1
-* @date 11/11/2023
-*
-* @copyright Copyright (c) 2023
-*
+ * @file level_factory.cpp
+ * @author Maxuuuu
+ * @brief Implementation of the level factory.
+ * @version 0.1
+ * @date 11/11/2023
+ *
+ * @copyright Copyright (c) 2023
+ *
  */
 
 #include "level_factory.hpp"
 #include "level_scene.hpp"
 
-LevelFactory::LevelFactory(std::shared_ptr<PrefabManager> &PrefabManager) : prefabManager(PrefabManager)
-{}
+LevelFactory::LevelFactory(std::shared_ptr<PrefabManager> &PrefabManager)
+    : prefabManager(PrefabManager)
+{
+}
 
 std::shared_ptr<Scene> LevelFactory::CreateScene(nlohmann::json sceneJson)
 {
     std::shared_ptr<Scene> scene = std::make_shared<LevelScene>();
 
-    nlohmann::json objects = sceneJson.at("objects");
-    AddObjects(*scene, objects);
+    nlohmann::json objectsJson = sceneJson.at("objects");
+    AddObjects(*scene, objectsJson);
+
+    nlohmann::json cameraJson = sceneJson.at("camera");
+    auto camera = ConvertCamera(cameraJson);
+    scene->SetCamera(camera);
 
     return scene;
 }
 
-std::vector<std::shared_ptr<GameObject>> LevelFactory::AddObjects(Scene &scene, const nlohmann::json& objectsJson) {
+std::vector<std::shared_ptr<GameObject>> LevelFactory::AddObjects(Scene &scene,
+                                                                  const nlohmann::json &objectsJson)
+{
     std::vector<std::shared_ptr<GameObject>> objects;
     for (const nlohmann::json &jsonObject : objectsJson)
     {
@@ -66,4 +74,16 @@ Transform LevelFactory::ConvertTransform(const nlohmann::json &transformJson) co
     auto scale = transformJson.at("scale").template get<double>();
 
     return {position, rotation, scale};
+}
+
+std::shared_ptr<Camera> LevelFactory::ConvertCamera(const nlohmann::json &cameraJson) const
+{
+    auto width = cameraJson.at("width").template get<int>();
+    auto height = cameraJson.at("height").template get<int>();
+
+    auto camera = std::make_shared<Camera>();
+    camera->SetAspectWidth(width);
+    camera->SetAspectHeight(height);
+
+    return camera;
 }

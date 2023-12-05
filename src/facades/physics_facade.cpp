@@ -13,9 +13,9 @@
 #include "box_collider.hpp"
 #include "circle_collider.hpp"
 #include "contact_listener.hpp"
-#include "polygon_collider.hpp"
 #include "time.hpp"
 #include <algorithm>
+#include <utility>
 
 const float TimeStep = 1.0f / 60.0f;
 const int VelocityIterations = 12;
@@ -23,6 +23,7 @@ const int PositionIterations = 4;
 const double MeterToPixel = 5;
 const double PixelToMeter = 1 / MeterToPixel;
 DebugRenderer debugRenderer;
+std::vector<std::shared_ptr<GameObject>> newObjects;
 
 PhysicsFacade::PhysicsFacade() { DEBUG = false; }
 
@@ -66,10 +67,17 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject)
 
 void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects)
 {
+    if (world != nullptr && newObjects.empty())
+    {
+        newObjects = std::move(gameObjects);
+        return;
+    }
+
     // PhysicsFacade receives a list of gameobjects that contain a rigidbody
     // create the world where the bodies will be placed
     b2Vec2 gravity(0.0f, -9.8f);
-    world = std::make_unique<b2World>(gravity);
+    if (world == nullptr)
+        world = std::make_unique<b2World>(gravity);
 
     // create a b2body for every gameobject
     for (auto &gameObject : gameObjects)
@@ -120,7 +128,21 @@ void PhysicsFacade::Step()
     double time = delta * Time::TimeScale() * 100 * (TimeStep);
     // run physics world
     world->Step(static_cast<float>(time), VelocityIterations, PositionIterations);
-    DeleteBodies();
+    // check if a new world has been requested
+    if (!newObjects.empty())
+    {
+        // if so, clear the bodies from the map and set them again with the new objects
+        for (auto &pair : bodies)
+            world->DestroyBody(pair.second);
+        bodies.clear();
+        PopulateWorld(newObjects);
+        newObjects.clear();
+    }
+    else
+    {
+        // if not delete all the bodies that have been flagged for delete
+        DeleteBodies();
+    }
 
     // update all gameobjects
     for (auto object_pair = bodies.begin(); object_pair != bodies.end(); ++object_pair)

@@ -60,11 +60,11 @@ struct Transform
     Transform operator-(const Transform &other) const;
 
     /**
-     * @brief Combines this transform with another transform.
-     * @param other The other transform to combine with this one.
-     * @return Transform The combined transform.
+     * @brief Compares two transforms to see if they are identical.
+     * @param other The transform which it is to be compared to.
+     * @return Whether the two transforms are identical.
      */
-    Transform CombineWith(const Transform &other) const;
+    bool operator==(const Transform &other) const;
 };
 
 #endif // AVANS_SPCPRJ13_TRANSFORM_H

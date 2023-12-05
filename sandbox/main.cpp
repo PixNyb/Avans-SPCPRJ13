@@ -9,6 +9,11 @@
  *
  */
 
+#include "behaviour_script.hpp"
+#include "json_reader.hpp"
+#include "level_manager.hpp"
+#include "prefab_manager.hpp"
+#include "rigidbody.hpp"
 #include <iostream>
 
 int main(int argc, char *argv[])

@@ -16,9 +16,18 @@
 #include "prefab_manager.hpp"
 #include <memory>
 
+/**
+ * @class LevelFactory
+ * @brief Creates levels based on a provided JSON object.
+ *
+ * This class is responsible for creating Levels based on a JSON object.
+ * It has a PrefabManager which is used to create new GameObjects based on the provided JSON.
+ * It will only create GameObjects for registered prefabs.
+ * If the JSON is not formatted properly and error will be thrown.
+ */
 class LevelFactory : public ISceneFactory
 {
-  private:
+  protected:
     /**
      * @brief The PrefabManager which is used to retrieve the registered prefabs.
      */
@@ -39,6 +48,13 @@ class LevelFactory : public ISceneFactory
      * @return The new Transform struct created based on the provided JSON.
      */
     [[nodiscard]] Transform ConvertTransform(const nlohmann::json &transformJson) const;
+
+    /**
+     * @brief Converts JSON to a Camera.
+     * @param cameraJson The JSON from which the Camera specifications are to be retrieved.
+     * @return The new Camera created based on the provided JSON.
+     */
+    std::shared_ptr<Camera> ConvertCamera(const nlohmann::json &transformJson) const;
 
   public:
     /**
