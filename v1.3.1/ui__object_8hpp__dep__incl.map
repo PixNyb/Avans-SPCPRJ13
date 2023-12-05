@@ -1,0 +1,19 @@
+<map id="include/api/ui_object.hpp" name="include/api/ui_object.hpp">
+<area shape="rect" id="node1" title="Defines the UIObject class for representing user interface elements in the game engine...." alt="" coords="633,5,817,32"/>
+<area shape="rect" id="node2" href="$button_8hpp.html" title="Defines the Button class as a part of the user interface in a game engine. Button is a UIObject subcl..." alt="" coords="459,80,626,107"/>
+<area shape="rect" id="node4" href="$text_8hpp.html" title="Defines the Text class for handling text rendering in UI elements within the game engine...." alt="" coords="650,80,801,107"/>
+<area shape="rect" id="node17" href="$ui__object_8cpp.html" title="This file contains the UIObject class implementation." alt="" coords="825,80,980,107"/>
+<area shape="rect" id="node3" href="$button_8cpp.html" title="This file contains the Button class implementation." alt="" coords="473,162,612,189"/>
+<area shape="rect" id="node5" href="$core__constants_8hpp_source.html" title=" " alt="" coords="643,155,795,196"/>
+<area shape="rect" id="node15" href="$text_8cpp.html" title="This file contains the Text class implementation." alt="" coords="1005,251,1128,278"/>
+<area shape="rect" id="node6" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="233,244,373,285"/>
+<area shape="rect" id="node10" href="$graphics__facade_8cpp.html" title="This file contains the GraphicsFacade class implementation." alt="" coords="288,423,443,464"/>
+<area shape="rect" id="node12" href="$engine_8hpp.html" title="Engine is the core of the engine. It is responsible for managing the game loop and managing the DICon..." alt="" coords="467,244,618,285"/>
+<area shape="rect" id="node14" href="$game__object__utility_8hpp.html" title="Game Object utility." alt="" coords="643,244,795,285"/>
+<area shape="rect" id="node16" href="$sfml__sound_8cpp.html" title="SFML implementation of the sound class." alt="" coords="819,244,981,285"/>
+<area shape="rect" id="node7" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="7,333,190,375"/>
+<area shape="rect" id="node11" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="214,333,391,375"/>
+<area shape="rect" id="node8" href="$render__manager_8hpp_source.html" title=" " alt="" coords="5,423,192,464"/>
+<area shape="rect" id="node9" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="131,512,328,539"/>
+<area shape="rect" id="node13" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="582,333,807,375"/>
+</map>
