@@ -37,7 +37,8 @@ jobs:
             libx11-dev \
             libxrandr-dev \
             libxcursor-dev \
-            libgl1-mesa-dev
+            libgl1-mesa-dev \
+            libsfml-dev
           sudo apt-get clean
           sudo rm -rf /var/lib/apt/lists/*
 

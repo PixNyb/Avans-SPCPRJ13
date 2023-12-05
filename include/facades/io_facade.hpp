@@ -28,6 +28,7 @@
 #include "line.hpp"
 #include "rectangle.hpp"
 #include "sdl_window.hpp"
+#include "texture.hpp"
 #include "triangle.hpp"
 #include <SDL.h>
 #include <vector>
@@ -58,11 +59,11 @@ class IOFacade
     virtual void Init() = 0;
 
     /**
-     * @brief Polls for input events and populates the provided event vector.
+     * @brief Polls for SDL input events.
      *
-     * Must be implemented by the concrete subclass to check for new events from
-     * the input system and translate them into a vector of Event objects.
-     * @param events A reference to a vector where the polled events will be stored.
+     * This function checks for new events from the SDL input system and returns them
+     * as a vector of SDL_Event objects.
+     * @return A vector containing all polled SDL_Event objects.
      */
     virtual void PollEvents(std::vector<Event> &events) = 0;
 
@@ -175,6 +176,68 @@ class IOFacade
      * @param text A Text object containing the content and other properties of the text.
      */
     virtual void DrawText(const Text &text) = 0;
+
+    /**
+     * @brief Draws a Texture object on the rendering target.
+     *
+     * This virtual function is intended to be implemented in GraphicsFacade class to handle
+     * the rendering of Texture objects. The method should use the properties of the
+     * Texture (such as its position and dimensions) to draw it on the provided SDL_Renderer.
+     *
+     * @param texture A Texture object containing the properties of the texture.
+     */
+    virtual void DrawSprite(const Texture &texture, Rectangle &rectangle) = 0;
+
+    /**
+     * @brief Renders an SDL_Texture on the rendering target.
+     *
+     * This virtual function is intended to be implemented in GraphicsFacade class to handle
+     * the rendering of SDL_Texture objects. The method should use the properties of the
+     * Texture (such as its position and dimensions) to draw it on the provided SDL_Renderer.
+     *
+     * @param sdlTexture An SDL_Texture object containing the properties of the texture.
+     * @param rectangle The rectangle to render the texture in.
+     */
+    virtual void RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle) = 0;
+
+    /**
+     * @brief Gets the cached SDL_Texture for a Texture object.
+     * @param texture The Texture object to retrieve the cached SDL_Texture for.
+     * @return The cached Texture.
+     */
+    virtual SDL_Texture *GetCachedSDLTexture(const Texture &texture) = 0;
+
+    /**
+     * @brief Creates an SDL_Texture from a Texture object.
+     * @param texture The Texture object to create the SDL_Texture from.
+     * @return The created SDL_Texture.
+     */
+    virtual SDL_Texture *CreateSDLTextureFromTexture(const Texture &texture) = 0;
+
+    /**
+     * @brief Caches an SDL_Texture for a Texture object.
+     * @param texture The Texture object to cache the SDL_Texture for.
+     * @param sdlTexture The SDL_Texture to cache.
+     */
+    virtual void CacheSDLTexture(const Texture &texture, SDL_Texture *sdlTexture) = 0;
+
+    /**
+     * @brief Gets the size of a sprite.
+     * @param filePath The path to the sprite file.
+     * @return The size of the sprite.
+     */
+    virtual Size GetSpriteSize(const std::string &filePath) = 0;
+
+    /**
+     * @brief Draws a sprite sheet frame on the rendering target.
+     * @param texture The texture to draw.
+     * @param dstRect The destination rectangle to draw the texture in.
+     * @param frameIndex The index of the frame to draw.
+     * @param totalColumns The total number of columns in the sprite sheet.
+     * @param totalRows The total number of rows in the sprite sheet.
+     */
+    virtual void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect,
+                                      int frameIndex, int totalColumns, int totalRows) = 0;
 };
 
 #endif // DEFUNBOBENGINE_IO_FACADE_HPP

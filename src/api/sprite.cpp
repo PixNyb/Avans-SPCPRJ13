@@ -8,21 +8,20 @@
  * Copyright Copyright (c) 2023
  *
  */
+
 #include "sprite.hpp"
 
+Sprite::Sprite()
+    : color(1.0, 1.0, 1.0, 1.0), // Initializing color to white (or any other default)
+      flipX(false), flipY(false), sortingLayer(0), orderInLayer(0)
+{
+}
 
-Sprite::Sprite() : color(Color::White())
-{}
-
-Sprite::Sprite(const Sprite &other) :
-  BehaviourScript(other),
-  sprite(other.sprite),
-  color(other.color),
-  flipX(other.flipX),
-  flipY(other.flipY),
-  sortingLayer(other.sortingLayer),
-  orderInLayer(other.orderInLayer)
-{}
+Sprite::Sprite(const Sprite &other)
+    : BehaviourScript(other), sprite(other.sprite), color(other.color), flipX(other.flipX),
+      flipY(other.flipY), sortingLayer(other.sortingLayer), orderInLayer(other.orderInLayer)
+{
+}
 
 std::shared_ptr<Component> Sprite::Clone(std::weak_ptr<GameObject> parent)
 {

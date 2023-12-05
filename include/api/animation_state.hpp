@@ -12,7 +12,6 @@
 #ifndef AVANS_SPCPRJ13_ANIMATIONSTATE_H
 #define AVANS_SPCPRJ13_ANIMATIONSTATE_H
 
-#include "game_object.hpp"
 #include <map>
 #include <string>
 
@@ -27,12 +26,13 @@
 class AnimationState
 {
   private:
-    /**
-     * @brief Map to hold various animation states.
-     *
-     * This map associates state names with their corresponding AnimationState objects.
-     */
-    std::map<std::string, AnimationState> states;
+    std::map<std::string, AnimationState> states; ///< Map of animation states.
+
+    int startFrameIndex;   ///< The index of the first frame of the animation.
+    int endFrameIndex;     ///< The index of the last frame of the animation.
+    float frameDuration;   ///< The duration of a single frame of the animation.
+    int currentFrameIndex; ///< The index of the current frame of the animation.
+    float elapsedTime;     ///< The time elapsed since the start of the animation.
 
   public:
     /**
@@ -43,15 +43,48 @@ class AnimationState
     AnimationState();
 
     /**
-     * @brief Updates the animation state of the given game object.
+     * @brief Constructs a new AnimationState object.
+     *
+     * Initializes a new instance of the AnimationState class with the specified
+     * parameters.
+     *
+     * @param startFrameIndex The index of the first frame of the animation.
+     * @param endFrameIndex The index of the last frame of the animation.
+     * @param frameDuration The duration of a single frame of the animation.
+     */
+    AnimationState(int startFrameIndex, int endFrameIndex, float frameDuration)
+        : startFrameIndex(startFrameIndex), endFrameIndex(endFrameIndex),
+          frameDuration(frameDuration), currentFrameIndex(startFrameIndex), elapsedTime(0)
+    {
+    }
+
+    /**
+     * @brief Updates the animation state.
      *
      * This function updates the state of an animation based on the current state
-     * and the properties of the provided game object.
+     * and the elapsed time.
      *
-     * @param gameObject The game object whose animation state is to be updated.
+     * @param deltaTime The time elapsed since the last frame.
      */
-    void Update(GameObject &gameObject);
-    // Getters, Setters, and other public member functions ...
+    void Update(float deltaTime);
+
+    /**
+     * @brief Gets the current frame index.
+     *
+     * This function returns the current frame index of the animation.
+     *
+     * @return int The current frame index.
+     */
+    [[nodiscard]] int GetCurrentFrameIndex() const;
+
+    /**
+     * @brief Gets the total duration of the animation.
+     *
+     * This function returns the total duration of the animation.
+     *
+     * @return float The total duration of the animation.
+     */
+    [[nodiscard]] float GetTotalDuration() const;
 };
 
 #endif // AVANS_SPCPRJ13_ANIMATIONSTATE_H

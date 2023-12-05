@@ -31,12 +31,13 @@ class Sprite : public BehaviourScript
 {
 
   private:
-    std::string sprite; ///< The sprite image file path or identifier.
-    Color color;        ///< The color tint applied to the sprite.
-    bool flipX;         ///< Flag to flip the sprite horizontally.
-    bool flipY;         ///< Flag to flip the sprite vertically.
-    int sortingLayer;   ///< The sorting layer for rendering order.
-    int orderInLayer;   ///< The specific order within the sorting layer.
+    std::string sprite;          ///< The sprite image file path or identifier.
+    Color color;                 ///< The color tint applied to the sprite.
+    bool flipX;                  ///< Flag to flip the sprite horizontally.
+    bool flipY;                  ///< Flag to flip the sprite vertically.
+    int sortingLayer;            ///< The sorting layer for rendering order.
+    int orderInLayer;            ///< The specific order within the sorting layer.
+    int frameWidth, frameHeight; ///< For the spritesheet
 
   public:
     /**
@@ -45,6 +46,30 @@ class Sprite : public BehaviourScript
     Sprite();
 
     /**
+     * @brief Constructs a new Sprite object with the specified sprite image.
+     * @param sprite The sprite image file path or identifier.
+     */
+    [[nodiscard]] const std::string &GetSprite() const { return sprite; }
+
+    /**
+     * @brief Sets the sprite image for this Sprite object.
+     * @param spriteImage The sprite image file path or identifier.
+     */
+    void SetSprite(const std::string &spriteImage) { sprite = spriteImage; }
+
+    /**
+     * @brief Returns the frame width of the sprite
+     * @return int frameWidth
+     */
+    [[nodiscard]] int GetFrameWidth() const { return frameWidth; }
+
+    /**
+     * @brief Returns the frame height of the sprite
+     * @return int frameHeight
+     */
+    [[nodiscard]] int GetFrameHeight() const { return frameHeight; }
+
+    /*
      * @brief Copy constructor for Sprite.
      *
      * Initializes a new Sprite with the values of an existing one.
@@ -58,8 +83,6 @@ class Sprite : public BehaviourScript
      * @return The cloned component.
      */
     std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
-
-    // Getters, Setters, and other public member functions ...
 };
 
 #endif // AVANS_SPCPRJ13_SPRITE_H
