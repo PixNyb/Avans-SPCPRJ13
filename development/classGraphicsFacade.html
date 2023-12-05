@@ -163,6 +163,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af2bb8164381a0c846ecaed92c3aaf883"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#af2bb8164381a0c846ecaed92c3aaf883">DrawText</a> (const <a class="el" href="classText.html">Text</a> &amp;text) override</td></tr>
 <tr class="memdesc:af2bb8164381a0c846ecaed92c3aaf883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a <a class="el" href="classText.html" title="Represents a piece of text in the user interface.">Text</a> object on the rendering target.  <a href="classGraphicsFacade.html#af2bb8164381a0c846ecaed92c3aaf883">More...</a><br /></td></tr>
 <tr class="separator:af2bb8164381a0c846ecaed92c3aaf883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac652bf52262e1eb2409c5981935f71c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#ac652bf52262e1eb2409c5981935f71c8">DrawSprite</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture, <a class="el" href="classRectangle.html">Rectangle</a> &amp;rectangle) override</td></tr>
+<tr class="memdesc:ac652bf52262e1eb2409c5981935f71c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture from an image file.  <a href="classGraphicsFacade.html#ac652bf52262e1eb2409c5981935f71c8">More...</a><br /></td></tr>
+<tr class="separator:ac652bf52262e1eb2409c5981935f71c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92b6af6189e5d795b0ba5d97b7bebc36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#a92b6af6189e5d795b0ba5d97b7bebc36">RenderSDLTexture</a> (SDL_Texture *sdlTexture, <a class="el" href="classRectangle.html">Rectangle</a> rectangle) override</td></tr>
+<tr class="memdesc:a92b6af6189e5d795b0ba5d97b7bebc36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an SDL_Texture from an image file.  <a href="classGraphicsFacade.html#a92b6af6189e5d795b0ba5d97b7bebc36">More...</a><br /></td></tr>
+<tr class="separator:a92b6af6189e5d795b0ba5d97b7bebc36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6480cea9277054e94054b0540949ba8"><td class="memItemLeft" align="right" valign="top">SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#ab6480cea9277054e94054b0540949ba8">GetCachedSDLTexture</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture) override</td></tr>
+<tr class="memdesc:ab6480cea9277054e94054b0540949ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the cached texture if it exists.  <a href="classGraphicsFacade.html#ab6480cea9277054e94054b0540949ba8">More...</a><br /></td></tr>
+<tr class="separator:ab6480cea9277054e94054b0540949ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeff22411a705a532c945df5d253f0100"><td class="memItemLeft" align="right" valign="top">SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#aeff22411a705a532c945df5d253f0100">CreateSDLTextureFromTexture</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture) override</td></tr>
+<tr class="memdesc:aeff22411a705a532c945df5d253f0100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an SDL_Texture from a <a class="el" href="classTexture.html" title="Manages an SDL_Texture loaded from a file.">Texture</a> object.  <a href="classGraphicsFacade.html#aeff22411a705a532c945df5d253f0100">More...</a><br /></td></tr>
+<tr class="separator:aeff22411a705a532c945df5d253f0100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8303956e86116328ec311e6e36577501"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#a8303956e86116328ec311e6e36577501">CacheSDLTexture</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture, SDL_Texture *sdlTexture) override</td></tr>
+<tr class="memdesc:a8303956e86116328ec311e6e36577501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Caches an SDL_Texture for a <a class="el" href="classTexture.html" title="Manages an SDL_Texture loaded from a file.">Texture</a> object.  <a href="classGraphicsFacade.html#a8303956e86116328ec311e6e36577501">More...</a><br /></td></tr>
+<tr class="separator:a8303956e86116328ec311e6e36577501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38462e59195f584471335fdcecb8280d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSize.html">Size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#a38462e59195f584471335fdcecb8280d">GetSpriteSize</a> (const std::string &amp;filePath) override</td></tr>
+<tr class="memdesc:a38462e59195f584471335fdcecb8280d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of a sprite.  <a href="classGraphicsFacade.html#a38462e59195f584471335fdcecb8280d">More...</a><br /></td></tr>
+<tr class="separator:a38462e59195f584471335fdcecb8280d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8665084361c88dc746c9d6269c64a3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#af8665084361c88dc746c9d6269c64a3e">DrawSpriteSheetFrame</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture, const <a class="el" href="classRectangle.html">Rectangle</a> &amp;dstRect, int frameIndex, int totalColumns, int totalRows) override</td></tr>
+<tr class="memdesc:af8665084361c88dc746c9d6269c64a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the sprite sheet frame.  <a href="classGraphicsFacade.html#af8665084361c88dc746c9d6269c64a3e">More...</a><br /></td></tr>
+<tr class="separator:af8665084361c88dc746c9d6269c64a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classIOFacade"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classIOFacade')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classIOFacade.html">IOFacade</a></td></tr>
 <tr class="memitem:a92a836ecf11f55edf01dda59b0f4534f inherit pub_methods_classIOFacade"><td class="memItemLeft" align="right" valign="top"><a id="a92a836ecf11f55edf01dda59b0f4534f"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIOFacade.html#a92a836ecf11f55edf01dda59b0f4534f">~IOFacade</a> ()=default</td></tr>
@@ -222,6 +243,53 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8303956e86116328ec311e6e36577501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8303956e86116328ec311e6e36577501">&#9670;&nbsp;</a></span>CacheSDLTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphicsFacade::CacheSDLTexture </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTexture.html">Texture</a> &amp;&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Texture *&#160;</td>
+          <td class="paramname"><em>sdlTexture</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Caches an SDL_Texture for a <a class="el" href="classTexture.html" title="Manages an SDL_Texture loaded from a file.">Texture</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture</td><td>The <a class="el" href="classTexture.html" title="Manages an SDL_Texture loaded from a file.">Texture</a> object to cache the SDL_Texture for. </td></tr>
+    <tr><td class="paramname">sdlTexture</td><td>The SDL_Texture to cache. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classIOFacade.html#aa9560c09053abb40ea05b147271c6e27">IOFacade</a>.</p>
+
+</div>
+</div>
 <a id="aed080afad9d41970874241a3751fbbef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed080afad9d41970874241a3751fbbef">&#9670;&nbsp;</a></span>ClearScreen()</h2>
 
@@ -279,6 +347,43 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <p>Initializes the renderer for the graphics window. </p>
 
 <p>Implements <a class="el" href="classIOFacade.html#a5d9d1e7a25e4feee2c13af9352c1de3f">IOFacade</a>.</p>
+
+</div>
+</div>
+<a id="aeff22411a705a532c945df5d253f0100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeff22411a705a532c945df5d253f0100">&#9670;&nbsp;</a></span>CreateSDLTextureFromTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Texture * GraphicsFacade::CreateSDLTextureFromTexture </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTexture.html">Texture</a> &amp;&#160;</td>
+          <td class="paramname"><em>texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an SDL_Texture from a <a class="el" href="classTexture.html" title="Manages an SDL_Texture loaded from a file.">Texture</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture</td><td>The <a class="el" href="classTexture.html" title="Manages an SDL_Texture loaded from a file.">Texture</a> object to create the SDL_Texture from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created SDL_Texture. </dd></dl>
+
+<p>Implements <a class="el" href="classIOFacade.html#a9119f3a2a96b9750798f2ed831be5215">IOFacade</a>.</p>
 
 </div>
 </div>
@@ -556,6 +661,120 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 
 </div>
 </div>
+<a id="ac652bf52262e1eb2409c5981935f71c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac652bf52262e1eb2409c5981935f71c8">&#9670;&nbsp;</a></span>DrawSprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphicsFacade::DrawSprite </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTexture.html">Texture</a> &amp;&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRectangle.html">Rectangle</a> &amp;&#160;</td>
+          <td class="paramname"><em>rectangle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a texture from an image file. </p>
+<p>This method creates a texture from an image file, which can then be used for rendering. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture</td><td>The texture to be created. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classIOFacade.html#aa905ff5af826129763c7d88f03235965">IOFacade</a>.</p>
+
+</div>
+</div>
+<a id="af8665084361c88dc746c9d6269c64a3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8665084361c88dc746c9d6269c64a3e">&#9670;&nbsp;</a></span>DrawSpriteSheetFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphicsFacade::DrawSpriteSheetFrame </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTexture.html">Texture</a> &amp;&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classRectangle.html">Rectangle</a> &amp;&#160;</td>
+          <td class="paramname"><em>dstRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>frameIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>totalColumns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>totalRows</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws the sprite sheet frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture</td><td>The texture to draw the frame from. </td></tr>
+    <tr><td class="paramname">dstRect</td><td>The rectangle to draw the frame in. </td></tr>
+    <tr><td class="paramname">frameIndex</td><td>The index of the frame to draw. </td></tr>
+    <tr><td class="paramname">totalColumns</td><td>The total number of columns in the sprite sheet. </td></tr>
+    <tr><td class="paramname">totalRows</td><td>The total number of rows in the sprite sheet. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classIOFacade.html#aeac74fe69911f269c1d951bfaa7aeb19">IOFacade</a>.</p>
+
+</div>
+</div>
 <a id="af2bb8164381a0c846ecaed92c3aaf883"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af2bb8164381a0c846ecaed92c3aaf883">&#9670;&nbsp;</a></span>DrawText()</h2>
 
@@ -590,6 +809,79 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </dl>
 
 <p>Implements <a class="el" href="classIOFacade.html#a6afaef37d6a54ca7f49de65f5d9f52d9">IOFacade</a>.</p>
+
+</div>
+</div>
+<a id="ab6480cea9277054e94054b0540949ba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6480cea9277054e94054b0540949ba8">&#9670;&nbsp;</a></span>GetCachedSDLTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Texture * GraphicsFacade::GetCachedSDLTexture </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTexture.html">Texture</a> &amp;&#160;</td>
+          <td class="paramname"><em>texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the cached texture if it exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture</td><td>The texture to get the cached SDL_Texture for. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classIOFacade.html#a641d75c0b6374ecaac2dd90b96792ced">IOFacade</a>.</p>
+
+</div>
+</div>
+<a id="a38462e59195f584471335fdcecb8280d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38462e59195f584471335fdcecb8280d">&#9670;&nbsp;</a></span>GetSpriteSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSize.html">Size</a> GraphicsFacade::GetSpriteSize </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the size of a sprite. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>The file path of the sprite. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The size of the sprite. </dd></dl>
+
+<p>Implements <a class="el" href="classIOFacade.html#acbcdd1fd7883bf39d1aa1d54f4a68b70">IOFacade</a>.</p>
 
 </div>
 </div>
@@ -686,6 +978,53 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <p>Updates the window with rendered graphics, finalizing the current frame. </p>
 
 <p>Implements <a class="el" href="classIOFacade.html#a427010f0cd482f33f528c7731cb23f43">IOFacade</a>.</p>
+
+</div>
+</div>
+<a id="a92b6af6189e5d795b0ba5d97b7bebc36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92b6af6189e5d795b0ba5d97b7bebc36">&#9670;&nbsp;</a></span>RenderSDLTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphicsFacade::RenderSDLTexture </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Texture *&#160;</td>
+          <td class="paramname"><em>sdlTexture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRectangle.html">Rectangle</a>&#160;</td>
+          <td class="paramname"><em>rectangle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an SDL_Texture from an image file. </p>
+<p>This method creates an SDL_Texture from an image file, which can then be used for rendering. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sdlTexture</td><td>The SDL_Texture to be created. </td></tr>
+    <tr><td class="paramname">rectangle</td><td>The rectangle to render the texture in. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classIOFacade.html#a65a7b73e56a5d3be86c181c35d650a7e">IOFacade</a>.</p>
 
 </div>
 </div>

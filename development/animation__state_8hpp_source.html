@@ -93,28 +93,43 @@ $(document).ready(function(){initNavTree('animation__state_8hpp_source.html','')
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef AVANS_SPCPRJ13_ANIMATIONSTATE_H</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define AVANS_SPCPRJ13_ANIMATIONSTATE_H</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="game__object_8hpp.html">game_object.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classAnimationState.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAnimationState.html">AnimationState</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::map&lt;std::string, AnimationState&gt; states;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classAnimationState.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAnimationState.html">AnimationState</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::map&lt;std::string, AnimationState&gt; states; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> startFrameIndex;   </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> endFrameIndex;     </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">float</span> frameDuration;   </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> currentFrameIndex; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">float</span> elapsedTime;     </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classAnimationState.html#a06e31ec743f5dc82f9ef3c30b3822dfd">AnimationState</a>();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAnimationState.html#ad0ff0ef23c02f9a6e91c5032e46d0aa0">Update</a>(<a class="code" href="classGameObject.html">GameObject</a> &amp;gameObject);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Getters, Setters, and other public member functions ...</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_ANIMATIONSTATE_H</span></div>
-<div class="ttc" id="aclassAnimationState_html"><div class="ttname"><a href="classAnimationState.html">AnimationState</a></div><div class="ttdoc">Manages the states of an animation.</div><div class="ttdef"><b>Definition:</b> animation_state.hpp:28</div></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classAnimationState.html#ad60a349abff9f691c81d56a76cb32b8b">   55</a></span>&#160;    <a class="code" href="classAnimationState.html#ad60a349abff9f691c81d56a76cb32b8b">AnimationState</a>(<span class="keywordtype">int</span> startFrameIndex, <span class="keywordtype">int</span> endFrameIndex, <span class="keywordtype">float</span> frameDuration)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        : startFrameIndex(startFrameIndex), endFrameIndex(endFrameIndex),</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;          frameDuration(frameDuration), currentFrameIndex(startFrameIndex), elapsedTime(0)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAnimationState.html#a62ec4b740fa756004da4606d952d922b">Update</a>(<span class="keywordtype">float</span> deltaTime);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    [[nodiscard]] <span class="keywordtype">int</span> <a class="code" href="classAnimationState.html#a62447a0f025f06e763a7a27f87f2b43e">GetCurrentFrameIndex</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    [[nodiscard]] <span class="keywordtype">float</span> <a class="code" href="classAnimationState.html#a60639ae495faaf5e1c3518d297fd3a50">GetTotalDuration</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_ANIMATIONSTATE_H</span></div>
+<div class="ttc" id="aclassAnimationState_html"><div class="ttname"><a href="classAnimationState.html">AnimationState</a></div><div class="ttdoc">Manages the states of an animation.</div><div class="ttdef"><b>Definition:</b> animation_state.hpp:27</div></div>
 <div class="ttc" id="aclassAnimationState_html_a06e31ec743f5dc82f9ef3c30b3822dfd"><div class="ttname"><a href="classAnimationState.html#a06e31ec743f5dc82f9ef3c30b3822dfd">AnimationState::AnimationState</a></div><div class="ttdeci">AnimationState()</div><div class="ttdoc">Constructs a new AnimationState object.</div><div class="ttdef"><b>Definition:</b> animation_state.cpp:14</div></div>
-<div class="ttc" id="aclassAnimationState_html_ad0ff0ef23c02f9a6e91c5032e46d0aa0"><div class="ttname"><a href="classAnimationState.html#ad0ff0ef23c02f9a6e91c5032e46d0aa0">AnimationState::Update</a></div><div class="ttdeci">void Update(GameObject &amp;gameObject)</div><div class="ttdoc">Updates the animation state of the given game object.</div><div class="ttdef"><b>Definition:</b> animation_state.cpp:16</div></div>
-<div class="ttc" id="aclassGameObject_html"><div class="ttname"><a href="classGameObject.html">GameObject</a></div><div class="ttdoc">The GameObject class represents an object in the game world.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:35</div></div>
-<div class="ttc" id="agame__object_8hpp_html"><div class="ttname"><a href="game__object_8hpp.html">game_object.hpp</a></div><div class="ttdoc">This file contains the GameObject class definition.</div></div>
+<div class="ttc" id="aclassAnimationState_html_a60639ae495faaf5e1c3518d297fd3a50"><div class="ttname"><a href="classAnimationState.html#a60639ae495faaf5e1c3518d297fd3a50">AnimationState::GetTotalDuration</a></div><div class="ttdeci">float GetTotalDuration() const</div><div class="ttdoc">Gets the total duration of the animation.</div><div class="ttdef"><b>Definition:</b> animation_state.cpp:32</div></div>
+<div class="ttc" id="aclassAnimationState_html_a62447a0f025f06e763a7a27f87f2b43e"><div class="ttname"><a href="classAnimationState.html#a62447a0f025f06e763a7a27f87f2b43e">AnimationState::GetCurrentFrameIndex</a></div><div class="ttdeci">int GetCurrentFrameIndex() const</div><div class="ttdoc">Gets the current frame index.</div><div class="ttdef"><b>Definition:</b> animation_state.cpp:30</div></div>
+<div class="ttc" id="aclassAnimationState_html_a62ec4b740fa756004da4606d952d922b"><div class="ttname"><a href="classAnimationState.html#a62ec4b740fa756004da4606d952d922b">AnimationState::Update</a></div><div class="ttdeci">void Update(float deltaTime)</div><div class="ttdoc">Updates the animation state.</div><div class="ttdef"><b>Definition:</b> animation_state.cpp:16</div></div>
+<div class="ttc" id="aclassAnimationState_html_ad60a349abff9f691c81d56a76cb32b8b"><div class="ttname"><a href="classAnimationState.html#ad60a349abff9f691c81d56a76cb32b8b">AnimationState::AnimationState</a></div><div class="ttdeci">AnimationState(int startFrameIndex, int endFrameIndex, float frameDuration)</div><div class="ttdoc">Constructs a new AnimationState object.</div><div class="ttdef"><b>Definition:</b> animation_state.hpp:55</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

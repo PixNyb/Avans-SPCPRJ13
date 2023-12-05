@@ -55,7 +55,7 @@ var NAVTREE =
     [ "Hoe de Engine te gebruiken?", "md_USAGE.html", [
       [ "Inhoudsopgave", "md_USAGE.html#autotoc_md24", null ],
       [ "1. Window aanmaken", "md_USAGE.html#autotoc_md25", null ],
-      [ "2. Level format", "md_USAGE.html#autotoc_md26", null ],
+      [ "Sprites aanmaken en renderen", "md_USAGE.html#autotoc_md26", null ],
       [ "3. Physics Simulatie Gebruiken", "md_USAGE.html#autotoc_md27", null ],
       [ "4. Input Facades", "md_USAGE.html#autotoc_md28", null ],
       [ "5. Contact listeners & Behaviour Scripts", "md_USAGE.html#autotoc_md29", null ]
@@ -92,10 +92,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "animation__state_8cpp.html",
-"classIKeyListener.html",
-"classScene.html#a06f43e6650b3ce0939d3987fdf724316",
-"i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a0f53c1e21652ea1a40c2b77d2e91260f",
-"io__facade_8hpp_source.html"
+"classIInputFacade.html#aa0b3b8b6ed832193ffbaed6929a5fbed",
+"classSDLWindow.html#a8da4ccd59902e2782d87879c9393d690",
+"game__object_8hpp_source.html",
+"i__input__facade_8hpp.html#ac1ec3647c005eacad401b06e7e18f711a21507b40c80068eda19865706fdc2403"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

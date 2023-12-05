@@ -101,30 +101,47 @@ $(document).ready(function(){initNavTree('sprite_8hpp_source.html',''); initResi
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::string sprite; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classColor.html">Color</a> color;        </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> flipX;         </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> flipY;         </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> sortingLayer;   </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> orderInLayer;   </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classSprite.html#a12cba3ac1868418add3c4d95ce87e615">Sprite</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classSprite.html#a12cba3ac1868418add3c4d95ce87e615">Sprite</a>(<span class="keyword">const</span> <a class="code" href="classSprite.html">Sprite</a> &amp;other);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::shared_ptr&lt;Component&gt; <a class="code" href="classSprite.html#a0d65be7f74f4fc989f45a7e4dc7e28d0">Clone</a>(std::weak_ptr&lt;GameObject&gt; parent) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Getters, Setters, and other public member functions ...</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_SPRITE_H</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::string sprite;          </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classColor.html">Color</a> color;                 </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> flipX;                  </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> flipY;                  </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> sortingLayer;            </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> orderInLayer;            </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> frameWidth, frameHeight; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classSprite.html#a12cba3ac1868418add3c4d95ce87e615">Sprite</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classSprite.html#a90182181ead11820cda85b65b600a58d">   52</a></span>&#160;    [[nodiscard]] <span class="keyword">const</span> std::string &amp;<a class="code" href="classSprite.html#a90182181ead11820cda85b65b600a58d">GetSprite</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> sprite; }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classSprite.html#ab8264f790a2a50f6c2d2fb3762724d6c">   58</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSprite.html#ab8264f790a2a50f6c2d2fb3762724d6c">SetSprite</a>(<span class="keyword">const</span> std::string &amp;spriteImage) { sprite = spriteImage; }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classSprite.html#a27bf49cf9aaf272d25dc3cb64d6024b8">   64</a></span>&#160;    [[nodiscard]] <span class="keywordtype">int</span> <a class="code" href="classSprite.html#a27bf49cf9aaf272d25dc3cb64d6024b8">GetFrameWidth</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> frameWidth; }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classSprite.html#a8b99661b9d774d737abb5f793d70626c">   70</a></span>&#160;    [[nodiscard]] <span class="keywordtype">int</span> <a class="code" href="classSprite.html#a8b99661b9d774d737abb5f793d70626c">GetFrameHeight</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> frameHeight; }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">     * @brief Copy constructor for Sprite.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">     *</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">     * Initializes a new Sprite with the values of an existing one.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">     * @param other The Sprite to copy values from.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="classSprite.html#a12cba3ac1868418add3c4d95ce87e615">Sprite</a>(<span class="keyword">const</span> <a class="code" href="classSprite.html">Sprite</a> &amp;other);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::shared_ptr&lt;Component&gt; <a class="code" href="classSprite.html#a0d65be7f74f4fc989f45a7e4dc7e28d0">Clone</a>(std::weak_ptr&lt;GameObject&gt; parent) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AVANS_SPCPRJ13_SPRITE_H</span></div>
 <div class="ttc" id="abehaviour__script_8hpp_html"><div class="ttname"><a href="behaviour__script_8hpp.html">behaviour_script.hpp</a></div><div class="ttdoc">Defines the BehaviourScript class as part of a game engine framework. BehaviourScript is a base class...</div></div>
 <div class="ttc" id="aclassBehaviourScript_html"><div class="ttname"><a href="classBehaviourScript.html">BehaviourScript</a></div><div class="ttdoc">Base class for scriptable behavior in game objects.</div><div class="ttdef"><b>Definition:</b> behaviour_script.hpp:31</div></div>
 <div class="ttc" id="aclassColor_html"><div class="ttname"><a href="classColor.html">Color</a></div><div class="ttdoc">Represents a color using red, green, blue, and alpha (transparency) components.</div><div class="ttdef"><b>Definition:</b> color.hpp:26</div></div>
 <div class="ttc" id="aclassSprite_html"><div class="ttname"><a href="classSprite.html">Sprite</a></div><div class="ttdoc">Represents a graphical sprite in the game engine.</div><div class="ttdef"><b>Definition:</b> sprite.hpp:31</div></div>
-<div class="ttc" id="aclassSprite_html_a0d65be7f74f4fc989f45a7e4dc7e28d0"><div class="ttname"><a href="classSprite.html#a0d65be7f74f4fc989f45a7e4dc7e28d0">Sprite::Clone</a></div><div class="ttdeci">std::shared_ptr&lt; Component &gt; Clone(std::weak_ptr&lt; GameObject &gt; parent) override</div><div class="ttdoc">Make a clone of the component.</div><div class="ttdef"><b>Definition:</b> sprite.cpp:27</div></div>
+<div class="ttc" id="aclassSprite_html_a0d65be7f74f4fc989f45a7e4dc7e28d0"><div class="ttname"><a href="classSprite.html#a0d65be7f74f4fc989f45a7e4dc7e28d0">Sprite::Clone</a></div><div class="ttdeci">std::shared_ptr&lt; Component &gt; Clone(std::weak_ptr&lt; GameObject &gt; parent) override</div><div class="ttdoc">Make a clone of the component.</div><div class="ttdef"><b>Definition:</b> sprite.cpp:26</div></div>
 <div class="ttc" id="aclassSprite_html_a12cba3ac1868418add3c4d95ce87e615"><div class="ttname"><a href="classSprite.html#a12cba3ac1868418add3c4d95ce87e615">Sprite::Sprite</a></div><div class="ttdeci">Sprite()</div><div class="ttdoc">Constructs a new Sprite object with default settings.</div><div class="ttdef"><b>Definition:</b> sprite.cpp:14</div></div>
+<div class="ttc" id="aclassSprite_html_a27bf49cf9aaf272d25dc3cb64d6024b8"><div class="ttname"><a href="classSprite.html#a27bf49cf9aaf272d25dc3cb64d6024b8">Sprite::GetFrameWidth</a></div><div class="ttdeci">int GetFrameWidth() const</div><div class="ttdoc">Returns the frame width of the sprite.</div><div class="ttdef"><b>Definition:</b> sprite.hpp:64</div></div>
+<div class="ttc" id="aclassSprite_html_a8b99661b9d774d737abb5f793d70626c"><div class="ttname"><a href="classSprite.html#a8b99661b9d774d737abb5f793d70626c">Sprite::GetFrameHeight</a></div><div class="ttdeci">int GetFrameHeight() const</div><div class="ttdoc">Returns the frame height of the sprite.</div><div class="ttdef"><b>Definition:</b> sprite.hpp:70</div></div>
+<div class="ttc" id="aclassSprite_html_a90182181ead11820cda85b65b600a58d"><div class="ttname"><a href="classSprite.html#a90182181ead11820cda85b65b600a58d">Sprite::GetSprite</a></div><div class="ttdeci">const std::string &amp; GetSprite() const</div><div class="ttdoc">Constructs a new Sprite object with the specified sprite image.</div><div class="ttdef"><b>Definition:</b> sprite.hpp:52</div></div>
+<div class="ttc" id="aclassSprite_html_ab8264f790a2a50f6c2d2fb3762724d6c"><div class="ttname"><a href="classSprite.html#ab8264f790a2a50f6c2d2fb3762724d6c">Sprite::SetSprite</a></div><div class="ttdeci">void SetSprite(const std::string &amp;spriteImage)</div><div class="ttdoc">Sets the sprite image for this Sprite object.</div><div class="ttdef"><b>Definition:</b> sprite.hpp:58</div></div>
 <div class="ttc" id="acolor_8hpp_html"><div class="ttname"><a href="color_8hpp.html">color.hpp</a></div><div class="ttdoc">Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

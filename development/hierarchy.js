@@ -83,9 +83,11 @@ var hierarchy =
     [ "SDLTriangle", "classSDLTriangle.html", null ],
     [ "SDLWindow", "classSDLWindow.html", null ],
     [ "ShapeColor", "classShapeColor.html", null ],
+    [ "Size", "structSize.html", null ],
     [ "testing::Test", null, [
       [ "SDLInputFacadeTest", "classSDLInputFacadeTest.html", null ]
     ] ],
+    [ "Texture", "classTexture.html", null ],
     [ "Thread", "classThread.html", null ],
     [ "Time", "classTime.html", null ],
     [ "Timer", "classTimer.html", null ],
