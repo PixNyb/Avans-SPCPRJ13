@@ -56,17 +56,22 @@ var hierarchy =
       ] ]
     ] ],
     [ "ISceneFactory", "classISceneFactory.html", [
-      [ "LevelFactory", "classLevelFactory.html", null ]
+      [ "LevelFactory", "classLevelFactory.html", [
+        [ "LevelFactoryStub", "classLevelFactoryStub.html", null ]
+      ] ]
     ] ],
     [ "ISound", "classISound.html", [
       [ "SFMLSound", "classSFMLSound.html", null ]
     ] ],
     [ "JSONReader", "classJSONReader.html", null ],
+    [ "LevelManager", "classLevelManager.html", null ],
     [ "PerformanceUtility", "classPerformanceUtility.html", null ],
     [ "PhysicsFacade", "classPhysicsFacade.html", null ],
     [ "PhysicsManager", "classPhysicsManager.html", null ],
     [ "Point", "structPoint.html", null ],
-    [ "PrefabManager", "classPrefabManager.html", null ],
+    [ "PrefabManager", "classPrefabManager.html", [
+      [ "PrefabManagerStub", "classPrefabManagerStub.html", null ]
+    ] ],
     [ "RenderManager", "classRenderManager.html", null ],
     [ "Scene", "classScene.html", [
       [ "LevelScene", "classLevelScene.html", null ]
@@ -85,6 +90,8 @@ var hierarchy =
     [ "ShapeColor", "classShapeColor.html", null ],
     [ "Size", "structSize.html", null ],
     [ "testing::Test", null, [
+      [ "LevelTest", "classLevelTest.html", null ],
+      [ "PrefabTest", "classPrefabTest.html", null ],
       [ "SDLInputFacadeTest", "classSDLInputFacadeTest.html", null ]
     ] ],
     [ "Texture", "classTexture.html", null ],

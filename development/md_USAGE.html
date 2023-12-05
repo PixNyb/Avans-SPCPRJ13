@@ -116,7 +116,7 @@ Inhoudsopgave</h1>
 <div class="line"><span class="keyword">auto</span> graphicsFacade = engine-&gt;Get&lt;<a class="code" href="classIOFacade.html">IOFacade</a>&gt;();</div>
 <div class="line">graphicsFacade-&gt;CreateWindow(<span class="stringliteral">&quot;Sandbox&quot;</span>, 600, 400);</div>
 <div class="line">graphicsFacade-&gt;CreateRenderer();</div>
-<div class="ttc" id="aclassEngine_html_aab953f155f37bc03fe78de7cb4dbf721"><div class="ttname"><a href="classEngine.html#aab953f155f37bc03fe78de7cb4dbf721">Engine::GetInstance</a></div><div class="ttdeci">static Engine * GetInstance()</div><div class="ttdoc">Gets the instance of the engine.</div><div class="ttdef"><b>Definition:</b> engine.cpp:115</div></div>
+<div class="ttc" id="aclassEngine_html_aab953f155f37bc03fe78de7cb4dbf721"><div class="ttname"><a href="classEngine.html#aab953f155f37bc03fe78de7cb4dbf721">Engine::GetInstance</a></div><div class="ttdeci">static Engine * GetInstance()</div><div class="ttdoc">Gets the instance of the engine.</div><div class="ttdef"><b>Definition:</b> engine.cpp:130</div></div>
 <div class="ttc" id="aclassIOFacade_html"><div class="ttname"><a href="classIOFacade.html">IOFacade</a></div><div class="ttdoc">Interface for input/output handling in the game engine.</div><div class="ttdef"><b>Definition:</b> io_facade.hpp:46</div></div>
 <div class="ttc" id="aclassSceneManager_html"><div class="ttname"><a href="classSceneManager.html">SceneManager</a></div><div class="ttdoc">Manages scenes and their updates.</div><div class="ttdef"><b>Definition:</b> scene_manager.hpp:23</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md26"></a>
@@ -154,88 +154,96 @@ Sprites aanmaken en renderen</h1>
 <div class="line"><span class="keyword">auto</span> animationController = std::make_shared&lt;AnimationControllerScript&gt;(animator);</div>
 <div class="line">sprite-&gt;AddComponent(animationController);</div>
 <div class="line"> </div>
-<div class="line"><span class="preprocessor">## 2. Level format</span></div>
+<div class="line"><span class="preprocessor">## 2. Prefabs gebruiken</span></div>
 <div class="line"> </div>
-<div class="line">Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief.</div>
-<div class="line">De waarde die is gezet voor <span class="stringliteral">&#39;prefab&#39;</span> wordt gebruikt om de prefab op te vragen aan de <a class="code" href="classPrefabManager.html">PrefabManager</a>.</div>
-<div class="line">Hier worden vervolgens name, tag, active, layer, transform en children nog bij gedefinieert.</div>
-<div class="line">In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk <a class="code" href="classGameObject.html">GameObject</a>.</div>
+<div class="line">De <a class="code" href="classPrefabManager.html">PrefabManager</a> kan gebruikt worden om prefabs te registeren en op te halen.</div>
 <div class="line"> </div>
-<div class="line">```json</div>
-<div class="line">{</div>
-<div class="line">  <span class="stringliteral">&quot;objects&quot;</span>: [</div>
+<div class="line">```cpp</div>
+<div class="line"><span class="keywordtype">void</span> RegisterPrefab(<span class="keyword">const</span> std::string &amp;<span class="keywordtype">id</span>, <span class="keyword">const</span> <a class="code" href="classGameObject.html">GameObject</a> &amp;prefab);</div>
+<div class="ttc" id="aclassAnimationState_html"><div class="ttname"><a href="classAnimationState.html">AnimationState</a></div><div class="ttdoc">Manages the states of an animation.</div><div class="ttdef"><b>Definition:</b> animation_state.hpp:27</div></div>
+<div class="ttc" id="aclassGameObject_html"><div class="ttname"><a href="classGameObject.html">GameObject</a></div><div class="ttdoc">The GameObject class represents an object in the game world.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:35</div></div>
+<div class="ttc" id="aclassPrefabManager_html"><div class="ttname"><a href="classPrefabManager.html">PrefabManager</a></div><div class="ttdoc">Manages the prefabs that are used for the levels.</div><div class="ttdef"><b>Definition:</b> prefab_manager.hpp:27</div></div>
+</div><!-- fragment --><p>Door middel van de functie RegisterPrefab kan er een nieuw <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> als prefab geregistreert worden. Hierbij dient er ook een uniek id meegegeven te worden zodat dit later bij het laden van een level opgevraagd kan worden.</p>
+<div class="fragment"><div class="line">std::shared_ptr&lt;GameObject&gt; GetPrefab(std::string <span class="keywordtype">id</span>);</div>
+</div><!-- fragment --><p>Om vervolgens een prefab weer op te halen kan er gebruik gemaakt worden van de GetPrefab functie. Hieraan wordt een id meegegeven om de prefab te specificeren. Er wordt hier een nieuwe copy van het <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> teruggegeven.</p>
+<h1><a class="anchor" id="autotoc_md27"></a>
+3. Level format</h1>
+<p>Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief. Eerst wordt camera gedefinieerd, hierbij wordt een width en height meegegeven. Vervolgens worden alle GameObjecten geplaatst in de objects array. De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de <a class="el" href="classPrefabManager.html" title="Manages the prefabs that are used for the levels.">PrefabManager</a>. Hier worden vervolgens name, tag, active, layer, transform en children nog bij gedefinieert. In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>.</p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">  &quot;camera&quot;: {</div>
+<div class="line">    &quot;width&quot;: 500,</div>
+<div class="line">    &quot;height&quot;: 500</div>
+<div class="line">  },</div>
+<div class="line">  &quot;objects&quot;: [</div>
 <div class="line">    {</div>
-<div class="line">      <span class="stringliteral">&quot;prefab&quot;</span>: <span class="stringliteral">&quot;Character&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;Character1&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;tag&quot;</span>: <span class="stringliteral">&quot;character&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;active&quot;</span>: <span class="keyword">true</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;layer&quot;</span>: 1,</div>
-<div class="line">      <span class="stringliteral">&quot;transform&quot;</span>: {</div>
-<div class="line">        <span class="stringliteral">&quot;position&quot;</span>: {</div>
-<div class="line">          <span class="stringliteral">&quot;x&quot;</span>: 1,</div>
-<div class="line">          <span class="stringliteral">&quot;y&quot;</span>: 1</div>
+<div class="line">      &quot;prefab&quot;: &quot;Character&quot;,</div>
+<div class="line">      &quot;name&quot;: &quot;Character1&quot;,</div>
+<div class="line">      &quot;tag&quot;: &quot;character&quot;,</div>
+<div class="line">      &quot;active&quot;: true,</div>
+<div class="line">      &quot;layer&quot;: 1,</div>
+<div class="line">      &quot;transform&quot;: {</div>
+<div class="line">        &quot;position&quot;: {</div>
+<div class="line">          &quot;x&quot;: 1,</div>
+<div class="line">          &quot;y&quot;: 1</div>
 <div class="line">        },</div>
-<div class="line">        <span class="stringliteral">&quot;rotation&quot;</span>: 0.0,</div>
-<div class="line">        <span class="stringliteral">&quot;scale&quot;</span>: 1.0</div>
+<div class="line">        &quot;rotation&quot;: 0.0,</div>
+<div class="line">        &quot;scale&quot;: 1.0</div>
 <div class="line">      },</div>
-<div class="line">      <span class="stringliteral">&quot;children&quot;</span>: []</div>
+<div class="line">      &quot;children&quot;: []</div>
 <div class="line">    },</div>
 <div class="line">    {</div>
-<div class="line">      <span class="stringliteral">&quot;prefab&quot;</span>: <span class="stringliteral">&quot;Tree&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;Tree1&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;tag&quot;</span>: <span class="stringliteral">&quot;tree&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;active&quot;</span>: <span class="keyword">true</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;layer&quot;</span>: 1,</div>
-<div class="line">      <span class="stringliteral">&quot;transform&quot;</span>: {</div>
-<div class="line">        <span class="stringliteral">&quot;position&quot;</span>: {</div>
-<div class="line">          <span class="stringliteral">&quot;x&quot;</span>: 4,</div>
-<div class="line">          <span class="stringliteral">&quot;y&quot;</span>: 1</div>
+<div class="line">      &quot;prefab&quot;: &quot;Tree&quot;,</div>
+<div class="line">      &quot;name&quot;: &quot;Tree1&quot;,</div>
+<div class="line">      &quot;tag&quot;: &quot;tree&quot;,</div>
+<div class="line">      &quot;active&quot;: true,</div>
+<div class="line">      &quot;layer&quot;: 1,</div>
+<div class="line">      &quot;transform&quot;: {</div>
+<div class="line">        &quot;position&quot;: {</div>
+<div class="line">          &quot;x&quot;: 4,</div>
+<div class="line">          &quot;y&quot;: 1</div>
 <div class="line">        },</div>
-<div class="line">        <span class="stringliteral">&quot;rotation&quot;</span>: 0.0,</div>
-<div class="line">        <span class="stringliteral">&quot;scale&quot;</span>: 1.0</div>
+<div class="line">        &quot;rotation&quot;: 0.0,</div>
+<div class="line">        &quot;scale&quot;: 1.0</div>
 <div class="line">      },</div>
-<div class="line">      <span class="stringliteral">&quot;children&quot;</span>: []</div>
+<div class="line">      &quot;children&quot;: []</div>
 <div class="line">    },</div>
 <div class="line">    {</div>
-<div class="line">      <span class="stringliteral">&quot;prefab&quot;</span>: <span class="stringliteral">&quot;Tree&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;Tree2&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;tag&quot;</span>: <span class="stringliteral">&quot;tree&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;active&quot;</span>: <span class="keyword">true</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;layer&quot;</span>: 2,</div>
-<div class="line">      <span class="stringliteral">&quot;transform&quot;</span>: {</div>
-<div class="line">        <span class="stringliteral">&quot;position&quot;</span>: {</div>
-<div class="line">          <span class="stringliteral">&quot;x&quot;</span>: 0,</div>
-<div class="line">          <span class="stringliteral">&quot;y&quot;</span>: 6</div>
+<div class="line">      &quot;prefab&quot;: &quot;Tree&quot;,</div>
+<div class="line">      &quot;name&quot;: &quot;Tree2&quot;,</div>
+<div class="line">      &quot;tag&quot;: &quot;tree&quot;,</div>
+<div class="line">      &quot;active&quot;: true,</div>
+<div class="line">      &quot;layer&quot;: 2,</div>
+<div class="line">      &quot;transform&quot;: {</div>
+<div class="line">        &quot;position&quot;: {</div>
+<div class="line">          &quot;x&quot;: 0,</div>
+<div class="line">          &quot;y&quot;: 6</div>
 <div class="line">        },</div>
-<div class="line">        <span class="stringliteral">&quot;rotation&quot;</span>: 0.0,</div>
-<div class="line">        <span class="stringliteral">&quot;scale&quot;</span>: 2.0</div>
+<div class="line">        &quot;rotation&quot;: 0.0,</div>
+<div class="line">        &quot;scale&quot;: 2.0</div>
 <div class="line">      },</div>
-<div class="line">      <span class="stringliteral">&quot;children&quot;</span>: [</div>
+<div class="line">      &quot;children&quot;: [</div>
 <div class="line">        {</div>
-<div class="line">          <span class="stringliteral">&quot;prefab&quot;</span>: <span class="stringliteral">&quot;Tree&quot;</span>,</div>
-<div class="line">          <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;SubTree&quot;</span>,</div>
-<div class="line">          <span class="stringliteral">&quot;tag&quot;</span>: <span class="stringliteral">&quot;tree&quot;</span>,</div>
-<div class="line">          <span class="stringliteral">&quot;active&quot;</span>: <span class="keyword">true</span>,</div>
-<div class="line">          <span class="stringliteral">&quot;layer&quot;</span>: 3,</div>
-<div class="line">          <span class="stringliteral">&quot;transform&quot;</span>: {</div>
-<div class="line">            <span class="stringliteral">&quot;position&quot;</span>: {</div>
-<div class="line">              <span class="stringliteral">&quot;x&quot;</span>: 2,</div>
-<div class="line">              <span class="stringliteral">&quot;y&quot;</span>: 7</div>
+<div class="line">          &quot;prefab&quot;: &quot;Tree&quot;,</div>
+<div class="line">          &quot;name&quot;: &quot;SubTree&quot;,</div>
+<div class="line">          &quot;tag&quot;: &quot;tree&quot;,</div>
+<div class="line">          &quot;active&quot;: true,</div>
+<div class="line">          &quot;layer&quot;: 3,</div>
+<div class="line">          &quot;transform&quot;: {</div>
+<div class="line">            &quot;position&quot;: {</div>
+<div class="line">              &quot;x&quot;: 2,</div>
+<div class="line">              &quot;y&quot;: 7</div>
 <div class="line">            },</div>
-<div class="line">            <span class="stringliteral">&quot;rotation&quot;</span>: 0.4,</div>
-<div class="line">            <span class="stringliteral">&quot;scale&quot;</span>: 1.0</div>
+<div class="line">            &quot;rotation&quot;: 0.4,</div>
+<div class="line">            &quot;scale&quot;: 1.0</div>
 <div class="line">          },</div>
-<div class="line">          <span class="stringliteral">&quot;children&quot;</span>: []</div>
+<div class="line">          &quot;children&quot;: []</div>
 <div class="line">        }</div>
 <div class="line">      ]</div>
 <div class="line">    }</div>
 <div class="line">  ]</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassAnimationState_html"><div class="ttname"><a href="classAnimationState.html">AnimationState</a></div><div class="ttdoc">Manages the states of an animation.</div><div class="ttdef"><b>Definition:</b> animation_state.hpp:27</div></div>
-<div class="ttc" id="aclassGameObject_html"><div class="ttname"><a href="classGameObject.html">GameObject</a></div><div class="ttdoc">The GameObject class represents an object in the game world.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:35</div></div>
-<div class="ttc" id="aclassPrefabManager_html"><div class="ttname"><a href="classPrefabManager.html">PrefabManager</a></div><div class="ttdef"><b>Definition:</b> prefab_manager.hpp:19</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md27"></a>
-3. Physics Simulatie Gebruiken</h1>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md28"></a>
+4. Physics Simulatie Gebruiken</h1>
 <p>De physics manager is voor de engine het aanspreekpunt om een wereld te starten, aan te passen en te beinvloeden. De physics manager heeft functies die elk hun doel omschrijven. Hiermee kun je bodies aanmaken, verwijderen, uit- en aanzetten en beinvloeden met krachten.</p>
 <div class="fragment"><div class="line"><span class="comment">// Creates the world and populates it with the given gameobjects</span></div>
 <div class="line"><span class="keywordtype">void</span> <a class="code" href="classPhysicsManager.html#af6458e7b31290e79c54bba685363a914">PhysicsManager::CreateWorld</a>(std::vector&lt;std::shared_ptr&lt;GameObject&gt;&gt; gameObjects) {</div>
@@ -246,8 +254,8 @@ Sprites aanmaken en renderen</h1>
 <div class="line"><span class="keywordtype">void</span> <a class="code" href="classPhysicsManager.html#acdc804abce59b430aff972e6035e8b41">PhysicsManager::Step</a>() {</div>
 <div class="line">    physicsFacade.<a class="code" href="classPhysicsFacade.html#a1a7b85a075e5ad1caa2fad8e43c9a142">Step</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassPhysicsFacade_html_a1a7b85a075e5ad1caa2fad8e43c9a142"><div class="ttname"><a href="classPhysicsFacade.html#a1a7b85a075e5ad1caa2fad8e43c9a142">PhysicsFacade::Step</a></div><div class="ttdeci">void Step()</div><div class="ttdoc">Execute the step function on the b2World.</div><div class="ttdef"><b>Definition:</b> physics_facade.cpp:117</div></div>
-<div class="ttc" id="aclassPhysicsFacade_html_a4a8cf544a84dde1e9eceb5aba4209b43"><div class="ttname"><a href="classPhysicsFacade.html#a4a8cf544a84dde1e9eceb5aba4209b43">PhysicsFacade::PopulateWorld</a></div><div class="ttdeci">void PopulateWorld(std::vector&lt; std::shared_ptr&lt; GameObject &gt;&gt; gameObjects)</div><div class="ttdoc">Populate the b2World through a list of gameobjects.</div><div class="ttdef"><b>Definition:</b> physics_facade.cpp:67</div></div>
+<div class="ttc" id="aclassPhysicsFacade_html_a1a7b85a075e5ad1caa2fad8e43c9a142"><div class="ttname"><a href="classPhysicsFacade.html#a1a7b85a075e5ad1caa2fad8e43c9a142">PhysicsFacade::Step</a></div><div class="ttdeci">void Step()</div><div class="ttdoc">Execute the step function on the b2World.</div><div class="ttdef"><b>Definition:</b> physics_facade.cpp:125</div></div>
+<div class="ttc" id="aclassPhysicsFacade_html_a4a8cf544a84dde1e9eceb5aba4209b43"><div class="ttname"><a href="classPhysicsFacade.html#a4a8cf544a84dde1e9eceb5aba4209b43">PhysicsFacade::PopulateWorld</a></div><div class="ttdeci">void PopulateWorld(std::vector&lt; std::shared_ptr&lt; GameObject &gt;&gt; gameObjects)</div><div class="ttdoc">Populate the b2World through a list of gameobjects.</div><div class="ttdef"><b>Definition:</b> physics_facade.cpp:68</div></div>
 <div class="ttc" id="aclassPhysicsManager_html_acdc804abce59b430aff972e6035e8b41"><div class="ttname"><a href="classPhysicsManager.html#acdc804abce59b430aff972e6035e8b41">PhysicsManager::Step</a></div><div class="ttdeci">void Step()</div><div class="ttdoc">Simulates the world for 1 step.</div><div class="ttdef"><b>Definition:</b> physics_manager.cpp:30</div></div>
 <div class="ttc" id="aclassPhysicsManager_html_af6458e7b31290e79c54bba685363a914"><div class="ttname"><a href="classPhysicsManager.html#af6458e7b31290e79c54bba685363a914">PhysicsManager::CreateWorld</a></div><div class="ttdeci">void CreateWorld(std::vector&lt; std::shared_ptr&lt; GameObject &gt;&gt; gameObjects)</div><div class="ttdoc">Creates the world the gameobjects will be simulated in.</div><div class="ttdef"><b>Definition:</b> physics_manager.cpp:15</div></div>
 </div><!-- fragment --><p>De CreateWorld functie roep je als eerste aan. Vervolgens kun je de simulatie starten met de Step() functie. Per aanroep van deze functie zet de wereld 1 stap en beweegt hij de objecten die hij bevat.</p>
@@ -264,8 +272,8 @@ Sprites aanmaken en renderen</h1>
 <li>Dynamic</li>
 </ul>
 <p>Dynamic bodies zijn volledig gesimuleerd en zullen zich gedragen zoals een object in de echte wereld dat doet. Deze kun je bewegen door meerdere functies te gebruiken: UpdateVelocity(), AddLinearForce() en AddForce().</p>
-<h1><a class="anchor" id="autotoc_md28"></a>
-4. Input Facades</h1>
+<h1><a class="anchor" id="autotoc_md29"></a>
+5. Input Facades</h1>
 <p>De input facade maakt het mogelijk om naar key en mouse inputs te luisteren, maar ook om acties te maken, binden aan specifieke inputs (een soort alias) en deze te gebruiken in de game.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> inputFacade = <a class="code" href="classEngine.html#aab953f155f37bc03fe78de7cb4dbf721">Engine::GetInstance</a>().<a class="code" href="classEngine.html#ab11c947aee16bee63bc9c1105f72dd43">Get</a>&lt;<a class="code" href="classIInputFacade.html">IInputFacade</a>&gt;();</div>
 <div class="line"> </div>
@@ -280,10 +288,10 @@ Sprites aanmaken en renderen</h1>
 <div class="line">    <span class="comment">// Jump!</span></div>
 <div class="line">}</div>
 <div class="ttc" id="aclassEngine_html_ab11c947aee16bee63bc9c1105f72dd43"><div class="ttname"><a href="classEngine.html#ab11c947aee16bee63bc9c1105f72dd43">Engine::Get</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; Get()</div><div class="ttdoc">Gets a public available instance (like SceneManager)</div><div class="ttdef"><b>Definition:</b> engine.hpp:68</div></div>
-<div class="ttc" id="aclassIInputFacade_html"><div class="ttname"><a href="classIInputFacade.html">IInputFacade</a></div><div class="ttdoc">The IInputFacade interface defines the methods that a concrete input facade must implement.</div><div class="ttdef"><b>Definition:</b> i_input_facade.hpp:282</div></div>
+<div class="ttc" id="aclassIInputFacade_html"><div class="ttname"><a href="classIInputFacade.html">IInputFacade</a></div><div class="ttdoc">The IInputFacade interface defines the methods that a concrete input facade must implement.</div><div class="ttdef"><b>Definition:</b> i_input_facade.hpp:285</div></div>
 <div class="ttc" id="aclassIInputFacade_html_a902b38964dca1cb6d34e55dab215481f"><div class="ttname"><a href="classIInputFacade.html#a902b38964dca1cb6d34e55dab215481f">IInputFacade::RegisterAction</a></div><div class="ttdeci">virtual void RegisterAction(const std::string &amp;action)=0</div><div class="ttdoc">Register an action with the input system.</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md29"></a>
-5. Contact listeners &amp; Behaviour Scripts</h1>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md30"></a>
+6. Contact listeners &amp; Behaviour Scripts</h1>
 <p>De contactlistener in de physicsfacade zorgt ervoor dat alle contacts worden afgevangen en sturen een signaal naar de behaviorscripts dat er een contactmoment is begonnen, eindigt of bezig is. Het enige waar de maker van de behaviorscripts rekening mee moet houden is het schrijven van de juiste calls naar de physics manager of andere managers. Hieronder staan de methodes van de behaviorscripts die aangeroepen worden in de contactlistener</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> ColliderBehaviorTest::OnTriggerEnter2D(<span class="keyword">const</span> <a class="code" href="classCollider.html">Collider</a> &amp;collider) {}</div>
 <div class="line"> </div>

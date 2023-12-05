@@ -1,8 +1,9 @@
 <map id="include/facades/physics_facade.hpp" name="include/facades/physics_facade.hpp">
-<area shape="rect" id="node1" title="This file contains the PhysicsFacade class definition." alt="" coords="323,5,500,47"/>
-<area shape="rect" id="node2" href="$physics__manager_8hpp.html" title="This file contains the PhysicsManager class definition." alt="" coords="318,95,505,136"/>
+<area shape="rect" id="node1" title="This file contains the PhysicsFacade class definition." alt="" coords="423,5,600,47"/>
+<area shape="rect" id="node2" href="$physics__manager_8hpp.html" title="This file contains the PhysicsManager class definition." alt="" coords="418,95,605,136"/>
 <area shape="rect" id="node3" href="$game__object_8cpp.html" title="This file contains the GameObject class implementation." alt="" coords="5,191,185,218"/>
 <area shape="rect" id="node4" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="210,191,407,218"/>
-<area shape="rect" id="node5" href="$physics__manager_8cpp.html" title="This file contains the PhysicsManager class implementation." alt="" coords="432,184,599,225"/>
-<area shape="rect" id="node6" href="$physics__test_8cpp.html" title="This file tests the general working of the PhysicsManager/PhysicsFacade." alt="" coords="623,191,789,218"/>
+<area shape="rect" id="node5" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="432,184,591,225"/>
+<area shape="rect" id="node6" href="$physics__manager_8cpp.html" title="This file contains the PhysicsManager class implementation." alt="" coords="615,184,781,225"/>
+<area shape="rect" id="node7" href="$physics__test_8cpp.html" title="This file tests the general working of the PhysicsManager/PhysicsFacade." alt="" coords="805,191,972,218"/>
 </map>

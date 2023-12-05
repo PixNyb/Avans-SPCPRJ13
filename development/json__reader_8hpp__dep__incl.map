@@ -1,4 +1,7 @@
 <map id="include/project/utility/json_reader.hpp" name="include/project/utility/json_reader.hpp">
-<area shape="rect" id="node1" title="Converts data sources to json." alt="" coords="5,5,165,47"/>
-<area shape="rect" id="node2" href="$json__reader_8cpp.html" title="Implementation of the JSONReader." alt="" coords="19,95,151,136"/>
+<area shape="rect" id="node1" title="Converts data sources to json." alt="" coords="217,5,377,47"/>
+<area shape="rect" id="node2" href="$level__manager_8hpp.html" title="Manages levels." alt="" coords="112,95,299,136"/>
+<area shape="rect" id="node5" href="$json__reader_8cpp.html" title="Implementation of the JSONReader." alt="" coords="323,95,455,136"/>
+<area shape="rect" id="node3" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="5,191,203,218"/>
+<area shape="rect" id="node4" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="227,184,386,225"/>
 </map>

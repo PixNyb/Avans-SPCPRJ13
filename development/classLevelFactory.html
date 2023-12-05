@@ -87,18 +87,26 @@ $(document).ready(function(){initNavTree('classLevelFactory.html',''); initResiz
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classLevelFactory-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">LevelFactory Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Creates levels based on a provided JSON object.  
+ <a href="classLevelFactory.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="level__factory_8hpp_source.html">level_factory.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for LevelFactory:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLevelFactory__inherit__graph.png" border="0" usemap="#aLevelFactory_inherit__map" alt="Inheritance graph"/></div>
 <map name="aLevelFactory_inherit__map" id="aLevelFactory_inherit__map">
-<area shape="rect" title=" " alt="" coords="9,80,113,107"/>
-<area shape="rect" href="classISceneFactory.html" title=" " alt="" coords="5,5,117,32"/>
+<area shape="rect" title="Creates levels based on a provided JSON object." alt="" coords="20,80,124,107"/>
+<area shape="rect" href="classLevelFactoryStub.html" title=" " alt="" coords="5,155,139,181"/>
+<area shape="rect" href="classISceneFactory.html" title="An interface for a scene factory." alt="" coords="16,5,128,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -106,8 +114,8 @@ Collaboration diagram for LevelFactory:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLevelFactory__coll__graph.png" border="0" usemap="#aLevelFactory_coll__map" alt="Collaboration graph"/></div>
 <map name="aLevelFactory_coll__map" id="aLevelFactory_coll__map">
-<area shape="rect" title=" " alt="" coords="9,80,113,107"/>
-<area shape="rect" href="classISceneFactory.html" title=" " alt="" coords="5,5,117,32"/>
+<area shape="rect" title="Creates levels based on a provided JSON object." alt="" coords="9,80,113,107"/>
+<area shape="rect" href="classISceneFactory.html" title="An interface for a scene factory." alt="" coords="5,5,117,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -128,8 +136,30 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classISceneFactory.html#a0b3d0a5395e25a4e425874d1b5b189fc">~ISceneFactory</a> ()=default</td></tr>
 <tr class="memdesc:a0b3d0a5395e25a4e425874d1b5b189fc inherit pub_methods_classISceneFactory"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the AbstractSceneFactory. <br /></td></tr>
 <tr class="separator:a0b3d0a5395e25a4e425874d1b5b189fc inherit pub_methods_classISceneFactory"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:af31976c4329117f5140cde55559004b9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLevelFactory.html#af31976c4329117f5140cde55559004b9">AddObjects</a> (<a class="el" href="classScene.html">Scene</a> &amp;scene, const nlohmann::json &amp;objectsJson)</td></tr>
+<tr class="memdesc:af31976c4329117f5140cde55559004b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A recursive function which adds the objects in a JSON to the provided <a class="el" href="classScene.html" title="Represents a scene in the game engine.">Scene</a>.  <a href="classLevelFactory.html#af31976c4329117f5140cde55559004b9">More...</a><br /></td></tr>
+<tr class="separator:af31976c4329117f5140cde55559004b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a8430750c7747547781069af85f095e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTransform.html">Transform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLevelFactory.html#a4a8430750c7747547781069af85f095e">ConvertTransform</a> (const nlohmann::json &amp;transformJson) const</td></tr>
+<tr class="memdesc:a4a8430750c7747547781069af85f095e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts JSON to a <a class="el" href="structTransform.html" title="Represents a 2D transformation including position, rotation, and scale.">Transform</a> struct.  <a href="classLevelFactory.html#a4a8430750c7747547781069af85f095e">More...</a><br /></td></tr>
+<tr class="separator:a4a8430750c7747547781069af85f095e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7e3ff33904b0f938ddd955ee082661c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classCamera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLevelFactory.html#ac7e3ff33904b0f938ddd955ee082661c">ConvertCamera</a> (const nlohmann::json &amp;transformJson) const</td></tr>
+<tr class="memdesc:ac7e3ff33904b0f938ddd955ee082661c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts JSON to a <a class="el" href="classCamera.html" title="Represents a camera view in the game.">Camera</a>.  <a href="classLevelFactory.html#ac7e3ff33904b0f938ddd955ee082661c">More...</a><br /></td></tr>
+<tr class="separator:ac7e3ff33904b0f938ddd955ee082661c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a762caade9c5d16357005e21c59210ab0"><td class="memItemLeft" align="right" valign="top"><a id="a762caade9c5d16357005e21c59210ab0"></a>
+std::shared_ptr&lt; <a class="el" href="classPrefabManager.html">PrefabManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLevelFactory.html#a762caade9c5d16357005e21c59210ab0">prefabManager</a></td></tr>
+<tr class="memdesc:a762caade9c5d16357005e21c59210ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classPrefabManager.html" title="Manages the prefabs that are used for the levels.">PrefabManager</a> which is used to retrieve the registered prefabs. <br /></td></tr>
+<tr class="separator:a762caade9c5d16357005e21c59210ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Creates levels based on a provided JSON object. </p>
+<p>This class is responsible for creating Levels based on a JSON object. It has a <a class="el" href="classPrefabManager.html" title="Manages the prefabs that are used for the levels.">PrefabManager</a> which is used to create new GameObjects based on the provided JSON. It will only create GameObjects for registered prefabs. If the JSON is not formatted properly and error will be thrown. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a977859a72107f9b9f778ca8488e66aa9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a977859a72107f9b9f778ca8488e66aa9">&#9670;&nbsp;</a></span>LevelFactory()</h2>
 
@@ -157,7 +187,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <p>Constructor for the level factory. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="classPrefabManager.html">PrefabManager</a></td><td>Provides the <a class="el" href="classPrefabManager.html">PrefabManager</a> from where the prefabs are to be retrieved. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classPrefabManager.html" title="Manages the prefabs that are used for the levels.">PrefabManager</a></td><td>Provides the <a class="el" href="classPrefabManager.html" title="Manages the prefabs that are used for the levels.">PrefabManager</a> from where the prefabs are to be retrieved. </td></tr>
   </table>
   </dd>
 </dl>
@@ -165,6 +195,122 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af31976c4329117f5140cde55559004b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af31976c4329117f5140cde55559004b9">&#9670;&nbsp;</a></span>AddObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; &gt; LevelFactory::AddObjects </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classScene.html">Scene</a> &amp;&#160;</td>
+          <td class="paramname"><em>scene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const nlohmann::json &amp;&#160;</td>
+          <td class="paramname"><em>objectsJson</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A recursive function which adds the objects in a JSON to the provided <a class="el" href="classScene.html" title="Represents a scene in the game engine.">Scene</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scene</td><td>The <a class="el" href="classScene.html" title="Represents a scene in the game engine.">Scene</a> to which the GameObjects are to be added. </td></tr>
+    <tr><td class="paramname">objectsJson</td><td>The JSON from which the GameObjects are to be retrieved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of GameObjects that were just added to the <a class="el" href="classScene.html" title="Represents a scene in the game engine.">Scene</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ac7e3ff33904b0f938ddd955ee082661c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7e3ff33904b0f938ddd955ee082661c">&#9670;&nbsp;</a></span>ConvertCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classCamera.html">Camera</a> &gt; LevelFactory::ConvertCamera </td>
+          <td>(</td>
+          <td class="paramtype">const nlohmann::json &amp;&#160;</td>
+          <td class="paramname"><em>transformJson</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts JSON to a <a class="el" href="classCamera.html" title="Represents a camera view in the game.">Camera</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cameraJson</td><td>The JSON from which the <a class="el" href="classCamera.html" title="Represents a camera view in the game.">Camera</a> specifications are to be retrieved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new <a class="el" href="classCamera.html" title="Represents a camera view in the game.">Camera</a> created based on the provided JSON. </dd></dl>
+
+</div>
+</div>
+<a id="a4a8430750c7747547781069af85f095e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a8430750c7747547781069af85f095e">&#9670;&nbsp;</a></span>ConvertTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTransform.html">Transform</a> LevelFactory::ConvertTransform </td>
+          <td>(</td>
+          <td class="paramtype">const nlohmann::json &amp;&#160;</td>
+          <td class="paramname"><em>transformJson</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts JSON to a <a class="el" href="structTransform.html" title="Represents a 2D transformation including position, rotation, and scale.">Transform</a> struct. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">transformJson</td><td>The JSON from which the <a class="el" href="structTransform.html" title="Represents a 2D transformation including position, rotation, and scale.">Transform</a> struct is to be retrieved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new <a class="el" href="structTransform.html" title="Represents a 2D transformation including position, rotation, and scale.">Transform</a> struct created based on the provided JSON. </dd></dl>
+
+</div>
+</div>
 <a id="a7fb92cacb3dbe706cbf8f30a107bb3e5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7fb92cacb3dbe706cbf8f30a107bb3e5">&#9670;&nbsp;</a></span>CreateScene()</h2>
 

@@ -1,14 +1,16 @@
 <map id="include/api/camera.hpp" name="include/api/camera.hpp">
-<area shape="rect" id="node1" title="Defines the Camera class for managing camera views in a game engine. The Camera class handles the ren..." alt="" coords="514,5,689,32"/>
-<area shape="rect" id="node2" href="$scene_8hpp.html" title="Defines the Scene class for managing and rendering game scenes in the game engine...." alt="" coords="431,80,593,107"/>
-<area shape="rect" id="node12" href="$camera_8cpp.html" title="This file contains the Camera class implementation." alt="" coords="618,80,763,107"/>
-<area shape="rect" id="node3" href="$level__scene_8hpp.html" title="Defines the LevelScene class for creating a level." alt="" coords="5,162,208,189"/>
-<area shape="rect" id="node5" href="$scene__manager_8hpp.html" title="Manages scenes." alt="" coords="308,155,495,196"/>
-<area shape="rect" id="node9" href="$iscene__factory_8hpp.html" title="Abstract factory for creating scenes." alt="" coords="519,155,727,196"/>
-<area shape="rect" id="node11" href="$scene_8cpp.html" title="This file contains the Scene class implementation." alt="" coords="751,162,886,189"/>
-<area shape="rect" id="node4" href="$level__factory_8cpp.html" title="Implementation of the level factory." alt="" coords="325,333,523,375"/>
-<area shape="rect" id="node6" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="67,251,264,278"/>
-<area shape="rect" id="node7" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="289,244,514,285"/>
-<area shape="rect" id="node8" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="538,244,697,285"/>
-<area shape="rect" id="node10" href="$level__factory_8hpp.html" title="Creates levels." alt="" coords="721,244,919,285"/>
+<area shape="rect" id="node1" title="Defines the Camera class for managing camera views in a game engine. The Camera class handles the ren..." alt="" coords="405,5,579,32"/>
+<area shape="rect" id="node2" href="$scene_8hpp.html" title="Defines the Scene class for managing and rendering game scenes in the game engine...." alt="" coords="321,80,484,107"/>
+<area shape="rect" id="node14" href="$camera_8cpp.html" title="This file contains the Camera class implementation." alt="" coords="509,80,654,107"/>
+<area shape="rect" id="node3" href="$level__scene_8hpp.html" title="Defines the LevelScene class for creating a level." alt="" coords="5,251,208,278"/>
+<area shape="rect" id="node5" href="$scene__manager_8hpp.html" title="Manages scenes." alt="" coords="456,244,643,285"/>
+<area shape="rect" id="node11" href="$iscene__factory_8hpp.html" title="Abstract factory for creating scenes." alt="" coords="228,155,436,196"/>
+<area shape="rect" id="node13" href="$scene_8cpp.html" title="This file contains the Scene class implementation." alt="" coords="511,162,646,189"/>
+<area shape="rect" id="node4" href="$level__factory_8cpp.html" title="Implementation of the level factory." alt="" coords="13,333,211,375"/>
+<area shape="rect" id="node6" href="$level__manager_8hpp.html" title="Manages levels." alt="" coords="239,333,425,375"/>
+<area shape="rect" id="node7" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="364,430,561,457"/>
+<area shape="rect" id="node9" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="499,333,725,375"/>
+<area shape="rect" id="node10" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="749,333,907,375"/>
+<area shape="rect" id="node8" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="181,423,339,464"/>
+<area shape="rect" id="node12" href="$level__factory_8hpp.html" title="Creates levels." alt="" coords="233,244,431,285"/>
 </map>

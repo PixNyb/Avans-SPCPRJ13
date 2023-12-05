@@ -1,4 +1,7 @@
 <map id="include/project/utility/factories/level_factory.hpp" name="include/project/utility/factories/level_factory.hpp">
-<area shape="rect" id="node1" title="Creates levels." alt="" coords="5,5,204,47"/>
-<area shape="rect" id="node2" href="$level__factory_8cpp.html" title="Implementation of the level factory." alt="" coords="6,95,203,136"/>
+<area shape="rect" id="node1" title="Creates levels." alt="" coords="214,5,413,47"/>
+<area shape="rect" id="node2" href="$level__manager_8hpp.html" title="Manages levels." alt="" coords="112,95,299,136"/>
+<area shape="rect" id="node5" href="$level__factory_8cpp.html" title="Implementation of the level factory." alt="" coords="323,95,520,136"/>
+<area shape="rect" id="node3" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="5,191,203,218"/>
+<area shape="rect" id="node4" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="227,184,386,225"/>
 </map>

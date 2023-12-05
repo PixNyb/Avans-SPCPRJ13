@@ -1,5 +1,6 @@
 <map id="include/project/core/engine.hpp" name="include/project/core/engine.hpp">
-<area shape="rect" id="node1" title="Engine is the core of the engine. It is responsible for managing the game loop and managing the DICon..." alt="" coords="146,5,297,47"/>
+<area shape="rect" id="node1" title="Engine is the core of the engine. It is responsible for managing the game loop and managing the DICon..." alt="" coords="265,5,415,47"/>
 <area shape="rect" id="node2" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="5,102,203,129"/>
 <area shape="rect" id="node3" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="227,95,453,136"/>
+<area shape="rect" id="node4" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="477,95,635,136"/>
 </map>
