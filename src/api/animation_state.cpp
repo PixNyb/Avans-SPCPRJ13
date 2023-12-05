@@ -13,4 +13,23 @@
 
 AnimationState::AnimationState() {}
 
-void AnimationState::Update(GameObject &gameObject) {}
+void AnimationState::Update(float deltaTime)
+{
+    elapsedTime += deltaTime;
+    if (elapsedTime >= frameDuration)
+    {
+        elapsedTime = 0;
+        currentFrameIndex++;
+        if (currentFrameIndex > endFrameIndex)
+        {
+            currentFrameIndex = startFrameIndex;
+        }
+    }
+}
+
+int AnimationState::GetCurrentFrameIndex() const { return currentFrameIndex; }
+
+float AnimationState::GetTotalDuration() const
+{
+    return (endFrameIndex - startFrameIndex + 1) * frameDuration;
+}

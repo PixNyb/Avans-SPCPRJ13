@@ -10,6 +10,7 @@
  */
 
 #include "render_manager.hpp"
+#include "animator.hpp"
 #include "box_collider.hpp"
 #include "circle.hpp"
 #include "circle_collider.hpp"
@@ -91,18 +92,71 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
 {
 
     auto gameObject = gameObjectPointer.lock();
+    if (!gameObject)
+    {
+        return; // GameObject is no longer valid
+    }
+
+    // Determine final position and scale based on parent (if any)
+    Transform finalTransform = gameObject->GetTransform();
+    if (auto parent = gameObject->GetParent())
+    {
+        finalTransform = finalTransform.operator+(parent->GetTransform());
+    }
 
     // Calculate relative camera position
-    auto relCamPos = gameObject->GetTransform().position - cameraPoint;
+    auto relCamPos = finalTransform.position - cameraPoint;
     double scale = gameObject->GetTransform().scale;
 
     // TODO: Don't try to draw objects that are out of bounds? Purely for efficiency, shouldn't
     //  really matter for now
 
     // Draw sprites
-    auto sprite = gameObject->GetComponent<Sprite>();
-    if (sprite)
+    auto spriteComponent = gameObject->GetComponent<Sprite>();
+    if (spriteComponent)
     {
+        auto animatorComponent = gameObject->GetComponent<Animator>();
+
+        Size spriteSize = gfx.GetSpriteSize(spriteComponent->GetSprite());
+
+        // Adjust sprite size to match parent's dimensions (if parent has a collider)
+        Size parentSize;
+        if (auto boxCollider = gameObject->GetParent()->GetComponent<BoxCollider>())
+        {
+            parentSize = Size(boxCollider->Width(), boxCollider->Height());
+        }
+        else if (auto circleCollider = gameObject->GetParent()->GetComponent<CircleCollider>())
+        {
+            double radius = circleCollider->Radius();
+            parentSize = Size(radius * 2, radius * 2);
+        }
+        else
+        {
+            parentSize = spriteSize; // Use sprite's own size if no parent collider
+        }
+
+        // Create a Rectangle object representing the position and size of the sprite
+        Rectangle spriteRect(Vector2D(relCamPos.x, relCamPos.y), parentSize.height,
+                             parentSize.width);
+
+        if (animatorComponent)
+        {
+            // Handling sprite sheets with Animator
+            int currentFrameIndex = animatorComponent->GetCurrentFrameIndex();
+            // TODO: get columns and rows from animator
+            int totalColumns = 8;
+            int totalRows = 3;
+            gfx.DrawSpriteSheetFrame(spriteComponent->GetSprite(), spriteRect, currentFrameIndex,
+                                     totalColumns, totalRows);
+        }
+        else
+        {
+            // Create a Texture object for the sprite
+            Texture spriteTexture(spriteComponent->GetSprite());
+
+            // Draw the sprite
+            gfx.DrawSprite(spriteTexture, spriteRect);
+        }
     }
 
     auto text = dynamic_pointer_cast<Text>(gameObject);

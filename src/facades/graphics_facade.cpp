@@ -15,20 +15,23 @@
 #include "sdl_colors.hpp"
 #include "sdl_rect.hpp"
 #include "sdl_triangle.hpp"
+#include <SDL_image.h>
 #include <SDL_ttf.h>
 #include <iostream>
 
-GraphicsFacade::GraphicsFacade() {
-    try {
+GraphicsFacade::GraphicsFacade()
+{
+    try
+    {
         SdlInit = std::make_unique<SDLInit>();
-    } catch (const std::exception& e) {
+    }
+    catch (const std::exception &e)
+    {
         std::cerr << "Exception during GraphicsFacade initialization: " << e.what() << std::endl;
     }
 }
 
-GraphicsFacade::~GraphicsFacade() {
-
-}
+GraphicsFacade::~GraphicsFacade() {}
 
 void GraphicsFacade::Init() {}
 
@@ -36,46 +39,58 @@ void GraphicsFacade::PollEvents(std::vector<Event>& events) {
     // implement features
 }
 
-void GraphicsFacade::CreateWindow(const std::string& title, int width, int height) {
-    const char* c_title = title.c_str();
-    if (!SdlWindow) {
+void GraphicsFacade::CreateWindow(const std::string &title, int width, int height)
+{
+    const char *c_title = title.c_str();
+    if (!SdlWindow)
+    {
         SdlWindow = std::make_unique<SDLWindow>(c_title, width, height);
     }
     SdlWindow->Create(c_title, width, height);
 }
 
-void GraphicsFacade::ClearScreen() {
-    if (SdlWindow) {
+void GraphicsFacade::ClearScreen()
+{
+    if (SdlWindow)
+    {
         SdlWindow->ClearScreen();
     }
 }
 
-void GraphicsFacade::CreateRenderer() {
-    if (SdlWindow) {
+void GraphicsFacade::CreateRenderer()
+{
+    if (SdlWindow)
+    {
         SdlWindow->CreateRenderer();
     }
 }
 
-void GraphicsFacade::PresentScreen() {
-    if (SdlWindow) {
+void GraphicsFacade::PresentScreen()
+{
+    if (SdlWindow)
+    {
         SdlWindow->PresentScreen();
     }
 }
 
-void GraphicsFacade::Delay(unsigned int ms) {
-    if (SdlWindow) {
+void GraphicsFacade::Delay(unsigned int ms)
+{
+    if (SdlWindow)
+    {
         SdlWindow->Delay(ms);
     }
 }
 
-void GraphicsFacade::DrawShape(Circle circle) {
+void GraphicsFacade::DrawShape(Circle circle)
+{
     auto renderer = SdlWindow->GetRenderer();
-    if(!renderer) {
+    if (!renderer)
+    {
         std::cerr << "Renderer is null" << std::endl;
         return;
     }
 
-    const Vector2D& pos = circle.GetPosition();
+    const Vector2D &pos = circle.GetPosition();
     int x = static_cast<int>(pos.x);
     int y = static_cast<int>(pos.y);
     int rad = static_cast<int>(circle.GetRadius());
@@ -86,14 +101,16 @@ void GraphicsFacade::DrawShape(Circle circle) {
     ResetColor();
 }
 
-void GraphicsFacade::DrawShape(Rectangle rectangle){
+void GraphicsFacade::DrawShape(Rectangle rectangle)
+{
     auto renderer = SdlWindow->GetRenderer();
-    if(!renderer) {
+    if (!renderer)
+    {
         std::cerr << "Renderer is null" << std::endl;
         return;
     }
 
-    const Vector2D& pos = rectangle.GetPosition();
+    const Vector2D &pos = rectangle.GetPosition();
 
     SDLRect rect(static_cast<int>(pos.x), static_cast<int>(pos.y), rectangle.GetWidth(),
                  rectangle.GetHeight(), static_cast<int>(rectangle.GetRotation()));
@@ -104,17 +121,19 @@ void GraphicsFacade::DrawShape(Rectangle rectangle){
     ResetColor();
 }
 
-void GraphicsFacade::DrawShape(Triangle triangle) {
+void GraphicsFacade::DrawShape(Triangle triangle)
+{
     auto renderer = SdlWindow->GetRenderer();
-    if(!renderer) {
+    if (!renderer)
+    {
         std::cerr << "Renderer is null" << std::endl;
         return;
     }
 
     // Retrieve the vertices of the Triangle
-    const Vector2D& v1 = triangle.GetVertex1();
-    const Vector2D& v2 = triangle.GetVertex2();
-    const Vector2D& v3 = triangle.GetVertex3();
+    const Vector2D &v1 = triangle.GetVertex1();
+    const Vector2D &v2 = triangle.GetVertex2();
+    const Vector2D &v3 = triangle.GetVertex3();
 
     // Convert the vertices to the format expected by SDLTriangle
     auto x1 = static_cast<Sint16>(v1.x);
@@ -146,9 +165,10 @@ void GraphicsFacade::DrawShape(Triangle triangle) {
 void GraphicsFacade::DrawLine(Line line)
 {
     auto renderer = SdlWindow->GetRenderer();
-    if(!renderer) {
-            std::cerr << "Renderer is null" << std::endl;
-            return;
+    if (!renderer)
+    {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
     }
 
     // Apply rotation
@@ -168,15 +188,18 @@ void GraphicsFacade::DrawLine(Line line)
     ResetColor();
 }
 
-void GraphicsFacade::DrawLines(std::vector<Line> lines) {
+void GraphicsFacade::DrawLines(std::vector<Line> lines)
+{
     auto renderer = SdlWindow->GetRenderer();
-    if(!renderer) {
-            std::cerr << "Renderer is null" << std::endl;
-            return;
+    if (!renderer)
+    {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
     }
 
     auto sdlLines = std::vector<SDL_Point>();
-    for(auto& line : lines) {
+    for (auto &line : lines)
+    {
         // Apply rotation
         auto rotation = line.GetRotation();
         auto x1 = static_cast<Sint16>(line.start.x * cos(rotation) - line.start.y * sin(rotation));
@@ -193,11 +216,13 @@ void GraphicsFacade::DrawLines(std::vector<Line> lines) {
     ResetColor();
 }
 
-void GraphicsFacade::ResetColor() {
+void GraphicsFacade::ResetColor()
+{
     auto renderer = SdlWindow->GetRenderer();
-    if(!renderer) {
-            std::cerr << "Renderer is null" << std::endl;
-            return;
+    if (!renderer)
+    {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
     }
 
     // Reset the color for filling
@@ -206,11 +231,13 @@ void GraphicsFacade::ResetColor() {
     SDL_SetRenderDrawColor(renderer, colors.r, colors.g, colors.b, colors.a);
 }
 
-void GraphicsFacade::SetColor(Color color) {
+void GraphicsFacade::SetColor(Color color)
+{
     auto renderer = SdlWindow->GetRenderer();
-    if(!renderer) {
-            std::cerr << "Renderer is null" << std::endl;
-            return;
+    if (!renderer)
+    {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
     }
 
     auto colors = SDLColorUtility::GetSDLColor(color);
@@ -218,56 +245,206 @@ void GraphicsFacade::SetColor(Color color) {
 }
 
 // TODO: Implement font manager?
-void GraphicsFacade::DrawText(const Text& text) {
-        auto renderer = SdlWindow->GetRenderer();
-        if(!renderer) {
-                std::cerr << "Renderer is null" << std::endl;
-                return;
-        }
+void GraphicsFacade::DrawText(const Text &text)
+{
+    auto renderer = SdlWindow->GetRenderer();
+    if (!renderer)
+    {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
+    }
 
-        // Load the font
-        auto fontPath = CoreConstants::Text::DEFAULT_FONT_PATH;
+    // Load the font
+    auto fontPath = CoreConstants::Text::DEFAULT_FONT_PATH;
 
-        auto sdlFont = TTF_OpenFont(fontPath.c_str(), text.GetFontSize());
-        if (!sdlFont) {
-                std::cerr << "Failed to load font: " << TTF_GetError() << std::endl;
-                return;
-        }
+    auto sdlFont = TTF_OpenFont(fontPath.c_str(), text.GetFontSize());
+    if (!sdlFont)
+    {
+        std::cerr << "Failed to load font: " << TTF_GetError() << std::endl;
+        return;
+    }
 
-        // Create the text surface
-        auto sdlColor = SDLColorUtility::GetSDLColor(text.GetTextColor());
+    // Create the text surface
+    auto sdlColor = SDLColorUtility::GetSDLColor(text.GetTextColor());
 
-        // Note: For some odd reason wrap length works in pixels instead of characters
-        auto textSurface = TTF_RenderUTF8_Blended_Wrapped(sdlFont, text.GetText().c_str(),
-                                                          sdlColor, text.GetWidth());
-        if (!textSurface) {
-                std::cerr << "Failed to create text surface: " << TTF_GetError() << std::endl;
-                return;
-        }
+    // Note: For some odd reason wrap length works in pixels instead of characters
+    auto textSurface =
+        TTF_RenderUTF8_Blended_Wrapped(sdlFont, text.GetText().c_str(), sdlColor, text.GetWidth());
+    if (!textSurface)
+    {
+        std::cerr << "Failed to create text surface: " << TTF_GetError() << std::endl;
+        return;
+    }
 
-        // Limit height to text height if it's larger than the height
-        if(textSurface->h > text.GetHeight()) {
-            textSurface->h = text.GetHeight();
-        }
+    // Limit height to text height if it's larger than the height
+    if (textSurface->h > text.GetHeight())
+    {
+        textSurface->h = text.GetHeight();
+    }
 
-        // Create the text texture
-        auto textTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
-        if (!textTexture) {
-                std::cerr << "Failed to create text texture: " << SDL_GetError() << std::endl;
-                return;
-        }
+    // Create the text texture
+    auto textTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
+    if (!textTexture)
+    {
+        std::cerr << "Failed to create text texture: " << SDL_GetError() << std::endl;
+        return;
+    }
 
-        // Create the text rectangle
-        auto position = text.GetTransform().position;
-        auto textRect = SDL_Rect{static_cast<int>(position.x), static_cast<int>(position.y), textSurface->w, textSurface->h};
+    // Create the text rectangle
+    auto position = text.GetTransform().position;
+    auto textRect = SDL_Rect{static_cast<int>(position.x), static_cast<int>(position.y),
+                             textSurface->w, textSurface->h};
 
-        // Render the text
-        SDL_RenderCopyEx(renderer, textTexture, nullptr, &textRect, text.GetTransform().rotation, nullptr, SDL_FLIP_NONE);
+    // Render the text
+    SDL_RenderCopyEx(renderer, textTexture, nullptr, &textRect, text.GetTransform().rotation,
+                     nullptr, SDL_FLIP_NONE);
 
-        // Free the text surface and texture
-        SDL_FreeSurface(textSurface);
-        SDL_DestroyTexture(textTexture);
+    // Free the text surface and texture
+    SDL_FreeSurface(textSurface);
+    SDL_DestroyTexture(textTexture);
 
-        // Close the font
-        TTF_CloseFont(sdlFont);
+    // Close the font
+    TTF_CloseFont(sdlFont);
+}
+
+void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle &rectangle)
+{
+    // Check if the texture has already been created and cached
+    SDL_Texture *sdlTexture = GetCachedSDLTexture(texture);
+
+    if (!sdlTexture)
+    {
+        // If not cached, create it and cache it
+        sdlTexture = CreateSDLTextureFromTexture(texture);
+        CacheSDLTexture(texture, sdlTexture);
+    }
+    // Proceed to draw the sprite using sdlTexture
+    RenderSDLTexture(sdlTexture, rectangle);
+}
+
+void GraphicsFacade::RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle)
+{
+    if (!sdlTexture)
+    {
+        std::cerr << "SDL_Texture is null" << std::endl;
+        return;
+    }
+
+    SDL_Renderer *renderer = SdlWindow->GetRenderer();
+    if (!renderer)
+    {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
+    }
+
+    // Extract position and size from the Rectangle object
+    const Vector2D &pos = rectangle.GetPosition();
+    int width = rectangle.GetWidth();
+    int height = rectangle.GetHeight();
+
+    // Define the SDL_Rect for rendering
+    SDL_Rect sdlRect;
+    sdlRect.x = static_cast<int>(pos.x);
+    sdlRect.y = static_cast<int>(pos.y);
+    sdlRect.w = width;
+    sdlRect.h = height;
+
+    // Render the texture to the screen
+    if (SDL_RenderCopy(renderer, sdlTexture, NULL, &sdlRect) != 0)
+    {
+        std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
+    }
+}
+
+SDL_Texture *GraphicsFacade::GetCachedSDLTexture(const Texture &texture)
+{
+    auto it = textureCache.find(texture.getFilePath());
+    if (it != textureCache.end())
+    {
+        return it->second;
+    }
+    return nullptr;
+}
+
+SDL_Texture *GraphicsFacade::CreateSDLTextureFromTexture(const Texture &texture)
+{
+    auto renderer = SdlWindow->GetRenderer();
+    if (!renderer)
+    {
+        std::cerr << "Renderer is null" << std::endl;
+        return nullptr;
+    }
+    SDL_Surface *surface = IMG_Load(texture.getFilePath().c_str());
+    if (!surface)
+    {
+        // Handle error
+        return nullptr;
+    }
+
+    SDL_Texture *sdlTexture = SDL_CreateTextureFromSurface(renderer, surface);
+    SDL_FreeSurface(surface);
+
+    if (!sdlTexture)
+    {
+        std::cerr << "SDLTexture error" << std::endl;
+        return nullptr;
+    }
+
+    return sdlTexture;
+}
+
+void GraphicsFacade::CacheSDLTexture(const Texture &texture, SDL_Texture *sdlTexture)
+{
+    textureCache[texture.getFilePath()] = sdlTexture;
+}
+
+Size GraphicsFacade::GetSpriteSize(const std::string &filePath)
+{
+    SDL_Surface *surface = IMG_Load(filePath.c_str());
+    if (!surface)
+    {
+        std::cerr << "Unable to load image: " << filePath << std::endl;
+        return Size{0, 0}; // Return an empty size if the image fails to load
+    }
+
+    Size size = {surface->w, surface->h};
+    SDL_FreeSurface(surface);
+    return size;
+}
+
+void GraphicsFacade::DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect,
+                                          int frameIndex, int totalColumns, int totalRows)
+{
+    SDL_Texture *sdlTexture = GetCachedSDLTexture(texture);
+    if (!sdlTexture)
+    {
+        sdlTexture = CreateSDLTextureFromTexture(texture);
+        CacheSDLTexture(texture, sdlTexture);
+    }
+
+    if (!sdlTexture)
+    {
+        std::cerr << "SDL_Texture is null for sprite sheet frame" << std::endl;
+        return;
+    }
+
+    // Calculate the source rectangle for the current frame
+    int frameWidth, frameHeight;
+    SDL_QueryTexture(sdlTexture, NULL, NULL, &frameWidth, &frameHeight);
+    frameWidth /= totalColumns;
+    frameHeight /= totalRows;
+
+    SDL_Rect srcRect;
+    srcRect.x = (frameIndex % totalColumns) * frameWidth;
+    srcRect.y = (frameIndex / totalColumns) * frameHeight;
+    srcRect.w = frameWidth;
+    srcRect.h = frameHeight;
+
+    // Define the destination SDL_Rect for rendering
+    SDL_Rect sdlDstRect = {static_cast<int>(dstRect.GetPosition().x),
+                           static_cast<int>(dstRect.GetPosition().y), dstRect.GetWidth(),
+                           dstRect.GetHeight()};
+
+    // Render the frame
+    SDL_RenderCopy(SdlWindow->GetRenderer(), sdlTexture, &srcRect, &sdlDstRect);
 }
