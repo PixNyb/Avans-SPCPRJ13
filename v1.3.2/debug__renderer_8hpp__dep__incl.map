@@ -1,0 +1,10 @@
+<map id="include/facades/box2d/debug_renderer.hpp" name="include/facades/box2d/debug_renderer.hpp">
+<area shape="rect" id="node1" title="This file contains the debugrendere class defenition." alt="" coords="430,5,598,47"/>
+<area shape="rect" id="node2" href="$physics__facade_8hpp.html" title="This file contains the PhysicsFacade class definition." alt="" coords="323,95,500,136"/>
+<area shape="rect" id="node8" href="$debug__renderer_8cpp.html" title="This file contains the debugrendere class implementation." alt="" coords="525,95,709,136"/>
+<area shape="rect" id="node3" href="$physics__manager_8hpp.html" title="This file contains the PhysicsManager class definition." alt="" coords="318,184,505,225"/>
+<area shape="rect" id="node4" href="$game__object_8cpp.html" title="This file contains the GameObject class implementation." alt="" coords="5,281,185,307"/>
+<area shape="rect" id="node5" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="210,281,407,307"/>
+<area shape="rect" id="node6" href="$physics__manager_8cpp.html" title="This file contains the PhysicsManager class implementation." alt="" coords="432,273,599,315"/>
+<area shape="rect" id="node7" href="$physics__test_8cpp.html" title="This file tests the general working of the PhysicsManager/PhysicsFacade." alt="" coords="623,281,789,307"/>
+</map>
