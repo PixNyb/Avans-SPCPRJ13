@@ -62,6 +62,7 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject)
     // add the angle and insert the gameobject-body pair into the bodies list
     bodyDef.angle = static_cast<float>(transform.rotation);
     auto body = world->CreateBody(&bodyDef);
+    body->SetGravityScale(rigidbody->GetGravityScale());
     bodies.insert(std::pair<std::shared_ptr<GameObject>, b2Body *>(gameObject, body));
 }
 
