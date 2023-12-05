@@ -1,0 +1,4 @@
+<map id="Polygon" name="Polygon">
+<area shape="rect" id="node1" title="Represents a polygon and extends the Geometry class." alt="" coords="11,80,86,107"/>
+<area shape="rect" id="node2" href="$classGeometry.html" title="Abstract base class for geometric shapes." alt="" coords="5,5,92,32"/>
+</map>
