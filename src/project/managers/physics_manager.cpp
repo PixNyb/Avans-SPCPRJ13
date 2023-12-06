@@ -71,3 +71,7 @@ void PhysicsManager::UpdateVelocity(const std::shared_ptr<GameObject> &gameObjec
 {
     physicsFacade.UpdateVelocity(gameObject, vX, vY);
 }
+Point PhysicsManager::GetVelocity(const std::shared_ptr<GameObject> &gameObject)
+{
+    return physicsFacade.GetVelocity(gameObject);
+}
