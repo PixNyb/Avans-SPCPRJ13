@@ -42,6 +42,10 @@ list(REMOVE_DUPLICATES HEADER_DIRS)
 # Add executable
 add_library(DeFunBobEngine ${SOURCES})
 
+if(MSVC)
+ target_compile_options(DeFunBobEngine PRIVATE "/MP")
+endif()
+
 # If the option is set to true or we're running a debug build, generate coverage
 if(GENERATE_COVERAGE OR BUILD_CICD OR CMAKE_BUILD_TYPE STREQUAL "Debug")
     if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
