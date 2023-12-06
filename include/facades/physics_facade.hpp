@@ -152,6 +152,13 @@ class PhysicsFacade
      * @brief Deletes the bodies that have the hasPhysics flag set to false
      */
     void DeleteBodies();
+
+    /**
+     * Gets the velocity of the given object
+     * @param gameObject
+     * @return Point
+     */
+    Point GetVelocity(const std::shared_ptr<GameObject> &gameObject);
 };
 
 #endif // AVANS_SPCPRJ13_PHYSICS_FACADE_HPP
