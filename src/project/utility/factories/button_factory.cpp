@@ -11,15 +11,17 @@
 
 #include "button_factory.hpp"
 
-std::shared_ptr<UIObject> ButtonFactory::CreateButton(const std::shared_ptr<IInputFacade>& inputFacade, const float width, const float height,
-                                                      const std::string &buttonText)
+std::shared_ptr<UIObject>
+ButtonFactory::CreateButton(const std::shared_ptr<IInputFacade> &inputFacade, const float width,
+                            const float height, const int fontSize, const std::string &buttonText)
 {
     std::shared_ptr<Button> button = std::make_shared<Button>();
     button->SetWidth(width);
     button->SetHeight(height);
     button->SetTag(buttonText);
 
-    auto text = std::make_shared<Text>("start button", "start button", 1, 80, 80);
+    auto text = std::make_shared<Text>(buttonText, buttonText, 1, width, height);
+    text->SetFontSize(fontSize);
     text->SetText(buttonText);
     text->SetParent(button);
 

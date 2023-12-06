@@ -231,8 +231,17 @@ class SDLInputFacade : public IInputFacade
      */
     bool GetActionUp(const std::string &action) const override;
 
-    void AddButtonClickListener(const std::shared_ptr<ButtonClickListener> &buttonClickListener) override;
+    /**
+     * @brief Add a button click listener to the input system.
+     * @param buttonClickListener The button click listener to add.
+     */
+    void AddButtonClickListener(
+        const std::shared_ptr<ButtonClickListener> &buttonClickListener) override;
 
+    /**
+     * @brief Get the button click listeners currently registered with the input system.
+     * @return The button click listeners currently registered with the input system.
+     */
     std::vector<ButtonClickListener> GetButtonClickListeners() const override;
 
   private:
@@ -241,7 +250,8 @@ class SDLInputFacade : public IInputFacade
         keyActionMap; ///< The keybindings on the keyboard.
     std::unordered_map<std::string, std::vector<MouseButton>> mouseActionMap; ///< The keybindings
                                                                               ///< on the mouse.
-    std::vector<ButtonClickListener> buttonClickListeners;
+    std::vector<ButtonClickListener>
+        buttonClickListeners; ///< The button click listeners registered.
 };
 
 #endif // INPUT_FACADE_HPP_
