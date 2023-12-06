@@ -115,6 +115,13 @@ class PhysicsManager
      * @param vY velocity on the y-axis
      */
     void UpdateVelocity(const std::shared_ptr<GameObject> &gameObject, double vX, double vY);
+
+    /**
+     * Gets the velocity of the given gameobject
+     * @param gameObject
+     * @return Point
+     */
+    Point GetVelocity(const std::shared_ptr<GameObject> &gameObject);
 };
 
 #endif // DEFUNBOBENGINE_PHYSICS_MANAGER_HPP
