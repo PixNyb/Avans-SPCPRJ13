@@ -14,6 +14,7 @@
 #include "point.hpp"
 #include <string>
 #include <vector>
+#include "button_click_listener.hpp"
 
 /**
  * @brief An enumeration describing the different keyboard keycodes.
@@ -497,6 +498,10 @@ class IInputFacade
      * @return True if the action has just stopped, false otherwise.
      */
     virtual bool GetActionUp(const std::string &action) const = 0;
+
+    virtual void AddButtonClickListener(const std::shared_ptr<ButtonClickListener> &buttonClickListener) = 0;
+
+    virtual std::vector<ButtonClickListener> GetButtonClickListeners() const = 0;
 };
 
 #endif // DEFUNBOBENGINE_INCLUDE_FACADES_I_INPUT_FACADE_HPP
