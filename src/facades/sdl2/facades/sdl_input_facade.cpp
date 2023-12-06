@@ -18,11 +18,14 @@
 
 SDLInputFacade::SDLInputFacade() : input(std::make_unique<SDLInput>()) {}
 
-void SDLInputFacade::Update() {
+void SDLInputFacade::Update()
+{
     input->Update();
 
-    if(input->IsAnyMouseButtonDown()) {
-        for (auto& buttonClickListener : buttonClickListeners) {
+    if (input->IsAnyMouseButtonDown())
+    {
+        for (auto &buttonClickListener : buttonClickListeners)
+        {
             buttonClickListener.SetMousePosition(this->GetMousePosition());
             buttonClickListener.OnMouseClicked();
         }
@@ -296,11 +299,13 @@ bool SDLInputFacade::GetActionUp(const std::string &action) const
     return false;
 }
 
-void SDLInputFacade::AddButtonClickListener(const std::shared_ptr<ButtonClickListener> &buttonClickListener)
+void SDLInputFacade::AddButtonClickListener(
+    const std::shared_ptr<ButtonClickListener> &buttonClickListener)
 {
     buttonClickListeners.push_back(*buttonClickListener);
 }
 
-std::vector<ButtonClickListener> SDLInputFacade::GetButtonClickListeners() const {
+std::vector<ButtonClickListener> SDLInputFacade::GetButtonClickListeners() const
+{
     return buttonClickListeners;
 }

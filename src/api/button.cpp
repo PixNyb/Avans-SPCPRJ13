@@ -9,18 +9,13 @@
  *
  */
 
-
 #include "button.hpp"
-#include "color.hpp"
-#include "iostream"
 
 Button::Button() : interactable(true), onClick(nullptr)
 {
     // Default constructor initialization
 }
-void Button::Click() {
-    std::cout << "Reached button" << std::endl;
-}
+void Button::Click() {}
 
 Button::Button(const std::string &name, const std::string &tag, int layer, float width,
                float height)
