@@ -12,6 +12,7 @@
 #ifndef INPUT_FACADE_HPP_
 #define INPUT_FACADE_HPP_
 
+#include "../listeners/button_click_listener.hpp"
 #include "i_input_facade.hpp"
 #include "point.hpp"
 #include "sdl_input.hpp"
@@ -230,12 +231,17 @@ class SDLInputFacade : public IInputFacade
      */
     bool GetActionUp(const std::string &action) const override;
 
+    void AddButtonClickListener(const std::shared_ptr<ButtonClickListener> &buttonClickListener) override;
+
+    std::vector<ButtonClickListener> GetButtonClickListeners() const override;
+
   private:
     std::unique_ptr<SDLInput> input; ///< The SDLInput instance.
     std::unordered_map<std::string, std::vector<KeyCode>>
         keyActionMap; ///< The keybindings on the keyboard.
     std::unordered_map<std::string, std::vector<MouseButton>> mouseActionMap; ///< The keybindings
                                                                               ///< on the mouse.
+    std::vector<ButtonClickListener> buttonClickListeners;
 };
 
 #endif // INPUT_FACADE_HPP_
