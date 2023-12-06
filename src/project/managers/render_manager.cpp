@@ -155,7 +155,9 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
             Texture spriteTexture(spriteComponent->GetSprite());
 
             // Draw the sprite
-            gfx.DrawSprite(spriteTexture, spriteRect);
+            gfx.DrawSprite(spriteTexture, spriteRect,
+                           gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedX(),
+                           gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY());
         }
     }
 

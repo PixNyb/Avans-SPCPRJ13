@@ -35,7 +35,8 @@ GraphicsFacade::~GraphicsFacade() {}
 
 void GraphicsFacade::Init() {}
 
-void GraphicsFacade::PollEvents(std::vector<Event>& events) {
+void GraphicsFacade::PollEvents(std::vector<Event> &events)
+{
     // implement features
 }
 
@@ -307,7 +308,8 @@ void GraphicsFacade::DrawText(const Text &text)
     TTF_CloseFont(sdlFont);
 }
 
-void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle &rectangle)
+void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX,
+                                bool flipY)
 {
     // Check if the texture has already been created and cached
     SDL_Texture *sdlTexture = GetCachedSDLTexture(texture);
@@ -319,10 +321,11 @@ void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle &rectangle)
         CacheSDLTexture(texture, sdlTexture);
     }
     // Proceed to draw the sprite using sdlTexture
-    RenderSDLTexture(sdlTexture, rectangle);
+    RenderSDLTexture(sdlTexture, rectangle, flipX, flipY);
 }
 
-void GraphicsFacade::RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle)
+void GraphicsFacade::RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle, bool flipX,
+                                      bool flipY)
 {
     if (!sdlTexture)
     {
@@ -349,11 +352,38 @@ void GraphicsFacade::RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectang
     sdlRect.w = width;
     sdlRect.h = height;
 
-    // Render the texture to the screen
-    if (SDL_RenderCopy(renderer, sdlTexture, NULL, &sdlRect) != 0)
+    if (flipX && flipY)
     {
-        std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
+        if (SDL_RenderCopyEx(
+                renderer, sdlTexture, NULL, &sdlRect, 0, NULL,
+                static_cast<const SDL_RendererFlip>(SDL_FLIP_HORIZONTAL | SDL_FLIP_VERTICAL)) != 0)
+        {
+            std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
+        }
     }
+    else if (flipX && !flipY)
+    {
+        if (SDL_RenderCopyEx(renderer, sdlTexture, NULL, &sdlRect, 0, NULL, SDL_FLIP_HORIZONTAL) !=
+            0)
+        {
+            std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
+        }
+    }
+    else if (!flipX && flipY)
+    {
+        if (SDL_RenderCopyEx(renderer, sdlTexture, NULL, &sdlRect, 0, NULL, SDL_FLIP_VERTICAL) != 0)
+        {
+            std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
+        }
+    }
+    else
+    {
+        if (SDL_RenderCopy(renderer, sdlTexture, NULL, &sdlRect) != 0)
+        {
+            std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
+        }
+    }
+    // Render the texture to the screen
 }
 
 SDL_Texture *GraphicsFacade::GetCachedSDLTexture(const Texture &texture)

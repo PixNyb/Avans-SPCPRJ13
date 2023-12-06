@@ -27,3 +27,9 @@ std::shared_ptr<Component> Sprite::Clone(std::weak_ptr<GameObject> parent)
 {
     return std::make_shared<Sprite>(*this);
 }
+
+void Sprite::FlipSprite(bool flipX, bool flipY)
+{
+    this->flipX = flipX;
+    this->flipY = flipY;
+}
