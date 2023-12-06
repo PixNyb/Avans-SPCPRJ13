@@ -26,8 +26,9 @@ LevelManager::~LevelManager() = default;
 
 void LevelManager::RegisterLevel(int id, std::string filePath)
 {
+    auto path = std::filesystem::absolute(filePath).string();
     // Check if file exists.
-    if (!std::filesystem::exists(filePath))
+    if (!std::filesystem::exists(path))
         throw std::runtime_error(fmt::format("No file was found at: '{}'", filePath));
 
     // Check for file extension.
