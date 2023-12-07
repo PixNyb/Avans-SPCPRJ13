@@ -10,7 +10,7 @@
 
 #include "prefab_manager.hpp"
 #include "game_object.hpp"
-#include <fmt/core.h>
+#include <fmt/format.h>
 #include <stdexcept>
 
 PrefabManager::PrefabManager() : prefabs() {}
