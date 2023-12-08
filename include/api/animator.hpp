@@ -56,9 +56,9 @@ class Animator : public BehaviourScript
      *
      * TODO: Finish this method.
      */
-    void Update();
-
-    void Stop();
+    //    void Update();
+    //
+    //    void Stop();
 
     /**
      * @brief Add a new state to the Animator.
@@ -69,7 +69,7 @@ class Animator : public BehaviourScript
      * @param name The name of the state.
      * @param state The state to add.
      */
-    [[gnu::used]] void AddState(const std::string &name, const AnimationState &state);
+    void AddState(const std::string &name, const AnimationState &state);
 
     /**
      * @brief Set the state of the Animator.
@@ -78,7 +78,7 @@ class Animator : public BehaviourScript
      *
      * @param name The name of the state to set.
      */
-    [[gnu::used]] void SetState(const std::string &name);
+    void SetState(const std::string &name);
 
     /**
      * @brief Update the Animator.
