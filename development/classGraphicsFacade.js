@@ -13,7 +13,7 @@ var classGraphicsFacade =
     [ "DrawShape", "classGraphicsFacade.html#a018fe9809bdec5c5c03acde18fafe564", null ],
     [ "DrawShape", "classGraphicsFacade.html#a834be76d398810e0dd13021b96841452", null ],
     [ "DrawShape", "classGraphicsFacade.html#a0585ad2292e8b3915f159ca339cd4969", null ],
-    [ "DrawSprite", "classGraphicsFacade.html#ac652bf52262e1eb2409c5981935f71c8", null ],
+    [ "DrawSprite", "classGraphicsFacade.html#a2c4de215fd535bf0965850340d3958a5", null ],
     [ "DrawSpriteSheetFrame", "classGraphicsFacade.html#af8665084361c88dc746c9d6269c64a3e", null ],
     [ "DrawText", "classGraphicsFacade.html#af2bb8164381a0c846ecaed92c3aaf883", null ],
     [ "GetCachedSDLTexture", "classGraphicsFacade.html#ab6480cea9277054e94054b0540949ba8", null ],
@@ -21,5 +21,5 @@ var classGraphicsFacade =
     [ "Init", "classGraphicsFacade.html#af260a2dcf4af0ad2c29faeda41385c5d", null ],
     [ "PollEvents", "classGraphicsFacade.html#abda789469d7b66d9013f8352a93d3877", null ],
     [ "PresentScreen", "classGraphicsFacade.html#ab1361534af676ff41f136d5b4eb5d38e", null ],
-    [ "RenderSDLTexture", "classGraphicsFacade.html#a92b6af6189e5d795b0ba5d97b7bebc36", null ]
+    [ "RenderSDLTexture", "classGraphicsFacade.html#ade9606381fa0a6c46293a305125615c2", null ]
 ];

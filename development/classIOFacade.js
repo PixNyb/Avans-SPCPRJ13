@@ -12,7 +12,7 @@ var classIOFacade =
     [ "DrawShape", "classIOFacade.html#a5dd3aefb0d459a72fdaec975847825d1", null ],
     [ "DrawShape", "classIOFacade.html#a7364a4eedb4f3215b56e5282d81060e8", null ],
     [ "DrawShape", "classIOFacade.html#aa3ac1ab80cbb108af3fa91bad1ab1ee8", null ],
-    [ "DrawSprite", "classIOFacade.html#aa905ff5af826129763c7d88f03235965", null ],
+    [ "DrawSprite", "classIOFacade.html#a7b0714bc3d54287f5adb0224bbe5cdf8", null ],
     [ "DrawSpriteSheetFrame", "classIOFacade.html#aeac74fe69911f269c1d951bfaa7aeb19", null ],
     [ "DrawText", "classIOFacade.html#a6afaef37d6a54ca7f49de65f5d9f52d9", null ],
     [ "GetCachedSDLTexture", "classIOFacade.html#a641d75c0b6374ecaac2dd90b96792ced", null ],
@@ -20,5 +20,5 @@ var classIOFacade =
     [ "Init", "classIOFacade.html#a44010d0258f0ff1b2f71a1c39f7790d1", null ],
     [ "PollEvents", "classIOFacade.html#ae83138d361fe83705d6099eaa2bc6595", null ],
     [ "PresentScreen", "classIOFacade.html#a427010f0cd482f33f528c7731cb23f43", null ],
-    [ "RenderSDLTexture", "classIOFacade.html#a65a7b73e56a5d3be86c181c35d650a7e", null ]
+    [ "RenderSDLTexture", "classIOFacade.html#ad75527183423952b105c0ade397544bf", null ]
 ];

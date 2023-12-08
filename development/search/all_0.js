@@ -13,7 +13,7 @@ var searchData=
   ['animation_5fstate_2ecpp_10',['animation_state.cpp',['../animation__state_8cpp.html',1,'']]],
   ['animation_5fstate_2ehpp_11',['animation_state.hpp',['../animation__state_8hpp.html',1,'']]],
   ['animationstate_12',['AnimationState',['../classAnimationState.html',1,'AnimationState'],['../classAnimationState.html#ad60a349abff9f691c81d56a76cb32b8b',1,'AnimationState::AnimationState(int startFrameIndex, int endFrameIndex, float frameDuration)'],['../classAnimationState.html#a06e31ec743f5dc82f9ef3c30b3822dfd',1,'AnimationState::AnimationState()']]],
-  ['animator_13',['Animator',['../classAnimator.html#a4a5f9fc920aa245ee4d96a2ca8b8db41',1,'Animator::Animator(const Animator &amp;other)'],['../classAnimator.html#a701eeb9283612be2027425efb06bbff7',1,'Animator::Animator()'],['../classAnimator.html',1,'Animator']]],
+  ['animator_13',['Animator',['../classAnimator.html#a4a5f9fc920aa245ee4d96a2ca8b8db41',1,'Animator::Animator(const Animator &amp;other)'],['../classAnimator.html#af823805ed8ae2eeeb4ef829444e2914a',1,'Animator::Animator(int columns, int rows)'],['../classAnimator.html',1,'Animator']]],
   ['animator_2ecpp_14',['animator.cpp',['../animator_8cpp.html',1,'']]],
   ['animator_2ehpp_15',['animator.hpp',['../animator_8hpp.html',1,'']]],
   ['anyaction_16',['AnyAction',['../classIInputFacade.html#a8cf711a8a5b316bc3452e870b5f0acbd',1,'IInputFacade::AnyAction()'],['../classSDLInputFacade.html#a698c986b7e39d8b7d831ec25b902b9c5',1,'SDLInputFacade::AnyAction()']]],

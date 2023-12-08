@@ -144,6 +144,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d65be7f74f4fc989f45a7e4dc7e28d0"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classComponent.html">Component</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSprite.html#a0d65be7f74f4fc989f45a7e4dc7e28d0">Clone</a> (std::weak_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; parent) override</td></tr>
 <tr class="memdesc:a0d65be7f74f4fc989f45a7e4dc7e28d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a clone of the component.  <a href="classSprite.html#a0d65be7f74f4fc989f45a7e4dc7e28d0">More...</a><br /></td></tr>
 <tr class="separator:a0d65be7f74f4fc989f45a7e4dc7e28d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e695a2053a38a6b808e0eabc6165268"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSprite.html#a5e695a2053a38a6b808e0eabc6165268">FlipSprite</a> (bool flipX, bool flipY)</td></tr>
+<tr class="memdesc:a5e695a2053a38a6b808e0eabc6165268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flips the sprite.  <a href="classSprite.html#a5e695a2053a38a6b808e0eabc6165268">More...</a><br /></td></tr>
+<tr class="separator:a5e695a2053a38a6b808e0eabc6165268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a946848cd15c8638b8bcfcf3a090ddf4f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSprite.html#a946848cd15c8638b8bcfcf3a090ddf4f">IsFlippedX</a> ()</td></tr>
+<tr class="memdesc:a946848cd15c8638b8bcfcf3a090ddf4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets flipX.  <a href="classSprite.html#a946848cd15c8638b8bcfcf3a090ddf4f">More...</a><br /></td></tr>
+<tr class="separator:a946848cd15c8638b8bcfcf3a090ddf4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a731c57516207fdc187a8e2b772eff2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSprite.html#a8a731c57516207fdc187a8e2b772eff2">IsFlippedY</a> ()</td></tr>
+<tr class="memdesc:a8a731c57516207fdc187a8e2b772eff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets flipY.  <a href="classSprite.html#a8a731c57516207fdc187a8e2b772eff2">More...</a><br /></td></tr>
+<tr class="separator:a8a731c57516207fdc187a8e2b772eff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classBehaviourScript"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classBehaviourScript')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classBehaviourScript.html">BehaviourScript</a></td></tr>
 <tr class="memitem:a80bffa3fec52a1131a1fbdc11417540b inherit pub_methods_classBehaviourScript"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBehaviourScript.html#a80bffa3fec52a1131a1fbdc11417540b">OnStart</a> ()</td></tr>
 <tr class="memdesc:a80bffa3fec52a1131a1fbdc11417540b inherit pub_methods_classBehaviourScript"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes everything required for the behaviour script.  <a href="classBehaviourScript.html#a80bffa3fec52a1131a1fbdc11417540b">More...</a><br /></td></tr>
@@ -243,6 +252,43 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="a5e695a2053a38a6b808e0eabc6165268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e695a2053a38a6b808e0eabc6165268">&#9670;&nbsp;</a></span>FlipSprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sprite::FlipSprite </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flipX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flipY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flips the sprite. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flipX</td><td>horizontal </td></tr>
+    <tr><td class="paramname">flipY</td><td>vertical </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8b99661b9d774d737abb5f793d70626c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8b99661b9d774d737abb5f793d70626c">&#9670;&nbsp;</a></span>GetFrameHeight()</h2>
 
@@ -329,6 +375,62 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a946848cd15c8638b8bcfcf3a090ddf4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a946848cd15c8638b8bcfcf3a090ddf4f">&#9670;&nbsp;</a></span>IsFlippedX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Sprite::IsFlippedX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets flipX. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a id="a8a731c57516207fdc187a8e2b772eff2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a731c57516207fdc187a8e2b772eff2">&#9670;&nbsp;</a></span>IsFlippedY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Sprite::IsFlippedY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets flipY. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
 </div>
 </div>

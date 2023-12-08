@@ -8,6 +8,7 @@ var classPhysicsFacade =
     [ "DeleteBodies", "classPhysicsFacade.html#a4b793595f2457ccd069dcc96ea82c2e2", null ],
     [ "DestroyBody", "classPhysicsFacade.html#a0927dc4108916d399b1f2d2137b58850", null ],
     [ "GetBodyByObject", "classPhysicsFacade.html#a074951df937e15be2bd37a262f8c3c5f", null ],
+    [ "GetVelocity", "classPhysicsFacade.html#a9c283a383fae5d1d69e03787b8e787a7", null ],
     [ "MakeBody", "classPhysicsFacade.html#a947492ef0668e4d01de02986d7a13b31", null ],
     [ "PopulateWorld", "classPhysicsFacade.html#a4a8cf544a84dde1e9eceb5aba4209b43", null ],
     [ "ShowDebug", "classPhysicsFacade.html#af9bca83d7c28bf066790bdcfda189c54", null ],
