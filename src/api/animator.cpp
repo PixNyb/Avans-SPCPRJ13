@@ -22,12 +22,12 @@ Animator::Animator(const Animator &other) : BehaviourScript(other)
     this->states = other.states;
 }
 
-[[gnu::used]] void Animator::AddState(const std::string &name, const AnimationState &state)
+void Animator::AddState(const std::string &name, const AnimationState &state)
 {
     states[name] = state;
 }
 
-[[gnu::used]] void Animator::SetState(const std::string &name)
+void Animator::SetState(const std::string &name)
 {
     auto it = states.find(name);
     if (it != states.end())
