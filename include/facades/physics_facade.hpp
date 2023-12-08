@@ -154,7 +154,7 @@ class PhysicsFacade
     void DeleteBodies();
 
     /**
-     * Gets the velocity of the given object
+     * @brief Gets the velocity of the given object
      * @param gameObject
      * @return Point
      */
