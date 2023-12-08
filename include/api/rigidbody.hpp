@@ -58,7 +58,7 @@ class RigidBody : public Component
     void AddForce(const Point &forceDirection);
 
     /**
-     * Constructs a RigidBody
+     * @brief Constructs a RigidBody
      * @param mass is the mass the body has in kg's
      * @param gravityScale is the amount of times the gravity should be applied on this body
      * @param bodyType is the type of body defined in the BodyType enum
@@ -74,19 +74,19 @@ class RigidBody : public Component
     RigidBody(const RigidBody &other);
 
     /**
-     * Gets the mass of this body in kg's
+     * @brief Gets the mass of this body in kg's
      * @return double
      */
     double GetMass() const;
 
     /**
-     * Gets the gravityscale of this body
+     * @brief Gets the gravityscale of this body
      * @return double
      */
     double GetGravityScale() const;
 
     /**
-     * Gets the body type of this body
+     * @brief Gets the body type of this body
      * @return variant of enum BodyType
      */
     BodyType GetBodyType();
