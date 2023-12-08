@@ -11,25 +11,31 @@
 
 #include "button_click_listener.hpp"
 
-ButtonClickListener::ButtonClickListener(const std::shared_ptr<Button> &button)
-    : button(button), mousePos(0, 0)
+ButtonClickListener::ButtonClickListener(const Button &button)
+    : button(button), inputFacade(*Engine::GetInstance()->Get<IInputFacade>())
 {
 }
-
-void ButtonClickListener::SetMousePosition(const Point &mousePos) { this->mousePos = mousePos; }
 
 void ButtonClickListener::OnMouseMoved() {}
 
 void ButtonClickListener::OnMouseClicked()
 {
-    if (mousePos.x >= button->GetTransform().position.x &&
-        mousePos.x <= button->GetTransform().position.x + button->GetWidth() &&
-        mousePos.y >= button->GetTransform().position.y &&
-        mousePos.y <= button->GetTransform().position.y + button->GetHeight())
+    // TODO: Find a better way to do this
+    auto mousePos = Engine::GetInstance()->Get<IInputFacade>()->GetMousePosition();
+
+    if (mousePos.x >= button.GetTransform().position.x &&
+        mousePos.x <= button.GetTransform().position.x + button.GetWidth() &&
+        mousePos.y >= button.GetTransform().position.y &&
+        mousePos.y <= button.GetTransform().position.y + button.GetHeight())
     {
+        button.onClick();
     }
 }
 
 void ButtonClickListener::OnMousePressed() {}
 
 void ButtonClickListener::OnMouseReleased() {}
+
+void ButtonClickListener::Attach() { inputFacade.AddMouseListener(shared_from_this()); }
+
+void ButtonClickListener::Detach() { inputFacade.RemoveMouseListener(shared_from_this()); }

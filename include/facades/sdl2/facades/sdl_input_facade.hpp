@@ -237,14 +237,19 @@ class SDLInputFacade : public IInputFacade
      * @brief Add a button click listener to the input system.
      * @param buttonClickListener The button click listener to add.
      */
-    void AddButtonClickListener(
-        const std::shared_ptr<ButtonClickListener> &buttonClickListener) override;
+    void AddMouseListener(const std::weak_ptr<IMouseListener> &mouseListener) override;
+
+    /**
+     * @brief Remove a button click listener from the input system.
+     * @param buttonClickListener The button click listener to remove.
+     */
+    void RemoveMouseListener(const std::weak_ptr<IMouseListener> &mouseListener) override;
 
     /**
      * @brief Get the button click listeners currently registered with the input system.
      * @return The button click listeners currently registered with the input system.
      */
-    std::vector<ButtonClickListener> GetButtonClickListeners() const override;
+    std::vector<std::weak_ptr<IMouseListener>> GetMouseListeners() const override;
 
   private:
     std::unique_ptr<SDLInput> input; ///< The SDLInput instance.
@@ -252,7 +257,7 @@ class SDLInputFacade : public IInputFacade
         keyActionMap; ///< The keybindings on the keyboard.
     std::unordered_map<std::string, std::vector<MouseButton>> mouseActionMap; ///< The keybindings
                                                                               ///< on the mouse.
-    std::vector<ButtonClickListener>
+    std::vector<std::weak_ptr<IMouseListener>>
         buttonClickListeners; ///< The button click listeners registered.
 };
 

@@ -35,9 +35,8 @@ class ButtonFactory
      * @param text Text to be displayed on the button.
      * @return Shared pointer to the created button UI element.
      */
-    static std::shared_ptr<UIObject> CreateButton(const std::shared_ptr<IInputFacade> &inputFacade,
-                                                  float width, float height, const int fontSize,
-                                                  const std::string &text);
+    static std::shared_ptr<Button> CreateButton(float width, float height, const int fontSize,
+                                                const std::string &text);
 };
 
 #endif // DEFUNBOBENGINE_BUTTON_FACTORY_HPP

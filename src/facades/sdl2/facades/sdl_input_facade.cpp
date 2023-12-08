@@ -19,10 +19,10 @@ void SDLInputFacade::Update()
 
     if (input->IsAnyMouseButtonDown())
     {
-        for (auto &buttonClickListener : buttonClickListeners)
+        for (auto &weakButtonClickListener : buttonClickListeners)
         {
-            buttonClickListener.SetMousePosition(this->GetMousePosition());
-            buttonClickListener.OnMouseClicked();
+            auto buttonClickListener = weakButtonClickListener.lock();
+            buttonClickListener->OnMouseClicked();
         }
     }
 }
@@ -35,7 +35,8 @@ bool SDLInputFacade::AnyKeyUp() const { return input->IsAnyKeyUp(); }
 
 Point SDLInputFacade::GetMousePosition() const
 {
-    return Point(input->GetMousePosition().x, input->GetMousePosition().y);
+    auto mousePos = input->GetMousePosition();
+    return {static_cast<double>(mousePos.x), static_cast<double>(mousePos.y)};
 }
 
 double SDLInputFacade::GetAxis() const { return 0.0; }
@@ -294,13 +295,24 @@ bool SDLInputFacade::GetActionUp(const std::string &action) const
     return false;
 }
 
-void SDLInputFacade::AddButtonClickListener(
-    const std::shared_ptr<ButtonClickListener> &buttonClickListener)
+void SDLInputFacade::AddMouseListener(const std::weak_ptr<IMouseListener> &mouseListener)
 {
-    buttonClickListeners.push_back(*buttonClickListener);
+    buttonClickListeners.push_back(mouseListener);
 }
 
-std::vector<ButtonClickListener> SDLInputFacade::GetButtonClickListeners() const
+void SDLInputFacade::RemoveMouseListener(const std::weak_ptr<IMouseListener> &mouseListener)
+{
+    for (auto it = buttonClickListeners.begin(); it != buttonClickListeners.end(); ++it)
+        if (it->lock().get() == mouseListener.lock().get())
+        {
+            buttonClickListeners.erase(it);
+            return;
+        }
+
+    throw std::runtime_error("Button click listener not registered");
+}
+
+std::vector<std::weak_ptr<IMouseListener>> SDLInputFacade::GetMouseListeners() const
 {
     return buttonClickListeners;
 }

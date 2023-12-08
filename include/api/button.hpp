@@ -21,7 +21,10 @@
 
 #include "ui_object.hpp"
 #include <functional>
+#include <iostream>
 #include <utility>
+
+class ButtonClickListener;
 
 /**
  * @class Button
@@ -44,6 +47,11 @@ class Button : public UIObject
     void Click();
 
     /**
+     * @brief Button destructor.
+     */
+    ~Button() override;
+
+    /**
      * @brief Register the onClick handler to be used when the button is clicked.
      * @param callback The function to register, usually a lambda. But this can be
      * @deprecated Other listeners should be used instead of this function
@@ -61,6 +69,13 @@ class Button : public UIObject
      * @deprecated Other listeners should be used instead of this function
      */
     std::function<void()> onClick;
+
+    /**
+     * @brief The listener for button clicks.
+     */
+    std::shared_ptr<ButtonClickListener> buttonClickListener;
+
+    friend class ButtonClickListener; ///< The button click listener is a friend class.
 };
 
 #endif // AVANS_SPCPRJ13_BUTTON_H

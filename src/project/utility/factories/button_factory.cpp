@@ -11,9 +11,9 @@
 
 #include "button_factory.hpp"
 
-std::shared_ptr<UIObject>
-ButtonFactory::CreateButton(const std::shared_ptr<IInputFacade> &inputFacade, const float width,
-                            const float height, const int fontSize, const std::string &buttonText)
+std::shared_ptr<Button> ButtonFactory::CreateButton(const float width, const float height,
+                                                    const int fontSize,
+                                                    const std::string &buttonText)
 {
     std::shared_ptr<Button> button = std::make_shared<Button>();
     button->SetWidth(width);
@@ -24,9 +24,6 @@ ButtonFactory::CreateButton(const std::shared_ptr<IInputFacade> &inputFacade, co
     text->SetFontSize(fontSize);
     text->SetText(buttonText);
     text->SetParent(button);
-
-    auto buttonClickListener = std::make_shared<ButtonClickListener>(button);
-    inputFacade->AddButtonClickListener(buttonClickListener);
 
     return button;
 }
