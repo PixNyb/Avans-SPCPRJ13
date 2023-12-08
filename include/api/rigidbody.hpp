@@ -91,15 +91,10 @@ class RigidBody : public Component
      */
     BodyType GetBodyType();
 
-    bool IsCollidable() { return isCollidable; }
-
-    void IsCollidable(bool isCollidable) { this->isCollidable = isCollidable; }
-
   private:
     double mass;         /**< The mass of the rigid body. */
     double gravityScale; /**< The scale at which gravity affects the rigid body. */
     BodyType bodyType;   /**< The type of the rigid body, determining its physics behavior. */
-    bool isCollidable;
 };
 
 #endif // AVANS_SPCPRJ13_RIGIDBODY_H
