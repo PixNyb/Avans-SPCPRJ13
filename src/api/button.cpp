@@ -10,16 +10,23 @@
  */
 
 #include "button.hpp"
+#include "button_click_listener.hpp"
 
-Button::Button() : interactable(true), onClick(nullptr)
+Button::Button()
+    : interactable(true), onClick(nullptr),
+      buttonClickListener(std::make_shared<ButtonClickListener>(*this))
 {
-    // Default constructor initialization
+    buttonClickListener->Attach();
 }
+
 void Button::Click() {}
 
 Button::Button(const std::string &name, const std::string &tag, int layer, float width,
                float height)
-    : UIObject(name, tag, layer, width, height), interactable(true), onClick(nullptr)
+    : UIObject(name, tag, layer, width, height), interactable(true), onClick(nullptr),
+      buttonClickListener(std::make_shared<ButtonClickListener>(*this))
 {
-    // Default constructor initialization
+    buttonClickListener->Attach();
 }
+
+Button::~Button() { buttonClickListener->Detach(); }

@@ -89,6 +89,12 @@ void GameObject::SetPhysicsManager(std::weak_ptr<PhysicsManager> physicsPointer)
 
 void GameObject::SetParent(std::shared_ptr<GameObject> newParent)
 {
+    if (newParent == nullptr)
+    {
+        parent = nullptr;
+        return;
+    }
+
     if (parent == newParent)
         return;
 
@@ -106,4 +112,10 @@ void GameObject::SetParent(std::shared_ptr<GameObject> newParent)
     // Add self to new parent
     if (parent != nullptr)
         parent->children.push_back(shared_from_this());
+}
+
+GameObject::~GameObject()
+{
+    for (auto &child : children)
+        child->SetParent(nullptr);
 }

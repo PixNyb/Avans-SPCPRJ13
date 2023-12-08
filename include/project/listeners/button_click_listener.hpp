@@ -13,6 +13,8 @@
 #define DEFUNBOBENGINE_BUTTON_CLICK_LISTENER_HPP
 
 #include "button.hpp"
+#include "engine.hpp"
+#include "i_input_facade.hpp"
 #include "imouse_listener.hpp"
 
 /**
@@ -22,24 +24,29 @@
  * The ButtonClickListener class is responsible for handling mouse events (such as clicks,
  * presses, releases, and movement) on a specific button.
  */
-class ButtonClickListener : public IMouseListener
+class ButtonClickListener : public IMouseListener,
+                            public std::enable_shared_from_this<ButtonClickListener>
 {
   private:
-    std::shared_ptr<Button> button; ///< The button being listened to.
-    Point mousePos;                 ///< The current mouse position.
+    const Button &button; ///< The button being listened to.
+    IInputFacade &inputFacade;
 
   public:
     /**
      * @brief Constructor for ButtonClickListener.
      * @param button A shared pointer to the button to listen to.
      */
-    ButtonClickListener(const std::shared_ptr<Button> &button);
+    explicit ButtonClickListener(const Button &button);
 
     /**
-     * @brief Set the current mouse position.
-     * @param mousePos The mouse position to set.
+     * @brief Called to attach the listener to the input manager.
      */
-    void SetMousePosition(const Point &mousePos);
+    void Attach();
+
+    /**
+     * @brief Called to detach the listener from the input manager.
+     */
+    void Detach();
 
     // IMouseListener interface implementations
     void OnMouseMoved() override;
