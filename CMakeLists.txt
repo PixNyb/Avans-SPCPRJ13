@@ -113,7 +113,12 @@ target_link_libraries(DeFunBobEngine PRIVATE nlohmann_json::nlohmann_json)
 
 # Add fmt
 find_package(fmt CONFIG REQUIRED)
-target_link_libraries(DeFunBobEngine PRIVATE fmt::fmt)
+if(APPLE)
+    target_link_libraries(DeFunBobEngine PRIVATE fmt::fmt-header-only)
+else()
+    target_link_libraries(DeFunBobEngine PRIVATE fmt::fmt)
+endif()
+
 
 # Add box2d
 find_package(box2d CONFIG REQUIRED)
