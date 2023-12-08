@@ -12,11 +12,13 @@
 #ifndef INPUT_FACADE_HPP_
 #define INPUT_FACADE_HPP_
 
-#include "../listeners/button_click_listener.hpp"
+#include "button_click_listener.hpp"
 #include "i_input_facade.hpp"
 #include "point.hpp"
 #include "sdl_input.hpp"
+#include <algorithm>
 #include <memory>
+#include <stdexcept>
 #include <string>
 #include <unordered_map>
 #include <vector>
