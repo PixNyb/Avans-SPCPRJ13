@@ -30,7 +30,7 @@ class Animator : public BehaviourScript
      *
      * Initializes a new Animator with default values.
      */
-    Animator();
+    Animator(int columns, int rows) : totalColumns(columns), totalRows(rows) {}
 
     /**
      * @brief Copy constructor for Animator.
@@ -56,11 +56,9 @@ class Animator : public BehaviourScript
      *
      * TODO: Finish this method.
      */
-    void Update();
-
-    // TODO: Finish these methods, and add methods for adding and removing states.
-    void Stop();
-    void Play(bool looping);
+    //    void Update();
+    //
+    //    void Stop();
 
     /**
      * @brief Add a new state to the Animator.
@@ -71,7 +69,7 @@ class Animator : public BehaviourScript
      * @param name The name of the state.
      * @param state The state to add.
      */
-    [[gnu::used]] void AddState(const std::string &name, const AnimationState &state);
+    void AddState(const std::string &name, const AnimationState &state);
 
     /**
      * @brief Set the state of the Animator.
@@ -80,7 +78,7 @@ class Animator : public BehaviourScript
      *
      * @param name The name of the state to set.
      */
-    [[gnu::used]] void SetState(const std::string &name);
+    void SetState(const std::string &name);
 
     /**
      * @brief Update the Animator.
@@ -94,18 +92,39 @@ class Animator : public BehaviourScript
      */
     int GetCurrentFrameIndex() const;
 
-  private:
     /**
-     * @brief The current state of the Animator.
-     *
+     * @brief Gets the total number of columns in the sprite sheet.
+     * This function returns the total number of columns in the sprite sheet.
+     * @return int The total number of columns in the sprite sheet.
      */
-    std::unique_ptr<AnimationState> currentState;
+    [[nodiscard]] int GetTotalColumns() const { return totalColumns; }
 
     /**
-     * @brief A map of possible states for the Animator.
-     *
+     * @brief Gets the total number of rows in the sprite sheet.
+     * This function returns the total number of rows in the sprite sheet.
+     * @return int The total number of rows in the sprite sheet.
      */
-    std::map<std::string, AnimationState> states;
+    [[nodiscard]] int GetTotalRows() const { return totalRows; }
+
+    /**
+     * @brief Sets the total number of columns in the sprite sheet.
+     * This function sets the total number of columns in the sprite sheet.
+     * @param totalColumns The total number of columns in the sprite sheet.
+     */
+    void SetTotalColumns(int totalColumns) { this->totalColumns = totalColumns; }
+
+    /**
+     * @brief Sets the total number of rows in the sprite sheet.
+     * This function sets the total number of rows in the sprite sheet.
+     * @param totalRows The total number of rows in the sprite sheet.
+     */
+    void SetTotalRows(int totalRows) { this->totalRows = totalRows; }
+
+  private:
+    std::unique_ptr<AnimationState> currentState; ///< The current state of the Animator.
+    std::map<std::string, AnimationState> states; ///< Map of animation states.
+    int totalColumns;                             ///< The total number of columns in the sprite
+    int totalRows;                                ///< The total number of rows in the sprite
 };
 
 #endif // AVANS_SPCPRJ13_ANIMATOR_H

@@ -83,6 +83,25 @@ class Sprite : public BehaviourScript
      * @return The cloned component.
      */
     std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
+
+    /**
+     * @brief Flips the sprite
+     * @param flipX horizontal
+     * @param flipY vertical
+     */
+    void FlipSprite(bool flipX, bool flipY);
+
+    /**
+     * @brief Gets flipX
+     * @return bool
+     */
+    bool IsFlippedX() { return flipX; }
+
+    /**
+     * @brief Gets flipY
+     * @return bool
+     */
+    bool IsFlippedY() { return flipY; }
 };
 
 #endif // AVANS_SPCPRJ13_SPRITE_H

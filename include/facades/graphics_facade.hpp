@@ -169,7 +169,7 @@ class GraphicsFacade : public IOFacade
      * This method creates a texture from an image file, which can then be used for rendering.
      * @param texture The texture to be created.
      */
-    void DrawSprite(const Texture &texture, Rectangle &rectangle) override;
+    void DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX, bool flipY) override;
 
     /**
      * @brief Creates an SDL_Texture from an image file.
@@ -178,7 +178,8 @@ class GraphicsFacade : public IOFacade
      * @param sdlTexture The SDL_Texture to be created.
      * @param rectangle The rectangle to render the texture in.
      */
-    void RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle) override;
+    void RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle, bool flipX,
+                          bool flipY) override;
 
     /**
      * @brief Gets the cached texture if it exists.

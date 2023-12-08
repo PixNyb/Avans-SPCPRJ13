@@ -121,11 +121,11 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
 
         // Adjust sprite size to match parent's dimensions (if parent has a collider)
         Size parentSize;
-        if (auto boxCollider = gameObject->GetParent()->GetComponent<BoxCollider>())
+        if (auto boxCollider = gameObject->GetComponent<BoxCollider>())
         {
             parentSize = Size(boxCollider->Width(), boxCollider->Height());
         }
-        else if (auto circleCollider = gameObject->GetParent()->GetComponent<CircleCollider>())
+        else if (auto circleCollider = gameObject->GetComponent<CircleCollider>())
         {
             double radius = circleCollider->Radius();
             parentSize = Size(radius * 2, radius * 2);
@@ -143,9 +143,10 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
         {
             // Handling sprite sheets with Animator
             int currentFrameIndex = animatorComponent->GetCurrentFrameIndex();
-            // TODO: get columns and rows from animator
-            int totalColumns = 8;
-            int totalRows = 3;
+
+            int totalColumns = animatorComponent->GetTotalColumns();
+            int totalRows = animatorComponent->GetTotalRows();
+
             gfx.DrawSpriteSheetFrame(spriteComponent->GetSprite(), spriteRect, currentFrameIndex,
                                      totalColumns, totalRows);
         }
@@ -155,7 +156,9 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
             Texture spriteTexture(spriteComponent->GetSprite());
 
             // Draw the sprite
-            gfx.DrawSprite(spriteTexture, spriteRect);
+            gfx.DrawSprite(spriteTexture, spriteRect,
+                           gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedX(),
+                           gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY());
         }
     }
 
@@ -166,7 +169,7 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
     }
 
     // Draw collider shapes
-    if (CoreConstants::Debug::EnableDebug && CoreConstants::Debug::DrawColliders)
+    if (CoreConstants::Debug::EnableDebug && CoreConstants::Debug::DrawColliders && !spriteComponent)
     {
         auto circleColliderShape = gameObject->GetComponent<CircleCollider>();
         if (circleColliderShape)
