@@ -1,0 +1,13 @@
+<map id="include/api/scene.hpp" name="include/api/scene.hpp">
+<area shape="rect" id="node1" title="Defines the Scene class for managing and rendering game scenes in the game engine...." alt="" coords="344,5,507,32"/>
+<area shape="rect" id="node2" href="$camera_8hpp.html" title="Defines the Camera class for managing camera views in a game engine. The Camera class handles the ren..." alt="" coords="239,80,337,107"/>
+<area shape="rect" id="node4" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="253,155,387,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="373,229,451,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="475,229,538,256"/>
+<area shape="rect" id="node11" title=" " alt="" coords="514,80,574,107"/>
+<area shape="rect" id="node3" href="$color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="147,155,229,181"/>
+<area shape="rect" id="node5" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="5,229,128,256"/>
+<area shape="rect" id="node6" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="152,229,267,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="291,229,349,256"/>
+<area shape="rect" id="node7" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="168,304,251,331"/>
+</map>

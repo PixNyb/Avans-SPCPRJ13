@@ -1,0 +1,6 @@
+<map id="include/project/managers/prefab_manager.hpp" name="include/project/managers/prefab_manager.hpp">
+<area shape="rect" id="node1" title="Manages prefabs." alt="" coords="113,5,299,47"/>
+<area shape="rect" id="node2" href="$level__factory_8hpp.html" title="Creates levels." alt="" coords="5,95,204,136"/>
+<area shape="rect" id="node4" href="$prefab__manager_8cpp.html" title="Implementation of the prefab manager." alt="" coords="228,95,387,136"/>
+<area shape="rect" id="node3" href="$level__factory_8cpp.html" title="Implementation of the level factory." alt="" coords="6,184,203,225"/>
+</map>

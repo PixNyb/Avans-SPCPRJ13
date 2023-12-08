@@ -1,0 +1,5 @@
+<map id="include/api/box_collider.hpp" name="include/api/box_collider.hpp">
+<area shape="rect" id="node1" title="Defines the BoxCollider class for representing rectangular collision areas. BoxCollider is a subclass..." alt="" coords="5,5,208,32"/>
+<area shape="rect" id="node2" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="58,80,155,107"/>
+<area shape="rect" id="node3" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="45,155,168,181"/>
+</map>
