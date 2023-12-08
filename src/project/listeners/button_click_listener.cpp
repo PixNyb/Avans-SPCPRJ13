@@ -10,7 +10,6 @@
  */
 
 #include "button_click_listener.hpp"
-#include "iostream"
 
 ButtonClickListener::ButtonClickListener(const std::shared_ptr<Button> &button)
     : button(button), mousePos(0, 0)
@@ -28,7 +27,6 @@ void ButtonClickListener::OnMouseClicked()
         mousePos.y >= button->GetTransform().position.y &&
         mousePos.y <= button->GetTransform().position.y + button->GetHeight())
     {
-        std::cout << "Button: " << button->GetTag() << " Pressed" << std::endl;
     }
 }
 

@@ -10,11 +10,6 @@
  */
 
 #include "sdl_input_facade.hpp"
-#include "point.hpp"
-#include "sdl_input.hpp"
-#include <algorithm>
-#include <memory>
-#include <stdexcept>
 
 SDLInputFacade::SDLInputFacade() : input(std::make_unique<SDLInput>()) {}
 
