@@ -186,7 +186,8 @@ class IOFacade
      *
      * @param texture A Texture object containing the properties of the texture.
      */
-    virtual void DrawSprite(const Texture &texture, Rectangle &rectangle) = 0;
+    virtual void DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX,
+                            bool flipY) = 0;
 
     /**
      * @brief Renders an SDL_Texture on the rendering target.
@@ -198,7 +199,8 @@ class IOFacade
      * @param sdlTexture An SDL_Texture object containing the properties of the texture.
      * @param rectangle The rectangle to render the texture in.
      */
-    virtual void RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle) = 0;
+    virtual void RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle, bool flipX,
+                                  bool flipY) = 0;
 
     /**
      * @brief Gets the cached SDL_Texture for a Texture object.

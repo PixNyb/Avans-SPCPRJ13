@@ -128,8 +128,11 @@ void PhysicsFacade::Step()
     double delta = std::clamp(Time::GetDeltaTime(), 0.0001, 2.0);
     double time = delta * Time::TimeScale() * 100 * (TimeStep);
     // run physics world
-    world->Step(static_cast<float>(time), VelocityIterations, PositionIterations);
     // check if a new world has been requested
+
+    // if not delete all the bodies that have been flagged for delete
+    DeleteBodies();
+    world->Step(static_cast<float>(time), VelocityIterations, PositionIterations);
     if (!newObjects.empty())
     {
         // if so, clear the bodies from the map and set them again with the new objects
@@ -139,12 +142,6 @@ void PhysicsFacade::Step()
         PopulateWorld(newObjects);
         newObjects.clear();
     }
-    else
-    {
-        // if not delete all the bodies that have been flagged for delete
-        DeleteBodies();
-    }
-
     // update all gameobjects
     for (auto object_pair = bodies.begin(); object_pair != bodies.end(); ++object_pair)
     {
@@ -220,7 +217,6 @@ void PhysicsFacade::AddForce(const std::shared_ptr<GameObject> &gameObject, floa
     float newVY = vy * 100;
     if (b2Body *body = GetBodyByObject(gameObject))
     {
-        body->SetLinearVelocity(b2Vec2(0, 0));
         body->ApplyForce(b2Vec2(newVX, newVY), body->GetWorldCenter(), true);
     }
 }
@@ -231,7 +227,6 @@ void PhysicsFacade::AddLinearImpulse(const std::shared_ptr<GameObject> &gameObje
     float newVX = vx;
     float newVY = vy;
     b2Body *body = GetBodyByObject(gameObject);
-    body->SetLinearVelocity(b2Vec2(0, 0));
     body->ApplyLinearImpulse(b2Vec2(newVX, newVY), body->GetWorldCenter(), true);
 }
 
@@ -277,12 +272,22 @@ void PhysicsFacade::DeleteBodies()
     for (auto i = bodies.begin(); i != bodies.end(); i++)
     {
         if (!i->first->HasPhysics())
+        {
             delBodies.push_back(i->first);
+            world->DestroyBody(i->second);
+        }
     }
     for (auto &object : delBodies)
     {
         bodies.erase(object);
     }
+}
+
+Point PhysicsFacade::GetVelocity(const std::shared_ptr<GameObject> &gameObject)
+{
+    b2Body *body = GetBodyByObject(gameObject);
+    auto velocity = body->GetLinearVelocity();
+    return {velocity.x, velocity.y};
 }
 
 PhysicsFacade::~PhysicsFacade() = default;

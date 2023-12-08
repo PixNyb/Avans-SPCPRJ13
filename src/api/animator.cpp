@@ -11,8 +11,6 @@
 #include "animator.hpp"
 #include "time.hpp"
 
-Animator::Animator() : currentState(nullptr) {}
-
 Animator::Animator(const Animator &other) : BehaviourScript(other)
 {
     // Copy constructor implementation
@@ -24,27 +22,12 @@ Animator::Animator(const Animator &other) : BehaviourScript(other)
     this->states = other.states;
 }
 
-void Animator::Update()
-{
-    // Implementation
-}
-
-void Animator::Stop()
-{
-    // Implementation
-}
-
-void Animator::Play(bool looping)
-{
-    // Implementation
-}
-
-[[gnu::used]] void Animator::AddState(const std::string &name, const AnimationState &state)
+void Animator::AddState(const std::string &name, const AnimationState &state)
 {
     states[name] = state;
 }
 
-[[gnu::used]] void Animator::SetState(const std::string &name)
+void Animator::SetState(const std::string &name)
 {
     auto it = states.find(name);
     if (it != states.end())

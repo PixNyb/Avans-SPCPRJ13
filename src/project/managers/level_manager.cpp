@@ -11,7 +11,8 @@
 #include "level_manager.hpp"
 #include "engine.hpp"
 #include "physics_manager.hpp"
-#include <fmt/core.h>
+#include <filesystem>
+#include <fmt/format.h>
 #include <iostream>
 
 LevelManager::LevelManager(std::shared_ptr<SceneManager> &sManager,

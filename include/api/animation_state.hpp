@@ -33,6 +33,8 @@ class AnimationState
     float frameDuration;   ///< The duration of a single frame of the animation.
     int currentFrameIndex; ///< The index of the current frame of the animation.
     float elapsedTime;     ///< The time elapsed since the start of the animation.
+    int totalColumns;      ///< The total number of columns in the sprite sheet.
+    int totalRows;         ///< The total number of rows in the sprite sheet.
 
   public:
     /**
