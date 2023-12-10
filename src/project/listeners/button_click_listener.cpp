@@ -20,8 +20,7 @@ void ButtonClickListener::OnMouseMoved() {}
 
 void ButtonClickListener::OnMouseClicked()
 {
-    // TODO: Find a better way to do this
-    auto mousePos = Engine::GetInstance()->Get<IInputFacade>()->GetMousePosition();
+    auto mousePos = inputFacade.GetMousePosition();
 
     if (mousePos.x >= button.GetTransform().position.x &&
         mousePos.x <= button.GetTransform().position.x + button.GetWidth() &&

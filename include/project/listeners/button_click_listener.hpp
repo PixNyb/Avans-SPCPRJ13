@@ -17,6 +17,8 @@
 #include "i_input_facade.hpp"
 #include "imouse_listener.hpp"
 
+class IInputFacade;
+
 /**
  * @class ButtonClickListener
  * @brief Listens to mouse events on a specific button.
