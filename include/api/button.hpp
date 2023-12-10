@@ -21,7 +21,6 @@
 
 #include "ui_object.hpp"
 #include <functional>
-#include <iostream>
 #include <utility>
 
 class ButtonClickListener;
