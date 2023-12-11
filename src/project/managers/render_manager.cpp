@@ -152,11 +152,17 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
             // Handling sprite sheets with Animator
             int currentFrameIndex = animatorComponent->GetCurrentFrameIndex();
 
-            int totalColumns = animatorComponent->GetTotalColumns();
-            int totalRows = animatorComponent->GetTotalRows();
+            int totalColumns = animatorComponent->GetTotalColumns() == 0
+                                   ? 10
+                                   : animatorComponent->GetTotalColumns();
+            int totalRows =
+                animatorComponent->GetTotalRows() == 0 ? 1 : animatorComponent->GetTotalRows();
 
             gfx.DrawSpriteSheetFrame(spriteComponent->GetSprite(), spriteRect, currentFrameIndex,
-                                     totalColumns, totalRows);
+                                     totalColumns, totalRows,
+                                     gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedX(),
+                                     gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY(),
+                                     gameObjectPointer.lock()->GetTransform().rotation);
         }
         else
         {

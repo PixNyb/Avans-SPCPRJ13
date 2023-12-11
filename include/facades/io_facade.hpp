@@ -237,9 +237,13 @@ class IOFacade
      * @param frameIndex The index of the frame to draw.
      * @param totalColumns The total number of columns in the sprite sheet.
      * @param totalRows The total number of rows in the sprite sheet.
+     * @param flipX Whether to flip the sprite horizontally.
+     * @param flipY Whether to flip the sprite vertically.
+     * @param angle The angle to rotate the sprite.
      */
     virtual void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect,
-                                      int frameIndex, int totalColumns, int totalRows) = 0;
+                                      int frameIndex, int totalColumns, int totalRows, bool flipX,
+                                      bool flipY, double angle) = 0;
 };
 
 #endif // DEFUNBOBENGINE_IO_FACADE_HPP
