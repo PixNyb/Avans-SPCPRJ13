@@ -12,11 +12,10 @@
 #ifndef AVANS_SPCPRJ13_PATHFINDABLE_H
 #define AVANS_SPCPRJ13_PATHFINDABLE_H
 
-#include "box_collider.hpp"
-#include "circle_collider.hpp"
 #include "component.hpp"
 #include "game_object.hpp"
 #include "pathfinding/graph.hpp"
+#include <SDL_render.h>
 #include <memory>
 #include <vector>
 
@@ -36,6 +35,7 @@ class Pathfindable : public Component
     ~Pathfindable();
 
     std::vector<std::shared_ptr<Node>> GetNodes() const;
+    void RenderNodes() const;
 
   protected:
     void CreateAndStoreNodes();

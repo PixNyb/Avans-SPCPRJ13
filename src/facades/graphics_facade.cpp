@@ -96,7 +96,7 @@ void GraphicsFacade::DrawShape(Circle circle)
     int y = static_cast<int>(pos.y);
     int rad = static_cast<int>(circle.GetRadius());
 
-    SetColor(circle.SetFillColor());
+    SetColor(circle.GetFillColor());
     SDLCircle sdlCircle(x, y, rad);
     sdlCircle.Draw(renderer);
     ResetColor();
@@ -116,7 +116,7 @@ void GraphicsFacade::DrawShape(Rectangle rectangle)
     SDLRect rect(static_cast<int>(pos.x), static_cast<int>(pos.y), rectangle.GetWidth(),
                  rectangle.GetHeight(), static_cast<int>(rectangle.GetRotation()));
 
-    SetColor(rectangle.SetFillColor());
+    SetColor(rectangle.GetFillColor());
 
     rect.Draw(renderer);
     ResetColor();
@@ -157,7 +157,7 @@ void GraphicsFacade::DrawShape(Triangle triangle)
     SDLTriangle sdlTriangle(x1, y1, x2, y2, x3, y3);
 
     // Use SDLTriangle's Draw method to render the triangle
-    auto color = triangle.SetFillColor();
+    auto color = triangle.GetFillColor();
     SetColor(color);
     sdlTriangle.Draw(renderer);
     ResetColor();
@@ -183,7 +183,7 @@ void GraphicsFacade::DrawLine(Line line)
     line.end.x = x2;
     line.end.y = y2;
 
-    auto color = line.SetFillColor();
+    auto color = line.GetFillColor();
     SetColor(color);
     SDL_RenderDrawLine(renderer, line.start.x, line.start.y, line.end.x, line.end.y);
     ResetColor();
@@ -211,7 +211,7 @@ void GraphicsFacade::DrawLines(std::vector<Line> lines)
         sdlLines.push_back({x2, y2});
     }
 
-    auto color = lines[0].SetFillColor();
+    auto color = lines[0].GetFillColor();
     SetColor(color);
     SDL_RenderDrawLines(renderer, sdlLines.data(), lines.size());
     ResetColor();

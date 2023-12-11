@@ -2,6 +2,7 @@
 #include "graph.hpp"
 #include "pathfindable.hpp"
 #include "scene.hpp"
+#include <memory>
 
 PathfindingManager::PathfindingManager() {}
 
@@ -13,6 +14,7 @@ std::shared_ptr<Graph> PathfindingManager::GetGraph() const { return graph; }
 
 void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
 {
+    scene = scene;
     graph = std::make_shared<Graph>();
 
     for (const auto &gameObject : scene->contents)
@@ -29,4 +31,15 @@ void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
     }
 
     // TODO: Add edges between nodes.
+}
+
+void PathfindingManager::Render() const
+{
+    for (const auto &gameObject : scene->contents)
+    {
+        auto pathfindable = gameObject->GetComponent<Pathfindable>();
+
+        if (pathfindable != nullptr)
+            pathfindable->RenderNodes();
+    }
 }

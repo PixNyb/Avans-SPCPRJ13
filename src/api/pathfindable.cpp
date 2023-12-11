@@ -1,5 +1,10 @@
 #include "pathfindable.hpp"
+#include "box_collider.hpp"
+#include "circle.hpp"
 #include "core_constants.hpp"
+#include "engine.hpp"
+#include "io_facade.hpp"
+#include "point.hpp"
 
 Pathfindable::Pathfindable(std::shared_ptr<GameObject> parent)
 {
@@ -38,8 +43,17 @@ void Pathfindable::CreateAndStoreNodes()
     {
         auto node = std::make_shared<Node>(topLeft + (nodeSpacing * i), top);
         _nodes.push_back(node);
+    }
+}
 
-        // Add a collider to the parent object at the position of the node.
-        auto nodeCollider = std::make_shared<CircleCollider>(_parent);
+void Pathfindable::RenderNodes() const
+{
+    auto renderer = Engine::GetInstance()->Get<IOFacade>();
+
+    for (auto &node : _nodes)
+    {
+        auto circle = Circle(*new Vector2D(node->GetX(), node->GetY()), 5);
+        circle.SetFillColor(CoreConstants::Pathfinding::NODE_COLOR);
+        renderer->DrawShape(circle);
     }
 }
