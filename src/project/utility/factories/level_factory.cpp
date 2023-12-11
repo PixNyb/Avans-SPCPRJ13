@@ -23,7 +23,7 @@ std::shared_ptr<Scene> LevelFactory::CreateScene(nlohmann::json sceneJson)
 
     nlohmann::json objectsJson = sceneJson.at("objects");
     AddObjects(*scene, objectsJson);
-
+    
     nlohmann::json cameraJson = sceneJson.at("camera");
     auto camera = ConvertCamera(cameraJson);
     scene->SetCamera(camera);

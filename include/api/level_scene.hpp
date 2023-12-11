@@ -20,6 +20,12 @@ class LevelScene : public Scene
      * @brief This function is responsible for rendering the contents of the LevelScene.
      */
     void RenderScene() override;
+
+    /**
+     * @brief Updates the scene
+     * @param deltaTime the deltatime
+     */
+    void Update(double deltaTime) override;
 };
 
 #endif // DEFUNBOBENGINE_LEVEL_SCENE_HPP
