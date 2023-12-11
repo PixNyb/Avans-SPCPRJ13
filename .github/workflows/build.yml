@@ -106,6 +106,8 @@ jobs:
             lcov \
             valgrind \
             xvfb
+          sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/*
 
       - name: Download build result
         uses: actions/download-artifact@v2
