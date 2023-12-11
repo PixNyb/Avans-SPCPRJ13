@@ -38,6 +38,7 @@ class Sprite : public BehaviourScript
     int sortingLayer;            ///< The sorting layer for rendering order.
     int orderInLayer;            ///< The specific order within the sorting layer.
     int frameWidth, frameHeight; ///< For the spritesheet
+    bool isTiled = false;
 
   public:
     /**
@@ -102,6 +103,10 @@ class Sprite : public BehaviourScript
      * @return bool
      */
     bool IsFlippedY() { return flipY; }
+
+    void SetIsTiled(bool isTiled) { this->isTiled = isTiled; }
+
+    bool GetIsTiled() { return isTiled; }
 };
 
 #endif // AVANS_SPCPRJ13_SPRITE_H

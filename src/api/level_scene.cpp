@@ -21,6 +21,6 @@ void LevelScene::Update(double deltaTime)
                                      { return obj->GetName() == searchString; });
     auto transform = camera->GetTransform();
     transform.position.x = playerObject->get()->GetTransform().position.x;
-    transform.position.y = playerObject->get()->GetTransform().position.y;
+    transform.position.y = playerObject->get()->GetTransform().position.y - 100;
     camera->SetTransform(transform);
 }
