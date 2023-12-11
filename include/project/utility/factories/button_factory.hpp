@@ -28,7 +28,6 @@ class ButtonFactory
   public:
     /**
      * @brief Creates a button UI element.
-     * @param inputFacade Shared pointer to the input facade for handling user input.
      * @param width Width of the button.
      * @param height Height of the button.
      * @param fontSize Font size of the button text.
