@@ -11,7 +11,7 @@
 #ifndef DEFUNBOBENGINE_LEVEL_MANAGER_HPP
 #define DEFUNBOBENGINE_LEVEL_MANAGER_HPP
 
-#include "json_handler.hpp"
+#include "json_reader.hpp"
 #include "level_factory.hpp"
 #include "scene_manager.hpp"
 #include <map>
@@ -79,7 +79,7 @@ class LevelManager
      * @brief Construct a new LevelManager;
      */
     LevelManager(std::shared_ptr<SceneManager> &sManager, std::shared_ptr<PrefabManager> &pManager,
-                 std::shared_ptr<JSONHandler> &jReader);
+                 std::shared_ptr<JSONReader> &jReader);
 
     /**
      * @brief Deconstructs a LevelManager;
@@ -100,13 +100,11 @@ class LevelManager
     void LoadLevel(int id);
 
     /**
-     * @brief Save the level which is the current scene. The intended use is saving a level made
-     * using level editor.
-     * @param directory The directory to where the level json is to be saved.
-     * @param filename The eventual filename.
+     * @brief Save the level which is current scene. The intended use is saving a level made using
+     * level editor.
      * @return The path of where the level is stored.
      */
-    std::string SaveLevel(std::string &directory, std::string &filename);
+    std::string SaveLevel();
 };
 
 #endif // DEFUNBOBENGINE_LEVEL_MANAGER_HPP
