@@ -18,8 +18,9 @@
 LevelManager::LevelManager(std::shared_ptr<SceneManager> &sManager,
                            std::shared_ptr<PrefabManager> &pManager,
                            std::shared_ptr<JSONReader> &jReader)
-    : levels(), sceneManager(sManager), levelFactory(std::make_unique<LevelFactory>(pManager)),
-      jsonReader(jReader), levelFileExtension(".json")
+    : levels(), sceneManager(sManager), prefabManager(pManager),
+      levelFactory(std::make_unique<LevelFactory>(pManager)), jsonReader(jReader),
+      levelFileExtension(".json")
 {
 }
 
@@ -68,4 +69,25 @@ void LevelManager::LoadLevel(int id)
         // TODO: Rethrow error or just return?
         std::cout << e.what() << std::endl;
     }
+}
+
+std::string LevelManager::SaveLevel()
+{
+    auto currentScene = sceneManager->GetScene();
+    nlohmann::json levelJson{};
+
+    for (const auto &gameObject : currentScene.lock()->contents)
+    {
+        auto prefabId = gameObject->GetTag();
+
+        if (!prefabManager->HasPrefab(prefabId))
+            throw std::runtime_error(fmt::format("A GameObject needs to be a registered prefab "
+                                                 "before it can be saved. Unregistered type: '{}'",
+                                                 prefabId));
+        
+        // TODO: Save the prefab to the json.
+    }
+
+    // TODO: Return path of the newly stored level.
+    return "Path";
 }

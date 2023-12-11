@@ -41,6 +41,11 @@ class LevelManager
     std::shared_ptr<SceneManager> sceneManager;
 
     /**
+     * @brief A PrefabManager which can be used to identify the prefabs from a level.
+     */
+    std::shared_ptr<PrefabManager> prefabManager;
+
+    /**
      * @brief A LevelFactory which is used to load the level.
      */
     std::unique_ptr<LevelFactory> levelFactory;
@@ -81,8 +86,8 @@ class LevelManager
     void LoadLevel(int id);
 
     /**
-     * @brief Save the level which is current scene. The intended use is saving a level made using
-     * level editor.
+     * @brief Save the level which is the current scene. The intended use is saving a level made
+     * using level editor.
      * @return The path of where the level is stored.
      */
     std::string SaveLevel();

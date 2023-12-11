@@ -101,7 +101,7 @@ Voor het inladen van een level wordt het volgende format aangehouden, dit format
 Eerst wordt camera gedefinieerd, hierbij wordt een width en height meegegeven.
 Vervolgens worden alle GameObjecten geplaatst in de objects array.
 De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de PrefabManager.
-Hier worden vervolgens name, tag, active, layer, transform en children nog bij gedefinieert.
+Hier worden vervolgens name, active, layer, transform en children nog bij gedefinieert.
 In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk GameObject.
 
 ```json
@@ -114,7 +114,6 @@ In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk Ga
     {
       "prefab": "Character",
       "name": "Character1",
-      "tag": "character",
       "active": true,
       "layer": 1,
       "transform": {
@@ -130,7 +129,6 @@ In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk Ga
     {
       "prefab": "Tree",
       "name": "Tree1",
-      "tag": "tree",
       "active": true,
       "layer": 1,
       "transform": {
@@ -146,7 +144,6 @@ In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk Ga
     {
       "prefab": "Tree",
       "name": "Tree2",
-      "tag": "tree",
       "active": true,
       "layer": 2,
       "transform": {
@@ -161,7 +158,6 @@ In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk Ga
         {
           "prefab": "Tree",
           "name": "SubTree",
-          "tag": "tree",
           "active": true,
           "layer": 3,
           "transform": {
