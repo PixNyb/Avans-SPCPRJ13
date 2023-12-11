@@ -17,9 +17,9 @@
 
 LevelManager::LevelManager(std::shared_ptr<SceneManager> &sManager,
                            std::shared_ptr<PrefabManager> &pManager,
-                           std::shared_ptr<JSONHandler> &jHandler)
+                           std::shared_ptr<JSONReader> &jReader)
     : levels(), sceneManager(sManager), prefabManager(pManager),
-      levelFactory(std::make_unique<LevelFactory>(pManager)), jsonHandler(jHandler),
+      levelFactory(std::make_unique<LevelFactory>(pManager)), jsonReader(jReader),
       levelFileExtension(".json")
 {
 }
@@ -71,84 +71,23 @@ void LevelManager::LoadLevel(int id)
     }
 }
 
-std::string LevelManager::SaveLevel(std::string &directory, std::string &filename)
+std::string LevelManager::SaveLevel()
 {
     auto currentScene = sceneManager->GetScene();
-    auto levelJson = nlohmann::json::object();
+    nlohmann::json levelJson{};
 
-    // Convert the Camera to a json object and add it to the level json.
-    auto cameraJson = CreateCameraJson(*currentScene.lock()->GetCamera());
-    levelJson["camera"] = cameraJson;
-
-    // Convert the GameObjects of the scene to json objects.
-    nlohmann::json objects;
     for (const auto &gameObject : currentScene.lock()->contents)
     {
-        // Check if the GameObject has a parent, if it does it should not be called here due
-        // to only root objects needing to be in objects array. The level json has a recursive
-        // structure of root components and their children. These children will be added in the
-        // recursive function call.
-        if (gameObject->GetParent() != nullptr)
-            continue;
+        auto prefabId = gameObject->GetTag();
 
-        auto objectJson = CreateGameObjectJson(*gameObject);
-        objects.push_back(objectJson);
+        if (!prefabManager->HasPrefab(prefabId))
+            throw std::runtime_error(fmt::format("A GameObject needs to be a registered prefab "
+                                                 "before it can be saved. Unregistered type: '{}'",
+                                                 prefabId));
+
+        // TODO: Save the prefab to the json.
     }
 
-    // Add the array of GameObjects to the level json.
-    levelJson["objects"] = objects;
-
-    // Write the json object to a file and return the resulting file path.
-    auto filePath = jsonHandler->WriteJsonToFile(directory, filename, levelJson);
-
-    return filePath;
-}
-
-nlohmann::json LevelManager::CreateGameObjectJson(GameObject &gameObject)
-{
-    auto objectJson = nlohmann::json::object();
-    auto prefabId = gameObject.GetPrefabId();
-
-    // If no prefab is registered by the prefab id, or a default value is found, an error is thrown.
-    if (!prefabManager->HasPrefab(prefabId) || prefabId.empty())
-        throw std::runtime_error(fmt::format("A GameObject needs to be a registered prefab "
-                                             "before it can be saved. Unregistered type: '{}'",
-                                             prefabId));
-
-    // Add basic properties.
-    objectJson["prefab"] = gameObject.GetPrefabId();
-    objectJson["name"] = gameObject.GetName();
-    objectJson["active"] = gameObject.IsActive();
-    objectJson["layer"] = gameObject.GetLayer();
-
-    // Add transform struct.
-    auto transform = gameObject.GetTransform();
-    objectJson["transform"] = {
-        {"position", {{"x", transform.position.x}, {"y", transform.position.y}}},
-        {"rotation", transform.rotation},
-        {"scale", transform.scale}};
-
-    nlohmann::json children;
-    // Iterate over every child object in a recursive function call.
-    for (const auto &child : gameObject.GetChildren())
-    {
-        // When push_back() is called the json turns into an array.
-        children.push_back(CreateGameObjectJson(*child));
-    }
-
-    // The children array is added to the GameObject json.
-    objectJson["children"] = children;
-
-    return objectJson;
-}
-
-nlohmann::json LevelManager::CreateCameraJson(Camera &camera)
-{
-    auto cameraJson = nlohmann::json::object();
-
-    // Add properties to the camera json.
-    cameraJson["width"] = camera.GetAspectWidth();
-    cameraJson["height"] = camera.GetAspectHeight();
-
-    return cameraJson;
+    // TODO: Return path of the newly stored level.
+    return "Path";
 }

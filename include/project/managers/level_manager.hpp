@@ -100,8 +100,8 @@ class LevelManager
     void LoadLevel(int id);
 
     /**
-     * @brief Save the level which is current scene. The intended use is saving a level made using
-     * level editor.
+     * @brief Save the level which is the current scene. The intended use is saving a level made
+     * using level editor.
      * @return The path of where the level is stored.
      */
     std::string SaveLevel();
