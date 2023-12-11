@@ -1,0 +1,4 @@
+<map id="include/api/sprite.hpp" name="include/api/sprite.hpp">
+<area shape="rect" id="node1" title="Defines the Sprite class for handling sprite rendering in the game engine. The Sprite class extends t..." alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node2" href="$sprite_8cpp.html" title="This file contains the Sprite class implementation." alt="" coords="20,80,153,107"/>
+</map>

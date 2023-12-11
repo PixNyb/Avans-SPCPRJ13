@@ -1,0 +1,11 @@
+<map id="include/api/camera.hpp" name="include/api/camera.hpp">
+<area shape="rect" id="node1" title="Defines the Camera class for managing camera views in a game engine. The Camera class handles the ren..." alt="" coords="101,5,275,32"/>
+<area shape="rect" id="node2" href="$color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="82,80,163,107"/>
+<area shape="rect" id="node3" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="187,80,322,107"/>
+<area shape="rect" id="node4" href="$iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="5,155,123,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="69,229,147,256"/>
+<area shape="rect" id="node6" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="197,155,312,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="336,155,395,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="419,155,482,181"/>
+<area shape="rect" id="node7" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="213,229,296,256"/>
+</map>
