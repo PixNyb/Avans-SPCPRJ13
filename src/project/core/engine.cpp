@@ -19,6 +19,7 @@
 #include "behaviour_script_manager.hpp"
 #include "graphics_facade.hpp"
 #include "level_manager.hpp"
+#include "pathfinding_manager.hpp"
 #include "physics_manager.hpp"
 #include "render_manager.hpp"
 #include "scene_manager.hpp"
@@ -28,7 +29,8 @@
 
 Engine *Engine::instancePtr = nullptr;
 
-Engine::Engine() {
+Engine::Engine()
+{
     auto jsonReader = std::make_shared<JSONReader>();
     container.registerInstance<JSONReader>(jsonReader, InstanceScope::Engine);
 
@@ -39,7 +41,9 @@ Engine::Engine() {
     auto prefabManager = std::make_shared<PrefabManager>();
     container.registerInstance<PrefabManager>(prefabManager, InstanceScope::Public);
 
-    container.registerInstance<LevelManager>(std::make_shared<LevelManager>(sceneManager, prefabManager, jsonReader), InstanceScope::Public);
+    container.registerInstance<LevelManager>(
+        std::make_shared<LevelManager>(sceneManager, prefabManager, jsonReader),
+        InstanceScope::Public);
 
     container.registerInstance<RenderManager>(std::make_shared<RenderManager>(),
                                               InstanceScope::Engine);
@@ -48,6 +52,7 @@ Engine::Engine() {
                                                        InstanceScope::Engine);
 
     container.registerInstance<PhysicsManager>(std::make_shared<PhysicsManager>());
+    container.registerInstance<PathfindingManager>(std::make_shared<PathfindingManager>());
 
     // Facades
     container.registerInstance<IInputFacade>(std::make_shared<SDLInputFacade>());

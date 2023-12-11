@@ -40,6 +40,7 @@ namespace Debug
 {
 const bool EnableDebug = true;
 const bool DrawColliders = true;
+const bool DrawNodes = true;
 } // namespace Debug
 
 namespace Audio
@@ -51,6 +52,15 @@ namespace Audio
  */
 const int AUDIO_MAX_INSTANCE_COUNT = 255;
 } // namespace Audio
+
+namespace Pathfinding
+{
+/**
+ * @brief The maximum distance between two nodes on a pathfindable object.
+ */
+const int NODE_SPACING = 10;
+} // namespace Pathfinding
+
 } // namespace CoreConstants
 
 #endif // DEFUNBOBENGINE_CORECONSTANTS_HPP
