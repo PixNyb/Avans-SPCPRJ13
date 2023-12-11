@@ -17,6 +17,10 @@ PrefabManager::PrefabManager() : prefabs() {}
 
 void PrefabManager::RegisterPrefab(const std::string &id, const std::shared_ptr<GameObject> &prefab)
 {
+    // Set the tag of the prefab equal to the id under which it is stored so that it is identifiable
+    // when saving a level.
+    prefab->SetTag(id);
+
     prefabs.insert(std::pair(id, prefab));
 }
 
