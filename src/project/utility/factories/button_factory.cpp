@@ -19,9 +19,7 @@ std::shared_ptr<Button> ButtonFactory::CreateButton(const float width, const flo
     button->SetWidth(width);
     button->SetHeight(height);
     button->SetTag(buttonText);
-
-    button->OnClick([]() { std::cout << "Button Clicked!" << std::endl; });
-
+    
     auto text = std::make_shared<Text>(buttonText, buttonText, 1, width, height);
     text->SetFontSize(fontSize);
     text->SetText(buttonText);
