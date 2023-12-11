@@ -87,6 +87,7 @@ var NAVTREEINDEX1 =
 "classLevelManager.html#adb32f1857dfd97ed0a12be79b78704b1":[5,0,34,2],
 "classLevelManager.html#afcddc0b0e02aa2c19fa407a5abe7e289":[5,0,34,3],
 "classLevelScene.html":[5,0,35],
+"classLevelScene.html#a34c5600ccad490f5d535f34299ed4ff2":[5,0,35,1],
 "classLevelScene.html#a81d9668e0753827a631dc0431fb11f7c":[5,0,35,0],
 "classLevelTest.html":[5,0,36],
 "classLevelTest.html#a221fa44bd6ad1f894487506ed4b24743":[5,0,36,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "classSDLInputFacadeTest.html#aea721d3ee8122235ef627a3595164284":[5,0,57,9],
 "classSDLRect.html":[5,0,58],
 "classSDLRect.html#a0d1facadd206458677c8389e9e77dc9a":[5,0,58,1],
-"classSDLRect.html#a1785d555fe682b025e1cbc4f0b16acb3":[5,0,58,3],
-"classSDLRect.html#a65c861525ff2aaa206ba1be58e7819e0":[5,0,58,2]
+"classSDLRect.html#a1785d555fe682b025e1cbc4f0b16acb3":[5,0,58,3]
 };

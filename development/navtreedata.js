@@ -94,9 +94,9 @@ var NAVTREEINDEX =
 [
 "animation__state_8cpp.html",
 "classIInputFacade.html#a99a3d348ee9d6aa0513eadd5cde9985f",
-"classSDLRect.html#a9fe78ba4f9142bb990bd313c7bd51bfd",
-"functions_func_m.html",
-"i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2ae791d936f894ce58dd18bf603edcb9b4"
+"classSDLRect.html#a65c861525ff2aaa206ba1be58e7819e0",
+"functions_func_i.html",
+"i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2ae4bf0e3d9afa4b59492d1f1a22fb6a37"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
