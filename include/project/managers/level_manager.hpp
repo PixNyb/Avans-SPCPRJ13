@@ -11,12 +11,12 @@
 #ifndef DEFUNBOBENGINE_LEVEL_MANAGER_HPP
 #define DEFUNBOBENGINE_LEVEL_MANAGER_HPP
 
+#include "json_reader.hpp"
+#include "level_factory.hpp"
+#include "scene_manager.hpp"
 #include <map>
 #include <memory>
 #include <string>
-#include "scene_manager.hpp"
-#include "level_factory.hpp"
-#include "json_reader.hpp"
 
 /**
  * @class LevelManager
@@ -25,7 +25,8 @@
  * This class is responsible for keeping track of all of the levels.
  * In addition, it can load a pre-defined level.
  */
-class LevelManager {
+class LevelManager
+{
   private:
     /**
      * @brief A map consisting of level id's and a filepath to the corresponding level JSON.
@@ -58,7 +59,8 @@ class LevelManager {
     /**
      * @brief Construct a new LevelManager;
      */
-    LevelManager(std::shared_ptr<SceneManager> &sManager, std::shared_ptr<PrefabManager> &pManager, std::shared_ptr<JSONReader> &jReader);
+    LevelManager(std::shared_ptr<SceneManager> &sManager, std::shared_ptr<PrefabManager> &pManager,
+                 std::shared_ptr<JSONReader> &jReader);
 
     /**
      * @brief Deconstructs a LevelManager;
@@ -78,6 +80,12 @@ class LevelManager {
      */
     void LoadLevel(int id);
 
+    /**
+     * @brief Save the level which is current scene. The intended use is saving a level made using
+     * level editor.
+     * @return The path of where the level is stored.
+     */
+    std::string SaveLevel();
 };
 
 #endif // DEFUNBOBENGINE_LEVEL_MANAGER_HPP
