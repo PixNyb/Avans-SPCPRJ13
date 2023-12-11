@@ -3,7 +3,6 @@
 
 TEST(ButtonFactoryTest, TestButtonFactory)
 {
-    bool clicked = false;
     const float width = 100.0f;
     const float height = 100.0f;
     const int fontSize = 10;
@@ -16,6 +15,13 @@ TEST(ButtonFactoryTest, TestButtonFactory)
     EXPECT_EQ(button->GetWidth(), width);
     EXPECT_EQ(button->GetHeight(), height);
     EXPECT_EQ(button->GetTag(), buttonText);
+}
+
+TEST(ButtonClickTest, TestButtonClick)
+{
+    bool clicked = false;
+
+    std::shared_ptr<Button> button = std::make_shared<Button>();
 
     button->OnClick([&clicked]() { clicked = true; });
 
