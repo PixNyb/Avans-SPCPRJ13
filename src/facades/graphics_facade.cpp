@@ -452,7 +452,7 @@ Size GraphicsFacade::GetSpriteSize(const std::string &filePath)
 
 void GraphicsFacade::DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect,
                                           int frameIndex, int totalColumns, int totalRows,
-                                          bool flipX, bool flipY, double angle, float scale)
+                                          bool flipX, bool flipY, double angle)
 {
     SDL_Texture *sdlTexture = GetCachedSDLTexture(texture);
     if (!sdlTexture)
@@ -487,17 +487,11 @@ void GraphicsFacade::DrawSpriteSheetFrame(const Texture &texture, const Rectangl
     int adjustedY =
         static_cast<int>(dstRect.GetPosition().y) - (scaledHeight - dstRect.GetHeight()) / 2;
 
-    SDL_Rect sdlDstRect;
-    sdlDstRect.x = adjustedX;
-    sdlDstRect.y = adjustedY;
-    sdlDstRect.w = scaledWidth;
-    sdlDstRect.h = scaledHeight;
-
     // Determine the flipping mode
     SDL_RendererFlip flip = static_cast<SDL_RendererFlip>((flipX ? SDL_FLIP_HORIZONTAL : 0) |
                                                           (flipY ? SDL_FLIP_VERTICAL : 0));
 
-    // Render the frame with rotation, flipping, and scaling
+    // Render the frame with rotation and flipping
     if (SDL_RenderCopyEx(SdlWindow->GetRenderer(), sdlTexture, &srcRect, &sdlDstRect, angle, NULL,
                          flip) != 0)
     {

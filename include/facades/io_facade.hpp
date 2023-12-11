@@ -248,11 +248,10 @@ class IOFacade
      * @param flipX Whether to flip the sprite horizontally.
      * @param flipY Whether to flip the sprite vertically.
      * @param angle The angle to rotate the sprite.
-     * @param scale The scale factor on the axis.
      */
     virtual void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect,
                                       int frameIndex, int totalColumns, int totalRows, bool flipX,
-                                      bool flipY, double angle, float scale) = 0;
+                                      bool flipY, double angle) = 0;
 };
 
 #endif // DEFUNBOBENGINE_IO_FACADE_HPP

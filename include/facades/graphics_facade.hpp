@@ -227,11 +227,10 @@ class GraphicsFacade : public IOFacade
      * @param flipX Whether to flip the sprite horizontally.
      * @param flipY Whether to flip the sprite vertically.
      * @param angle The angle to draw the sprite at.
-     * @param scale The scale factor on the axis
      */
     void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect, int frameIndex,
-                              int totalColumns, int totalRows, bool flipX, bool flipY, double angle,
-                              float scale) override;
+                              int totalColumns, int totalRows, bool flipX, bool flipY,
+                              double angle) override;
 };
 
 #endif // DEFUNBOBENGINE_GRAPHICS_FACADE_HPP
