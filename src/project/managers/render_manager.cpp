@@ -166,7 +166,8 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
                                      totalColumns, totalRows,
                                      gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedX(),
                                      gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY(),
-                                     gameObjectPointer.lock()->GetTransform().rotation);
+                                     gameObjectPointer.lock()->GetTransform().rotation,
+                                     gameObjectPointer.lock()->GetTransform().scale);
         }
         else
         {
@@ -176,7 +177,8 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
             // Draw the sprite
             gfx.DrawSprite(spriteTexture, spriteRect,
                            gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedX(),
-                           gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY());
+                           gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY(),
+                           gameObjectPointer.lock()->GetTransform().scale);
         }
     }
 

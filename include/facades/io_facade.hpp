@@ -185,9 +185,13 @@ class IOFacade
      * Texture (such as its position and dimensions) to draw it on the provided SDL_Renderer.
      *
      * @param texture A Texture object containing the properties of the texture.
+     * @param rectangle The rectangle to render the texture in.
+     * @param flipX Whether to flip the texture horizontally.
+     * @param flipY Whether to flip the texture vertically.
+     * @param scale The scale factor on the axis.
      */
-    virtual void DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX,
-                            bool flipY) = 0;
+    virtual void DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX, bool flipY,
+                            float scale) = 0;
 
     /**
      * @brief Renders an SDL_Texture on the rendering target.
@@ -198,9 +202,12 @@ class IOFacade
      *
      * @param sdlTexture An SDL_Texture object containing the properties of the texture.
      * @param rectangle The rectangle to render the texture in.
+     * @param flipX Whether to flip the texture horizontally.
+     * @param flipY Whether to flip the texture vertically.
+     * @param scale The scale factor on the axis.
      */
     virtual void RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle, bool flipX,
-                                  bool flipY) = 0;
+                                  bool flipY, float scale) = 0;
 
     /**
      * @brief Gets the cached SDL_Texture for a Texture object.
@@ -240,10 +247,11 @@ class IOFacade
      * @param flipX Whether to flip the sprite horizontally.
      * @param flipY Whether to flip the sprite vertically.
      * @param angle The angle to rotate the sprite.
+     * @param scale The scale factor on the axis.
      */
     virtual void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect,
                                       int frameIndex, int totalColumns, int totalRows, bool flipX,
-                                      bool flipY, double angle) = 0;
+                                      bool flipY, double angle, float scale) = 0;
 };
 
 #endif // DEFUNBOBENGINE_IO_FACADE_HPP
