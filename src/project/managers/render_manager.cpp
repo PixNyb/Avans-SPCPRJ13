@@ -169,7 +169,8 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
     }
 
     // Draw collider shapes
-    if (CoreConstants::Debug::EnableDebug && CoreConstants::Debug::DrawColliders && !spriteComponent)
+    if (CoreConstants::Debug::EnableDebug && CoreConstants::Debug::DrawColliders &&
+        !spriteComponent)
     {
         auto circleColliderShape = gameObject->GetComponent<CircleCollider>();
         if (circleColliderShape)
