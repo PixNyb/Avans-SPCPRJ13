@@ -9,7 +9,6 @@
  *
  */
 
-
 #include "ui_object.hpp"
 
 UIObject::UIObject() : width(0), height(0)
@@ -22,6 +21,8 @@ UIObject::UIObject(const std::string &name, const std::string &tag, int layer, f
                    float height)
     : GameObject(name), width(width), height(height)
 {
+    this->tag = tag;
+    this->layer = layer;
 }
 
 void UIObject::SetWidth(float w) { width = w; }
