@@ -171,10 +171,9 @@ class GraphicsFacade : public IOFacade
      * @param rectangle The rectangle to render the texture in.
      * @param flipX Whether to flip the texture horizontally.
      * @param flipY Whether to flip the texture vertically.
-     * @param angle The angle to draw the sprite at.
      * @param scale The scale factor on the axis
      */
-    void DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX, bool flipY, int angle,
+    void DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX, bool flipY,
                     float scale) override;
 
     /**
@@ -227,10 +226,11 @@ class GraphicsFacade : public IOFacade
      * @param flipX Whether to flip the sprite horizontally.
      * @param flipY Whether to flip the sprite vertically.
      * @param angle The angle to draw the sprite at.
+     * @param scale The scale factor on the axis
      */
     void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect, int frameIndex,
-                              int totalColumns, int totalRows, bool flipX, bool flipY,
-                              double angle) override;
+                              int totalColumns, int totalRows, bool flipX, bool flipY, double angle,
+                              float scale) override;
 };
 
 #endif // DEFUNBOBENGINE_GRAPHICS_FACADE_HPP

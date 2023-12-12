@@ -166,7 +166,8 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
                                      totalColumns, totalRows,
                                      gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedX(),
                                      gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY(),
-                                     gameObjectPointer.lock()->GetTransform().rotation);
+                                     gameObjectPointer.lock()->GetTransform().rotation,
+                                     gameObjectPointer.lock()->GetTransform().scale);
         }
         else
         {
@@ -177,29 +178,7 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
             gfx.DrawSprite(spriteTexture, spriteRect,
                            gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedX(),
                            gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY(),
-                           gameObjectPointer.lock()->GetTransform().rotation,
                            gameObjectPointer.lock()->GetTransform().scale);
-        }
-    }
-
-    auto shapeComponent = gameObject->GetComponent<ShapeComponent>();
-    if (shapeComponent)
-    {
-        for (auto &shape : shapeComponent->GetGeometries())
-        {
-            if (shapeComponent->DoTranslate())
-            {
-                shape->SetTranslation(
-                    {static_cast<float>(relCamPos.x), static_cast<float>(relCamPos.y)});
-            }
-            else
-            {
-                // TODO: Perhaps do stuff like this more lazily
-                auto gameObjectTransform = gameObject->GetTransform();
-                shape->SetTranslation({static_cast<float>(gameObjectTransform.position.x),
-                                       static_cast<float>(gameObjectTransform.position.y)});
-            }
-            shape->Accept(shapeRenderer);
         }
     }
 

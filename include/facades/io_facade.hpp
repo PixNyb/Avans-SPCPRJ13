@@ -188,11 +188,10 @@ class IOFacade
      * @param rectangle The rectangle to render the texture in.
      * @param flipX Whether to flip the texture horizontally.
      * @param flipY Whether to flip the texture vertically.
-     * @param angle The angle to rotate the texture.
      * @param scale The scale factor on the axis.
      */
     virtual void DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX, bool flipY,
-                            int angle, float scale) = 0;
+                            float scale) = 0;
 
     /**
      * @brief Renders an SDL_Texture on the rendering target.
@@ -248,10 +247,11 @@ class IOFacade
      * @param flipX Whether to flip the sprite horizontally.
      * @param flipY Whether to flip the sprite vertically.
      * @param angle The angle to rotate the sprite.
+     * @param scale The scale factor on the axis.
      */
     virtual void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect,
                                       int frameIndex, int totalColumns, int totalRows, bool flipX,
-                                      bool flipY, double angle) = 0;
+                                      bool flipY, double angle, float scale) = 0;
 };
 
 #endif // DEFUNBOBENGINE_IO_FACADE_HPP
