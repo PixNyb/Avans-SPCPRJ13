@@ -65,6 +65,7 @@ void Engine::Start()
     int frameCount = 0;
     double lastFPSUpdateTime = Time::GetTotalTime();
     auto graphicsFacade = Get<IOFacade>();
+    auto sceneManager = Get<SceneManager>();
 
     if (!graphicsFacade)
     {
@@ -80,16 +81,18 @@ void Engine::Start()
 
         // Start of the frame
         Time::StartFrame();
+        graphicsFacade->ClearScreen();
 
+        auto scene = sceneManager->GetScene().lock();
+        
         Get<PhysicsManager>()->Step();
 
         Get<IInputFacade>()->Update();
 
-        Get<SceneManager>()->Update(deltaTime);
+        sceneManager->Update(deltaTime);
 
         Get<BehaviourScriptManager>()->Update();
 
-        graphicsFacade->ClearScreen();
         Get<RenderManager>()->Render();
         Get<PathfindingManager>()->Render();
 
