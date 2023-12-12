@@ -24,11 +24,21 @@ class ShapeComponent : public Component
 {
   private:
     std::vector<std::shared_ptr<Geometry>> _geometries;
+    bool translate;
 
   public:
-    explicit ShapeComponent(std::vector<std::shared_ptr<Geometry>> geometries);
+    explicit ShapeComponent(std::vector<std::shared_ptr<Geometry>> geometries,
+                            bool translate = true);
+
     [[nodiscard]] std::vector<std::shared_ptr<Geometry>> GetGeometries() const;
+
     std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
+
+    /**
+     * @brief Specifies whether or not to translate the shapes relative to the game object
+     * @return True if it should translate
+     */
+    [[nodiscard]] bool DoTranslate() const;
 };
 
 #endif // DEFUNBOBENGINE_INCLUDE_API_SHAPE_COMPONENT_HPP

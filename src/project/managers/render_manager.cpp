@@ -170,8 +170,18 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
     {
         for (auto &shape : shapeComponent->GetGeometries())
         {
-            shape->SetTranslation(
-                {static_cast<float>(relCamPos.x), static_cast<float>(relCamPos.y)});
+            if (shapeComponent->DoTranslate())
+            {
+                shape->SetTranslation(
+                    {static_cast<float>(relCamPos.x), static_cast<float>(relCamPos.y)});
+            }
+            else
+            {
+                // TODO: Perhaps do stuff like this more lazily
+                auto gameObjectTransform = gameObject->GetTransform();
+                shape->SetTranslation({static_cast<float>(gameObjectTransform.position.x),
+                                       static_cast<float>(gameObjectTransform.position.y)});
+            }
             shape->Accept(shapeRenderer);
         }
     }
