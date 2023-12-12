@@ -32,16 +32,16 @@ void ContactListener::BeginContact(b2Contact *contact)
     for (auto &script : gameObjectA->GetComponents<BehaviourScript>())
     {
         if (gameObjectA->GetComponent<BoxCollider>())
-            script->OnTriggerEnter2D(*gameObjectA->GetComponent<BoxCollider>());
+            script->OnTriggerEnter2D(*gameObjectB->GetComponent<BoxCollider>());
         else
-            script->OnTriggerEnter2D(*gameObjectA->GetComponent<CircleCollider>());
+            script->OnTriggerEnter2D(*gameObjectB->GetComponent<CircleCollider>());
     }
     for (auto &script : gameObjectB->GetComponents<BehaviourScript>())
     {
         if (gameObjectB->GetComponent<BoxCollider>())
-            script->OnTriggerEnter2D(*gameObjectB->GetComponent<BoxCollider>());
+            script->OnTriggerEnter2D(*gameObjectA->GetComponent<BoxCollider>());
         else
-            script->OnTriggerEnter2D(*gameObjectB->GetComponent<CircleCollider>());
+            script->OnTriggerEnter2D(*gameObjectA->GetComponent<CircleCollider>());
     }
 }
 

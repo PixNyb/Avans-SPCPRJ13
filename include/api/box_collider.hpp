@@ -30,7 +30,7 @@ class BoxCollider : public Collider
     /**
      * @brief Constructs a new BoxCollider.
      */
-    BoxCollider();
+    BoxCollider(std::weak_ptr<GameObject> parent);
 
     /**
      * @brief Make a clone of the component.
