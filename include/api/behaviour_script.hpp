@@ -56,19 +56,19 @@ class BehaviourScript : public Component
      * @brief Sent when another object enters a trigger collider
      *        attached to this object (2D physics only).
      */
-    virtual void OnTriggerEnter2D(const Collider &collider);
+    virtual void OnTriggerEnter2D(Collider &collider);
 
     /**
      * @brief Sent when another object leaves a trigger collider
      *        attached to this object (2D physics only).
      */
-    virtual void OnTriggerExit2D(const Collider &collider);
+    virtual void OnTriggerExit2D(Collider &collider);
 
     /**
      * @brief Sent each frame where another object is within a trigger
      *        collider attached to this object (2D physics only).
      */
-    virtual void OnTriggerStay2D(const Collider &collider);
+    virtual void OnTriggerStay2D(Collider &collider);
 
     /**
      * @brief Checks if the behaviour script has started.
