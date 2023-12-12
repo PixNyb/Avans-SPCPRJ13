@@ -10,8 +10,10 @@
  */
 #include "circle_collider.hpp"
 
-CircleCollider::CircleCollider() : radius(0.0)
-{}
+CircleCollider::CircleCollider(std::weak_ptr<GameObject> parent) : radius(0.0)
+{
+    this->parent = parent;
+}
 
 CircleCollider::CircleCollider(const CircleCollider &other) : Collider(other)
 {
