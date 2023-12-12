@@ -25,7 +25,8 @@ void ButtonClickListener::OnMouseClicked()
     if (mousePos.x >= button.GetTransform().position.x &&
         mousePos.x <= button.GetTransform().position.x + button.GetWidth() &&
         mousePos.y >= button.GetTransform().position.y &&
-        mousePos.y <= button.GetTransform().position.y + button.GetHeight())
+        mousePos.y <= button.GetTransform().position.y + button.GetHeight() &&
+        button.onClick != nullptr)
     {
         button.onClick();
     }
