@@ -171,9 +171,10 @@ class GraphicsFacade : public IOFacade
      * @param rectangle The rectangle to render the texture in.
      * @param flipX Whether to flip the texture horizontally.
      * @param flipY Whether to flip the texture vertically.
+     * @param angle The angle to draw the sprite at.
      * @param scale The scale factor on the axis
      */
-    void DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX, bool flipY,
+    void DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX, bool flipY, int angle,
                     float scale) override;
 
     /**

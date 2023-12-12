@@ -315,7 +315,7 @@ void GraphicsFacade::DrawText(const Text &text)
 }
 
 void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX,
-                                bool flipY, float scale)
+                                bool flipY, int angle, float scale)
 {
     // Check if the texture has already been created and cached
     SDL_Texture *sdlTexture = GetCachedSDLTexture(texture);

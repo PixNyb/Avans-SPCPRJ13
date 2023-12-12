@@ -188,10 +188,11 @@ class IOFacade
      * @param rectangle The rectangle to render the texture in.
      * @param flipX Whether to flip the texture horizontally.
      * @param flipY Whether to flip the texture vertically.
+     * @param angle The angle to rotate the texture.
      * @param scale The scale factor on the axis.
      */
     virtual void DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX, bool flipY,
-                            float scale) = 0;
+                            int angle, float scale) = 0;
 
     /**
      * @brief Renders an SDL_Texture on the rendering target.
