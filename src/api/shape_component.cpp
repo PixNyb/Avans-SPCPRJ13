@@ -12,8 +12,8 @@
 #include "shape_component.hpp"
 #include <utility>
 
-ShapeComponent::ShapeComponent(std::vector<std::shared_ptr<Geometry>> geometries)
-    : _geometries(std::move(geometries))
+ShapeComponent::ShapeComponent(std::vector<std::shared_ptr<Geometry>> geometries, bool translate)
+    : _geometries(std::move(geometries)), translate(translate)
 {
 }
 
@@ -23,3 +23,5 @@ std::shared_ptr<Component> ShapeComponent::Clone(std::weak_ptr<GameObject> paren
 {
     return std::make_shared<ShapeComponent>(_geometries);
 }
+
+bool ShapeComponent::DoTranslate() const { return translate; }
