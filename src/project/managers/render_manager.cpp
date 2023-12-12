@@ -178,6 +178,7 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
             gfx.DrawSprite(spriteTexture, spriteRect,
                            gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedX(),
                            gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY(),
+                           gameObjectPointer.lock()->GetTransform().rotation,
                            gameObjectPointer.lock()->GetTransform().scale);
         }
     }
