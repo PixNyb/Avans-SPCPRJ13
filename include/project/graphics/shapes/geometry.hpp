@@ -15,8 +15,11 @@
 #ifndef DEFUNBOBENGINE_GEOMETRY_HPP
 #define DEFUNBOBENGINE_GEOMETRY_HPP
 
+#include "geometry_visitor.hpp"
 #include "shape_color.hpp"
 #include "vector2d.hpp"
+
+class GeometryVisitor;
 
 /**
  * @class Geometry
@@ -28,8 +31,9 @@
 class Geometry
 {
   protected:
-    ShapeColor fillColor; ///< Color of the geometric shape.
-    double rotation = 0;  ///< Rotation of the geometric shape.
+    Vector2D translation{0, 0}; ///< The translation of the geometric shape.
+    ShapeColor fillColor;       ///< Color of the geometric shape.
+    double rotation = 0;        ///< Rotation of the geometric shape.
 
   public:
     Geometry() : fillColor(Color::Black()) {}
@@ -79,6 +83,24 @@ class Geometry
      * @return True if the shape is within the area, false otherwise.
      */
     virtual bool IsWithinArea(const Vector2D &start, const Vector2D &end) = 0;
+
+    /**
+     * @brief Sets the translation of the geometric shape.
+     * @param t The translation to set.
+     */
+    void SetTranslation(const Vector2D &t) { translation = t; }
+
+    /**
+     * @brief Gets the translation of the geometric shape.
+     * @return The translation of the geometric shape.
+     */
+    [[nodiscard]] Vector2D GetTranslation() const { return translation; }
+
+    /**
+     * @brief Accepts a visitor.
+     * @param visitor The visitor to accept.
+     */
+    virtual void Accept(GeometryVisitor &visitor) = 0;
 };
 
 #endif // DEFUNBOBENGINE_GEOMETRY_HPP

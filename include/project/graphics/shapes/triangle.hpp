@@ -67,6 +67,8 @@ class Triangle : public Geometry
         }
         return true;
     }
+
+    void Accept(GeometryVisitor &visitor) override { visitor.Visit(*this); }
 };
 
 #endif // DEFUNBOBENGINE_TRIANGLE_HPP
