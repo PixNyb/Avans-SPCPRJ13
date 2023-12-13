@@ -126,7 +126,7 @@ class Animator : public BehaviourScript
      * This function sets the GameObject of the Animator.
      * @param gameObject The GameObject of the Animator.
      */
-    void SetGameObject(std::weak_ptr<GameObject> gameObject) { this->gameObject = gameObject; }
+    void SetGameObject(std::weak_ptr<GameObject> gObject) { this->gameObject = gObject; }
 
   private:
     std::unique_ptr<AnimationState> currentState; ///< The current state of the Animator.
