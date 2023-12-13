@@ -17,9 +17,9 @@
 
 LevelManager::LevelManager(std::shared_ptr<SceneManager> &sManager,
                            std::shared_ptr<PrefabManager> &pManager,
-                           std::shared_ptr<JSONReader> &jReader)
+                           std::shared_ptr<JSONHandler> &jHandler)
     : levels(), sceneManager(sManager), prefabManager(pManager),
-      levelFactory(std::make_unique<LevelFactory>(pManager)), jsonReader(jReader),
+      levelFactory(std::make_unique<LevelFactory>(pManager)), jsonHandler(jHandler),
       levelFileExtension(".json")
 {
 }
@@ -54,7 +54,7 @@ void LevelManager::LoadLevel(int id)
     try
     {
         // Read level JSON.
-        auto levelJson = jsonReader->ConvertFileToJson(path->second);
+        auto levelJson = jsonHandler->ConvertFileToJson(path->second);
 
         // Create level based on the JSON.
         auto level = levelFactory->CreateScene(levelJson);
@@ -71,7 +71,7 @@ void LevelManager::LoadLevel(int id)
     }
 }
 
-std::string LevelManager::SaveLevel(std::string &path)
+std::string LevelManager::SaveLevel(std::string &directory)
 {
     auto currentScene = sceneManager->GetScene();
     auto levelJson = nlohmann::json::object();
@@ -98,8 +98,11 @@ std::string LevelManager::SaveLevel(std::string &path)
     // Add the array of GameObjects to the level json.
     levelJson["objects"] = objects;
 
-    // TODO: Return path of the newly stored level.
-    return "Path";
+    // TODO: New file naming method.
+    // Write the json object to a file and return the resulting file path.
+    auto filePath = jsonHandler->WriteJsonToFile(directory, "level", levelJson);
+
+    return filePath;
 }
 
 nlohmann::json LevelManager::CreateGameObjectJson(GameObject &gameObject)
