@@ -31,7 +31,9 @@
 class Pathfindable : public Component
 {
   public:
-    Pathfindable(std::shared_ptr<GameObject> parent);
+    std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
+    Pathfindable(std::weak_ptr<GameObject> parent);
+    Pathfindable(const Pathfindable &other);
     ~Pathfindable();
 
     std::vector<std::shared_ptr<Node>> GetNodes() const;

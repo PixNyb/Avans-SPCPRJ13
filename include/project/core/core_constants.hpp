@@ -58,7 +58,7 @@ namespace Pathfinding
 /**
  * @brief The maximum distance between two nodes on a pathfindable object.
  */
-const int NODE_SPACING = 10;
+const int NODE_SPACING = 100;
 const Color NODE_COLOR = Color::Red();
 } // namespace Pathfinding
 

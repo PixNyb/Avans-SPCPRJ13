@@ -90,8 +90,8 @@ void Engine::Start()
         Get<BehaviourScriptManager>()->Update();
 
         graphicsFacade->ClearScreen();
-        Get<PathfindingManager>()->Render();
         Get<RenderManager>()->Render();
+        Get<PathfindingManager>()->Render();
 
         graphicsFacade->PresentScreen();
 

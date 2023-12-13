@@ -5,19 +5,35 @@
 #include "engine.hpp"
 #include "io_facade.hpp"
 #include "point.hpp"
+#include <iostream>
+#include <memory>
 
-Pathfindable::Pathfindable(std::shared_ptr<GameObject> parent)
+Pathfindable::Pathfindable(std::weak_ptr<GameObject> parent)
 {
-    _parent = parent;
+    _parent = parent.lock();
     CreateAndStoreNodes();
 }
 
 Pathfindable::~Pathfindable() {}
 
+std::shared_ptr<Component> Pathfindable::Clone(std::weak_ptr<GameObject> parent)
+{
+    return std::make_shared<Pathfindable>(parent);
+    CreateAndStoreNodes();
+}
+
+Pathfindable::Pathfindable(const Pathfindable &other)
+{
+    _parent = other._parent;
+    _nodes = other._nodes;
+    CreateAndStoreNodes();
+}
+
 std::vector<std::shared_ptr<Node>> Pathfindable::GetNodes() const { return _nodes; }
 
 void Pathfindable::CreateAndStoreNodes()
 {
+    std::cout << "Creating nodes for: " << _parent->GetName() << std::endl;
     // Find the collider of the parent GameObject.
     auto collider = _parent->GetComponent<BoxCollider>();
     auto transform = _parent->GetTransform();
@@ -30,6 +46,8 @@ void Pathfindable::CreateAndStoreNodes()
     auto width = collider->Width();
     auto nodeCount = static_cast<int>(width / CoreConstants::Pathfinding::NODE_SPACING);
 
+    std::cout << "Node count: " << nodeCount << std::endl;
+
     // Place a node at each corner of the collider.
     auto topLeft = transform.position.x;
     auto topRight = transform.position.x + width;
@@ -41,6 +59,7 @@ void Pathfindable::CreateAndStoreNodes()
 
     for (int i = 0; i < nodeCount; i++)
     {
+        std::cout << "Creating node: " << topLeft + (nodeSpacing * i) << ", " << top << std::endl;
         auto node = std::make_shared<Node>(topLeft + (nodeSpacing * i), top);
         _nodes.push_back(node);
     }

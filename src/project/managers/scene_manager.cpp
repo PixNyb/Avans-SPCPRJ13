@@ -28,7 +28,7 @@ void SceneManager::SetScene(std::shared_ptr<Scene> scene)
 {
     currentScene = std::move(scene);
     auto pathfindingManager = Engine::GetInstance()->Get<PathfindingManager>();
-    pathfindingManager->Update(scene);
+    pathfindingManager->Update(currentScene);
 }
 
 void SceneManager::RenderScene() { currentScene->RenderScene(); }
