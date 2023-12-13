@@ -34,6 +34,20 @@ class Vector2D
      * @param y The y component of the vector.
      */
     Vector2D(float x = 0.0f, float y = 0.0f) : x(x), y(y) {}
+
+    Vector2D operator+=(const Vector2D &rhs)
+    {
+        x += rhs.x;
+        y += rhs.y;
+        return *this;
+    }
+
+    Vector2D operator-=(const Vector2D &rhs)
+    {
+        x -= rhs.x;
+        y -= rhs.y;
+        return *this;
+    }
 };
 
 #endif // DEFUNBOBENGINE_VECTOR2D_HPP
