@@ -24,6 +24,7 @@ Animator::Animator(const Animator &other) : BehaviourScript(other)
     this->states = other.states;
     this->totalColumns = other.totalColumns;
     this->totalRows = other.totalRows;
+    this->gameObject = other.gameObject;
 }
 
 void Animator::AddState(const std::string &name, const AnimationState &state)
@@ -66,5 +67,7 @@ int Animator::GetCurrentFrameIndex() const
 
 std::shared_ptr<Component> Animator::Clone(std::weak_ptr<GameObject> parent)
 {
-    return std::make_shared<Animator>(*this);
+    auto object = std::make_shared<Animator>(*this);
+    object->SetGameObject(parent);
+    return object;
 }
