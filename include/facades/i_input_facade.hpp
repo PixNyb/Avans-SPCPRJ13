@@ -11,6 +11,8 @@
 #ifndef DEFUNBOBENGINE_INCLUDE_FACADES_I_INPUT_FACADE_HPP
 #define DEFUNBOBENGINE_INCLUDE_FACADES_I_INPUT_FACADE_HPP
 
+#include "button_click_listener.hpp"
+#include "imouse_listener.hpp"
 #include "point.hpp"
 #include <string>
 #include <vector>
@@ -497,6 +499,20 @@ class IInputFacade
      * @return True if the action has just stopped, false otherwise.
      */
     virtual bool GetActionUp(const std::string &action) const = 0;
+
+    /**
+     * @brief Adds a mouse listener to the input system.
+     * @param mouseListener The mouse listener to add.
+     */
+    virtual void AddMouseListener(const std::weak_ptr<IMouseListener> &mouseListener) = 0;
+
+    /**
+     * @brief Removes a mouse listener from the input system.
+     * @param mouseListener The mouse listener to remove.
+     */
+    virtual void RemoveMouseListener(const std::weak_ptr<IMouseListener> &mouseListener) = 0;
+
+    [[nodiscard]] virtual std::vector<std::weak_ptr<IMouseListener>> GetMouseListeners() const = 0;
 };
 
 #endif // DEFUNBOBENGINE_INCLUDE_FACADES_I_INPUT_FACADE_HPP

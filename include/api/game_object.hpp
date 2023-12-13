@@ -105,7 +105,7 @@ class GameObject : public std::enable_shared_from_this<GameObject>, public IProt
     /**
      * @brief Destructor for GameObject.
      */
-    virtual ~GameObject() = default;
+    virtual ~GameObject();
 
     /**
      * @brief Get the name of the GameObject.
