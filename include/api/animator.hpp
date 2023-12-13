@@ -85,38 +85,34 @@ class Animator : public BehaviourScript
      * @brief Update the Animator.
      * @param deltaTime
      */
-    virtual void OnUpdate() override;
+    void OnUpdate() override;
 
     /**
      * @brief Get the current frame index.
      * @return int The current frame index.
      */
-    int GetCurrentFrameIndex() const;
+    [[nodiscard]] int GetCurrentFrameIndex() const;
 
     /**
      * @brief Gets the total number of columns in the sprite sheet.
      * This function returns the total number of columns in the sprite sheet.
      * @return int The total number of columns in the sprite sheet.
      */
-    int GetTotalColumns() const;
+    [[nodiscard]] int GetTotalColumns() const { return this->totalColumns; };
 
     /**
      * @brief Gets the total number of rows in the sprite sheet.
      * This function returns the total number of rows in the sprite sheet.
      * @return int The total number of rows in the sprite sheet.
      */
-    int GetTotalRows() const;
-
+    [[nodiscard]] int GetTotalRows() const { return this->totalRows; };
+    
     /**
      * @brief Sets the total number of columns in the sprite sheet.
      * This function sets the total number of columns in the sprite sheet.
      * @param totalColumns The total number of columns in the sprite sheet.
      */
-    void SetTotalColumns(int columns)
-    {
-        std::cout << "Setting total columns: " << totalColumns << std::endl;
-        this->totalColumns = columns;
-    }
+    void SetTotalColumns(int columns) { this->totalColumns = columns; }
 
     /**
      * @brief Sets the total number of rows in the sprite sheet.
