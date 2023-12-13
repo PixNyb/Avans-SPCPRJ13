@@ -143,16 +143,8 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
         {
             // Handling sprite sheets with Animator
             int currentFrameIndex = animatorComponent->GetCurrentFrameIndex();
-
-            //            int totalColumns = animatorComponent->GetTotalColumns() == 0
-            //                                   ? 10
-            //                                   : animatorComponent->GetTotalColumns();
-            //            int totalRows =
-            //                animatorComponent->GetTotalRows() == 0 ? 1 :
-            //                animatorComponent->GetTotalRows();
-
-            int totalColumns = 10;
-            int totalRows = 1;
+            int totalColumns = animatorComponent->GetTotalColumns();
+            int totalRows = animatorComponent->GetTotalRows();
 
             gfx.DrawSpriteSheetFrame(spriteComponent->GetSprite(), spriteRect, currentFrameIndex,
                                      totalColumns, totalRows,

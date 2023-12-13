@@ -13,6 +13,7 @@
 
 #include "animation_state.hpp"
 #include "behaviour_script.hpp"
+#include <iostream>
 #include <map>
 #include <memory>
 #include <vector>
@@ -97,28 +98,32 @@ class Animator : public BehaviourScript
      * This function returns the total number of columns in the sprite sheet.
      * @return int The total number of columns in the sprite sheet.
      */
-    [[nodiscard]] int GetTotalColumns() const { return totalColumns; }
+    int GetTotalColumns() const;
 
     /**
      * @brief Gets the total number of rows in the sprite sheet.
      * This function returns the total number of rows in the sprite sheet.
      * @return int The total number of rows in the sprite sheet.
      */
-    [[nodiscard]] int GetTotalRows() const { return totalRows; }
+    int GetTotalRows() const;
 
     /**
      * @brief Sets the total number of columns in the sprite sheet.
      * This function sets the total number of columns in the sprite sheet.
      * @param totalColumns The total number of columns in the sprite sheet.
      */
-    void SetTotalColumns(int totalColumns) { this->totalColumns = totalColumns; }
+    void SetTotalColumns(int columns)
+    {
+        std::cout << "Setting total columns: " << totalColumns << std::endl;
+        this->totalColumns = columns;
+    }
 
     /**
      * @brief Sets the total number of rows in the sprite sheet.
      * This function sets the total number of rows in the sprite sheet.
      * @param totalRows The total number of rows in the sprite sheet.
      */
-    void SetTotalRows(int totalRows) { this->totalRows = totalRows; }
+    void SetTotalRows(int rows) { this->totalRows = rows; }
 
   private:
     std::unique_ptr<AnimationState> currentState; ///< The current state of the Animator.
