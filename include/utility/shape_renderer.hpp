@@ -21,12 +21,19 @@
 #include <io_facade.hpp>
 #include <memory>
 
+/**
+ * @brief A visitor class that can render shapes.
+ */
 class ShapeRenderer : public GeometryVisitor
 {
   private:
-    std::shared_ptr<IOFacade> _ioFacade;
+    std::shared_ptr<IOFacade> _ioFacade; ///< The io facade.
 
   public:
+    /**
+     * @brief Construct a new Shape Renderer object.
+     * @param ioFacade The io facade.
+     */
     explicit ShapeRenderer(std::shared_ptr<IOFacade> ioFacade);
 
     void Visit(Circle &circle) override;
