@@ -32,7 +32,7 @@ class JSONHandler
     /**
      * @brief Constructs a new JSONHandler.
      */
-    JSONHandler() = default;
+    JSONHandler() : fileExtension(".json") {}
 
     /**
      * @brief Converts a file to a JSON object.
