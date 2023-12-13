@@ -25,3 +25,7 @@ std::shared_ptr<Component> ShapeComponent::Clone(std::weak_ptr<GameObject> paren
 }
 
 bool ShapeComponent::DoTranslate() const { return translate; }
+void ShapeComponent::AddGeometry(std::shared_ptr<Geometry> geo)
+{
+    _geometries.push_back(std::move(geo));
+}
