@@ -71,26 +71,82 @@ void LevelManager::LoadLevel(int id)
     }
 }
 
-std::string LevelManager::SaveLevel()
+std::string LevelManager::SaveLevel(std::string &path)
 {
     auto currentScene = sceneManager->GetScene();
-    nlohmann::json levelJson = {"objects", nlohmann::json::array()};
+    auto levelJson = nlohmann::json::object();
 
+    // Convert the Camera to a json object and add it to the level json.
+    auto cameraJson = CreateCameraJson(*currentScene.lock()->GetCamera());
+    levelJson["camera"] = cameraJson;
+
+    // Convert the GameObjects of the scene to json objects.
+    nlohmann::json objects;
     for (const auto &gameObject : currentScene.lock()->contents)
     {
-        auto prefabId = gameObject->GetPrefabId();
+        // Check if the GameObject has a parent, if it does it should not be called here due
+        // to only root objects needing to be in objects array. The level json has a recursive
+        // structure of root components and their children. These children will be added in the
+        // recursive function call.
+        if (gameObject->GetParent() != nullptr)
+            continue;
 
-        if (!prefabManager->HasPrefab(prefabId))
-            throw std::runtime_error(fmt::format("A GameObject needs to be a registered prefab "
-                                                 "before it can be saved. Unregistered type: '{}'",
-                                                 prefabId));
-
-        // TODO: Save the prefab to the json.
-
+        auto objectJson = CreateGameObjectJson(*gameObject);
+        objects.push_back(objectJson);
     }
+
+    // Add the array of GameObjects to the level json.
+    levelJson["objects"] = objects;
 
     // TODO: Return path of the newly stored level.
     return "Path";
 }
 
-void LevelManager::AddGameObject(nlohmann::json &levelJson, GameObject &gameObject) {}
+nlohmann::json LevelManager::CreateGameObjectJson(GameObject &gameObject)
+{
+    auto objectJson = nlohmann::json::object();
+    auto prefabId = gameObject.GetPrefabId();
+
+    // If no prefab is registered by the prefab id, or a default value is found, an error is thrown.
+    if (!prefabManager->HasPrefab(prefabId) || prefabId.empty())
+        throw std::runtime_error(fmt::format("A GameObject needs to be a registered prefab "
+                                             "before it can be saved. Unregistered type: '{}'",
+                                             prefabId));
+
+    // Add basic properties.
+    objectJson["prefab"] = gameObject.GetPrefabId();
+    objectJson["name"] = gameObject.GetName();
+    objectJson["active"] = gameObject.IsActive();
+    objectJson["layer"] = gameObject.GetLayer();
+
+    // Add transform struct.
+    auto transform = gameObject.GetTransform();
+    objectJson["transform"] = {
+        {"position", {{"x", transform.position.x}, {"y", transform.position.y}}},
+        {"rotation", transform.rotation},
+        {"scale", transform.scale}};
+
+    nlohmann::json children;
+    // Iterate over every child object in a recursive function call.
+    for (const auto &child : gameObject.GetChildren())
+    {
+        // When push_back() is called the json turns into an array.
+        children.push_back(CreateGameObjectJson(*child));
+    }
+
+    // The children array is added to the GameObject json.
+    objectJson["children"] = children;
+
+    return objectJson;
+}
+
+nlohmann::json LevelManager::CreateCameraJson(Camera &camera)
+{
+    auto cameraJson = nlohmann::json::object();
+
+    // Add properties to the camera json.
+    cameraJson["width"] = camera.GetAspectWidth();
+    cameraJson["height"] = camera.GetAspectHeight();
+
+    return cameraJson;
+}
