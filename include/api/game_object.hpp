@@ -42,6 +42,7 @@ class GameObject : public std::enable_shared_from_this<GameObject>, public IProt
     bool active;                        ///< The active flag of the GameObject.
     std::string tag;                    ///< The tag/type of the GameObject.
     int layer;                          ///< The layer of the GameObject.
+    std::string prefabId;               ///< The id of the prefab type of the GameObject.
     std::weak_ptr<PhysicsManager>
         physicsManager; ///< A reference to the physicsmanager for behaviorscripts
     std::vector<std::shared_ptr<GameObject>> children; ///< The children of the GameObject.
@@ -141,6 +142,18 @@ class GameObject : public std::enable_shared_from_this<GameObject>, public IProt
      * @param layer The new layer of the GameObject.
      */
     void SetLayer(int layer);
+
+    /**
+     * @brief Get the prefab id of the GameObject.
+     * @return The prefab id of the GameObject.
+     */
+    std::string GetPrefabId() const;
+
+    /**
+     * @brief Set the prefab id of the GameObject.
+     * @param id The new prefab id of the GameObject.
+     */
+    void SetPrefabId(std::string id);
 
     /**
      * @brief Get the transform of the GameObject.

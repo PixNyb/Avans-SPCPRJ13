@@ -60,6 +60,13 @@ class LevelManager
      */
     std::string levelFileExtension;
 
+    /**
+     * @brief Add a GameObject to the Level Json.
+     * @param levelJson The json to which the GameObject is to be added.
+     * @param gameObject The GameObject which is to be added to the level.
+     */
+    void AddGameObject(nlohmann::json &levelJson, GameObject &gameObject);
+
   public:
     /**
      * @brief Construct a new LevelManager;

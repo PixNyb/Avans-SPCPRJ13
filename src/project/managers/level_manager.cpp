@@ -74,20 +74,23 @@ void LevelManager::LoadLevel(int id)
 std::string LevelManager::SaveLevel()
 {
     auto currentScene = sceneManager->GetScene();
-    nlohmann::json levelJson{};
+    nlohmann::json levelJson = {"objects", nlohmann::json::array()};
 
     for (const auto &gameObject : currentScene.lock()->contents)
     {
-        auto prefabId = gameObject->GetTag();
+        auto prefabId = gameObject->GetPrefabId();
 
         if (!prefabManager->HasPrefab(prefabId))
             throw std::runtime_error(fmt::format("A GameObject needs to be a registered prefab "
                                                  "before it can be saved. Unregistered type: '{}'",
                                                  prefabId));
-        
+
         // TODO: Save the prefab to the json.
+
     }
 
     // TODO: Return path of the newly stored level.
     return "Path";
 }
+
+void LevelManager::AddGameObject(nlohmann::json &levelJson, GameObject &gameObject) {}

@@ -17,19 +17,19 @@
 #include <algorithm>
 #include <memory>
 
-GameObject::GameObject() : name(""), active(true), tag(""), layer(0), transform()
+GameObject::GameObject() : name(""), active(true), tag(""), layer(0), prefabId(""), transform()
 {
     // Constructor default initialization
 }
 
 GameObject::GameObject(const std::string &name)
-    : name(name), active(true), tag(""), layer(0), transform()
+    : name(name), active(true), tag(""), layer(0), prefabId(""), transform()
 {
     // Constructor with name initialization
 }
 
 GameObject::GameObject(const std::string &name, const Transform &transform)
-    : name(name), transform(transform), active(true), tag(""), layer(0)
+    : name(name), transform(transform), active(true), tag(""), layer(0), prefabId("")
 {
     // Constructor with name and transform initialization
 }
@@ -49,6 +49,7 @@ std::shared_ptr<GameObject> GameObject::Clone()
     ptr->active = active;
     ptr->tag = tag;
     ptr->layer = layer;
+    ptr->prefabId = prefabId;
 
     return ptr;
 }
@@ -69,6 +70,10 @@ void GameObject::SetTag(std::string tag) { this->tag = tag; }
 int GameObject::GetLayer() const { return layer; }
 
 void GameObject::SetLayer(int layer) { this->layer = layer; }
+
+std::string GameObject::GetPrefabId() const { return prefabId; }
+
+void GameObject::SetPrefabId(std::string id) { this->prefabId = id; }
 
 const Transform &GameObject::GetTransform() const { return transform; }
 
