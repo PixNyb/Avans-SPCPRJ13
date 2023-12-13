@@ -1,10 +1,11 @@
 <map id="Component" name="Component">
-<area shape="rect" id="node1" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="208,80,305,107"/>
+<area shape="rect" id="node1" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="269,80,367,107"/>
 <area shape="rect" id="node3" href="$classAudioSource.html" title="Component for handling audio playback." alt="" coords="5,155,108,181"/>
 <area shape="rect" id="node4" href="$classBehaviourScript.html" title="Base class for scriptable behavior in game objects." alt="" coords="133,155,258,181"/>
 <area shape="rect" id="node7" href="$classCollider.html" title="Base class for collider components." alt="" coords="282,155,354,181"/>
 <area shape="rect" id="node11" href="$classRigidBody.html" title="Represents a physics body in the game engine." alt="" coords="378,155,466,181"/>
-<area shape="rect" id="node2" href="$classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="175,5,339,32"/>
+<area shape="rect" id="node12" href="$classShapeComponent.html" title="A class that represents a shape component." alt="" coords="491,155,628,181"/>
+<area shape="rect" id="node2" href="$classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="236,5,400,32"/>
 <area shape="rect" id="node5" href="$classAnimator.html" title="The Animator class is a BehaviourScript that can be added to a GameObject to animate it according to ..." alt="" coords="58,229,141,256"/>
 <area shape="rect" id="node6" href="$classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="165,229,225,256"/>
 <area shape="rect" id="node8" href="$classBoxCollider.html" title="Represents a rectangular collision area." alt="" coords="249,229,347,256"/>

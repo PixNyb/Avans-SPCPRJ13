@@ -1,9 +1,11 @@
 <map id="include/project/graphics/texture.hpp" name="include/project/graphics/texture.hpp">
-<area shape="rect" id="node1" title="This file contains the Texture class definition." alt="" coords="242,5,419,47"/>
-<area shape="rect" id="node2" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="261,95,401,136"/>
-<area shape="rect" id="node3" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="138,184,321,225"/>
-<area shape="rect" id="node7" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="345,184,522,225"/>
-<area shape="rect" id="node4" href="$render__manager_8hpp_source.html" title=" " alt="" coords="5,273,192,315"/>
-<area shape="rect" id="node5" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="65,363,263,389"/>
-<area shape="rect" id="node6" href="$graphics__facade_8cpp.html" title="This file contains the GraphicsFacade class implementation." alt="" coords="267,273,421,315"/>
+<area shape="rect" id="node1" title="This file contains the Texture class definition." alt="" coords="217,5,394,47"/>
+<area shape="rect" id="node2" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="236,95,376,136"/>
+<area shape="rect" id="node3" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="10,184,193,225"/>
+<area shape="rect" id="node7" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="217,184,394,225"/>
+<area shape="rect" id="node8" href="$shape__renderer_8hpp.html" title="A file containing the ShapeRenderer class." alt="" coords="419,184,574,225"/>
+<area shape="rect" id="node4" href="$render__manager_8hpp_source.html" title=" " alt="" coords="203,273,390,315"/>
+<area shape="rect" id="node5" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="43,363,240,389"/>
+<area shape="rect" id="node6" href="$graphics__facade_8cpp.html" title="This file contains the GraphicsFacade class implementation." alt="" coords="24,273,179,315"/>
+<area shape="rect" id="node9" href="$shape__renderer_8cpp.html" title="A file containing the ShapeRenderer class." alt="" coords="414,281,629,307"/>
 </map>

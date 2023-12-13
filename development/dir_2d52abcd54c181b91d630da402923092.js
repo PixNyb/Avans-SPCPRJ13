@@ -62,6 +62,9 @@ var dir_2d52abcd54c181b91d630da402923092 =
     [ "scene.hpp", "scene_8hpp.html", [
       [ "Scene", "classScene.html", "classScene" ]
     ] ],
+    [ "shape_component.hpp", "shape__component_8hpp.html", [
+      [ "ShapeComponent", "classShapeComponent.html", "classShapeComponent" ]
+    ] ],
     [ "sprite.hpp", "sprite_8hpp.html", [
       [ "Sprite", "classSprite.html", "classSprite" ]
     ] ],

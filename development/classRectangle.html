@@ -111,9 +111,10 @@ Collaboration diagram for Rectangle:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRectangle__coll__graph.png" border="0" usemap="#aRectangle_coll__map" alt="Collaboration graph"/></div>
 <map name="aRectangle_coll__map" id="aRectangle_coll__map">
-<area shape="rect" title="Represents a rectangle and extends the Geometry class." alt="" coords="10,171,97,197"/>
-<area shape="rect" href="classGeometry.html" title="Abstract base class for geometric shapes." alt="" coords="10,95,97,121"/>
-<area shape="rect" href="classShapeColor.html" title="ShapeColor is a class that represents a color in the game engine." alt="" coords="5,5,101,32"/>
+<area shape="rect" title="Represents a rectangle and extends the Geometry class." alt="" coords="59,171,145,197"/>
+<area shape="rect" href="classGeometry.html" title="Abstract base class for geometric shapes." alt="" coords="59,95,145,121"/>
+<area shape="rect" href="classVector2D.html" title="Represents a two&#45;dimensional vector." alt="" coords="5,5,87,32"/>
+<area shape="rect" href="classShapeColor.html" title="ShapeColor is a class that represents a color in the game engine." alt="" coords="111,5,207,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -125,6 +126,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af59bb859c622c91ee5c1270db09736fe"><td class="memItemLeft" align="right" valign="top"><a id="af59bb859c622c91ee5c1270db09736fe"></a>
 <a class="el" href="classVector2D.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetPosition</b> () const</td></tr>
 <tr class="separator:af59bb859c622c91ee5c1270db09736fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a758a42d2b4e9a255961878d0f53f82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRectangle.html#a5a758a42d2b4e9a255961878d0f53f82">SetPosition</a> (const <a class="el" href="classVector2D.html">Vector2D</a> &amp;pos)</td></tr>
+<tr class="memdesc:a5a758a42d2b4e9a255961878d0f53f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the position of the rectangle's reference point (typically the top left corner).  <a href="classRectangle.html#a5a758a42d2b4e9a255961878d0f53f82">More...</a><br /></td></tr>
+<tr class="separator:a5a758a42d2b4e9a255961878d0f53f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdbcb27f7f0f2602eeeaeeaf3c6540f3"><td class="memItemLeft" align="right" valign="top"><a id="afdbcb27f7f0f2602eeeaeeaf3c6540f3"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>GetHeight</b> () const</td></tr>
 <tr class="separator:afdbcb27f7f0f2602eeeaeeaf3c6540f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,6 +141,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>GetWidth</b> () const<
 <tr class="memitem:af1e277632385225b71a9035a681130bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRectangle.html#af1e277632385225b71a9035a681130bc">IsWithinArea</a> (const <a class="el" href="classVector2D.html">Vector2D</a> &amp;start, const <a class="el" href="classVector2D.html">Vector2D</a> &amp;end) override</td></tr>
 <tr class="memdesc:af1e277632385225b71a9035a681130bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method to check if a geometric shape is within a given area.  <a href="classRectangle.html#af1e277632385225b71a9035a681130bc">More...</a><br /></td></tr>
 <tr class="separator:af1e277632385225b71a9035a681130bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a553d2de0c4afb653e5675dcfcb772f78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRectangle.html#a553d2de0c4afb653e5675dcfcb772f78">Accept</a> (<a class="el" href="classGeometryVisitor.html">GeometryVisitor</a> &amp;visitor) override</td></tr>
+<tr class="memdesc:a553d2de0c4afb653e5675dcfcb772f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accepts a visitor.  <a href="classRectangle.html#a553d2de0c4afb653e5675dcfcb772f78">More...</a><br /></td></tr>
+<tr class="separator:a553d2de0c4afb653e5675dcfcb772f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classGeometry"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classGeometry')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classGeometry.html">Geometry</a></td></tr>
 <tr class="memitem:aedd2e92f79197c6f0671c5d14cf72578 inherit pub_methods_classGeometry"><td class="memItemLeft" align="right" valign="top"><a id="aedd2e92f79197c6f0671c5d14cf72578"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry.html#aedd2e92f79197c6f0671c5d14cf72578">~Geometry</a> ()</td></tr>
@@ -150,10 +157,20 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="separator:a9155417e613c836a52be223bed3a8c71 inherit pub_methods_classGeometry"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecce7247296b31d4f838533ab204494f inherit pub_methods_classGeometry"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry.html#aecce7247296b31d4f838533ab204494f">GetRotation</a> () const</td></tr>
 <tr class="separator:aecce7247296b31d4f838533ab204494f inherit pub_methods_classGeometry"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a412830439cfbdb2655728ee6eb758837 inherit pub_methods_classGeometry"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry.html#a412830439cfbdb2655728ee6eb758837">SetTranslation</a> (const <a class="el" href="classVector2D.html">Vector2D</a> &amp;t)</td></tr>
+<tr class="memdesc:a412830439cfbdb2655728ee6eb758837 inherit pub_methods_classGeometry"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the translation of the geometric shape.  <a href="classGeometry.html#a412830439cfbdb2655728ee6eb758837">More...</a><br /></td></tr>
+<tr class="separator:a412830439cfbdb2655728ee6eb758837 inherit pub_methods_classGeometry"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16ba5c57c9cf0e433d312398272f6271 inherit pub_methods_classGeometry"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVector2D.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry.html#a16ba5c57c9cf0e433d312398272f6271">GetTranslation</a> () const</td></tr>
+<tr class="memdesc:a16ba5c57c9cf0e433d312398272f6271 inherit pub_methods_classGeometry"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the translation of the geometric shape.  <a href="classGeometry.html#a16ba5c57c9cf0e433d312398272f6271">More...</a><br /></td></tr>
+<tr class="separator:a16ba5c57c9cf0e433d312398272f6271 inherit pub_methods_classGeometry"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classGeometry"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classGeometry')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classGeometry.html">Geometry</a></td></tr>
+<tr class="memitem:aed7b84d1cb2b663371a40f9efc8c0497 inherit pro_attribs_classGeometry"><td class="memItemLeft" align="right" valign="top"><a id="aed7b84d1cb2b663371a40f9efc8c0497"></a>
+<a class="el" href="classVector2D.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry.html#aed7b84d1cb2b663371a40f9efc8c0497">translation</a> {0, 0}</td></tr>
+<tr class="memdesc:aed7b84d1cb2b663371a40f9efc8c0497 inherit pro_attribs_classGeometry"><td class="mdescLeft">&#160;</td><td class="mdescRight">The translation of the geometric shape. <br /></td></tr>
+<tr class="separator:aed7b84d1cb2b663371a40f9efc8c0497 inherit pro_attribs_classGeometry"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba2a01e1d50ac038cb1c0fcd1b0d1cf9 inherit pro_attribs_classGeometry"><td class="memItemLeft" align="right" valign="top"><a id="aba2a01e1d50ac038cb1c0fcd1b0d1cf9"></a>
 <a class="el" href="classShapeColor.html">ShapeColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeometry.html#aba2a01e1d50ac038cb1c0fcd1b0d1cf9">fillColor</a></td></tr>
 <tr class="memdesc:aba2a01e1d50ac038cb1c0fcd1b0d1cf9 inherit pro_attribs_classGeometry"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classColor.html" title="Represents a color using red, green, blue, and alpha (transparency) components.">Color</a> of the geometric shape. <br /></td></tr>
@@ -220,6 +237,42 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a553d2de0c4afb653e5675dcfcb772f78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a553d2de0c4afb653e5675dcfcb772f78">&#9670;&nbsp;</a></span>Accept()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Rectangle::Accept </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGeometryVisitor.html">GeometryVisitor</a> &amp;&#160;</td>
+          <td class="paramname"><em>visitor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Accepts a visitor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visitor</td><td>The visitor to accept. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classGeometry.html#aba13bc11c0684b0ae9b2f9a3980005c0">Geometry</a>.</p>
+
+</div>
+</div>
 <a id="ab04e18a4e5d6513ca9d7e78763b94561"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab04e18a4e5d6513ca9d7e78763b94561">&#9670;&nbsp;</a></span>GetArea()</h2>
 
@@ -295,6 +348,40 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <dl class="section return"><dt>Returns</dt><dd>True if the shape is within the area, false otherwise. </dd></dl>
 
 <p>Implements <a class="el" href="classGeometry.html#a4fc939d5f90d8461b3ffb5f91c336f4f">Geometry</a>.</p>
+
+</div>
+</div>
+<a id="a5a758a42d2b4e9a255961878d0f53f82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a758a42d2b4e9a255961878d0f53f82">&#9670;&nbsp;</a></span>SetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Rectangle::SetPosition </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classVector2D.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the position of the rectangle's reference point (typically the top left corner). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>The position to set. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

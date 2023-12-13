@@ -30,6 +30,9 @@ var hierarchy =
       [ "Rectangle", "classRectangle.html", null ],
       [ "Triangle", "classTriangle.html", null ]
     ] ],
+    [ "GeometryVisitor", "classGeometryVisitor.html", [
+      [ "ShapeRenderer", "classShapeRenderer.html", null ]
+    ] ],
     [ "IInputFacade", "classIInputFacade.html", [
       [ "SDLInputFacade", "classSDLInputFacade.html", null ]
     ] ],
@@ -56,7 +59,8 @@ var hierarchy =
           [ "CircleCollider", "classCircleCollider.html", null ],
           [ "PolygonCollider", "classPolygonCollider.html", null ]
         ] ],
-        [ "RigidBody", "classRigidBody.html", null ]
+        [ "RigidBody", "classRigidBody.html", null ],
+        [ "ShapeComponent", "classShapeComponent.html", null ]
       ] ]
     ] ],
     [ "ISceneFactory", "classISceneFactory.html", [

@@ -1,0 +1,7 @@
+<map id="include/project/graphics/shapes/polygon.hpp" name="include/project/graphics/shapes/polygon.hpp">
+<area shape="rect" id="node1" title="This file contains the Polygon class definition." alt="" coords="127,5,305,47"/>
+<area shape="rect" id="node2" href="$shape__renderer_8hpp.html" title="A file containing the ShapeRenderer class." alt="" coords="139,95,293,136"/>
+<area shape="rect" id="node3" href="$render__manager_8hpp_source.html" title=" " alt="" coords="11,184,197,225"/>
+<area shape="rect" id="node5" href="$shape__renderer_8cpp.html" title="A file containing the ShapeRenderer class." alt="" coords="222,191,437,218"/>
+<area shape="rect" id="node4" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="5,273,203,300"/>
+</map>

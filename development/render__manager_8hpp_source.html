@@ -96,31 +96,34 @@ $(document).ready(function(){initNavTree('render__manager_8hpp_source.html','');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="game__object_8hpp.html">game_object.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="graphics__facade_8hpp.html">graphics_facade.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="point_8hpp.html">point.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classRenderManager.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRenderManager.html">RenderManager</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRenderManager.html#a1e0788708fda748a7ff5e2730ed478f1">Render</a>(<a class="code" href="classIOFacade.html">IOFacade</a> &amp;gfx, <span class="keyword">const</span> <a class="code" href="structPoint.html">Point</a> &amp;cameraPoint,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keyword">const</span> std::weak_ptr&lt;GameObject&gt; &amp;gameObject);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> DrawTiled();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="shape__renderer_8hpp.html">shape_renderer.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classRenderManager.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRenderManager.html">RenderManager</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRenderManager.html#a1e0788708fda748a7ff5e2730ed478f1">Render</a>(<a class="code" href="classIOFacade.html">IOFacade</a> &amp;gfx, <a class="code" href="classShapeRenderer.html">ShapeRenderer</a> &amp;shapeRenderer, <span class="keyword">const</span> <a class="code" href="structPoint.html">Point</a> &amp;cameraPoint,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keyword">const</span> std::weak_ptr&lt;GameObject&gt; &amp;gameObject);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classRenderManager.html#aa52d38e61976b5b9438a9eabd2031cfa">   43</a></span>&#160;    <a class="code" href="classRenderManager.html#aa52d38e61976b5b9438a9eabd2031cfa">RenderManager</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classRenderManager.html#a221c4de19c04ad31cc1e729b9eb60c3b">   48</a></span>&#160;    <a class="code" href="classRenderManager.html#a221c4de19c04ad31cc1e729b9eb60c3b">~RenderManager</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRenderManager.html#a1e0788708fda748a7ff5e2730ed478f1">Render</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_SRC_PROJECT_MANAGERS_RENDERMANAGER_H</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> DrawTiled();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classRenderManager.html#aa52d38e61976b5b9438a9eabd2031cfa">   45</a></span>&#160;    <a class="code" href="classRenderManager.html#aa52d38e61976b5b9438a9eabd2031cfa">RenderManager</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classRenderManager.html#a221c4de19c04ad31cc1e729b9eb60c3b">   50</a></span>&#160;    <a class="code" href="classRenderManager.html#a221c4de19c04ad31cc1e729b9eb60c3b">~RenderManager</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRenderManager.html#a1e0788708fda748a7ff5e2730ed478f1">Render</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_SRC_PROJECT_MANAGERS_RENDERMANAGER_H</span></div>
 <div class="ttc" id="aclassIOFacade_html"><div class="ttname"><a href="classIOFacade.html">IOFacade</a></div><div class="ttdoc">Interface for input/output handling in the game engine.</div><div class="ttdef"><b>Definition:</b> io_facade.hpp:46</div></div>
-<div class="ttc" id="aclassRenderManager_html"><div class="ttname"><a href="classRenderManager.html">RenderManager</a></div><div class="ttdoc">This class is responsible for rendering all active game objects in the scene if possible.</div><div class="ttdef"><b>Definition:</b> render_manager.hpp:25</div></div>
-<div class="ttc" id="aclassRenderManager_html_a1e0788708fda748a7ff5e2730ed478f1"><div class="ttname"><a href="classRenderManager.html#a1e0788708fda748a7ff5e2730ed478f1">RenderManager::Render</a></div><div class="ttdeci">void Render()</div><div class="ttdoc">Renders all active game objects in the scene if possible.</div><div class="ttdef"><b>Definition:</b> render_manager.cpp:29</div></div>
+<div class="ttc" id="aclassRenderManager_html"><div class="ttname"><a href="classRenderManager.html">RenderManager</a></div><div class="ttdoc">This class is responsible for rendering all active game objects in the scene if possible.</div><div class="ttdef"><b>Definition:</b> render_manager.hpp:26</div></div>
+<div class="ttc" id="aclassRenderManager_html_a1e0788708fda748a7ff5e2730ed478f1"><div class="ttname"><a href="classRenderManager.html#a1e0788708fda748a7ff5e2730ed478f1">RenderManager::Render</a></div><div class="ttdeci">void Render()</div><div class="ttdoc">Renders all active game objects in the scene if possible.</div><div class="ttdef"><b>Definition:</b> render_manager.cpp:31</div></div>
 <div class="ttc" id="aclassRenderManager_html_a221c4de19c04ad31cc1e729b9eb60c3b"><div class="ttname"><a href="classRenderManager.html#a221c4de19c04ad31cc1e729b9eb60c3b">RenderManager::~RenderManager</a></div><div class="ttdeci">~RenderManager()</div><div class="ttdoc">This is a destructor for the RenderManager.</div></div>
 <div class="ttc" id="aclassRenderManager_html_aa52d38e61976b5b9438a9eabd2031cfa"><div class="ttname"><a href="classRenderManager.html#aa52d38e61976b5b9438a9eabd2031cfa">RenderManager::RenderManager</a></div><div class="ttdeci">RenderManager()</div><div class="ttdoc">This is a constructor for the RenderManager.</div></div>
+<div class="ttc" id="aclassShapeRenderer_html"><div class="ttname"><a href="classShapeRenderer.html">ShapeRenderer</a></div><div class="ttdoc">A visitor class that can render shapes.</div><div class="ttdef"><b>Definition:</b> shape_renderer.hpp:28</div></div>
 <div class="ttc" id="agame__object_8hpp_html"><div class="ttname"><a href="game__object_8hpp.html">game_object.hpp</a></div><div class="ttdoc">This file contains the GameObject class definition.</div></div>
 <div class="ttc" id="agraphics__facade_8hpp_html"><div class="ttname"><a href="graphics__facade_8hpp.html">graphics_facade.hpp</a></div><div class="ttdoc">Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine.</div></div>
 <div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div><div class="ttdoc">Defines the Point struct for representing 2D points and vectors in the DefunBobEngine....</div></div>
+<div class="ttc" id="ashape__renderer_8hpp_html"><div class="ttname"><a href="shape__renderer_8hpp.html">shape_renderer.hpp</a></div><div class="ttdoc">A file containing the ShapeRenderer class.</div></div>
 <div class="ttc" id="astructPoint_html"><div class="ttname"><a href="structPoint.html">Point</a></div><div class="ttdoc">Represents a 2D point or vector.</div><div class="ttdef"><b>Definition:</b> point.hpp:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
