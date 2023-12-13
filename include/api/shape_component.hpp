@@ -23,13 +23,18 @@
 class ShapeComponent : public Component
 {
   private:
-    std::vector<std::shared_ptr<Geometry>> _geometries;
-    bool translate;
+    std::vector<std::shared_ptr<Geometry>> _geometries; ///< The geometries of the shape.
+    bool translate;                                     ///< Specifies whether or not to translate
+                                                        ///< the shapes relative to the game object
 
   public:
     explicit ShapeComponent(std::vector<std::shared_ptr<Geometry>> geometries,
                             bool translate = true);
 
+    /**
+     * @brief Get the geometries of the shape.
+     * @return The geometries of the shape.
+     */
     [[nodiscard]] std::vector<std::shared_ptr<Geometry>> GetGeometries() const;
 
     std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
