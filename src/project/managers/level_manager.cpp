@@ -71,7 +71,7 @@ void LevelManager::LoadLevel(int id)
     }
 }
 
-std::string LevelManager::SaveLevel(std::string &directory)
+std::string LevelManager::SaveLevel(std::string &directory, std::string &filename)
 {
     auto currentScene = sceneManager->GetScene();
     auto levelJson = nlohmann::json::object();
@@ -98,9 +98,8 @@ std::string LevelManager::SaveLevel(std::string &directory)
     // Add the array of GameObjects to the level json.
     levelJson["objects"] = objects;
 
-    // TODO: New file naming method.
     // Write the json object to a file and return the resulting file path.
-    auto filePath = jsonHandler->WriteJsonToFile(directory, "level", levelJson);
+    auto filePath = jsonHandler->WriteJsonToFile(directory, filename, levelJson);
 
     return filePath;
 }

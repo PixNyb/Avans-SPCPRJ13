@@ -103,9 +103,10 @@ class LevelManager
      * @brief Save the level which is the current scene. The intended use is saving a level made
      * using level editor.
      * @param directory The directory to where the level json is to be saved.
+     * @param filename The eventual filename.
      * @return The path of where the level is stored.
      */
-    std::string SaveLevel(std::string &directory);
+    std::string SaveLevel(std::string &directory, std::string &filename);
 };
 
 #endif // DEFUNBOBENGINE_LEVEL_MANAGER_HPP
