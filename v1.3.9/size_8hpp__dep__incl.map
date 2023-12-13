@@ -1,0 +1,10 @@
+<map id="include/project/graphics/size.hpp" name="include/project/graphics/size.hpp">
+<area shape="rect" id="node1" title="Defines the Size struct." alt="" coords="242,5,419,47"/>
+<area shape="rect" id="node2" href="$texture_8hpp.html" title="This file contains the Texture class definition." alt="" coords="242,95,419,136"/>
+<area shape="rect" id="node3" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="261,184,401,225"/>
+<area shape="rect" id="node4" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="138,273,321,315"/>
+<area shape="rect" id="node8" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="345,273,522,315"/>
+<area shape="rect" id="node5" href="$render__manager_8hpp_source.html" title=" " alt="" coords="5,363,192,404"/>
+<area shape="rect" id="node6" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="65,452,263,479"/>
+<area shape="rect" id="node7" href="$graphics__facade_8cpp.html" title="This file contains the GraphicsFacade class implementation." alt="" coords="267,363,421,404"/>
+</map>
