@@ -61,11 +61,18 @@ class LevelManager
     std::string levelFileExtension;
 
     /**
-     * @brief Add a GameObject to the Level Json.
-     * @param levelJson The json to which the GameObject is to be added.
-     * @param gameObject The GameObject which is to be added to the level.
+     * @brief Create a json object from a GameObject.
+     * @param gameObject The GameObject which is to converted.
+     * @return The json of the given GameObject.
      */
-    void AddGameObject(nlohmann::json &levelJson, GameObject &gameObject);
+    nlohmann::json CreateGameObjectJson(GameObject &gameObject);
+
+    /**
+     * @brief Create a json object from a Camera.
+     * @param camera The camera which is to be converted.
+     * @return The json of the given Camera.
+     */
+    nlohmann::json CreateCameraJson(Camera &camera);
 
   public:
     /**
@@ -95,9 +102,10 @@ class LevelManager
     /**
      * @brief Save the level which is the current scene. The intended use is saving a level made
      * using level editor.
+     * @param path The path to where the level json is to be saved.
      * @return The path of where the level is stored.
      */
-    std::string SaveLevel();
+    std::string SaveLevel(std::string &path);
 };
 
 #endif // DEFUNBOBENGINE_LEVEL_MANAGER_HPP
