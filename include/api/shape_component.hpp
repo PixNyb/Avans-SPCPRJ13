@@ -28,7 +28,12 @@ class ShapeComponent : public Component
                                                         ///< the shapes relative to the game object
 
   public:
-    explicit ShapeComponent(std::vector<std::shared_ptr<Geometry>> geometries,
+    /**
+     * @brief Construct a new Shape Component object.
+     * @param geometries The geometries of the shape.
+     * @param translate Specifies whether or not to translate the shapes relative to the game
+     */
+    explicit ShapeComponent(std::vector<std::shared_ptr<Geometry>> geometries = {},
                             bool translate = true);
 
     /**
@@ -36,6 +41,12 @@ class ShapeComponent : public Component
      * @return The geometries of the shape.
      */
     [[nodiscard]] std::vector<std::shared_ptr<Geometry>> GetGeometries() const;
+
+    /**
+     * @brief Add a geometry to the shape.
+     * @param geometry The geometry to add.
+     */
+    void AddGeometry(std::shared_ptr<Geometry> geometry);
 
     std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
 
