@@ -61,18 +61,11 @@ class LevelManager
     std::string levelFileExtension;
 
     /**
-     * @brief Create a json object from a GameObject.
-     * @param gameObject The GameObject which is to converted.
-     * @return The json of the given GameObject.
+     * @brief Add a GameObject to the Level Json.
+     * @param levelJson The json to which the GameObject is to be added.
+     * @param gameObject The GameObject which is to be added to the level.
      */
-    nlohmann::json CreateGameObjectJson(GameObject &gameObject);
-
-    /**
-     * @brief Create a json object from a Camera.
-     * @param camera The camera which is to be converted.
-     * @return The json of the given Camera.
-     */
-    nlohmann::json CreateCameraJson(Camera &camera);
+    void AddGameObject(nlohmann::json &levelJson, GameObject &gameObject);
 
   public:
     /**
