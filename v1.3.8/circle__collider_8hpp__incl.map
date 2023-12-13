@@ -1,0 +1,13 @@
+<map id="include/api/circle_collider.hpp" name="include/api/circle_collider.hpp">
+<area shape="rect" id="node1" title="Defines the CircleCollider class for representing circular collision areas. CircleCollider is a subcl..." alt="" coords="306,5,438,47"/>
+<area shape="rect" id="node2" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="323,95,421,121"/>
+<area shape="rect" id="node3" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="311,169,433,196"/>
+<area shape="rect" id="node4" href="$iprototype__component_8hpp.html" title="This file contains the IPrototypeComponent interface definition." alt="" coords="273,244,471,271"/>
+<area shape="rect" id="node5" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="199,319,334,345"/>
+<area shape="rect" id="node7" title=" " alt="" coords="385,468,463,495"/>
+<area shape="rect" id="node6" href="$iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="365,393,483,420"/>
+<area shape="rect" id="node8" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="5,393,120,420"/>
+<area shape="rect" id="node10" title=" " alt="" coords="195,393,253,420"/>
+<area shape="rect" id="node11" title=" " alt="" coords="278,393,341,420"/>
+<area shape="rect" id="node9" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="21,468,104,495"/>
+</map>

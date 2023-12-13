@@ -1,0 +1,8 @@
+<map id="include/facades/sdl2/sdl_init.hpp" name="include/facades/sdl2/sdl_init.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="247,5,401,47"/>
+<area shape="rect" id="node2" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="138,95,321,136"/>
+<area shape="rect" id="node6" href="$sdl__init_8cpp.html" title="This file contains the SDLInit class implementation." alt="" coords="345,95,495,136"/>
+<area shape="rect" id="node3" href="$render__manager_8hpp_source.html" title=" " alt="" coords="5,184,192,225"/>
+<area shape="rect" id="node4" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="65,273,263,300"/>
+<area shape="rect" id="node5" href="$graphics__facade_8cpp.html" title="This file contains the GraphicsFacade class implementation." alt="" coords="267,184,421,225"/>
+</map>
