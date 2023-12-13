@@ -19,7 +19,9 @@ BoxCollider::BoxCollider(std::weak_ptr<GameObject> parent) : width(0.0), height(
 
 std::shared_ptr<Component> BoxCollider::Clone(std::weak_ptr<GameObject> parent)
 {
-    return std::make_shared<BoxCollider>(*this);
+    auto collider = std::make_shared<BoxCollider>(*this);
+    collider->parent = parent;
+    return collider;
 }
 
 BoxCollider::BoxCollider(const BoxCollider &other) : Collider(other)

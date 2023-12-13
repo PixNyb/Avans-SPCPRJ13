@@ -24,7 +24,7 @@ void PhysicsManager::RemoveBody(const std::shared_ptr<GameObject> &gameObject)
 
 void PhysicsManager::CreateBody(std::shared_ptr<GameObject> gameObject)
 {
-    physicsFacade.MakeBody(std::move(gameObject));
+    physicsFacade.AddBody(std::move(gameObject));
 }
 
 void PhysicsManager::Step() { physicsFacade.Step(); }
