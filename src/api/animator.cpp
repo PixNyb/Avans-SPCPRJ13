@@ -9,6 +9,8 @@
  */
 
 #include "animator.hpp"
+#include "engine.hpp"
+#include "physics_manager.hpp"
 #include "time.hpp"
 
 Animator::Animator(const Animator &other) : BehaviourScript(other)
@@ -40,9 +42,16 @@ void Animator::SetState(const std::string &name)
 
 void Animator::OnUpdate()
 {
-    if (currentState)
+    auto physicsManager = Engine::GetInstance()->Get<PhysicsManager>();
+    auto velocity = physicsManager->GetVelocity(gameObject.lock());
+    std::cout << "Velocity: " << velocity.x << ", " << velocity.y << std::endl;
+    // Check if velocity is not null
+    if (velocity.x != 0 || velocity.y != 0)
     {
-        currentState->Update(Time::GetDeltaTime());
+        if (currentState)
+        {
+            currentState->Update(Time::GetDeltaTime());
+        }
     }
 }
 

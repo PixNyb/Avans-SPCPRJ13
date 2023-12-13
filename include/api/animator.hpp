@@ -106,7 +106,7 @@ class Animator : public BehaviourScript
      * @return int The total number of rows in the sprite sheet.
      */
     [[nodiscard]] int GetTotalRows() const { return this->totalRows; };
-    
+
     /**
      * @brief Sets the total number of columns in the sprite sheet.
      * This function sets the total number of columns in the sprite sheet.
@@ -121,11 +121,19 @@ class Animator : public BehaviourScript
      */
     void SetTotalRows(int rows) { this->totalRows = rows; }
 
+    /**
+     * @brief Sets the GameObject of the Animator.
+     * This function sets the GameObject of the Animator.
+     * @param gameObject The GameObject of the Animator.
+     */
+    void SetGameObject(std::weak_ptr<GameObject> gameObject) { this->gameObject = gameObject; }
+
   private:
     std::unique_ptr<AnimationState> currentState; ///< The current state of the Animator.
     std::map<std::string, AnimationState> states; ///< Map of animation states.
     int totalColumns;                             ///< The total number of columns in the sprite
     int totalRows;                                ///< The total number of rows in the sprite
+    std::weak_ptr<GameObject> gameObject;         ///< The GameObject of the Animator.
 };
 
 #endif // AVANS_SPCPRJ13_ANIMATOR_H
