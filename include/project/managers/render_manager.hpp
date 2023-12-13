@@ -36,6 +36,8 @@ class RenderManager
     void Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Point &cameraPoint,
                 const std::weak_ptr<GameObject> &gameObject);
 
+    void DrawTiled();
+
   public:
     /**
      * @brief This is a constructor for the RenderManager

@@ -256,3 +256,52 @@ void ColliderBehaviorTest::OnTriggerExit2D(const Collider &collider) {}
 
 void ColliderBehaviorTest::OnTriggerStay2D(const Collider &collider) {}
 ```
+
+## 7. HUD (Head-Up Display) aanmaken
+
+Het HUD is georganiseerd in een of meerdere hoofdcontainers. Elke hoofdcontainer container is
+verder onderverdeeld in subcontainers, wat zorgt voor een gestructureerde indeling van de UI-elementen.
+
+```cpp
+    // Het creëren van een hud dat wordt toegevoegd aan de scene
+    auto hud = std::make_shared<HUD>(LayoutType::VERTICAL, GameConstants::General::WINDOW_WIDTH,
+                                     GameConstants::General::WINDOW_HEIGHT);
+    AddGameObject(hud);
+    hud->DrawHud(*engine);
+    hud->SetActive(true);    
+    
+    //Het aanmaken van de HUD structuur gebeurt in de hud.cpp.
+    // - LayoutType wordt gebruikt voor de horizontale of verticale uitlijning van de ui objecten.
+    // - Op de parameter na de layout kan een container worden gehalveerd met een kommagetal.
+    // - Anchor wordt gebruikt voor de positie van de ui objecten binnen een container
+    // - Point kan worden gebruikt om een offset mee te geven aan alle uiobjecten binnen een container.
+    
+    // Het aanmaken van een container
+    auto containerTop =
+        std::make_shared<UIContainer>(LayoutType::HORIZONTAL, 0, Anchor::CENTER, Point(0, 0));
+    containerTop->SetParent(shared_from_this());
+
+    // Het aanmaken van een sub container
+    auto containerTopLeft =
+        std::make_shared<UIContainer>(LayoutType::VERTICAL, 0, Anchor::CENTER, Point(0, 0));
+
+    // Het aanmaken van een tweede sub container
+    auto containerTopRight =
+        std::make_shared<UIContainer>(LayoutType::HORIZONTAL, 0, Anchor::TOP_CENTER, Point(0, 20));
+
+    // Het toevoegen van de sub containers aan de gemaakte container
+    containerTop->AddContainerChild(containerTopLeft);
+    containerTop->AddContainerChild(containerTopRight);
+
+    // Het aanmaken van een tweede container werkt op dezelfde manier met sub containers
+    auto containerBottom =
+        std::make_shared<UIContainer>(LayoutType::HORIZONTAL, 0, Anchor::CENTER, Point(0, 0));
+    containerBottom->SetParent(shared_from_this());
+
+    // Het toevoegen van de containers aan de HUD
+    AddContainerChild(containerTop);
+    AddContainerChild(containerBottom);
+
+    // Daarna het renderen van de HUD met de gemaakte containers
+    RenderHud();
+```

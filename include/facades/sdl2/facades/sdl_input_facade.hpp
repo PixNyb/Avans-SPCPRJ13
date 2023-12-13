@@ -12,10 +12,13 @@
 #ifndef INPUT_FACADE_HPP_
 #define INPUT_FACADE_HPP_
 
+#include "button_click_listener.hpp"
 #include "i_input_facade.hpp"
 #include "point.hpp"
 #include "sdl_input.hpp"
+#include <algorithm>
 #include <memory>
+#include <stdexcept>
 #include <string>
 #include <unordered_map>
 #include <vector>
@@ -230,12 +233,32 @@ class SDLInputFacade : public IInputFacade
      */
     bool GetActionUp(const std::string &action) const override;
 
+    /**
+     * @brief Add a button click listener to the input system.
+     * @param buttonClickListener The button click listener to add.
+     */
+    void AddMouseListener(const std::weak_ptr<IMouseListener> &mouseListener) override;
+
+    /**
+     * @brief Remove a button click listener from the input system.
+     * @param buttonClickListener The button click listener to remove.
+     */
+    void RemoveMouseListener(const std::weak_ptr<IMouseListener> &mouseListener) override;
+
+    /**
+     * @brief Get the button click listeners currently registered with the input system.
+     * @return The button click listeners currently registered with the input system.
+     */
+    std::vector<std::weak_ptr<IMouseListener>> GetMouseListeners() const override;
+
   private:
     std::unique_ptr<SDLInput> input; ///< The SDLInput instance.
     std::unordered_map<std::string, std::vector<KeyCode>>
         keyActionMap; ///< The keybindings on the keyboard.
     std::unordered_map<std::string, std::vector<MouseButton>> mouseActionMap; ///< The keybindings
                                                                               ///< on the mouse.
+    std::vector<std::weak_ptr<IMouseListener>>
+        buttonClickListeners; ///< The button click listeners registered.
 };
 
 #endif // INPUT_FACADE_HPP_

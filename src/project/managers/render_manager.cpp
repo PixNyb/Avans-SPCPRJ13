@@ -133,6 +133,11 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
             double radius = circleCollider->Radius();
             parentSize = Size(radius * 2, radius * 2);
         }
+        // Check if gameobject is a UIObject
+        else if (std::shared_ptr<UIObject> uiObj = std::dynamic_pointer_cast<UIObject>(gameObject))
+        {
+            parentSize = Size(uiObj->GetWidth(), uiObj->GetHeight());
+        }
         else
         {
             parentSize = spriteSize; // Use sprite's own size if no parent collider
