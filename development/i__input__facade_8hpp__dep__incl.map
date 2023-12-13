@@ -1,6 +1,10 @@
 <map id="include/facades/i_input_facade.hpp" name="include/facades/i_input_facade.hpp">
-<area shape="rect" id="node1" title="This file contains the IInputFacade interface definition." alt="" coords="117,5,289,47"/>
-<area shape="rect" id="node2" href="$sdl__input__facade_8hpp.html" title="This file contains the SDLInputFacade class definition." alt="" coords="94,95,313,136"/>
-<area shape="rect" id="node3" href="$sdl__input__facade_8cpp.html" title="This file contains the SDLInputFacade class implementation." alt="" coords="5,184,188,225"/>
-<area shape="rect" id="node4" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="213,191,410,218"/>
+<area shape="rect" id="node1" title="This file contains the IInputFacade interface definition." alt="" coords="283,5,455,47"/>
+<area shape="rect" id="node2" href="$sdl__input__facade_8hpp.html" title="This file contains the SDLInputFacade class definition." alt="" coords="94,184,313,225"/>
+<area shape="rect" id="node5" href="$button__click__listener_8hpp.html" title="Defines the ButtonClickListener class." alt="" coords="275,95,463,136"/>
+<area shape="rect" id="node7" href="$button__factory_8hpp.html" title="Contains the definition for the button factory." alt="" coords="493,95,701,136"/>
+<area shape="rect" id="node3" href="$sdl__input__facade_8cpp.html" title="This file contains the SDLInputFacade class implementation." alt="" coords="5,273,188,315"/>
+<area shape="rect" id="node4" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="213,281,410,307"/>
+<area shape="rect" id="node6" href="$button_8cpp.html" title="This file contains the Button class implementation." alt="" coords="337,191,475,218"/>
+<area shape="rect" id="node8" href="$button__factory_8cpp.html" title="Implements the ButtonFactory class for creating and initializing buttons." alt="" coords="500,184,707,225"/>
 </map>

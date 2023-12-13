@@ -1,4 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,145,32"/>
-<area shape="rect" id="node2" href="$classContactListener.html" title="This class handles the contacts that occur in the b2World. When a contact comes through here the beha..." alt="" coords="193,5,317,32"/>
+<area shape="rect" id="node1" href="$classButtonFactory.html" title="Provides a factory for creating buttons in the graphical user interface." alt="" coords="5,5,117,32"/>
 </map>

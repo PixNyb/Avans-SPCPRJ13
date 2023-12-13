@@ -1,0 +1,5 @@
+<map id="ButtonClickListener" name="ButtonClickListener">
+<area shape="rect" id="node1" title="Listens to mouse events on a specific button." alt="" coords="95,95,245,121"/>
+<area shape="rect" id="node2" href="$classIMouseListener.html" title="Interface for objects that respond to mouse events." alt="" coords="5,13,127,39"/>
+<area shape="rect" id="node3" title=" " alt="" coords="151,5,399,47"/>
+</map>

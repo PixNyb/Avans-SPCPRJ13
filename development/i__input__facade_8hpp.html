@@ -95,7 +95,9 @@ $(document).ready(function(){initNavTree('i__input__facade_8hpp.html',''); initR
 
 <p>This file contains the <a class="el" href="classIInputFacade.html" title="The IInputFacade interface defines the methods that a concrete input facade must implement.">IInputFacade</a> interface definition.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="point_8hpp_source.html">point.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="button__click__listener_8hpp_source.html">button_click_listener.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="imouse__listener_8hpp_source.html">imouse_listener.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="point_8hpp_source.html">point.hpp</a>&quot;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -103,10 +105,27 @@ Include dependency graph for i_input_facade.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="i__input__facade_8hpp__incl.png" border="0" usemap="#ainclude_2facades_2i__input__facade_8hpp" alt=""/></div>
 <map name="ainclude_2facades_2i__input__facade_8hpp" id="ainclude_2facades_2i__input__facade_8hpp">
-<area shape="rect" title="This file contains the IInputFacade interface definition." alt="" coords="55,5,227,47"/>
-<area shape="rect" href="point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="5,95,88,121"/>
-<area shape="rect" title=" " alt="" coords="112,95,171,121"/>
-<area shape="rect" title=" " alt="" coords="195,95,258,121"/>
+<area shape="rect" title="This file contains the IInputFacade interface definition." alt="" coords="683,5,855,47"/>
+<area shape="rect" href="button__click__listener_8hpp.html" title="Defines the ButtonClickListener class." alt="" coords="613,95,797,121"/>
+<area shape="rect" href="point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="817,617,900,644"/>
+<area shape="rect" title=" " alt="" coords="305,543,364,569"/>
+<area shape="rect" title=" " alt="" coords="719,543,782,569"/>
+<area shape="rect" href="imouse__listener_8hpp.html" title="Defines the IMouseListener interface for handling mouse events in the DefunBobEngine...." alt="" coords="707,319,861,345"/>
+<area shape="rect" href="button_8hpp.html" title="Defines the Button class as a part of the user interface in a game engine. Button is a UIObject subcl..." alt="" coords="637,169,729,196"/>
+<area shape="rect" href="engine_8hpp.html" title="Engine is the core of the engine. It is responsible for managing the game loop and managing the DICon..." alt="" coords="274,169,369,196"/>
+<area shape="rect" href="ui__object_8hpp.html" title="Defines the UIObject class for representing user interface elements in the game engine...." alt="" coords="597,393,707,420"/>
+<area shape="rect" title=" " alt="" coords="525,244,611,271"/>
+<area shape="rect" title=" " alt="" coords="635,244,695,271"/>
+<area shape="rect" href="game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="575,468,710,495"/>
+<area shape="rect" href="iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="388,543,505,569"/>
+<area shape="rect" title=" " alt="" coords="247,617,324,644"/>
+<area shape="rect" href="transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="580,543,695,569"/>
+<area shape="rect" href="core__constants_8hpp_source.html" title=" " alt="" coords="247,244,395,271"/>
+<area shape="rect" href="di__container_8hpp.html" title="Dependency injection container." alt="" coords="94,244,223,271"/>
+<area shape="rect" title=" " alt="" coords="420,244,500,271"/>
+<area shape="rect" href="color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="367,393,449,420"/>
+<area shape="rect" href="text_8hpp.html" title="Defines the Text class for handling text rendering in UI elements within the game engine...." alt="" coords="447,319,523,345"/>
+<area shape="rect" title=" " alt="" coords="167,319,291,345"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -114,10 +133,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="i__input__facade_8hpp__dep__incl.png" border="0" usemap="#ainclude_2facades_2i__input__facade_8hppdep" alt=""/></div>
 <map name="ainclude_2facades_2i__input__facade_8hppdep" id="ainclude_2facades_2i__input__facade_8hppdep">
-<area shape="rect" title="This file contains the IInputFacade interface definition." alt="" coords="117,5,289,47"/>
-<area shape="rect" href="sdl__input__facade_8hpp.html" title="This file contains the SDLInputFacade class definition." alt="" coords="94,95,313,136"/>
-<area shape="rect" href="sdl__input__facade_8cpp.html" title="This file contains the SDLInputFacade class implementation." alt="" coords="5,184,188,225"/>
-<area shape="rect" href="engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="213,191,410,218"/>
+<area shape="rect" title="This file contains the IInputFacade interface definition." alt="" coords="283,5,455,47"/>
+<area shape="rect" href="sdl__input__facade_8hpp.html" title="This file contains the SDLInputFacade class definition." alt="" coords="94,184,313,225"/>
+<area shape="rect" href="button__click__listener_8hpp.html" title="Defines the ButtonClickListener class." alt="" coords="275,95,463,136"/>
+<area shape="rect" href="button__factory_8hpp.html" title="Contains the definition for the button factory." alt="" coords="493,95,701,136"/>
+<area shape="rect" href="sdl__input__facade_8cpp.html" title="This file contains the SDLInputFacade class implementation." alt="" coords="5,273,188,315"/>
+<area shape="rect" href="engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="213,281,410,307"/>
+<area shape="rect" href="button_8cpp.html" title="This file contains the Button class implementation." alt="" coords="337,191,475,218"/>
+<area shape="rect" href="button__factory_8cpp.html" title="Implements the ButtonFactory class for creating and initializing buttons." alt="" coords="500,184,707,225"/>
 </map>
 </div>
 </div>

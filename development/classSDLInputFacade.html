@@ -210,10 +210,55 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a849839ef2c6059f797e5615d966b4c76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDLInputFacade.html#a849839ef2c6059f797e5615d966b4c76">GetActionUp</a> (const std::string &amp;action) const override</td></tr>
 <tr class="memdesc:a849839ef2c6059f797e5615d966b4c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true during the frame the user stops performing the given action.  <a href="classSDLInputFacade.html#a849839ef2c6059f797e5615d966b4c76">More...</a><br /></td></tr>
 <tr class="separator:a849839ef2c6059f797e5615d966b4c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac88d1aa86c626dec4fa0d11a564a417d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDLInputFacade.html#ac88d1aa86c626dec4fa0d11a564a417d">AddMouseListener</a> (const std::weak_ptr&lt; <a class="el" href="classIMouseListener.html">IMouseListener</a> &gt; &amp;mouseListener) override</td></tr>
+<tr class="memdesc:ac88d1aa86c626dec4fa0d11a564a417d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a button click listener to the input system.  <a href="classSDLInputFacade.html#ac88d1aa86c626dec4fa0d11a564a417d">More...</a><br /></td></tr>
+<tr class="separator:ac88d1aa86c626dec4fa0d11a564a417d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeadfc8108b2783e4cb859bc8e067e63b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDLInputFacade.html#aeadfc8108b2783e4cb859bc8e067e63b">RemoveMouseListener</a> (const std::weak_ptr&lt; <a class="el" href="classIMouseListener.html">IMouseListener</a> &gt; &amp;mouseListener) override</td></tr>
+<tr class="memdesc:aeadfc8108b2783e4cb859bc8e067e63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a button click listener from the input system.  <a href="classSDLInputFacade.html#aeadfc8108b2783e4cb859bc8e067e63b">More...</a><br /></td></tr>
+<tr class="separator:aeadfc8108b2783e4cb859bc8e067e63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32aeee8db79f56c26845b137efa3e8fd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::weak_ptr&lt; <a class="el" href="classIMouseListener.html">IMouseListener</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDLInputFacade.html#a32aeee8db79f56c26845b137efa3e8fd">GetMouseListeners</a> () const override</td></tr>
+<tr class="memdesc:a32aeee8db79f56c26845b137efa3e8fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the button click listeners currently registered with the input system.  <a href="classSDLInputFacade.html#a32aeee8db79f56c26845b137efa3e8fd">More...</a><br /></td></tr>
+<tr class="separator:a32aeee8db79f56c26845b137efa3e8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classSDLInputFacade.html" title="The SDLInputFacade class is responsible for handling input from the user.">SDLInputFacade</a> class is responsible for handling input from the user. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac88d1aa86c626dec4fa0d11a564a417d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac88d1aa86c626dec4fa0d11a564a417d">&#9670;&nbsp;</a></span>AddMouseListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLInputFacade::AddMouseListener </td>
+          <td>(</td>
+          <td class="paramtype">const std::weak_ptr&lt; <a class="el" href="classIMouseListener.html">IMouseListener</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mouseListener</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add a button click listener to the input system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buttonClickListener</td><td>The button click listener to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classIInputFacade.html#ad78154c2bee37c626a4193510e9e0e2b">IInputFacade</a>.</p>
+
+</div>
+</div>
 <a id="a698c986b7e39d8b7d831ec25b902b9c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a698c986b7e39d8b7d831ec25b902b9c5">&#9670;&nbsp;</a></span>AnyAction()</h2>
 
@@ -916,6 +961,36 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="a32aeee8db79f56c26845b137efa3e8fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32aeee8db79f56c26845b137efa3e8fd">&#9670;&nbsp;</a></span>GetMouseListeners()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::weak_ptr&lt; <a class="el" href="classIMouseListener.html">IMouseListener</a> &gt; &gt; SDLInputFacade::GetMouseListeners </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the button click listeners currently registered with the input system. </p>
+<dl class="section return"><dt>Returns</dt><dd>The button click listeners currently registered with the input system. </dd></dl>
+
+<p>Implements <a class="el" href="classIInputFacade.html">IInputFacade</a>.</p>
+
+</div>
+</div>
 <a id="a0407b84e90e6a6b5eff6f42813192aa9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0407b84e90e6a6b5eff6f42813192aa9">&#9670;&nbsp;</a></span>RegisterAction()</h2>
 
@@ -949,6 +1024,42 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 
 <p>Implements <a class="el" href="classIInputFacade.html#a902b38964dca1cb6d34e55dab215481f">IInputFacade</a>.</p>
+
+</div>
+</div>
+<a id="aeadfc8108b2783e4cb859bc8e067e63b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeadfc8108b2783e4cb859bc8e067e63b">&#9670;&nbsp;</a></span>RemoveMouseListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLInputFacade::RemoveMouseListener </td>
+          <td>(</td>
+          <td class="paramtype">const std::weak_ptr&lt; <a class="el" href="classIMouseListener.html">IMouseListener</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mouseListener</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove a button click listener from the input system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buttonClickListener</td><td>The button click listener to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classIInputFacade.html#af6f7baf905c0e3f823a7f5e8bb9a82c8">IInputFacade</a>.</p>
 
 </div>
 </div>

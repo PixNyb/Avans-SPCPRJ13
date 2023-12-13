@@ -197,11 +197,56 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:a67be9d6143d9c829a6e171363cbb0ab2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIInputFacade.html#a67be9d6143d9c829a6e171363cbb0ab2">GetActionUp</a> (const std::string &amp;action) const =0</td></tr>
 <tr class="memdesc:a67be9d6143d9c829a6e171363cbb0ab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given action has just stopped being performed.  <a href="classIInputFacade.html#a67be9d6143d9c829a6e171363cbb0ab2">More...</a><br /></td></tr>
 <tr class="separator:a67be9d6143d9c829a6e171363cbb0ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad78154c2bee37c626a4193510e9e0e2b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIInputFacade.html#ad78154c2bee37c626a4193510e9e0e2b">AddMouseListener</a> (const std::weak_ptr&lt; <a class="el" href="classIMouseListener.html">IMouseListener</a> &gt; &amp;mouseListener)=0</td></tr>
+<tr class="memdesc:ad78154c2bee37c626a4193510e9e0e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a mouse listener to the input system.  <a href="classIInputFacade.html#ad78154c2bee37c626a4193510e9e0e2b">More...</a><br /></td></tr>
+<tr class="separator:ad78154c2bee37c626a4193510e9e0e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6f7baf905c0e3f823a7f5e8bb9a82c8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIInputFacade.html#af6f7baf905c0e3f823a7f5e8bb9a82c8">RemoveMouseListener</a> (const std::weak_ptr&lt; <a class="el" href="classIMouseListener.html">IMouseListener</a> &gt; &amp;mouseListener)=0</td></tr>
+<tr class="memdesc:af6f7baf905c0e3f823a7f5e8bb9a82c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a mouse listener from the input system.  <a href="classIInputFacade.html#af6f7baf905c0e3f823a7f5e8bb9a82c8">More...</a><br /></td></tr>
+<tr class="separator:af6f7baf905c0e3f823a7f5e8bb9a82c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bd1aaa3fac5b214342572c550c44a25"><td class="memItemLeft" align="right" valign="top"><a id="a3bd1aaa3fac5b214342572c550c44a25"></a>
+virtual std::vector&lt; std::weak_ptr&lt; <a class="el" href="classIMouseListener.html">IMouseListener</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetMouseListeners</b> () const =0</td></tr>
+<tr class="separator:a3bd1aaa3fac5b214342572c550c44a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classIInputFacade.html" title="The IInputFacade interface defines the methods that a concrete input facade must implement.">IInputFacade</a> interface defines the methods that a concrete input facade must implement. </p>
 <p>The input facade is responsible for handling all input from the user. This includes keyboard input, mouse input and controller input. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad78154c2bee37c626a4193510e9e0e2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad78154c2bee37c626a4193510e9e0e2b">&#9670;&nbsp;</a></span>AddMouseListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IInputFacade::AddMouseListener </td>
+          <td>(</td>
+          <td class="paramtype">const std::weak_ptr&lt; <a class="el" href="classIMouseListener.html">IMouseListener</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mouseListener</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a mouse listener to the input system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mouseListener</td><td>The mouse listener to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classSDLInputFacade.html#ac88d1aa86c626dec4fa0d11a564a417d">SDLInputFacade</a>.</p>
+
+</div>
+</div>
 <a id="a8cf711a8a5b316bc3452e870b5f0acbd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8cf711a8a5b316bc3452e870b5f0acbd">&#9670;&nbsp;</a></span>AnyAction()</h2>
 
@@ -1062,6 +1107,42 @@ false if no key is up. </dd></dl>
 </dl>
 
 <p>Implemented in <a class="el" href="classSDLInputFacade.html#a0407b84e90e6a6b5eff6f42813192aa9">SDLInputFacade</a>.</p>
+
+</div>
+</div>
+<a id="af6f7baf905c0e3f823a7f5e8bb9a82c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f7baf905c0e3f823a7f5e8bb9a82c8">&#9670;&nbsp;</a></span>RemoveMouseListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IInputFacade::RemoveMouseListener </td>
+          <td>(</td>
+          <td class="paramtype">const std::weak_ptr&lt; <a class="el" href="classIMouseListener.html">IMouseListener</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mouseListener</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes a mouse listener from the input system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mouseListener</td><td>The mouse listener to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classSDLInputFacade.html#aeadfc8108b2783e4cb859bc8e067e63b">SDLInputFacade</a>.</p>
 
 </div>
 </div>

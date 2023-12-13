@@ -6,10 +6,12 @@ var hierarchy =
       [ "ContactListener", "classContactListener.html", null ]
     ] ],
     [ "BehaviourScriptManager", "classBehaviourScriptManager.html", null ],
+    [ "ButtonFactory", "classButtonFactory.html", null ],
     [ "Color", "classColor.html", null ],
     [ "DebugRenderer", "classDebugRenderer.html", null ],
     [ "DIContainer", "classDIContainer.html", null ],
     [ "std::enable_shared_from_this", null, [
+      [ "ButtonClickListener", "classButtonClickListener.html", null ],
       [ "GameObject", "classGameObject.html", [
         [ "Camera", "classCamera.html", null ],
         [ "UIObject", "classUIObject.html", [
@@ -32,7 +34,9 @@ var hierarchy =
       [ "SDLInputFacade", "classSDLInputFacade.html", null ]
     ] ],
     [ "IKeyListener", "classIKeyListener.html", null ],
-    [ "IMouseListener", "classIMouseListener.html", null ],
+    [ "IMouseListener", "classIMouseListener.html", [
+      [ "ButtonClickListener", "classButtonClickListener.html", null ]
+    ] ],
     [ "IOFacade", "classIOFacade.html", [
       [ "GraphicsFacade", "classGraphicsFacade.html", null ]
     ] ],

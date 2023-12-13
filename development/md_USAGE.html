@@ -288,7 +288,7 @@ Sprites aanmaken en renderen</h1>
 <div class="line">    <span class="comment">// Jump!</span></div>
 <div class="line">}</div>
 <div class="ttc" id="aclassEngine_html_ab11c947aee16bee63bc9c1105f72dd43"><div class="ttname"><a href="classEngine.html#ab11c947aee16bee63bc9c1105f72dd43">Engine::Get</a></div><div class="ttdeci">std::shared_ptr&lt; T &gt; Get()</div><div class="ttdoc">Gets a public available instance (like SceneManager)</div><div class="ttdef"><b>Definition:</b> engine.hpp:68</div></div>
-<div class="ttc" id="aclassIInputFacade_html"><div class="ttname"><a href="classIInputFacade.html">IInputFacade</a></div><div class="ttdoc">The IInputFacade interface defines the methods that a concrete input facade must implement.</div><div class="ttdef"><b>Definition:</b> i_input_facade.hpp:285</div></div>
+<div class="ttc" id="aclassIInputFacade_html"><div class="ttname"><a href="classIInputFacade.html">IInputFacade</a></div><div class="ttdoc">The IInputFacade interface defines the methods that a concrete input facade must implement.</div><div class="ttdef"><b>Definition:</b> i_input_facade.hpp:287</div></div>
 <div class="ttc" id="aclassIInputFacade_html_a902b38964dca1cb6d34e55dab215481f"><div class="ttname"><a href="classIInputFacade.html#a902b38964dca1cb6d34e55dab215481f">IInputFacade::RegisterAction</a></div><div class="ttdeci">virtual void RegisterAction(const std::string &amp;action)=0</div><div class="ttdoc">Register an action with the input system.</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md30"></a>
 6. Contact listeners &amp; Behaviour Scripts</h1>
@@ -299,6 +299,50 @@ Sprites aanmaken en renderen</h1>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> ColliderBehaviorTest::OnTriggerStay2D(<span class="keyword">const</span> <a class="code" href="classCollider.html">Collider</a> &amp;collider) {}</div>
 <div class="ttc" id="aclassCollider_html"><div class="ttname"><a href="classCollider.html">Collider</a></div><div class="ttdoc">Base class for collider components.</div><div class="ttdef"><b>Definition:</b> collider.hpp:29</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md31"></a>
+7. HUD (Head-Up Display) aanmaken</h1>
+<p>Het HUD is georganiseerd in een of meerdere hoofdcontainers. Elke hoofdcontainer container is verder onderverdeeld in subcontainers, wat zorgt voor een gestructureerde indeling van de UI-elementen.</p>
+<div class="fragment"><div class="line"><span class="comment">// Het creëren van een hud dat wordt toegevoegd aan de scene</span></div>
+<div class="line"><span class="keyword">auto</span> hud = std::make_shared&lt;HUD&gt;(LayoutType::VERTICAL, GameConstants::General::WINDOW_WIDTH,</div>
+<div class="line">                                 GameConstants::General::WINDOW_HEIGHT);</div>
+<div class="line">AddGameObject(hud);</div>
+<div class="line">hud-&gt;DrawHud(*engine);</div>
+<div class="line">hud-&gt;SetActive(<span class="keyword">true</span>);    </div>
+<div class="line"> </div>
+<div class="line"><span class="comment">//Het aanmaken van de HUD structuur gebeurt in de hud.cpp.</span></div>
+<div class="line"><span class="comment">// - LayoutType wordt gebruikt voor de horizontale of verticale uitlijning van de ui objecten.</span></div>
+<div class="line"><span class="comment">// - Op de parameter na de layout kan een container worden gehalveerd met een kommagetal.</span></div>
+<div class="line"><span class="comment">// - Anchor wordt gebruikt voor de positie van de ui objecten binnen een container</span></div>
+<div class="line"><span class="comment">// - Point kan worden gebruikt om een offset mee te geven aan alle uiobjecten binnen een container.</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Het aanmaken van een container</span></div>
+<div class="line"><span class="keyword">auto</span> containerTop =</div>
+<div class="line">    std::make_shared&lt;UIContainer&gt;(LayoutType::HORIZONTAL, 0, Anchor::CENTER, <a class="code" href="structPoint.html">Point</a>(0, 0));</div>
+<div class="line">containerTop-&gt;SetParent(shared_from_this());</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Het aanmaken van een sub container</span></div>
+<div class="line"><span class="keyword">auto</span> containerTopLeft =</div>
+<div class="line">    std::make_shared&lt;UIContainer&gt;(LayoutType::VERTICAL, 0, Anchor::CENTER, <a class="code" href="structPoint.html">Point</a>(0, 0));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Het aanmaken van een tweede sub container</span></div>
+<div class="line"><span class="keyword">auto</span> containerTopRight =</div>
+<div class="line">    std::make_shared&lt;UIContainer&gt;(LayoutType::HORIZONTAL, 0, Anchor::TOP_CENTER, <a class="code" href="structPoint.html">Point</a>(0, 20));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Het toevoegen van de sub containers aan de gemaakte container</span></div>
+<div class="line">containerTop-&gt;AddContainerChild(containerTopLeft);</div>
+<div class="line">containerTop-&gt;AddContainerChild(containerTopRight);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Het aanmaken van een tweede container werkt op dezelfde manier met sub containers</span></div>
+<div class="line"><span class="keyword">auto</span> containerBottom =</div>
+<div class="line">    std::make_shared&lt;UIContainer&gt;(LayoutType::HORIZONTAL, 0, Anchor::CENTER, <a class="code" href="structPoint.html">Point</a>(0, 0));</div>
+<div class="line">containerBottom-&gt;SetParent(shared_from_this());</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Het toevoegen van de containers aan de HUD</span></div>
+<div class="line">AddContainerChild(containerTop);</div>
+<div class="line">AddContainerChild(containerBottom);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Daarna het renderen van de HUD met de gemaakte containers</span></div>
+<div class="line">RenderHud();</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

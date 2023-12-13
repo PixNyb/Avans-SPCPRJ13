@@ -8,6 +8,8 @@ var annotated_dup =
     [ "BehaviourScriptManager", "classBehaviourScriptManager.html", "classBehaviourScriptManager" ],
     [ "BoxCollider", "classBoxCollider.html", "classBoxCollider" ],
     [ "Button", "classButton.html", "classButton" ],
+    [ "ButtonClickListener", "classButtonClickListener.html", "classButtonClickListener" ],
+    [ "ButtonFactory", "classButtonFactory.html", null ],
     [ "Camera", "classCamera.html", "classCamera" ],
     [ "Circle", "classCircle.html", "classCircle" ],
     [ "CircleCollider", "classCircleCollider.html", "classCircleCollider" ],

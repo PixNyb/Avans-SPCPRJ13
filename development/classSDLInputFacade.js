@@ -1,6 +1,7 @@
 var classSDLInputFacade =
 [
     [ "SDLInputFacade", "classSDLInputFacade.html#aff7660edb014b524e1f1e008962e629f", null ],
+    [ "AddMouseListener", "classSDLInputFacade.html#ac88d1aa86c626dec4fa0d11a564a417d", null ],
     [ "AnyAction", "classSDLInputFacade.html#a698c986b7e39d8b7d831ec25b902b9c5", null ],
     [ "AnyActionDown", "classSDLInputFacade.html#a2dd7083dc3e22424b8e59c77d68bb69c", null ],
     [ "AnyActionUp", "classSDLInputFacade.html#aa20e4553398c2f3281f20a983f4b6d5a", null ],
@@ -24,8 +25,10 @@ var classSDLInputFacade =
     [ "GetMouseButtonDown", "classSDLInputFacade.html#a6fd2ddcd6c83eec8e8ed8999829c9b22", null ],
     [ "GetMouseButtonsForAction", "classSDLInputFacade.html#a803b749aa38d8d8b035283bcb4bdb66a", null ],
     [ "GetMouseButtonUp", "classSDLInputFacade.html#a9b482ff76916e2a0bdd9025078a601c4", null ],
+    [ "GetMouseListeners", "classSDLInputFacade.html#a32aeee8db79f56c26845b137efa3e8fd", null ],
     [ "GetMousePosition", "classSDLInputFacade.html#a0afc5d59c9d9acbf61fcff19aca2852a", null ],
     [ "RegisterAction", "classSDLInputFacade.html#a0407b84e90e6a6b5eff6f42813192aa9", null ],
+    [ "RemoveMouseListener", "classSDLInputFacade.html#aeadfc8108b2783e4cb859bc8e067e63b", null ],
     [ "UnbindKey", "classSDLInputFacade.html#af9c15366754753272ba5204469080ccd", null ],
     [ "UnbindMouseButton", "classSDLInputFacade.html#a6a64a931bd6af77764b9f35a120e166d", null ],
     [ "UnregisterAction", "classSDLInputFacade.html#aa634e4bfed6567e321666d9656d8497c", null ],

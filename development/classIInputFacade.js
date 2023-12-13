@@ -1,6 +1,7 @@
 var classIInputFacade =
 [
     [ "~IInputFacade", "classIInputFacade.html#a99a3d348ee9d6aa0513eadd5cde9985f", null ],
+    [ "AddMouseListener", "classIInputFacade.html#ad78154c2bee37c626a4193510e9e0e2b", null ],
     [ "AnyAction", "classIInputFacade.html#a8cf711a8a5b316bc3452e870b5f0acbd", null ],
     [ "AnyActionDown", "classIInputFacade.html#a5913f165dde64d0b0f51bf2dca257819", null ],
     [ "AnyActionUp", "classIInputFacade.html#ac227fc18c87f4e940319d5c87596e68a", null ],
@@ -24,8 +25,10 @@ var classIInputFacade =
     [ "GetMouseButtonDown", "classIInputFacade.html#ad22ba53b83b33fff3d73d286e2b48bc2", null ],
     [ "GetMouseButtonsForAction", "classIInputFacade.html#acec6a039cdbce93d5b9bf8c0f42e6c9c", null ],
     [ "GetMouseButtonUp", "classIInputFacade.html#adea1472a7963acc02c1b681806459034", null ],
+    [ "GetMouseListeners", "classIInputFacade.html#a3bd1aaa3fac5b214342572c550c44a25", null ],
     [ "GetMousePosition", "classIInputFacade.html#a767d8c6c0d02e11da3094ac47e10d497", null ],
     [ "RegisterAction", "classIInputFacade.html#a902b38964dca1cb6d34e55dab215481f", null ],
+    [ "RemoveMouseListener", "classIInputFacade.html#af6f7baf905c0e3f823a7f5e8bb9a82c8", null ],
     [ "UnbindKey", "classIInputFacade.html#a2b59cd52a16cd6faa91cc04460355d58", null ],
     [ "UnbindMouseButton", "classIInputFacade.html#ae4603e07a1bca1d61222f9dac6f13768", null ],
     [ "UnregisterAction", "classIInputFacade.html#aa0b3b8b6ed832193ffbaed6929a5fbed", null ],
