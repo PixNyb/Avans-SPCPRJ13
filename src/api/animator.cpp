@@ -44,6 +44,8 @@ void Animator::OnUpdate()
 {
     auto physicsManager = Engine::GetInstance()->Get<PhysicsManager>();
     auto velocity = physicsManager->GetVelocity(gameObject.lock());
+    std::cout << "Velocity: " << velocity.x << ", " << velocity.y << std::endl;
+    // Check if velocity is not null
     if (velocity.x != 0 || velocity.y != 0)
     {
         if (currentState)
