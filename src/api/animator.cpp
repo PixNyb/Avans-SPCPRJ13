@@ -59,7 +59,3 @@ std::shared_ptr<Component> Animator::Clone(std::weak_ptr<GameObject> parent)
 {
     return std::make_shared<Animator>(*this);
 }
-
-int Animator::GetTotalColumns() const { return totalColumns; }
-
-int Animator::GetTotalRows() const { return totalRows; }
