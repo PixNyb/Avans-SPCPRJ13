@@ -24,7 +24,6 @@ Animator::Animator(const Animator &other) : BehaviourScript(other)
     this->states = other.states;
     this->totalColumns = other.totalColumns;
     this->totalRows = other.totalRows;
-    this->gameObject = other.gameObject;
 }
 
 void Animator::AddState(const std::string &name, const AnimationState &state)
@@ -69,3 +68,7 @@ std::shared_ptr<Component> Animator::Clone(std::weak_ptr<GameObject> parent)
     object->SetGameObject(parent);
     return object;
 }
+
+int Animator::GetTotalColumns() const { return totalColumns; }
+
+int Animator::GetTotalRows() const { return totalRows; }
