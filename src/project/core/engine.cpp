@@ -30,8 +30,8 @@ Engine *Engine::instancePtr = nullptr;
 
 Engine::Engine()
 {
-    auto jsonReader = std::make_shared<JSONReader>();
-    container.registerInstance<JSONReader>(jsonReader, InstanceScope::Engine);
+    auto jsonHandler = std::make_shared<JSONHandler>();
+    container.registerInstance<JSONHandler>(jsonHandler, InstanceScope::Engine);
 
     // Managers
     auto sceneManager = std::make_shared<SceneManager>();
@@ -41,7 +41,7 @@ Engine::Engine()
     container.registerInstance<PrefabManager>(prefabManager, InstanceScope::Public);
 
     container.registerInstance<LevelManager>(
-        std::make_shared<LevelManager>(sceneManager, prefabManager, jsonReader),
+        std::make_shared<LevelManager>(sceneManager, prefabManager, jsonHandler),
         InstanceScope::Public);
 
     container.registerInstance<RenderManager>(std::make_shared<RenderManager>(),
