@@ -46,6 +46,12 @@ class Rectangle : public Geometry
 
     [[nodiscard]] Vector2D GetPosition() const { return position; }
 
+    /**
+     * @brief Sets the position of the rectangle's reference point (typically the top left corner).
+     * @param pos The position to set.
+     */
+    void SetPosition(const Vector2D &pos) { position = pos; }
+
     int GetHeight() const { return height; }
 
     int GetWidth() const { return width; }
@@ -57,6 +63,8 @@ class Rectangle : public Geometry
         return (position.x >= start.x && position.y >= start.y) &&
                (position.x + width <= end.x && position.y + height <= end.y);
     }
+
+    void Accept(GeometryVisitor &visitor) override { visitor.Visit(*this); }
 };
 
 #endif // DEFUNBOBENGINE_RECTANGLE_HPP

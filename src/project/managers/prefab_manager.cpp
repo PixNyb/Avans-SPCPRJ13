@@ -30,6 +30,8 @@ std::shared_ptr<GameObject> PrefabManager::GetPrefab(std::string id)
     return it->second->Clone();
 }
 
+std::map<std::string, std::shared_ptr<GameObject>> PrefabManager::GetPrefabs() { return prefabs; }
+
 bool PrefabManager::HasPrefab(const std::string &id) const
 {
     auto it = prefabs.find(id);

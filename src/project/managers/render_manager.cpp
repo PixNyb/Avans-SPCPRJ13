@@ -19,6 +19,8 @@
 #include "game_object_utility.hpp"
 #include "graphics_facade.hpp"
 #include "managers/scene_manager.hpp"
+#include "shape_component.hpp"
+#include "shape_renderer.hpp"
 #include "text.hpp"
 #include <map>
 #include <sprite.hpp>
@@ -31,6 +33,7 @@ void RenderManager::Render()
     auto engine = Engine::GetInstance();
     auto sceneManager = engine->Get<SceneManager>();
     auto graphicsFacade = engine->Get<IOFacade>();
+    auto shapeRenderer = std::make_shared<ShapeRenderer>(graphicsFacade);
 
     if (!sceneManager->HasScene())
         return;
@@ -82,12 +85,12 @@ void RenderManager::Render()
             if (!gameObjectPtr || !gameObjectPtr->IsActive())
                 continue;
             // Delegate to private render method
-            Render(*graphicsFacade, renderPoint, gameObjectPtr);
+            Render(*graphicsFacade, *shapeRenderer, renderPoint, gameObjectPtr);
         }
     }
 }
 
-void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
+void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Point &cameraPoint,
                            const std::weak_ptr<GameObject> &gameObjectPointer)
 {
 
@@ -130,6 +133,11 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
             double radius = circleCollider->Radius();
             parentSize = Size(radius * 2, radius * 2);
         }
+        // Check if gameobject is a UIObject
+        else if (std::shared_ptr<UIObject> uiObj = std::dynamic_pointer_cast<UIObject>(gameObject))
+        {
+            parentSize = Size(uiObj->GetWidth(), uiObj->GetHeight());
+        }
         else
         {
             parentSize = spriteSize; // Use sprite's own size if no parent collider
@@ -164,6 +172,27 @@ void RenderManager::Render(IOFacade &gfx, const Point &cameraPoint,
                            gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY(),
                            gameObjectPointer.lock()->GetTransform().rotation,
                            gameObjectPointer.lock()->GetTransform().scale);
+        }
+    }
+
+    auto shapeComponent = gameObject->GetComponent<ShapeComponent>();
+    if (shapeComponent)
+    {
+        for (auto &shape : shapeComponent->GetGeometries())
+        {
+            if (shapeComponent->DoTranslate())
+            {
+                shape->SetTranslation(
+                    {static_cast<float>(relCamPos.x), static_cast<float>(relCamPos.y)});
+            }
+            else
+            {
+                // TODO: Perhaps do stuff like this more lazily
+                auto gameObjectTransform = gameObject->GetTransform();
+                shape->SetTranslation({static_cast<float>(gameObjectTransform.position.x),
+                                       static_cast<float>(gameObjectTransform.position.y)});
+            }
+            shape->Accept(shapeRenderer);
         }
     }
 

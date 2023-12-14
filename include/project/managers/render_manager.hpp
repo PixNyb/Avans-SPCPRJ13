@@ -15,6 +15,7 @@
 #include "game_object.hpp"
 #include "graphics_facade.hpp"
 #include "point.hpp"
+#include "shape_renderer.hpp"
 
 /**
  * @class RenderManager
@@ -27,12 +28,15 @@ class RenderManager
     /**
      * @brief Renders a game object if possible (contains specializations for different types)
      * @param gfx Graphics facade
+     * @param shapeRenderer Shape renderer
      * @param cameraPoint Point of the camera (used for relative calculations compared to
      * absolute coordinates)
      * @param gameObject Game object to render
      */
-    void Render(IOFacade &gfx, const Point &cameraPoint,
+    void Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Point &cameraPoint,
                 const std::weak_ptr<GameObject> &gameObject);
+
+    void DrawTiled();
 
   public:
     /**
