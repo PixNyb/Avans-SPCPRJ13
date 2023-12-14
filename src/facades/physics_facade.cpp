@@ -125,6 +125,8 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
 
 void PhysicsFacade::Step()
 {
+    auto *contactListener = new ContactListener(bodies);
+    world->SetContactListener(contactListener);
     double delta = std::clamp(Time::GetDeltaTime(), 0.0001, 2.0);
     double time = delta * Time::TimeScale() * 100 * (TimeStep);
     // run physics world
@@ -292,7 +294,14 @@ Point PhysicsFacade::GetVelocity(const std::shared_ptr<GameObject> &gameObject)
 
 void PhysicsFacade::AddBody(const std::shared_ptr<GameObject> &gameObject)
 {
+    std::cout << gameObject->GetName() << std::endl;
+
     bodiesToBeAdded.push_back(gameObject);
+    std::cout << "Contents of bodiesToBeAdded:" << std::endl;
+    for (const auto& obj : bodiesToBeAdded) {
+        std::cout << obj->GetName() << std::endl; // Assuming GameObject has a suitable operator<< overload
+    }
+
 }
 
 PhysicsFacade::~PhysicsFacade() = default;
