@@ -84,7 +84,7 @@ void Engine::Start()
         graphicsFacade->ClearScreen();
 
         auto scene = sceneManager->GetScene().lock();
-        
+
         Get<PhysicsManager>()->Step();
 
         Get<IInputFacade>()->Update();
@@ -94,7 +94,6 @@ void Engine::Start()
         Get<BehaviourScriptManager>()->Update();
 
         Get<RenderManager>()->Render();
-        Get<PathfindingManager>()->Render();
 
         graphicsFacade->PresentScreen();
 

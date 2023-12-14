@@ -12,6 +12,7 @@
 #ifndef DEFUNBOBENGINE_GRAPH_HPP
 #define DEFUNBOBENGINE_GRAPH_HPP
 
+#include "point.hpp"
 #include <memory>
 #include <vector>
 
@@ -42,6 +43,29 @@ class Node : public std::enable_shared_from_this<Node>
     Node(const Node &other);
 
     /**
+     * @brief Get the position of the node.
+     *
+     * @return The position of the node.
+     */
+    Point GetPosition();
+
+    /**
+     * @brief Check the distance to another node.
+     *
+     * @param other The node to compare to.
+     * @return The distance to the other node.
+     */
+    float DistanceTo(std::shared_ptr<Node> other);
+
+    /**
+     * @brief Check the distance to a point.
+     *
+     * @param point The point to compare to.
+     * @return The distance to the point.
+     */
+    float DistanceTo(Point point);
+
+    /**
      * @brief Get the x coordinate of the node.
      */
     int GetX();
@@ -51,36 +75,9 @@ class Node : public std::enable_shared_from_this<Node>
      */
     int GetY();
 
-    /**
-     * @brief Get the cost of the node.
-     */
-    int GetG();
-
-    /**
-     * @brief Set the cost of the node.
-     */
-    void SetG(int g);
-
-    /**
-     * @brief Get the heuristic cost of the node.
-     */
-    int GetH();
-
-    /**
-     * @brief Set the heuristic cost of the node.
-     */
-    void SetH(int h);
-
-    /**
-     * @brief Get the total cost of the node.
-     */
-    int GetF();
-
   private:
     int _x; ///< The x coordinate of the node in the level.
     int _y; ///< The y coordinate of the node in the level.
-    int _g; ///< The cost of the node.
-    int _h; ///< The heuristic cost of the node.
 };
 
 /**
@@ -146,6 +143,11 @@ class Graph : public std::enable_shared_from_this<Graph>
     void AddLink(Link link);
 
     /**
+     * @brief Check if the given nodes are linked.
+     */
+    bool AreNodesLinked(std::shared_ptr<Node> node1, std::shared_ptr<Node> node2);
+
+    /**
      * @brief Get the node at the given index.
      */
     std::shared_ptr<Node> GetNode(int index);
@@ -165,7 +167,19 @@ class Graph : public std::enable_shared_from_this<Graph>
      */
     int GetLinkCount();
 
+    /**
+     * @brief Get the path from the starting point to the ending point.
+     */
+    std::vector<std::shared_ptr<Node>> GetPath(Point start, Point end);
+
+    /**
+     * @brief Get the path from the starting node to the ending node.
+     */
+    std::vector<std::shared_ptr<Node>> GetPath(std::shared_ptr<Node> start,
+                                               std::shared_ptr<Node> end);
+
   private:
+    std::shared_ptr<Node> FindClosestNode(Point point);
     std::vector<std::shared_ptr<Node>> _nodes; ///< The nodes in the graph.
     std::vector<std::shared_ptr<Link>> _links; ///< The links in the graph.
 };

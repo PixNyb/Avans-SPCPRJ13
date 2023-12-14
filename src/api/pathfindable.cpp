@@ -5,37 +5,35 @@
 #include "engine.hpp"
 #include "io_facade.hpp"
 #include "point.hpp"
+#include "rectangle.hpp"
+#include "shape_component.hpp"
 #include <iostream>
 #include <memory>
 
-Pathfindable::Pathfindable(std::weak_ptr<GameObject> parent)
-{
-    _parent = parent.lock();
-    CreateAndStoreNodes();
-}
+Pathfindable::Pathfindable(std::weak_ptr<GameObject> parent) { _parent = parent.lock(); }
 
 Pathfindable::~Pathfindable() {}
 
 std::shared_ptr<Component> Pathfindable::Clone(std::weak_ptr<GameObject> parent)
 {
     return std::make_shared<Pathfindable>(parent);
-    CreateAndStoreNodes();
 }
 
 Pathfindable::Pathfindable(const Pathfindable &other)
 {
     _parent = other._parent;
     _nodes = other._nodes;
-    CreateAndStoreNodes();
 }
 
 std::vector<std::shared_ptr<Node>> Pathfindable::GetNodes() const { return _nodes; }
 
-void Pathfindable::CreateAndStoreNodes()
+bool Pathfindable::IsGenerated() const { return _generated; }
+
+void Pathfindable::Generate()
 {
-    std::cout << "Creating nodes for: " << _parent->GetName() << std::endl;
     // Find the collider of the parent GameObject.
     auto collider = _parent->GetComponent<BoxCollider>();
+    auto shapes = _parent->GetComponent<ShapeComponent>();
     auto transform = _parent->GetTransform();
 
     if (collider == nullptr)
@@ -44,35 +42,22 @@ void Pathfindable::CreateAndStoreNodes()
 
     // Calculate the amount of nodes needed to cover the collider.
     auto width = collider->Width();
-    auto nodeCount = static_cast<int>(width / CoreConstants::Pathfinding::NODE_SPACING);
 
-    std::cout << "Node count: " << nodeCount << std::endl;
+    // Divide the width by the node spacing and round up to get the amount of nodes.
+    auto nodeCount = static_cast<int>(std::ceil(width / CoreConstants::Pathfinding::NODE_SPACING));
 
-    // Place a node at each corner of the collider.
-    auto topLeft = transform.position.x;
-    auto topRight = transform.position.x + width;
+    // Calculate the spacing between the nodes.
+    auto nodeSpacing = width / nodeCount;
 
-    auto top = transform.position.y;
+    auto left = _parent->GetTransform().position.x;
+    auto top = _parent->GetTransform().position.y;
 
-    // Evenly distribute the nodes between the top left and top right corner.
-    auto nodeSpacing = (topRight - topLeft) / nodeCount;
-
-    for (int i = 0; i < nodeCount; i++)
+    for (int i = 0; i <= nodeCount; i++)
     {
-        std::cout << "Creating node: " << topLeft + (nodeSpacing * i) << ", " << top << std::endl;
-        auto node = std::make_shared<Node>(topLeft + (nodeSpacing * i), top);
+        auto node = std::make_shared<Node>(left + (nodeSpacing * i),
+                                           top + CoreConstants::Pathfinding::NODE_Y_OFFSET);
         _nodes.push_back(node);
     }
-}
 
-void Pathfindable::RenderNodes() const
-{
-    auto renderer = Engine::GetInstance()->Get<IOFacade>();
-
-    for (auto &node : _nodes)
-    {
-        auto circle = Circle(*new Vector2D(node->GetX(), node->GetY()), 5);
-        circle.SetFillColor(CoreConstants::Pathfinding::NODE_COLOR);
-        renderer->DrawShape(circle);
-    }
+    _generated = true;
 }

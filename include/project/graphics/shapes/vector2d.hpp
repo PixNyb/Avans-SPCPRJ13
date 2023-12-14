@@ -22,6 +22,7 @@
  * throughout the game engine wherever 2D coordinates or vectors are needed, such as
  * in position calculations, physics, and rendering.
  */
+#include <cmath>
 class Vector2D
 {
   public:
@@ -47,6 +48,13 @@ class Vector2D
         x -= rhs.x;
         y -= rhs.y;
         return *this;
+    }
+
+    void Normalize()
+    {
+        float length = sqrt(x * x + y * y);
+        x /= length;
+        y /= length;
     }
 };
 

@@ -36,13 +36,14 @@ class Pathfindable : public Component
     Pathfindable(const Pathfindable &other);
     ~Pathfindable();
 
+    void Generate();
+    bool IsGenerated() const;
     std::vector<std::shared_ptr<Node>> GetNodes() const;
-    void RenderNodes() const;
 
   protected:
-    void CreateAndStoreNodes();
     std::vector<std::shared_ptr<Node>> _nodes;
     std::shared_ptr<GameObject> _parent;
+    bool _generated = false;
 };
 
 #endif // AVANS_SPCPRJ13_PATHFINDABLE_H

@@ -41,6 +41,7 @@ namespace Debug
 const bool EnableDebug = true;
 const bool DrawColliders = true;
 const bool DrawNodes = true;
+const bool DrawPath = true;
 } // namespace Debug
 
 namespace Audio
@@ -58,8 +59,16 @@ namespace Pathfinding
 /**
  * @brief The maximum distance between two nodes on a pathfindable object.
  */
-const int NODE_SPACING = 100;
-const Color NODE_COLOR = Color::Red();
+const int NODE_SPACING = 40;   ///< The maximum distance between two nodes on a pathfindable object.
+const int NODE_Y_OFFSET = -10; ///< The y offset of the nodes relative to the parent GameObject.
+const int NODE_SIZE = 6;       ///< The size of the nodes when rendered.
+const int NODE_CONNECTION_LENGTH =
+    79; ///< The maximum distance to look for nodes to connect to, when this is smaller than
+        ///< NODE_SPACING, NODE_SPACING will be used instead. Make sure the value is smaller than
+        ///< NODE_SPACING * 2 to prevent unnecessary connections.
+const Color NODE_COLOR = Color::Black();          ///< The color of the nodes when rendered.
+const Color NODE_CONNECTION_COLOR = Color::Red(); ///< The color of the node connections when
+                                                  ///< rendered.
 } // namespace Pathfinding
 
 } // namespace CoreConstants
