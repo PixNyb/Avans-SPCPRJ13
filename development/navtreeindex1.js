@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"classGraphicsFacade.html#a8303956e86116328ec311e6e36577501":[5,0,25,2],
+"classGraphicsFacade.html#a834be76d398810e0dd13021b96841452":[5,0,25,11],
+"classGraphicsFacade.html#a8d3fad6022838ad14d33b3980430434a":[5,0,25,9],
 "classGraphicsFacade.html#a91d74ddc63aa1f443c4734786b3dceb6":[5,0,25,4],
 "classGraphicsFacade.html#ab1361534af676ff41f136d5b4eb5d38e":[5,0,25,20],
 "classGraphicsFacade.html#ab6480cea9277054e94054b0540949ba8":[5,0,25,16],
@@ -99,9 +102,10 @@ var NAVTREEINDEX1 =
 "classISound.html#abbed52c02649fd2563339d838b7301de":[5,0,33,0],
 "classISound.html#acb7bc9f5e524cee5da084cedc5de37de":[5,0,33,9],
 "classISound.html#afde4566c8cf3b897aea83461b55279fd":[5,0,33,6],
-"classJSONReader.html":[5,0,34],
-"classJSONReader.html#a380266e8a5d6ac2480863a5f57afb0d6":[5,0,34,0],
-"classJSONReader.html#a7a8ca2fe4d091d088248f8da50da2621":[5,0,34,1],
+"classJSONHandler.html":[5,0,34],
+"classJSONHandler.html#a523e8849a447e9fe3aa51466ff1df582":[5,0,34,2],
+"classJSONHandler.html#a8fb7b9d53805c97b3516130beaca0536":[5,0,34,0],
+"classJSONHandler.html#ae84e447e97544e7a68c63b471f19c3b0":[5,0,34,1],
 "classLevelFactory.html":[5,0,35],
 "classLevelFactory.html#a4a8430750c7747547781069af85f095e":[5,0,35,3],
 "classLevelFactory.html#a762caade9c5d16357005e21c59210ab0":[5,0,35,5],
@@ -114,8 +118,9 @@ var NAVTREEINDEX1 =
 "classLevelFactoryStub.html#ad60f3e241f66438da417e1f66e672644":[5,0,36,1],
 "classLevelFactoryStub.html#adaa03531b7e741793cd5e0a3414d55f2":[5,0,36,0],
 "classLevelManager.html":[5,0,37],
-"classLevelManager.html#a4485509a50255188ad0925c1c076a828":[5,0,37,0],
 "classLevelManager.html#a72ca9c27cc6b85143e20f83c520d1215":[5,0,37,1],
+"classLevelManager.html#a787c9ca015086d03b1d4ebea874f5443":[5,0,37,4],
+"classLevelManager.html#ad5ac2fabd41123bbd92980940a59d744":[5,0,37,0],
 "classLevelManager.html#adb32f1857dfd97ed0a12be79b78704b1":[5,0,37,2],
 "classLevelManager.html#afcddc0b0e02aa2c19fa407a5abe7e289":[5,0,37,3],
 "classLevelScene.html":[5,0,38],
@@ -244,10 +249,5 @@ var NAVTREEINDEX1 =
 "classSDLInputFacade.html":[5,0,59],
 "classSDLInputFacade.html#a0407b84e90e6a6b5eff6f42813192aa9":[5,0,59,27],
 "classSDLInputFacade.html#a0ac3786263c9519885e169fed0f1355b":[5,0,59,14],
-"classSDLInputFacade.html#a0afc5d59c9d9acbf61fcff19aca2852a":[5,0,59,26],
-"classSDLInputFacade.html#a1bd1a11d8ae8657ebf96eaf43a3d6d46":[5,0,59,18],
-"classSDLInputFacade.html#a2c31a9f298539c0bc2c6f3ff7b07a986":[5,0,59,20],
-"classSDLInputFacade.html#a2dd7083dc3e22424b8e59c77d68bb69c":[5,0,59,3],
-"classSDLInputFacade.html#a32aeee8db79f56c26845b137efa3e8fd":[5,0,59,25],
-"classSDLInputFacade.html#a39007e98b6c5be86b25201b69d220763":[5,0,59,11]
+"classSDLInputFacade.html#a0afc5d59c9d9acbf61fcff19aca2852a":[5,0,59,26]
 };

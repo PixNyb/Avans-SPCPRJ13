@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jsonreader_595',['JSONReader',['../classJSONReader.html',1,'']]]
+  ['jsonhandler_598',['JSONHandler',['../classJSONHandler.html',1,'']]]
 ];

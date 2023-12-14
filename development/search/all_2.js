@@ -33,7 +33,7 @@ var searchData=
   ['contactlistener_84',['ContactListener',['../classContactListener.html',1,'ContactListener'],['../classContactListener.html#a5361c171c4086933413e229bba9eb219',1,'ContactListener::ContactListener()']]],
   ['contents_85',['contents',['../classScene.html#a756e2e6ebc6797dd249a6055699f022d',1,'Scene']]],
   ['convertcamera_86',['ConvertCamera',['../classLevelFactory.html#ac7e3ff33904b0f938ddd955ee082661c',1,'LevelFactory']]],
-  ['convertfiletojson_87',['ConvertFileToJson',['../classJSONReader.html#a7a8ca2fe4d091d088248f8da50da2621',1,'JSONReader']]],
+  ['convertfiletojson_87',['ConvertFileToJson',['../classJSONHandler.html#ae84e447e97544e7a68c63b471f19c3b0',1,'JSONHandler']]],
   ['converttransform_88',['ConvertTransform',['../classLevelFactory.html#a4a8430750c7747547781069af85f095e',1,'LevelFactory']]],
   ['create_89',['create',['../classWindow.html#aaafb0b50bd7ddcdc2ecea1a13a557cc7',1,'Window']]],
   ['create_90',['Create',['../classSDLWindow.html#a8da4ccd59902e2782d87879c9393d690',1,'SDLWindow']]],

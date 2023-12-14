@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jsonreader_963',['JSONReader',['../classJSONReader.html#a380266e8a5d6ac2480863a5f57afb0d6',1,'JSONReader']]]
+  ['jsonhandler_965',['JSONHandler',['../classJSONHandler.html#a8fb7b9d53805c97b3516130beaca0536',1,'JSONHandler']]]
 ];

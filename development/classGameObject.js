@@ -14,6 +14,7 @@ var classGameObject =
     [ "GetLayer", "classGameObject.html#a3f5c50c6cf0f7c63ab75257f959f200e", null ],
     [ "GetName", "classGameObject.html#a986731c4dfb08336dbf0731e6514bad9", null ],
     [ "GetParent", "classGameObject.html#aa6788e19c6016d6de2e8374af223ab0b", null ],
+    [ "GetPrefabId", "classGameObject.html#a37f8a7fe8b46352a32b5b5b5ff0ab89c", null ],
     [ "GetTag", "classGameObject.html#a559f77edc1be0bc69ec7225d85f3ee12", null ],
     [ "GetTransform", "classGameObject.html#aa56a1cffac7ac7f336137bc8604f61f8", null ],
     [ "HasPhysics", "classGameObject.html#a0ed6f7d8c2d8017ef4ab1bf39fea25d5", null ],
@@ -28,6 +29,7 @@ var classGameObject =
     [ "SetName", "classGameObject.html#aeb05cfeea5008cffef2012ed763a7db8", null ],
     [ "SetParent", "classGameObject.html#a5a81173374609fb49d242b3fba50b436", null ],
     [ "SetPhysicsManager", "classGameObject.html#a76ad5e654b86341fe54827b326e9666d", null ],
+    [ "SetPrefabId", "classGameObject.html#ac37559f4c4b911fc391649740ebe2e5f", null ],
     [ "SetTag", "classGameObject.html#a2121c39612440691843dd8bf7d64d452", null ],
     [ "SetTransform", "classGameObject.html#a0aa1842e6bcd14add28cb71347d6ca5d", null ],
     [ "active", "classGameObject.html#afa3bf48882a927f94a6d922045a435e0", null ],
@@ -38,6 +40,7 @@ var classGameObject =
     [ "name", "classGameObject.html#af542b33c8de269343e22c5629e6b66c0", null ],
     [ "parent", "classGameObject.html#aae2ba1fd3e39a32f1de627c2c39b4ae2", null ],
     [ "physicsManager", "classGameObject.html#a3ffdc01e5ce90678c2008a01fbdf3b20", null ],
+    [ "prefabId", "classGameObject.html#ae460ea4d4719404b27a1a84651de8e8b", null ],
     [ "tag", "classGameObject.html#a66891b8bfd67373dde0155ae7808bbb4", null ],
     [ "transform", "classGameObject.html#ad2de7705e8d1d7b5d0014448dd13f99a", null ]
 ];

@@ -100,10 +100,10 @@ $(document).ready(function(){initNavTree('classLevelManager.html',''); initResiz
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4485509a50255188ad0925c1c076a828"><td class="memItemLeft" align="right" valign="top"><a id="a4485509a50255188ad0925c1c076a828"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLevelManager.html#a4485509a50255188ad0925c1c076a828">LevelManager</a> (std::shared_ptr&lt; <a class="el" href="classSceneManager.html">SceneManager</a> &gt; &amp;sManager, std::shared_ptr&lt; <a class="el" href="classPrefabManager.html">PrefabManager</a> &gt; &amp;pManager, std::shared_ptr&lt; <a class="el" href="classJSONReader.html">JSONReader</a> &gt; &amp;jReader)</td></tr>
-<tr class="memdesc:a4485509a50255188ad0925c1c076a828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classLevelManager.html" title="Manages the levels of the game.">LevelManager</a>;. <br /></td></tr>
-<tr class="separator:a4485509a50255188ad0925c1c076a828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5ac2fabd41123bbd92980940a59d744"><td class="memItemLeft" align="right" valign="top"><a id="ad5ac2fabd41123bbd92980940a59d744"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLevelManager.html#ad5ac2fabd41123bbd92980940a59d744">LevelManager</a> (std::shared_ptr&lt; <a class="el" href="classSceneManager.html">SceneManager</a> &gt; &amp;sManager, std::shared_ptr&lt; <a class="el" href="classPrefabManager.html">PrefabManager</a> &gt; &amp;pManager, std::shared_ptr&lt; <a class="el" href="classJSONHandler.html">JSONHandler</a> &gt; &amp;jReader)</td></tr>
+<tr class="memdesc:ad5ac2fabd41123bbd92980940a59d744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classLevelManager.html" title="Manages the levels of the game.">LevelManager</a>;. <br /></td></tr>
+<tr class="separator:ad5ac2fabd41123bbd92980940a59d744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72ca9c27cc6b85143e20f83c520d1215"><td class="memItemLeft" align="right" valign="top"><a id="a72ca9c27cc6b85143e20f83c520d1215"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLevelManager.html#a72ca9c27cc6b85143e20f83c520d1215">~LevelManager</a> ()</td></tr>
 <tr class="memdesc:a72ca9c27cc6b85143e20f83c520d1215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deconstructs a <a class="el" href="classLevelManager.html" title="Manages the levels of the game.">LevelManager</a>;. <br /></td></tr>
@@ -114,6 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adb32f1857dfd97ed0a12be79b78704b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLevelManager.html#adb32f1857dfd97ed0a12be79b78704b1">LoadLevel</a> (int id)</td></tr>
 <tr class="memdesc:adb32f1857dfd97ed0a12be79b78704b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a level based on the provided id.  <a href="classLevelManager.html#adb32f1857dfd97ed0a12be79b78704b1">More...</a><br /></td></tr>
 <tr class="separator:adb32f1857dfd97ed0a12be79b78704b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787c9ca015086d03b1d4ebea874f5443"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLevelManager.html#a787c9ca015086d03b1d4ebea874f5443">SaveLevel</a> (std::string &amp;directory, std::string &amp;filename)</td></tr>
+<tr class="memdesc:a787c9ca015086d03b1d4ebea874f5443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the level which is the current scene. The intended use is saving a level made using level editor.  <a href="classLevelManager.html#a787c9ca015086d03b1d4ebea874f5443">More...</a><br /></td></tr>
+<tr class="separator:a787c9ca015086d03b1d4ebea874f5443"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages the levels of the game. </p>
@@ -179,6 +182,44 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a787c9ca015086d03b1d4ebea874f5443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a787c9ca015086d03b1d4ebea874f5443">&#9670;&nbsp;</a></span>SaveLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string LevelManager::SaveLevel </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>directory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Save the level which is the current scene. The intended use is saving a level made using level editor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">directory</td><td>The directory to where the level json is to be saved. </td></tr>
+    <tr><td class="paramname">filename</td><td>The eventual filename. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The path of where the level is stored. </dd></dl>
 
 </div>
 </div>

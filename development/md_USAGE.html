@@ -168,7 +168,7 @@ Sprites aanmaken en renderen</h1>
 </div><!-- fragment --><p>Om vervolgens een prefab weer op te halen kan er gebruik gemaakt worden van de GetPrefab functie. Hieraan wordt een id meegegeven om de prefab te specificeren. Er wordt hier een nieuwe copy van het <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a> teruggegeven.</p>
 <h1><a class="anchor" id="autotoc_md27"></a>
 3. Level format</h1>
-<p>Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief. Eerst wordt camera gedefinieerd, hierbij wordt een width en height meegegeven. Vervolgens worden alle GameObjecten geplaatst in de objects array. De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de <a class="el" href="classPrefabManager.html" title="Manages the prefabs that are used for the levels.">PrefabManager</a>. Hier worden vervolgens name, tag, active, layer, transform en children nog bij gedefinieert. In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>.</p>
+<p>Voor het inladen van een level wordt het volgende format aangehouden, dit format is niet definitief. Eerst wordt camera gedefinieerd, hierbij wordt een width en height meegegeven. Vervolgens worden alle GameObjecten geplaatst in de objects array. De waarde die is gezet voor 'prefab' wordt gebruikt om de prefab op te vragen aan de <a class="el" href="classPrefabManager.html" title="Manages the prefabs that are used for the levels.">PrefabManager</a>. Hier worden vervolgens name, active, layer, transform en children nog bij gedefinieert. In de huidige situatie zijn al deze velden verplicht om in te vullen voor elk <a class="el" href="classGameObject.html" title="The GameObject class represents an object in the game world.">GameObject</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  &quot;camera&quot;: {</div>
 <div class="line">    &quot;width&quot;: 500,</div>
@@ -178,7 +178,6 @@ Sprites aanmaken en renderen</h1>
 <div class="line">    {</div>
 <div class="line">      &quot;prefab&quot;: &quot;Character&quot;,</div>
 <div class="line">      &quot;name&quot;: &quot;Character1&quot;,</div>
-<div class="line">      &quot;tag&quot;: &quot;character&quot;,</div>
 <div class="line">      &quot;active&quot;: true,</div>
 <div class="line">      &quot;layer&quot;: 1,</div>
 <div class="line">      &quot;transform&quot;: {</div>
@@ -194,7 +193,6 @@ Sprites aanmaken en renderen</h1>
 <div class="line">    {</div>
 <div class="line">      &quot;prefab&quot;: &quot;Tree&quot;,</div>
 <div class="line">      &quot;name&quot;: &quot;Tree1&quot;,</div>
-<div class="line">      &quot;tag&quot;: &quot;tree&quot;,</div>
 <div class="line">      &quot;active&quot;: true,</div>
 <div class="line">      &quot;layer&quot;: 1,</div>
 <div class="line">      &quot;transform&quot;: {</div>
@@ -210,7 +208,6 @@ Sprites aanmaken en renderen</h1>
 <div class="line">    {</div>
 <div class="line">      &quot;prefab&quot;: &quot;Tree&quot;,</div>
 <div class="line">      &quot;name&quot;: &quot;Tree2&quot;,</div>
-<div class="line">      &quot;tag&quot;: &quot;tree&quot;,</div>
 <div class="line">      &quot;active&quot;: true,</div>
 <div class="line">      &quot;layer&quot;: 2,</div>
 <div class="line">      &quot;transform&quot;: {</div>
@@ -225,7 +222,6 @@ Sprites aanmaken en renderen</h1>
 <div class="line">        {</div>
 <div class="line">          &quot;prefab&quot;: &quot;Tree&quot;,</div>
 <div class="line">          &quot;name&quot;: &quot;SubTree&quot;,</div>
-<div class="line">          &quot;tag&quot;: &quot;tree&quot;,</div>
 <div class="line">          &quot;active&quot;: true,</div>
 <div class="line">          &quot;layer&quot;: 3,</div>
 <div class="line">          &quot;transform&quot;: {</div>

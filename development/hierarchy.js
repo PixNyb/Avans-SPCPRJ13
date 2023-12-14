@@ -71,7 +71,7 @@ var hierarchy =
     [ "ISound", "classISound.html", [
       [ "SFMLSound", "classSFMLSound.html", null ]
     ] ],
-    [ "JSONReader", "classJSONReader.html", null ],
+    [ "JSONHandler", "classJSONHandler.html", null ],
     [ "LevelManager", "classLevelManager.html", null ],
     [ "PerformanceUtility", "classPerformanceUtility.html", null ],
     [ "PhysicsFacade", "classPhysicsFacade.html", null ],

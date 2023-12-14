@@ -34,7 +34,7 @@ var annotated_dup =
     [ "IPrototypeComponent", "classIPrototypeComponent.html", "classIPrototypeComponent" ],
     [ "ISceneFactory", "classISceneFactory.html", "classISceneFactory" ],
     [ "ISound", "classISound.html", "classISound" ],
-    [ "JSONReader", "classJSONReader.html", "classJSONReader" ],
+    [ "JSONHandler", "classJSONHandler.html", "classJSONHandler" ],
     [ "LevelFactory", "classLevelFactory.html", "classLevelFactory" ],
     [ "LevelFactoryStub", "classLevelFactoryStub.html", "classLevelFactoryStub" ],
     [ "LevelManager", "classLevelManager.html", "classLevelManager" ],
