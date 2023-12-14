@@ -87,14 +87,6 @@ void Pathfinding::OnUpdate()
 
         // Using the physicsmanager produces errors since it can't find the parent's body2d
         // instance.
-        // physicsManager->UpdateVelocity(_parent, vector.x * 10, vector.y * 10);
-
-        // Move the parent using the transform
-        auto transform = _parent->GetTransform();
-        auto angle = atan2(vector.y, vector.x);
-        transform.position.x += vector.x * 10;
-        transform.position.y += vector.y * 10;
-        transform.rotation = angle * 180 / M_PI;
-        _parent->SetTransform(transform);
+        physicsManager->UpdateVelocity(_parent, vector.x * 10, vector.y * 10);
     }
 }
