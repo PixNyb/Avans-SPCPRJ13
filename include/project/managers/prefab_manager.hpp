@@ -54,6 +54,12 @@ class PrefabManager
     std::shared_ptr<GameObject> GetPrefab(std::string id);
 
     /**
+     * @brief Gets all prefabs
+     * @return A list of prefabs
+     */
+    std::map<std::string, std::shared_ptr<GameObject>> GetPrefabs();
+
+    /**
      * @brief Check if there is a prefab registered with a specified id.
      * @param id Defines which id to check for.
      * @return True if there is already a prefab registered by the specified id.

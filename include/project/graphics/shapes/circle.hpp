@@ -42,6 +42,12 @@ class Circle : public Geometry
 
     [[nodiscard]] Vector2D GetPosition() const { return position; }
 
+    /**
+     * @brief Sets the position of the circle's center.
+     * @param pos The position to set.
+     */
+    void SetPosition(const Vector2D &pos) { position = pos; }
+
     float GetRadius() const { return radius; }
 
     int GetArea() override { return 3.14 * radius * radius; }
@@ -60,6 +66,8 @@ class Circle : public Geometry
 
         return false;
     }
+
+    void Accept(GeometryVisitor &visitor) override { visitor.Visit(*this); }
 };
 
 #endif // DEFUNBOBENGINE_CIRCLE_HPP
