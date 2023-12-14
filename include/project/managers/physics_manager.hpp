@@ -48,7 +48,7 @@ class PhysicsManager
      * @brief Creates a body in the world simulation
      * @param gameObject the object for which a body will be created
      */
-    void CreateBody(const std::shared_ptr<GameObject>& gameObject);
+    void CreateBody(std::shared_ptr<GameObject>& gameObject);
 
     /**
      * @brief Adds a force to a gameobject (will allways create a force on the center of the body)

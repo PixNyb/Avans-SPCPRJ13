@@ -14,6 +14,7 @@
 #include "box_collider.hpp"
 #include "circle_collider.hpp"
 #include <algorithm>
+#include <iostream>
 #include <utility>
 
 const double MeterToPixel = 50;
@@ -22,7 +23,6 @@ const double PixelToMeter = 1 / MeterToPixel;
 void ContactListener::BeginContact(b2Contact *contact)
 {
     // to make an object bounce you can set the contact restitution
-    //    contact->SetRestitution(0.005);
     auto bodyA = contact->GetFixtureA()->GetBody();
     auto bodyB = contact->GetFixtureB()->GetBody();
     std::shared_ptr<GameObject> gameObjectA = FindGameObject(bodyA);
@@ -79,4 +79,7 @@ std::shared_ptr<GameObject> ContactListener::FindGameObject(b2Body *body)
     auto it = std::find_if(gameObjects.begin(), gameObjects.end(),
                            [body](const auto &pair) { return pair.second == body; });
     return (it != gameObjects.end()) ? it->first : nullptr;
+}
+void ContactListener::UpdateBodies(std::map<std::shared_ptr<GameObject>, b2Body *> gameObjects) {
+    this->gameObjects = gameObjects;
 }

@@ -55,6 +55,8 @@ class ContactListener : public b2ContactListener
      */
     void EndContact(b2Contact *contact) override;
 
+    void UpdateBodies(std::map<std::shared_ptr<GameObject>, b2Body *> gameObjects);
+
     /**
      * Finds the gameobject with a b2body
      */

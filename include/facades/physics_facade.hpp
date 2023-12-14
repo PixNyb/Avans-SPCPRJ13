@@ -12,6 +12,7 @@
 #define AVANS_SPCPRJ13_PHYSICS_FACADE_HPP
 
 #include "collider.hpp"
+#include "contact_listener.hpp"
 #include "debug_renderer.hpp"
 #include "game_object.hpp"
 #include "rigidbody.hpp"
@@ -39,6 +40,7 @@ class PhysicsFacade
     std::unique_ptr<b2World> world; ///< The world in which the bodies can move.
     std::vector<std::shared_ptr<GameObject>>
         bodiesToBeAdded; ///< Bodies that have to be added to the world
+    ContactListener* contactListener;
 
     /**
      * @brief Creates a shape on a body through a fixture
@@ -166,7 +168,7 @@ class PhysicsFacade
      * Adds a body (this function is used for adding bodies to the world after initialisation)
      * @param gameObject
      */
-    void AddBody(const std::shared_ptr<GameObject> &gameObject);
+    void AddBody(std::shared_ptr<GameObject> &gameObject);
 };
 
 #endif // AVANS_SPCPRJ13_PHYSICS_FACADE_HPP

@@ -22,9 +22,8 @@ void PhysicsManager::RemoveBody(const std::shared_ptr<GameObject> &gameObject)
     physicsFacade.DestroyBody(gameObject);
 }
 
-void PhysicsManager::CreateBody(const std::shared_ptr<GameObject>& object)
+void PhysicsManager::CreateBody(std::shared_ptr<GameObject>& object)
 {
-    std::cout << object->GetName() << std::endl;
     physicsFacade.AddBody(object);
 }
 
