@@ -14,6 +14,8 @@
 #include <filesystem>
 #include <fmt/format.h>
 #include <iostream>
+#include <regex>
+#include <utility>
 
 LevelManager::LevelManager(std::shared_ptr<SceneManager> &sManager,
                            std::shared_ptr<PrefabManager> &pManager,
@@ -39,6 +41,9 @@ void LevelManager::RegisterLevel(int id, std::string filePath)
                                levelFileExtension.length(), levelFileExtension)))
         throw std::runtime_error(fmt::format(
             "Level file is of a unsupported type. Expected type: '{}'", levelFileExtension));
+
+    if (levels.find(id) != levels.end())
+        throw std::runtime_error(fmt::format("Level with id '{}' already exists.", id));
 
     levels.insert(std::pair(id, filePath));
 }
@@ -71,18 +76,57 @@ void LevelManager::LoadLevel(int id)
     }
 }
 
+void LevelManager::LoadLevel(LevelEntry &levelEntry)
+{
+    if (levelEntry.levelType == LevelType::File)
+    {
+        LoadLevel(static_cast<int>(levelEntry.levelID));
+        return;
+    }
+
+    if (levelEntry.levelType == LevelType::SceneInstance)
+    {
+        try
+        {
+            auto [name, fatory] = _levelScenes[levelEntry.levelID];
+            sceneManager->SetScene(fatory());
+        }
+        catch (std::exception &e)
+        {
+            std::cout << e.what() << std::endl;
+        }
+        return;
+    }
+
+    throw std::runtime_error("Could not load level!");
+}
+
 std::string LevelManager::SaveLevel(std::string &directory, std::string &filename)
 {
-    auto currentScene = sceneManager->GetScene();
+    auto currentWeakScene = sceneManager->GetScene();
+
+    if (currentWeakScene.expired())
+        throw std::runtime_error("No scene is currently loaded.");
+
+    auto currentScene = currentWeakScene.lock();
+    auto camera = currentScene->GetCamera();
+
+    return SaveLevel(directory, filename, camera, currentScene->contents);
+}
+
+std::string LevelManager::SaveLevel(std::string &directory, std::string &filename,
+                                    std::shared_ptr<Camera> &camera,
+                                    std::vector<std::shared_ptr<GameObject>> &gameObjects)
+{
     auto levelJson = nlohmann::json::object();
 
     // Convert the Camera to a json object and add it to the level json.
-    auto cameraJson = CreateCameraJson(*currentScene.lock()->GetCamera());
+    auto cameraJson = CreateCameraJson(*camera);
     levelJson["camera"] = cameraJson;
 
     // Convert the GameObjects of the scene to json objects.
     nlohmann::json objects;
-    for (const auto &gameObject : currentScene.lock()->contents)
+    for (const auto &gameObject : gameObjects)
     {
         // Check if the GameObject has a parent, if it does it should not be called here due
         // to only root objects needing to be in objects array. The level json has a recursive
@@ -151,4 +195,66 @@ nlohmann::json LevelManager::CreateCameraJson(Camera &camera)
     cameraJson["height"] = camera.GetAspectHeight();
 
     return cameraJson;
+}
+
+void LevelManager::LoadAllFromDirectory(const std::string &directory)
+{
+    // Regular expression to match the required filename format
+    std::regex filenamePattern(R"((\d+)_(.*)\.json)");
+
+    for (const auto &entry : std::filesystem::directory_iterator(directory))
+    {
+        if (!entry.is_regular_file())
+        {
+            continue;
+        }
+
+        std::smatch match;
+        auto filename = entry.path().filename().string();
+        if (!std::regex_match(filename, match, filenamePattern) || match.size() != 3)
+        {
+            std::cout << "Skipped file with invalid filename format: " << entry.path() << std::endl;
+            continue;
+        }
+
+        // Extract information using capture groups
+        std::string id = match[1];
+        std::string name = match[2];
+        std::cout << "Found match. ID: " << id << ", File: " << entry.path() << std::endl;
+        // Process the JSON file
+        RegisterLevel(std::stoi(id), entry.path().string());
+    }
+}
+std::vector<LevelEntry> LevelManager::GetLevels()
+{
+    std::vector<LevelEntry> entries;
+
+    for (auto const &[key, val] : levels)
+    {
+        auto entry = LevelEntry();
+        entry.levelName = "none";
+
+        auto path = std::filesystem::weakly_canonical(val);
+        if (path.has_filename())
+        {
+            entry.levelName = path.filename().string();
+        }
+
+        entry.levelID = key;
+        entry.levelType = LevelType::File;
+        entries.push_back(entry);
+    }
+
+    for (auto const &[key, nameFuncSet] : _levelScenes)
+    {
+        auto [name, factory] = nameFuncSet;
+
+        auto entry = LevelEntry();
+        entry.levelID = key;
+        entry.levelName = name;
+        entry.levelType = LevelType::SceneInstance;
+        entries.push_back(entry);
+    }
+
+    return entries;
 }
