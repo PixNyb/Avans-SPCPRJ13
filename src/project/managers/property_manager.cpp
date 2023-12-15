@@ -15,3 +15,18 @@ PropertyManager::PropertyManager(std::shared_ptr<JSONHandler> &jHandler)
     : jsonHandler(jHandler), fileExtension(".json")
 {
 }
+
+std::string PropertyManager::ValidatePath(std::string &filePath)
+{
+    if (filePath.length() < fileExtension.length() ||
+        (0 != filePath.compare(filePath.length() - fileExtension.length(), fileExtension.length(),
+                               fileExtension)))
+        throw std::runtime_error(
+            fmt::format("The file is of a unsupported type. Expected type: '{}'", fileExtension));
+
+    auto normPath = std::filesystem::absolute(filePath).string();
+    if (!std::filesystem::exists(normPath))
+        throw std::runtime_error(fmt::format("Path was not found: {}", normPath));
+
+    return normPath;
+}

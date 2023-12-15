@@ -45,7 +45,7 @@ class JSONHandler
      * @brief Write a json object to a json file.
      * @param destination The folder which the file is to be written to.
      * @param fileName The name which the file should have.
-     * @param json The json object which is tob e written to the file.
+     * @param json The json object which is to be written to the file.
      * @return The resulting file path to which the json was written.
      */
     std::string WriteJsonToFile(const std::string &destination, const std::string &fileName,
