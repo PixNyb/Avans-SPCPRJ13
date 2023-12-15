@@ -10,12 +10,16 @@
 
 #include "pathfinding.hpp"
 #include "box_collider.hpp"
+#include "circle.hpp"
+#include "core_constants.hpp"
 #include "engine.hpp"
 #include "pathfinding_manager.hpp"
 #include "physics_manager.hpp"
 #include "point.hpp"
 #include "scene_manager.hpp"
+#include "shape_component.hpp"
 #include "sprite.hpp"
+#include "transform.hpp"
 #include "vector2d.hpp"
 #include <iostream>
 #include <memory>
@@ -61,7 +65,9 @@ void Pathfinding::OnStart()
     _path = pathfindingManager->GetPath(_parent.lock()->GetTransform().position,
                                         _target.lock()->GetTransform().position);
 
-    this->_targetNode = _path[_path.size() - 1];
+    if (_path.size() != 0)
+        this->_targetNode = _path[_path.size() - 1];
+
     this->hasStarted = true;
 }
 
@@ -73,30 +79,35 @@ void Pathfinding::OnUpdate()
         return;
 
     auto physicsManager = Engine::GetInstance()->Get<PhysicsManager>();
-    auto parentPosition = _parent.lock()->GetTransform().position;
-    auto parentCollider = _parent.lock()->GetComponent<BoxCollider>();
-    auto parentBottom = Point(parentCollider->Width() / 2, parentCollider->Height());
-    auto targetPosition = _target.lock()->GetTransform().position;
-    auto targetCollider = _target.lock()->GetComponent<BoxCollider>();
-    auto targetBottom = Point(targetCollider->Width() / 2, targetCollider->Height());
-    auto closestNodeToTarget = pathfindingManager->FindClosestNode(targetPosition + targetBottom);
+    auto parentHeight = _parent.lock()->GetComponent<BoxCollider>()->Height();
+    auto parentWidth = _parent.lock()->GetComponent<BoxCollider>()->Width();
 
-    if (_targetNode != nullptr && closestNodeToTarget != _targetNode)
+    auto parentPosition = _parent.lock()->GetTransform().position;
+    auto parentBottom = Point(parentWidth / 2, parentHeight);
+    auto parentBottomPosition = parentPosition + parentBottom;
+    auto velocity = physicsManager->GetVelocity(_parent.lock());
+
+    auto targetPosition = _target.lock()->GetTransform().position;
+    auto targetBottom = Point(_target.lock()->GetComponent<BoxCollider>()->Width() / 2,
+                              _target.lock()->GetComponent<BoxCollider>()->Height());
+    auto targetBottomPosition = targetPosition + targetBottom;
+
+    auto closestNodeToTarget = pathfindingManager->FindClosestNode(targetBottomPosition);
+
+    if (_targetNode == nullptr || closestNodeToTarget != _targetNode)
     {
-        std::cout << "Updating path..." << std::endl;
-        _path = pathfindingManager->GetPath(parentPosition, targetPosition);
-        _targetNode = _path[_path.size() - 1];
+        _path = pathfindingManager->GetPath(parentBottomPosition, targetBottomPosition);
+
+        if (_path.size() != 0)
+            this->_targetNode = _path[_path.size() - 1];
     }
 
-    if (_path.size() > 0)
+    if (_targetNode != nullptr && _path.size() != 0)
     {
         auto nextNode = _path[0];
 
-        // Check if the parent is close enough to the next node
-        std::cout << "Distance to next node: "
-                  << nextNode->DistanceTo(parentPosition + parentBottom) << std::endl;
-
-        if (nextNode->DistanceTo(parentPosition + parentBottom) <= 10)
+        if (nextNode->DistanceTo(_parent.lock()->GetTransform().position) <
+            parentHeight - CoreConstants::Pathfinding::NODE_Y_OFFSET)
         {
             // Remove the node from the path
             _path.erase(_path.begin());
@@ -105,7 +116,6 @@ void Pathfinding::OnUpdate()
             if (_path.size() == 0)
             {
                 // Set the velocity to 0 when the target is reached
-                std::cout << "Target reached!" << std::endl;
                 physicsManager->UpdateVelocity(_parent.lock(), 0, 0);
                 return;
             }
@@ -115,12 +125,15 @@ void Pathfinding::OnUpdate()
         }
 
         // Move the parent towards the next node
-        auto direction = nextNode->GetPosition() - parentPosition;
-        auto vector = Vector2D(-direction.x, direction.y <= 0 ? direction.y : 0);
+        auto direction = nextNode->GetPosition() - _parent.lock()->GetTransform().position;
+        auto vector = Vector2D(direction.x, -direction.y);
         vector.Direction();
-        std::cout << "Moving towards next node: " << vector.x << ", " << vector.y << std::endl;
 
-        physicsManager->UpdateVelocity(_parent.lock(), -vector.x, -vector.y);
-        
+        // If the next node is higher than the parent, jump
+        if (nextNode->GetPosition().y < _parent.lock()->GetTransform().position.y + 50)
+            physicsManager->UpdateVelocity(_parent.lock(), vector.x * 30,
+                                           2000); // Insane jumping power
+        else
+            physicsManager->UpdateVelocity(_parent.lock(), vector.x * 30, 0);
     }
 }

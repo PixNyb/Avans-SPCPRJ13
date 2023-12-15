@@ -185,23 +185,9 @@ std::vector<std::shared_ptr<Node>> PathfindingManager::GetPath(Point start, Poin
     if (graph == nullptr)
         return std::vector<std::shared_ptr<Node>>();
 
-    if (CoreConstants::Debug::EnableDebug)
-    {
-        std::cout << "Path requested from: " << start.x << ", " << start.y << " to " << end.x
-                  << ", " << end.y << std::endl;
-    }
-
     auto path = graph->GetPath(start, end);
-    if (path.size() == 0)
-    {
-        if (CoreConstants::Debug::EnableDebug)
-        {
-            std::cout << "No path found." << std::endl;
-        }
-        return path;
-    }
 
-    if (CoreConstants::Debug::DrawNodes)
+    if (CoreConstants::Debug::DrawNodes && path.size() > 0)
     {
         // Find the debug component and get the shape component
         std::shared_ptr<ShapeComponent> shapeComponent = nullptr;

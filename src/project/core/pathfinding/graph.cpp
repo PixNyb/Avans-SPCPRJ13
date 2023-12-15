@@ -1,7 +1,9 @@
 #include "graph.hpp"
+#include "core_constants.hpp"
 #include "point.hpp"
 #include <algorithm>
 #include <cmath>
+#include <iostream>
 #include <memory>
 #include <set>
 #include <unordered_map>
@@ -95,6 +97,13 @@ std::vector<std::shared_ptr<Node>> Graph::GetPath(Point start, Point end)
 std::vector<std::shared_ptr<Node>> Graph::GetPath(std::shared_ptr<Node> start,
                                                   std::shared_ptr<Node> end)
 {
+
+    if (CoreConstants::Debug::EnableDebug)
+    {
+        std::cout << "Path requested from: " << start->GetX() << ", " << start->GetY() << " to "
+                  << end->GetX() << ", " << end->GetY() << std::endl;
+    }
+
     // Collect f, g and h values for each node.
     std::unordered_map<std::shared_ptr<Node>, float> gValues;
     std::unordered_map<std::shared_ptr<Node>, float> hValues;
@@ -185,6 +194,10 @@ std::vector<std::shared_ptr<Node>> Graph::GetPath(std::shared_ptr<Node> start,
     }
 
     // If no path is found, return an empty vector.
+    if (CoreConstants::Debug::EnableDebug)
+    {
+        std::cout << "No path found." << std::endl;
+    }
     return std::vector<std::shared_ptr<Node>>();
 }
 
