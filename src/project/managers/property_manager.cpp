@@ -8,3 +8,10 @@
  * @copyright Copyright (c) 2023
  *
  */
+
+#include "property_manager.hpp"
+
+PropertyManager::PropertyManager(std::shared_ptr<JSONHandler> &jHandler)
+    : jsonHandler(jHandler), fileExtension(".json")
+{
+}

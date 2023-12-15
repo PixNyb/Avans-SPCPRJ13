@@ -19,17 +19,33 @@
 #include <string>
 #include <type_traits>
 
+/**
+ * @class PropertyManager
+ * @brief Manages various properties which are stored in a JSON file.
+ *
+ * This class is responsible for managing properties of the game. These properties are stored in a
+ * JSON file, the path to which is passed from the game. Only a few properties can be stored in this
+ * PropertyManager, these types of properties are: int, float, bool and string
+ */
 class PropertyManager
 {
   private:
+    /**
+     * @brief A JSONHandler used to read and write the property file.
+     */
     std::shared_ptr<JSONHandler> jsonHandler;
+
+    /**
+     * @brief The expected file extension of the properties file.
+     */
+    std::string fileExtension;
 
   public:
     /**
      * @brief Constructs a new PropertyManager
      * @param jHandler The JSONHandler used to read and write the property file.
      */
-    PropertyManager(std::shared_ptr<JSONHandler> &jHandler);
+    explicit PropertyManager(std::shared_ptr<JSONHandler> &jHandler);
 
     /**
      * @brief This function stores a int value based on a string key.
