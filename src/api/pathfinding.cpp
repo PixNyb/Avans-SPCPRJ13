@@ -86,6 +86,7 @@ void Pathfinding::OnUpdate()
     auto parentBottom = Point(parentWidth / 2, parentHeight);
     auto parentBottomPosition = parentPosition + parentBottom;
     auto velocity = physicsManager->GetVelocity(_parent.lock());
+    physicsManager->UpdateRotation(_parent.lock(), 0);
 
     auto targetPosition = _target.lock()->GetTransform().position;
     auto targetBottom = Point(_target.lock()->GetComponent<BoxCollider>()->Width() / 2,
@@ -116,7 +117,6 @@ void Pathfinding::OnUpdate()
             if (_path.size() == 0)
             {
                 // Set the velocity to 0 when the target is reached
-                physicsManager->UpdateVelocity(_parent.lock(), 0, 0);
                 return;
             }
 
@@ -130,10 +130,16 @@ void Pathfinding::OnUpdate()
         vector.Direction();
 
         // If the next node is higher than the parent, jump
-        if (nextNode->GetPosition().y < _parent.lock()->GetTransform().position.y + 50)
-            physicsManager->UpdateVelocity(_parent.lock(), vector.x * 30,
-                                           2000); // Insane jumping power
+        if (nextNode->GetPosition().y < _parent.lock()->GetTransform().position.y + 100)
+            physicsManager->UpdateVelocity(_parent.lock(), 0,
+                                           600); // Insane jumping power
         else
-            physicsManager->UpdateVelocity(_parent.lock(), vector.x * 30, 0);
+        {
+            physicsManager->UpdateVelocity(_parent.lock(), vector.x * 30, vector.y);
+            if (vector.x < 0)
+                _parent.lock()->GetComponent<Sprite>()->FlipSprite(true, false);
+            else
+                _parent.lock()->GetComponent<Sprite>()->FlipSprite(false, false);
+        }
     }
 }
