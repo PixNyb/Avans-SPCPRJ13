@@ -168,8 +168,14 @@ class GraphicsFacade : public IOFacade
      *
      * This method creates a texture from an image file, which can then be used for rendering.
      * @param texture The texture to be created.
+     * @param rectangle The rectangle to render the texture in.
+     * @param flipX Whether to flip the texture horizontally.
+     * @param flipY Whether to flip the texture vertically.
+     * @param angle The angle to draw the sprite at.
+     * @param scale The scale factor on the axis
      */
-    void DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX, bool flipY) override;
+    void DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX, bool flipY, int angle,
+                    float scale) override;
 
     /**
      * @brief Creates an SDL_Texture from an image file.
@@ -177,9 +183,12 @@ class GraphicsFacade : public IOFacade
      * This method creates an SDL_Texture from an image file, which can then be used for rendering.
      * @param sdlTexture The SDL_Texture to be created.
      * @param rectangle The rectangle to render the texture in.
+     * @param flipX Whether to flip the texture horizontally.
+     * @param flipY Whether to flip the texture vertically.
+     * @param scale The scale factor on the axis
      */
-    void RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle, bool flipX,
-                          bool flipY) override;
+    void RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle, bool flipX, bool flipY,
+                          float scale) override;
 
     /**
      * @brief Gets the cached texture if it exists.
@@ -215,9 +224,14 @@ class GraphicsFacade : public IOFacade
      * @param frameIndex The index of the frame to draw.
      * @param totalColumns The total number of columns in the sprite sheet.
      * @param totalRows The total number of rows in the sprite sheet.
+     * @param flipX Whether to flip the sprite horizontally.
+     * @param flipY Whether to flip the sprite vertically.
+     * @param angle The angle to draw the sprite at.
+     * @param scale The scale factor on the axis
      */
     void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect, int frameIndex,
-                              int totalColumns, int totalRows) override;
+                              int totalColumns, int totalRows, bool flipX, bool flipY, double angle,
+                              float scale) override;
 };
 
 #endif // DEFUNBOBENGINE_GRAPHICS_FACADE_HPP

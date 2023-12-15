@@ -9,6 +9,8 @@
  */
 
 #include "animator.hpp"
+#include "engine.hpp"
+#include "physics_manager.hpp"
 #include "time.hpp"
 
 Animator::Animator(const Animator &other) : BehaviourScript(other)
@@ -20,6 +22,9 @@ Animator::Animator(const Animator &other) : BehaviourScript(other)
         this->currentState = std::make_unique<AnimationState>(*other.currentState);
     }
     this->states = other.states;
+    this->totalColumns = other.totalColumns;
+    this->totalRows = other.totalRows;
+    this->gameObject = other.gameObject;
 }
 
 void Animator::AddState(const std::string &name, const AnimationState &state)
@@ -38,9 +43,14 @@ void Animator::SetState(const std::string &name)
 
 void Animator::OnUpdate()
 {
-    if (currentState)
+    auto physicsManager = Engine::GetInstance()->Get<PhysicsManager>();
+    auto velocity = physicsManager->GetVelocity(gameObject.lock());
+    if (velocity.x != 0 || velocity.y != 0)
     {
-        currentState->Update(Time::GetDeltaTime());
+        if (currentState)
+        {
+            currentState->Update(Time::GetDeltaTime());
+        }
     }
 }
 
@@ -55,5 +65,7 @@ int Animator::GetCurrentFrameIndex() const
 
 std::shared_ptr<Component> Animator::Clone(std::weak_ptr<GameObject> parent)
 {
-    return std::make_shared<Animator>(*this);
+    auto object = std::make_shared<Animator>(*this);
+    object->SetGameObject(parent);
+    return object;
 }

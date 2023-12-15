@@ -162,7 +162,7 @@ void PhysicsFacade::Step()
                 oldTransform.position.x = bodyPos.x * MeterToPixel;
                 oldTransform.position.y = -bodyPos.y * MeterToPixel;
             }
-            oldTransform.rotation = (body->GetAngle() * 180 / b2_pi);
+            oldTransform.rotation = -(body->GetAngle() * 180 / b2_pi);
             gameObject->SetTransform(oldTransform);
         }
     }
