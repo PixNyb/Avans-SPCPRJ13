@@ -1,0 +1,9 @@
+<map id="include/project/graphics/shapes/rectangle.hpp" name="include/project/graphics/shapes/rectangle.hpp">
+<area shape="rect" id="node1" title="This file contains the Rectangle class definition." alt="" coords="165,5,342,47"/>
+<area shape="rect" id="node2" href="$geometry_8hpp.html" title="This file contains the Geometry class definition." alt="" coords="198,95,309,121"/>
+<area shape="rect" id="node3" href="$geometry__visitor_8hpp.html" title="A file containing the GeometryVisitor class." alt="" coords="5,169,165,196"/>
+<area shape="rect" id="node5" href="$shape__color_8hpp.html" title="ShapeColor is a class that represents a color in the game engine." alt="" coords="190,169,317,196"/>
+<area shape="rect" id="node7" href="$vector2d_8hpp.html" title="This file contains the Vector2D class definition." alt="" coords="341,169,448,196"/>
+<area shape="rect" id="node4" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="44,244,127,271"/>
+<area shape="rect" id="node6" href="$color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="213,244,294,271"/>
+</map>

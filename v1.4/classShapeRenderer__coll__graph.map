@@ -1,0 +1,4 @@
+<map id="ShapeRenderer" name="ShapeRenderer">
+<area shape="rect" id="node1" title="A visitor class that can render shapes." alt="" coords="9,80,131,107"/>
+<area shape="rect" id="node2" href="$classGeometryVisitor.html" title="Interface for a Geometry Visitor." alt="" coords="5,5,135,32"/>
+</map>
