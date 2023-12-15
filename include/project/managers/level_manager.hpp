@@ -11,12 +11,12 @@
 #ifndef DEFUNBOBENGINE_LEVEL_MANAGER_HPP
 #define DEFUNBOBENGINE_LEVEL_MANAGER_HPP
 
+#include "json_handler.hpp"
+#include "level_factory.hpp"
+#include "scene_manager.hpp"
 #include <map>
 #include <memory>
 #include <string>
-#include "scene_manager.hpp"
-#include "level_factory.hpp"
-#include "json_reader.hpp"
 
 /**
  * @class LevelManager
@@ -25,7 +25,8 @@
  * This class is responsible for keeping track of all of the levels.
  * In addition, it can load a pre-defined level.
  */
-class LevelManager {
+class LevelManager
+{
   private:
     /**
      * @brief A map consisting of level id's and a filepath to the corresponding level JSON.
@@ -40,25 +41,45 @@ class LevelManager {
     std::shared_ptr<SceneManager> sceneManager;
 
     /**
+     * @brief A PrefabManager which can be used to identify the prefabs from a level.
+     */
+    std::shared_ptr<PrefabManager> prefabManager;
+
+    /**
      * @brief A LevelFactory which is used to load the level.
      */
     std::unique_ptr<LevelFactory> levelFactory;
 
     /**
-     * @brief A JSONReader which is used to read the level JSON files.
+     * @brief A JSONHandler which is used to read the level JSON files.
      */
-    std::shared_ptr<JSONReader> jsonReader;
+    std::shared_ptr<JSONHandler> jsonHandler;
 
     /**
      * @brief The file extension used for the level files.
      */
     std::string levelFileExtension;
 
+    /**
+     * @brief Create a json object from a GameObject.
+     * @param gameObject The GameObject which is to converted.
+     * @return The json of the given GameObject.
+     */
+    nlohmann::json CreateGameObjectJson(GameObject &gameObject);
+
+    /**
+     * @brief Create a json object from a Camera.
+     * @param camera The camera which is to be converted.
+     * @return The json of the given Camera.
+     */
+    nlohmann::json CreateCameraJson(Camera &camera);
+
   public:
     /**
      * @brief Construct a new LevelManager;
      */
-    LevelManager(std::shared_ptr<SceneManager> &sManager, std::shared_ptr<PrefabManager> &pManager, std::shared_ptr<JSONReader> &jReader);
+    LevelManager(std::shared_ptr<SceneManager> &sManager, std::shared_ptr<PrefabManager> &pManager,
+                 std::shared_ptr<JSONHandler> &jReader);
 
     /**
      * @brief Deconstructs a LevelManager;
@@ -78,6 +99,14 @@ class LevelManager {
      */
     void LoadLevel(int id);
 
+    /**
+     * @brief Save the level which is the current scene. The intended use is saving a level made
+     * using level editor.
+     * @param directory The directory to where the level json is to be saved.
+     * @param filename The eventual filename.
+     * @return The path of where the level is stored.
+     */
+    std::string SaveLevel(std::string &directory, std::string &filename);
 };
 
 #endif // DEFUNBOBENGINE_LEVEL_MANAGER_HPP

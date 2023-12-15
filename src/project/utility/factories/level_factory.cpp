@@ -42,8 +42,6 @@ std::vector<std::shared_ptr<GameObject>> LevelFactory::AddObjects(Scene &scene,
 
         gameObject->SetName(jsonObject.at("name").template get<std::string>());
 
-        gameObject->SetTag(jsonObject.at("tag").template get<std::string>());
-
         gameObject->SetActive(jsonObject.at("active").template get<bool>());
 
         gameObject->SetLayer(jsonObject.at("layer").template get<int>());

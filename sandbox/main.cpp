@@ -10,7 +10,7 @@
  */
 
 #include "behaviour_script.hpp"
-#include "json_reader.hpp"
+#include "json_handler.hpp"
 #include "level_manager.hpp"
 #include "prefab_manager.hpp"
 #include "rigidbody.hpp"
