@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classSDLInputFacade.html#a0afc5d59c9d9acbf61fcff19aca2852a":[5,0,59,26],
 "classSDLInputFacade.html#a1bd1a11d8ae8657ebf96eaf43a3d6d46":[5,0,59,18],
 "classSDLInputFacade.html#a2c31a9f298539c0bc2c6f3ff7b07a986":[5,0,59,20],
 "classSDLInputFacade.html#a2dd7083dc3e22424b8e59c77d68bb69c":[5,0,59,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "dir_00f0a3b1654669903f8939607e046ce9.html":[6,0,1,2],
 "dir_0619a8f54b4fad7043a6de45be8fde0b.html":[6,0,1,3],
 "dir_0bde15225a6b0d64d038a7eec027a48c.html":[6,0,0,1,1,1],
-"dir_0da442c11c3342efeb89d3a72ce9cb13.html":[6,0,0,2,0,0],
-"dir_0e4392474d6d3c0f3c6a065a1a5a9c9b.html":[6,0,0,1,1]
+"dir_0da442c11c3342efeb89d3a72ce9cb13.html":[6,0,0,2,0,0]
 };

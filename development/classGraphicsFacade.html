@@ -163,12 +163,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af2bb8164381a0c846ecaed92c3aaf883"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#af2bb8164381a0c846ecaed92c3aaf883">DrawText</a> (const <a class="el" href="classText.html">Text</a> &amp;text) override</td></tr>
 <tr class="memdesc:af2bb8164381a0c846ecaed92c3aaf883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a <a class="el" href="classText.html" title="Represents a piece of text in the user interface.">Text</a> object on the rendering target.  <a href="classGraphicsFacade.html#af2bb8164381a0c846ecaed92c3aaf883">More...</a><br /></td></tr>
 <tr class="separator:af2bb8164381a0c846ecaed92c3aaf883"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c4de215fd535bf0965850340d3958a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#a2c4de215fd535bf0965850340d3958a5">DrawSprite</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture, <a class="el" href="classRectangle.html">Rectangle</a> &amp;rectangle, bool flipX, bool flipY) override</td></tr>
-<tr class="memdesc:a2c4de215fd535bf0965850340d3958a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture from an image file.  <a href="classGraphicsFacade.html#a2c4de215fd535bf0965850340d3958a5">More...</a><br /></td></tr>
-<tr class="separator:a2c4de215fd535bf0965850340d3958a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade9606381fa0a6c46293a305125615c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#ade9606381fa0a6c46293a305125615c2">RenderSDLTexture</a> (SDL_Texture *sdlTexture, <a class="el" href="classRectangle.html">Rectangle</a> rectangle, bool flipX, bool flipY) override</td></tr>
-<tr class="memdesc:ade9606381fa0a6c46293a305125615c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an SDL_Texture from an image file.  <a href="classGraphicsFacade.html#ade9606381fa0a6c46293a305125615c2">More...</a><br /></td></tr>
-<tr class="separator:ade9606381fa0a6c46293a305125615c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a637836098c1747ac65d55cd4875e5bbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#a637836098c1747ac65d55cd4875e5bbc">DrawSprite</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture, <a class="el" href="classRectangle.html">Rectangle</a> &amp;rectangle, bool flipX, bool flipY, int angle, float scale) override</td></tr>
+<tr class="memdesc:a637836098c1747ac65d55cd4875e5bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture from an image file.  <a href="classGraphicsFacade.html#a637836098c1747ac65d55cd4875e5bbc">More...</a><br /></td></tr>
+<tr class="separator:a637836098c1747ac65d55cd4875e5bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45c9d97902139b0bb8cff69f9e4fbe3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#a45c9d97902139b0bb8cff69f9e4fbe3b">RenderSDLTexture</a> (SDL_Texture *sdlTexture, <a class="el" href="classRectangle.html">Rectangle</a> rectangle, bool flipX, bool flipY, float scale) override</td></tr>
+<tr class="memdesc:a45c9d97902139b0bb8cff69f9e4fbe3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an SDL_Texture from an image file.  <a href="classGraphicsFacade.html#a45c9d97902139b0bb8cff69f9e4fbe3b">More...</a><br /></td></tr>
+<tr class="separator:a45c9d97902139b0bb8cff69f9e4fbe3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6480cea9277054e94054b0540949ba8"><td class="memItemLeft" align="right" valign="top">SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#ab6480cea9277054e94054b0540949ba8">GetCachedSDLTexture</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture) override</td></tr>
 <tr class="memdesc:ab6480cea9277054e94054b0540949ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the cached texture if it exists.  <a href="classGraphicsFacade.html#ab6480cea9277054e94054b0540949ba8">More...</a><br /></td></tr>
 <tr class="separator:ab6480cea9277054e94054b0540949ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,9 +181,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a38462e59195f584471335fdcecb8280d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSize.html">Size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#a38462e59195f584471335fdcecb8280d">GetSpriteSize</a> (const std::string &amp;filePath) override</td></tr>
 <tr class="memdesc:a38462e59195f584471335fdcecb8280d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of a sprite.  <a href="classGraphicsFacade.html#a38462e59195f584471335fdcecb8280d">More...</a><br /></td></tr>
 <tr class="separator:a38462e59195f584471335fdcecb8280d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8665084361c88dc746c9d6269c64a3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#af8665084361c88dc746c9d6269c64a3e">DrawSpriteSheetFrame</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture, const <a class="el" href="classRectangle.html">Rectangle</a> &amp;dstRect, int frameIndex, int totalColumns, int totalRows) override</td></tr>
-<tr class="memdesc:af8665084361c88dc746c9d6269c64a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the sprite sheet frame.  <a href="classGraphicsFacade.html#af8665084361c88dc746c9d6269c64a3e">More...</a><br /></td></tr>
-<tr class="separator:af8665084361c88dc746c9d6269c64a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b0172c9c539cec1e0cadb922a093fbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#a8b0172c9c539cec1e0cadb922a093fbf">DrawSpriteSheetFrame</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture, const <a class="el" href="classRectangle.html">Rectangle</a> &amp;dstRect, int frameIndex, int totalColumns, int totalRows, bool flipX, bool flipY, double angle, float scale) override</td></tr>
+<tr class="memdesc:a8b0172c9c539cec1e0cadb922a093fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the sprite sheet frame.  <a href="classGraphicsFacade.html#a8b0172c9c539cec1e0cadb922a093fbf">More...</a><br /></td></tr>
+<tr class="separator:a8b0172c9c539cec1e0cadb922a093fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classIOFacade"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classIOFacade')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classIOFacade.html">IOFacade</a></td></tr>
 <tr class="memitem:a92a836ecf11f55edf01dda59b0f4534f inherit pub_methods_classIOFacade"><td class="memItemLeft" align="right" valign="top"><a id="a92a836ecf11f55edf01dda59b0f4534f"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIOFacade.html#a92a836ecf11f55edf01dda59b0f4534f">~IOFacade</a> ()=default</td></tr>
@@ -661,8 +661,8 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 
 </div>
 </div>
-<a id="a2c4de215fd535bf0965850340d3958a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c4de215fd535bf0965850340d3958a5">&#9670;&nbsp;</a></span>DrawSprite()</h2>
+<a id="a637836098c1747ac65d55cd4875e5bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a637836098c1747ac65d55cd4875e5bbc">&#9670;&nbsp;</a></span>DrawSprite()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -692,7 +692,19 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>flipY</em>&#160;</td>
+          <td class="paramname"><em>flipY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -711,16 +723,21 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <p>This method creates a texture from an image file, which can then be used for rendering. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">texture</td><td>The texture to be created. </td></tr>
+    <tr><td class="paramname">rectangle</td><td>The rectangle to render the texture in. </td></tr>
+    <tr><td class="paramname">flipX</td><td>Whether to flip the texture horizontally. </td></tr>
+    <tr><td class="paramname">flipY</td><td>Whether to flip the texture vertically. </td></tr>
+    <tr><td class="paramname">angle</td><td>The angle to draw the sprite at. </td></tr>
+    <tr><td class="paramname">scale</td><td>The scale factor on the axis </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classIOFacade.html#a7b0714bc3d54287f5adb0224bbe5cdf8">IOFacade</a>.</p>
+<p>Implements <a class="el" href="classIOFacade.html#ad808484584056bf2d3713c132dc038be">IOFacade</a>.</p>
 
 </div>
 </div>
-<a id="af8665084361c88dc746c9d6269c64a3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8665084361c88dc746c9d6269c64a3e">&#9670;&nbsp;</a></span>DrawSpriteSheetFrame()</h2>
+<a id="a8b0172c9c539cec1e0cadb922a093fbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0172c9c539cec1e0cadb922a093fbf">&#9670;&nbsp;</a></span>DrawSpriteSheetFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -756,7 +773,31 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>totalRows</em>&#160;</td>
+          <td class="paramname"><em>totalRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flipX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flipY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -779,11 +820,15 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
     <tr><td class="paramname">frameIndex</td><td>The index of the frame to draw. </td></tr>
     <tr><td class="paramname">totalColumns</td><td>The total number of columns in the sprite sheet. </td></tr>
     <tr><td class="paramname">totalRows</td><td>The total number of rows in the sprite sheet. </td></tr>
+    <tr><td class="paramname">flipX</td><td>Whether to flip the sprite horizontally. </td></tr>
+    <tr><td class="paramname">flipY</td><td>Whether to flip the sprite vertically. </td></tr>
+    <tr><td class="paramname">angle</td><td>The angle to draw the sprite at. </td></tr>
+    <tr><td class="paramname">scale</td><td>The scale factor on the axis </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classIOFacade.html#aeac74fe69911f269c1d951bfaa7aeb19">IOFacade</a>.</p>
+<p>Implements <a class="el" href="classIOFacade.html#a79b7a096b12e2c5980c754e7995ffe83">IOFacade</a>.</p>
 
 </div>
 </div>
@@ -993,8 +1038,8 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 
 </div>
 </div>
-<a id="ade9606381fa0a6c46293a305125615c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade9606381fa0a6c46293a305125615c2">&#9670;&nbsp;</a></span>RenderSDLTexture()</h2>
+<a id="a45c9d97902139b0bb8cff69f9e4fbe3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45c9d97902139b0bb8cff69f9e4fbe3b">&#9670;&nbsp;</a></span>RenderSDLTexture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1024,7 +1069,13 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>flipY</em>&#160;</td>
+          <td class="paramname"><em>flipY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1044,11 +1095,14 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
   <table class="params">
     <tr><td class="paramname">sdlTexture</td><td>The SDL_Texture to be created. </td></tr>
     <tr><td class="paramname">rectangle</td><td>The rectangle to render the texture in. </td></tr>
+    <tr><td class="paramname">flipX</td><td>Whether to flip the texture horizontally. </td></tr>
+    <tr><td class="paramname">flipY</td><td>Whether to flip the texture vertically. </td></tr>
+    <tr><td class="paramname">scale</td><td>The scale factor on the axis </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classIOFacade.html#ad75527183423952b105c0ade397544bf">IOFacade</a>.</p>
+<p>Implements <a class="el" href="classIOFacade.html#a500832806bee9d5733ba0fcccf0a613e">IOFacade</a>.</p>
 
 </div>
 </div>

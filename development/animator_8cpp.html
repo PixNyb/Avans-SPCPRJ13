@@ -93,29 +93,45 @@ $(document).ready(function(){initNavTree('animator_8cpp.html',''); initResizable
 <p>This file contains the <a class="el" href="classAnimator.html" title="The Animator class is a BehaviourScript that can be added to a GameObject to animate it according to ...">Animator</a> class implementation.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="animator_8hpp_source.html">animator.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="engine_8hpp_source.html">engine.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="physics__manager_8hpp_source.html">physics_manager.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="time_8hpp_source.html">time.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for animator.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="animator_8cpp__incl.png" border="0" usemap="#asrc_2api_2animator_8cpp" alt=""/></div>
 <map name="asrc_2api_2animator_8cpp" id="asrc_2api_2animator_8cpp">
-<area shape="rect" title="This file contains the Animator class implementation." alt="" coords="345,5,500,32"/>
-<area shape="rect" href="animator_8hpp.html" title="This file contains the Animator class definition." alt="" coords="310,80,418,107"/>
-<area shape="rect" href="time_8hpp.html" title="Defines the Time class for managing game time in the DefunBobEngine. The Time class provides static m..." alt="" coords="505,80,585,107"/>
-<area shape="rect" href="animation__state_8hpp.html" title="This file contains the AnimationState class definition." alt="" coords="345,155,501,181"/>
-<area shape="rect" title=" " alt="" coords="339,229,389,256"/>
-<area shape="rect" href="behaviour__script_8hpp.html" title="Defines the BehaviourScript class as part of a game engine framework. BehaviourScript is a base class..." alt="" coords="110,155,269,181"/>
-<area shape="rect" title=" " alt="" coords="43,603,120,629"/>
-<area shape="rect" title=" " alt="" coords="507,528,570,555"/>
-<area shape="rect" title=" " alt="" coords="424,528,483,555"/>
-<area shape="rect" href="collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="101,229,198,256"/>
-<area shape="rect" href="component_8hpp.html" title="This file contains the Component class definition." alt="" coords="155,304,277,331"/>
-<area shape="rect" href="iprototype__component_8hpp.html" title="This file contains the IPrototypeComponent interface definition." alt="" coords="117,379,315,405"/>
-<area shape="rect" href="game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="155,453,290,480"/>
-<area shape="rect" href="iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="144,528,261,555"/>
-<area shape="rect" href="transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="285,528,400,555"/>
-<area shape="rect" href="point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="301,603,384,629"/>
-<area shape="rect" title=" " alt="" coords="576,155,643,181"/>
+<area shape="rect" title="This file contains the Animator class implementation." alt="" coords="1040,5,1195,32"/>
+<area shape="rect" href="animator_8hpp.html" title="This file contains the Animator class definition." alt="" coords="1143,80,1251,107"/>
+<area shape="rect" href="engine_8hpp.html" title="Engine is the core of the engine. It is responsible for managing the game loop and managing the DICon..." alt="" coords="141,155,235,181"/>
+<area shape="rect" href="physics__manager_8hpp.html" title="This file contains the PhysicsManager class definition." alt="" coords="956,80,1119,107"/>
+<area shape="rect" href="time_8hpp.html" title="Defines the Time class for managing game time in the DefunBobEngine. The Time class provides static m..." alt="" coords="1479,80,1559,107"/>
+<area shape="rect" href="animation__state_8hpp.html" title="This file contains the AnimationState class definition." alt="" coords="846,229,1002,256"/>
+<area shape="rect" title=" " alt="" coords="991,304,1041,331"/>
+<area shape="rect" href="behaviour__script_8hpp.html" title="Defines the BehaviourScript class as part of a game engine framework. BehaviourScript is a base class..." alt="" coords="1333,155,1491,181"/>
+<area shape="rect" title=" " alt="" coords="852,603,929,629"/>
+<area shape="rect" title=" " alt="" coords="1399,528,1462,555"/>
+<area shape="rect" title=" " alt="" coords="496,304,576,331"/>
+<area shape="rect" title=" " alt="" coords="747,528,805,555"/>
+<area shape="rect" href="collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="1363,229,1461,256"/>
+<area shape="rect" href="component_8hpp.html" title="This file contains the Component class definition." alt="" coords="1389,304,1512,331"/>
+<area shape="rect" href="iprototype__component_8hpp.html" title="This file contains the IPrototypeComponent interface definition." alt="" coords="1128,379,1325,405"/>
+<area shape="rect" href="game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="867,453,1002,480"/>
+<area shape="rect" href="iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="880,528,997,555"/>
+<area shape="rect" href="transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="1072,528,1187,555"/>
+<area shape="rect" href="point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="1233,603,1316,629"/>
+<area shape="rect" href="core__constants_8hpp_source.html" title=" " alt="" coords="294,229,442,256"/>
+<area shape="rect" href="di__container_8hpp.html" title="Dependency injection container." alt="" coords="38,229,167,256"/>
+<area shape="rect" href="color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="369,379,450,405"/>
+<area shape="rect" href="text_8hpp.html" title="Defines the Text class for handling text rendering in UI elements within the game engine...." alt="" coords="395,304,471,331"/>
+<area shape="rect" href="ui__object_8hpp.html" title="Defines the UIObject class for representing user interface elements in the game engine...." alt="" coords="917,379,1027,405"/>
+<area shape="rect" title=" " alt="" coords="43,304,167,331"/>
+<area shape="rect" href="physics__facade_8hpp.html" title="This file contains the PhysicsFacade class definition." alt="" coords="962,155,1113,181"/>
+<area shape="rect" href="debug__renderer_8hpp.html" title="This file contains the debugrendere class defenition." alt="" coords="619,229,770,256"/>
+<area shape="rect" title=" " alt="" coords="785,304,903,331"/>
+<area shape="rect" href="rigidbody_8hpp_source.html" title=" " alt="" coords="1229,229,1339,256"/>
+<area shape="rect" title=" " alt="" coords="651,304,709,331"/>
+<area shape="rect" title=" " alt="" coords="1688,155,1755,181"/>
 </map>
 </div>
 </div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

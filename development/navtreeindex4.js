@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a9d5bdbbda25d7d033cc422a625805c2e":[6,0,0,1,5,1,228],
 "i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a9d5ed678fe57bcca610140957afab571":[6,0,0,1,5,1,4],
 "i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a9d6c744c1a040633dca220fa79bb3858":[6,0,0,1,5,1,50],
 "i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a9f7f638a3a20b2cbf346d6b28dcf4183":[6,0,0,1,5,1,148],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "sfml__sound_8hpp_source.html":[6,0,0,1,2,0],
 "shape__color_8cpp.html":[6,0,1,1,1,1,4],
 "shape__color_8hpp.html":[6,0,0,2,1,0,5],
-"shape__color_8hpp_source.html":[6,0,0,2,1,0,5],
-"shape__component_8cpp.html":[6,0,1,0,14]
+"shape__color_8hpp_source.html":[6,0,0,2,1,0,5]
 };

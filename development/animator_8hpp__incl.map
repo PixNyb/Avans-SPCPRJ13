@@ -1,10 +1,11 @@
 <map id="include/api/animator.hpp" name="include/api/animator.hpp">
-<area shape="rect" id="node1" title="This file contains the Animator class definition." alt="" coords="81,5,263,32"/>
+<area shape="rect" id="node1" title="This file contains the Animator class definition." alt="" coords="171,5,354,32"/>
 <area shape="rect" id="node2" href="$animation__state_8hpp.html" title="This file contains the AnimationState class definition." alt="" coords="94,80,250,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="43,155,93,181"/>
 <area shape="rect" id="node5" href="$behaviour__script_8hpp.html" title="Defines the BehaviourScript class as part of a game engine framework. BehaviourScript is a base class..." alt="" coords="274,80,433,107"/>
 <area shape="rect" id="node11" title=" " alt="" coords="168,528,245,555"/>
 <area shape="rect" id="node14" title=" " alt="" coords="550,453,613,480"/>
+<area shape="rect" id="node15" title=" " alt="" coords="508,80,588,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="85,453,144,480"/>
 <area shape="rect" id="node6" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="223,155,321,181"/>
 <area shape="rect" id="node7" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="215,229,337,256"/>

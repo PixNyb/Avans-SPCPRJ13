@@ -8,7 +8,8 @@ var classAnimator =
     [ "GetTotalColumns", "classAnimator.html#a33a68754adc8eb66235b7458c0dc8478", null ],
     [ "GetTotalRows", "classAnimator.html#a7381a45a97f4ee1b5f00007e4c08ebab", null ],
     [ "OnUpdate", "classAnimator.html#a318a6ae9410b514bac4b69a4f4ff921f", null ],
+    [ "SetGameObject", "classAnimator.html#af73c7cad0cadf18d2863f0e2610500b9", null ],
     [ "SetState", "classAnimator.html#a29151afd800566a31fef7df41657f00c", null ],
-    [ "SetTotalColumns", "classAnimator.html#a2f97cb5d3255d4ca96972e87e07c89fa", null ],
-    [ "SetTotalRows", "classAnimator.html#a9f4f8e12d13bf694469a7a4d1d24ea13", null ]
+    [ "SetTotalColumns", "classAnimator.html#aaa5c3488a75c2af07a808dd540e34156", null ],
+    [ "SetTotalRows", "classAnimator.html#a48227cdabc6fc445ad844adbe957421b", null ]
 ];
