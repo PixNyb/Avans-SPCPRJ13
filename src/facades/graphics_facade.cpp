@@ -315,7 +315,7 @@ void GraphicsFacade::DrawText(const Text &text)
 }
 
 void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle &rectangle, bool flipX,
-                                bool flipY)
+                                bool flipY, int angle, float scale)
 {
     // Check if the texture has already been created and cached
     SDL_Texture *sdlTexture = GetCachedSDLTexture(texture);
@@ -327,11 +327,11 @@ void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle &rectangle, bo
         CacheSDLTexture(texture, sdlTexture);
     }
     // Proceed to draw the sprite using sdlTexture
-    RenderSDLTexture(sdlTexture, rectangle, flipX, flipY);
+    RenderSDLTexture(sdlTexture, rectangle, flipX, flipY, scale);
 }
 
 void GraphicsFacade::RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle, bool flipX,
-                                      bool flipY)
+                                      bool flipY, float scale)
 {
     if (!sdlTexture)
     {
@@ -346,17 +346,19 @@ void GraphicsFacade::RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectang
         return;
     }
 
-    // Extract position and size from the Rectangle object
     const Vector2D &pos = rectangle.GetPosition();
-    int width = rectangle.GetWidth();
-    int height = rectangle.GetHeight();
+    int originalWidth = rectangle.GetWidth();
+    int originalHeight = rectangle.GetHeight();
 
-    // Define the SDL_Rect for rendering
+    // Apply scaling
+    int scaledWidth = static_cast<int>(originalWidth * scale);
+    int scaledHeight = static_cast<int>(originalHeight * scale);
+
     SDL_Rect sdlRect;
     sdlRect.x = static_cast<int>(pos.x);
     sdlRect.y = static_cast<int>(pos.y);
-    sdlRect.w = width;
-    sdlRect.h = height;
+    sdlRect.w = scaledWidth;
+    sdlRect.h = scaledHeight;
 
     if (flipX && flipY)
     {
@@ -449,7 +451,8 @@ Size GraphicsFacade::GetSpriteSize(const std::string &filePath)
 }
 
 void GraphicsFacade::DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect,
-                                          int frameIndex, int totalColumns, int totalRows)
+                                          int frameIndex, int totalColumns, int totalRows,
+                                          bool flipX, bool flipY, double angle, float scale)
 {
     SDL_Texture *sdlTexture = GetCachedSDLTexture(texture);
     if (!sdlTexture)
@@ -476,11 +479,28 @@ void GraphicsFacade::DrawSpriteSheetFrame(const Texture &texture, const Rectangl
     srcRect.w = frameWidth;
     srcRect.h = frameHeight;
 
-    // Define the destination SDL_Rect for rendering
-    SDL_Rect sdlDstRect = {static_cast<int>(dstRect.GetPosition().x),
-                           static_cast<int>(dstRect.GetPosition().y), dstRect.GetWidth(),
-                           dstRect.GetHeight()};
+    // Scale and adjust the destination rectangle
+    int scaledWidth = static_cast<int>(dstRect.GetWidth() * scale);
+    int scaledHeight = static_cast<int>(dstRect.GetHeight() * scale);
+    int adjustedX =
+        static_cast<int>(dstRect.GetPosition().x) - (scaledWidth - dstRect.GetWidth()) / 2;
+    int adjustedY =
+        static_cast<int>(dstRect.GetPosition().y) - (scaledHeight - dstRect.GetHeight()) / 2;
 
-    // Render the frame
-    SDL_RenderCopy(SdlWindow->GetRenderer(), sdlTexture, &srcRect, &sdlDstRect);
+    SDL_Rect sdlDstRect;
+    sdlDstRect.x = adjustedX;
+    sdlDstRect.y = adjustedY;
+    sdlDstRect.w = scaledWidth;
+    sdlDstRect.h = scaledHeight;
+
+    // Determine the flipping mode
+    SDL_RendererFlip flip = static_cast<SDL_RendererFlip>((flipX ? SDL_FLIP_HORIZONTAL : 0) |
+                                                          (flipY ? SDL_FLIP_VERTICAL : 0));
+
+    // Render the frame with rotation, flipping, and scaling
+    if (SDL_RenderCopyEx(SdlWindow->GetRenderer(), sdlTexture, &srcRect, &sdlDstRect, angle, NULL,
+                         flip) != 0)
+    {
+        std::cerr << "SDL_RenderCopyEx failed: " << SDL_GetError() << std::endl;
+    }
 }
