@@ -56,6 +56,12 @@ class Vector2D
         x /= length;
         y /= length;
     }
+
+    void Direction()
+    {
+        x = (x > 0) - (x < 0);
+        y = (y > 0) - (y < 0);
+    }
 };
 
 #endif // DEFUNBOBENGINE_VECTOR2D_HPP

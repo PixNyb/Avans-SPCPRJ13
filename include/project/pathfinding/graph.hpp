@@ -178,8 +178,15 @@ class Graph : public std::enable_shared_from_this<Graph>
     std::vector<std::shared_ptr<Node>> GetPath(std::shared_ptr<Node> start,
                                                std::shared_ptr<Node> end);
 
-  private:
+    /**
+     * @brief Find the closest node to the given point.
+     *
+     * @param point
+     * @return The closest node to the given point.
+     */
     std::shared_ptr<Node> FindClosestNode(Point point);
+
+  private:
     std::vector<std::shared_ptr<Node>> _nodes; ///< The nodes in the graph.
     std::vector<std::shared_ptr<Link>> _links; ///< The links in the graph.
 };

@@ -18,13 +18,15 @@ class Pathfinding : public BehaviourScript
 {
   public:
     std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
-    Pathfinding(std::shared_ptr<GameObject> parent, std::shared_ptr<GameObject> target);
+    Pathfinding(std::weak_ptr<GameObject> parent, std::string targetId);
     Pathfinding(const Pathfinding &other);
     virtual void OnStart() override;
     virtual void OnUpdate() override;
 
   private:
-    std::shared_ptr<GameObject> _parent;
-    std::shared_ptr<GameObject> _target;
+    std::weak_ptr<GameObject> _parent;
+    std::weak_ptr<GameObject> _target;
+    std::string _targetId;
     std::vector<std::shared_ptr<Node>> _path;
+    std::shared_ptr<Node> _targetNode;
 };

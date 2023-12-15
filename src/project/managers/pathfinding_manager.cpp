@@ -1,6 +1,9 @@
 #include "pathfinding_manager.hpp"
 #include "box_collider.hpp"
+#include "circle.hpp"
+#include "color.hpp"
 #include "core_constants.hpp"
+#include "game_object.hpp"
 #include "graph.hpp"
 #include "line.hpp"
 #include "pathfindable.hpp"
@@ -11,6 +14,7 @@
 #include "shape_component.hpp"
 #include "transform.hpp"
 #include "vector2d.hpp"
+#include <cstdlib>
 #include <iostream>
 #include <memory>
 
@@ -181,18 +185,62 @@ std::vector<std::shared_ptr<Node>> PathfindingManager::GetPath(Point start, Poin
     if (graph == nullptr)
         return std::vector<std::shared_ptr<Node>>();
 
-    auto path = graph->GetPath(start, end);
-
-    if (CoreConstants::Debug::DrawPath)
+    if (CoreConstants::Debug::EnableDebug)
     {
         std::cout << "Path requested from: " << start.x << ", " << start.y << " to " << end.x
                   << ", " << end.y << std::endl;
-        for (int i = 0; i < path.size() - 1; i++)
+    }
+
+    auto path = graph->GetPath(start, end);
+    if (path.size() == 0)
+    {
+        if (CoreConstants::Debug::EnableDebug)
         {
-            std::cout << "Step " << i << ": " << path[i]->GetX() << ", " << path[i]->GetY()
-                      << std::endl;
+            std::cout << "No path found." << std::endl;
+        }
+        return path;
+    }
+
+    if (CoreConstants::Debug::DrawNodes)
+    {
+        // Find the debug component and get the shape component
+        std::shared_ptr<ShapeComponent> shapeComponent = nullptr;
+        for (const auto &gameObject : scene->contents)
+            if (gameObject->GetName() == "Graph-Debug")
+            {
+                shapeComponent = gameObject->GetComponent<ShapeComponent>();
+                break;
+            }
+
+        if (shapeComponent != nullptr)
+        {
+            auto color =
+                Color(rand() % 100 / 100.0f, rand() % 100 / 100.0f, rand() % 100 / 100.0f, 1);
+
+            auto startNode = path[0];
+            auto x = startNode->GetX();
+            auto y = startNode->GetY();
+            auto startCircle = Circle(Vector2D(x, y), CoreConstants::Pathfinding::NODE_TARGET_SIZE);
+            startCircle.SetFillColor(color);
+
+            auto endNode = path[path.size() - 1];
+            x = endNode->GetX();
+            y = endNode->GetY();
+            auto endCircle = Circle(Vector2D(x, y), CoreConstants::Pathfinding::NODE_TARGET_SIZE);
+            endCircle.SetFillColor(color);
+
+            shapeComponent->AddGeometry(std::make_shared<Circle>(startCircle));
+            shapeComponent->AddGeometry(std::make_shared<Circle>(endCircle));
         }
     }
 
     return path;
+}
+
+std::shared_ptr<Node> PathfindingManager::FindClosestNode(Point point) const
+{
+    if (graph == nullptr)
+        return nullptr;
+
+    return graph->FindClosestNode(point);
 }

@@ -62,6 +62,8 @@ namespace Pathfinding
 const int NODE_SPACING = 40;   ///< The maximum distance between two nodes on a pathfindable object.
 const int NODE_Y_OFFSET = -10; ///< The y offset of the nodes relative to the parent GameObject.
 const int NODE_SIZE = 6;       ///< The size of the nodes when rendered.
+const int NODE_TARGET_SIZE =
+    10; ///< The size of the target node when rendered. This is the node that is being pathed to.
 const int NODE_CONNECTION_LENGTH =
     79; ///< The maximum distance to look for nodes to connect to, when this is smaller than
         ///< NODE_SPACING, NODE_SPACING will be used instead. Make sure the value is smaller than
@@ -69,6 +71,7 @@ const int NODE_CONNECTION_LENGTH =
 const Color NODE_COLOR = Color::Black();          ///< The color of the nodes when rendered.
 const Color NODE_CONNECTION_COLOR = Color::Red(); ///< The color of the node connections when
                                                   ///< rendered.
+const Color NODE_TARGET_COLOR = Color::Blue();    ///< The color of the target node when rendered.
 } // namespace Pathfinding
 
 } // namespace CoreConstants
