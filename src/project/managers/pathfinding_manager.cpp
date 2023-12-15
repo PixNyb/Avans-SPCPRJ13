@@ -24,14 +24,14 @@ PathfindingManager::~PathfindingManager() {}
 
 void PathfindingManager::Update(std::shared_ptr<Scene> scene) { GenerateGraphForScene(scene); }
 
-std::shared_ptr<Graph> PathfindingManager::GetGraph() const { return graph; }
+std::shared_ptr<Graph> PathfindingManager::GetGraph() const { return _graph; }
 
 void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
 {
     if (scene == nullptr)
         return;
 
-    this->scene = scene;
+    this->_scene = scene;
     std::cout << "Generating graph for scene: " << scene << std::endl;
 
     // Find the graphGameObject in the scene contents
@@ -58,7 +58,7 @@ void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
         scene->contents.push_back(graphGameObject);
     }
 
-    graph = std::make_shared<Graph>();
+    _graph = std::make_shared<Graph>();
     auto shapeComponent = graphGameObject->GetComponent<ShapeComponent>();
 
     for (const auto &gameObject : scene->contents)
@@ -79,9 +79,9 @@ void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
             {
                 // Check if there is already a node at this position
                 bool nodeExists = false;
-                for (int i = 0; i < graph->GetNodeCount(); i++)
+                for (int i = 0; i < _graph->GetNodeCount(); i++)
                 {
-                    auto existingNode = graph->GetNode(i);
+                    auto existingNode = _graph->GetNode(i);
                     if (existingNode->GetX() == node->GetX() &&
                         existingNode->GetY() == node->GetY())
                     {
@@ -116,7 +116,7 @@ void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
 
                 if (!nodeExists && !colliderExists)
                 {
-                    graph->AddNode(node);
+                    _graph->AddNode(node);
 
                     if (CoreConstants::Debug::DrawNodes)
                     {
@@ -133,21 +133,21 @@ void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
         }
     }
 
-    std::cout << "Graph nodes: " << graph->GetNodeCount() << std::endl;
+    std::cout << "Graph nodes: " << _graph->GetNodeCount() << std::endl;
 
     // Link the nodes
-    for (int i = 0; i < graph->GetNodeCount(); i++)
+    for (int i = 0; i < _graph->GetNodeCount(); i++)
     {
-        auto node1 = graph->GetNode(i);
+        auto node1 = _graph->GetNode(i);
 
         // Check a radius around the node for other nodes using
         // CoreConstants::Pathfinding::NODE_CONNECTION_RADIUS
-        for (int j = 0; j < graph->GetNodeCount(); j++)
+        for (int j = 0; j < _graph->GetNodeCount(); j++)
         {
             if (i == j)
                 continue;
 
-            auto node2 = graph->GetNode(j);
+            auto node2 = _graph->GetNode(j);
 
             // Check if the distance between the nodes is less than the radius
             if (node1->DistanceTo(node2) <=
@@ -157,10 +157,10 @@ void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
                      : CoreConstants::Pathfinding::NODE_SPACING))
             {
                 // Check if the nodes are not already linked
-                if (!graph->AreNodesLinked(node1, node2))
+                if (!_graph->AreNodesLinked(node1, node2))
                 {
                     // Link the nodes
-                    graph->AddLink(Link(node1, node2));
+                    _graph->AddLink(Link(node1, node2));
 
                     if (CoreConstants::Debug::DrawNodes)
                     {
@@ -175,23 +175,23 @@ void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
         }
     }
 
-    std::cout << "Graph links: " << graph->GetLinkCount() << std::endl;
+    std::cout << "Graph links: " << _graph->GetLinkCount() << std::endl;
 
     std::cout << "Graph generated." << std::endl;
 }
 
 std::vector<std::shared_ptr<Node>> PathfindingManager::GetPath(Point start, Point end) const
 {
-    if (graph == nullptr)
+    if (_graph == nullptr)
         return std::vector<std::shared_ptr<Node>>();
 
-    auto path = graph->GetPath(start, end);
+    auto path = _graph->GetPath(start, end);
 
     if (CoreConstants::Debug::DrawNodes && path.size() > 0)
     {
         // Find the debug component and get the shape component
         std::shared_ptr<ShapeComponent> shapeComponent = nullptr;
-        for (const auto &gameObject : scene->contents)
+        for (const auto &gameObject : _scene->contents)
             if (gameObject->GetName() == "Graph-Debug")
             {
                 shapeComponent = gameObject->GetComponent<ShapeComponent>();
@@ -225,8 +225,8 @@ std::vector<std::shared_ptr<Node>> PathfindingManager::GetPath(Point start, Poin
 
 std::shared_ptr<Node> PathfindingManager::FindClosestNode(Point point) const
 {
-    if (graph == nullptr)
+    if (_graph == nullptr)
         return nullptr;
 
-    return graph->FindClosestNode(point);
+    return _graph->FindClosestNode(point);
 }
