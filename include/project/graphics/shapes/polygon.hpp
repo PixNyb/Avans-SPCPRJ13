@@ -73,6 +73,8 @@ class Polygon : public Geometry
         // TODO: Implement
         return true;
     }
+
+    void Accept(GeometryVisitor &visitor) override { visitor.Visit(*this); }
 };
 
 #endif // DEFUNBOBENGINE_POLYGON_HPP

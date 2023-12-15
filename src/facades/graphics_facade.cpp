@@ -91,7 +91,7 @@ void GraphicsFacade::DrawShape(Circle circle)
         return;
     }
 
-    const Vector2D &pos = circle.GetPosition();
+    const Vector2D &pos = circle.GetPosition() += circle.GetTranslation();
     int x = static_cast<int>(pos.x);
     int y = static_cast<int>(pos.y);
     int rad = static_cast<int>(circle.GetRadius());
@@ -111,7 +111,7 @@ void GraphicsFacade::DrawShape(Rectangle rectangle)
         return;
     }
 
-    const Vector2D &pos = rectangle.GetPosition();
+    Vector2D pos = rectangle.GetPosition() += rectangle.GetTranslation();
 
     SDLRect rect(static_cast<int>(pos.x), static_cast<int>(pos.y), rectangle.GetWidth(),
                  rectangle.GetHeight(), static_cast<int>(rectangle.GetRotation()));
@@ -132,9 +132,9 @@ void GraphicsFacade::DrawShape(Triangle triangle)
     }
 
     // Retrieve the vertices of the Triangle
-    const Vector2D &v1 = triangle.GetVertex1();
-    const Vector2D &v2 = triangle.GetVertex2();
-    const Vector2D &v3 = triangle.GetVertex3();
+    const Vector2D &v1 = triangle.GetVertex1() += triangle.GetTranslation();
+    const Vector2D &v2 = triangle.GetVertex2() += triangle.GetTranslation();
+    const Vector2D &v3 = triangle.GetVertex3() += triangle.GetTranslation();
 
     // Convert the vertices to the format expected by SDLTriangle
     auto x1 = static_cast<Sint16>(v1.x);
@@ -172,6 +172,9 @@ void GraphicsFacade::DrawLine(Line line)
         return;
     }
 
+    line.start += line.GetTranslation();
+    line.end += line.GetTranslation();
+
     // Apply rotation
     auto rotation = line.GetRotation();
     auto x1 = static_cast<Sint16>(line.start.x * cos(rotation) - line.start.y * sin(rotation));
@@ -201,6 +204,9 @@ void GraphicsFacade::DrawLines(std::vector<Line> lines)
     auto sdlLines = std::vector<SDL_Point>();
     for (auto &line : lines)
     {
+        line.start += line.GetTranslation();
+        line.end += line.GetTranslation();
+
         // Apply rotation
         auto rotation = line.GetRotation();
         auto x1 = static_cast<Sint16>(line.start.x * cos(rotation) - line.start.y * sin(rotation));

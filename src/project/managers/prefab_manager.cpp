@@ -17,6 +17,10 @@ PrefabManager::PrefabManager() : prefabs() {}
 
 void PrefabManager::RegisterPrefab(const std::string &id, const std::shared_ptr<GameObject> &prefab)
 {
+    // Set the tag of the prefab equal to the id under which it is stored so that it is identifiable
+    // when saving a level.
+    prefab->SetPrefabId(id);
+
     prefabs.insert(std::pair(id, prefab));
 }
 
@@ -29,6 +33,8 @@ std::shared_ptr<GameObject> PrefabManager::GetPrefab(std::string id)
 
     return it->second->Clone();
 }
+
+std::map<std::string, std::shared_ptr<GameObject>> PrefabManager::GetPrefabs() { return prefabs; }
 
 bool PrefabManager::HasPrefab(const std::string &id) const
 {

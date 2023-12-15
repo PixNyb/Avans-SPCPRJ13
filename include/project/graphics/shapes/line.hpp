@@ -30,6 +30,8 @@ struct Line : public Geometry
         return (s.x > e.x && (start.x > s.x || end.x < e.x)) ||
                (s.x <= e.x && (start.x < s.x || end.x > e.x));
     }
+
+    void Accept(GeometryVisitor &visitor) override { visitor.Visit(*this); }
 };
 
 #endif // DEFUNBOBENGINE_INCLUDE_PROJECT_GRAPHICS_SHAPES_LINE_HPP
