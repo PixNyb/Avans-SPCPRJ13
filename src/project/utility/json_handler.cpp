@@ -16,23 +16,20 @@
 
 nlohmann::json JSONHandler::ConvertFileToJson(const std::string &filePath)
 {
-    std::ifstream file(filePath, std::ifstream::binary);
+    // Normalize the destination path and validate whether it exists.
+    auto normPath = ValidateFilePath(filePath);
+
+    std::ifstream file(normPath, std::ifstream::binary);
 
     return nlohmann::json::parse(file);
 }
 
-std::string JSONHandler::WriteJsonToFile(const std::string &destination,
-                                         const std::string &fileName, const nlohmann::json &json)
+std::string JSONHandler::WriteJsonToFile(const std::string &filePath, const nlohmann::json &json)
 {
     // Normalize the destination path and validate whether it exists.
-    auto normDestination = std::filesystem::absolute(destination).string();
-    if (!std::filesystem::exists(normDestination))
-        throw std::runtime_error(fmt::format("Path was not found: {}", normDestination));
+    auto normPath = ValidateFilePath(filePath);
 
-    // Create and normalize final file path to which the json is to be written.
-    auto path = std::filesystem::absolute(normDestination + fileName + fileExtension).string();
-
-    std::ofstream file(path);
+    std::ofstream file(normPath);
 
     // The parameter 4 in dump indicates how deep of an indent should be made when formatting the
     // json file. An indentation is used to make the level files more readable to the human eye.
@@ -40,5 +37,20 @@ std::string JSONHandler::WriteJsonToFile(const std::string &destination,
 
     file.close();
 
-    return path;
+    return normPath;
+}
+
+std::string JSONHandler::ValidateFilePath(const std::string &filePath)
+{
+    if (filePath.length() < fileExtension.length() ||
+        (0 != filePath.compare(filePath.length() - fileExtension.length(), fileExtension.length(),
+                               fileExtension)))
+        throw std::runtime_error(
+            fmt::format("The file is of a unsupported type. Expected type: '{}'", fileExtension));
+
+    auto normPath = std::filesystem::absolute(filePath).string();
+    if (!std::filesystem::exists(filePath))
+        throw std::runtime_error(fmt::format("Path was not found: {}", filePath));
+
+    return normPath;
 }

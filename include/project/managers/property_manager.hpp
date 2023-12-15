@@ -51,13 +51,6 @@ class PropertyManager
                 std::is_same<T, bool>::value || std::is_same<T, std::string>::value);
     }
 
-    /**
-     * @brief Validate the path that was passed and return it normalised..
-     * @param filePath The file path that is to be validated.
-     * @return The validated and normalised file path.
-     */
-    std::string ValidatePath(std::string &filePath);
-
   public:
     /**
      * @brief Constructs a new PropertyManager
@@ -79,16 +72,13 @@ class PropertyManager
                                                  "bool and string are supported. Passed type: {}",
                                                  typeid(T).name()));
 
-        auto normPath = ValidatePath(filePath);
-
         if (key.length() == 0)
             throw std::runtime_error("An empty key was provided.");
 
-        auto propertyFile = jsonHandler->ConvertFileToJson(normPath);
+        auto propertyFile = jsonHandler->ConvertFileToJson(filePath);
         propertyFile[key] = value;
 
-        // TODO: Add file storage.
-        // jsonHandler->WriteJsonToFile();
+        jsonHandler->WriteJsonToFile(filePath, propertyFile);
     }
 
     /**
@@ -105,12 +95,10 @@ class PropertyManager
                                                  "bool and string are supported. Passed type: {}",
                                                  typeid(T).name()));
 
-        auto normPath = ValidatePath(filePath);
-
         if (key.length() == 0)
             throw std::runtime_error("An empty key was provided.");
 
-        auto propertyFile = jsonHandler->ConvertFileToJson(normPath);
+        auto propertyFile = jsonHandler->ConvertFileToJson(filePath);
 
         return propertyFile.at(key).template get<T>();
     }

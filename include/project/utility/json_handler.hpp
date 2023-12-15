@@ -28,6 +28,8 @@ class JSONHandler
      */
     std::string fileExtension;
 
+    std::string ValidateFilePath(const std::string &filePath);
+
   public:
     /**
      * @brief Constructs a new JSONHandler.
@@ -43,13 +45,11 @@ class JSONHandler
 
     /**
      * @brief Write a json object to a json file.
-     * @param destination The folder which the file is to be written to.
-     * @param fileName The name which the file should have.
+     * @param destination The file destination which is to be written to.
      * @param json The json object which is to be written to the file.
      * @return The resulting file path to which the json was written.
      */
-    std::string WriteJsonToFile(const std::string &destination, const std::string &fileName,
-                                const nlohmann::json &json);
+    std::string WriteJsonToFile(const std::string &filePath, const nlohmann::json &json);
 };
 
 #endif // DEFUNBOBENGINE_JSON_HANDLER_HPP
