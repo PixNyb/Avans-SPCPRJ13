@@ -51,6 +51,11 @@ class PropertyManager
                 std::is_same<T, bool>::value || std::is_same<T, std::string>::value);
     }
 
+    /**
+     * @brief Validate the path that was passed and return it normalised..
+     * @param filePath The file path that is to be validated.
+     * @return The validated and normalised file path.
+     */
     std::string ValidatePath(std::string &filePath);
 
   public:
