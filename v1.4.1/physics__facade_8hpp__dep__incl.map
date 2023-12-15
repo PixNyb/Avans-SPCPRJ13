@@ -1,0 +1,10 @@
+<map id="include/facades/physics_facade.hpp" name="include/facades/physics_facade.hpp">
+<area shape="rect" id="node1" title="This file contains the PhysicsFacade class definition." alt="" coords="501,5,678,47"/>
+<area shape="rect" id="node2" href="$physics__manager_8hpp.html" title="This file contains the PhysicsManager class definition." alt="" coords="496,95,683,136"/>
+<area shape="rect" id="node3" href="$animator_8cpp.html" title="This file contains the Animator class implementation." alt="" coords="5,191,160,218"/>
+<area shape="rect" id="node4" href="$game__object_8cpp.html" title="This file contains the GameObject class implementation." alt="" coords="185,191,365,218"/>
+<area shape="rect" id="node5" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="389,191,587,218"/>
+<area shape="rect" id="node6" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="611,184,770,225"/>
+<area shape="rect" id="node7" href="$physics__manager_8cpp.html" title="This file contains the PhysicsManager class implementation." alt="" coords="794,184,961,225"/>
+<area shape="rect" id="node8" href="$physics__test_8cpp.html" title="This file tests the general working of the PhysicsManager/PhysicsFacade." alt="" coords="985,191,1151,218"/>
+</map>

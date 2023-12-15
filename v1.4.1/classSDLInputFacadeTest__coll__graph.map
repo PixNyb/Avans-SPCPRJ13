@@ -1,0 +1,6 @@
+<map id="SDLInputFacadeTest" name="SDLInputFacadeTest">
+<area shape="rect" id="node1" title=" " alt="" coords="26,171,177,197"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,81,107,108"/>
+<area shape="rect" id="node3" href="$classSDLInputFacade.html" title="The SDLInputFacade class is responsible for handling input from the user." alt="" coords="131,81,256,108"/>
+<area shape="rect" id="node4" href="$classIInputFacade.html" title="The IInputFacade interface defines the methods that a concrete input facade must implement." alt="" coords="141,5,245,32"/>
+</map>

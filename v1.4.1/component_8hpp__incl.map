@@ -1,0 +1,11 @@
+<map id="include/api/component.hpp" name="include/api/component.hpp">
+<area shape="rect" id="node1" title="This file contains the Component class definition." alt="" coords="273,5,471,32"/>
+<area shape="rect" id="node2" href="$iprototype__component_8hpp.html" title="This file contains the IPrototypeComponent interface definition." alt="" coords="273,80,471,107"/>
+<area shape="rect" id="node3" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="199,155,334,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="385,304,463,331"/>
+<area shape="rect" id="node4" href="$iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="365,229,483,256"/>
+<area shape="rect" id="node6" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="5,229,120,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="195,229,253,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="278,229,341,256"/>
+<area shape="rect" id="node7" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="21,304,104,331"/>
+</map>
