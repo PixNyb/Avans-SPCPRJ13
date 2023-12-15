@@ -50,29 +50,34 @@ void LevelManager::RegisterLevel(int id, std::string filePath)
 
 void LevelManager::LoadLevel(int id)
 {
+    auto scene = CreateScene(id);
+    // Update the current scene.
+    sceneManager->SetScene(scene);
+    // Update the physics.
+    Engine::GetInstance()->Get<PhysicsManager>()->CreateWorld(scene->contents);
+}
+
+std::shared_ptr<Scene> LevelManager::CreateScene(int id)
+{
     auto path = levels.find(id);
 
     // No level found with the following id.
     if (path == levels.end())
-        return;
+        throw std::runtime_error(fmt::format("No level found with id: '{}'", id));
 
     try
     {
         // Read level JSON.
         auto levelJson = jsonHandler->ConvertFileToJson(path->second);
-
         // Create level based on the JSON.
         auto level = levelFactory->CreateScene(levelJson);
 
-        // Update the current scene.
-        sceneManager->SetScene(level);
-        // Update the physics.
-        Engine::GetInstance()->Get<PhysicsManager>()->CreateWorld(level->contents);
+        return level;
     }
     catch (std::exception &e)
     {
-        // TODO: Rethrow error or just return?
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
+        throw std::runtime_error(fmt::format("Could not load level with id: '{}'", id));
     }
 }
 

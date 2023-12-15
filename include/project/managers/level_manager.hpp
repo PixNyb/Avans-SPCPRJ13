@@ -15,6 +15,7 @@
 #include "level_entry.hpp"
 #include "level_factory.hpp"
 #include "scene_manager.hpp"
+#include <fmt/format.h>
 #include <map>
 #include <memory>
 #include <string>
@@ -112,6 +113,13 @@ class LevelManager
     {
         _levelScenes[typeid(T).hash_code()] = {typeid(T).name(), std::move(instanceFactory)};
     }
+
+    /**
+     * @brief Create a scene based on the provided id.
+     * @param id The id of which scene is to be created.
+     * @return The scene which is created.
+     */
+    std::shared_ptr<Scene> CreateScene(int id);
 
     /**
      * @brief Load a level based on the provided id.
