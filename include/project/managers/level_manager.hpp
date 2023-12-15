@@ -60,6 +60,8 @@ class LevelManager
      */
     std::string levelFileExtension;
 
+    int currentLevelID; ///< Resembles the currentLevel
+
     /**
      * @brief Create a json object from a GameObject.
      * @param gameObject The GameObject which is to converted.
@@ -107,6 +109,8 @@ class LevelManager
      * @return The path of where the level is stored.
      */
     std::string SaveLevel(std::string &directory, std::string &filename);
+
+    int GetCurrentLevelID() { return currentLevelID; }
 };
 
 #endif // DEFUNBOBENGINE_LEVEL_MANAGER_HPP
