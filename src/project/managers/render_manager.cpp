@@ -151,12 +151,15 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
         {
             // Handling sprite sheets with Animator
             int currentFrameIndex = animatorComponent->GetCurrentFrameIndex();
-
             int totalColumns = animatorComponent->GetTotalColumns();
             int totalRows = animatorComponent->GetTotalRows();
 
             gfx.DrawSpriteSheetFrame(spriteComponent->GetSprite(), spriteRect, currentFrameIndex,
-                                     totalColumns, totalRows);
+                                     totalColumns, totalRows,
+                                     gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedX(),
+                                     gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY(),
+                                     gameObjectPointer.lock()->GetTransform().rotation,
+                                     gameObjectPointer.lock()->GetTransform().scale);
         }
         else
         {
@@ -166,7 +169,9 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
             // Draw the sprite
             gfx.DrawSprite(spriteTexture, spriteRect,
                            gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedX(),
-                           gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY());
+                           gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY(),
+                           gameObjectPointer.lock()->GetTransform().rotation,
+                           gameObjectPointer.lock()->GetTransform().scale);
         }
     }
 
