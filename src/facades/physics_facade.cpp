@@ -193,13 +193,7 @@ void PhysicsFacade::ShowDebug() { debugRenderer.Render(bodies); }
 
 b2Body *PhysicsFacade::GetBodyByObject(const std::shared_ptr<GameObject> &gameObject)
 {
-    for (auto &pair : bodies)
-    {
-        if (pair.first->GetTransform().position.x == gameObject->GetTransform().position.x &&
-            pair.first->GetTransform().position.y == gameObject->GetTransform().position.y)
-            return pair.second;
-    }
-    return nullptr;
+    return bodies.at(gameObject);
 }
 
 void PhysicsFacade::DestroyBody(const std::shared_ptr<GameObject> &gameObject)

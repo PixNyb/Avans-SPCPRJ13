@@ -9,6 +9,7 @@
  */
 
 #include "level_scene.hpp"
+#include <algorithm>
 
 void LevelScene::RenderScene() {}
 
