@@ -21,6 +21,7 @@
 #include "level_manager.hpp"
 #include "pathfinding_manager.hpp"
 #include "physics_manager.hpp"
+#include "property_manager.hpp"
 #include "render_manager.hpp"
 #include "scene_manager.hpp"
 #include "sdl_input_facade.hpp"
@@ -53,6 +54,8 @@ Engine::Engine()
 
     container.registerInstance<PhysicsManager>(std::make_shared<PhysicsManager>());
     container.registerInstance<PathfindingManager>(std::make_shared<PathfindingManager>());
+
+    container.registerInstance<PropertyManager>(std::make_shared<PropertyManager>(jsonHandler));
 
     // Facades
     container.registerInstance<IInputFacade>(std::make_shared<SDLInputFacade>());
