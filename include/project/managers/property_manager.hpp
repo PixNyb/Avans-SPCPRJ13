@@ -76,7 +76,18 @@ class PropertyManager
             throw std::runtime_error("An empty key was provided.");
 
         auto propertyFile = jsonHandler->ConvertFileToJson(filePath);
-        propertyFile[key] = value;
+        if (propertyFile.is_null() || !propertyFile.is_object())
+            throw std::runtime_error("The file did not contain a valid json.");
+
+        try
+        {
+            propertyFile.at(key) = value;
+        }
+        catch (std::exception &e)
+        {
+            // Propagate exception.
+            throw std::runtime_error(e.what());
+        }
 
         jsonHandler->WriteJsonToFile(filePath, propertyFile);
     }
@@ -100,7 +111,18 @@ class PropertyManager
 
         auto propertyFile = jsonHandler->ConvertFileToJson(filePath);
 
-        return propertyFile.at(key).template get<T>();
+        T value;
+        try
+        {
+            value = propertyFile.at(key).template get<T>();
+        }
+        catch (std::exception &e)
+        {
+            // Propagate exception.
+            throw std::runtime_error(e.what());
+        }
+
+        return value;
     }
 };
 

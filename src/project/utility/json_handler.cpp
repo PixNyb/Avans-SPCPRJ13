@@ -21,7 +21,18 @@ nlohmann::json JSONHandler::ConvertFileToJson(const std::string &filePath)
 
     std::ifstream file(normPath, std::ifstream::binary);
 
-    return nlohmann::json::parse(file);
+    nlohmann::json json;
+    try
+    {
+        json = nlohmann::json::parse(file);
+    }
+    catch (nlohmann::json::parse_error &e)
+    {
+        // Propagate exception.
+        throw std::runtime_error(e.what());
+    }
+
+    return json;
 }
 
 std::string JSONHandler::WriteJsonToFile(const std::string &filePath, const nlohmann::json &json)
