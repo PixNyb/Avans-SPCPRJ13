@@ -1,11 +1,14 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="33,57,178,98"/>
-<area shape="rect" id="node2" href="$classButtonClickListener.html" title="Listens to mouse events on a specific button." alt="" coords="253,37,403,64"/>
-<area shape="rect" id="node3" href="$classGameObject.html" title="The GameObject class represents an object in the game world." alt="" coords="277,92,379,119"/>
-<area shape="rect" id="node4" href="$classCamera.html" title="Represents a camera view in the game." alt="" coords="453,67,527,93"/>
-<area shape="rect" id="node5" href="$classUIObject.html" title="Represents a user interface object in the game engine." alt="" coords="451,117,529,144"/>
-<area shape="rect" id="node6" href="$classButton.html" title="Represents a clickable user interface element." alt="" coords="577,92,643,119"/>
-<area shape="rect" id="node7" href="$classText.html" title="Represents a piece of text in the user interface." alt="" coords="585,143,635,169"/>
-<area shape="rect" id="node8" href="$classIMouseListener.html" title="Interface for objects that respond to mouse events." alt="" coords="45,5,166,32"/>
-<area shape="rect" id="node9" href="$classIPrototype.html" title=" " alt="" coords="5,123,205,149"/>
+<area shape="rect" id="node1" title=" " alt="" coords="33,99,178,141"/>
+<area shape="rect" id="node2" href="$classButtonClickListener.html" title="Listens to mouse events on a specific button." alt="" coords="253,5,403,32"/>
+<area shape="rect" id="node3" href="$classGameObject.html" title="The GameObject class represents an object in the game world." alt="" coords="277,208,379,235"/>
+<area shape="rect" id="node8" href="$classGraph.html" title="This class represents a graph." alt="" coords="297,56,359,83"/>
+<area shape="rect" id="node9" href="$classLink.html" title="This class represents a link in a graph." alt="" coords="303,107,353,133"/>
+<area shape="rect" id="node10" href="$classNode.html" title="This class represents a node in a graph." alt="" coords="300,157,356,184"/>
+<area shape="rect" id="node4" href="$classCamera.html" title="Represents a camera view in the game." alt="" coords="453,183,527,209"/>
+<area shape="rect" id="node5" href="$classUIObject.html" title="Represents a user interface object in the game engine." alt="" coords="451,233,529,260"/>
+<area shape="rect" id="node6" href="$classButton.html" title="Represents a clickable user interface element." alt="" coords="577,208,643,235"/>
+<area shape="rect" id="node7" href="$classText.html" title="Represents a piece of text in the user interface." alt="" coords="585,259,635,285"/>
+<area shape="rect" id="node11" href="$classIMouseListener.html" title="Interface for objects that respond to mouse events." alt="" coords="45,5,166,32"/>
+<area shape="rect" id="node12" href="$classIPrototype.html" title=" " alt="" coords="5,208,205,235"/>
 </map>

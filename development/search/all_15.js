@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['wake_530',['Wake',['../classPhysicsFacade.html#abf3ed6a9de65cc7346182cb6abd18ff4',1,'PhysicsFacade::Wake()'],['../classPhysicsManager.html#a8b524e357b7449555268a74c3059f0bf',1,'PhysicsManager::Wake()']]],
-  ['white_531',['White',['../classColor.html#a0020082b0a7de0e2cc27148813a3c702',1,'Color']]],
-  ['width_532',['Width',['../classBoxCollider.html#a75bb7313bcf1fb540a5bf4841322e69c',1,'BoxCollider::Width() const'],['../classBoxCollider.html#ad7a5dc5d55fc1e701c49c01d11fc3694',1,'BoxCollider::Width(double newWidth)']]],
-  ['width_533',['width',['../classSDLRect.html#af0118d9c9913ffd531eb083c52546608',1,'SDLRect::width()'],['../structSize.html#aa1f23158085de487cfd5434301c077a4',1,'Size::width()']]],
-  ['window_534',['Window',['../classWindow.html',1,'Window'],['../classWindow.html#ae955846c7e3b4b259f920ebf9f7cde46',1,'Window::Window()']]],
-  ['window_2ecpp_535',['window.cpp',['../window_8cpp.html',1,'']]],
-  ['window_2ehpp_536',['window.hpp',['../window_8hpp.html',1,'']]],
-  ['windowclose_537',['WindowClose',['../event__type_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faac984201d37197ab297a14d19efee4b07',1,'event_type.hpp']]],
-  ['writejsontofile_538',['WriteJsonToFile',['../classJSONHandler.html#a523e8849a447e9fe3aa51466ff1df582',1,'JSONHandler']]]
+  ['vector2d_560',['Vector2D',['../classVector2D.html',1,'Vector2D'],['../classVector2D.html#a99cbcc8c511a0f07f57751e111126a34',1,'Vector2D::Vector2D()']]],
+  ['vector2d_2ehpp_561',['vector2d.hpp',['../vector2d_8hpp.html',1,'']]],
+  ['vertices_562',['Vertices',['../classPolygonCollider.html#aac171bda7a91159c88c68d332d052723',1,'PolygonCollider::Vertices(const std::vector&lt; Point &gt; &amp;vertices)'],['../classPolygonCollider.html#acb23a795bfc2d68ea79a46011491f762',1,'PolygonCollider::Vertices() const']]],
+  ['visit_563',['Visit',['../classGeometryVisitor.html#a62e2af38e5651094c78ed38d3c9e140d',1,'GeometryVisitor::Visit(Circle &amp;circle)=0'],['../classGeometryVisitor.html#a88944ed028196c8079d6d504f905d2e4',1,'GeometryVisitor::Visit(Line &amp;line)=0'],['../classGeometryVisitor.html#a71145a1781269e9738cbddc68ba4a55a',1,'GeometryVisitor::Visit(Rectangle &amp;rectangle)=0'],['../classGeometryVisitor.html#a0f1a5f45c1679f175d42c84b178181e5',1,'GeometryVisitor::Visit(Polygon &amp;polygon)=0'],['../classGeometryVisitor.html#acc9bbc8df6eda2ca3ce085749d15b46a',1,'GeometryVisitor::Visit(Triangle &amp;triangle)=0'],['../classShapeRenderer.html#a730c7cdeaac5130917fe8637dcd4475d',1,'ShapeRenderer::Visit(Circle &amp;circle) override'],['../classShapeRenderer.html#ab5dda758c864127e9fe9eced40b4b0c8',1,'ShapeRenderer::Visit(Line &amp;line) override'],['../classShapeRenderer.html#aadaf35f0614b001f3943ca0bd7aa8284',1,'ShapeRenderer::Visit(Rectangle &amp;rectangle) override'],['../classShapeRenderer.html#a76c59897040655570f702a8472021be3',1,'ShapeRenderer::Visit(Polygon &amp;polygon) override'],['../classShapeRenderer.html#a4b7a21c0767823332d2f4bef2f7da52b',1,'ShapeRenderer::Visit(Triangle &amp;triangle) override']]]
 ];

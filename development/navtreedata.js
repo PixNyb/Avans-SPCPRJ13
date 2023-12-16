@@ -60,7 +60,8 @@ var NAVTREE =
       [ "4. Physics Simulatie Gebruiken", "md_USAGE.html#autotoc_md28", null ],
       [ "5. Input Facades", "md_USAGE.html#autotoc_md29", null ],
       [ "6. Contact listeners & Behaviour Scripts", "md_USAGE.html#autotoc_md30", null ],
-      [ "7. HUD (Head-Up Display) aanmaken", "md_USAGE.html#autotoc_md31", null ]
+      [ "7. HUD (Head-Up Display) aanmaken", "md_USAGE.html#autotoc_md31", null ],
+      [ "8. Pathfinding", "md_USAGE.html#autotoc_md32", null ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -95,11 +96,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "animation__state_8cpp.html",
-"classGraphicsFacade.html#a55c7789332e5120b0ac2f6ddc4d0b04d",
-"classSDLInputFacade.html#a0afc5d59c9d9acbf61fcff19aca2852a",
-"dir_0e4392474d6d3c0f3c6a065a1a5a9c9b.html",
-"i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a9d5bdbbda25d7d033cc422a625805c2e",
-"shape__component_8cpp.html"
+"classGraph.html#aa54c5ba10849a893b1f208eca77e90ab",
+"classRectangle.html#ab04e18a4e5d6513ca9d7e78763b94561",
+"classVector2D.html#ac68f4dafca1639747c67c1b01e3a9f28",
+"i__input__facade_8hpp.html#a7885f47644a0388f981f416fa20389b2a54c664c92771219068db84d7f04c7e4b",
+"physics__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

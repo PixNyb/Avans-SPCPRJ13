@@ -1,14 +1,19 @@
 var searchData=
 [
-  ['pause_991',['Pause',['../classISound.html#a49b41991a465e17cdda79daa5a217dc6',1,'ISound::Pause()'],['../classThread.html#a9d22f28bef2580dace692bb52f1df2a8',1,'Thread::Pause()'],['../classTimer.html#a9b8c57bf9675da635a82d68d9b4d05e5',1,'Timer::Pause()'],['../classSFMLSound.html#ac131c496ef96635600d4b46c39208193',1,'SFMLSound::Pause()'],['../classAudioSource.html#a70732968279954b9e56cb3d51d508b50',1,'AudioSource::Pause()']]],
-  ['physicsfacade_992',['PhysicsFacade',['../classPhysicsFacade.html#a560e69df94f6f55dfb1b560510e6b1e1',1,'PhysicsFacade']]],
-  ['play_993',['Play',['../classAudioSource.html#a25294a3010f121461562a6bf4739c645',1,'AudioSource::Play()'],['../classISound.html#afde4566c8cf3b897aea83461b55279fd',1,'ISound::Play()'],['../classSFMLSound.html#a93b34ef0f492c207eeff9e83405988c4',1,'SFMLSound::Play()']]],
-  ['point_994',['Point',['../structPoint.html#a78b55e8d5466bb8c2cf60fa55f2562ff',1,'Point']]],
-  ['pollevents_995',['PollEvents',['../classGraphicsFacade.html#abda789469d7b66d9013f8352a93d3877',1,'GraphicsFacade::PollEvents()'],['../classIOFacade.html#ae83138d361fe83705d6099eaa2bc6595',1,'IOFacade::PollEvents()']]],
-  ['polygon_996',['Polygon',['../classPolygon.html#a5c606b03157c7ca6a8d1ee3a70e45b22',1,'Polygon']]],
-  ['polygoncollider_997',['PolygonCollider',['../classPolygonCollider.html#afa14f978d2e2a25b329dac2e0ee1d3c8',1,'PolygonCollider::PolygonCollider()=default'],['../classPolygonCollider.html#a4d51f2290c4c3075ed642a8b322f41ad',1,'PolygonCollider::PolygonCollider(const PolygonCollider &amp;other)']]],
-  ['populateworld_998',['PopulateWorld',['../classPhysicsFacade.html#a4a8cf544a84dde1e9eceb5aba4209b43',1,'PhysicsFacade']]],
-  ['prefabmanager_999',['PrefabManager',['../classPrefabManager.html#a172a21833b61f5883d2db26e3441b37d',1,'PrefabManager']]],
-  ['present_1000',['Present',['../classSDLRender.html#a5d507e73430bc5f1e786bb1cdc55fd05',1,'SDLRender']]],
-  ['presentscreen_1001',['PresentScreen',['../classGraphicsFacade.html#ab1361534af676ff41f136d5b4eb5d38e',1,'GraphicsFacade::PresentScreen()'],['../classIOFacade.html#a427010f0cd482f33f528c7731cb23f43',1,'IOFacade::PresentScreen()'],['../classSDLWindow.html#a99de7a60d60ab2639435304193118670',1,'SDLWindow::PresentScreen()']]]
+  ['onclick_1045',['OnClick',['../classButton.html#ae31adb0f8429e0c6dbf4dc38b7ce484d',1,'Button']]],
+  ['onkeypressed_1046',['OnKeyPressed',['../classIKeyListener.html#a3f9fc9fb7be9d621bc7f496a0ec81968',1,'IKeyListener']]],
+  ['onkeyreleased_1047',['OnKeyReleased',['../classIKeyListener.html#aa59c51d6c3b9372d038f97c00c4f45ee',1,'IKeyListener']]],
+  ['onmouseclicked_1048',['OnMouseClicked',['../classIMouseListener.html#a93715198ff969b5ced894b11177c7445',1,'IMouseListener::OnMouseClicked()'],['../classButtonClickListener.html#ad27fe5ad017ee644279e8e785ed8c1d1',1,'ButtonClickListener::OnMouseClicked()']]],
+  ['onmousemoved_1049',['OnMouseMoved',['../classIMouseListener.html#a31bea49f2143ecd1931273a74cfd5eba',1,'IMouseListener::OnMouseMoved()'],['../classButtonClickListener.html#ae4c201c7d80b9ccd6beeeb63108dcc3e',1,'ButtonClickListener::OnMouseMoved()']]],
+  ['onmousepressed_1050',['OnMousePressed',['../classIMouseListener.html#afcb033c0cce2ea238c4a76f07f1ffc79',1,'IMouseListener::OnMousePressed()'],['../classButtonClickListener.html#a901ec9c5140dfc1952d553f5426358a2',1,'ButtonClickListener::OnMousePressed()']]],
+  ['onmousereleased_1051',['OnMouseReleased',['../classIMouseListener.html#af72b6d9a955e5768b20845486de539b5',1,'IMouseListener::OnMouseReleased()'],['../classButtonClickListener.html#a52f0a802d6baffa76e18fc6d2c473915',1,'ButtonClickListener::OnMouseReleased()']]],
+  ['onstart_1052',['OnStart',['../classBehaviourScript.html#a80bffa3fec52a1131a1fbdc11417540b',1,'BehaviourScript::OnStart()'],['../classPathfinding.html#a67a8436a6ad9be3488512e553be0867d',1,'Pathfinding::OnStart()']]],
+  ['ontriggerenter2d_1053',['OnTriggerEnter2D',['../classBehaviourScript.html#aac312cd15a7fc08efecf7c0885555afe',1,'BehaviourScript']]],
+  ['ontriggerexit2d_1054',['OnTriggerExit2D',['../classBehaviourScript.html#a2d4f62bb511a116d1e24c9aabdefbe40',1,'BehaviourScript']]],
+  ['ontriggerstay2d_1055',['OnTriggerStay2D',['../classBehaviourScript.html#a169c46d2b660f0d1e108ea5674dc9c82',1,'BehaviourScript']]],
+  ['onupdate_1056',['OnUpdate',['../classAnimator.html#a318a6ae9410b514bac4b69a4f4ff921f',1,'Animator::OnUpdate()'],['../classBehaviourScript.html#a23e6fc57ffe64b760dfb801d10f634ff',1,'BehaviourScript::OnUpdate()'],['../classPathfinding.html#ad9d8389d2261d409b9024e918a9489e0',1,'Pathfinding::OnUpdate()']]],
+  ['operator_2b_1057',['operator+',['../structPoint.html#a8bc39ec95c27d83d84e1df3fd8124fa2',1,'Point::operator+()'],['../structTransform.html#af54121ba06c77f98fa3ea1af90062106',1,'Transform::operator+()']]],
+  ['operator_2d_1058',['operator-',['../structPoint.html#a17b65599126120074e6295ddad1ca906',1,'Point::operator-()'],['../structTransform.html#ad73a521adb133336e5ec9dbcb9720825',1,'Transform::operator-()']]],
+  ['operator_3d_1059',['operator=',['../classGameObject.html#afa0013e69d67ca8e6361473e72cccd47',1,'GameObject::operator=(const GameObject &amp;other)=delete'],['../classGameObject.html#afe1d5bfb975be0ca3062cfcee08646a0',1,'GameObject::operator=(GameObject &amp;&amp;other) noexcept=delete']]],
+  ['operator_3d_3d_1060',['operator==',['../structPoint.html#a9c29cd36d1ce448b8e1e56a204fe2b95',1,'Point::operator==()'],['../structTransform.html#aecb2e8fe27024e2765594385f28c532a',1,'Transform::operator==()']]]
 ];

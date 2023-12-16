@@ -102,18 +102,20 @@ Inheritance diagram for IPrototypeComponent:</div>
 <div class="dyncontent">
 <div class="center"><img src="classIPrototypeComponent__inherit__graph.png" border="0" usemap="#aIPrototypeComponent_inherit__map" alt="Inheritance graph"/></div>
 <map name="aIPrototypeComponent_inherit__map" id="aIPrototypeComponent_inherit__map">
-<area shape="rect" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="236,5,400,32"/>
-<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="269,80,367,107"/>
-<area shape="rect" href="classAudioSource.html" title="Component for handling audio playback." alt="" coords="5,155,108,181"/>
-<area shape="rect" href="classBehaviourScript.html" title="Base class for scriptable behavior in game objects." alt="" coords="133,155,258,181"/>
-<area shape="rect" href="classCollider.html" title="Base class for collider components." alt="" coords="282,155,354,181"/>
-<area shape="rect" href="classRigidBody.html" title="Represents a physics body in the game engine." alt="" coords="378,155,466,181"/>
-<area shape="rect" href="classShapeComponent.html" title="A class that represents a shape component." alt="" coords="491,155,628,181"/>
-<area shape="rect" href="classAnimator.html" title="The Animator class is a BehaviourScript that can be added to a GameObject to animate it according to ..." alt="" coords="58,229,141,256"/>
-<area shape="rect" href="classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="165,229,225,256"/>
-<area shape="rect" href="classBoxCollider.html" title="Represents a rectangular collision area." alt="" coords="249,229,347,256"/>
-<area shape="rect" href="classCircleCollider.html" title="Represents a circular collision area." alt="" coords="371,229,481,256"/>
-<area shape="rect" href="classPolygonCollider.html" title=" " alt="" coords="505,229,629,256"/>
+<area shape="rect" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="347,5,511,32"/>
+<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="381,80,478,107"/>
+<area shape="rect" href="classAudioSource.html" title="Component for handling audio playback." alt="" coords="61,155,163,181"/>
+<area shape="rect" href="classBehaviourScript.html" title="Base class for scriptable behavior in game objects." alt="" coords="188,155,313,181"/>
+<area shape="rect" href="classCollider.html" title="Base class for collider components." alt="" coords="337,155,409,181"/>
+<area shape="rect" href="classPathfindable.html" title="The Pathfindable class represents a pathfindable object." alt="" coords="434,155,537,181"/>
+<area shape="rect" href="classRigidBody.html" title="Represents a physics body in the game engine." alt="" coords="561,155,649,181"/>
+<area shape="rect" href="classShapeComponent.html" title="A class that represents a shape component." alt="" coords="674,155,811,181"/>
+<area shape="rect" href="classAnimator.html" title="The Animator class is a BehaviourScript that can be added to a GameObject to animate it according to ..." alt="" coords="5,229,88,256"/>
+<area shape="rect" href="classPathfinding.html" title="The Pathfinding class represents a pathfinding behaviour script." alt="" coords="113,229,207,256"/>
+<area shape="rect" href="classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="231,229,291,256"/>
+<area shape="rect" href="classBoxCollider.html" title="Represents a rectangular collision area." alt="" coords="315,229,413,256"/>
+<area shape="rect" href="classCircleCollider.html" title="Represents a circular collision area." alt="" coords="437,229,547,256"/>
+<area shape="rect" href="classPolygonCollider.html" title=" " alt="" coords="571,229,695,256"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -159,7 +161,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A copy of the object in a shared pointer. </dd></dl>
 
-<p>Implemented in <a class="el" href="classComponent.html#ac77bc25fb7e0523a6dfb7a95698d054a">Component</a>, <a class="el" href="classCollider.html#a047d35d518d0fa8d784a341bb55cbf0c">Collider</a>, <a class="el" href="classBehaviourScript.html#a27f0dd65f4687a7b4abdf6ab934ed7f1">BehaviourScript</a>, <a class="el" href="classSprite.html#a0d65be7f74f4fc989f45a7e4dc7e28d0">Sprite</a>, <a class="el" href="classShapeComponent.html#a9a8b732333108d177d9bc9e59e3b11fd">ShapeComponent</a>, <a class="el" href="classRigidBody.html#a13159669816000cba90f70e184e13348">RigidBody</a>, <a class="el" href="classPolygonCollider.html#ad16c9fcff418b6b2fb1dddbeebeec045">PolygonCollider</a>, <a class="el" href="classCircleCollider.html#a15033c04f805ba86ac8e7acc85d5870f">CircleCollider</a>, <a class="el" href="classBoxCollider.html#a7c1069a79a8c797c8fba3cbfda6c6257">BoxCollider</a>, <a class="el" href="classAudioSource.html#ac7f1aabb82de6ee95e11ce1f47e38399">AudioSource</a>, and <a class="el" href="classAnimator.html#a2eb24e2da3fdb1408f99bd4d8907f3dd">Animator</a>.</p>
+<p>Implemented in <a class="el" href="classComponent.html#ac77bc25fb7e0523a6dfb7a95698d054a">Component</a>, <a class="el" href="classCollider.html#a047d35d518d0fa8d784a341bb55cbf0c">Collider</a>, <a class="el" href="classBehaviourScript.html#a27f0dd65f4687a7b4abdf6ab934ed7f1">BehaviourScript</a>, <a class="el" href="classSprite.html#a0d65be7f74f4fc989f45a7e4dc7e28d0">Sprite</a>, <a class="el" href="classShapeComponent.html#a9a8b732333108d177d9bc9e59e3b11fd">ShapeComponent</a>, <a class="el" href="classRigidBody.html#a13159669816000cba90f70e184e13348">RigidBody</a>, <a class="el" href="classPolygonCollider.html#ad16c9fcff418b6b2fb1dddbeebeec045">PolygonCollider</a>, <a class="el" href="classPathfinding.html#a4b855537ec583805d3419b0a8b2a0c15">Pathfinding</a>, <a class="el" href="classPathfindable.html#a6816e24371e420d9089583e2802baff1">Pathfindable</a>, <a class="el" href="classCircleCollider.html#a15033c04f805ba86ac8e7acc85d5870f">CircleCollider</a>, <a class="el" href="classBoxCollider.html#a7c1069a79a8c797c8fba3cbfda6c6257">BoxCollider</a>, <a class="el" href="classAudioSource.html#ac7f1aabb82de6ee95e11ce1f47e38399">AudioSource</a>, and <a class="el" href="classAnimator.html#a2eb24e2da3fdb1408f99bd4d8907f3dd">Animator</a>.</p>
 
 </div>
 </div>

@@ -96,10 +96,13 @@ Inhoudsopgave</h1>
 <li><a href="#hoe-de-engine-te-gebruiken">Hoe de Engine te gebruiken?</a><ul>
 <li><a href="#inhoudsopgave">Inhoudsopgave</a></li>
 <li><a href="#1-window-aanmaken">1. Window aanmaken</a></li>
-<li><a href="#2-level-format">2. Level format</a></li>
-<li><a href="#3-physics-simulatie-gebruiken">3. Physics Simulatie Gebruiken</a></li>
-<li><a href="#4-input-facades">4. Input Facades</a></li>
-<li><a href="#5-contact-listeners--behaviour-scripts">5. Contact listeners &amp; Behaviour Scripts</a></li>
+<li><a href="#sprites-aanmaken-en-renderen">Sprites aanmaken en renderen</a></li>
+<li><a href="#3-level-format">3. Level format</a></li>
+<li><a href="#4-physics-simulatie-gebruiken">4. Physics Simulatie Gebruiken</a></li>
+<li><a href="#5-input-facades">5. Input Facades</a></li>
+<li><a href="#6-contact-listeners--behaviour-scripts">6. Contact listeners &amp; Behaviour Scripts</a></li>
+<li><a href="#7-hud-head-up-display-aanmaken">7. HUD (Head-Up Display) aanmaken</a></li>
+<li><a href="#8-pathfinding">8. Pathfinding</a></li>
 </ul>
 </li>
 </ul>
@@ -116,7 +119,7 @@ Inhoudsopgave</h1>
 <div class="line"><span class="keyword">auto</span> graphicsFacade = engine-&gt;Get&lt;<a class="code" href="classIOFacade.html">IOFacade</a>&gt;();</div>
 <div class="line">graphicsFacade-&gt;CreateWindow(<span class="stringliteral">&quot;Sandbox&quot;</span>, 600, 400);</div>
 <div class="line">graphicsFacade-&gt;CreateRenderer();</div>
-<div class="ttc" id="aclassEngine_html_aab953f155f37bc03fe78de7cb4dbf721"><div class="ttname"><a href="classEngine.html#aab953f155f37bc03fe78de7cb4dbf721">Engine::GetInstance</a></div><div class="ttdeci">static Engine * GetInstance()</div><div class="ttdoc">Gets the instance of the engine.</div><div class="ttdef"><b>Definition:</b> engine.cpp:136</div></div>
+<div class="ttc" id="aclassEngine_html_aab953f155f37bc03fe78de7cb4dbf721"><div class="ttname"><a href="classEngine.html#aab953f155f37bc03fe78de7cb4dbf721">Engine::GetInstance</a></div><div class="ttdeci">static Engine * GetInstance()</div><div class="ttdoc">Gets the instance of the engine.</div><div class="ttdef"><b>Definition:</b> engine.cpp:138</div></div>
 <div class="ttc" id="aclassIOFacade_html"><div class="ttname"><a href="classIOFacade.html">IOFacade</a></div><div class="ttdoc">Interface for input/output handling in the game engine.</div><div class="ttdef"><b>Definition:</b> io_facade.hpp:46</div></div>
 <div class="ttc" id="aclassSceneManager_html"><div class="ttname"><a href="classSceneManager.html">SceneManager</a></div><div class="ttdoc">Manages scenes and their updates.</div><div class="ttdef"><b>Definition:</b> scene_manager.hpp:23</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md26"></a>
@@ -303,7 +306,7 @@ Sprites aanmaken en renderen</h1>
 <div class="line">                                 GameConstants::General::WINDOW_HEIGHT);</div>
 <div class="line">AddGameObject(hud);</div>
 <div class="line">hud-&gt;DrawHud(*engine);</div>
-<div class="line">hud-&gt;SetActive(<span class="keyword">true</span>);    </div>
+<div class="line">hud-&gt;SetActive(<span class="keyword">true</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">//Het aanmaken van de HUD structuur gebeurt in de hud.cpp.</span></div>
 <div class="line"><span class="comment">// - LayoutType wordt gebruikt voor de horizontale of verticale uitlijning van de ui objecten.</span></div>
@@ -339,6 +342,18 @@ Sprites aanmaken en renderen</h1>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Daarna het renderen van de HUD met de gemaakte containers</span></div>
 <div class="line">RenderHud();</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md32"></a>
+8. Pathfinding</h1>
+<p>De pathfinding wordt gedaan door de A* algoritme. De A* algoritme is een algoritme dat de kortste route berekent tussen een start en eindpoint. De verschillende standaardcomponenten zijn als volgt te gebruiken:</p>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> floorPathfindable = std::make_shared&lt;Pathfindable&gt;(floor);</div>
+<div class="line">floor-&gt;AddComponent(floorPathfindable);</div>
+<div class="line"><span class="keyword">auto</span> blockPathfindable = std::make_shared&lt;Pathfindable&gt;(block);</div>
+<div class="line">block-&gt;AddComponent(blockPathfindable);</div>
+<div class="line"><span class="keyword">auto</span> block1Pathfindable = std::make_shared&lt;Pathfindable&gt;(block1);</div>
+<div class="line">block1-&gt;AddComponent(block1Pathfindable);</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> enemyPathfinding = std::make_shared&lt;Pathfinding&gt;(enemy, <span class="stringliteral">&quot;Player&quot;</span>);</div>
+<div class="line">enemy-&gt;AddComponent(enemyPathfinding);</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

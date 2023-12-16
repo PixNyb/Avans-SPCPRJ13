@@ -6,6 +6,9 @@ var dir_8fc6996adf8a387c627a1f9a07e75c72 =
     [ "level_manager.hpp", "level__manager_8hpp.html", [
       [ "LevelManager", "classLevelManager.html", "classLevelManager" ]
     ] ],
+    [ "pathfinding_manager.hpp", "pathfinding__manager_8hpp.html", [
+      [ "PathfindingManager", "classPathfindingManager.html", "classPathfindingManager" ]
+    ] ],
     [ "physics_manager.hpp", "physics__manager_8hpp.html", [
       [ "PhysicsManager", "classPhysicsManager.html", "classPhysicsManager" ]
     ] ],

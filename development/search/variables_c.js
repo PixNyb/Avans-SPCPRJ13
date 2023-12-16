@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_1152',['x',['../structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7',1,'Point::x()'],['../classSDLRect.html#ab31023478deece1ce73a99c3a3b10f26',1,'SDLRect::x()'],['../classVector2D.html#aeb4253ba6555251d010ea4450619029e',1,'Vector2D::x()']]]
+  ['width_1229',['width',['../classSDLRect.html#af0118d9c9913ffd531eb083c52546608',1,'SDLRect::width()'],['../structSize.html#aa1f23158085de487cfd5434301c077a4',1,'Size::width()']]]
 ];

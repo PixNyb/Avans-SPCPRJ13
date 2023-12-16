@@ -18,7 +18,10 @@ var hierarchy =
           [ "Button", "classButton.html", null ],
           [ "Text", "classText.html", null ]
         ] ]
-      ] ]
+      ] ],
+      [ "Graph", "classGraph.html", null ],
+      [ "Link", "classLink.html", null ],
+      [ "Node", "classNode.html", null ]
     ] ],
     [ "Engine", "classEngine.html", null ],
     [ "Event", "classEvent.html", null ],
@@ -52,6 +55,7 @@ var hierarchy =
         [ "AudioSource", "classAudioSource.html", null ],
         [ "BehaviourScript", "classBehaviourScript.html", [
           [ "Animator", "classAnimator.html", null ],
+          [ "Pathfinding", "classPathfinding.html", null ],
           [ "Sprite", "classSprite.html", null ]
         ] ],
         [ "Collider", "classCollider.html", [
@@ -59,6 +63,7 @@ var hierarchy =
           [ "CircleCollider", "classCircleCollider.html", null ],
           [ "PolygonCollider", "classPolygonCollider.html", null ]
         ] ],
+        [ "Pathfindable", "classPathfindable.html", null ],
         [ "RigidBody", "classRigidBody.html", null ],
         [ "ShapeComponent", "classShapeComponent.html", null ]
       ] ]
@@ -73,6 +78,7 @@ var hierarchy =
     ] ],
     [ "JSONHandler", "classJSONHandler.html", null ],
     [ "LevelManager", "classLevelManager.html", null ],
+    [ "PathfindingManager", "classPathfindingManager.html", null ],
     [ "PerformanceUtility", "classPerformanceUtility.html", null ],
     [ "PhysicsFacade", "classPhysicsFacade.html", null ],
     [ "PhysicsManager", "classPhysicsManager.html", null ],

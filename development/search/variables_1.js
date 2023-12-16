@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['children_1127',['children',['../classGameObject.html#ace620644f3b086757e2f304f12c2413d',1,'GameObject']]],
-  ['components_1128',['components',['../classGameObject.html#a545e4ed29df0e16304d46c73404c0ce6',1,'GameObject']]],
-  ['contents_1129',['contents',['../classScene.html#a756e2e6ebc6797dd249a6055699f022d',1,'Scene']]]
+  ['active_1204',['active',['../classComponent.html#a2ebc869395d66425690dfeae99d1b791',1,'Component::active()'],['../classGameObject.html#afa3bf48882a927f94a6d922045a435e0',1,'GameObject::active()']]]
 ];

@@ -12,6 +12,7 @@ var dir_da61e3e9a357748887e3ca8d7c5a0c16 =
     [ "color.cpp", "color_8cpp.html", null ],
     [ "component.cpp", "component_8cpp.html", null ],
     [ "game_object.cpp", "game__object_8cpp.html", null ],
+    [ "pathfinding.cpp", "pathfinding_8cpp.html", null ],
     [ "rigidbody.cpp", "rigidbody_8cpp.html", null ],
     [ "scene.cpp", "scene_8cpp.html", null ],
     [ "shape_component.cpp", "shape__component_8cpp.html", null ],

@@ -52,6 +52,12 @@ var dir_2d52abcd54c181b91d630da402923092 =
     [ "level_scene.hpp", "level__scene_8hpp.html", [
       [ "LevelScene", "classLevelScene.html", "classLevelScene" ]
     ] ],
+    [ "pathfindable.hpp", "pathfindable_8hpp.html", [
+      [ "Pathfindable", "classPathfindable.html", "classPathfindable" ]
+    ] ],
+    [ "pathfinding.hpp", "pathfinding_8hpp.html", [
+      [ "Pathfinding", "classPathfinding.html", "classPathfinding" ]
+    ] ],
     [ "point.hpp", "point_8hpp.html", [
       [ "Point", "structPoint.html", "structPoint" ]
     ] ],

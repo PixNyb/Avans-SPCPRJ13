@@ -1,4 +1,5 @@
 <map id="include/api/shape_component.hpp" name="include/api/shape_component.hpp">
-<area shape="rect" id="node1" title="A file containing the ShapeComponent class." alt="" coords="5,5,249,32"/>
-<area shape="rect" id="node2" href="$shape__component_8cpp.html" title="A file containing the ShapeComponent class." alt="" coords="20,80,235,107"/>
+<area shape="rect" id="node1" title="A file containing the ShapeComponent class." alt="" coords="76,5,320,32"/>
+<area shape="rect" id="node2" href="$pathfinding_8cpp.html" title="This file contains the Pathfinding class implementation." alt="" coords="5,80,175,107"/>
+<area shape="rect" id="node3" href="$shape__component_8cpp.html" title="A file containing the ShapeComponent class." alt="" coords="199,80,413,107"/>
 </map>

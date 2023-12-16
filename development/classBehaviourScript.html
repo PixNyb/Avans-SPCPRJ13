@@ -103,11 +103,12 @@ Inheritance diagram for BehaviourScript:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBehaviourScript__inherit__graph.png" border="0" usemap="#aBehaviourScript_inherit__map" alt="Inheritance graph"/></div>
 <map name="aBehaviourScript_inherit__map" id="aBehaviourScript_inherit__map">
-<area shape="rect" title="Base class for scriptable behavior in game objects." alt="" coords="32,155,157,181"/>
+<area shape="rect" title="Base class for scriptable behavior in game objects." alt="" coords="97,155,223,181"/>
 <area shape="rect" href="classAnimator.html" title="The Animator class is a BehaviourScript that can be added to a GameObject to animate it according to ..." alt="" coords="5,229,88,256"/>
-<area shape="rect" href="classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="113,229,173,256"/>
-<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="46,80,143,107"/>
-<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="13,5,177,32"/>
+<area shape="rect" href="classPathfinding.html" title="The Pathfinding class represents a pathfinding behaviour script." alt="" coords="113,229,207,256"/>
+<area shape="rect" href="classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="231,229,291,256"/>
+<area shape="rect" href="classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="111,80,209,107"/>
+<area shape="rect" href="classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="78,5,242,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -221,7 +222,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Implements <a class="el" href="classComponent.html#ac77bc25fb7e0523a6dfb7a95698d054a">Component</a>.</p>
 
-<p>Implemented in <a class="el" href="classSprite.html#a0d65be7f74f4fc989f45a7e4dc7e28d0">Sprite</a>, and <a class="el" href="classAnimator.html#a2eb24e2da3fdb1408f99bd4d8907f3dd">Animator</a>.</p>
+<p>Implemented in <a class="el" href="classSprite.html#a0d65be7f74f4fc989f45a7e4dc7e28d0">Sprite</a>, <a class="el" href="classPathfinding.html#a4b855537ec583805d3419b0a8b2a0c15">Pathfinding</a>, and <a class="el" href="classAnimator.html#a2eb24e2da3fdb1408f99bd4d8907f3dd">Animator</a>.</p>
 
 </div>
 </div>
@@ -272,6 +273,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="section note"><dt>Note</dt><dd>This is required because not everything might be known while constructing a component </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>DO set the hasStarted variable to true in this function or call the parent function </dd></dl>
 
+<p>Reimplemented in <a class="el" href="classPathfinding.html#a67a8436a6ad9be3488512e553be0867d">Pathfinding</a>.</p>
+
 </div>
 </div>
 <a id="a23e6fc57ffe64b760dfb801d10f634ff"></a>
@@ -300,7 +303,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Calls the update function of the behaviour script. </p>
 <dl class="section note"><dt>Note</dt><dd>It only calls active behaviour scripts. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classAnimator.html#a318a6ae9410b514bac4b69a4f4ff921f">Animator</a>.</p>
+<p>Reimplemented in <a class="el" href="classPathfinding.html#ad9d8389d2261d409b9024e918a9489e0">Pathfinding</a>, and <a class="el" href="classAnimator.html#a318a6ae9410b514bac4b69a4f4ff921f">Animator</a>.</p>
 
 </div>
 </div>
