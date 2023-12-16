@@ -81,7 +81,7 @@ class PropertyManager
 
         try
         {
-            propertyFile.at(key) = value;
+            propertyFile[key] = value;
         }
         catch (std::exception &e)
         {

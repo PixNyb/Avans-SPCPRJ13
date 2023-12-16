@@ -28,7 +28,18 @@ class JSONHandler
      */
     std::string fileExtension;
 
+    /**
+     * @brief Validate that the file exists and normalize the path.
+     * @param filePath The file path that is to be validated.
+     * @return The validated and normalized file path.
+     */
     std::string ValidateFilePath(const std::string &filePath);
+
+    /**
+     * @brief Validate the file extension of the file path.
+     * @param filePath The file path of which the extension is to be validated.
+     */
+    void ValidateExtension(const std::string &filePath);
 
   public:
     /**

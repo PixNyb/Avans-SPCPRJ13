@@ -16,8 +16,9 @@
 
 nlohmann::json JSONHandler::ConvertFileToJson(const std::string &filePath)
 {
-    // Normalize the destination path and validate whether it exists.
+    // Normalize the destination path, validate whether it exists and validate the file extension.
     auto normPath = ValidateFilePath(filePath);
+    ValidateExtension(normPath);
 
     std::ifstream file(normPath, std::ifstream::binary);
 
@@ -37,8 +38,9 @@ nlohmann::json JSONHandler::ConvertFileToJson(const std::string &filePath)
 
 std::string JSONHandler::WriteJsonToFile(const std::string &filePath, const nlohmann::json &json)
 {
-    // Normalize the destination path and validate whether it exists.
-    auto normPath = ValidateFilePath(filePath);
+    // Normalize the destination path and validate the file extension.
+    auto normPath = std::filesystem::absolute(filePath).string();
+    ValidateExtension(normPath);
 
     std::ofstream file(normPath);
 
@@ -53,15 +55,18 @@ std::string JSONHandler::WriteJsonToFile(const std::string &filePath, const nloh
 
 std::string JSONHandler::ValidateFilePath(const std::string &filePath)
 {
-    if (filePath.length() < fileExtension.length() ||
-        (0 != filePath.compare(filePath.length() - fileExtension.length(), fileExtension.length(),
-                               fileExtension)))
-        throw std::runtime_error(
-            fmt::format("The file is of a unsupported type. Expected type: '{}'", fileExtension));
-
     auto normPath = std::filesystem::absolute(filePath).string();
     if (!std::filesystem::exists(filePath))
         throw std::runtime_error(fmt::format("Path was not found: {}", filePath));
 
     return normPath;
+}
+
+void JSONHandler::ValidateExtension(const std::string &filePath)
+{
+    if (filePath.length() < fileExtension.length() ||
+        (0 != filePath.compare(filePath.length() - fileExtension.length(), fileExtension.length(),
+                               fileExtension)))
+        throw std::runtime_error(
+            fmt::format("The file is of a unsupported type. Expected type: '{}'", fileExtension));
 }
