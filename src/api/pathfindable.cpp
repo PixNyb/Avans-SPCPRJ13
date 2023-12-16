@@ -16,7 +16,9 @@ Pathfindable::~Pathfindable() {}
 
 std::shared_ptr<Component> Pathfindable::Clone(std::weak_ptr<GameObject> parent)
 {
-    return std::make_shared<Pathfindable>(parent);
+    auto object = std::make_shared<Pathfindable>(*this);
+    object->_parent = parent.lock();
+    return object;
 }
 
 Pathfindable::Pathfindable(const Pathfindable &other)

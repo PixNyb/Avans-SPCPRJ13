@@ -77,7 +77,7 @@ class PathfindingManager
     std::shared_ptr<Node> FindClosestNode(Point point) const;
 
   private:
-    void GenerateGraphForScene(std::shared_ptr<Scene> scene); // Generate the graph for the scene.
-    std::shared_ptr<Graph> _graph;                            // The graph.
-    std::shared_ptr<Scene> _scene;                            // The scene.
+    void GenerateGraphForScene(std::shared_ptr<Scene> scene); ///< Generate the graph for the scene.
+    std::shared_ptr<Graph> _graph;                            ///< The graph.
+    std::shared_ptr<Scene> _scene;                            ///< The scene.
 };

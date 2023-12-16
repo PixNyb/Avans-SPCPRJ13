@@ -65,7 +65,6 @@ void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
     {
         auto pathfindable = gameObject->GetComponent<Pathfindable>();
 
-        // TODO: Check if i'm using the right 'active' flag here.
         if (pathfindable != nullptr && gameObject->IsActive())
         {
             std::cout << "Found pathfindable: " << gameObject->GetName() << std::endl;

@@ -47,8 +47,6 @@ class BoxCollider : public Collider
      */
     BoxCollider(const BoxCollider &other);
 
-    // TODO: Rename to Get<Property> and Set<Property>?
-
     /**
      * @brief The collider's width
      * @return The current width

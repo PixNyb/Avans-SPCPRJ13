@@ -115,10 +115,7 @@ void Pathfinding::OnUpdate()
 
             // Check if the path is empty
             if (_path.size() == 0)
-            {
-                // Set the velocity to 0 when the target is reached
                 return;
-            }
 
             // Get the next node
             nextNode = _path[0];

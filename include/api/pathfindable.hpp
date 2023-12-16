@@ -15,7 +15,6 @@
 #include "component.hpp"
 #include "game_object.hpp"
 #include "pathfinding/graph.hpp"
-#include <SDL_render.h>
 #include <memory>
 #include <vector>
 
@@ -81,9 +80,9 @@ class Pathfindable : public Component
     std::vector<std::shared_ptr<Node>> GetNodes() const;
 
   protected:
-    std::vector<std::shared_ptr<Node>> _nodes; // The nodes for this Pathfindable object.
-    std::shared_ptr<GameObject> _parent;       // The parent GameObject of this component.
-    bool _generated = false;                   // Whether or not the nodes have been generated.
+    std::vector<std::shared_ptr<Node>> _nodes; ///< The nodes for this Pathfindable object.
+    std::shared_ptr<GameObject> _parent;       ///< The parent GameObject of this component.
+    bool _generated = false;                   ///< Whether or not the nodes have been generated.
 };
 
 #endif // AVANS_SPCPRJ13_PATHFINDABLE_H
