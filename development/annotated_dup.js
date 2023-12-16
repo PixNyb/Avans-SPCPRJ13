@@ -56,6 +56,7 @@ var annotated_dup =
     [ "PrefabManager", "classPrefabManager.html", "classPrefabManager" ],
     [ "PrefabManagerStub", "classPrefabManagerStub.html", "classPrefabManagerStub" ],
     [ "PrefabTest", "classPrefabTest.html", "classPrefabTest" ],
+    [ "PropertyManager", "classPropertyManager.html", "classPropertyManager" ],
     [ "Rectangle", "classRectangle.html", "classRectangle" ],
     [ "RenderManager", "classRenderManager.html", "classRenderManager" ],
     [ "RigidBody", "classRigidBody.html", "classRigidBody" ],

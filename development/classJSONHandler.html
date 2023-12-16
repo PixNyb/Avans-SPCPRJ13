@@ -107,9 +107,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae84e447e97544e7a68c63b471f19c3b0"><td class="memItemLeft" align="right" valign="top">nlohmann::json&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSONHandler.html#ae84e447e97544e7a68c63b471f19c3b0">ConvertFileToJson</a> (const std::string &amp;filePath)</td></tr>
 <tr class="memdesc:ae84e447e97544e7a68c63b471f19c3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a file to a JSON object.  <a href="classJSONHandler.html#ae84e447e97544e7a68c63b471f19c3b0">More...</a><br /></td></tr>
 <tr class="separator:ae84e447e97544e7a68c63b471f19c3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a523e8849a447e9fe3aa51466ff1df582"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSONHandler.html#a523e8849a447e9fe3aa51466ff1df582">WriteJsonToFile</a> (const std::string &amp;destination, const std::string &amp;fileName, const nlohmann::json &amp;json)</td></tr>
-<tr class="memdesc:a523e8849a447e9fe3aa51466ff1df582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a json object to a json file.  <a href="classJSONHandler.html#a523e8849a447e9fe3aa51466ff1df582">More...</a><br /></td></tr>
-<tr class="separator:a523e8849a447e9fe3aa51466ff1df582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d7a8f3519a488c233586f86be0aad91"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSONHandler.html#a9d7a8f3519a488c233586f86be0aad91">WriteJsonToFile</a> (const std::string &amp;filePath, const nlohmann::json &amp;json)</td></tr>
+<tr class="memdesc:a9d7a8f3519a488c233586f86be0aad91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a json object to a json file.  <a href="classJSONHandler.html#a9d7a8f3519a488c233586f86be0aad91">More...</a><br /></td></tr>
+<tr class="separator:a9d7a8f3519a488c233586f86be0aad91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Converts JSON files to a readable JSON object. </p>
@@ -142,8 +142,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a523e8849a447e9fe3aa51466ff1df582"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a523e8849a447e9fe3aa51466ff1df582">&#9670;&nbsp;</a></span>WriteJsonToFile()</h2>
+<a id="a9d7a8f3519a488c233586f86be0aad91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d7a8f3519a488c233586f86be0aad91">&#9670;&nbsp;</a></span>WriteJsonToFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,13 +152,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">std::string JSONHandler::WriteJsonToFile </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>destination</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>fileName</em>, </td>
+          <td class="paramname"><em>filePath</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -177,9 +171,8 @@ Public Member Functions</h2></td></tr>
 <p>Write a json object to a json file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">destination</td><td>The folder which the file is to be written to. </td></tr>
-    <tr><td class="paramname">fileName</td><td>The name which the file should have. </td></tr>
-    <tr><td class="paramname">json</td><td>The json object which is tob e written to the file. </td></tr>
+    <tr><td class="paramname">destination</td><td>The file destination which is to be written to. </td></tr>
+    <tr><td class="paramname">json</td><td>The json object which is to be written to the file. </td></tr>
   </table>
   </dd>
 </dl>

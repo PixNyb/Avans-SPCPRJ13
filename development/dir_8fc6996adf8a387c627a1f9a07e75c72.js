@@ -15,6 +15,9 @@ var dir_8fc6996adf8a387c627a1f9a07e75c72 =
     [ "prefab_manager.hpp", "prefab__manager_8hpp.html", [
       [ "PrefabManager", "classPrefabManager.html", "classPrefabManager" ]
     ] ],
+    [ "property_manager.hpp", "property__manager_8hpp.html", [
+      [ "PropertyManager", "classPropertyManager.html", "classPropertyManager" ]
+    ] ],
     [ "render_manager.hpp", "render__manager_8hpp_source.html", null ],
     [ "scene_manager.hpp", "scene__manager_8hpp.html", [
       [ "SceneManager", "classSceneManager.html", "classSceneManager" ]

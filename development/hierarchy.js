@@ -86,6 +86,7 @@ var hierarchy =
     [ "PrefabManager", "classPrefabManager.html", [
       [ "PrefabManagerStub", "classPrefabManagerStub.html", null ]
     ] ],
+    [ "PropertyManager", "classPropertyManager.html", null ],
     [ "RenderManager", "classRenderManager.html", null ],
     [ "Scene", "classScene.html", [
       [ "LevelScene", "classLevelScene.html", null ]
