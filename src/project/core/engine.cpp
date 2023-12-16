@@ -19,6 +19,7 @@
 #include "behaviour_script_manager.hpp"
 #include "graphics_facade.hpp"
 #include "level_manager.hpp"
+#include "pathfinding_manager.hpp"
 #include "physics_manager.hpp"
 #include "render_manager.hpp"
 #include "scene_manager.hpp"
@@ -51,6 +52,7 @@ Engine::Engine()
                                                        InstanceScope::Engine);
 
     container.registerInstance<PhysicsManager>(std::make_shared<PhysicsManager>());
+    container.registerInstance<PathfindingManager>(std::make_shared<PathfindingManager>());
 
     // Facades
     container.registerInstance<IInputFacade>(std::make_shared<SDLInputFacade>());
@@ -82,7 +84,7 @@ void Engine::Start()
         graphicsFacade->ClearScreen();
 
         auto scene = sceneManager->GetScene().lock();
-        
+
         Get<PhysicsManager>()->Step();
 
         Get<IInputFacade>()->Update();
