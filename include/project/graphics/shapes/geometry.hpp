@@ -52,7 +52,7 @@ class Geometry
      * Gets the color of the geometric shape.
      * @return The color of the geometric shape.
      */
-    [[nodiscard]] Color SetFillColor() const { return fillColor.GetColor(); }
+    [[nodiscard]] Color GetFillColor() const { return fillColor.GetColor(); }
 
     /**
      * Set the rotation of the geometric shape.
