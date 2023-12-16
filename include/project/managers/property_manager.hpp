@@ -30,15 +30,10 @@
 class PropertyManager
 {
   private:
-    /**
-     * @brief A JSONHandler used to read and write the property file.
-     */
-    std::shared_ptr<JSONHandler> jsonHandler;
+    std::shared_ptr<JSONHandler>
+        jsonHandler; ///< A JSONHandler used to read and write the property file.
 
-    /**
-     * @brief The expected file extension of the properties file.
-     */
-    std::string fileExtension;
+    std::string fileExtension; ///< The expected file extension of the properties file.
 
     /**
      * @brief Validates whether the type passed is supported by the PropertyManager.

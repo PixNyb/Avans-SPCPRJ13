@@ -23,10 +23,7 @@
 class JSONHandler
 {
   private:
-    /**
-     * @brief The accepted file extension for a json file.
-     */
-    std::string fileExtension;
+    std::string fileExtension; ///< The accepted file extension for a json file.
 
     /**
      * @brief Validate that the file exists and normalize the path.
