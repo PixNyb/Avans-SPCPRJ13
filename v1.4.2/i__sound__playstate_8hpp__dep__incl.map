@@ -1,0 +1,10 @@
+<map id="include/facades/i_sound_playstate.hpp" name="include/facades/i_sound_playstate.hpp">
+<area shape="rect" id="node1" title="The playstate of a sound." alt="" coords="325,5,504,47"/>
+<area shape="rect" id="node2" href="$i__sound_8hpp.html" title="A sound wrapper." alt="" coords="241,95,447,121"/>
+<area shape="rect" id="node7" href="$sfml__sound_8hpp.html" title="A file containing the SFMLSound class." alt="" coords="429,169,587,211"/>
+<area shape="rect" id="node3" href="$audio__source_8hpp.html" title="The AudioSource class provides audio playback functionality for game objects. This class is part of a..." alt="" coords="5,177,216,203"/>
+<area shape="rect" id="node5" href="$audio__facade_8hpp.html" title="A facade for the audio library." alt="" coords="241,169,405,211"/>
+<area shape="rect" id="node4" href="$audio__source_8cpp.html" title="This file contains the AudioSource class implementation." alt="" coords="19,266,202,293"/>
+<area shape="rect" id="node6" href="$audio__facade_8cpp.html" title="A facade for the audio library." alt="" coords="226,266,441,293"/>
+<area shape="rect" id="node8" href="$sfml__sound_8cpp.html" title="SFML implementation of the sound class." alt="" coords="465,259,628,300"/>
+</map>

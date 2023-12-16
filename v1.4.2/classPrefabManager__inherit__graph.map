@@ -1,0 +1,4 @@
+<map id="PrefabManager" name="PrefabManager">
+<area shape="rect" id="node1" title="Manages the prefabs that are used for the levels." alt="" coords="20,5,141,32"/>
+<area shape="rect" id="node2" href="$classPrefabManagerStub.html" title=" " alt="" coords="5,80,156,107"/>
+</map>

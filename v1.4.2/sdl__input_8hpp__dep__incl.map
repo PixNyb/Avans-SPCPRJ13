@@ -1,0 +1,7 @@
+<map id="include/facades/sdl2/sdl_input.hpp" name="include/facades/sdl2/sdl_input.hpp">
+<area shape="rect" id="node1" title="This file contains the Input class definition." alt="" coords="230,5,385,47"/>
+<area shape="rect" id="node2" href="$sdl__input__facade_8hpp.html" title="This file contains the SDLInputFacade class definition." alt="" coords="94,95,313,136"/>
+<area shape="rect" id="node5" href="$sdl__input_8cpp.html" title="This file contains the SDLInput class implementation." alt="" coords="337,95,488,136"/>
+<area shape="rect" id="node3" href="$sdl__input__facade_8cpp.html" title="This file contains the SDLInputFacade class implementation." alt="" coords="5,184,188,225"/>
+<area shape="rect" id="node4" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="213,191,410,218"/>
+</map>
