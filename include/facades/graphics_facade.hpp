@@ -232,6 +232,8 @@ class GraphicsFacade : public IOFacade
     void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect, int frameIndex,
                               int totalColumns, int totalRows, bool flipX, bool flipY, double angle,
                               float scale) override;
+
+    void DrawParticles() override;
 };
 
 #endif // DEFUNBOBENGINE_GRAPHICS_FACADE_HPP

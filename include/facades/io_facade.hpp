@@ -253,6 +253,8 @@ class IOFacade
     virtual void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect,
                                       int frameIndex, int totalColumns, int totalRows, bool flipX,
                                       bool flipY, double angle, float scale) = 0;
+
+    virtual void DrawParticles() = 0;
 };
 
 #endif // DEFUNBOBENGINE_IO_FACADE_HPP
