@@ -54,6 +54,8 @@ class Scene
 
     /**
      * @brief This property contains all the Game Object that are contained in this scene.
+     *
+     * TODO: Make this private and add a getter?
      */
     std::vector<std::shared_ptr<GameObject>> contents;
 
