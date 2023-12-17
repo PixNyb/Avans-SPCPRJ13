@@ -1,0 +1,4 @@
+<map id="Component" name="Component">
+<area shape="rect" id="node1" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="39,80,136,107"/>
+<area shape="rect" id="node2" href="$classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="5,5,169,32"/>
+</map>
