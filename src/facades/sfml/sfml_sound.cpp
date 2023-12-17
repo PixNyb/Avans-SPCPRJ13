@@ -33,7 +33,11 @@ SFMLSound::SFMLSound(const std::string &filePath)
     sound.setBuffer(buffer);
 }
 
-SFMLSound::~SFMLSound() { instanceCount--; }
+SFMLSound::~SFMLSound()
+{
+    instanceCount--;
+    sound.stop();
+}
 
 // Volume
 void SFMLSound::SetVolume(float volume) { sound.setVolume(volume); }
