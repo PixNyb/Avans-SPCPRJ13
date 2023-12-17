@@ -13,10 +13,12 @@
 struct Particle : BehaviourScript
 {
     Particle();
+
     Point position;
     Point velocity;
     std::chrono::milliseconds lifetime;
     Texture texture;
+    std::uint8_t color;
 
     void Update();
 

@@ -19,6 +19,7 @@
 #include "game_object_utility.hpp"
 #include "graphics_facade.hpp"
 #include "managers/scene_manager.hpp"
+#include "particle.hpp"
 #include "shape_component.hpp"
 #include "shape_renderer.hpp"
 #include "text.hpp"
@@ -232,4 +233,7 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
             gfx.DrawShape(shape);
         }
     }
+
+    auto particle = gameObjectPointer.lock()->GetComponent<Particle>();
+    gfx.DrawParticle(particle->position.x, particle->position.y, particle->color);
 }

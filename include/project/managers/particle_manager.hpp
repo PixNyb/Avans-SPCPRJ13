@@ -14,8 +14,6 @@ class ParticleManager
 
     std::vector<std::unique_ptr<Particle>> particles;
     std::vector<Sprite> sprites;
-    std::vector<Point> vertices;
-    std::vector<std::uint8_t> alphas;
     std::chrono::milliseconds lifeTime;
     Point emitter;
     bool useSprites;
@@ -25,6 +23,7 @@ class ParticleManager
     ParticleManager(int amountOfParticles, const Texture &texture, bool useSprites);
     void SetEmitter(Point position);
     void Update(std::chrono::milliseconds elapsed);
+    std::vector<Point> GetVertices() const;
     void Draw();
 };
 

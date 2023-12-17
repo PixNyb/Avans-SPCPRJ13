@@ -505,7 +505,7 @@ void GraphicsFacade::DrawSpriteSheetFrame(const Texture &texture, const Rectangl
     }
 }
 
-void GraphicsFacade::DrawParticles()
+void GraphicsFacade::DrawParticle(double posX, double posY, uint8_t alpha)
 {
     auto renderer = SdlWindow->GetRenderer();
     if (!renderer)
@@ -514,12 +514,15 @@ void GraphicsFacade::DrawParticles()
         return;
     }
 
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, alpha);
+    SDL_RenderDrawPoint(renderer, posX, posY);
+
     //    auto particleManager = Get<ParticleManager>();
     //
-    //    for (std::size_t i = 0; i < pm.vertices.size(); ++i)
+    //    for (std::size_t i = 0; i < particleManager.vertices.size(); ++i)
     //    {
-    //        SDL_SetRenderDrawColor(renderer, 255, 255, 255, pm.alphas[i]);
-    //        SDL_RenderDrawPoint(renderer, static_cast<int>(pm.vertices[i].x),
-    //                            static_cast<int>(pm.vertices[i].y));
+    //    SDL_SetRenderDrawColor(renderer, 255, 255, 255, particleManager.alphas[i]);
+    //    SDL_RenderDrawPoint(renderer, static_cast<int>(particleManager.vertices[i].x),
+    //                        static_cast<int>(particleManager.vertices[i].y));
     //    }
 }

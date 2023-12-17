@@ -233,7 +233,7 @@ class GraphicsFacade : public IOFacade
                               int totalColumns, int totalRows, bool flipX, bool flipY, double angle,
                               float scale) override;
 
-    void DrawParticles() override;
+    void DrawParticle(double posX, double posY, uint8_t alpha) override;
 };
 
 #endif // DEFUNBOBENGINE_GRAPHICS_FACADE_HPP
