@@ -2,6 +2,7 @@ var classPhysicsFacade =
 [
     [ "PhysicsFacade", "classPhysicsFacade.html#a560e69df94f6f55dfb1b560510e6b1e1", null ],
     [ "~PhysicsFacade", "classPhysicsFacade.html#a77a8bc8eb762008b176ad8ecb7a8debf", null ],
+    [ "AddBody", "classPhysicsFacade.html#a6a4da7fc825a9020640bbe4dec4e8404", null ],
     [ "AddForce", "classPhysicsFacade.html#ab9d465cfe08ee77bd1cbc348173d98b4", null ],
     [ "AddLinearImpulse", "classPhysicsFacade.html#ac0320619c0f972d115693ecaa4e553f0", null ],
     [ "AddRotation", "classPhysicsFacade.html#a83ca19da6bfe088a4862f08c3e1ba3c3", null ],

@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('physics__facade_8hpp.html',''); initRe
 <p>This file contains the <a class="el" href="classPhysicsFacade.html" title="The PhysicsFacade is responsible for all physics related logic. It gives the engine the tools to simu...">PhysicsFacade</a> class definition.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="collider_8hpp_source.html">collider.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="contact__listener_8hpp_source.html">contact_listener.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="debug__renderer_8hpp_source.html">debug_renderer.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="game__object_8hpp_source.html">game_object.hpp</a>&quot;</code><br />
 <code>#include &quot;rigidbody.hpp&quot;</code><br />
@@ -107,23 +108,26 @@ Include dependency graph for physics_facade.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="physics__facade_8hpp__incl.png" border="0" usemap="#ainclude_2facades_2physics__facade_8hpp" alt=""/></div>
 <map name="ainclude_2facades_2physics__facade_8hpp" id="ainclude_2facades_2physics__facade_8hpp">
-<area shape="rect" title="This file contains the PhysicsFacade class definition." alt="" coords="410,5,587,47"/>
-<area shape="rect" href="collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="221,95,318,121"/>
-<area shape="rect" href="game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="278,319,413,345"/>
-<area shape="rect" title=" " alt="" coords="43,468,120,495"/>
-<area shape="rect" title=" " alt="" coords="507,393,570,420"/>
-<area shape="rect" href="debug__renderer_8hpp.html" title="This file contains the debugrendere class defenition." alt="" coords="671,95,822,121"/>
-<area shape="rect" title=" " alt="" coords="871,169,990,196"/>
-<area shape="rect" title=" " alt="" coords="1015,169,1065,196"/>
-<area shape="rect" href="rigidbody_8hpp_source.html" title=" " alt="" coords="399,95,508,121"/>
-<area shape="rect" href="component_8hpp.html" title="This file contains the Component class definition." alt="" coords="201,169,324,196"/>
-<area shape="rect" href="iprototype__component_8hpp.html" title="This file contains the IPrototypeComponent interface definition." alt="" coords="127,244,324,271"/>
-<area shape="rect" href="iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="144,393,261,420"/>
-<area shape="rect" href="transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="285,393,400,420"/>
-<area shape="rect" title=" " alt="" coords="424,393,483,420"/>
-<area shape="rect" href="point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="433,468,516,495"/>
-<area shape="rect" title=" " alt="" coords="788,169,847,196"/>
-<area shape="rect" title=" " alt="" coords="684,169,764,196"/>
+<area shape="rect" title="This file contains the PhysicsFacade class definition." alt="" coords="585,5,762,47"/>
+<area shape="rect" href="collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="1026,95,1123,121"/>
+<area shape="rect" href="game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="555,319,690,345"/>
+<area shape="rect" title=" " alt="" coords="488,468,565,495"/>
+<area shape="rect" title=" " alt="" coords="250,393,313,420"/>
+<area shape="rect" href="contact__listener_8hpp.html" title="This file contains the defenition of the class ContactListener This class should only be used inside ..." alt="" coords="451,95,605,121"/>
+<area shape="rect" title=" " alt="" coords="648,169,699,196"/>
+<area shape="rect" href="debug__renderer_8hpp.html" title="This file contains the debugrendere class defenition." alt="" coords="737,95,887,121"/>
+<area shape="rect" title=" " alt="" coords="961,169,1079,196"/>
+<area shape="rect" href="rigidbody_8hpp_source.html" title=" " alt="" coords="1155,95,1264,121"/>
+<area shape="rect" href="component_8hpp.html" title="This file contains the Component class definition." alt="" coords="1104,169,1227,196"/>
+<area shape="rect" href="iprototype__component_8hpp.html" title="This file contains the IPrototypeComponent interface definition." alt="" coords="960,244,1157,271"/>
+<area shape="rect" href="iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="468,393,585,420"/>
+<area shape="rect" href="transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="704,393,819,420"/>
+<area shape="rect" title=" " alt="" coords="864,393,923,420"/>
+<area shape="rect" href="point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="996,468,1079,495"/>
+<area shape="rect" title=" " alt="" coords="424,169,573,196"/>
+<area shape="rect" title=" " alt="" coords="195,169,400,196"/>
+<area shape="rect" title=" " alt="" coords="723,169,781,196"/>
+<area shape="rect" title=" " alt="" coords="805,169,885,196"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">

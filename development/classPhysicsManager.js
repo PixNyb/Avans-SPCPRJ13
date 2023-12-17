@@ -5,7 +5,7 @@ var classPhysicsManager =
     [ "AddForce", "classPhysicsManager.html#a88141ec6c6659ceb1064fed10dfe5247", null ],
     [ "AddLinearImpulse", "classPhysicsManager.html#a29237517567cead618d1bcad777aaeae", null ],
     [ "AddRotationalForce", "classPhysicsManager.html#a8964341467bd13fe775ee2036a0ab373", null ],
-    [ "CreateBody", "classPhysicsManager.html#af83e47b4ab0a5c4cb9a5efeba37c140b", null ],
+    [ "CreateBody", "classPhysicsManager.html#ad9612a67aca843f2ff827fe826f22409", null ],
     [ "CreateWorld", "classPhysicsManager.html#af6458e7b31290e79c54bba685363a914", null ],
     [ "GetVelocity", "classPhysicsManager.html#a71a524299adb61ce0ec073c09d0a7e46", null ],
     [ "RemoveBody", "classPhysicsManager.html#ada836b73c83d6c00527904d3fa29db40", null ],

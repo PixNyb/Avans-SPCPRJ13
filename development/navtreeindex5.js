@@ -1,5 +1,10 @@
 var NAVTREEINDEX5 =
 {
+"pathfinding__manager_8hpp.html":[6,0,0,2,3,2],
+"pathfinding__manager_8hpp_source.html":[6,0,0,2,3,2],
+"performance__utility_8hpp_source.html":[6,0,0,3,3],
+"physics__facade_8hpp.html":[6,0,0,1,9],
+"physics__facade_8hpp_source.html":[6,0,0,1,9],
 "physics__manager_8cpp.html":[6,0,1,2,2,2],
 "physics__manager_8hpp.html":[6,0,0,2,3,3],
 "physics__manager_8hpp_source.html":[6,0,0,2,3,3],

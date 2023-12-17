@@ -115,29 +115,34 @@ $(document).ready(function(){initNavTree('level__manager_8hpp_source.html',''); 
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::string levelFileExtension;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    nlohmann::json CreateGameObjectJson(<a class="code" href="classGameObject.html">GameObject</a> &amp;gameObject);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    nlohmann::json CreateCameraJson(<a class="code" href="classCamera.html">Camera</a> &amp;camera);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="classLevelManager.html#ad5ac2fabd41123bbd92980940a59d744">LevelManager</a>(std::shared_ptr&lt;SceneManager&gt; &amp;sManager, std::shared_ptr&lt;PrefabManager&gt; &amp;pManager,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                 std::shared_ptr&lt;JSONHandler&gt; &amp;jReader);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classLevelManager.html#a72ca9c27cc6b85143e20f83c520d1215">   87</a></span>&#160;    <a class="code" href="classLevelManager.html#a72ca9c27cc6b85143e20f83c520d1215">~LevelManager</a>();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLevelManager.html#afcddc0b0e02aa2c19fa407a5abe7e289">RegisterLevel</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, std::string filePath);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLevelManager.html#adb32f1857dfd97ed0a12be79b78704b1">LoadLevel</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    std::string <a class="code" href="classLevelManager.html#a787c9ca015086d03b1d4ebea874f5443">SaveLevel</a>(std::string &amp;directory, std::string &amp;filename);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_LEVEL_MANAGER_HPP</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">int</span> currentLevelID; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    nlohmann::json CreateGameObjectJson(<a class="code" href="classGameObject.html">GameObject</a> &amp;gameObject);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    nlohmann::json CreateCameraJson(<a class="code" href="classCamera.html">Camera</a> &amp;camera);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classLevelManager.html#ad5ac2fabd41123bbd92980940a59d744">LevelManager</a>(std::shared_ptr&lt;SceneManager&gt; &amp;sManager, std::shared_ptr&lt;PrefabManager&gt; &amp;pManager,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                 std::shared_ptr&lt;JSONHandler&gt; &amp;jReader);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classLevelManager.html#a72ca9c27cc6b85143e20f83c520d1215">   89</a></span>&#160;    <a class="code" href="classLevelManager.html#a72ca9c27cc6b85143e20f83c520d1215">~LevelManager</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLevelManager.html#afcddc0b0e02aa2c19fa407a5abe7e289">RegisterLevel</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, std::string filePath);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLevelManager.html#adb32f1857dfd97ed0a12be79b78704b1">LoadLevel</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::string <a class="code" href="classLevelManager.html#a787c9ca015086d03b1d4ebea874f5443">SaveLevel</a>(std::string &amp;directory, std::string &amp;filename);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classLevelManager.html#a1ccfe1cee217c77a29bf238b14d80760">  117</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classLevelManager.html#a1ccfe1cee217c77a29bf238b14d80760">GetCurrentLevelID</a>() { <span class="keywordflow">return</span> currentLevelID; }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;};</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DEFUNBOBENGINE_LEVEL_MANAGER_HPP</span></div>
 <div class="ttc" id="aclassCamera_html"><div class="ttname"><a href="classCamera.html">Camera</a></div><div class="ttdoc">Represents a camera view in the game.</div><div class="ttdef"><b>Definition:</b> camera.hpp:29</div></div>
 <div class="ttc" id="aclassGameObject_html"><div class="ttname"><a href="classGameObject.html">GameObject</a></div><div class="ttdoc">The GameObject class represents an object in the game world.</div><div class="ttdef"><b>Definition:</b> game_object.hpp:35</div></div>
 <div class="ttc" id="aclassLevelManager_html"><div class="ttname"><a href="classLevelManager.html">LevelManager</a></div><div class="ttdoc">Manages the levels of the game.</div><div class="ttdef"><b>Definition:</b> level_manager.hpp:29</div></div>
+<div class="ttc" id="aclassLevelManager_html_a1ccfe1cee217c77a29bf238b14d80760"><div class="ttname"><a href="classLevelManager.html#a1ccfe1cee217c77a29bf238b14d80760">LevelManager::GetCurrentLevelID</a></div><div class="ttdeci">int GetCurrentLevelID()</div><div class="ttdoc">Gets the current level.</div><div class="ttdef"><b>Definition:</b> level_manager.hpp:117</div></div>
 <div class="ttc" id="aclassLevelManager_html_a72ca9c27cc6b85143e20f83c520d1215"><div class="ttname"><a href="classLevelManager.html#a72ca9c27cc6b85143e20f83c520d1215">LevelManager::~LevelManager</a></div><div class="ttdeci">~LevelManager()</div><div class="ttdoc">Deconstructs a LevelManager;.</div></div>
-<div class="ttc" id="aclassLevelManager_html_a787c9ca015086d03b1d4ebea874f5443"><div class="ttname"><a href="classLevelManager.html#a787c9ca015086d03b1d4ebea874f5443">LevelManager::SaveLevel</a></div><div class="ttdeci">std::string SaveLevel(std::string &amp;directory, std::string &amp;filename)</div><div class="ttdoc">Save the level which is the current scene. The intended use is saving a level made using level editor...</div><div class="ttdef"><b>Definition:</b> level_manager.cpp:74</div></div>
+<div class="ttc" id="aclassLevelManager_html_a787c9ca015086d03b1d4ebea874f5443"><div class="ttname"><a href="classLevelManager.html#a787c9ca015086d03b1d4ebea874f5443">LevelManager::SaveLevel</a></div><div class="ttdeci">std::string SaveLevel(std::string &amp;directory, std::string &amp;filename)</div><div class="ttdoc">Save the level which is the current scene. The intended use is saving a level made using level editor...</div><div class="ttdef"><b>Definition:</b> level_manager.cpp:75</div></div>
 <div class="ttc" id="aclassLevelManager_html_ad5ac2fabd41123bbd92980940a59d744"><div class="ttname"><a href="classLevelManager.html#ad5ac2fabd41123bbd92980940a59d744">LevelManager::LevelManager</a></div><div class="ttdeci">LevelManager(std::shared_ptr&lt; SceneManager &gt; &amp;sManager, std::shared_ptr&lt; PrefabManager &gt; &amp;pManager, std::shared_ptr&lt; JSONHandler &gt; &amp;jReader)</div><div class="ttdoc">Construct a new LevelManager;.</div><div class="ttdef"><b>Definition:</b> level_manager.cpp:18</div></div>
 <div class="ttc" id="aclassLevelManager_html_adb32f1857dfd97ed0a12be79b78704b1"><div class="ttname"><a href="classLevelManager.html#adb32f1857dfd97ed0a12be79b78704b1">LevelManager::LoadLevel</a></div><div class="ttdeci">void LoadLevel(int id)</div><div class="ttdoc">Load a level based on the provided id.</div><div class="ttdef"><b>Definition:</b> level_manager.cpp:46</div></div>
 <div class="ttc" id="aclassLevelManager_html_afcddc0b0e02aa2c19fa407a5abe7e289"><div class="ttname"><a href="classLevelManager.html#afcddc0b0e02aa2c19fa407a5abe7e289">LevelManager::RegisterLevel</a></div><div class="ttdeci">void RegisterLevel(int id, std::string filePath)</div><div class="ttdoc">Registers a level.</div><div class="ttdef"><b>Definition:</b> level_manager.cpp:29</div></div>

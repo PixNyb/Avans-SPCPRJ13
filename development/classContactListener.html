@@ -119,14 +119,24 @@ Collaboration diagram for ContactListener:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5361c171c4086933413e229bba9eb219"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContactListener.html#a5361c171c4086933413e229bba9eb219">ContactListener</a> (std::map&lt; std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;, b2Body * &gt; gameObjects)</td></tr>
+<tr class="memdesc:a5361c171c4086933413e229bba9eb219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a contactlistener.  <a href="classContactListener.html#a5361c171c4086933413e229bba9eb219">More...</a><br /></td></tr>
 <tr class="separator:a5361c171c4086933413e229bba9eb219"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a594d18bd52740c2ee88ecbaab281d55c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContactListener.html#a594d18bd52740c2ee88ecbaab281d55c">~ContactListener</a> ()=default</td></tr>
+<tr class="memitem:a594d18bd52740c2ee88ecbaab281d55c"><td class="memItemLeft" align="right" valign="top"><a id="a594d18bd52740c2ee88ecbaab281d55c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContactListener.html#a594d18bd52740c2ee88ecbaab281d55c">~ContactListener</a> ()=default</td></tr>
+<tr class="memdesc:a594d18bd52740c2ee88ecbaab281d55c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs a contactlistener. <br /></td></tr>
 <tr class="separator:a594d18bd52740c2ee88ecbaab281d55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad75eca7244addd81d9761af8e6a72d7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContactListener.html#ad75eca7244addd81d9761af8e6a72d7c">BeginContact</a> (b2Contact *contact) override</td></tr>
+<tr class="memdesc:ad75eca7244addd81d9761af8e6a72d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">executes the defined actions in the gameobjects that corresponds with bodies in the incoming contact object  <a href="classContactListener.html#ad75eca7244addd81d9761af8e6a72d7c">More...</a><br /></td></tr>
 <tr class="separator:ad75eca7244addd81d9761af8e6a72d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12e3afd23843ef1be4721f643706498f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContactListener.html#a12e3afd23843ef1be4721f643706498f">EndContact</a> (b2Contact *contact) override</td></tr>
+<tr class="memdesc:a12e3afd23843ef1be4721f643706498f"><td class="mdescLeft">&#160;</td><td class="mdescRight">executes the defined actions in the gameobjects that corresponds with bodies in the incoming contact object  <a href="classContactListener.html#a12e3afd23843ef1be4721f643706498f">More...</a><br /></td></tr>
 <tr class="separator:a12e3afd23843ef1be4721f643706498f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ab81df48b05868ed96269ed0486a190"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContactListener.html#a1ab81df48b05868ed96269ed0486a190">FindGameObject</a> (b2Body *body)</td></tr>
+<tr class="memitem:a93c0f5b4137de9679d37d601ffb68473"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContactListener.html#a93c0f5b4137de9679d37d601ffb68473">UpdateBodies</a> (std::map&lt; std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;, b2Body * &gt; gameObjects)</td></tr>
+<tr class="memdesc:a93c0f5b4137de9679d37d601ffb68473"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the list of bodies in the contact listener.  <a href="classContactListener.html#a93c0f5b4137de9679d37d601ffb68473">More...</a><br /></td></tr>
+<tr class="separator:a93c0f5b4137de9679d37d601ffb68473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ab81df48b05868ed96269ed0486a190"><td class="memItemLeft" align="right" valign="top"><a id="a1ab81df48b05868ed96269ed0486a190"></a>
+std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContactListener.html#a1ab81df48b05868ed96269ed0486a190">FindGameObject</a> (b2Body *body)</td></tr>
+<tr class="memdesc:a1ab81df48b05868ed96269ed0486a190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the gameobject with a b2body. <br /></td></tr>
 <tr class="separator:a1ab81df48b05868ed96269ed0486a190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -147,38 +157,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructs a contactlistener </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Constructs a contactlistener. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gameObjects</td><td></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a594d18bd52740c2ee88ecbaab281d55c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a594d18bd52740c2ee88ecbaab281d55c">&#9670;&nbsp;</a></span>~ContactListener()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ContactListener::~ContactListener </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Destructs a contactlistener </p>
 
 </div>
 </div>
@@ -206,7 +192,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>executes the defined actions in the gameobjects that corresponds with bodies in the incoming contact object </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>executes the defined actions in the gameobjects that corresponds with bodies in the incoming contact object </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">contact</td><td>is the object that contains the 2 bodies that have come in contact </td></tr>
   </table>
@@ -238,7 +226,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>executes the defined actions in the gameobjects that corresponds with bodies in the incoming contact object </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>executes the defined actions in the gameobjects that corresponds with bodies in the incoming contact object </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">contact</td><td>is the object that contains the 2 bodies that have exited their contact </td></tr>
   </table>
@@ -247,22 +237,29 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1ab81df48b05868ed96269ed0486a190"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ab81df48b05868ed96269ed0486a190">&#9670;&nbsp;</a></span>FindGameObject()</h2>
+<a id="a93c0f5b4137de9679d37d601ffb68473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c0f5b4137de9679d37d601ffb68473">&#9670;&nbsp;</a></span>UpdateBodies()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt; ContactListener::FindGameObject </td>
+          <td class="memname">void ContactListener::UpdateBodies </td>
           <td>(</td>
-          <td class="paramtype">b2Body *&#160;</td>
-          <td class="paramname"><em>body</em></td><td>)</td>
+          <td class="paramtype">std::map&lt; std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;, b2Body * &gt;&#160;</td>
+          <td class="paramname"><em>gameObjects</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Finds the gameobject with a b2body </p>
+
+<p>Updates the list of bodies in the contact listener. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gameObjects</td><td>the new list of objects </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

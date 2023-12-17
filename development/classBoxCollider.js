@@ -1,6 +1,6 @@
 var classBoxCollider =
 [
-    [ "BoxCollider", "classBoxCollider.html#aa8358aaf4f5fae5446ebdf0b303ccce3", null ],
+    [ "BoxCollider", "classBoxCollider.html#a0c22c9c3383148dba9652f9639efff26", null ],
     [ "BoxCollider", "classBoxCollider.html#a50366ba73004ab6dc924c5f3ba81362c", null ],
     [ "Clone", "classBoxCollider.html#a7c1069a79a8c797c8fba3cbfda6c6257", null ],
     [ "Height", "classBoxCollider.html#a077b4b3adeffcfee377d8aa9e719df76", null ],
