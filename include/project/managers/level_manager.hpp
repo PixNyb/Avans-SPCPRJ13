@@ -110,6 +110,10 @@ class LevelManager
      */
     std::string SaveLevel(std::string &directory, std::string &filename);
 
+    /**
+     * @brief Gets the current level
+     * @return int
+     */
     int GetCurrentLevelID() { return currentLevelID; }
 };
 

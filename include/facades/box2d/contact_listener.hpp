@@ -31,34 +31,38 @@ class ContactListener : public b2ContactListener
         gameObjects; ///< The gameobjects that are in the b2world
   public:
     /**
-     * Constructs a contactlistener
+     * @brief Constructs a contactlistener
      * @param gameObjects
      */
     ContactListener(std::map<std::shared_ptr<GameObject>, b2Body *> gameObjects);
 
     /**
-     * Destructs a contactlistener
+     * @brief Destructs a contactlistener
      */
     ~ContactListener() = default;
 
     /**
-     * executes the defined actions in the gameobjects that corresponds with bodies in the incoming
-     * contact object
+     * @brief executes the defined actions in the gameobjects that corresponds with bodies in the
+     * incoming contact object
      * @param contact is the object that contains the 2 bodies that have come in contact
      */
     void BeginContact(b2Contact *contact) override;
 
     /**
-     * executes the defined actions in the gameobjects that corresponds with bodies in the incoming
-     * contact object
+     * @brief executes the defined actions in the gameobjects that corresponds with bodies in the
+     * incoming contact object
      * @param contact is the object that contains the 2 bodies that have exited their contact
      */
     void EndContact(b2Contact *contact) override;
 
+    /**
+     * @brief Updates the list of bodies in the contact listener.
+     * @param gameObjects the new list of objects
+     */
     void UpdateBodies(std::map<std::shared_ptr<GameObject>, b2Body *> gameObjects);
 
     /**
-     * Finds the gameobject with a b2body
+     * @brief Finds the gameobject with a b2body
      */
     std::shared_ptr<GameObject> FindGameObject(b2Body *body);
 };
