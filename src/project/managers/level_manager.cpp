@@ -100,7 +100,8 @@ std::string LevelManager::SaveLevel(std::string &directory, std::string &filenam
     levelJson["objects"] = objects;
 
     // Write the json object to a file and return the resulting file path.
-    auto filePath = jsonHandler->WriteJsonToFile(directory, filename, levelJson);
+    auto fullPath = directory + filename + levelFileExtension;
+    auto filePath = jsonHandler->WriteJsonToFile(fullPath, levelJson);
 
     return filePath;
 }
