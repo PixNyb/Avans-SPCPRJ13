@@ -111,7 +111,10 @@ class LevelManager
     template <typename T>
     void RegisterScene(std::function<std::shared_ptr<Scene>()> instanceFactory)
     {
-        _levelScenes[typeid(T).hash_code()] = {typeid(T).name(), std::move(instanceFactory)};
+        auto name = std::string(typeid(T).name());
+        // Remove the class prefix
+        name = name.substr(name.find_first_of(' ') + 1);
+        _levelScenes[typeid(T).hash_code()] = {name, std::move(instanceFactory)};
     }
 
     /**
