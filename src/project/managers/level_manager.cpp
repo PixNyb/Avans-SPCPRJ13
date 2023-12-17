@@ -50,6 +50,7 @@ void LevelManager::RegisterLevel(int id, std::string filePath)
 
 void LevelManager::LoadLevel(int id)
 {
+    currentLevelID = id;
     auto scene = CreateScene(id);
     // Update the current scene.
     sceneManager->SetScene(scene);
@@ -148,7 +149,8 @@ std::string LevelManager::SaveLevel(std::string &directory, std::string &filenam
     levelJson["objects"] = objects;
 
     // Write the json object to a file and return the resulting file path.
-    auto filePath = jsonHandler->WriteJsonToFile(directory, filename, levelJson);
+    auto fullPath = directory + filename + levelFileExtension;
+    auto filePath = jsonHandler->WriteJsonToFile(fullPath, levelJson);
 
     return filePath;
 }
@@ -304,3 +306,5 @@ void LevelManager::SwapLevel(LevelEntry levelA, LevelEntry levelB)
     levels[levelB.levelID] = newFilePathA.string();
     levels[levelA.levelID] = newFilePathB.string();
 }
+
+int LevelManager::GetCurrentLevelID() { return currentLevelID; }

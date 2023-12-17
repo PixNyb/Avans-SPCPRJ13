@@ -5,12 +5,15 @@ In dit bestand staat uitgebreide documentatie over het gebruik van de DeFunBobEn
 ## Inhoudsopgave
 
 - [Hoe de Engine te gebruiken?](#hoe-de-engine-te-gebruiken)
-    - [Inhoudsopgave](#inhoudsopgave)
-    - [1. Window aanmaken](#1-window-aanmaken)
-    - [2. Level format](#2-level-format)
-    - [3. Physics Simulatie Gebruiken](#3-physics-simulatie-gebruiken)
-    - [4. Input Facades](#4-input-facades)
-    - [5. Contact listeners \& Behaviour Scripts](#5-contact-listeners--behaviour-scripts)
+  - [Inhoudsopgave](#inhoudsopgave)
+  - [1. Window aanmaken](#1-window-aanmaken)
+  - [Sprites aanmaken en renderen](#sprites-aanmaken-en-renderen)
+  - [3. Level format](#3-level-format)
+  - [4. Physics Simulatie Gebruiken](#4-physics-simulatie-gebruiken)
+  - [5. Input Facades](#5-input-facades)
+  - [6. Contact listeners \& Behaviour Scripts](#6-contact-listeners--behaviour-scripts)
+  - [7. HUD (Head-Up Display) aanmaken](#7-hud-head-up-display-aanmaken)
+  - [8. Pathfinding](#8-pathfinding)
 
 ## 1. Window aanmaken
 
@@ -264,14 +267,14 @@ verder onderverdeeld in subcontainers, wat zorgt voor een gestructureerde indeli
                                      GameConstants::General::WINDOW_HEIGHT);
     AddGameObject(hud);
     hud->DrawHud(*engine);
-    hud->SetActive(true);    
-    
+    hud->SetActive(true);
+
     //Het aanmaken van de HUD structuur gebeurt in de hud.cpp.
     // - LayoutType wordt gebruikt voor de horizontale of verticale uitlijning van de ui objecten.
     // - Op de parameter na de layout kan een container worden gehalveerd met een kommagetal.
     // - Anchor wordt gebruikt voor de positie van de ui objecten binnen een container
     // - Point kan worden gebruikt om een offset mee te geven aan alle uiobjecten binnen een container.
-    
+
     // Het aanmaken van een container
     auto containerTop =
         std::make_shared<UIContainer>(LayoutType::HORIZONTAL, 0, Anchor::CENTER, Point(0, 0));
@@ -300,4 +303,20 @@ verder onderverdeeld in subcontainers, wat zorgt voor een gestructureerde indeli
 
     // Daarna het renderen van de HUD met de gemaakte containers
     RenderHud();
+```
+
+## 8. Pathfinding
+
+De pathfinding wordt gedaan door de A* algoritme. De A* algoritme is een algoritme dat de kortste route berekent tussen een start en eindpoint. De verschillende standaardcomponenten zijn als volgt te gebruiken:
+
+```cpp
+    auto floorPathfindable = std::make_shared<Pathfindable>(floor);
+    floor->AddComponent(floorPathfindable);
+    auto blockPathfindable = std::make_shared<Pathfindable>(block);
+    block->AddComponent(blockPathfindable);
+    auto block1Pathfindable = std::make_shared<Pathfindable>(block1);
+    block1->AddComponent(block1Pathfindable);
+
+    auto enemyPathfinding = std::make_shared<Pathfinding>(enemy, "Player");
+    enemy->AddComponent(enemyPathfinding);
 ```

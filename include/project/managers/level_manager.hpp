@@ -70,6 +70,8 @@ class LevelManager
      */
     std::string levelFileExtension;
 
+    int currentLevelID; ///< Resembles the currentLevel
+
     /**
      * @brief Create a json object from a GameObject.
      * @param gameObject The GameObject which is to converted.
@@ -176,6 +178,12 @@ class LevelManager
      * @note Can only swap File levels.
      */
     void SwapLevel(LevelEntry levelA, LevelEntry levelB);
+
+    /**
+     * @brief Gets the current level
+     * @return int
+     */
+    int GetCurrentLevelID();
 };
 
 #endif // DEFUNBOBENGINE_LEVEL_MANAGER_HPP

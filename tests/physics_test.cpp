@@ -29,7 +29,7 @@ TEST(PhysicsTest, TestPhysics)
     Point point{400, 600};
     Transform trs{point, 0, 1};
     auto body = std::make_shared<RigidBody>(10, 1, BodyType::dynamicBody);
-    auto collider = std::make_shared<BoxCollider>();
+    auto collider = std::make_shared<BoxCollider>(obj);
     collider->Width(50);
     collider->Height(50);
     obj->AddComponent(body);
@@ -41,7 +41,7 @@ TEST(PhysicsTest, TestPhysics)
     Point point1{500, 600};
     Transform trs1{point1, 0, 1};
     auto body1 = std::make_shared<RigidBody>(10, 1, BodyType::dynamicBody);
-    auto collider1 = std::make_shared<CircleCollider>();
+    auto collider1 = std::make_shared<CircleCollider>(obj1);
     collider1->Radius(25);
     obj1->AddComponent(body1);
     obj1->AddComponent(collider1);
@@ -52,7 +52,7 @@ TEST(PhysicsTest, TestPhysics)
     Point point2{0, 20};
     Transform trs2{point2, 0, 1};
     auto body2 = std::make_shared<RigidBody>(10, 1, BodyType::staticBody);
-    auto collider2 = std::make_shared<BoxCollider>();
+    auto collider2 = std::make_shared<BoxCollider>(obj2);
     collider2->Width(800);
     collider2->Height(20);
     obj2->AddComponent(body2);

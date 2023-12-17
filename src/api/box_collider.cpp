@@ -10,12 +10,18 @@
  */
 #include "box_collider.hpp"
 
-BoxCollider::BoxCollider() : width(0.0), height(0.0)
-{}
+#include <utility>
+
+BoxCollider::BoxCollider(std::weak_ptr<GameObject> parent) : width(0.0), height(0.0)
+{
+    this->parent = std::move(parent);
+}
 
 std::shared_ptr<Component> BoxCollider::Clone(std::weak_ptr<GameObject> parent)
 {
-    return std::make_shared<BoxCollider>(*this);
+    auto collider = std::make_shared<BoxCollider>(*this);
+    collider->parent = parent;
+    return collider;
 }
 
 BoxCollider::BoxCollider(const BoxCollider &other) : Collider(other)
