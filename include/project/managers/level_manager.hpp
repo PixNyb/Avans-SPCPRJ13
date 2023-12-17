@@ -164,6 +164,15 @@ class LevelManager
      * @return A map consisting of level id's and file paths.
      */
     std::vector<LevelEntry> GetLevels();
+
+    /**
+     * @brief Swaps two file levels.
+     * @param levelIDa levelIDa
+     * @param levelIDb levelIDb
+     *
+     * @note Can only swap File levels.
+     */
+    void SwapLevel(LevelEntry levelA, LevelEntry levelB);
 };
 
 #endif // DEFUNBOBENGINE_LEVEL_MANAGER_HPP

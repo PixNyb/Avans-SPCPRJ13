@@ -263,3 +263,40 @@ std::vector<LevelEntry> LevelManager::GetLevels()
 
     return entries;
 }
+
+void LevelManager::SwapLevel(LevelEntry levelA, LevelEntry levelB)
+{
+    // Prevent swapping of non-file levels
+    if (levelA.levelType != LevelType::File || levelB.levelType != LevelType::File)
+    {
+        return;
+    }
+
+    auto levelPathA = std::filesystem::weakly_canonical(levels[levelA.levelID]);
+    auto levelPathB = std::filesystem::weakly_canonical(levels[levelB.levelID]);
+
+    // Regular expression to match the required filename format
+    std::regex filenamePattern(R"((\d+)_(.*)\.json)");
+
+    auto fileNameA = levelPathA.filename().string();
+    auto fileNameB = levelPathB.filename().string();
+
+    // If both filenames match the pattern
+    std::smatch matchA, matchB;
+    if (std::regex_search(fileNameA, matchA, filenamePattern) &&
+        std::regex_search(fileNameB, matchB, filenamePattern))
+    {
+        // Swap the IDs of the file names, format is ID_Name.json
+        std::string newFilenameA = fmt::format("{}_{}.json", matchB[1].str(), matchA[2].str());
+        std::string newFilenameB = fmt::format("{}_{}.json", matchA[1].str(), matchB[2].str());
+
+        // Update the level paths with the swapped filenames
+        auto temp = levels[levelA.levelID];
+        levels[levelA.levelID] = levels[levelB.levelID];
+        levels[levelB.levelID] = temp;
+    }
+    else
+    {
+        throw std::runtime_error("Could not swap levels.");
+    }
+}
