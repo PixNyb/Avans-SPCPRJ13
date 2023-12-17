@@ -281,22 +281,26 @@ void LevelManager::SwapLevel(LevelEntry levelA, LevelEntry levelB)
     auto fileNameA = levelPathA.filename().string();
     auto fileNameB = levelPathB.filename().string();
 
-    // If both filenames match the pattern
+    // If both filenames don't match the pattern throw an error
     std::smatch matchA, matchB;
-    if (std::regex_search(fileNameA, matchA, filenamePattern) &&
-        std::regex_search(fileNameB, matchB, filenamePattern))
-    {
-        // Swap the IDs of the file names, format is ID_Name.json
-        std::string newFilenameA = fmt::format("{}_{}.json", matchB[1].str(), matchA[2].str());
-        std::string newFilenameB = fmt::format("{}_{}.json", matchA[1].str(), matchB[2].str());
-
-        // Update the level paths with the swapped filenames
-        auto temp = levels[levelA.levelID];
-        levels[levelA.levelID] = levels[levelB.levelID];
-        levels[levelB.levelID] = temp;
-    }
-    else
+    if (!std::regex_search(fileNameA, matchA, filenamePattern) ||
+        !std::regex_search(fileNameB, matchB, filenamePattern))
     {
         throw std::runtime_error("Could not swap levels.");
     }
+
+    // Swap the IDs of the file names, format is ID_Name.json
+    std::string newFilenameA = fmt::format("{}_{}.json", matchB[1].str(), matchA[2].str());
+    std::string newFilenameB = fmt::format("{}_{}.json", matchA[1].str(), matchB[2].str());
+
+    // Rename the files
+    auto newFilePathA = levelPathA.parent_path() / newFilenameA;
+    auto newFilePathB = levelPathB.parent_path() / newFilenameB;
+
+    std::filesystem::rename(levelPathA, newFilePathA);
+    std::filesystem::rename(levelPathB, newFilePathB);
+
+    // Update the level paths with the swapped filepaths
+    levels[levelB.levelID] = newFilePathA.string();
+    levels[levelA.levelID] = newFilePathB.string();
 }
