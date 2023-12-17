@@ -52,6 +52,7 @@ void SDLWindow::Destroy()
 
 void SDLWindow::CreateRenderer() {
     if (SdlWindow){
+        SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "nearest");
         SdlRenderer = SDL_CreateRenderer(SdlWindow, -1, SDL_RENDERER_ACCELERATED);
         if (!SdlRenderer) {
             std::cerr << "Renderer could not be created! SDL Error: " << SDL_GetError() << std::endl;

@@ -27,6 +27,9 @@
  */
 class Collider : public Component
 {
+  protected:
+    std::weak_ptr<GameObject> parent; ///< The parent of this collider
+
   public:
     /**
      * @brief Make a clone of the component.
@@ -34,6 +37,12 @@ class Collider : public Component
      * @return The cloned component.
      */
     std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override = 0;
+
+    /**
+     * @brief Gets the parent of this collider
+     * @return weak_ptr
+     */
+    std::weak_ptr<GameObject> GetParent() { return parent; }
 };
 
 #endif // COLLIDER2D_H_

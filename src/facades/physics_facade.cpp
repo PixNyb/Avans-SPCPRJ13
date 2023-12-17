@@ -63,6 +63,30 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject)
     bodyDef.angle = static_cast<float>(transform.rotation);
     auto body = world->CreateBody(&bodyDef);
     body->SetGravityScale(rigidbody->GetGravityScale());
+    // create circles
+    for (auto &circleCollider : (*gameObject).GetComponents<CircleCollider>())
+    {
+        b2CircleShape circleShape{};
+        circleShape.m_radius = static_cast<float>(circleCollider->Radius() * PixelToMeter);
+        double area =
+            (*gameObject).GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody
+                ? ((circleCollider->Radius() * circleCollider->Radius()) * 2)
+                : 0.0f;
+        SetFixture(body, &circleShape, (*gameObject).GetComponent<RigidBody>(), area);
+    }
+
+    // create boxes
+    for (auto &boxCollider : (*gameObject).GetComponents<BoxCollider>())
+    {
+        b2PolygonShape boxShape{};
+        boxShape.SetAsBox(static_cast<float>(boxCollider->Width() / 2 * PixelToMeter),
+                          static_cast<float>(boxCollider->Height() / 2 * PixelToMeter));
+        double area =
+            (*gameObject).GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody
+                ? (boxCollider->Width() * boxCollider->Height())
+                : 0.0f;
+        SetFixture(body, &boxShape, (*gameObject).GetComponent<RigidBody>(), area);
+    }
     bodies.insert(std::pair<std::shared_ptr<GameObject>, b2Body *>(gameObject, body));
 }
 
@@ -87,39 +111,7 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
             MakeBody(gameObject);
     }
 
-    // add fixtures for every body
-    for (auto object_pair = bodies.begin(); object_pair != bodies.end(); ++object_pair)
-    {
-        auto game_object = object_pair->first;
-        auto body = object_pair->second;
-
-        // create circles
-        for (auto &circleCollider : game_object->GetComponents<CircleCollider>())
-        {
-            b2CircleShape circleShape{};
-            circleShape.m_radius = static_cast<float>(circleCollider->Radius() * PixelToMeter);
-            double area =
-                game_object->GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody
-                    ? ((circleCollider->Radius() * circleCollider->Radius()) * 2)
-                    : 0.0f;
-            SetFixture(body, &circleShape, game_object->GetComponent<RigidBody>(), area);
-        }
-
-        // create boxes
-        for (auto &boxCollider : game_object->GetComponents<BoxCollider>())
-        {
-            b2PolygonShape boxShape{};
-            boxShape.SetAsBox(static_cast<float>(boxCollider->Width() / 2 * PixelToMeter),
-                              static_cast<float>(boxCollider->Height() / 2 * PixelToMeter));
-            double area =
-                game_object->GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody
-                    ? (boxCollider->Width() * boxCollider->Height())
-                    : 0.0f;
-            SetFixture(body, &boxShape, game_object->GetComponent<RigidBody>(), area);
-        }
-    }
-
-    auto *contactListener = new ContactListener(bodies);
+    contactListener = new ContactListener(bodies);
     world->SetContactListener(contactListener);
 }
 
@@ -133,6 +125,12 @@ void PhysicsFacade::Step()
     // if not delete all the bodies that have been flagged for delete
     DeleteBodies();
     world->Step(static_cast<float>(time), VelocityIterations, PositionIterations);
+    if (!bodiesToBeAdded.empty())
+    {
+        for (auto &body : bodiesToBeAdded)
+            MakeBody(body);
+        bodiesToBeAdded.clear();
+    }
     if (!newObjects.empty())
     {
         // if so, clear the bodies from the map and set them again with the new objects
@@ -174,6 +172,7 @@ void PhysicsFacade::Step()
             debugRenderer.Start();
         ShowDebug();
     }
+    contactListener->UpdateBodies(bodies);
 }
 
 void PhysicsFacade::SetFixture(b2Body *body, b2Shape *shape,
@@ -282,6 +281,11 @@ Point PhysicsFacade::GetVelocity(const std::shared_ptr<GameObject> &gameObject)
     b2Body *body = GetBodyByObject(gameObject);
     auto velocity = body->GetLinearVelocity();
     return {velocity.x, velocity.y};
+}
+
+void PhysicsFacade::AddBody(std::shared_ptr<GameObject> &gameObject)
+{
+    bodiesToBeAdded.push_back(gameObject);
 }
 
 PhysicsFacade::~PhysicsFacade() = default;

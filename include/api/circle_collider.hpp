@@ -31,7 +31,7 @@ class CircleCollider : public Collider
     /**
      * @brief Constructs a new CircleCollider.
      */
-    CircleCollider();
+    CircleCollider(std::weak_ptr<GameObject> parent);
 
     /**
      * @brief Copy constructor for CircleCollider.
@@ -41,11 +41,11 @@ class CircleCollider : public Collider
      */
     CircleCollider(const CircleCollider &other);
 
-   /**
-    * @brief Make a clone of the component.
-    * @param parent The parent GameObject.
-    * @return The cloned component.
-    */
+    /**
+     * @brief Make a clone of the component.
+     * @param parent The parent GameObject.
+     * @return The cloned component.
+     */
     std::shared_ptr<Component> Clone(std::weak_ptr<GameObject> parent) override;
 
     /**

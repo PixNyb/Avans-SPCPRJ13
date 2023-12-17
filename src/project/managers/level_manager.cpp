@@ -45,6 +45,7 @@ void LevelManager::RegisterLevel(int id, std::string filePath)
 
 void LevelManager::LoadLevel(int id)
 {
+    currentLevelID = id;
     auto path = levels.find(id);
 
     // No level found with the following id.
