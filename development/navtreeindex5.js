@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"pathfinding_8hpp.html":[6,0,0,0,19],
+"pathfinding_8hpp_source.html":[6,0,0,0,19],
 "pathfinding__manager_8hpp.html":[6,0,0,2,3,2],
 "pathfinding__manager_8hpp_source.html":[6,0,0,2,3,2],
 "performance__utility_8hpp_source.html":[6,0,0,3,3],
