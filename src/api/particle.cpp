@@ -1,7 +1,7 @@
 #include "particle.hpp"
 
 Particle::Particle()
-    : position(0.0, 0.0), velocity(0.0, 0.0), lifetime(std::chrono::milliseconds(0)), texture("")
+    : position(0.0, 0.0), velocity(0.0, 0.0), lifetime(0.5f), texture("")
 {
 }
 
@@ -13,4 +13,9 @@ void Particle::Update()
 std::shared_ptr<Component> Particle::Clone(std::weak_ptr<GameObject> parent)
 {
     return std::make_shared<Particle>(*this);
+}
+
+bool Particle::IsAlive() const
+{
+    return lifetime > 0;
 }

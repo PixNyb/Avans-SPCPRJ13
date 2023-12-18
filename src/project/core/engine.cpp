@@ -58,11 +58,7 @@ Engine::Engine()
 
     container.registerInstance<PropertyManager>(std::make_shared<PropertyManager>(jsonHandler));
 
-    Texture *texture = new Texture("");
-    auto particleManager = std::make_shared<ParticleManager>(1000, *texture, false);
-    particleManager->SetEmitter({200, 200});
-
-    container.registerInstance(particleManager, InstanceScope::Public);
+    container.registerInstance<ParticleManager>(std::make_shared<ParticleManager>());
 
     // Facades
     container.registerInstance<IInputFacade>(std::make_shared<SDLInputFacade>());

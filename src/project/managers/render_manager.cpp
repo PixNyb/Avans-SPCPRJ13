@@ -23,6 +23,8 @@
 #include "shape_component.hpp"
 #include "shape_renderer.hpp"
 #include "text.hpp"
+#include "particle_manager.hpp"
+#include "time.hpp"
 #include <map>
 #include <sprite.hpp>
 
@@ -234,6 +236,18 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
         }
     }
 
-    auto particle = gameObjectPointer.lock()->GetComponent<Particle>();
-    gfx.DrawParticle(particle->position.x, particle->position.y, particle->color);
+    auto engine = Engine::GetInstance();
+    auto particleManager = engine->Get<ParticleManager>();
+    particleManager->Update(Time::GetDeltaTime()); // Update particle states
+
+    for (const auto& particle : particleManager->GetParticles()) {
+        if (particle->IsAlive()) { // Ensure the particle is still alive
+            gfx.DrawParticle(particle->GetPosition().x, particle->GetPosition().y, particle->GetColor());
+
+            // handle sprites below
+        }
+    }
+
+
+
 }

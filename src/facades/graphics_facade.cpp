@@ -516,13 +516,4 @@ void GraphicsFacade::DrawParticle(double posX, double posY, uint8_t alpha)
 
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, alpha);
     SDL_RenderDrawPoint(renderer, posX, posY);
-
-    //    auto particleManager = Get<ParticleManager>();
-    //
-    //    for (std::size_t i = 0; i < particleManager.vertices.size(); ++i)
-    //    {
-    //    SDL_SetRenderDrawColor(renderer, 255, 255, 255, particleManager.alphas[i]);
-    //    SDL_RenderDrawPoint(renderer, static_cast<int>(particleManager.vertices[i].x),
-    //                        static_cast<int>(particleManager.vertices[i].y));
-    //    }
 }
