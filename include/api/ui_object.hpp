@@ -30,8 +30,9 @@
 class UIObject : public GameObject
 {
   private:
-    float width;  ///< The width of the UI object.
-    float height; ///< The height of the UI object.
+    float width;              ///< The width of the UI object.
+    float height;             ///< The height of the UI object.
+    bool useRelativePosition; ///< Whether relative position is used.
   public:
     /**
      * @brief Default constructor for UIObject.
@@ -75,6 +76,18 @@ class UIObject : public GameObject
      * @return The height of the UI object.
      */
     [[nodiscard]] float GetHeight() const;
+
+    /**
+     * @brief Sets whether the relative position is to be used.
+     * @param status The new value.
+     */
+    void SetUseRelativePosition(bool status);
+
+    /**
+     * @brief Gets whether the relative position is to be used.
+     * @return Whether the relative position is to be used.
+     */
+    bool GetUseRelativePosition() const;
 };
 
 #endif // AVANS_SPCPRJ13_UIOBJECT_H
