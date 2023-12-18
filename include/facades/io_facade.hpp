@@ -208,7 +208,7 @@ class IOFacade
      * @param scale The scale factor on the axis.
      */
     virtual void RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle, bool flipX,
-                                  bool flipY, float scale) = 0;
+                                  bool flipY, float scale, int angle) = 0;
 
     /**
      * @brief Gets the cached SDL_Texture for a Texture object.

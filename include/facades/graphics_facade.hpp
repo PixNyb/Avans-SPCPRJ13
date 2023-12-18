@@ -188,7 +188,7 @@ class GraphicsFacade : public IOFacade
      * @param scale The scale factor on the axis
      */
     void RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle, bool flipX, bool flipY,
-                          float scale) override;
+                          float scale, int angle) override;
 
     /**
      * @brief Gets the cached texture if it exists.
