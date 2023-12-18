@@ -18,6 +18,7 @@
 
 #include "behaviour_script.hpp"
 #include "color.hpp"
+#include "texture.hpp"
 #include <string>
 
 /**
@@ -39,6 +40,7 @@ class Sprite : public BehaviourScript
     int orderInLayer;            ///< The specific order within the sorting layer.
     int frameWidth, frameHeight; ///< For the spritesheet
     bool isTiled = false;
+    std::shared_ptr<Texture> texture; ///< The texture of the sprite
 
   public:
     /**
@@ -115,6 +117,22 @@ class Sprite : public BehaviourScript
      * @return tiled bool
      */
     bool GetIsTiled() { return isTiled; }
+
+    /**
+     * @brief Sets the texture for this Sprite object.
+     * @param texture The shared pointer to the texture.
+     */
+    void SetTexture(const std::shared_ptr<Texture>& texture) {
+        this->texture = texture;
+    }
+
+    /**
+     * @brief Gets the texture associated with this sprite.
+     * @return Shared pointer to the texture.
+     */
+    std::shared_ptr<Texture> GetTexture() const {
+        return texture;
+    }
 };
 
 #endif // AVANS_SPCPRJ13_SPRITE_H

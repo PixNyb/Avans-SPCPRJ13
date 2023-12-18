@@ -120,8 +120,6 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
     {
         auto animatorComponent = gameObject->GetComponent<Animator>();
 
-        Size spriteSize = gfx.GetSpriteSize(spriteComponent->GetSprite());
-
         // Adjust sprite size to match parent's dimensions (if parent has a collider)
         Size parentSize;
         if (auto boxCollider = gameObject->GetComponent<BoxCollider>())
@@ -140,7 +138,13 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
         }
         else
         {
-            parentSize = spriteSize; // Use sprite's own size if no parent collider
+            Size spriteSize = spriteComponent->GetTexture()->GetSize();
+            // if spriteSize is not set, use the sprite's own size
+            if (spriteSize.height == 0 && spriteSize.width == 0)
+                spriteSize = gfx.GetSpriteSize(spriteComponent->GetSprite());
+            else
+                parentSize = Size(spriteSize.height, spriteSize.width);
+
         }
 
         // Create a Rectangle object representing the position and size of the sprite

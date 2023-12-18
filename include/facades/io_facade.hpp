@@ -222,7 +222,7 @@ class IOFacade
      * @param texture The Texture object to create the SDL_Texture from.
      * @return The created SDL_Texture.
      */
-    virtual SDL_Texture *CreateSDLTextureFromTexture(const Texture &texture) = 0;
+    virtual SDL_Texture *CreateSDLTextureFromTexture(Texture &texture) = 0;
 
     /**
      * @brief Caches an SDL_Texture for a Texture object.
