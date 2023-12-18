@@ -505,7 +505,7 @@ void GraphicsFacade::DrawSpriteSheetFrame(const Texture &texture, const Rectangl
     }
 }
 
-void GraphicsFacade::DrawParticle(double posX, double posY, uint8_t alpha)
+void GraphicsFacade::DrawParticle(const Point &position, uint8_t alpha)
 {
     auto renderer = SdlWindow->GetRenderer();
     if (!renderer)
@@ -515,5 +515,5 @@ void GraphicsFacade::DrawParticle(double posX, double posY, uint8_t alpha)
     }
 
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, alpha);
-    SDL_RenderDrawPoint(renderer, posX, posY);
+    SDL_RenderDrawPoint(renderer, static_cast<int>(position.x), static_cast<int>(position.y));
 }

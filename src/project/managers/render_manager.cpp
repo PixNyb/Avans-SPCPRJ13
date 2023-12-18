@@ -20,10 +20,10 @@
 #include "graphics_facade.hpp"
 #include "managers/scene_manager.hpp"
 #include "particle.hpp"
+#include "particle_manager.hpp"
 #include "shape_component.hpp"
 #include "shape_renderer.hpp"
 #include "text.hpp"
-#include "particle_manager.hpp"
 #include "time.hpp"
 #include <map>
 #include <sprite.hpp>
@@ -240,14 +240,11 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
     auto particleManager = engine->Get<ParticleManager>();
     particleManager->Update(Time::GetDeltaTime()); // Update particle states
 
-    for (const auto& particle : particleManager->GetParticles()) {
-        if (particle->IsAlive()) { // Ensure the particle is still alive
-            gfx.DrawParticle(particle->GetPosition().x, particle->GetPosition().y, particle->GetColor());
-
-            // handle sprites below
+    for (const auto &particle : particleManager->GetParticles())
+    {
+        if (particle->IsAlive())
+        { // Ensure the particle is still alive
+            gfx.DrawParticle(particle->GetPosition(), particle->GetColor());
         }
     }
-
-
-
 }
