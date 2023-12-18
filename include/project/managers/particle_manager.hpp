@@ -13,36 +13,22 @@
 #ifndef DEFUNBOBENGINE_PARTICLE_MANAGER_HPP
 #define DEFUNBOBENGINE_PARTICLE_MANAGER_HPP
 
-#include "particle.hpp"
+#include "particles.hpp"
 #include "sprite.hpp"
 #include <chrono>
 #include <memory>
 #include <vector>
 
-class ParticleManager
-{
+class ParticleManager {
 private:
-    void ResetParticles(std::size_t index);
-
-    std::vector<std::unique_ptr<Particle>> particles;
-    std::vector<Sprite> sprites;
-    float lifeTime;
-    Point emitter;
-    bool useSprites;
-    int amountOfParticles;
+    std::vector<Particles> allParticles;
 
 public:
-    ParticleManager();
-    ParticleManager(int amountOfParticles, bool useSprites);
-    void SetEmitter(Point position);
-    void Update(double elapsed);
-    void SetTexture(const Texture& texture);
-    void SetLifeTime(float deltaTime) { this->lifeTime = deltaTime; }
-    void SetAmountOfParticles(int amountOfParticles);
+    void Update();  // Update all Particles instances
 
-    std::vector<Point> GetVertices() const;
-    void Draw();
-    const std::vector<std::unique_ptr<Particle>>& GetParticles() const { return particles; }
+    void AddParticles(const Particles& particles);  // Add new Particles instance
+
+    const std::vector<Particles>& GetAllParticles() const;
 };
 
 #endif // DEFUNBOBENGINE_PARTICLE_MANAGER_HPP
