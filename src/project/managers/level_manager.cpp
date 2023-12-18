@@ -94,8 +94,8 @@ void LevelManager::LoadLevel(LevelEntry &levelEntry)
     {
         try
         {
-            auto [name, fatory] = _levelScenes[levelEntry.levelID];
-            sceneManager->SetScene(fatory());
+            auto [name, factory] = _levelScenes[levelEntry.levelID];
+            sceneManager->SetScene(factory());
         }
         catch (std::exception &e)
         {
@@ -149,7 +149,7 @@ std::string LevelManager::SaveLevel(std::string &directory, std::string &filenam
     levelJson["objects"] = objects;
 
     // Write the json object to a file and return the resulting file path.
-    auto fullPath = directory + filename + levelFileExtension;
+    auto fullPath = directory + filename;
     auto filePath = jsonHandler->WriteJsonToFile(fullPath, levelJson);
 
     return filePath;
@@ -244,9 +244,13 @@ std::vector<LevelEntry> LevelManager::GetLevels()
         auto path = std::filesystem::weakly_canonical(val);
         if (path.has_filename())
         {
-            entry.levelName = path.filename().string();
+            auto filename = path.filename().string();
+            filename = filename.substr(0, filename.find_last_of('.'));
+            std::replace(filename.begin(), filename.end(), '_', ' ');
+            entry.levelName = filename;
         }
 
+        entry.SetAdditionalAttribute("path", path.string());
         entry.levelID = key;
         entry.levelType = LevelType::File;
         entries.push_back(entry);
