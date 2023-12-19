@@ -138,12 +138,11 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
         }
         else
         {
-            Size spriteSize = spriteComponent->GetTexture()->GetSize();
-            // if spriteSize is not set, use the sprite's own size
-            if (spriteSize.height == 0 && spriteSize.width == 0)
-                spriteSize = gfx.GetSpriteSize(spriteComponent->GetSprite());
-            else
-                parentSize = Size(spriteSize.height, spriteSize.width);
+            Size spriteSize;
+            if (spriteComponent->GetTexture() == nullptr) {
+                parentSize = gfx.GetSpriteSize(spriteComponent->GetSprite());
+                std::cout << "Sprite size is not set, using sprite's own size" << std::endl;
+            }
 
         }
 
@@ -177,11 +176,29 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
         }
         else
         {
-            // Create a Texture object for the sprite
-            Texture spriteTexture(spriteComponent->GetSprite());
+            std::string texturePath = spriteComponent->GetSprite();
+            if (texturePath.empty()) {
+                // Handle invalid texture path
+                std::cout << "Invalid texture path" << std::endl;
+                return;
+            }
+            Texture texture;
+
+            // Check if texture is already loaded
+            auto it = textureCache.find(texturePath);
+            if (it == textureCache.end()) {
+                // Texture not in cache, load and cache it
+                Texture newTexture(texturePath);
+                textureCache.emplace(texturePath, std::move(newTexture));
+                texture = newTexture;
+            } else {
+                // Texture already in cache, use it
+                texture = it->second;
+            }
+
 
             // Draw the sprite
-            gfx.DrawSprite(spriteTexture, spriteRect,
+            gfx.DrawSprite(texture, spriteRect,
                            gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedX(),
                            gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY(),
                            gameObjectPointer.lock()->GetTransform().rotation,

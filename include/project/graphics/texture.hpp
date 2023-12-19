@@ -27,7 +27,9 @@
  */
 class Texture {
 public:
-    /**
+    Texture();
+
+/**
      * @brief Constructs a Texture by loading from the specified file path.
      * @param filePath The path to the image file to load as an SDL_Texture.
      */

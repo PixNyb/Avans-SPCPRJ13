@@ -12,6 +12,7 @@
 #ifndef DEFUNBOBENGINE_SRC_PROJECT_MANAGERS_RENDERMANAGER_H
 #define DEFUNBOBENGINE_SRC_PROJECT_MANAGERS_RENDERMANAGER_H
 
+#include <unordered_map>
 #include "game_object.hpp"
 #include "graphics_facade.hpp"
 #include "point.hpp"
@@ -37,6 +38,8 @@ class RenderManager
                 const std::weak_ptr<GameObject> &gameObject);
 
     void DrawTiled();
+
+    std::map<std::string, Texture> textureCache; ///< Map of cached Textures for Texture objects.
 
   public:
     /**

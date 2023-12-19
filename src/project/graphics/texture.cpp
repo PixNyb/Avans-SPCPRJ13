@@ -16,6 +16,10 @@ Texture::Texture(const std::string& filePath) : filePath(filePath) {}
 
 Texture::~Texture() {}
 
+Texture::Texture() {}
+
 const std::string& Texture::getFilePath() const {
     return filePath;
 }
+
+
