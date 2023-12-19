@@ -186,9 +186,10 @@ class GraphicsFacade : public IOFacade
      * @param flipX Whether to flip the texture horizontally.
      * @param flipY Whether to flip the texture vertically.
      * @param scale The scale factor on the axis
+     * @param angle The angle to draw the sprite at.
      */
     void RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle, bool flipX, bool flipY,
-                          float scale) override;
+                          float scale, int angle) override;
 
     /**
      * @brief Gets the cached texture if it exists.
@@ -201,7 +202,7 @@ class GraphicsFacade : public IOFacade
      * @param texture The Texture object to create the SDL_Texture from.
      * @return The created SDL_Texture.
      */
-    SDL_Texture *CreateSDLTextureFromTexture(const Texture &texture) override;
+    SDL_Texture *CreateSDLTextureFromTexture(Texture &texture) override;
 
     /**
      * @brief Caches an SDL_Texture for a Texture object.

@@ -345,15 +345,15 @@ void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle &rectangle, bo
     if (!sdlTexture)
     {
         // If not cached, create it and cache it
-        sdlTexture = CreateSDLTextureFromTexture(texture);
+        sdlTexture = CreateSDLTextureFromTexture(const_cast<Texture &>(texture));
         CacheSDLTexture(texture, sdlTexture);
     }
     // Proceed to draw the sprite using sdlTexture
-    RenderSDLTexture(sdlTexture, rectangle, flipX, flipY, scale);
+    RenderSDLTexture(sdlTexture, rectangle, flipX, flipY, scale, angle);
 }
 
 void GraphicsFacade::RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle, bool flipX,
-                                      bool flipY, float scale)
+                                      bool flipY, float scale, int angle)
 {
     if (!sdlTexture)
     {
@@ -385,7 +385,7 @@ void GraphicsFacade::RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectang
     if (flipX && flipY)
     {
         if (SDL_RenderCopyEx(
-                renderer, sdlTexture, NULL, &sdlRect, 0, NULL,
+                renderer, sdlTexture, NULL, &sdlRect, -static_cast<double>(angle), NULL,
                 static_cast<const SDL_RendererFlip>(SDL_FLIP_HORIZONTAL | SDL_FLIP_VERTICAL)) != 0)
         {
             std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
@@ -393,22 +393,24 @@ void GraphicsFacade::RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectang
     }
     else if (flipX && !flipY)
     {
-        if (SDL_RenderCopyEx(renderer, sdlTexture, NULL, &sdlRect, 0, NULL, SDL_FLIP_HORIZONTAL) !=
-            0)
+        if (SDL_RenderCopyEx(renderer, sdlTexture, NULL, &sdlRect, -static_cast<double>(angle),
+                             NULL, SDL_FLIP_HORIZONTAL) != 0)
         {
             std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
         }
     }
     else if (!flipX && flipY)
     {
-        if (SDL_RenderCopyEx(renderer, sdlTexture, NULL, &sdlRect, 0, NULL, SDL_FLIP_VERTICAL) != 0)
+        if (SDL_RenderCopyEx(renderer, sdlTexture, NULL, &sdlRect, -static_cast<double>(angle),
+                             NULL, SDL_FLIP_VERTICAL) != 0)
         {
             std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
         }
     }
     else
     {
-        if (SDL_RenderCopy(renderer, sdlTexture, NULL, &sdlRect) != 0)
+        if (SDL_RenderCopyEx(renderer, sdlTexture, NULL, &sdlRect, -static_cast<double>(angle),
+                             NULL, SDL_FLIP_NONE) != 0)
         {
             std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
         }
@@ -426,32 +428,33 @@ SDL_Texture *GraphicsFacade::GetCachedSDLTexture(const Texture &texture)
     return nullptr;
 }
 
-SDL_Texture *GraphicsFacade::CreateSDLTextureFromTexture(const Texture &texture)
-{
+SDL_Texture* GraphicsFacade::CreateSDLTextureFromTexture(Texture& texture) {
     auto renderer = SdlWindow->GetRenderer();
-    if (!renderer)
-    {
+    if (!renderer) {
         std::cerr << "Renderer is null" << std::endl;
         return nullptr;
     }
-    SDL_Surface *surface = IMG_Load(texture.getFilePath().c_str());
-    if (!surface)
-    {
+
+    SDL_Surface* surface = IMG_Load(texture.getFilePath().c_str());
+    if (!surface) {
         // Handle error
         return nullptr;
     }
 
-    SDL_Texture *sdlTexture = SDL_CreateTextureFromSurface(renderer, surface);
+    // Set the size in the Texture object
+    texture.SetSize(Size{surface->w, surface->h});
+
+    SDL_Texture* sdlTexture = SDL_CreateTextureFromSurface(renderer, surface);
     SDL_FreeSurface(surface);
 
-    if (!sdlTexture)
-    {
+    if (!sdlTexture) {
         std::cerr << "SDLTexture error" << std::endl;
         return nullptr;
     }
 
     return sdlTexture;
 }
+
 
 void GraphicsFacade::CacheSDLTexture(const Texture &texture, SDL_Texture *sdlTexture)
 {
@@ -479,7 +482,7 @@ void GraphicsFacade::DrawSpriteSheetFrame(const Texture &texture, const Rectangl
     SDL_Texture *sdlTexture = GetCachedSDLTexture(texture);
     if (!sdlTexture)
     {
-        sdlTexture = CreateSDLTextureFromTexture(texture);
+        sdlTexture = CreateSDLTextureFromTexture(const_cast<Texture &>(texture));
         CacheSDLTexture(texture, sdlTexture);
     }
 

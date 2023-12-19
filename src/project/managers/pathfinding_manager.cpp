@@ -37,14 +37,14 @@ void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
         return;
 
     this->_scene = scene;
-    std::cout << "Generating graph for scene: " << scene << std::endl;
+    //    std::cout << "Generating graph for scene: " << scene << std::endl;
 
     // Find the graphGameObject in the scene contents
     std::shared_ptr<GameObject> graphGameObject = nullptr;
     for (const auto &gameObject : scene->contents)
         if (gameObject->GetName() == "Graph-Debug")
         {
-            std::cout << "Found graph game object." << std::endl;
+            //            std::cout << "Found graph game object." << std::endl;
             graphGameObject = gameObject;
 
             if (graphGameObject->GetComponent<ShapeComponent>() == nullptr)
@@ -56,7 +56,7 @@ void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
     // If the graphGameObject is not found, create one at (0, 0)
     if (graphGameObject == nullptr)
     {
-        std::cout << "Graph game object not found, creating one..." << std::endl;
+        //        std::cout << "Graph game object not found, creating one..." << std::endl;
         graphGameObject = std::make_shared<GameObject>("Graph-Debug");
         graphGameObject->SetTransform(Transform(Point(0, 0), 0, 1));
         graphGameObject->AddComponent(std::make_shared<ShapeComponent>());
@@ -72,7 +72,7 @@ void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
 
         if (pathfindable != nullptr && gameObject->IsActive())
         {
-            std::cout << "Found pathfindable: " << gameObject->GetName() << std::endl;
+            //            std::cout << "Found pathfindable: " << gameObject->GetName() << std::endl;
 
             if (!pathfindable->IsGenerated())
                 pathfindable->Generate();
@@ -137,7 +137,7 @@ void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
         }
     }
 
-    std::cout << "Graph nodes: " << _graph->GetNodeCount() << std::endl;
+    //    std::cout << "Graph nodes: " << _graph->GetNodeCount() << std::endl;
 
     // Link the nodes
     for (int i = 0; i < _graph->GetNodeCount(); i++)
@@ -179,9 +179,9 @@ void PathfindingManager::GenerateGraphForScene(std::shared_ptr<Scene> scene)
         }
     }
 
-    std::cout << "Graph links: " << _graph->GetLinkCount() << std::endl;
+    //    std::cout << "Graph links: " << _graph->GetLinkCount() << std::endl;
 
-    std::cout << "Graph generated." << std::endl;
+    //    std::cout << "Graph generated." << std::endl;
 }
 
 std::vector<std::shared_ptr<Node>> PathfindingManager::GetPath(Point start, Point end) const

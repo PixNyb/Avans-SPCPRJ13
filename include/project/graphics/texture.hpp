@@ -27,7 +27,9 @@
  */
 class Texture {
 public:
-    /**
+    Texture();
+
+/**
      * @brief Constructs a Texture by loading from the specified file path.
      * @param filePath The path to the image file to load as an SDL_Texture.
      */
@@ -48,7 +50,13 @@ public:
      * @brief Retrieves the size of the texture.
      * @return Size The size of the texture.
      */
-    [[nodiscard]] Size getSize() const { return size; }
+    [[nodiscard]] Size GetSize() const { return size; }
+
+    /**
+     * @brief Sets the size of the texture.
+     * @param newSize The new size of the texture.
+     */
+    void SetSize(Size newSize) { size = newSize; }
 
 private:
     std::string filePath; ///< The path to the image file to load as an SDL_Texture.
