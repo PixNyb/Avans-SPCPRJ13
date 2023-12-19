@@ -11,6 +11,7 @@
 #include "level_manager.hpp"
 #include "engine.hpp"
 #include "level_name_generator.hpp"
+#include "pathfinding_manager.hpp"
 #include "physics_manager.hpp"
 #include <filesystem>
 #include <fmt/format.h>
@@ -51,6 +52,8 @@ void LevelManager::RegisterLevel(int id, std::string filePath)
 
 void LevelManager::LoadLevel(int id)
 {
+    Engine::GetInstance()->Get<PathfindingManager>()->EnablePathfinding();
+    
     currentLevelID = id;
     auto scene = CreateScene(id);
     // Update the current scene.
@@ -85,6 +88,8 @@ std::shared_ptr<Scene> LevelManager::CreateScene(int id)
 
 void LevelManager::LoadLevel(LevelEntry &levelEntry)
 {
+    Engine::GetInstance()->Get<PathfindingManager>()->EnablePathfinding();
+
     if (levelEntry.levelType == LevelType::File)
     {
         LoadLevel(static_cast<int>(levelEntry.levelID));
