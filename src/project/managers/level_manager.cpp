@@ -10,6 +10,7 @@
 
 #include "level_manager.hpp"
 #include "engine.hpp"
+#include "level_name_generator.hpp"
 #include "physics_manager.hpp"
 #include <filesystem>
 #include <fmt/format.h>
@@ -107,7 +108,7 @@ void LevelManager::LoadLevel(LevelEntry &levelEntry)
     throw std::runtime_error("Could not load level!");
 }
 
-std::string LevelManager::SaveLevel(std::string &directory, std::string &filename)
+std::string LevelManager::SaveLevelFromScene(std::string &directory, std::string &filename)
 {
     auto currentWeakScene = sceneManager->GetScene();
 
@@ -120,9 +121,21 @@ std::string LevelManager::SaveLevel(std::string &directory, std::string &filenam
     return SaveLevel(directory, filename, camera, currentScene->contents);
 }
 
-std::string LevelManager::SaveLevel(std::string &directory, std::string &filename,
-                                    std::shared_ptr<Camera> &camera,
-                                    std::vector<std::shared_ptr<GameObject>> &gameObjects)
+std::string LevelManager::SaveNewLevel(const std::string &directory,
+                                       const std::shared_ptr<Camera> &camera,
+                                       const std::vector<std::shared_ptr<GameObject>> &gameObjects)
+{
+    // Get the highest ID and add 1 to it.
+    auto currentHighestId = std::max_element(levels.begin(), levels.end())->first;
+
+    auto name = LevelNameGenerator::Generate(currentHighestId + 1) + levelFileExtension;
+
+    return SaveLevel(directory, name, camera, gameObjects);
+}
+
+std::string LevelManager::SaveLevel(const std::string &directory, const std::string &filename,
+                                    const std::shared_ptr<Camera> &camera,
+                                    const std::vector<std::shared_ptr<GameObject>> &gameObjects)
 {
     auto levelJson = nlohmann::json::object();
 
@@ -312,3 +325,22 @@ void LevelManager::SwapLevel(LevelEntry levelA, LevelEntry levelB)
 }
 
 int LevelManager::GetCurrentLevelID() { return currentLevelID; }
+
+void LevelManager::DeleteLevel(LevelEntry level)
+{
+    if (level.levelType != LevelType::File)
+        return;
+
+    auto levelPath = std::filesystem::weakly_canonical(levels[level.levelID]);
+    if (!std::filesystem::exists(levelPath))
+        return;
+
+    std::filesystem::remove(levelPath);
+    levels.erase(static_cast<int>(level.levelID));
+}
+
+void LevelManager::RefreshLevels(const std::string &directory)
+{
+    levels.clear();
+    LoadAllFromDirectory(directory);
+}

@@ -145,13 +145,20 @@ class LevelManager
     void LoadAllFromDirectory(const std::string &directory);
 
     /**
+     * @brief Refreshes the levels.
+     *
+     * @note Clears levels and calls LoadAllFromDirectory.
+     */
+    void RefreshLevels(const std::string &directory);
+
+    /**
      * @brief Save the level by the current scene. The intended use is saving a level made.
      * using level editor.
      * @param directory The directory to where the level json is to be saved.
      * @param filename The eventual filename.
      * @return The path of where the level is stored.
      */
-    std::string SaveLevel(std::string &directory, std::string &filename);
+    std::string SaveLevelFromScene(std::string &directory, std::string &filename);
 
     /**
      * @brief Save the level by a list of game objects.
@@ -160,9 +167,18 @@ class LevelManager
      * @param gameObjects The list of game objects which are to be saved.
      * @return The path of where the level is stored.
      */
-    std::string SaveLevel(std::string &directory, std::string &filename,
-                          std::shared_ptr<Camera> &camera,
-                          std::vector<std::shared_ptr<GameObject>> &gameObjects);
+    std::string SaveLevel(const std::string &directory, const std::string &filename,
+                          const std::shared_ptr<Camera> &camera,
+                          const std::vector<std::shared_ptr<GameObject>> &gameObjects);
+
+    /**
+     * @brief Saves a new level by a list of game objects.
+     * @param camera
+     * @param gameObjects The list of game objects which are to be saved.
+     * @return The path of where the level is stored.
+     */
+    std::string SaveNewLevel(const std::string &directory, const std::shared_ptr<Camera> &camera,
+                             const std::vector<std::shared_ptr<GameObject>> &gameObjects);
 
     /**
      * @brief Get the Level id's and file paths.
@@ -178,6 +194,12 @@ class LevelManager
      * @note Can only swap File levels.
      */
     void SwapLevel(LevelEntry levelA, LevelEntry levelB);
+
+    /**
+     * @brief Deletes a level.
+     * @param level The level to delete.
+     */
+    void DeleteLevel(LevelEntry level);
 
     /**
      * @brief Gets the current level
