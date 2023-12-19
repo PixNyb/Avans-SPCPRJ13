@@ -47,10 +47,11 @@ class Particles : public BehaviourScript
   private:
     std::vector<Particle> particles;
     Point emitterPosition;
+    std::weak_ptr<GameObject> parent;
 
   public:
     Particles(int count, float lifetime, const Point &initialPosition, const Color &color,
-              const ParticleType &particleType);
+              const ParticleType &particleType, std::weak_ptr<GameObject> parent);
 
     void OnUpdate() override;
     void SetEmitterPosition(const Point &position);

@@ -5,10 +5,10 @@
 #include "time.hpp"
 
 Particles::Particles(int count, float lifetime, const Point &initialPosition, const Color &color,
-                     const ParticleType &particleType)
+                     const ParticleType &particleType, std::weak_ptr<GameObject> parent)
     : emitterPosition(initialPosition)
 {
-
+    this->parent = parent;
     particles.resize(count);
     for (auto &particle : particles)
     {
@@ -39,7 +39,6 @@ void Particles::OnUpdate()
                 particle.lifetime -= deltaTime;
                 break;
             }
-
             if (particle.lifetime <= 0)
             {
                 // Reset the particle to start over again
@@ -53,7 +52,9 @@ void Particles::SetEmitterPosition(const Point &position) { emitterPosition = po
 
 std::shared_ptr<Component> Particles::Clone(std::weak_ptr<GameObject> parent)
 {
-    return std::make_shared<Particles>(*this);
+    auto clone = std::make_shared<Particles>(*this);
+    clone->parent = parent;
+    return clone;
 }
 
 void Particles::ResetParticle(Particle &particle)

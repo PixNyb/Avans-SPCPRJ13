@@ -122,7 +122,8 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
     if (spriteComponent)
     {
         std::string texturePath = spriteComponent->GetSprite();
-        if (texturePath.empty()) {
+        if (texturePath.empty())
+        {
             // Handle invalid texture path
             std::cout << "Invalid texture path" << std::endl;
             return;
@@ -131,16 +132,18 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
 
         // Check if texture is already loaded
         auto it = textureCache.find(texturePath);
-        if (it == textureCache.end()) {
+        if (it == textureCache.end())
+        {
             // Texture not in cache, load and cache it
             auto newTexture = std::make_unique<Texture>(texturePath);
-            texture = newTexture.get();  // Keep a raw pointer for immediate use
+            texture = newTexture.get(); // Keep a raw pointer for immediate use
             textureCache.emplace(texturePath, std::move(newTexture));
-        } else {
+        }
+        else
+        {
             // Texture already in cache, use it
             texture = it->second.get();
         }
-
 
         auto animatorComponent = gameObject->GetComponent<Animator>();
 
@@ -165,7 +168,9 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
             parentSize = gfx.GetSpriteSize(spriteComponent->GetSprite());
             texture->SetSize(parentSize);
             std::cout << texture->GetSize().width << " " << texture->GetSize().height << std::endl;
-        } else {
+        }
+        else
+        {
             parentSize = texture->GetSize();
         }
 
@@ -266,19 +271,15 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
         }
     }
 
-    auto engine = Engine::GetInstance();
-    auto particleManager = engine->Get<ParticleManager>();
-    particleManager->Update(); // Update particle states
-
-    for (const auto &particles : particleManager->GetAllParticles())
+    auto particleComponent = gameObject->GetComponent<Particles>();
+    if (particleComponent)
     {
-        for (const auto &particle : particles.GetParticles())
+        particleComponent->SetEmitterPosition(relCamPos);
+        for (const auto &particle : particleComponent->GetParticles())
         {
             if (particle.isAlive)
             { // Ensure the particle is still alive
-                gfx.DrawParticle(cameraPoint.x - particle.position.x,
-                                 cameraPoint.y - particle.position.y, particle.color);
-
+                gfx.DrawParticle(particle.position.x, particle.position.y, particle.color);
                 // Handle sprites below if needed
             }
         }
