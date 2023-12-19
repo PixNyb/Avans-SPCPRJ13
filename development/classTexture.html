@@ -110,9 +110,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae78d7131af5bafebf8913ba7d0523aed"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTexture.html#ae78d7131af5bafebf8913ba7d0523aed">getFilePath</a> () const</td></tr>
 <tr class="memdesc:ae78d7131af5bafebf8913ba7d0523aed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the underlying SDL_Texture pointer.  <a href="classTexture.html#ae78d7131af5bafebf8913ba7d0523aed">More...</a><br /></td></tr>
 <tr class="separator:ae78d7131af5bafebf8913ba7d0523aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a325976a8dc4d45309c345238b9e74f21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSize.html">Size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTexture.html#a325976a8dc4d45309c345238b9e74f21">getSize</a> () const</td></tr>
-<tr class="memdesc:a325976a8dc4d45309c345238b9e74f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the size of the texture.  <a href="classTexture.html#a325976a8dc4d45309c345238b9e74f21">More...</a><br /></td></tr>
-<tr class="separator:a325976a8dc4d45309c345238b9e74f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6032740b4d0e47af3e96fe2747fb5f73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSize.html">Size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTexture.html#a6032740b4d0e47af3e96fe2747fb5f73">GetSize</a> () const</td></tr>
+<tr class="memdesc:a6032740b4d0e47af3e96fe2747fb5f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the size of the texture.  <a href="classTexture.html#a6032740b4d0e47af3e96fe2747fb5f73">More...</a><br /></td></tr>
+<tr class="separator:a6032740b4d0e47af3e96fe2747fb5f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9cffd787be929762a3bd44f63ad65b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTexture.html#ad9cffd787be929762a3bd44f63ad65b0">SetSize</a> (<a class="el" href="structSize.html">Size</a> newSize)</td></tr>
+<tr class="memdesc:ad9cffd787be929762a3bd44f63ad65b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the size of the texture.  <a href="classTexture.html#ad9cffd787be929762a3bd44f63ad65b0">More...</a><br /></td></tr>
+<tr class="separator:ad9cffd787be929762a3bd44f63ad65b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages an SDL_Texture loaded from a file. </p>
@@ -165,8 +168,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a325976a8dc4d45309c345238b9e74f21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a325976a8dc4d45309c345238b9e74f21">&#9670;&nbsp;</a></span>getSize()</h2>
+<a id="a6032740b4d0e47af3e96fe2747fb5f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6032740b4d0e47af3e96fe2747fb5f73">&#9670;&nbsp;</a></span>GetSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,7 +178,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structSize.html">Size</a> Texture::getSize </td>
+          <td class="memname"><a class="el" href="structSize.html">Size</a> Texture::GetSize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -190,6 +193,40 @@ Public Member Functions</h2></td></tr>
 
 <p>Retrieves the size of the texture. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structSize.html" title="Represents a width and height.">Size</a> The size of the texture. </dd></dl>
+
+</div>
+</div>
+<a id="ad9cffd787be929762a3bd44f63ad65b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9cffd787be929762a3bd44f63ad65b0">&#9670;&nbsp;</a></span>SetSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Texture::SetSize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structSize.html">Size</a>&#160;</td>
+          <td class="paramname"><em>newSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the size of the texture. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newSize</td><td>The new size of the texture. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

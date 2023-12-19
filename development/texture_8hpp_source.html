@@ -98,25 +98,29 @@ $(document).ready(function(){initNavTree('texture_8hpp_source.html',''); initRes
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classTexture.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTexture.html">Texture</a> {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classTexture.html#a25ab3a58fa60ccafe3e3883727bc63fc">Texture</a>(<span class="keyword">const</span> std::string&amp; filePath);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classTexture.html#a09c4bcb7462f64c1d20fa69dba3cee8a">~Texture</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">const</span> std::string&amp; <a class="code" href="classTexture.html#ae78d7131af5bafebf8913ba7d0523aed">getFilePath</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classTexture.html#a325976a8dc4d45309c345238b9e74f21">   51</a></span>&#160;    [[nodiscard]] <a class="code" href="structSize.html">Size</a> <a class="code" href="classTexture.html#a325976a8dc4d45309c345238b9e74f21">getSize</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> size; }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::string filePath; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="structSize.html">Size</a> size; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_TEXTURE_HPP</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classTexture.html">Texture</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classTexture.html">Texture</a>(<span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classTexture.html#a09c4bcb7462f64c1d20fa69dba3cee8a">~Texture</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">const</span> std::string&amp; <a class="code" href="classTexture.html#ae78d7131af5bafebf8913ba7d0523aed">getFilePath</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classTexture.html#a6032740b4d0e47af3e96fe2747fb5f73">   53</a></span>&#160;    [[nodiscard]] <a class="code" href="structSize.html">Size</a> <a class="code" href="classTexture.html#a6032740b4d0e47af3e96fe2747fb5f73">GetSize</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> size; }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classTexture.html#ad9cffd787be929762a3bd44f63ad65b0">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTexture.html#ad9cffd787be929762a3bd44f63ad65b0">SetSize</a>(<a class="code" href="structSize.html">Size</a> newSize) { size = newSize; }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::string filePath; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="structSize.html">Size</a> size; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DEFUNBOBENGINE_TEXTURE_HPP</span></div>
 <div class="ttc" id="aclassTexture_html"><div class="ttname"><a href="classTexture.html">Texture</a></div><div class="ttdoc">Manages an SDL_Texture loaded from a file.</div><div class="ttdef"><b>Definition:</b> texture.hpp:28</div></div>
 <div class="ttc" id="aclassTexture_html_a09c4bcb7462f64c1d20fa69dba3cee8a"><div class="ttname"><a href="classTexture.html#a09c4bcb7462f64c1d20fa69dba3cee8a">Texture::~Texture</a></div><div class="ttdeci">~Texture()</div><div class="ttdoc">Destroys the Texture, freeing the managed SDL_Texture resource.</div><div class="ttdef"><b>Definition:</b> texture.cpp:17</div></div>
-<div class="ttc" id="aclassTexture_html_a25ab3a58fa60ccafe3e3883727bc63fc"><div class="ttname"><a href="classTexture.html#a25ab3a58fa60ccafe3e3883727bc63fc">Texture::Texture</a></div><div class="ttdeci">Texture(const std::string &amp;filePath)</div><div class="ttdoc">Constructs a Texture by loading from the specified file path.</div><div class="ttdef"><b>Definition:</b> texture.cpp:15</div></div>
-<div class="ttc" id="aclassTexture_html_a325976a8dc4d45309c345238b9e74f21"><div class="ttname"><a href="classTexture.html#a325976a8dc4d45309c345238b9e74f21">Texture::getSize</a></div><div class="ttdeci">Size getSize() const</div><div class="ttdoc">Retrieves the size of the texture.</div><div class="ttdef"><b>Definition:</b> texture.hpp:51</div></div>
-<div class="ttc" id="aclassTexture_html_ae78d7131af5bafebf8913ba7d0523aed"><div class="ttname"><a href="classTexture.html#ae78d7131af5bafebf8913ba7d0523aed">Texture::getFilePath</a></div><div class="ttdeci">const std::string &amp; getFilePath() const</div><div class="ttdoc">Retrieves the underlying SDL_Texture pointer.</div><div class="ttdef"><b>Definition:</b> texture.cpp:19</div></div>
+<div class="ttc" id="aclassTexture_html_a6032740b4d0e47af3e96fe2747fb5f73"><div class="ttname"><a href="classTexture.html#a6032740b4d0e47af3e96fe2747fb5f73">Texture::GetSize</a></div><div class="ttdeci">Size GetSize() const</div><div class="ttdoc">Retrieves the size of the texture.</div><div class="ttdef"><b>Definition:</b> texture.hpp:53</div></div>
+<div class="ttc" id="aclassTexture_html_ad9cffd787be929762a3bd44f63ad65b0"><div class="ttname"><a href="classTexture.html#ad9cffd787be929762a3bd44f63ad65b0">Texture::SetSize</a></div><div class="ttdeci">void SetSize(Size newSize)</div><div class="ttdoc">Sets the size of the texture.</div><div class="ttdef"><b>Definition:</b> texture.hpp:59</div></div>
+<div class="ttc" id="aclassTexture_html_ae78d7131af5bafebf8913ba7d0523aed"><div class="ttname"><a href="classTexture.html#ae78d7131af5bafebf8913ba7d0523aed">Texture::getFilePath</a></div><div class="ttdeci">const std::string &amp; getFilePath() const</div><div class="ttdoc">Retrieves the underlying SDL_Texture pointer.</div><div class="ttdef"><b>Definition:</b> texture.cpp:21</div></div>
 <div class="ttc" id="asize_8hpp_html"><div class="ttname"><a href="size_8hpp.html">size.hpp</a></div><div class="ttdoc">Defines the Size struct.</div></div>
 <div class="ttc" id="astructSize_html"><div class="ttname"><a href="structSize.html">Size</a></div><div class="ttdoc">Represents a width and height.</div><div class="ttdef"><b>Definition:</b> size.hpp:24</div></div>
 </div><!-- fragment --></div><!-- contents -->

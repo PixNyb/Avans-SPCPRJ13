@@ -4,7 +4,7 @@ var classIOFacade =
     [ "CacheSDLTexture", "classIOFacade.html#aa9560c09053abb40ea05b147271c6e27", null ],
     [ "ClearScreen", "classIOFacade.html#a1f19605a9051a926f970b2654ec06423", null ],
     [ "CreateRenderer", "classIOFacade.html#a5d9d1e7a25e4feee2c13af9352c1de3f", null ],
-    [ "CreateSDLTextureFromTexture", "classIOFacade.html#a9119f3a2a96b9750798f2ed831be5215", null ],
+    [ "CreateSDLTextureFromTexture", "classIOFacade.html#a63f5800a1084b6393edd0082a154bd80", null ],
     [ "CreateWindow", "classIOFacade.html#a87baa59ab531091f7fa8f71af13e3f48", null ],
     [ "Delay", "classIOFacade.html#a3519db40cebbc1385f3f4cea0d17048d", null ],
     [ "DrawLine", "classIOFacade.html#aaa5a6d1000e5ed60b6a3d8bf9c5b700e", null ],

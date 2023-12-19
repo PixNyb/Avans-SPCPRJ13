@@ -159,6 +159,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adbef9adfdfbbafc65f69be75ca6f95b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSprite.html#adbef9adfdfbbafc65f69be75ca6f95b6">GetIsTiled</a> ()</td></tr>
 <tr class="memdesc:adbef9adfdfbbafc65f69be75ca6f95b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the tiled flag. The flag indicates if the sprite should be tiled.  <a href="classSprite.html#adbef9adfdfbbafc65f69be75ca6f95b6">More...</a><br /></td></tr>
 <tr class="separator:adbef9adfdfbbafc65f69be75ca6f95b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8861d57897d2e73578957e30b5c8869a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSprite.html#a8861d57897d2e73578957e30b5c8869a">SetTexture</a> (const std::shared_ptr&lt; <a class="el" href="classTexture.html">Texture</a> &gt; &amp;texture)</td></tr>
+<tr class="memdesc:a8861d57897d2e73578957e30b5c8869a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the texture for this <a class="el" href="classSprite.html" title="Represents a graphical sprite in the game engine.">Sprite</a> object.  <a href="classSprite.html#a8861d57897d2e73578957e30b5c8869a">More...</a><br /></td></tr>
+<tr class="separator:a8861d57897d2e73578957e30b5c8869a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e4380b8917ddd426e000c97fd8415ed"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classTexture.html">Texture</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSprite.html#a4e4380b8917ddd426e000c97fd8415ed">GetTexture</a> () const</td></tr>
+<tr class="memdesc:a4e4380b8917ddd426e000c97fd8415ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the texture associated with this sprite.  <a href="classSprite.html#a4e4380b8917ddd426e000c97fd8415ed">More...</a><br /></td></tr>
+<tr class="separator:a4e4380b8917ddd426e000c97fd8415ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classBehaviourScript"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classBehaviourScript')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classBehaviourScript.html">BehaviourScript</a></td></tr>
 <tr class="memitem:a80bffa3fec52a1131a1fbdc11417540b inherit pub_methods_classBehaviourScript"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBehaviourScript.html#a80bffa3fec52a1131a1fbdc11417540b">OnStart</a> ()</td></tr>
 <tr class="memdesc:a80bffa3fec52a1131a1fbdc11417540b inherit pub_methods_classBehaviourScript"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes everything required for the behaviour script.  <a href="classBehaviourScript.html#a80bffa3fec52a1131a1fbdc11417540b">More...</a><br /></td></tr>
@@ -412,6 +418,34 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="a4e4380b8917ddd426e000c97fd8415ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e4380b8917ddd426e000c97fd8415ed">&#9670;&nbsp;</a></span>GetTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classTexture.html">Texture</a>&gt; Sprite::GetTexture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the texture associated with this sprite. </p>
+<dl class="section return"><dt>Returns</dt><dd>Shared pointer to the texture. </dd></dl>
+
+</div>
+</div>
 <a id="a946848cd15c8638b8bcfcf3a090ddf4f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a946848cd15c8638b8bcfcf3a090ddf4f">&#9670;&nbsp;</a></span>IsFlippedX()</h2>
 
@@ -530,6 +564,40 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">spriteImage</td><td>The sprite image file path or identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8861d57897d2e73578957e30b5c8869a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8861d57897d2e73578957e30b5c8869a">&#9670;&nbsp;</a></span>SetTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sprite::SetTexture </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classTexture.html">Texture</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the texture for this <a class="el" href="classSprite.html" title="Represents a graphical sprite in the game engine.">Sprite</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture</td><td>The shared pointer to the texture. </td></tr>
   </table>
   </dd>
 </dl>

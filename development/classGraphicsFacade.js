@@ -5,7 +5,7 @@ var classGraphicsFacade =
     [ "CacheSDLTexture", "classGraphicsFacade.html#a8303956e86116328ec311e6e36577501", null ],
     [ "ClearScreen", "classGraphicsFacade.html#aed080afad9d41970874241a3751fbbef", null ],
     [ "CreateRenderer", "classGraphicsFacade.html#a91d74ddc63aa1f443c4734786b3dceb6", null ],
-    [ "CreateSDLTextureFromTexture", "classGraphicsFacade.html#aeff22411a705a532c945df5d253f0100", null ],
+    [ "CreateSDLTextureFromTexture", "classGraphicsFacade.html#ae29ad64e92864cc4688bbccf29036cb3", null ],
     [ "CreateWindow", "classGraphicsFacade.html#a08819ac96155cc90519ff0482ad5b336", null ],
     [ "Delay", "classGraphicsFacade.html#aff309a90e6393a6f40babc95ec4eb13e", null ],
     [ "DrawLine", "classGraphicsFacade.html#a55c7789332e5120b0ac2f6ddc4d0b04d", null ],

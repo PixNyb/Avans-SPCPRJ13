@@ -8,8 +8,10 @@ var classSprite =
     [ "GetFrameWidth", "classSprite.html#a27bf49cf9aaf272d25dc3cb64d6024b8", null ],
     [ "GetIsTiled", "classSprite.html#adbef9adfdfbbafc65f69be75ca6f95b6", null ],
     [ "GetSprite", "classSprite.html#a90182181ead11820cda85b65b600a58d", null ],
+    [ "GetTexture", "classSprite.html#a4e4380b8917ddd426e000c97fd8415ed", null ],
     [ "IsFlippedX", "classSprite.html#a946848cd15c8638b8bcfcf3a090ddf4f", null ],
     [ "IsFlippedY", "classSprite.html#a8a731c57516207fdc187a8e2b772eff2", null ],
     [ "SetIsTiled", "classSprite.html#ab86eb96621bbbc6fad396e4a87954492", null ],
-    [ "SetSprite", "classSprite.html#ab8264f790a2a50f6c2d2fb3762724d6c", null ]
+    [ "SetSprite", "classSprite.html#ab8264f790a2a50f6c2d2fb3762724d6c", null ],
+    [ "SetTexture", "classSprite.html#a8861d57897d2e73578957e30b5c8869a", null ]
 ];
