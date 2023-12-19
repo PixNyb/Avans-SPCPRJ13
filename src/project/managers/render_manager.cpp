@@ -147,6 +147,16 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
         Rectangle spriteRect(Vector2D(relCamPos.x, relCamPos.y), parentSize.height,
                              parentSize.width);
 
+        if (std::shared_ptr<UIObject> uiObj = std::dynamic_pointer_cast<UIObject>(gameObject))
+        {
+            if (!uiObj->GetUseRelativePosition())
+            {
+                auto transform = gameObject->GetTransform().position;
+                spriteRect = Rectangle(Vector2D(transform.x, transform.y), parentSize.height,
+                                       parentSize.width);
+            }
+        }
+
         if (animatorComponent)
         {
             // Handling sprite sheets with Animator
