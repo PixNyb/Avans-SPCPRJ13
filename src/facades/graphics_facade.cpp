@@ -323,7 +323,7 @@ void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle &rectangle, bo
     if (!sdlTexture)
     {
         // If not cached, create it and cache it
-        sdlTexture = CreateSDLTextureFromTexture(texture);
+        sdlTexture = CreateSDLTextureFromTexture(const_cast<Texture &>(texture));
         CacheSDLTexture(texture, sdlTexture);
     }
     // Proceed to draw the sprite using sdlTexture
@@ -406,32 +406,33 @@ SDL_Texture *GraphicsFacade::GetCachedSDLTexture(const Texture &texture)
     return nullptr;
 }
 
-SDL_Texture *GraphicsFacade::CreateSDLTextureFromTexture(const Texture &texture)
-{
+SDL_Texture* GraphicsFacade::CreateSDLTextureFromTexture(Texture& texture) {
     auto renderer = SdlWindow->GetRenderer();
-    if (!renderer)
-    {
+    if (!renderer) {
         std::cerr << "Renderer is null" << std::endl;
         return nullptr;
     }
-    SDL_Surface *surface = IMG_Load(texture.getFilePath().c_str());
-    if (!surface)
-    {
+
+    SDL_Surface* surface = IMG_Load(texture.getFilePath().c_str());
+    if (!surface) {
         // Handle error
         return nullptr;
     }
 
-    SDL_Texture *sdlTexture = SDL_CreateTextureFromSurface(renderer, surface);
+    // Set the size in the Texture object
+    texture.SetSize(Size{surface->w, surface->h});
+
+    SDL_Texture* sdlTexture = SDL_CreateTextureFromSurface(renderer, surface);
     SDL_FreeSurface(surface);
 
-    if (!sdlTexture)
-    {
+    if (!sdlTexture) {
         std::cerr << "SDLTexture error" << std::endl;
         return nullptr;
     }
 
     return sdlTexture;
 }
+
 
 void GraphicsFacade::CacheSDLTexture(const Texture &texture, SDL_Texture *sdlTexture)
 {
@@ -459,7 +460,7 @@ void GraphicsFacade::DrawSpriteSheetFrame(const Texture &texture, const Rectangl
     SDL_Texture *sdlTexture = GetCachedSDLTexture(texture);
     if (!sdlTexture)
     {
-        sdlTexture = CreateSDLTextureFromTexture(texture);
+        sdlTexture = CreateSDLTextureFromTexture(const_cast<Texture &>(texture));
         CacheSDLTexture(texture, sdlTexture);
     }
 

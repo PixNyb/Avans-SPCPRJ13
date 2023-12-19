@@ -202,7 +202,7 @@ class GraphicsFacade : public IOFacade
      * @param texture The Texture object to create the SDL_Texture from.
      * @return The created SDL_Texture.
      */
-    SDL_Texture *CreateSDLTextureFromTexture(const Texture &texture) override;
+    SDL_Texture *CreateSDLTextureFromTexture(Texture &texture) override;
 
     /**
      * @brief Caches an SDL_Texture for a Texture object.
