@@ -46,8 +46,7 @@ Engine::Engine()
         std::make_shared<LevelManager>(sceneManager, prefabManager, jsonHandler),
         InstanceScope::Public);
 
-    container.registerInstance<RenderManager>(std::make_shared<RenderManager>(),
-                                              InstanceScope::Engine);
+    container.registerInstance<RenderManager>(std::make_shared<RenderManager>());
 
     container.registerInstance<BehaviourScriptManager>(std::make_shared<BehaviourScriptManager>(),
                                                        InstanceScope::Engine);

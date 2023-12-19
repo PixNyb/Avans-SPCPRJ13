@@ -39,7 +39,7 @@ class RenderManager
 
     void DrawTiled();
 
-    std::map<std::string, Texture> textureCache; ///< Map of cached Textures for Texture objects.
+    std::unordered_map<std::string, std::unique_ptr<Texture>> textureCache; ///< Map of cached Textures for Texture objects.
 
   public:
     /**

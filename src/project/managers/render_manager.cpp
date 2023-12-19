@@ -118,6 +118,27 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
     auto spriteComponent = gameObject->GetComponent<Sprite>();
     if (spriteComponent)
     {
+        std::string texturePath = spriteComponent->GetSprite();
+        if (texturePath.empty()) {
+            // Handle invalid texture path
+            std::cout << "Invalid texture path" << std::endl;
+            return;
+        }
+        Texture *texture;
+
+        // Check if texture is already loaded
+        auto it = textureCache.find(texturePath);
+        if (it == textureCache.end()) {
+            // Texture not in cache, load and cache it
+            auto newTexture = std::make_unique<Texture>(texturePath);
+            texture = newTexture.get();  // Keep a raw pointer for immediate use
+            textureCache.emplace(texturePath, std::move(newTexture));
+        } else {
+            // Texture already in cache, use it
+            texture = it->second.get();
+        }
+
+
         auto animatorComponent = gameObject->GetComponent<Animator>();
 
         // Adjust sprite size to match parent's dimensions (if parent has a collider)
@@ -136,14 +157,13 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
         {
             parentSize = Size(uiObj->GetWidth(), uiObj->GetHeight());
         }
-        else
+        else if (texture->GetSize().height == 0 && texture->GetSize().width == 0)
         {
-            Size spriteSize;
-            if (spriteComponent->GetTexture() == nullptr) {
-                parentSize = gfx.GetSpriteSize(spriteComponent->GetSprite());
-                std::cout << "Sprite size is not set, using sprite's own size" << std::endl;
-            }
-
+            parentSize = gfx.GetSpriteSize(spriteComponent->GetSprite());
+            texture->SetSize(parentSize);
+            std::cout << texture->GetSize().width << " " << texture->GetSize().height << std::endl;
+        } else {
+            parentSize = texture->GetSize();
         }
 
         // Create a Rectangle object representing the position and size of the sprite
@@ -176,29 +196,8 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
         }
         else
         {
-            std::string texturePath = spriteComponent->GetSprite();
-            if (texturePath.empty()) {
-                // Handle invalid texture path
-                std::cout << "Invalid texture path" << std::endl;
-                return;
-            }
-            Texture texture;
-
-            // Check if texture is already loaded
-            auto it = textureCache.find(texturePath);
-            if (it == textureCache.end()) {
-                // Texture not in cache, load and cache it
-                Texture newTexture(texturePath);
-                textureCache.emplace(texturePath, std::move(newTexture));
-                texture = newTexture;
-            } else {
-                // Texture already in cache, use it
-                texture = it->second;
-            }
-
-
             // Draw the sprite
-            gfx.DrawSprite(texture, spriteRect,
+            gfx.DrawSprite(*texture, spriteRect,
                            gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedX(),
                            gameObjectPointer.lock()->GetComponent<Sprite>()->IsFlippedY(),
                            gameObjectPointer.lock()->GetTransform().rotation,
