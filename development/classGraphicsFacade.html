@@ -166,9 +166,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a637836098c1747ac65d55cd4875e5bbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#a637836098c1747ac65d55cd4875e5bbc">DrawSprite</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture, <a class="el" href="classRectangle.html">Rectangle</a> &amp;rectangle, bool flipX, bool flipY, int angle, float scale) override</td></tr>
 <tr class="memdesc:a637836098c1747ac65d55cd4875e5bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture from an image file.  <a href="classGraphicsFacade.html#a637836098c1747ac65d55cd4875e5bbc">More...</a><br /></td></tr>
 <tr class="separator:a637836098c1747ac65d55cd4875e5bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45c9d97902139b0bb8cff69f9e4fbe3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#a45c9d97902139b0bb8cff69f9e4fbe3b">RenderSDLTexture</a> (SDL_Texture *sdlTexture, <a class="el" href="classRectangle.html">Rectangle</a> rectangle, bool flipX, bool flipY, float scale) override</td></tr>
-<tr class="memdesc:a45c9d97902139b0bb8cff69f9e4fbe3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an SDL_Texture from an image file.  <a href="classGraphicsFacade.html#a45c9d97902139b0bb8cff69f9e4fbe3b">More...</a><br /></td></tr>
-<tr class="separator:a45c9d97902139b0bb8cff69f9e4fbe3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eb186955425c167dde38aa3c223605f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#a4eb186955425c167dde38aa3c223605f">RenderSDLTexture</a> (SDL_Texture *sdlTexture, <a class="el" href="classRectangle.html">Rectangle</a> rectangle, bool flipX, bool flipY, float scale, int angle) override</td></tr>
+<tr class="memdesc:a4eb186955425c167dde38aa3c223605f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an SDL_Texture from an image file.  <a href="classGraphicsFacade.html#a4eb186955425c167dde38aa3c223605f">More...</a><br /></td></tr>
+<tr class="separator:a4eb186955425c167dde38aa3c223605f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6480cea9277054e94054b0540949ba8"><td class="memItemLeft" align="right" valign="top">SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#ab6480cea9277054e94054b0540949ba8">GetCachedSDLTexture</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture) override</td></tr>
 <tr class="memdesc:ab6480cea9277054e94054b0540949ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the cached texture if it exists.  <a href="classGraphicsFacade.html#ab6480cea9277054e94054b0540949ba8">More...</a><br /></td></tr>
 <tr class="separator:ab6480cea9277054e94054b0540949ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1038,8 +1038,8 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 
 </div>
 </div>
-<a id="a45c9d97902139b0bb8cff69f9e4fbe3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45c9d97902139b0bb8cff69f9e4fbe3b">&#9670;&nbsp;</a></span>RenderSDLTexture()</h2>
+<a id="a4eb186955425c167dde38aa3c223605f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eb186955425c167dde38aa3c223605f">&#9670;&nbsp;</a></span>RenderSDLTexture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1075,7 +1075,13 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>scale</em>&#160;</td>
+          <td class="paramname"><em>scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>angle</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1098,11 +1104,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
     <tr><td class="paramname">flipX</td><td>Whether to flip the texture horizontally. </td></tr>
     <tr><td class="paramname">flipY</td><td>Whether to flip the texture vertically. </td></tr>
     <tr><td class="paramname">scale</td><td>The scale factor on the axis </td></tr>
+    <tr><td class="paramname">angle</td><td>The angle to draw the sprite at. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classIOFacade.html#a500832806bee9d5733ba0fcccf0a613e">IOFacade</a>.</p>
+<p>Implements <a class="el" href="classIOFacade.html#a9e06c6bed74819d0a04f09202eecde2b">IOFacade</a>.</p>
 
 </div>
 </div>

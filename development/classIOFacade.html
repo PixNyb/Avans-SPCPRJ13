@@ -155,9 +155,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:ad808484584056bf2d3713c132dc038be"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIOFacade.html#ad808484584056bf2d3713c132dc038be">DrawSprite</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture, <a class="el" href="classRectangle.html">Rectangle</a> &amp;rectangle, bool flipX, bool flipY, int angle, float scale)=0</td></tr>
 <tr class="memdesc:ad808484584056bf2d3713c132dc038be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a <a class="el" href="classTexture.html" title="Manages an SDL_Texture loaded from a file.">Texture</a> object on the rendering target.  <a href="classIOFacade.html#ad808484584056bf2d3713c132dc038be">More...</a><br /></td></tr>
 <tr class="separator:ad808484584056bf2d3713c132dc038be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a500832806bee9d5733ba0fcccf0a613e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIOFacade.html#a500832806bee9d5733ba0fcccf0a613e">RenderSDLTexture</a> (SDL_Texture *sdlTexture, <a class="el" href="classRectangle.html">Rectangle</a> rectangle, bool flipX, bool flipY, float scale)=0</td></tr>
-<tr class="memdesc:a500832806bee9d5733ba0fcccf0a613e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders an SDL_Texture on the rendering target.  <a href="classIOFacade.html#a500832806bee9d5733ba0fcccf0a613e">More...</a><br /></td></tr>
-<tr class="separator:a500832806bee9d5733ba0fcccf0a613e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e06c6bed74819d0a04f09202eecde2b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIOFacade.html#a9e06c6bed74819d0a04f09202eecde2b">RenderSDLTexture</a> (SDL_Texture *sdlTexture, <a class="el" href="classRectangle.html">Rectangle</a> rectangle, bool flipX, bool flipY, float scale, int angle)=0</td></tr>
+<tr class="memdesc:a9e06c6bed74819d0a04f09202eecde2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders an SDL_Texture on the rendering target.  <a href="classIOFacade.html#a9e06c6bed74819d0a04f09202eecde2b">More...</a><br /></td></tr>
+<tr class="separator:a9e06c6bed74819d0a04f09202eecde2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a641d75c0b6374ecaac2dd90b96792ced"><td class="memItemLeft" align="right" valign="top">virtual SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIOFacade.html#a641d75c0b6374ecaac2dd90b96792ced">GetCachedSDLTexture</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture)=0</td></tr>
 <tr class="memdesc:a641d75c0b6374ecaac2dd90b96792ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the cached SDL_Texture for a <a class="el" href="classTexture.html" title="Manages an SDL_Texture loaded from a file.">Texture</a> object.  <a href="classIOFacade.html#a641d75c0b6374ecaac2dd90b96792ced">More...</a><br /></td></tr>
 <tr class="separator:a641d75c0b6374ecaac2dd90b96792ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -974,8 +974,8 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 
 </div>
 </div>
-<a id="a500832806bee9d5733ba0fcccf0a613e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a500832806bee9d5733ba0fcccf0a613e">&#9670;&nbsp;</a></span>RenderSDLTexture()</h2>
+<a id="a9e06c6bed74819d0a04f09202eecde2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e06c6bed74819d0a04f09202eecde2b">&#9670;&nbsp;</a></span>RenderSDLTexture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1011,7 +1011,13 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>scale</em>&#160;</td>
+          <td class="paramname"><em>scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>angle</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1035,11 +1041,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
     <tr><td class="paramname">flipX</td><td>Whether to flip the texture horizontally. </td></tr>
     <tr><td class="paramname">flipY</td><td>Whether to flip the texture vertically. </td></tr>
     <tr><td class="paramname">scale</td><td>The scale factor on the axis. </td></tr>
+    <tr><td class="paramname">angle</td><td>The angle to rotate the texture. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classGraphicsFacade.html#a45c9d97902139b0bb8cff69f9e4fbe3b">GraphicsFacade</a>.</p>
+<p>Implemented in <a class="el" href="classGraphicsFacade.html#a4eb186955425c167dde38aa3c223605f">GraphicsFacade</a>.</p>
 
 </div>
 </div>

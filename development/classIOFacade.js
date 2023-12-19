@@ -20,5 +20,5 @@ var classIOFacade =
     [ "Init", "classIOFacade.html#a44010d0258f0ff1b2f71a1c39f7790d1", null ],
     [ "PollEvents", "classIOFacade.html#ae83138d361fe83705d6099eaa2bc6595", null ],
     [ "PresentScreen", "classIOFacade.html#a427010f0cd482f33f528c7731cb23f43", null ],
-    [ "RenderSDLTexture", "classIOFacade.html#a500832806bee9d5733ba0fcccf0a613e", null ]
+    [ "RenderSDLTexture", "classIOFacade.html#a9e06c6bed74819d0a04f09202eecde2b", null ]
 ];

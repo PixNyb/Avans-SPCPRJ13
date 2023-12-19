@@ -21,5 +21,5 @@ var classGraphicsFacade =
     [ "Init", "classGraphicsFacade.html#af260a2dcf4af0ad2c29faeda41385c5d", null ],
     [ "PollEvents", "classGraphicsFacade.html#abda789469d7b66d9013f8352a93d3877", null ],
     [ "PresentScreen", "classGraphicsFacade.html#ab1361534af676ff41f136d5b4eb5d38e", null ],
-    [ "RenderSDLTexture", "classGraphicsFacade.html#a45c9d97902139b0bb8cff69f9e4fbe3b", null ]
+    [ "RenderSDLTexture", "classGraphicsFacade.html#a4eb186955425c167dde38aa3c223605f", null ]
 ];

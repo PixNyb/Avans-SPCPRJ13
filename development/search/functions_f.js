@@ -15,7 +15,7 @@ var searchData=
   ['render_1103',['Render',['../classDebugRenderer.html#a6ecef2365db359173537e2f6915e688a',1,'DebugRenderer::Render()'],['../classRenderManager.html#a1e0788708fda748a7ff5e2730ed478f1',1,'RenderManager::Render()']]],
   ['rendermanager_1104',['RenderManager',['../classRenderManager.html#aa52d38e61976b5b9438a9eabd2031cfa',1,'RenderManager']]],
   ['renderscene_1105',['RenderScene',['../classLevelScene.html#a81d9668e0753827a631dc0431fb11f7c',1,'LevelScene::RenderScene()'],['../classScene.html#af0e6f0b1a917a4b7662fe7867614811a',1,'Scene::RenderScene()'],['../classSceneManager.html#a03e3156da326c5fc02ae809b2c59034a',1,'SceneManager::RenderScene()']]],
-  ['rendersdltexture_1106',['RenderSDLTexture',['../classGraphicsFacade.html#a45c9d97902139b0bb8cff69f9e4fbe3b',1,'GraphicsFacade::RenderSDLTexture()'],['../classIOFacade.html#a500832806bee9d5733ba0fcccf0a613e',1,'IOFacade::RenderSDLTexture()']]],
+  ['rendersdltexture_1106',['RenderSDLTexture',['../classGraphicsFacade.html#a4eb186955425c167dde38aa3c223605f',1,'GraphicsFacade::RenderSDLTexture()'],['../classIOFacade.html#a9e06c6bed74819d0a04f09202eecde2b',1,'IOFacade::RenderSDLTexture()']]],
   ['rendershapes_1107',['RenderShapes',['../classDebugRenderer.html#aa363c728f8159c6bd06e0fdb3be74aa1',1,'DebugRenderer']]],
   ['resolve_1108',['resolve',['../classDIContainer.html#a1a4e656327271848d6fe72c1a79923de',1,'DIContainer']]],
   ['resume_1109',['Resume',['../classISound.html#aa3b18852f3f95353e8087ecb5d476df6',1,'ISound::Resume()'],['../classSFMLSound.html#ac926237a6be41ef87523fd19ef0eea05',1,'SFMLSound::Resume()']]],
