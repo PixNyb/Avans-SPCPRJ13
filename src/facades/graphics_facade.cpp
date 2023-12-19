@@ -513,6 +513,8 @@ void GraphicsFacade::DrawParticle(double posX, double posY, Color color)
         std::cerr << "Renderer is null" << std::endl;
         return;
     }
-    SDL_SetRenderDrawColor(renderer, color.GetRed(), color.GetGreen(), color.GetBlue(), color.GetAlpha());
+
+    SDL_SetRenderDrawColor(renderer, color.GetRed(), color.GetGreen(), color.GetBlue(),
+                           color.GetAlpha());
     SDL_RenderDrawPoint(renderer, posX, posY);
 }

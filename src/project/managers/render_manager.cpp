@@ -19,11 +19,11 @@
 #include "game_object_utility.hpp"
 #include "graphics_facade.hpp"
 #include "managers/scene_manager.hpp"
+#include "particle_manager.hpp"
 #include "particles.hpp"
 #include "shape_component.hpp"
 #include "shape_renderer.hpp"
 #include "text.hpp"
-#include "particle_manager.hpp"
 #include "time.hpp"
 #include <map>
 #include <sprite.hpp>
@@ -240,17 +240,17 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
     auto particleManager = engine->Get<ParticleManager>();
     particleManager->Update(); // Update particle states
 
-    for (const auto& particles : particleManager->GetAllParticles()) {
-        for (const auto& particle : particles.GetParticles()) {
-            if (particle.isAlive) { // Ensure the particle is still alive
-                gfx.DrawParticle(particle.position.x, particle.position.y, particle.color);
+    for (const auto &particles : particleManager->GetAllParticles())
+    {
+        for (const auto &particle : particles.GetParticles())
+        {
+            if (particle.isAlive)
+            { // Ensure the particle is still alive
+                gfx.DrawParticle(cameraPoint.x - particle.position.x,
+                                 cameraPoint.y - particle.position.y, particle.color);
 
                 // Handle sprites below if needed
             }
         }
     }
-
-
-
-
 }

@@ -1,0 +1,10 @@
+#ifndef DEFUNBOBENGINE_PARTICLE_TYPE_HPP
+#define DEFUNBOBENGINE_PARTICLE_TYPE_HPP
+
+enum ParticleType
+{
+    Rain,
+    Confetti
+};
+
+#endif // DEFUNBOBENGINE_PARTICLE_TYPE_HPP
