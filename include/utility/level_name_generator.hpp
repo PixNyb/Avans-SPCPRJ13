@@ -14,9 +14,18 @@
 
 #include <string>
 
+/**
+ * @class LevelNameGenerator
+ * @brief A class for generating level names.
+ */
 class LevelNameGenerator
 {
   public:
+    /**
+     * @brief Generates a level name based on the given id.
+     * @param id The id of the level.
+     * @return The generated level name.
+     */
     static std::string Generate(int id);
 };
 

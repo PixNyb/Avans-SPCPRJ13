@@ -12,10 +12,14 @@
 #ifndef DEFUNBOBENGINE_INCLUDE_PROJECT_CORE_LEVEL_TYPE_HPP
 #define DEFUNBOBENGINE_INCLUDE_PROJECT_CORE_LEVEL_TYPE_HPP
 
+/**
+ * @enum LevelType
+ * @brief The type of a level.
+ */
 enum class LevelType
 {
-    File,
-    SceneInstance
+    File,         ///< A level which is stored in a file.
+    SceneInstance ///< A level which is a scene instance.
 };
 
 #endif // DEFUNBOBENGINE_INCLUDE_PROJECT_CORE_LEVEL_TYPE_HPP
