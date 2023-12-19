@@ -10,6 +10,7 @@
  */
 
 #include "level_name_generator.hpp"
+#include <fmt/format.h>
 #include <random>
 
 namespace RandomLevelWords
@@ -30,8 +31,6 @@ static const std::vector<std::string> nouns = {"adventure",
 
 std::string LevelNameGenerator::Generate(int id)
 {
-    std::string name = std::to_string(id) + "_";
-
     // Generate random number without using rand
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -41,8 +40,8 @@ std::string LevelNameGenerator::Generate(int id)
     int randomNounIndex = static_cast<int>(dis(gen) % RandomLevelWords::nouns.size());
     int randomNumber = dis(gen);
 
-    name += RandomLevelWords::verbs[randomVerbIndex] + "_" +
-            RandomLevelWords::nouns[randomNounIndex] + "_" + std::to_string(randomNumber);
+    std::string name = fmt::format("{}_{}_{}_{}", id, RandomLevelWords::verbs[randomVerbIndex],
+                                   RandomLevelWords::nouns[randomNounIndex], randomNumber);
 
     return name;
 }
