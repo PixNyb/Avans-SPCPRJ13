@@ -327,11 +327,11 @@ void GraphicsFacade::DrawSprite(const Texture &texture, Rectangle &rectangle, bo
         CacheSDLTexture(texture, sdlTexture);
     }
     // Proceed to draw the sprite using sdlTexture
-    RenderSDLTexture(sdlTexture, rectangle, flipX, flipY, scale);
+    RenderSDLTexture(sdlTexture, rectangle, flipX, flipY, scale, angle);
 }
 
 void GraphicsFacade::RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectangle, bool flipX,
-                                      bool flipY, float scale)
+                                      bool flipY, float scale, int angle)
 {
     if (!sdlTexture)
     {
@@ -363,7 +363,7 @@ void GraphicsFacade::RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectang
     if (flipX && flipY)
     {
         if (SDL_RenderCopyEx(
-                renderer, sdlTexture, NULL, &sdlRect, 0, NULL,
+                renderer, sdlTexture, NULL, &sdlRect, -static_cast<double>(angle), NULL,
                 static_cast<const SDL_RendererFlip>(SDL_FLIP_HORIZONTAL | SDL_FLIP_VERTICAL)) != 0)
         {
             std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
@@ -371,22 +371,24 @@ void GraphicsFacade::RenderSDLTexture(SDL_Texture *sdlTexture, Rectangle rectang
     }
     else if (flipX && !flipY)
     {
-        if (SDL_RenderCopyEx(renderer, sdlTexture, NULL, &sdlRect, 0, NULL, SDL_FLIP_HORIZONTAL) !=
-            0)
+        if (SDL_RenderCopyEx(renderer, sdlTexture, NULL, &sdlRect, -static_cast<double>(angle),
+                             NULL, SDL_FLIP_HORIZONTAL) != 0)
         {
             std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
         }
     }
     else if (!flipX && flipY)
     {
-        if (SDL_RenderCopyEx(renderer, sdlTexture, NULL, &sdlRect, 0, NULL, SDL_FLIP_VERTICAL) != 0)
+        if (SDL_RenderCopyEx(renderer, sdlTexture, NULL, &sdlRect, -static_cast<double>(angle),
+                             NULL, SDL_FLIP_VERTICAL) != 0)
         {
             std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
         }
     }
     else
     {
-        if (SDL_RenderCopy(renderer, sdlTexture, NULL, &sdlRect) != 0)
+        if (SDL_RenderCopyEx(renderer, sdlTexture, NULL, &sdlRect, -static_cast<double>(angle),
+                             NULL, SDL_FLIP_NONE) != 0)
         {
             std::cerr << "SDL_RenderCopy failed: " << SDL_GetError() << std::endl;
         }
