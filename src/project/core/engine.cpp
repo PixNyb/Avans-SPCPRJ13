@@ -94,7 +94,7 @@ void Engine::Start()
 
         sceneManager->Update(deltaTime);
 
-        Get<BehaviourScriptManager>()->Update();
+        GetLocal<BehaviourScriptManager>()->Update();
 
         GetLocal<RenderManager>()->Render();
 
