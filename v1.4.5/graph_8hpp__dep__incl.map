@@ -1,0 +1,10 @@
+<map id="include/project/pathfinding/graph.hpp" name="include/project/pathfinding/graph.hpp">
+<area shape="rect" id="node1" title="This file contains the Graph, Node and Link classes." alt="" coords="238,5,433,47"/>
+<area shape="rect" id="node2" href="$pathfindable_8hpp.html" title="This file contains the Pathfindable class definition." alt="" coords="5,102,212,129"/>
+<area shape="rect" id="node3" href="$pathfinding_8hpp.html" title="This file contains the Pathfinding class definition." alt="" coords="236,102,435,129"/>
+<area shape="rect" id="node5" href="$pathfinding__manager_8hpp.html" title="This file contains the PathfindingManager class definition." alt="" coords="459,95,649,136"/>
+<area shape="rect" id="node4" href="$pathfinding_8cpp.html" title="This file contains the Pathfinding class implementation." alt="" coords="251,191,420,218"/>
+<area shape="rect" id="node6" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="445,191,642,218"/>
+<area shape="rect" id="node7" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="667,184,825,225"/>
+<area shape="rect" id="node8" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="849,184,1008,225"/>
+</map>

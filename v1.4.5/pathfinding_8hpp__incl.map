@@ -1,0 +1,15 @@
+<map id="include/api/pathfinding.hpp" name="include/api/pathfinding.hpp">
+<area shape="rect" id="node1" title="This file contains the Pathfinding class definition." alt="" coords="243,5,442,32"/>
+<area shape="rect" id="node2" href="$behaviour__script_8hpp.html" title="Defines the BehaviourScript class as part of a game engine framework. BehaviourScript is a base class..." alt="" coords="146,80,305,107"/>
+<area shape="rect" id="node6" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="263,379,398,405"/>
+<area shape="rect" id="node8" title=" " alt="" coords="113,528,191,555"/>
+<area shape="rect" id="node12" title=" " alt="" coords="507,453,570,480"/>
+<area shape="rect" id="node13" href="$graph_8hpp.html" title="This file contains the Graph, Node and Link classes." alt="" coords="530,379,617,405"/>
+<area shape="rect" id="node3" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="193,155,290,181"/>
+<area shape="rect" id="node4" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="120,229,243,256"/>
+<area shape="rect" id="node5" href="$iprototype__component_8hpp.html" title="This file contains the IPrototypeComponent interface definition." alt="" coords="83,304,280,331"/>
+<area shape="rect" id="node7" href="$iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="93,453,211,480"/>
+<area shape="rect" id="node9" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="368,453,483,480"/>
+<area shape="rect" id="node11" title=" " alt="" coords="235,453,293,480"/>
+<area shape="rect" id="node10" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="500,528,583,555"/>
+</map>

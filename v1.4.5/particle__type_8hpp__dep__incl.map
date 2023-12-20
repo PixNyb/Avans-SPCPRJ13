@@ -1,0 +1,13 @@
+<map id="include/project/graphics/particle_type.hpp" name="include/project/graphics/particle_type.hpp">
+<area shape="rect" id="node1" title="Defines the ParticleType enum for specifying types of particles." alt="" coords="190,5,367,47"/>
+<area shape="rect" id="node2" href="$particles_8hpp.html" title="This file contains the Particles class definition." alt="" coords="96,102,277,129"/>
+<area shape="rect" id="node4" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="305,95,445,136"/>
+<area shape="rect" id="node3" href="$particles_8cpp.html" title="This file contains the particles class implementation." alt="" coords="5,191,157,218"/>
+<area shape="rect" id="node5" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="182,184,365,225"/>
+<area shape="rect" id="node9" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="389,184,566,225"/>
+<area shape="rect" id="node10" href="$shape__renderer_8hpp.html" title="A file containing the ShapeRenderer class." alt="" coords="591,184,745,225"/>
+<area shape="rect" id="node6" href="$render__manager_8hpp_source.html" title=" " alt="" coords="375,273,561,315"/>
+<area shape="rect" id="node7" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="215,363,412,389"/>
+<area shape="rect" id="node8" href="$graphics__facade_8cpp.html" title="This file contains the GraphicsFacade class implementation." alt="" coords="196,273,351,315"/>
+<area shape="rect" id="node11" href="$shape__renderer_8cpp.html" title="A file containing the ShapeRenderer class." alt="" coords="586,281,801,307"/>
+</map>

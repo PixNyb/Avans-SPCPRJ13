@@ -1,0 +1,5 @@
+<map id="Particle" name="Particle">
+<area shape="rect" id="node1" title="Represents a particle in the game engine." alt="" coords="39,124,109,151"/>
+<area shape="rect" id="node2" href="$structPoint.html" title="Represents a 2D point or vector." alt="" coords="5,5,60,32"/>
+<area shape="rect" id="node3" href="$classColor.html" title="Represents a color using red, green, blue, and alpha (transparency) components." alt="" coords="89,5,145,32"/>
+</map>
