@@ -35,6 +35,8 @@ struct Point
      */
     Point(double x, double y) : x(x), y(y) {}
 
+    Point() : x(0.0), y(0.0) {}
+    
     /**
      * @brief Adds two points/vectors together.
      * @param other The other point/vector to add to this one.
@@ -48,6 +50,15 @@ struct Point
      * @return Point The difference of the two points/vectors.
      */
     Point operator-(const Point &other) const { return {x - other.x, y - other.y}; }
+
+    Point operator+=(const Point &other)
+    {
+        x += other.x;
+        y += other.y;
+        return *this;
+    };
+
+    Point operator*(const double scalar) const { return {x * scalar, y * scalar}; }
 
     /**
      * @brief Compares two points/vectors for equality.

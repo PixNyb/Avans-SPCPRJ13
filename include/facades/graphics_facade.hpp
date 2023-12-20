@@ -233,6 +233,18 @@ class GraphicsFacade : public IOFacade
     void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect, int frameIndex,
                               int totalColumns, int totalRows, bool flipX, bool flipY, double angle,
                               float scale) override;
+
+    /**
+     * @brief Draws a particle.
+     *
+     * @param particleType The type of the particle to be drawn.
+     * @param position The position of the particle on the screen.
+     * @param size The size of the particle.
+     * @param angle The angle of the particle (rotation).
+     * @param color The color of the particle.
+     */
+    void DrawParticle(const ParticleType &particleType, const Point &position, int size,
+                      const Point &angle, Color color) override;
 };
 
 #endif // DEFUNBOBENGINE_GRAPHICS_FACADE_HPP

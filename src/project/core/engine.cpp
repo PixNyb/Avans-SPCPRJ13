@@ -56,7 +56,7 @@ Engine::Engine()
     container.registerInstance<PathfindingManager>(std::make_shared<PathfindingManager>());
 
     container.registerInstance<PropertyManager>(std::make_shared<PropertyManager>(jsonHandler));
-
+    
     // Facades
     container.registerInstance<IInputFacade>(std::make_shared<SDLInputFacade>());
     container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>());

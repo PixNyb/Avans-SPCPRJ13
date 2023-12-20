@@ -428,15 +428,18 @@ SDL_Texture *GraphicsFacade::GetCachedSDLTexture(const Texture &texture)
     return nullptr;
 }
 
-SDL_Texture* GraphicsFacade::CreateSDLTextureFromTexture(Texture& texture) {
+SDL_Texture *GraphicsFacade::CreateSDLTextureFromTexture(Texture &texture)
+{
     auto renderer = SdlWindow->GetRenderer();
-    if (!renderer) {
+    if (!renderer)
+    {
         std::cerr << "Renderer is null" << std::endl;
         return nullptr;
     }
 
-    SDL_Surface* surface = IMG_Load(texture.getFilePath().c_str());
-    if (!surface) {
+    SDL_Surface *surface = IMG_Load(texture.getFilePath().c_str());
+    if (!surface)
+    {
         // Handle error
         return nullptr;
     }
@@ -444,17 +447,17 @@ SDL_Texture* GraphicsFacade::CreateSDLTextureFromTexture(Texture& texture) {
     // Set the size in the Texture object
     texture.SetSize(Size{surface->w, surface->h});
 
-    SDL_Texture* sdlTexture = SDL_CreateTextureFromSurface(renderer, surface);
+    SDL_Texture *sdlTexture = SDL_CreateTextureFromSurface(renderer, surface);
     SDL_FreeSurface(surface);
 
-    if (!sdlTexture) {
+    if (!sdlTexture)
+    {
         std::cerr << "SDLTexture error" << std::endl;
         return nullptr;
     }
 
     return sdlTexture;
 }
-
 
 void GraphicsFacade::CacheSDLTexture(const Texture &texture, SDL_Texture *sdlTexture)
 {
@@ -527,5 +530,40 @@ void GraphicsFacade::DrawSpriteSheetFrame(const Texture &texture, const Rectangl
                          flip) != 0)
     {
         std::cerr << "SDL_RenderCopyEx failed: " << SDL_GetError() << std::endl;
+    }
+}
+
+void GraphicsFacade::DrawParticle(const ParticleType &particleType, const Point &position, int size,
+                                  const Point &angle, Color color)
+{
+    auto renderer = SdlWindow->GetRenderer();
+    if (!renderer)
+    {
+        std::cerr << "Renderer is null" << std::endl;
+        return;
+    }
+
+    SDL_SetRenderDrawColor(renderer, color.GetRed(), color.GetGreen(), color.GetBlue(),
+                           color.GetAlpha());
+
+    switch (particleType)
+    {
+    case ParticleType::Confetti:
+    {
+        for (int i = -size / 2; i <= size / 2; ++i)
+        {
+            for (int j = -size / 2; j <= size / 2; ++j)
+            {
+                SDL_RenderDrawPoint(renderer, static_cast<int>(position.x) + i,
+                                    static_cast<int>(position.y) + j);
+            }
+        }
+        break;
+    }
+    case ParticleType::Rain:
+        Point endPos = position + angle;
+        SDL_RenderDrawLine(renderer, static_cast<int>(position.x), static_cast<int>(position.y),
+                           static_cast<int>(endPos.x), static_cast<int>(endPos.y));
+        break;
     }
 }

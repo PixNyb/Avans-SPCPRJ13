@@ -71,20 +71,20 @@ install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include/${PROJECT_N
 
 # Add uninstall target
 configure_file(
-    "${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake"
-    IMMEDIATE @ONLY
+        "${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake"
+        IMMEDIATE @ONLY
 )
 
 add_custom_target(uninstall
-    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake
+        COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall.cmake
 )
 
 # Add SDL2
 find_package(SDL2 CONFIG REQUIRED)
 target_link_libraries(DeFunBobEngine
-    PRIVATE
-    $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
-    $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+        PRIVATE
+        $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+        $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
 )
 
 # Add SDL2_gfx
@@ -113,12 +113,12 @@ target_link_libraries(DeFunBobEngine PRIVATE nlohmann_json::nlohmann_json)
 
 # Add fmt
 find_package(fmt CONFIG REQUIRED)
-
 if(APPLE)
     target_link_libraries(DeFunBobEngine PRIVATE fmt::fmt-header-only)
 else()
     target_link_libraries(DeFunBobEngine PRIVATE fmt::fmt)
 endif()
+
 
 # Add box2d
 find_package(box2d CONFIG REQUIRED)

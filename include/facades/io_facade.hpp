@@ -26,6 +26,7 @@
 #include "core_constants.hpp"
 #include "event.hpp"
 #include "line.hpp"
+#include "particle_type.hpp"
 #include "rectangle.hpp"
 #include "sdl_window.hpp"
 #include "texture.hpp"
@@ -254,6 +255,18 @@ class IOFacade
     virtual void DrawSpriteSheetFrame(const Texture &texture, const Rectangle &dstRect,
                                       int frameIndex, int totalColumns, int totalRows, bool flipX,
                                       bool flipY, double angle, float scale) = 0;
+
+    /**
+     * @brief Draws a particle on the rendering target.
+     *
+     * @param particleType The type of the particle to be drawn.
+     * @param position The position of the particle on the screen.
+     * @param size The size of the particle.
+     * @param angle The angle of the particle (rotation).
+     * @param color The color of the particle.
+     */
+    virtual void DrawParticle(const ParticleType &particleType, const Point &position, int size,
+                              const Point &angle, Color color) = 0;
 };
 
 #endif // DEFUNBOBENGINE_IO_FACADE_HPP

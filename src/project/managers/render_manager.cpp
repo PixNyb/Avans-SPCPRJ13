@@ -19,9 +19,11 @@
 #include "game_object_utility.hpp"
 #include "graphics_facade.hpp"
 #include "managers/scene_manager.hpp"
+#include "particles.hpp"
 #include "shape_component.hpp"
 #include "shape_renderer.hpp"
 #include "text.hpp"
+#include "time.hpp"
 #include <map>
 #include <sprite.hpp>
 
@@ -119,7 +121,8 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
     if (spriteComponent)
     {
         std::string texturePath = spriteComponent->GetSprite();
-        if (texturePath.empty()) {
+        if (texturePath.empty())
+        {
             // Handle invalid texture path
             std::cout << "Invalid texture path" << std::endl;
             return;
@@ -128,16 +131,18 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
 
         // Check if texture is already loaded
         auto it = textureCache.find(texturePath);
-        if (it == textureCache.end()) {
+        if (it == textureCache.end())
+        {
             // Texture not in cache, load and cache it
             auto newTexture = std::make_unique<Texture>(texturePath);
-            texture = newTexture.get();  // Keep a raw pointer for immediate use
+            texture = newTexture.get(); // Keep a raw pointer for immediate use
             textureCache.emplace(texturePath, std::move(newTexture));
-        } else {
+        }
+        else
+        {
             // Texture already in cache, use it
             texture = it->second.get();
         }
-
 
         auto animatorComponent = gameObject->GetComponent<Animator>();
 
@@ -162,7 +167,9 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
             parentSize = gfx.GetSpriteSize(spriteComponent->GetSprite());
             texture->SetSize(parentSize);
             std::cout << texture->GetSize().width << " " << texture->GetSize().height << std::endl;
-        } else {
+        }
+        else
+        {
             parentSize = texture->GetSize();
         }
 
@@ -260,6 +267,21 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
                 Rectangle(Vector2D(relCamPos.x, relCamPos.y), height * scale, width * scale);
             shape.SetFillColor(Color::Blue());
             gfx.DrawShape(shape);
+        }
+    }
+
+    auto particleComponent = gameObject->GetComponent<Particles>();
+    if (particleComponent)
+    {
+        particleComponent->SetEmitterPosition(relCamPos);
+
+        for (const auto &particle : particleComponent->GetParticles())
+        {
+            if (particle.isAlive)
+            { // Ensure the particle is still alive
+                gfx.DrawParticle(particle.type, particle.position, particle.size, particle.angle,
+                                 particle.color);
+            }
         }
     }
 }
