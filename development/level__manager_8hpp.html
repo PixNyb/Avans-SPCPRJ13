@@ -95,8 +95,10 @@ $(document).ready(function(){initNavTree('level__manager_8hpp.html',''); initRes
 <p>Manages levels.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;json_handler.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="level__entry_8hpp_source.html">level_entry.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="level__factory_8hpp_source.html">level_factory.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="scene__manager_8hpp_source.html">scene_manager.hpp</a>&quot;</code><br />
+<code>#include &lt;fmt/format.h&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
@@ -105,25 +107,28 @@ Include dependency graph for level_manager.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="level__manager_8hpp__incl.png" border="0" usemap="#ainclude_2project_2managers_2level__manager_8hpp" alt=""/></div>
 <map name="ainclude_2project_2managers_2level__manager_8hpp" id="ainclude_2project_2managers_2level__manager_8hpp">
-<area shape="rect" title="Manages levels." alt="" coords="297,5,484,47"/>
-<area shape="rect" href="json__handler_8hpp_source.html" title=" " alt="" coords="43,169,175,196"/>
-<area shape="rect" href="level__factory_8hpp.html" title="Creates levels." alt="" coords="241,95,375,121"/>
-<area shape="rect" title=" " alt="" coords="200,543,277,569"/>
-<area shape="rect" title=" " alt="" coords="695,468,753,495"/>
-<area shape="rect" title=" " alt="" coords="687,244,737,271"/>
-<area shape="rect" href="scene__manager_8hpp.html" title="Manages scenes." alt="" coords="399,95,551,121"/>
-<area shape="rect" title=" " alt="" coords="225,244,372,271"/>
-<area shape="rect" href="iscene__factory_8hpp.html" title="Abstract factory for creating scenes." alt="" coords="251,169,394,196"/>
-<area shape="rect" href="prefab__manager_8hpp.html" title="Manages prefabs." alt="" coords="519,169,675,196"/>
-<area shape="rect" href="scene_8hpp.html" title="Defines the Scene class for managing and rendering game scenes in the game engine...." alt="" coords="396,244,484,271"/>
-<area shape="rect" href="camera_8hpp.html" title="Defines the Camera class for managing camera views in a game engine. The Camera class handles the ren..." alt="" coords="412,319,511,345"/>
-<area shape="rect" href="game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="477,393,611,420"/>
-<area shape="rect" title=" " alt="" coords="277,468,339,495"/>
-<area shape="rect" title=" " alt="" coords="327,319,387,345"/>
-<area shape="rect" href="color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="371,393,453,420"/>
-<area shape="rect" href="iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="415,468,532,495"/>
-<area shape="rect" href="transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="556,468,671,495"/>
-<area shape="rect" href="point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="572,543,655,569"/>
+<area shape="rect" title="Manages levels." alt="" coords="522,5,709,47"/>
+<area shape="rect" href="json__handler_8hpp_source.html" title=" " alt="" coords="505,169,637,196"/>
+<area shape="rect" href="level__entry_8hpp.html" title="A file containing the LevelEntry class." alt="" coords="77,169,199,196"/>
+<area shape="rect" title=" " alt="" coords="199,244,250,271"/>
+<area shape="rect" title=" " alt="" coords="269,468,327,495"/>
+<area shape="rect" href="level__factory_8hpp.html" title="Creates levels." alt="" coords="601,95,734,121"/>
+<area shape="rect" title=" " alt="" coords="759,543,837,569"/>
+<area shape="rect" href="scene__manager_8hpp.html" title="Manages scenes." alt="" coords="758,95,910,121"/>
+<area shape="rect" title=" " alt="" coords="985,95,1091,121"/>
+<area shape="rect" title=" " alt="" coords="510,244,657,271"/>
+<area shape="rect" href="level__type_8hpp.html" title="A file containing the level_type class." alt="" coords="5,244,124,271"/>
+<area shape="rect" href="iscene__factory_8hpp.html" title="Abstract factory for creating scenes." alt="" coords="661,169,804,196"/>
+<area shape="rect" href="prefab__manager_8hpp.html" title="Manages prefabs." alt="" coords="325,169,481,196"/>
+<area shape="rect" href="scene_8hpp.html" title="Defines the Scene class for managing and rendering game scenes in the game engine...." alt="" coords="686,244,774,271"/>
+<area shape="rect" href="camera_8hpp.html" title="Defines the Camera class for managing camera views in a game engine. The Camera class handles the ren..." alt="" coords="577,319,675,345"/>
+<area shape="rect" href="game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="473,393,608,420"/>
+<area shape="rect" title=" " alt="" coords="367,468,429,495"/>
+<area shape="rect" title=" " alt="" coords="700,319,760,345"/>
+<area shape="rect" href="color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="632,393,713,420"/>
+<area shape="rect" href="iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="593,468,710,495"/>
+<area shape="rect" href="transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="454,468,569,495"/>
+<area shape="rect" href="point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="470,543,553,569"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">

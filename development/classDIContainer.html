@@ -108,11 +108,42 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1a4e656327271848d6fe72c1a79923de"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classDIContainer.html#a1a4e656327271848d6fe72c1a79923de">resolve</a> (<a class="el" href="di__container_8hpp.html#a9329b70dc6690349dc4fca57d567cf7e">InstanceScope</a> scope=<a class="el" href="di__container_8hpp.html#ad63b94811145ec5073fe96214ac11bbd">DEFAULT_INSTANCE_SCOPE</a>)</td></tr>
 <tr class="memdesc:a1a4e656327271848d6fe72c1a79923de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves an instance.  <a href="classDIContainer.html#a1a4e656327271848d6fe72c1a79923de">More...</a><br /></td></tr>
 <tr class="separator:a1a4e656327271848d6fe72c1a79923de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f8bea2cb7b264c68dae6d3723b9029c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDIContainer.html#a8f8bea2cb7b264c68dae6d3723b9029c">CleanUp</a> ()</td></tr>
+<tr class="memdesc:a8f8bea2cb7b264c68dae6d3723b9029c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleans up the container.  <a href="classDIContainer.html#a8f8bea2cb7b264c68dae6d3723b9029c">More...</a><br /></td></tr>
+<tr class="separator:a8f8bea2cb7b264c68dae6d3723b9029c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The dependency injection container is used to store public or private instances. </p>
 <p>This container is used to store private or public instances for the game dev like <a class="el" href="classSceneManager.html" title="Manages scenes and their updates.">SceneManager</a> etc. </p><dl class="section note"><dt>Note</dt><dd>Refer to InstanceScope for more information about the scope of the instance. </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8f8bea2cb7b264c68dae6d3723b9029c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f8bea2cb7b264c68dae6d3723b9029c">&#9670;&nbsp;</a></span>CleanUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIContainer::CleanUp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cleans up the container. </p>
+<dl class="section note"><dt>Note</dt><dd>This is used to clean up the container when the engine is stopped. </dd></dl>
+
+</div>
+</div>
 <a id="a3adda24f6027fbda6341acecede71b15"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3adda24f6027fbda6341acecede71b15">&#9670;&nbsp;</a></span>registerInstance()</h2>
 

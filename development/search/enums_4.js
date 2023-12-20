@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mousebutton_1260',['MouseButton',['../i__input__facade_8hpp.html#ac1ec3647c005eacad401b06e7e18f711',1,'i_input_facade.hpp']]]
+  ['leveltype_1312',['LevelType',['../level__type_8hpp.html#acaf0fa9ae53d9ba60cd809335aa4dd9c',1,'level_type.hpp']]]
 ];

@@ -1,3 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classLevelManager.html" title="Manages the levels of the game." alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node1" href="$structLevelEntry.html" title="An entry&#45;level class for holding level details in a game." alt="" coords="5,5,96,32"/>
 </map>

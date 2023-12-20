@@ -77,7 +77,9 @@ var hierarchy =
       [ "SFMLSound", "classSFMLSound.html", null ]
     ] ],
     [ "JSONHandler", "classJSONHandler.html", null ],
+    [ "LevelEntry", "structLevelEntry.html", null ],
     [ "LevelManager", "classLevelManager.html", null ],
+    [ "LevelNameGenerator", "classLevelNameGenerator.html", null ],
     [ "PathfindingManager", "classPathfindingManager.html", null ],
     [ "PerformanceUtility", "classPerformanceUtility.html", null ],
     [ "PhysicsFacade", "classPhysicsFacade.html", null ],

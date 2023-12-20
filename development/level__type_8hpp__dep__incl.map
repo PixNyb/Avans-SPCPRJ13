@@ -1,0 +1,8 @@
+<map id="include/project/core/level_type.hpp" name="include/project/core/level_type.hpp">
+<area shape="rect" id="node1" title="A file containing the level_type class." alt="" coords="229,5,379,47"/>
+<area shape="rect" id="node2" href="$level__entry_8hpp.html" title="A file containing the LevelEntry class." alt="" coords="229,95,379,136"/>
+<area shape="rect" id="node3" href="$level__manager_8hpp.html" title="Manages levels." alt="" coords="112,184,299,225"/>
+<area shape="rect" id="node6" href="$level__entry_8cpp.html" title="A file containing the LevelEntry class." alt="" coords="323,184,482,225"/>
+<area shape="rect" id="node4" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="5,281,203,307"/>
+<area shape="rect" id="node5" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="227,273,386,315"/>
+</map>
