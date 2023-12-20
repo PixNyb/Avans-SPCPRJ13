@@ -1,0 +1,52 @@
+<map id="include/api/game_object.hpp" name="include/api/game_object.hpp">
+<area shape="rect" id="node1" title="This file contains the GameObject class definition." alt="" coords="1315,5,1524,32"/>
+<area shape="rect" id="node2" href="$camera_8hpp.html" title="Defines the Camera class for managing camera views in a game engine. The Camera class handles the ren..." alt="" coords="340,87,515,114"/>
+<area shape="rect" id="node3" href="$scene_8hpp.html" title="Defines the Scene class for managing and rendering game scenes in the game engine...." alt="" coords="547,177,710,203"/>
+<area shape="rect" id="node13" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="1120,437,1345,479"/>
+<area shape="rect" id="node18" href="$iprototype__component_8hpp.html" title="This file contains the IPrototypeComponent interface definition." alt="" coords="2009,80,2173,121"/>
+<area shape="rect" id="node22" href="$pathfinding_8hpp.html" title="This file contains the Pathfinding class definition." alt="" coords="1797,445,1996,471"/>
+<area shape="rect" id="node26" href="$physics__facade_8hpp.html" title="This file contains the PhysicsFacade class definition." alt="" coords="1407,348,1584,389"/>
+<area shape="rect" id="node28" href="$game__object_8cpp.html" title="This file contains the GameObject class implementation." alt="" coords="2761,534,2941,561"/>
+<area shape="rect" id="node29" href="$physics__test_8cpp.html" title="This file tests the general working of the PhysicsManager/PhysicsFacade." alt="" coords="2571,534,2737,561"/>
+<area shape="rect" id="node30" href="$pathfindable_8hpp.html" title="This file contains the Pathfindable class definition." alt="" coords="2595,266,2801,293"/>
+<area shape="rect" id="node34" href="$ui__object_8hpp.html" title="Defines the UIObject class for representing user interface elements in the game engine...." alt="" coords="3183,87,3367,114"/>
+<area shape="rect" id="node41" href="$game__object__utility_8hpp.html" title="Game Object utility." alt="" coords="1609,348,1761,389"/>
+<area shape="rect" id="node43" href="$contact__listener_8hpp.html" title="This file contains the defenition of the class ContactListener This class should only be used inside ..." alt="" coords="1163,259,1331,300"/>
+<area shape="rect" id="node44" href="$debug__renderer_8hpp.html" title="This file contains the debugrendere class defenition." alt="" coords="1457,80,1625,121"/>
+<area shape="rect" id="node45" href="$debug__renderer_8cpp.html" title="This file contains the debugrendere class implementation." alt="" coords="1507,169,1691,211"/>
+<area shape="rect" id="node46" href="$behaviour__script__manager_8hpp.html" title="A file containing the BehaviourScriptManager class." alt="" coords="981,348,1207,389"/>
+<area shape="rect" id="node47" href="$prefab__manager_8hpp.html" title="Manages prefabs." alt="" coords="539,80,726,121"/>
+<area shape="rect" id="node48" href="$prefab__manager_8cpp.html" title="Implementation of the prefab manager." alt="" coords="735,169,893,211"/>
+<area shape="rect" id="node49" href="$render__manager_8hpp_source.html" title=" " alt="" coords="851,80,1038,121"/>
+<area shape="rect" id="node50" href="$animation__state_8cpp.html" title="This file contains the AnimationState class implementation." alt="" coords="3391,87,3594,114"/>
+<area shape="rect" id="node17" href="$camera_8cpp.html" title="This file contains the Camera class implementation." alt="" coords="5,177,151,203"/>
+<area shape="rect" id="node4" href="$level__scene_8hpp.html" title="Defines the LevelScene class for creating a level." alt="" coords="442,355,645,382"/>
+<area shape="rect" id="node6" href="$pathfinding__manager_8hpp.html" title="This file contains the PathfindingManager class definition." alt="" coords="492,437,683,479"/>
+<area shape="rect" id="node11" href="$scene__manager_8hpp.html" title="Manages scenes." alt="" coords="719,348,906,389"/>
+<area shape="rect" id="node14" href="$iscene__factory_8hpp.html" title="Abstract factory for creating scenes." alt="" coords="226,259,434,300"/>
+<area shape="rect" id="node16" href="$scene_8cpp.html" title="This file contains the Scene class implementation." alt="" coords="459,266,593,293"/>
+<area shape="rect" id="node5" href="$level__factory_8cpp.html" title="Implementation of the level factory." alt="" coords="219,437,417,479"/>
+<area shape="rect" id="node7" href="$pathfinding_8cpp.html" title="This file contains the Pathfinding class implementation." alt="" coords="1703,534,1872,561"/>
+<area shape="rect" id="node8" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="919,534,1117,561"/>
+<area shape="rect" id="node9" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="721,527,880,568"/>
+<area shape="rect" id="node10" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="441,527,600,568"/>
+<area shape="rect" id="node12" href="$level__manager_8hpp.html" title="Manages levels." alt="" coords="707,437,894,479"/>
+<area shape="rect" id="node15" href="$level__factory_8hpp.html" title="Creates levels." alt="" coords="219,348,417,389"/>
+<area shape="rect" id="node19" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="2233,177,2432,203"/>
+<area shape="rect" id="node20" href="$audio__source_8hpp.html" title="The AudioSource class provides audio playback functionality for game objects. This class is part of a..." alt="" coords="2157,266,2367,293"/>
+<area shape="rect" id="node21" href="$behaviour__script_8hpp.html" title="Defines the BehaviourScript class as part of a game engine framework. BehaviourScript is a base class..." alt="" coords="1801,348,1963,389"/>
+<area shape="rect" id="node23" href="$behaviour__script_8cpp.html" title="This file contains the BehaviourScript class implementation." alt="" coords="2131,445,2335,471"/>
+<area shape="rect" id="node25" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="1559,266,1731,293"/>
+<area shape="rect" id="node31" href="$rigidbody_8hpp_source.html" title=" " alt="" coords="1949,266,2133,293"/>
+<area shape="rect" id="node32" href="$shape__component_8hpp.html" title="A file containing the ShapeComponent class." alt="" coords="2384,355,2628,382"/>
+<area shape="rect" id="node33" href="$component_8cpp.html" title="This file contains the Component class implementation." alt="" coords="1755,266,1924,293"/>
+<area shape="rect" id="node24" href="$contact__listener_8cpp.html" title="This file contains the implementation of the class ContactListener." alt="" coords="1370,437,1562,479"/>
+<area shape="rect" id="node27" href="$physics__manager_8hpp.html" title="This file contains the PhysicsManager class definition." alt="" coords="1586,437,1773,479"/>
+<area shape="rect" id="node35" href="$button_8hpp.html" title="Defines the Button class as a part of the user interface in a game engine. Button is a UIObject subcl..." alt="" coords="3509,177,3676,203"/>
+<area shape="rect" id="node38" href="$button__factory_8hpp.html" title="Contains the definition for the button factory." alt="" coords="3266,259,3474,300"/>
+<area shape="rect" id="node39" href="$text_8hpp.html" title="Defines the Text class for handling text rendering in UI elements within the game engine...." alt="" coords="3104,177,3255,203"/>
+<area shape="rect" id="node42" href="$ui__object_8cpp.html" title="This file contains the UIObject class implementation." alt="" coords="3279,177,3434,203"/>
+<area shape="rect" id="node36" href="$button__click__listener_8hpp.html" title="Defines the ButtonClickListener class." alt="" coords="3499,259,3687,300"/>
+<area shape="rect" id="node37" href="$button_8cpp.html" title="This file contains the Button class implementation." alt="" coords="3589,355,3727,382"/>
+<area shape="rect" id="node40" href="$core__constants_8hpp_source.html" title=" " alt="" coords="2826,259,2978,300"/>
+</map>

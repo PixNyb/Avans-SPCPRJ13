@@ -1,0 +1,52 @@
+<map id="include/api/point.hpp" name="include/api/point.hpp">
+<area shape="rect" id="node1" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="1361,5,1519,32"/>
+<area shape="rect" id="node2" href="$debug_8hpp.html" title="Defines a set of debugging utilities in the DefunBobEngine. This file includes functions for drawing ..." alt="" coords="5,87,171,114"/>
+<area shape="rect" id="node3" href="$imouse__listener_8hpp.html" title="Defines the IMouseListener interface for handling mouse events in the DefunBobEngine...." alt="" coords="310,259,455,300"/>
+<area shape="rect" id="node4" href="$i__input__facade_8hpp.html" title="This file contains the IInputFacade interface definition." alt="" coords="297,348,469,389"/>
+<area shape="rect" id="node5" href="$sdl__input__facade_8hpp.html" title="This file contains the SDLInputFacade class definition." alt="" coords="179,527,397,568"/>
+<area shape="rect" id="node11" href="$polygon__collider_8hpp.html" title="This file contains the PolygonCollider class definition." alt="" coords="4535,80,4684,121"/>
+<area shape="rect" id="node12" href="$rigidbody_8hpp_source.html" title=" " alt="" coords="3787,266,3971,293"/>
+<area shape="rect" id="node16" href="$pathfinding_8cpp.html" title="This file contains the Pathfinding class implementation." alt="" coords="1118,534,1287,561"/>
+<area shape="rect" id="node20" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="1871,87,2060,114"/>
+<area shape="rect" id="node24" href="$pathfinding__manager_8hpp.html" title="This file contains the PathfindingManager class definition." alt="" coords="1521,437,1711,479"/>
+<area shape="rect" id="node29" href="$ui__object_8hpp.html" title="Defines the UIObject class for representing user interface elements in the game engine...." alt="" coords="831,266,1015,293"/>
+<area shape="rect" id="node39" href="$render__manager_8hpp_source.html" title=" " alt="" coords="3925,527,4112,568"/>
+<area shape="rect" id="node43" href="$line_8hpp_source.html" title=" " alt="" coords="4277,259,4454,300"/>
+<area shape="rect" id="node47" href="$graph_8hpp.html" title="This file contains the Graph, Node and Link classes." alt="" coords="1243,169,1437,211"/>
+<area shape="rect" id="node48" href="$geometry__visitor_8hpp.html" title="A file containing the GeometryVisitor class." alt="" coords="4075,80,4253,121"/>
+<area shape="rect" id="node8" href="$button__click__listener_8hpp.html" title="Defines the ButtonClickListener class." alt="" coords="310,437,498,479"/>
+<area shape="rect" id="node10" href="$button__factory_8hpp.html" title="Contains the definition for the button factory." alt="" coords="620,437,828,479"/>
+<area shape="rect" id="node6" href="$sdl__input__facade_8cpp.html" title="This file contains the SDLInputFacade class implementation." alt="" coords="197,616,379,657"/>
+<area shape="rect" id="node7" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="2948,623,3145,650"/>
+<area shape="rect" id="node9" href="$button_8cpp.html" title="This file contains the Button class implementation." alt="" coords="465,534,604,561"/>
+<area shape="rect" id="node13" href="$physics__facade_8hpp.html" title="This file contains the PhysicsFacade class definition." alt="" coords="3337,348,3514,389"/>
+<area shape="rect" id="node18" href="$physics__test_8cpp.html" title="This file tests the general working of the PhysicsManager/PhysicsFacade." alt="" coords="3653,534,3819,561"/>
+<area shape="rect" id="node19" href="$rigidbody_8cpp.html" title="This file contains the RigidBody class implementation." alt="" coords="3827,355,3981,382"/>
+<area shape="rect" id="node14" href="$physics__manager_8hpp.html" title="This file contains the PhysicsManager class definition." alt="" coords="3235,437,3421,479"/>
+<area shape="rect" id="node15" href="$game__object_8cpp.html" title="This file contains the GameObject class implementation." alt="" coords="3449,534,3629,561"/>
+<area shape="rect" id="node17" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="2491,527,2650,568"/>
+<area shape="rect" id="node21" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="2429,177,2638,203"/>
+<area shape="rect" id="node42" href="$transform_8cpp.html" title="This file contains the Transform struct implementation." alt="" coords="1885,177,2045,203"/>
+<area shape="rect" id="node22" href="$camera_8hpp.html" title="Defines the Camera class for managing camera views in a game engine. The Camera class handles the ren..." alt="" coords="1795,266,1970,293"/>
+<area shape="rect" id="node23" href="$scene_8hpp.html" title="Defines the Scene class for managing and rendering game scenes in the game engine...." alt="" coords="1676,355,1839,382"/>
+<area shape="rect" id="node26" href="$iprototype__component_8hpp.html" title="This file contains the IPrototypeComponent interface definition." alt="" coords="2659,259,2823,300"/>
+<area shape="rect" id="node27" href="$pathfindable_8hpp.html" title="This file contains the Pathfindable class definition." alt="" coords="1513,266,1719,293"/>
+<area shape="rect" id="node28" href="$pathfinding_8hpp.html" title="This file contains the Pathfinding class definition." alt="" coords="1239,266,1438,293"/>
+<area shape="rect" id="node33" href="$contact__listener_8hpp.html" title="This file contains the defenition of the class ContactListener This class should only be used inside ..." alt="" coords="3341,259,3509,300"/>
+<area shape="rect" id="node34" href="$debug__renderer_8hpp.html" title="This file contains the debugrendere class defenition." alt="" coords="3149,259,3317,300"/>
+<area shape="rect" id="node35" href="$debug__renderer_8cpp.html" title="This file contains the debugrendere class implementation." alt="" coords="3073,348,3257,389"/>
+<area shape="rect" id="node36" href="$behaviour__script__manager_8hpp.html" title="A file containing the BehaviourScriptManager class." alt="" coords="2848,259,3075,300"/>
+<area shape="rect" id="node37" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="2009,348,2234,389"/>
+<area shape="rect" id="node38" href="$prefab__manager_8hpp.html" title="Manages prefabs." alt="" coords="2221,259,2408,300"/>
+<area shape="rect" id="node40" href="$game__object__utility_8hpp.html" title="Game Object utility." alt="" coords="2045,259,2197,300"/>
+<area shape="rect" id="node41" href="$animation__state_8cpp.html" title="This file contains the AnimationState class implementation." alt="" coords="2432,266,2635,293"/>
+<area shape="rect" id="node25" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="1537,527,1695,568"/>
+<area shape="rect" id="node30" href="$button_8hpp.html" title="Defines the Button class as a part of the user interface in a game engine. Button is a UIObject subcl..." alt="" coords="493,355,659,382"/>
+<area shape="rect" id="node31" href="$text_8hpp.html" title="Defines the Text class for handling text rendering in UI elements within the game engine...." alt="" coords="683,355,834,382"/>
+<area shape="rect" id="node32" href="$ui__object_8cpp.html" title="This file contains the UIObject class implementation." alt="" coords="909,355,1064,382"/>
+<area shape="rect" id="node44" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="4235,437,4418,479"/>
+<area shape="rect" id="node45" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="4187,348,4327,389"/>
+<area shape="rect" id="node46" href="$shape__renderer_8hpp.html" title="A file containing the ShapeRenderer class." alt="" coords="4056,437,4211,479"/>
+<area shape="rect" id="node49" href="$geometry_8hpp.html" title="This file contains the Geometry class definition." alt="" coords="4282,169,4459,211"/>
+<area shape="rect" id="node50" href="$geometry__visitor_8cpp.html" title="A file containing the GeometryVisitor class." alt="" coords="4107,169,4258,211"/>
+</map>

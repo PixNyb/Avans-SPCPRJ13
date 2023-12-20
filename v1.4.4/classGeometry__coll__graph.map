@@ -1,0 +1,5 @@
+<map id="Geometry" name="Geometry">
+<area shape="rect" id="node1" title="Abstract base class for geometric shapes." alt="" coords="59,95,145,121"/>
+<area shape="rect" id="node2" href="$classVector2D.html" title="Represents a two&#45;dimensional vector." alt="" coords="5,5,87,32"/>
+<area shape="rect" id="node3" href="$classShapeColor.html" title="ShapeColor is a class that represents a color in the game engine." alt="" coords="111,5,207,32"/>
+</map>

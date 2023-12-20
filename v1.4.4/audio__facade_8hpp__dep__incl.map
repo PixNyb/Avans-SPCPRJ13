@@ -1,0 +1,5 @@
+<map id="include/facades/audio_facade.hpp" name="include/facades/audio_facade.hpp">
+<area shape="rect" id="node1" title="A facade for the audio library." alt="" coords="125,5,289,47"/>
+<area shape="rect" id="node2" href="$audio__source_8cpp.html" title="This file contains the AudioSource class implementation." alt="" coords="5,95,188,121"/>
+<area shape="rect" id="node3" href="$audio__facade_8cpp.html" title="A facade for the audio library." alt="" coords="212,95,427,121"/>
+</map>

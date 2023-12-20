@@ -1,0 +1,9 @@
+<map id="include/project/managers/prefab_manager.hpp" name="include/project/managers/prefab_manager.hpp">
+<area shape="rect" id="node1" title="Manages prefabs." alt="" coords="321,5,508,47"/>
+<area shape="rect" id="node2" href="$level__factory_8hpp.html" title="Creates levels." alt="" coords="214,95,413,136"/>
+<area shape="rect" id="node7" href="$prefab__manager_8cpp.html" title="Implementation of the prefab manager." alt="" coords="437,95,595,136"/>
+<area shape="rect" id="node3" href="$level__manager_8hpp.html" title="Manages levels." alt="" coords="112,184,299,225"/>
+<area shape="rect" id="node6" href="$level__factory_8cpp.html" title="Implementation of the level factory." alt="" coords="323,184,520,225"/>
+<area shape="rect" id="node4" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="5,281,203,307"/>
+<area shape="rect" id="node5" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="227,273,386,315"/>
+</map>
