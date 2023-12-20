@@ -164,6 +164,7 @@ class LevelManager
      * @brief Save the level by a list of game objects.
      * @param directory The directory to where the level json is to be saved.
      * @param filename The eventual filename.
+     * @param camera The camera which is to be saved.
      * @param gameObjects The list of game objects which are to be saved.
      * @return The path of where the level is stored.
      */
@@ -173,7 +174,7 @@ class LevelManager
 
     /**
      * @brief Saves a new level by a list of game objects.
-     * @param camera
+     * @param camera The camera which is to be saved.
      * @param gameObjects The list of game objects which are to be saved.
      * @return The path of where the level is stored.
      */
