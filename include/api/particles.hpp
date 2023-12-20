@@ -47,6 +47,7 @@ class Particles : public BehaviourScript
     Point emitterPosition;
     Point offset;
     std::weak_ptr<GameObject> parent;
+    ParticleType type;
 
   public:
     Particles(std::weak_ptr<GameObject> parent);
@@ -59,6 +60,8 @@ class Particles : public BehaviourScript
     void AddParticles(const int count, float lifetime, const Point &offset, const int size,
                       const Point &angle, const Color &color, const ParticleType &particleType);
 
+    ParticleType GetParticleType() const { return type; }
+    
     const std::vector<Particle> &GetParticles() const { return particles; }
 
     void ResetParticle(Particle &particle);

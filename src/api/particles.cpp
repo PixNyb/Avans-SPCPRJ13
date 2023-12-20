@@ -12,6 +12,7 @@ void Particles::AddParticles(const int count, float lifetime, const Point &offse
                              const ParticleType &particleType)
 {
     this->offset = offset;
+    this->type = particleType;
 
     for (int i = 0; i < count; ++i)
     {
