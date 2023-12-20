@@ -1,23 +1,29 @@
 #include "particles.hpp"
+#include "camera.hpp"
 #include "engine.hpp"
 #include "memory"
 #include "particle_manager.hpp"
+#include "scene_manager.hpp"
 #include "time.hpp"
 
-Particles::Particles(int count, float lifetime, const Point &initialPosition, const Color &color,
-                     const ParticleType &particleType, std::weak_ptr<GameObject> parent)
-    : emitterPosition(initialPosition)
+Particles::Particles(std::weak_ptr<GameObject> parent) { this->parent = parent; }
+
+void Particles::AddParticles(const int count, float lifetime, const Point &offset, const int size,
+                             const Color &color, const ParticleType &particleType)
 {
-    this->parent = parent;
-    particles.resize(count);
-    for (auto &particle : particles)
+    this->offset = offset;
+
+    for (int i = 0; i < count; ++i)
     {
-        particle.position = initialPosition;
+        Particle particle;
         particle.defaultLifetime = lifetime;
         particle.lifetime = lifetime;
         particle.isAlive = true;
         particle.color = color;
         particle.type = particleType;
+        particle.size = size;
+
+        particles.push_back(particle);
     }
 }
 
@@ -48,7 +54,7 @@ void Particles::OnUpdate()
     }
 }
 
-void Particles::SetEmitterPosition(const Point &position) { emitterPosition = position; }
+void Particles::SetEmitterPosition(const Point &position) { emitterPosition = position + offset; }
 
 std::shared_ptr<Component> Particles::Clone(std::weak_ptr<GameObject> parent)
 {
@@ -59,22 +65,27 @@ std::shared_ptr<Component> Particles::Clone(std::weak_ptr<GameObject> parent)
 
 void Particles::ResetParticle(Particle &particle)
 {
-    particle.lifetime = particle.defaultLifetime;
+    auto engine = Engine::GetInstance();
+    auto sceneManager = engine->Get<SceneManager>();
+    auto scene = sceneManager->GetScene().lock();
+    auto camera = scene->GetCamera();
+
+    particle.lifetime =
+        static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * particle.defaultLifetime;
 
     switch (particle.type)
     {
     case ParticleType::Confetti:
         particle.position = emitterPosition;
-        particle.velocity = Point{static_cast<float>(rand() % 10 - 5),
-                                  static_cast<float>(rand() % 10 - 5)}; // Random velocity
+        particle.velocity =
+            Point{static_cast<float>(rand() % 100 - 50), static_cast<float>(rand() % 100 - 50)};
         break;
     case ParticleType::Rain:
         particle.position =
-            emitterPosition +
-            Point{static_cast<float>(rand() % 1500),
-                  static_cast<float>(rand() % 800 - 100)}; // Reset position to emitter's position
-        particle.velocity = Point{static_cast<float>(rand() % 20 + 10),
-                                  static_cast<float>(rand() % 20 + 10)}; // Random velocity
+            emitterPosition + Point{static_cast<float>(rand() % camera->GetAspectWidth()),
+                                    static_cast<float>(rand() % camera->GetAspectHeight())};
+        particle.velocity =
+            Point{static_cast<float>(rand() % 10 + 5), static_cast<float>(rand() % 10 + 5)};
         break;
     }
 

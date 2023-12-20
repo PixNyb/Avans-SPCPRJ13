@@ -26,6 +26,7 @@
 #include "core_constants.hpp"
 #include "event.hpp"
 #include "line.hpp"
+#include "particle_type.hpp"
 #include "rectangle.hpp"
 #include "sdl_window.hpp"
 #include "texture.hpp"
@@ -255,7 +256,8 @@ class IOFacade
                                       int frameIndex, int totalColumns, int totalRows, bool flipX,
                                       bool flipY, double angle, float scale) = 0;
 
-    virtual void DrawParticle(double posX, double posY, Color color) = 0;
+    virtual void DrawParticle(const ParticleType &particleType, double posX, double posY, int size,
+                              Color color) = 0;
 };
 
 #endif // DEFUNBOBENGINE_IO_FACADE_HPP

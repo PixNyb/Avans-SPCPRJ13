@@ -275,12 +275,13 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
     if (particleComponent)
     {
         particleComponent->SetEmitterPosition(relCamPos);
+        
         for (const auto &particle : particleComponent->GetParticles())
         {
             if (particle.isAlive)
             { // Ensure the particle is still alive
-                gfx.DrawParticle(particle.position.x, particle.position.y, particle.color);
-                // Handle sprites below if needed
+                gfx.DrawParticle(particle.type, particle.position.x, particle.position.y,
+                                 particle.size, particle.color);
             }
         }
     }
