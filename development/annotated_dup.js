@@ -46,6 +46,8 @@ var annotated_dup =
     [ "Line", "structLine.html", "structLine" ],
     [ "Link", "classLink.html", "classLink" ],
     [ "Node", "classNode.html", "classNode" ],
+    [ "Particle", "structParticle.html", "structParticle" ],
+    [ "Particles", "classParticles.html", "classParticles" ],
     [ "Pathfindable", "classPathfindable.html", "classPathfindable" ],
     [ "Pathfinding", "classPathfinding.html", "classPathfinding" ],
     [ "PathfindingManager", "classPathfindingManager.html", "classPathfindingManager" ],

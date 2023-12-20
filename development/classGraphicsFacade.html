@@ -184,6 +184,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8b0172c9c539cec1e0cadb922a093fbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#a8b0172c9c539cec1e0cadb922a093fbf">DrawSpriteSheetFrame</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture, const <a class="el" href="classRectangle.html">Rectangle</a> &amp;dstRect, int frameIndex, int totalColumns, int totalRows, bool flipX, bool flipY, double angle, float scale) override</td></tr>
 <tr class="memdesc:a8b0172c9c539cec1e0cadb922a093fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the sprite sheet frame.  <a href="classGraphicsFacade.html#a8b0172c9c539cec1e0cadb922a093fbf">More...</a><br /></td></tr>
 <tr class="separator:a8b0172c9c539cec1e0cadb922a093fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa810f63d2dedf99ff4b6c3d6c43038a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsFacade.html#aa810f63d2dedf99ff4b6c3d6c43038a8">DrawParticle</a> (const <a class="el" href="particle__type_8hpp.html#aded321cd7610a60bfbc018a66067a3d6">ParticleType</a> &amp;particleType, const <a class="el" href="structPoint.html">Point</a> &amp;position, int size, const <a class="el" href="structPoint.html">Point</a> &amp;angle, <a class="el" href="classColor.html">Color</a> color) override</td></tr>
+<tr class="memdesc:aa810f63d2dedf99ff4b6c3d6c43038a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a particle.  <a href="classGraphicsFacade.html#aa810f63d2dedf99ff4b6c3d6c43038a8">More...</a><br /></td></tr>
+<tr class="separator:aa810f63d2dedf99ff4b6c3d6c43038a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classIOFacade"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classIOFacade')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classIOFacade.html">IOFacade</a></td></tr>
 <tr class="memitem:a92a836ecf11f55edf01dda59b0f4534f inherit pub_methods_classIOFacade"><td class="memItemLeft" align="right" valign="top"><a id="a92a836ecf11f55edf01dda59b0f4534f"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIOFacade.html#a92a836ecf11f55edf01dda59b0f4534f">~IOFacade</a> ()=default</td></tr>
@@ -547,6 +550,74 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </dl>
 
 <p>Implements <a class="el" href="classIOFacade.html#a41bcbcd0b30645da3c9e6a3569424fdd">IOFacade</a>.</p>
+
+</div>
+</div>
+<a id="aa810f63d2dedf99ff4b6c3d6c43038a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa810f63d2dedf99ff4b6c3d6c43038a8">&#9670;&nbsp;</a></span>DrawParticle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphicsFacade::DrawParticle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="particle__type_8hpp.html#aded321cd7610a60bfbc018a66067a3d6">ParticleType</a> &amp;&#160;</td>
+          <td class="paramname"><em>particleType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structPoint.html">Point</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structPoint.html">Point</a> &amp;&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classColor.html">Color</a>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws a particle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particleType</td><td>The type of the particle to be drawn. </td></tr>
+    <tr><td class="paramname">position</td><td>The position of the particle on the screen. </td></tr>
+    <tr><td class="paramname">size</td><td>The size of the particle. </td></tr>
+    <tr><td class="paramname">angle</td><td>The angle of the particle (rotation). </td></tr>
+    <tr><td class="paramname">color</td><td>The color of the particle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classIOFacade.html#a5ca8fb1d23e190eb08f91b0e063b28c0">IOFacade</a>.</p>
 
 </div>
 </div>

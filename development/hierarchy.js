@@ -55,6 +55,7 @@ var hierarchy =
         [ "AudioSource", "classAudioSource.html", null ],
         [ "BehaviourScript", "classBehaviourScript.html", [
           [ "Animator", "classAnimator.html", null ],
+          [ "Particles", "classParticles.html", null ],
           [ "Pathfinding", "classPathfinding.html", null ],
           [ "Sprite", "classSprite.html", null ]
         ] ],
@@ -80,6 +81,7 @@ var hierarchy =
     [ "LevelEntry", "structLevelEntry.html", null ],
     [ "LevelManager", "classLevelManager.html", null ],
     [ "LevelNameGenerator", "classLevelNameGenerator.html", null ],
+    [ "Particle", "structParticle.html", null ],
     [ "PathfindingManager", "classPathfindingManager.html", null ],
     [ "PerformanceUtility", "classPerformanceUtility.html", null ],
     [ "PhysicsFacade", "classPhysicsFacade.html", null ],

@@ -10,6 +10,7 @@ var classGraphicsFacade =
     [ "Delay", "classGraphicsFacade.html#aff309a90e6393a6f40babc95ec4eb13e", null ],
     [ "DrawLine", "classGraphicsFacade.html#a55c7789332e5120b0ac2f6ddc4d0b04d", null ],
     [ "DrawLines", "classGraphicsFacade.html#a8d3fad6022838ad14d33b3980430434a", null ],
+    [ "DrawParticle", "classGraphicsFacade.html#aa810f63d2dedf99ff4b6c3d6c43038a8", null ],
     [ "DrawShape", "classGraphicsFacade.html#a018fe9809bdec5c5c03acde18fafe564", null ],
     [ "DrawShape", "classGraphicsFacade.html#a834be76d398810e0dd13021b96841452", null ],
     [ "DrawShape", "classGraphicsFacade.html#a0585ad2292e8b3915f159ca339cd4969", null ],

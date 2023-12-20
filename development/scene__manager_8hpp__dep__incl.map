@@ -1,9 +1,10 @@
 <map id="include/project/managers/scene_manager.hpp" name="include/project/managers/scene_manager.hpp">
-<area shape="rect" id="node1" title="Manages scenes." alt="" coords="344,5,531,47"/>
+<area shape="rect" id="node1" title="Manages scenes." alt="" coords="427,5,613,47"/>
 <area shape="rect" id="node2" href="$level__manager_8hpp.html" title="Manages levels." alt="" coords="141,95,328,136"/>
 <area shape="rect" id="node3" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="5,191,203,218"/>
-<area shape="rect" id="node5" href="$pathfinding_8cpp.html" title="This file contains the Pathfinding class implementation." alt="" coords="353,102,522,129"/>
-<area shape="rect" id="node6" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="546,95,771,136"/>
-<area shape="rect" id="node7" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="795,95,954,136"/>
+<area shape="rect" id="node5" href="$particles_8cpp.html" title="This file contains the particles class implementation." alt="" coords="352,102,504,129"/>
+<area shape="rect" id="node6" href="$pathfinding_8cpp.html" title="This file contains the Pathfinding class implementation." alt="" coords="529,102,698,129"/>
+<area shape="rect" id="node7" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="722,95,947,136"/>
+<area shape="rect" id="node8" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="971,95,1130,136"/>
 <area shape="rect" id="node4" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="227,184,386,225"/>
 </map>

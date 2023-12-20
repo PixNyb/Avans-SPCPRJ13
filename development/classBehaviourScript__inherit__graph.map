@@ -1,8 +1,9 @@
 <map id="BehaviourScript" name="BehaviourScript">
-<area shape="rect" id="node1" title="Base class for scriptable behavior in game objects." alt="" coords="97,155,223,181"/>
+<area shape="rect" id="node1" title="Base class for scriptable behavior in game objects." alt="" coords="143,155,268,181"/>
 <area shape="rect" id="node4" href="$classAnimator.html" title="The Animator class is a BehaviourScript that can be added to a GameObject to animate it according to ..." alt="" coords="5,229,88,256"/>
-<area shape="rect" id="node5" href="$classPathfinding.html" title="The Pathfinding class represents a pathfinding behaviour script." alt="" coords="113,229,207,256"/>
-<area shape="rect" id="node6" href="$classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="231,229,291,256"/>
-<area shape="rect" id="node2" href="$classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="111,80,209,107"/>
-<area shape="rect" id="node3" href="$classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="78,5,242,32"/>
+<area shape="rect" id="node5" href="$classParticles.html" title="Manages a collection of particles in the game engine." alt="" coords="112,229,189,256"/>
+<area shape="rect" id="node6" href="$classPathfinding.html" title="The Pathfinding class represents a pathfinding behaviour script." alt="" coords="214,229,309,256"/>
+<area shape="rect" id="node7" href="$classSprite.html" title="Represents a graphical sprite in the game engine." alt="" coords="333,229,393,256"/>
+<area shape="rect" id="node2" href="$classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="157,80,254,107"/>
+<area shape="rect" id="node3" href="$classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="123,5,287,32"/>
 </map>

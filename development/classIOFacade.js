@@ -9,6 +9,7 @@ var classIOFacade =
     [ "Delay", "classIOFacade.html#a3519db40cebbc1385f3f4cea0d17048d", null ],
     [ "DrawLine", "classIOFacade.html#aaa5a6d1000e5ed60b6a3d8bf9c5b700e", null ],
     [ "DrawLines", "classIOFacade.html#a41bcbcd0b30645da3c9e6a3569424fdd", null ],
+    [ "DrawParticle", "classIOFacade.html#a5ca8fb1d23e190eb08f91b0e063b28c0", null ],
     [ "DrawShape", "classIOFacade.html#a5dd3aefb0d459a72fdaec975847825d1", null ],
     [ "DrawShape", "classIOFacade.html#a7364a4eedb4f3215b56e5282d81060e8", null ],
     [ "DrawShape", "classIOFacade.html#aa3ac1ab80cbb108af3fa91bad1ab1ee8", null ],

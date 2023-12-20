@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classPropertyManager.html" title="Manages various properties which are stored in a JSON file." alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node1" href="$classPrefabManager.html" title="Manages the prefabs that are used for the levels." alt="" coords="5,5,127,32"/>
+<area shape="rect" id="node2" href="$classPrefabManagerStub.html" title=" " alt="" coords="175,5,325,32"/>
 </map>

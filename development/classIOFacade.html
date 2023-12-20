@@ -173,6 +173,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:a79b7a096b12e2c5980c754e7995ffe83"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIOFacade.html#a79b7a096b12e2c5980c754e7995ffe83">DrawSpriteSheetFrame</a> (const <a class="el" href="classTexture.html">Texture</a> &amp;texture, const <a class="el" href="classRectangle.html">Rectangle</a> &amp;dstRect, int frameIndex, int totalColumns, int totalRows, bool flipX, bool flipY, double angle, float scale)=0</td></tr>
 <tr class="memdesc:a79b7a096b12e2c5980c754e7995ffe83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a sprite sheet frame on the rendering target.  <a href="classIOFacade.html#a79b7a096b12e2c5980c754e7995ffe83">More...</a><br /></td></tr>
 <tr class="separator:a79b7a096b12e2c5980c754e7995ffe83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca8fb1d23e190eb08f91b0e063b28c0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIOFacade.html#a5ca8fb1d23e190eb08f91b0e063b28c0">DrawParticle</a> (const <a class="el" href="particle__type_8hpp.html#aded321cd7610a60bfbc018a66067a3d6">ParticleType</a> &amp;particleType, const <a class="el" href="structPoint.html">Point</a> &amp;position, int size, const <a class="el" href="structPoint.html">Point</a> &amp;angle, <a class="el" href="classColor.html">Color</a> color)=0</td></tr>
+<tr class="memdesc:a5ca8fb1d23e190eb08f91b0e063b28c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a particle on the rendering target.  <a href="classIOFacade.html#a5ca8fb1d23e190eb08f91b0e063b28c0">More...</a><br /></td></tr>
+<tr class="separator:a5ca8fb1d23e190eb08f91b0e063b28c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface for input/output handling in the game engine. </p>
@@ -483,6 +486,74 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </dl>
 
 <p>Implemented in <a class="el" href="classGraphicsFacade.html#a8d3fad6022838ad14d33b3980430434a">GraphicsFacade</a>.</p>
+
+</div>
+</div>
+<a id="a5ca8fb1d23e190eb08f91b0e063b28c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca8fb1d23e190eb08f91b0e063b28c0">&#9670;&nbsp;</a></span>DrawParticle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IOFacade::DrawParticle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="particle__type_8hpp.html#aded321cd7610a60bfbc018a66067a3d6">ParticleType</a> &amp;&#160;</td>
+          <td class="paramname"><em>particleType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structPoint.html">Point</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structPoint.html">Point</a> &amp;&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classColor.html">Color</a>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws a particle on the rendering target. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particleType</td><td>The type of the particle to be drawn. </td></tr>
+    <tr><td class="paramname">position</td><td>The position of the particle on the screen. </td></tr>
+    <tr><td class="paramname">size</td><td>The size of the particle. </td></tr>
+    <tr><td class="paramname">angle</td><td>The angle of the particle (rotation). </td></tr>
+    <tr><td class="paramname">color</td><td>The color of the particle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classGraphicsFacade.html#aa810f63d2dedf99ff4b6c3d6c43038a8">GraphicsFacade</a>.</p>
 
 </div>
 </div>
