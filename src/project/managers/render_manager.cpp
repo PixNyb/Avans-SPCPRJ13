@@ -206,7 +206,7 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
     }
 
     auto shapeComponent = gameObject->GetComponent<ShapeComponent>();
-    if (shapeComponent)
+    if (shapeComponent && shapeComponent->IsActive())
     {
         for (auto &shape : shapeComponent->GetGeometries())
         {

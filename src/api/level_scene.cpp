@@ -20,6 +20,11 @@ void LevelScene::Update(double deltaTime)
     auto playerObject = std::find_if(contents.begin(), contents.end(),
                                      [&searchString](const std::shared_ptr<GameObject> &obj)
                                      { return obj->GetName() == searchString; });
+
+    // Small bugfix for when the player is not found
+    if (playerObject == contents.end())
+        return;
+
     auto transform = camera->GetTransform();
     transform.position.x = playerObject->get()->GetTransform().position.x;
     transform.position.y = playerObject->get()->GetTransform().position.y - 100;

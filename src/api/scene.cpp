@@ -11,8 +11,7 @@
 
 #include "scene.hpp"
 
-void Scene::RenderScene()
-{}
+void Scene::RenderScene() {}
 
 void Scene::AddGameObject(const std::shared_ptr<GameObject> &gameObject)
 {
@@ -59,16 +58,22 @@ bool Scene::RemoveGameObjectByName(const std::string &name)
 
 bool Scene::RemoveGameObjectByTag(const std::string &tag)
 {
-    for (auto it = contents.begin(); it != contents.end(); ++it)
+    bool removed = false;
+
+    for (auto it = contents.begin(); it != contents.end(); /* no increment here */)
     {
         if ((*it)->GetTag() == tag)
         {
-            contents.erase(it);
-            return true;
+            it = contents.erase(it);
+            removed = true;
+        }
+        else
+        {
+            ++it;
         }
     }
 
-    return false;
+    return removed;
 }
 
 void Scene::Clear() { contents.clear(); }

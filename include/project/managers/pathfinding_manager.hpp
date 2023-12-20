@@ -43,6 +43,16 @@ class PathfindingManager
     void Update(std::shared_ptr<Scene> scene);
 
     /**
+     * @brief Disable pathfinding for the scene.
+     */
+    void DisablePathfinding();
+
+    /**
+     * @brief Enable pathfinding for the scene.
+     */
+    void EnablePathfinding();
+
+    /**
      * @brief Get the Graph object
      *
      * @return A shared pointer to the graph.
@@ -80,4 +90,5 @@ class PathfindingManager
     void GenerateGraphForScene(std::shared_ptr<Scene> scene); ///< Generate the graph for the scene.
     std::shared_ptr<Graph> _graph;                            ///< The graph.
     std::shared_ptr<Scene> _scene;                            ///< The scene.
+    bool _isEnabled = true;                                   ///< Whether pathfinding is enabled.
 };

@@ -297,10 +297,32 @@ void GraphicsFacade::DrawText(const Text &text)
         return;
     }
 
+    auto newPos = text.GetTransform();
+    auto alignment = text.GetAlignment();
+    if (alignment == Alignment::left || alignment == Alignment::right)
+    {
+        double relWidthTransform = text.GetWidth() - static_cast<double>(textSurface->w);
+        if (relWidthTransform < 0)
+            relWidthTransform = 0;
+
+        if (alignment == Alignment::left)
+        {
+            newPos.position.x -= relWidthTransform / 2;
+            newPos.position.x *= newPos.scale;
+        }
+        else
+        {
+            newPos.position.x += relWidthTransform / 2;
+            newPos.position.x *= newPos.scale;
+        }
+    }
+
     // Create the text rectangle
-    auto position = text.GetTransform().position;
-    auto textRect = SDL_Rect{static_cast<int>(position.x), static_cast<int>(position.y),
-                             textSurface->w, textSurface->h};
+    auto textRect = SDL_Rect{};
+    textRect.w = static_cast<int>(textSurface->w * newPos.scale);
+    textRect.h = static_cast<int>(textSurface->h * newPos.scale);
+    textRect.x = static_cast<int>(newPos.position.x - (textRect.w / 2));
+    textRect.y = static_cast<int>(newPos.position.y - (textRect.h / 2));
 
     // Render the text
     SDL_RenderCopyEx(renderer, textTexture, nullptr, &textRect, text.GetTransform().rotation,

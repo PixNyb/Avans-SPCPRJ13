@@ -22,7 +22,12 @@ PathfindingManager::PathfindingManager() {}
 
 PathfindingManager::~PathfindingManager() {}
 
-void PathfindingManager::Update(std::shared_ptr<Scene> scene) { GenerateGraphForScene(scene); }
+void PathfindingManager::Update(std::shared_ptr<Scene> scene)
+{
+    if (!_isEnabled)
+        return;
+    GenerateGraphForScene(scene);
+}
 
 std::shared_ptr<Graph> PathfindingManager::GetGraph() const { return _graph; }
 
@@ -229,3 +234,6 @@ std::shared_ptr<Node> PathfindingManager::FindClosestNode(Point point) const
 
     return _graph->FindClosestNode(point);
 }
+
+void PathfindingManager::DisablePathfinding() { _isEnabled = false; }
+void PathfindingManager::EnablePathfinding() { _isEnabled = true; }

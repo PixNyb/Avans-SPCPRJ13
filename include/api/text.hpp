@@ -46,9 +46,8 @@ enum class Alignment
 class Text : public UIObject
 {
   private:
-    std::string text; ///< The text string.
-    int fontSize;     ///< The font size of the text.
-    // TODO: Implement alignment
+    std::string text;    ///< The text string.
+    int fontSize;        ///< The font size of the text.
     Alignment alignment; ///< The alignment of the text.
     Color textColor;     ///< The color of the text.
 

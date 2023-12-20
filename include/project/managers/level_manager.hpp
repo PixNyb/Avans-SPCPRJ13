@@ -12,8 +12,10 @@
 #define DEFUNBOBENGINE_LEVEL_MANAGER_HPP
 
 #include "json_handler.hpp"
+#include "level_entry.hpp"
 #include "level_factory.hpp"
 #include "scene_manager.hpp"
+#include <fmt/format.h>
 #include <map>
 #include <memory>
 #include <string>
@@ -34,6 +36,14 @@ class LevelManager
      * @value A filepath leading to a level JSON file.
      */
     std::map<int, std::string> levels;
+
+    /**
+     * @brief A map consisting of level id's and a filepath to the corresponding level JSON.
+     * @key The hashcode of the scene class.
+     * @value A name mapped to a scene factory method.
+     */
+    std::map<size_t, std::tuple<std::string, std::function<std::shared_ptr<Scene>()>>>
+        _levelScenes; ///< All level scenes. Provides additional ways to add levels.
 
     /**
      * @brief A SceneManager which can be used to load the level.
@@ -96,25 +106,107 @@ class LevelManager
     void RegisterLevel(int id, std::string filePath);
 
     /**
+     * @brief Registers a level.
+     * @tparam T The type of the scene. Name and hashcode are inferred from it.
+     * @param instanceFactory The instance factory of the scene.
+     */
+    template <typename T>
+    void RegisterScene(std::function<std::shared_ptr<Scene>()> instanceFactory)
+    {
+        auto name = std::string(typeid(T).name());
+        // Remove the class prefix
+        name = name.substr(name.find_first_of(' ') + 1);
+        _levelScenes[typeid(T).hash_code()] = {name, std::move(instanceFactory)};
+    }
+
+    /**
+     * @brief Create a scene based on the provided id.
+     * @param id The id of which scene is to be created.
+     * @return The scene which is created.
+     */
+    std::shared_ptr<Scene> CreateScene(int id);
+
+    /**
      * @brief Load a level based on the provided id.
      * @param id The id of which level is to be loaded.
      */
     void LoadLevel(int id);
 
     /**
-     * @brief Save the level which is the current scene. The intended use is saving a level made
+     * @brief Load a level based on the provided id.
+     * @param levelEntry
+     */
+    void LoadLevel(LevelEntry &levelEntry);
+
+    /**
+     * @brief Load a levels into the dictionary based on the directory.
+     * @param directory The directory of where the level JSON can be found.
+     */
+    void LoadAllFromDirectory(const std::string &directory);
+
+    /**
+     * @brief Refreshes the levels.
+     *
+     * @note Clears levels and calls LoadAllFromDirectory.
+     */
+    void RefreshLevels(const std::string &directory);
+
+    /**
+     * @brief Save the level by the current scene. The intended use is saving a level made.
      * using level editor.
      * @param directory The directory to where the level json is to be saved.
      * @param filename The eventual filename.
      * @return The path of where the level is stored.
      */
-    std::string SaveLevel(std::string &directory, std::string &filename);
+    std::string SaveLevelFromScene(std::string &directory, std::string &filename);
+
+    /**
+     * @brief Save the level by a list of game objects.
+     * @param directory The directory to where the level json is to be saved.
+     * @param filename The eventual filename.
+     * @param camera The camera which is to be saved.
+     * @param gameObjects The list of game objects which are to be saved.
+     * @return The path of where the level is stored.
+     */
+    std::string SaveLevel(const std::string &directory, const std::string &filename,
+                          const std::shared_ptr<Camera> &camera,
+                          const std::vector<std::shared_ptr<GameObject>> &gameObjects);
+
+    /**
+     * @brief Saves a new level by a list of game objects.
+     * @param camera The camera which is to be saved.
+     * @param gameObjects The list of game objects which are to be saved.
+     * @return The path of where the level is stored.
+     */
+    std::string SaveNewLevel(const std::string &directory, const std::shared_ptr<Camera> &camera,
+                             const std::vector<std::shared_ptr<GameObject>> &gameObjects);
+
+    /**
+     * @brief Get the Level id's and file paths.
+     * @return A map consisting of level id's and file paths.
+     */
+    std::vector<LevelEntry> GetLevels();
+
+    /**
+     * @brief Swaps two file levels.
+     * @param levelIDa levelIDa
+     * @param levelIDb levelIDb
+     *
+     * @note Can only swap File levels.
+     */
+    void SwapLevel(LevelEntry levelA, LevelEntry levelB);
+
+    /**
+     * @brief Deletes a level.
+     * @param level The level to delete.
+     */
+    void DeleteLevel(LevelEntry level);
 
     /**
      * @brief Gets the current level
      * @return int
      */
-    int GetCurrentLevelID() { return currentLevelID; }
+    int GetCurrentLevelID();
 };
 
 #endif // DEFUNBOBENGINE_LEVEL_MANAGER_HPP
