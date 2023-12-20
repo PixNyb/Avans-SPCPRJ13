@@ -539,8 +539,6 @@ void GraphicsFacade::DrawParticle(const ParticleType &particleType, const Point 
         break;
     }
     case ParticleType::Rain:
-        //        double endX = posX += angle.x;
-        //        double endY = posY + 20;
         Point endPos = position + angle;
         SDL_RenderDrawLine(renderer, static_cast<int>(position.x), static_cast<int>(position.y),
                            static_cast<int>(endPos.x), static_cast<int>(endPos.y));

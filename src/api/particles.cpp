@@ -1,3 +1,13 @@
+/**
+ * @file particles.cpp
+ * @author Martijn Vermeer
+ * @brief This file contains the particles class implementation.
+ * @version 0.1
+ * @date 2023-20-12
+ *
+ * @copyright Copyright (c) 2023
+ */
+
 #include "particles.hpp"
 #include "camera.hpp"
 #include "engine.hpp"
