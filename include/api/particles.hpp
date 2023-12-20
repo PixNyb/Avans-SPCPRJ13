@@ -18,10 +18,11 @@ struct Particle
     bool isAlive;
     ParticleType type;
     int size;
+    Point angle;
 
     Particle()
-        : position({0, 0}), velocity({0, 0}), lifetime(0), size(0), color(1.0f, 1.0f, 1.0f, 255),
-          isAlive(false), type(ParticleType::Confetti)
+        : position({0, 0}), velocity({0, 0}), lifetime(0), size(0), angle({0, 0}),
+          color(1.0f, 1.0f, 1.0f, 255), isAlive(false), type(ParticleType::Confetti)
     {
     }
 
@@ -56,7 +57,7 @@ class Particles : public BehaviourScript
     Point GetEmitterPosition() const;
 
     void AddParticles(const int count, float lifetime, const Point &offset, const int size,
-                      const Color &color, const ParticleType &particleType);
+                      const Point &angle, const Color &color, const ParticleType &particleType);
 
     const std::vector<Particle> &GetParticles() const { return particles; }
 

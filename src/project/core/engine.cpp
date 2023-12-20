@@ -19,7 +19,6 @@
 #include "behaviour_script_manager.hpp"
 #include "graphics_facade.hpp"
 #include "level_manager.hpp"
-#include "particle_manager.hpp"
 #include "pathfinding_manager.hpp"
 #include "physics_manager.hpp"
 #include "property_manager.hpp"
@@ -57,9 +56,7 @@ Engine::Engine()
     container.registerInstance<PathfindingManager>(std::make_shared<PathfindingManager>());
 
     container.registerInstance<PropertyManager>(std::make_shared<PropertyManager>(jsonHandler));
-
-    container.registerInstance<ParticleManager>(std::make_shared<ParticleManager>());
-
+    
     // Facades
     container.registerInstance<IInputFacade>(std::make_shared<SDLInputFacade>());
     container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>());

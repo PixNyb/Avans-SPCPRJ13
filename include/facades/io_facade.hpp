@@ -256,8 +256,8 @@ class IOFacade
                                       int frameIndex, int totalColumns, int totalRows, bool flipX,
                                       bool flipY, double angle, float scale) = 0;
 
-    virtual void DrawParticle(const ParticleType &particleType, double posX, double posY, int size,
-                              Color color) = 0;
+    virtual void DrawParticle(const ParticleType &particleType, const Point &position, int size,
+                              const Point &angle, Color color) = 0;
 };
 
 #endif // DEFUNBOBENGINE_IO_FACADE_HPP

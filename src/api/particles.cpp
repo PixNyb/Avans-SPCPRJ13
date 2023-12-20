@@ -2,14 +2,14 @@
 #include "camera.hpp"
 #include "engine.hpp"
 #include "memory"
-#include "particle_manager.hpp"
 #include "scene_manager.hpp"
 #include "time.hpp"
 
 Particles::Particles(std::weak_ptr<GameObject> parent) { this->parent = parent; }
 
 void Particles::AddParticles(const int count, float lifetime, const Point &offset, const int size,
-                             const Color &color, const ParticleType &particleType)
+                             const Point &angle, const Color &color,
+                             const ParticleType &particleType)
 {
     this->offset = offset;
 
@@ -21,6 +21,7 @@ void Particles::AddParticles(const int count, float lifetime, const Point &offse
         particle.isAlive = true;
         particle.color = color;
         particle.type = particleType;
+        particle.angle = angle;
         particle.size = size;
 
         particles.push_back(particle);

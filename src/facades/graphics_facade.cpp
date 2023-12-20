@@ -511,8 +511,8 @@ void GraphicsFacade::DrawSpriteSheetFrame(const Texture &texture, const Rectangl
     }
 }
 
-void GraphicsFacade::DrawParticle(const ParticleType &particleType, double posX, double posY,
-                                  int size, Color color)
+void GraphicsFacade::DrawParticle(const ParticleType &particleType, const Point &position, int size,
+                                  const Point &angle, Color color)
 {
     auto renderer = SdlWindow->GetRenderer();
     if (!renderer)
@@ -532,17 +532,18 @@ void GraphicsFacade::DrawParticle(const ParticleType &particleType, double posX,
         {
             for (int j = -size / 2; j <= size / 2; ++j)
             {
-                SDL_RenderDrawPoint(renderer, static_cast<int>(posX) + i,
-                                    static_cast<int>(posY) + j);
+                SDL_RenderDrawPoint(renderer, static_cast<int>(position.x) + i,
+                                    static_cast<int>(position.y) + j);
             }
         }
         break;
     }
     case ParticleType::Rain:
-        double endX = posX + 10;
-        double endY = posY + 10;
-        SDL_RenderDrawLine(renderer, static_cast<int>(posX), static_cast<int>(posY),
-                           static_cast<int>(endX), static_cast<int>(endY));
+        //        double endX = posX += angle.x;
+        //        double endY = posY + 20;
+        Point endPos = position + angle;
+        SDL_RenderDrawLine(renderer, static_cast<int>(position.x), static_cast<int>(position.y),
+                           static_cast<int>(endPos.x), static_cast<int>(endPos.y));
         break;
     }
 }

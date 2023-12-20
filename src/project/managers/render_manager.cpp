@@ -19,7 +19,6 @@
 #include "game_object_utility.hpp"
 #include "graphics_facade.hpp"
 #include "managers/scene_manager.hpp"
-#include "particle_manager.hpp"
 #include "particles.hpp"
 #include "shape_component.hpp"
 #include "shape_renderer.hpp"
@@ -275,13 +274,13 @@ void RenderManager::Render(IOFacade &gfx, ShapeRenderer &shapeRenderer, const Po
     if (particleComponent)
     {
         particleComponent->SetEmitterPosition(relCamPos);
-        
+
         for (const auto &particle : particleComponent->GetParticles())
         {
             if (particle.isAlive)
             { // Ensure the particle is still alive
-                gfx.DrawParticle(particle.type, particle.position.x, particle.position.y,
-                                 particle.size, particle.color);
+                gfx.DrawParticle(particle.type, particle.position, particle.size, particle.angle,
+                                 particle.color);
             }
         }
     }
