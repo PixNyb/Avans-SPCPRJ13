@@ -84,6 +84,13 @@ class DIContainer
         }
         return nullptr;
     }
+
+    /**
+     * @brief Cleans up the container
+     *
+     * @note This is used to clean up the container when the engine is stopped.
+     */
+    void CleanUp() { instances.clear(); }
 };
 
 #endif // AVANS_SPCPRJ13_DI_CONTAINER_HPP

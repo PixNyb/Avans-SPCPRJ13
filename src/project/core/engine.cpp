@@ -102,7 +102,7 @@ void Engine::Start()
 
         // Keep this at the end of the frame so the user can execute actions before the engine stops
         if (Get<IInputFacade>()->GetAction("quit"))
-            Stop();
+            Shutdown();
         // End of the frame
 
         // Calculate FPS
@@ -130,8 +130,13 @@ void Engine::Shutdown()
 {
     Stop();
 
+    // Theoretically, the engine should be able to clean up all the managers and facades, but we
+    // want to determine the order of cleanup here
+    
     if (auto sceneManager = Get<SceneManager>(); sceneManager != nullptr)
         sceneManager->ClearScene();
+
+    container.CleanUp();
 }
 
 int Engine::GetFPS() const { return currentFPS; }

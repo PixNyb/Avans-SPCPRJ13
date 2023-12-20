@@ -12,6 +12,7 @@
 #include "json_handler.hpp"
 #include "fmt/format.h"
 #include <fstream>
+#include <iostream>
 #include <nlohmann/json.hpp>
 
 nlohmann::json JSONHandler::ConvertFileToJson(const std::string &filePath)
@@ -42,13 +43,25 @@ std::string JSONHandler::WriteJsonToFile(const std::string &filePath, const nloh
     auto normPath = std::filesystem::absolute(filePath).string();
     ValidateExtension(normPath);
 
-    std::ofstream file(normPath);
+    // Open the file in truncation mode (std::ios::trunc)
+    std::ofstream file(normPath, std::ios::out | std::ios::trunc);
 
-    // The parameter 4 in dump indicates how deep of an indent should be made when formatting the
-    // json file. An indentation is used to make the level files more readable to the human eye.
-    file << json.dump(4);
+    // Check if the file is open
+    if (file.is_open())
+    {
+        // The parameter 4 in dump indicates how deep of an indent should be made when formatting
+        // the json file. An indentation is used to make the level files more readable to the human
+        // eye.
+        file << json.dump(4);
 
-    file.close();
+        file.close();
+
+        std::cout << "File '" << normPath << "' has been created and truncated.\n";
+    }
+    else
+    {
+        std::cerr << "Error opening file '" << normPath << "' for writing.\n";
+    }
 
     return normPath;
 }
