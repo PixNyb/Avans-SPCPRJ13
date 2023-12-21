@@ -23,8 +23,8 @@
 class SFMLSound : public ISound
 {
   private:
-    sf::Sound sound;          ///< sound
     sf::SoundBuffer buffer;   ///< sound buffer
+    sf::Sound sound;          ///< sound
     static int instanceCount; ///< counts of the instances, used to check if we exceed the max
                               ///< amount of instances.
 

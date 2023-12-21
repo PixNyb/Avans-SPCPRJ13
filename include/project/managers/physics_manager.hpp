@@ -39,6 +39,11 @@ class PhysicsManager
     void CreateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects);
 
     /**
+     * @brief Destroys the world
+     */
+    void DestroyWorld() { physicsFacade.DepopulateWorld(); }
+
+    /**
      * @brief Removes the gameobject from the simulated world
      * @param gameObject is the object to be removed
      */
@@ -48,7 +53,7 @@ class PhysicsManager
      * @brief Creates a body in the world simulation
      * @param gameObject the object for which a body will be created
      */
-    void CreateBody(std::shared_ptr<GameObject>& gameObject);
+    void CreateBody(std::shared_ptr<GameObject> &gameObject);
 
     /**
      * @brief Adds a force to a gameobject (will allways create a force on the center of the body)

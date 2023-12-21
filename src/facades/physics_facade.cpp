@@ -68,10 +68,9 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject)
     {
         b2CircleShape circleShape{};
         circleShape.m_radius = static_cast<float>(circleCollider->Radius() * PixelToMeter);
-        double area =
-            (*gameObject).GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody
-                ? ((circleCollider->Radius() * circleCollider->Radius()) * 2)
-                : 0.0f;
+        double area = (*gameObject).GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody
+                          ? ((circleCollider->Radius() * circleCollider->Radius()) * 2)
+                          : 0.0f;
         SetFixture(body, &circleShape, (*gameObject).GetComponent<RigidBody>(), area);
     }
 
@@ -81,10 +80,9 @@ void PhysicsFacade::MakeBody(std::shared_ptr<GameObject> gameObject)
         b2PolygonShape boxShape{};
         boxShape.SetAsBox(static_cast<float>(boxCollider->Width() / 2 * PixelToMeter),
                           static_cast<float>(boxCollider->Height() / 2 * PixelToMeter));
-        double area =
-            (*gameObject).GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody
-                ? (boxCollider->Width() * boxCollider->Height())
-                : 0.0f;
+        double area = (*gameObject).GetComponent<RigidBody>()->GetBodyType() != BodyType::staticBody
+                          ? (boxCollider->Width() * boxCollider->Height())
+                          : 0.0f;
         SetFixture(body, &boxShape, (*gameObject).GetComponent<RigidBody>(), area);
     }
     bodies.insert(std::pair<std::shared_ptr<GameObject>, b2Body *>(gameObject, body));
@@ -113,6 +111,15 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
 
     contactListener = new ContactListener(bodies);
     world->SetContactListener(contactListener);
+}
+
+void PhysicsFacade::DepopulateWorld()
+{
+    // delete all the bodies from the world
+    for (auto &pair : bodies)
+        world->DestroyBody(pair.second);
+    bodies.clear();
+    bodiesToBeAdded.clear();
 }
 
 void PhysicsFacade::Step()

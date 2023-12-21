@@ -56,7 +56,7 @@ Engine::Engine()
     container.registerInstance<PathfindingManager>(std::make_shared<PathfindingManager>());
 
     container.registerInstance<PropertyManager>(std::make_shared<PropertyManager>(jsonHandler));
-    
+
     // Facades
     container.registerInstance<IInputFacade>(std::make_shared<SDLInputFacade>());
     container.registerInstance<IOFacade>(std::make_shared<GraphicsFacade>());
@@ -132,9 +132,19 @@ void Engine::Shutdown()
 
     // Theoretically, the engine should be able to clean up all the managers and facades, but we
     // want to determine the order of cleanup here
-    
+
+    if (auto physicsManager = Get<PhysicsManager>(); physicsManager != nullptr)
+    {
+        physicsManager->DestroyWorld();
+    }
+
     if (auto sceneManager = Get<SceneManager>(); sceneManager != nullptr)
         sceneManager->ClearScene();
+
+    if (auto prefabManager = Get<PrefabManager>(); prefabManager != nullptr)
+    {
+        prefabManager->ClearPrefabs();
+    }
 
     container.CleanUp();
 }

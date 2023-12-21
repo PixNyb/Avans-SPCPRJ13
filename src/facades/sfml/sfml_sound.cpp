@@ -35,8 +35,8 @@ SFMLSound::SFMLSound(const std::string &filePath)
 
 SFMLSound::~SFMLSound()
 {
-    instanceCount--;
     sound.stop();
+    instanceCount--;
 }
 
 // Volume
