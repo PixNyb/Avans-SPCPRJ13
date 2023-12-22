@@ -120,6 +120,7 @@ void PhysicsFacade::DepopulateWorld()
         world->DestroyBody(pair.second);
     bodies.clear();
     bodiesToBeAdded.clear();
+    delete contactListener;
 }
 
 void PhysicsFacade::Step()
