@@ -84,6 +84,11 @@ class PhysicsFacade
     void PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameObjects);
 
     /**
+     * @brief Depopulate the b2World
+     */
+    void DepopulateWorld();
+
+    /**
      * @brief Add a force to an object
      * can be used for jumping or boosts in speed
      */
