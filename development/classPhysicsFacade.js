@@ -7,6 +7,7 @@ var classPhysicsFacade =
     [ "AddLinearImpulse", "classPhysicsFacade.html#ac0320619c0f972d115693ecaa4e553f0", null ],
     [ "AddRotation", "classPhysicsFacade.html#a83ca19da6bfe088a4862f08c3e1ba3c3", null ],
     [ "DeleteBodies", "classPhysicsFacade.html#a4b793595f2457ccd069dcc96ea82c2e2", null ],
+    [ "DepopulateWorld", "classPhysicsFacade.html#ab4b6d80c5e55f685dd7e2ee37bfbf4d9", null ],
     [ "DestroyBody", "classPhysicsFacade.html#a0927dc4108916d399b1f2d2137b58850", null ],
     [ "GetBodyByObject", "classPhysicsFacade.html#a074951df937e15be2bd37a262f8c3c5f", null ],
     [ "GetVelocity", "classPhysicsFacade.html#a9c283a383fae5d1d69e03787b8e787a7", null ],

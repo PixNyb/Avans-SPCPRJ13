@@ -7,6 +7,7 @@ var classPhysicsManager =
     [ "AddRotationalForce", "classPhysicsManager.html#a8964341467bd13fe775ee2036a0ab373", null ],
     [ "CreateBody", "classPhysicsManager.html#ad9612a67aca843f2ff827fe826f22409", null ],
     [ "CreateWorld", "classPhysicsManager.html#af6458e7b31290e79c54bba685363a914", null ],
+    [ "DestroyWorld", "classPhysicsManager.html#a5f7724974429b915fa6f2479501716a1", null ],
     [ "GetVelocity", "classPhysicsManager.html#a71a524299adb61ce0ec073c09d0a7e46", null ],
     [ "RemoveBody", "classPhysicsManager.html#ada836b73c83d6c00527904d3fa29db40", null ],
     [ "SetDebug", "classPhysicsManager.html#a239788fa1c137c6e6ba1bb90f9e3c6c7", null ],
