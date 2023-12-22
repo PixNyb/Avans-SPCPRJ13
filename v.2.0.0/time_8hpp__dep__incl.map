@@ -1,0 +1,7 @@
+<map id="include/api/time.hpp" name="include/api/time.hpp">
+<area shape="rect" id="node1" title="Defines the Time class for managing game time in the DefunBobEngine. The Time class provides static m..." alt="" coords="264,5,419,32"/>
+<area shape="rect" id="node2" href="$animator_8cpp.html" title="This file contains the Animator class implementation." alt="" coords="5,80,160,107"/>
+<area shape="rect" id="node3" href="$particles_8cpp.html" title="This file contains the particles class implementation." alt="" coords="184,80,336,107"/>
+<area shape="rect" id="node4" href="$time_8cpp.html" title="This file contains the Time class implementation." alt="" coords="361,80,487,107"/>
+<area shape="rect" id="node5" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="512,80,709,107"/>
+</map>

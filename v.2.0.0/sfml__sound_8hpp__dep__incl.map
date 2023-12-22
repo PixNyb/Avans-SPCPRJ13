@@ -1,0 +1,5 @@
+<map id="include/facades/sfml/sfml_sound.hpp" name="include/facades/sfml/sfml_sound.hpp">
+<area shape="rect" id="node1" title="A file containing the SFMLSound class." alt="" coords="141,5,298,47"/>
+<area shape="rect" id="node2" href="$audio__facade_8cpp.html" title="A facade for the audio library." alt="" coords="5,102,220,129"/>
+<area shape="rect" id="node3" href="$sfml__sound_8cpp.html" title="SFML implementation of the sound class." alt="" coords="245,95,407,136"/>
+</map>

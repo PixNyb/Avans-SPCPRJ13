@@ -1,0 +1,6 @@
+<map id="CircleCollider" name="CircleCollider">
+<area shape="rect" id="node1" title="Represents a circular collision area." alt="" coords="33,229,142,256"/>
+<area shape="rect" id="node2" href="$classCollider.html" title="Base class for collider components." alt="" coords="51,155,123,181"/>
+<area shape="rect" id="node3" href="$classComponent.html" title="The Component class is a base class for all components that can be added to a GameObject." alt="" coords="39,80,136,107"/>
+<area shape="rect" id="node4" href="$classIPrototypeComponent.html" title="The IPrototypeComponent interface defines that a class needs to be cloneable." alt="" coords="5,5,169,32"/>
+</map>
