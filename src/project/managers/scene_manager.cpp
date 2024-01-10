@@ -17,6 +17,7 @@
  */
 
 #include "managers/scene_manager.hpp"
+#include "behaviour_script_manager.hpp"
 #include "engine.hpp"
 #include "pathfinding_manager.hpp"
 
@@ -26,6 +27,7 @@ SceneManager::~SceneManager() = default;
 
 void SceneManager::SetScene(std::shared_ptr<Scene> scene)
 {
+    Engine::GetInstance()->Get<BehaviourScriptManager>()->shouldExecute = true;
     currentScene = std::move(scene);
     auto pathfindingManager = Engine::GetInstance()->Get<PathfindingManager>();
     pathfindingManager->Update(currentScene);

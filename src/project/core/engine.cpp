@@ -50,7 +50,7 @@ Engine::Engine()
                                               InstanceScope::Engine);
 
     container.registerInstance<BehaviourScriptManager>(std::make_shared<BehaviourScriptManager>(),
-                                                       InstanceScope::Engine);
+                                                       InstanceScope::Public);
 
     container.registerInstance<PhysicsManager>(std::make_shared<PhysicsManager>());
     container.registerInstance<PathfindingManager>(std::make_shared<PathfindingManager>());
@@ -94,7 +94,7 @@ void Engine::Start()
 
         sceneManager->Update(deltaTime);
 
-        GetLocal<BehaviourScriptManager>()->Update();
+        Get<BehaviourScriptManager>()->Update();
 
         GetLocal<RenderManager>()->Render();
 
