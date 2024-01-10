@@ -13,6 +13,7 @@
 #include "behaviour_script.hpp"
 #include "box_collider.hpp"
 #include "circle_collider.hpp"
+#include "engine.hpp"
 #include <algorithm>
 #include <iostream>
 #include <utility>
@@ -80,6 +81,14 @@ std::shared_ptr<GameObject> ContactListener::FindGameObject(b2Body *body)
                            [body](const auto &pair) { return pair.second == body; });
     return (it != gameObjects.end()) ? it->first : nullptr;
 }
+
 void ContactListener::UpdateBodies(std::map<std::shared_ptr<GameObject>, b2Body *> gameObjects) {
     this->gameObjects = gameObjects;
+}
+
+ContactListener::~ContactListener() {
+    gameObjects.clear();
+}
+void ContactListener::CleanUp() {
+    gameObjects.clear();
 }

@@ -39,7 +39,7 @@ class ContactListener : public b2ContactListener
     /**
      * @brief Destructs a contactlistener
      */
-    ~ContactListener() = default;
+    ~ContactListener() override;
 
     /**
      * @brief executes the defined actions in the gameobjects that corresponds with bodies in the
@@ -65,6 +65,8 @@ class ContactListener : public b2ContactListener
      * @brief Finds the gameobject with a b2body
      */
     std::shared_ptr<GameObject> FindGameObject(b2Body *body);
+
+    void CleanUp();
 };
 
 #endif // DEFUNBOBENGINE_CONTACTLISTENER_HPP

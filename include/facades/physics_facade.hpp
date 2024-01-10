@@ -40,7 +40,7 @@ class PhysicsFacade
     std::unique_ptr<b2World> world; ///< The world in which the bodies can move.
     std::vector<std::shared_ptr<GameObject>>
         bodiesToBeAdded;              ///< Bodies that have to be added to the world
-    ContactListener *contactListener; ///< the object that listens to and handles collisions
+    std::unique_ptr<ContactListener> contactListener; ///< the object that listens to and handles collisions
 
     /**
      * @brief Creates a shape on a body through a fixture
