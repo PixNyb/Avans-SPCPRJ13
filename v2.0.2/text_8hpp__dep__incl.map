@@ -1,0 +1,30 @@
+<map id="include/api/text.hpp" name="include/api/text.hpp">
+<area shape="rect" id="node1" title="Defines the Text class for handling text rendering in UI elements within the game engine...." alt="" coords="1327,5,1477,32"/>
+<area shape="rect" id="node2" href="$core__constants_8hpp_source.html" title=" " alt="" coords="893,80,1045,121"/>
+<area shape="rect" id="node16" href="$button__factory_8hpp.html" title="Contains the definition for the button factory." alt="" coords="1757,437,1965,479"/>
+<area shape="rect" id="node27" href="$text_8cpp.html" title="This file contains the Text class implementation." alt="" coords="1341,177,1463,203"/>
+<area shape="rect" id="node3" href="$io__facade_8hpp.html" title="This file contains the IOFacade interface definition." alt="" coords="344,169,484,211"/>
+<area shape="rect" id="node7" href="$graphics__facade_8cpp.html" title="This file contains the GraphicsFacade class implementation." alt="" coords="18,348,173,389"/>
+<area shape="rect" id="node11" href="$engine_8hpp.html" title="Engine is the core of the engine. It is responsible for managing the game loop and managing the DICon..." alt="" coords="1165,169,1316,211"/>
+<area shape="rect" id="node21" href="$pathfinding_8cpp.html" title="This file contains the Pathfinding class implementation." alt="" coords="613,266,783,293"/>
+<area shape="rect" id="node26" href="$game__object__utility_8hpp.html" title="Game Object utility." alt="" coords="802,169,954,211"/>
+<area shape="rect" id="node28" href="$sfml__sound_8cpp.html" title="SFML implementation of the sound class." alt="" coords="978,169,1141,211"/>
+<area shape="rect" id="node4" href="$graphics__facade_8hpp.html" title="Defines the GraphicsFacade class for managing graphics operations in the DefunBobEngine." alt="" coords="227,259,409,300"/>
+<area shape="rect" id="node8" href="$window_8hpp.html" title="This file contains the Window class definition." alt="" coords="25,259,203,300"/>
+<area shape="rect" id="node9" href="$shape__renderer_8hpp.html" title="A file containing the ShapeRenderer class." alt="" coords="434,259,589,300"/>
+<area shape="rect" id="node5" href="$render__manager_8hpp_source.html" title=" " alt="" coords="402,348,589,389"/>
+<area shape="rect" id="node6" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="658,534,855,561"/>
+<area shape="rect" id="node10" href="$shape__renderer_8cpp.html" title="A file containing the ShapeRenderer class." alt="" coords="613,355,828,382"/>
+<area shape="rect" id="node12" href="$button__click__listener_8hpp.html" title="Defines the ButtonClickListener class." alt="" coords="1107,259,1295,300"/>
+<area shape="rect" id="node19" href="$animator_8cpp.html" title="This file contains the Animator class implementation." alt="" coords="1319,266,1474,293"/>
+<area shape="rect" id="node20" href="$particles_8cpp.html" title="This file contains the particles class implementation." alt="" coords="1498,266,1650,293"/>
+<area shape="rect" id="node22" href="$contact__listener_8cpp.html" title="This file contains the implementation of the class ContactListener." alt="" coords="1674,259,1866,300"/>
+<area shape="rect" id="node23" href="$behaviour__script__manager_8cpp.html" title="Manager that updates all behaviour scripts." alt="" coords="807,259,1032,300"/>
+<area shape="rect" id="node24" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="1891,259,2049,300"/>
+<area shape="rect" id="node25" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="2073,259,2232,300"/>
+<area shape="rect" id="node13" href="$i__input__facade_8hpp.html" title="This file contains the IInputFacade interface definition." alt="" coords="1157,348,1329,389"/>
+<area shape="rect" id="node14" href="$sdl__input__facade_8hpp.html" title="This file contains the SDLInputFacade class definition." alt="" coords="1106,437,1325,479"/>
+<area shape="rect" id="node18" href="$button_8cpp.html" title="This file contains the Button class implementation." alt="" coords="1354,355,1493,382"/>
+<area shape="rect" id="node15" href="$sdl__input__facade_8cpp.html" title="This file contains the SDLInputFacade class implementation." alt="" coords="1124,527,1307,568"/>
+<area shape="rect" id="node17" href="$button__factory_8cpp.html" title="Implements the ButtonFactory class for creating and initializing buttons." alt="" coords="1757,527,1964,568"/>
+</map>

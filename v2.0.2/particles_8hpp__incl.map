@@ -1,0 +1,18 @@
+<map id="include/api/particles.hpp" name="include/api/particles.hpp">
+<area shape="rect" id="node1" title="This file contains the Particles class definition." alt="" coords="415,5,596,32"/>
+<area shape="rect" id="node2" href="$behaviour__script_8hpp.html" title="Defines the BehaviourScript class as part of a game engine framework. BehaviourScript is a base class..." alt="" coords="231,80,390,107"/>
+<area shape="rect" id="node4" href="$component_8hpp.html" title="This file contains the Component class definition." alt="" coords="163,229,285,256"/>
+<area shape="rect" id="node10" href="$point_8hpp.html" title="Defines the Point struct for representing 2D points and vectors in the DefunBobEngine...." alt="" coords="417,528,500,555"/>
+<area shape="rect" id="node13" href="$color_8hpp.html" title="Defines the Color class for representing RGBA colors in the DefunBobEngine. The Color class provides ..." alt="" coords="587,80,669,107"/>
+<area shape="rect" id="node14" href="$particle__type_8hpp.html" title="Defines the ParticleType enum for specifying types of particles." alt="" coords="693,80,827,107"/>
+<area shape="rect" id="node15" href="$texture_8hpp.html" title="This file contains the Texture class definition." alt="" coords="414,80,511,107"/>
+<area shape="rect" id="node3" href="$collider_8hpp.html" title="Defines the Collider class as a base for all collider components in a game engine...." alt="" coords="262,155,359,181"/>
+<area shape="rect" id="node5" href="$iprototype__component_8hpp.html" title="This file contains the IPrototypeComponent interface definition." alt="" coords="125,304,323,331"/>
+<area shape="rect" id="node6" href="$game__object_8hpp.html" title="This file contains the GameObject class definition." alt="" coords="158,379,293,405"/>
+<area shape="rect" id="node8" title=" " alt="" coords="5,528,83,555"/>
+<area shape="rect" id="node7" href="$iprototype_8hpp.html" title="This file contains the IPrototype interface definition." alt="" coords="169,453,287,480"/>
+<area shape="rect" id="node9" href="$transform_8hpp.html" title="This file contains the Transform struct definition." alt="" coords="311,453,425,480"/>
+<area shape="rect" id="node11" title=" " alt="" coords="449,453,508,480"/>
+<area shape="rect" id="node12" title=" " alt="" coords="82,453,145,480"/>
+<area shape="rect" id="node16" href="$size_8hpp.html" title="Defines the Size struct." alt="" coords="435,155,511,181"/>
+</map>

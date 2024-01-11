@@ -1,0 +1,7 @@
+<map id="include/project/managers/pathfinding_manager.hpp" name="include/project/managers/pathfinding_manager.hpp">
+<area shape="rect" id="node1" title="This file contains the PathfindingManager class definition." alt="" coords="304,5,495,47"/>
+<area shape="rect" id="node2" href="$pathfinding_8cpp.html" title="This file contains the Pathfinding class implementation." alt="" coords="5,102,175,129"/>
+<area shape="rect" id="node3" href="$engine_8cpp.html" title="Implementation of the Engine class for the core game engine functionalities." alt="" coords="199,102,397,129"/>
+<area shape="rect" id="node4" href="$level__manager_8cpp.html" title="Implementation of the LevelManager." alt="" coords="421,95,580,136"/>
+<area shape="rect" id="node5" href="$scene__manager_8cpp.html" title="Implementation of the SceneManager class, handling scene transitions and management in the game engin..." alt="" coords="604,95,763,136"/>
+</map>
