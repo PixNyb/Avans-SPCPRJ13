@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classPhysicsManager.html#ad9612a67aca843f2ff827fe826f22409":[5,0,53,5],
 "classPhysicsManager.html#ada836b73c83d6c00527904d3fa29db40":[5,0,53,9],
 "classPhysicsManager.html#af6458e7b31290e79c54bba685363a914":[5,0,53,6],
 "classPolygon.html":[5,0,55],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "classText.html#a8003413af57b0e8fd5a143f2cfb5af9f":[5,0,84,4],
 "classText.html#ab3e26143fccc52699bcc5149cae852bc":[5,0,84,0],
 "classText.html#ab7a79fc8775c7935b2515fde15cbc127":[5,0,84,7],
-"classText.html#abefbc7bc20f7b31cbc3376def798dbfd":[5,0,84,6],
-"classText.html#ac0a93525b5ec069bfe236f724fb57989":[5,0,84,5]
+"classText.html#abefbc7bc20f7b31cbc3376def798dbfd":[5,0,84,6]
 };

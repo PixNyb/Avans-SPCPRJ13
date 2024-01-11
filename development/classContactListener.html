@@ -121,10 +121,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5361c171c4086933413e229bba9eb219"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContactListener.html#a5361c171c4086933413e229bba9eb219">ContactListener</a> (std::map&lt; std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;, b2Body * &gt; gameObjects)</td></tr>
 <tr class="memdesc:a5361c171c4086933413e229bba9eb219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a contactlistener.  <a href="classContactListener.html#a5361c171c4086933413e229bba9eb219">More...</a><br /></td></tr>
 <tr class="separator:a5361c171c4086933413e229bba9eb219"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a594d18bd52740c2ee88ecbaab281d55c"><td class="memItemLeft" align="right" valign="top"><a id="a594d18bd52740c2ee88ecbaab281d55c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContactListener.html#a594d18bd52740c2ee88ecbaab281d55c">~ContactListener</a> ()=default</td></tr>
-<tr class="memdesc:a594d18bd52740c2ee88ecbaab281d55c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs a contactlistener. <br /></td></tr>
-<tr class="separator:a594d18bd52740c2ee88ecbaab281d55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade8fe079e25712b7ee601b2d5b156bc1"><td class="memItemLeft" align="right" valign="top"><a id="ade8fe079e25712b7ee601b2d5b156bc1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContactListener.html#ade8fe079e25712b7ee601b2d5b156bc1">~ContactListener</a> () override</td></tr>
+<tr class="memdesc:ade8fe079e25712b7ee601b2d5b156bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs a contactlistener. <br /></td></tr>
+<tr class="separator:ade8fe079e25712b7ee601b2d5b156bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad75eca7244addd81d9761af8e6a72d7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContactListener.html#ad75eca7244addd81d9761af8e6a72d7c">BeginContact</a> (b2Contact *contact) override</td></tr>
 <tr class="memdesc:ad75eca7244addd81d9761af8e6a72d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">executes the defined actions in the gameobjects that corresponds with bodies in the incoming contact object  <a href="classContactListener.html#ad75eca7244addd81d9761af8e6a72d7c">More...</a><br /></td></tr>
 <tr class="separator:ad75eca7244addd81d9761af8e6a72d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +138,9 @@ Public Member Functions</h2></td></tr>
 std::shared_ptr&lt; <a class="el" href="classGameObject.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContactListener.html#a1ab81df48b05868ed96269ed0486a190">FindGameObject</a> (b2Body *body)</td></tr>
 <tr class="memdesc:a1ab81df48b05868ed96269ed0486a190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the gameobject with a b2body. <br /></td></tr>
 <tr class="separator:a1ab81df48b05868ed96269ed0486a190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b5819c166e4681cf35ea9effaada2bf"><td class="memItemLeft" align="right" valign="top"><a id="a2b5819c166e4681cf35ea9effaada2bf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CleanUp</b> ()</td></tr>
+<tr class="separator:a2b5819c166e4681cf35ea9effaada2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class handles the contacts that occur in the b2World. When a contact comes through here the behaviour scripts of both bodies are called. </p>
