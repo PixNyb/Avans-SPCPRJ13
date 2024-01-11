@@ -17,6 +17,7 @@
  */
 
 #include "managers/scene_manager.hpp"
+#include "behaviour_script_manager.hpp"
 #include "engine.hpp"
 #include "pathfinding_manager.hpp"
 

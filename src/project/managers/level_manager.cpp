@@ -9,6 +9,7 @@
  */
 
 #include "level_manager.hpp"
+#include "behaviour_script_manager.hpp"
 #include "engine.hpp"
 #include "level_name_generator.hpp"
 #include "pathfinding_manager.hpp"
@@ -53,7 +54,7 @@ void LevelManager::RegisterLevel(int id, std::string filePath)
 void LevelManager::LoadLevel(int id)
 {
     Engine::GetInstance()->Get<PathfindingManager>()->EnablePathfinding();
-    
+    Engine::GetInstance()->Get<BehaviourScriptManager>()->shouldExecute = true;
     currentLevelID = id;
     auto scene = CreateScene(id);
     // Update the current scene.

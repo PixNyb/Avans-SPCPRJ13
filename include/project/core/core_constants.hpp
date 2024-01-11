@@ -38,9 +38,9 @@ const int MAX_NESTED_CHILDREN = 5; ///< The maximum amount of nested children a 
 } // namespace Engine
 namespace Debug
 {
-const bool EnableDebug = true;
+const bool EnableDebug = false;
 const bool DrawColliders = true;
-const bool DrawNodes = true;
+const bool DrawNodes = false;
 const bool DrawPath = true;
 } // namespace Debug
 

@@ -10,9 +10,11 @@
  */
 
 #include "physics_facade.hpp"
+#include "behaviour_script_manager.hpp"
 #include "box_collider.hpp"
 #include "circle_collider.hpp"
 #include "contact_listener.hpp"
+#include "engine.hpp"
 #include "time.hpp"
 #include <algorithm>
 #include <utility>
@@ -109,8 +111,9 @@ void PhysicsFacade::PopulateWorld(std::vector<std::shared_ptr<GameObject>> gameO
             MakeBody(gameObject);
     }
 
-    contactListener = new ContactListener(bodies);
-    world->SetContactListener(contactListener);
+
+    contactListener = std::make_unique<ContactListener>(bodies);
+    world->SetContactListener(contactListener.get());
 }
 
 void PhysicsFacade::DepopulateWorld()
@@ -120,7 +123,6 @@ void PhysicsFacade::DepopulateWorld()
         world->DestroyBody(pair.second);
     bodies.clear();
     bodiesToBeAdded.clear();
-    delete contactListener;
 }
 
 void PhysicsFacade::Step()

@@ -19,6 +19,8 @@
 BehaviourScriptManager::BehaviourScriptManager() = default;
 BehaviourScriptManager::~BehaviourScriptManager() = default;
 
+bool BehaviourScriptManager::shouldExecute = true;
+
 void BehaviourScriptManager::Update()
 {
     auto engine = Engine::GetInstance();
@@ -37,22 +39,28 @@ void BehaviourScriptManager::Update()
             continue;
 
         // Execute script recursively
-        GameObjectUtility::TraverseActiveGameObjects(
-            gameObject,
-            [](const std::shared_ptr<GameObject> &gameObject) { ExecuteScript(*gameObject); });
+        if (shouldExecute) {
+            GameObjectUtility::TraverseActiveGameObjects(
+                gameObject,
+                [](const std::shared_ptr<GameObject> &gameObject) { ExecuteScript(*gameObject); });
+        }
     }
+    Engine::GetInstance()->Get<BehaviourScriptManager>()->shouldExecute = true;
 }
 void BehaviourScriptManager::ExecuteScript(GameObject &gameObject)
 {
     auto scripts = gameObject.GetComponents<BehaviourScript>();
     for (auto &script : scripts)
     {
-        if (!script || !script->IsActive())
-            continue;
+        if (shouldExecute){
+            if (!script || !script->IsActive())
+                continue;
 
-        if (!script->HasStarted())
-            script->OnStart();
+            if (!script->HasStarted())
+                script->OnStart();
 
-        script->OnUpdate();
+            script->OnUpdate();
+        }
+
     }
 }

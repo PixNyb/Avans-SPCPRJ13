@@ -31,6 +31,8 @@ class BehaviourScriptManager
     void Update();
 
     static void ExecuteScript(GameObject &gameObject);
+
+    static bool shouldExecute;
 };
 
 #endif // DEFUNBOBENGINE_SRC_PROJECT_MANAGERS_BEHAVIOUR_SCRIPT_MANAGER_HPP
